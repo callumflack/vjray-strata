@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "contentful": "4.3.0",
-    "next": "3.0.0-beta6",
+    "next": "3.0.0-beta8",
     "react": "15.4.2",
     "react-dom": "15.4.2"
   }

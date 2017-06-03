@@ -1,33 +1,31 @@
 import React from 'react';
-import Layout from '../components/Layout.js';
+import styled from 'styled-components';
+
 import { initClient, getClient } from '../services/contentfulClient';
+import Layout from '../components/Layout.js';
+import Block from '../components/shared/Block.js';
+import Container from '../components/shared/Container.js';
+import Section from '../components/Home/Section.js';
+import Anchor from '../components/shared/Anchor.js';
+import Hero from '../components/Home/Hero.js';
+import FeatureList from '../components/Home/FeatureList.js';
+import {
+	HeaderBold,
+	TextLarge,
+} from '../components/shared/Text.js';
 
-const Section = (props) => (
-	<section className='container--sm' style={{color: props.color}}>
-		<h4 className='header-hr'>
-			<div>
-				{props.section.fields.primaryHeader}
-				<hr />
-			</div>
-		</h4>
+const QuoteAuthor = styled.span`
+	text-transform: uppercase;
+`;
 
-		<h1>
-			{props.section.fields.secondaryHeader}
-		</h1>
+const Email = styled.p`
+	font-weight: bold;
+	color: #D3145A;
+`;
 
-		<p>
-			{props.section.fields.content}
-		</p>
-
-		{props.children}
-
-		<style jsx>{`
-			section {
-				text-align: center;
-			}
-		`}</style>
-	</section>
-);
+const SectionPhoto = styled.img`
+	margin-top: 1.5rem;
+`;
 
 class Index extends React.Component {
 	static async getInitialProps() {
@@ -53,56 +51,28 @@ class Index extends React.Component {
 	render() {
 		return (
 			<Layout>
-				<div className='hero container'>
-					<div className='hero-text'>
-						<h1>We understand how valuable piece of mind is.</h1>
-						<p>Leave your apartment asset to VJ Ray and skip the hassle of management and maintenace.</p>
+				<Hero />
 
-						<form className='form-quote'>
-							<input placeholder='Enter your email' />
-							<button type='submit'>Get a quote today</button>
-						</form>
-					</div>
+				<Block textCenter>
+					<Container>
+						<Container small>
+							<HeaderBold>It all adds up to a better deal.</HeaderBold>
 
-					<img src='http://lorempixel.com/400/300' />
-				</div>
+							<TextLarge>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></TextLarge>
+						</Container>
+
+						<FeatureList />
+					</Container>
+				</Block>
 
 				<Section section={this.props.sections[0]} color='#D3145A'>
-					<a className='link-bordered' href='#'>Watch video</a>
+					<Anchor bordered>Watch video</Anchor>
 				</Section>
 
 				<Section section={this.props.sections[1]}>
-					<p className='email'>contact@vjraystrata.com.au</p>
-					<img className='section-photo' src='http://lorempixel.com/400/600' />
+					<Email>contact@vjraystrata.com.au</Email>
+					<SectionPhoto src='http://lorempixel.com/400/600' />
 				</Section>
-
-				<style jsx>{`
-					.hero {
-						display: flex;
-						background-color: #F6EFE9;
-					}
-
-					.hero-text {
-						margin-right: 2rem;
-					}
-
-					.hero h1 {
-						color: #D3145A;
-					}
-
-					section {
-						text-align: center;
-					}
-
-					.email {
-						font-weight: bold;
-						color: #D3145A;
-					}
-
-					.section-photo {
-						margin-top: 1.5rem;
-					}
-				`}</style>
 			</Layout>
 		)
 	}

@@ -1,51 +1,48 @@
+import styled from 'styled-components';
+import Anchor from './shared/Anchor.js';
 import Link from 'next/link';
 
+const SiteHeader = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+	background-color: #F6EFE9;
+	border-bottom: 2px solid #E3DEDB;
+	color: #585870;
+	font-weight: bold;
+`;
+
 const Header = () => (
-	<div className='site-header container'>
+	<SiteHeader>
 		<Link href='/'>
-			<a>V.J.Ray</a>
+			<Anchor vSpace>V.J.Ray</Anchor>
 		</Link>
 
 		<nav>
 			<Link href='/'>
-				<a>Who we are</a>
+				<Anchor vSpace>Who we are</Anchor>
 			</Link>
 			<Link href='/'>
-				<a>What we do for you</a>
+				<Anchor vSpace>What we do for you</Anchor>
 			</Link>
 			<Link href='/'>
-				<a>Useful info</a>
+				<Anchor vSpace>Useful info</Anchor>
 			</Link>
 			<Link href='/'>
-				<a>Contact us</a>
+				<Anchor vSpace>Contact us</Anchor>
 			</Link>
 			<Link href='/'>
-				<a>1300 667 123</a>
+				<Anchor vSpace>1300 667 123</Anchor>
 			</Link>
 		</nav>
 
 		<nav>
 			<Link href='/signin'>
-				<a className='link-bordered'>Sign in</a>
+				<Anchor bordered>Sign in</Anchor>
 			</Link>
 		</nav>
-		<style jsx>{`
-			.site-header {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 2rem;
-				background-color: #F6EFE9;
-				border-bottom: 2px solid #E3DEDB;
-				color: #585870;
-				font-weight: bold;
-			}
-
-			nav a:not(:last-child) {
-				margin-right: 1.5rem;
-			}
-		`}</style>
-	</div>
+	</SiteHeader>
 );
 
 export default Header;

@@ -6,24 +6,24 @@ injectGlobal`
 html {font-size: 1em;}
 
 body {
-	background-color: white;
-	font-family: 'Open Sans', sans;
-	font-weight: 400;
-	line-height: 1.45;
-	color: #585870;
+  background-color: white;
+  font-family: 'Open Sans', sans;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #585870;
 }
 
 p {margin-bottom: 1.3em;}
 
 h1, h2, h3, h4 {
-	margin: 1.414em 0 0.5em;
-	font-weight: inherit;
-	line-height: 1.2;
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
 }
 
 h1 {
-	margin-top: 0.5em;
-	font-size: 3.157em;
+  margin-top: 0.5em;
+  font-size: 3.157em;
 }
 
 h2 {font-size: 2.369em;}
@@ -38,21 +38,21 @@ small, .font_small {font-size: 0.75em;}
 
 
 *, *:before, *:after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
+  margin: 0;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 hr {
-	color: inherit;
-	border: 0;
-	border-bottom: 1px solid currentColor;
+  color: inherit;
+  border: 0;
+  border-bottom: 1px solid currentColor;
 }
 `;

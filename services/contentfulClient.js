@@ -4,17 +4,17 @@ let client;
 let authorized;
 
 export function initClient(space, accessToken) {
-	client = createClient({
-		space, accessToken
-	});
+  client = createClient({
+    space, accessToken
+  });
 
-	return client.getSpace()
-	.then((space) => {
-		authorized = true;
-		return space;
-	});
+  return client.getSpace()
+  .then((space) => {
+    authorized = true;
+    return space;
+  });
 }
 
 export function getClient() {
-	return authorized && client;
+  return authorized && client;
 }

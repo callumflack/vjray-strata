@@ -1,17 +1,19 @@
 import styled, {css} from 'styled-components';
 
+import theme from '../../css/theme.js';
+
 const Container = styled.div`
-  --width: 960px;
+  --width: ${theme.containers.rg};
 
   margin: auto;
   max-width: calc(var(--width));
 
-  ${props => props.small && css`
-    --width: 700px;
+  ${props => props.sm && css`
+    --width: ${theme.containers.sm};
   `}
 
-  ${props => props.large && css`
-    --width: 1200px;
+  ${props => props.lg && css`
+    --width: ${theme.containers.lg};
   `}
 `;
 

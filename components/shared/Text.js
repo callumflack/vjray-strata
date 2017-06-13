@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+
+import theme from '../../css/theme.js';
 
 const HrWrapper = styled.h4`
   margin: auto;
@@ -15,13 +17,14 @@ const HeaderHr = (props) => (
   </HrWrapper>
 );
 
-const HeaderBold = styled.h2`
-  font-weight: bold;
+const Paragraph = styled.p`
+  ${props => props.lg && css`
+    font-size: ${theme.text.lg};
+  `}
+
+  ${props => props.transparent && css`
+    opacity: ${theme.text.transparent};
+  `}
 `;
 
-const TextLarge = styled.p`
-  font-size: 1.35rem;
-  opacity: 0.8;
-`;
-
-export { HeaderHr, HeaderBold, TextLarge };
+export { HeaderHr, Paragraph };

@@ -30,7 +30,6 @@ const QuoteFormInput = styled.input`
   border: 1px solid #ccc;
 `;
 
-// Use anchor component?
 const QuoteFormButton = styled.button`
   --gutter: 0.4rem;
   position: absolute;

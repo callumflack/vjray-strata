@@ -2,14 +2,15 @@ import styled from 'styled-components';
 import Anchor from './shared/Anchor.js';
 import Link from 'next/link';
 
+import theme from '../css/theme.js';
+
 const SiteHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: #F6EFE9;
+  background-color: ${theme.colors.alt};
   border-bottom: 2px solid #E3DEDB;
-  color: #585870;
   font-weight: bold;
 `;
 

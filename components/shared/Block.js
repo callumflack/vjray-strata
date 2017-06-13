@@ -1,8 +1,10 @@
 import styled, {css} from 'styled-components';
 
+import theme from '../../css/theme.js';
+
 const Block = styled.section`
   padding: 7rem 3rem;
-  background-color: ${props => props.altBackground ? '#F6EFE9' : 'inherit'};
+  background-color: ${props => props.altBackground ? theme.colors.alt : 'inherit'};
   color: ${props => props.color ? props.color : 'inherit' };
 
   @media (max-width: 600px) {

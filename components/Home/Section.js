@@ -8,7 +8,7 @@ import {
 
 const SectionWrapper = (props) => (
   <Block textCenter color={props.color}>
-    <Container small>
+    <Container sm>
       <HeaderHr>{props.section.fields.primaryHeader}</HeaderHr>
       <h1>{props.section.fields.secondaryHeader}</h1>
       <p>{props.section.fields.content}</p>

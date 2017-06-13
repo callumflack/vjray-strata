@@ -10,8 +10,7 @@ import Anchor from '../components/shared/Anchor.js';
 import Hero from '../components/Home/Hero.js';
 import FeatureList from '../components/Home/FeatureList.js';
 import {
-  HeaderBold,
-  TextLarge,
+  Paragraph,
 } from '../components/shared/Text.js';
 
 const QuoteAuthor = styled.span`
@@ -55,10 +54,10 @@ class Index extends React.Component {
 
         <Block textCenter>
           <Container>
-            <Container small>
-              <HeaderBold>It all adds up to a better deal.</HeaderBold>
+            <Container sm>
+              <h2><strong>It all adds up to a better deal.</strong></h2>
 
-              <TextLarge>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></TextLarge>
+              <Paragraph lg transparent>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
             </Container>
 
             <FeatureList />

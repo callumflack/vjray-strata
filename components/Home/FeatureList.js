@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import theme from '../../css/theme.js';
+
 const FeatureList = styled.div`
   margin-top: 4rem;
   display: flex;
@@ -9,19 +11,19 @@ const Item = styled.div`
 `;
 
 const Title = styled.h4`
-  color: #D3145A;
+  color: ${theme.colors.brand};
   margin-top: 1.5rem;
 `;
 
 const Content = styled.p`
-  color: #888;
+  opacity: 0.7;
 `;
 
 const Divider = styled.div`
   padding: 0 0.7rem;
   font-size: 3rem;
   font-weight: 100;
-  color: #D3145A;
+  color: ${theme.colors.brand};
 `;
 
 const FeatureListWrapper = (props) => (

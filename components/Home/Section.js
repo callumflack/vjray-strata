@@ -15,8 +15,8 @@ const BlockWrapper = styled(Block)`
 `;
 
 const Section = (props) => (
-  <BlockWrapper textCenter color={props.color} sectionImg={props.sectionImg}>
-    <Container sm>
+  <BlockWrapper color={props.color} sectionImg={props.sectionImg}>
+    <Container sm textCenter>
       {props.children}
     </Container>
   </BlockWrapper>

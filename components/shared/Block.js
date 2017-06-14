@@ -10,10 +10,6 @@ const Block = styled.section`
   @media (max-width: 600px) {
     padding: 4rem 2rem;
   }
-
-  ${props => props.textCenter && css`
-    text-align: center;
-  `}
 `;
 
 export default Block;

@@ -56,14 +56,14 @@ class Index extends React.Component {
       <Layout>
         <Hero />
 
-        <Block textCenter>
-          <Container sm>
+        <Block>
+          <Container sm textCenter>
             <h2><strong>It all adds up to a better deal.</strong></h2>
 
             <Paragraph lg transparent>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
           </Container>
 
-          <Container>
+          <Container textCenter>
             <FeatureList />
           </Container>
         </Block>
@@ -88,13 +88,14 @@ class Index extends React.Component {
           <SectionImg src='http://lorempixel.com/400/600' />
         </Section>
 
-        <Block textCenter>
-          <Container sm>
+        <Block>
+          <Container sm textCenter>
             <h2><strong>Our duty is your satisfaction.</strong></h2>
 
             <Paragraph lg brand>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
           </Container>
-          <Container>
+
+          <Container textCenter>
             <Testimonials />
           </Container>
         </Block>

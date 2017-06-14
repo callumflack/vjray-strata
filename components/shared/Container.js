@@ -15,6 +15,10 @@ const Container = styled.div`
   ${props => props.lg && css`
     --width: ${theme.containers.lg};
   `}
+
+  ${props => props.textCenter && css`
+    text-align: center;
+  `}
 `;
 
 export default Container;

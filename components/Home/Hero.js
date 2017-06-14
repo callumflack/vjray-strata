@@ -52,8 +52,8 @@ const Hero = () => (
     <Container>
       <Wrapper>
         <TextWrapper>
-          <Title>We understand how valuable piece of mind is.</Title>
-          <Paragraph lg>Leave your apartment asset to VJ Ray and skip the hassle of management and maintenace.</Paragraph>
+          <Title>Skip the hassle of Strata management.</Title>
+          <Paragraph lg>At VJ Ray Strata, we understand how valuable piece of mind is.</Paragraph>
 
           <QuoteForm>
             <QuoteFormInput placeholder='Enter your email' />

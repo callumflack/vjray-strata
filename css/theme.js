@@ -12,7 +12,7 @@ const theme = {
     lg: '1200px',
   },
   text: {
-    family: `'Open Sans', sans`,
+    family: `GT-Eesti-Pro`,
     lineHeight: 1.45,
     base: '16px',
     lg: '1.333em',

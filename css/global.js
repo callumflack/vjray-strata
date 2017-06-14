@@ -3,6 +3,13 @@ import { injectGlobal } from 'styled-components';
 import theme from './theme.js';
 
 injectGlobal`
+@font-face {
+  font-family: 'GT-Eesti-Pro';
+  src: url('/static/fonts/GT-Eesti-Pro-Text-Regular.woff');
+  src: local('GT-Eesti-Pro'), local('GT-Eesti-Pro'),
+       url('/static/fonts/GT-Eesti-Pro-Text-Regular.woff') format('woff');
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }

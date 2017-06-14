@@ -47,7 +47,7 @@ const Guides = (props) => (
 
       <Image src='http://lorempixel.com/100/100' />
     </Guide>
-    )};
+    )}
   </GuidesWrapper>
 );
 

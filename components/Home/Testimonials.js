@@ -55,7 +55,7 @@ const Testimonials = (props) => (
         </AuthorInfo>
       </Author>
     </Testimonial>
-    )};
+    )}
   </TestimonialsWrapper>
 );
 

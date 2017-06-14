@@ -81,11 +81,11 @@ const Contact = (props) => (
               <span>&#9742;</span>
               1300 073 405
             </InfoListItem>
-            )};
+            )}
           </InfoList>
         </LocationInfo>
       </Location>
-      )};
+      )}
     </Locations>
   </div>
 );

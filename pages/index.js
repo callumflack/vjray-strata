@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from '../css/theme.js';
-import { initClient, getClient } from '../services/contentfulClient';
 import Layout from '../components/Layout.js';
 import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
@@ -30,94 +29,70 @@ const QuoteAuthor = (props) => (
   <Uppercase><small>{props.children}</small></Uppercase>
 );
 
-class Index extends React.Component {
-  static async getInitialProps() {
-    const space = await initClient('h12qkyh9prdx', 'a6896c50a7491bac6d5f4c8b85858bdc063bfd3ebef2e8d89929c6f28d0a31ec');
-    const client = getClient();
-    const content = await getClient().getEntries({ content_type: 'page' });
-    const home = await client.getEntries({
-      content_type: 'page',
-      'fields.name[match]': 'Home'
-    });
+const Index = () => (
+  <Layout>
+    <Hero />
 
-    return {
-      content,
-      home,
-      sections: home.items[0].fields.sections,
-    };
-  }
+    <Block>
+      <Container sm textCenter>
+        <h2><strong>It all adds up to a better deal.</strong></h2>
 
-  constructor(props) {
-    super(props);
-  }
+        <Paragraph lg transparent>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
+      </Container>
 
-  render() {
-    return (
-      <Layout>
-        <Hero />
+      <Container textCenter>
+        <FeatureList />
+      </Container>
+    </Block>
 
-        <Block>
-          <Container sm textCenter>
-            <h2><strong>It all adds up to a better deal.</strong></h2>
+    <Section color={theme.colors.brand}>
+      <HeaderHr>Dependable and effective</HeaderHr>
+      <h1>We help make high-density Sydney living great.</h1>
+      <p>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</p>
 
-            <Paragraph lg transparent>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
-          </Container>
+      <Anchor bordered>Watch video</Anchor>
+    </Section>
 
-          <Container textCenter>
-            <FeatureList />
-          </Container>
-        </Block>
+    <Section sectionImg>
+      <HeaderHr>Fast. Easy. Done.</HeaderHr>
+      <h1>Do it all, online.</h1>
+      <p>We're a team of licensed real estate professionals with an exclusive focus on strata management in Sydney and local market experts - and we're here to help make youre living stress-free.</p>
 
-        <Section color={theme.colors.brand}>
-          <HeaderHr>Dependable and effective</HeaderHr>
-          <h1>We help make high-density Sydney living great.</h1>
-          <p>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</p>
+      <Paragraph brand>
+        <Anchor bordered>Sign up</Anchor>
+      </Paragraph>
 
-          <Anchor bordered>Watch video</Anchor>
-        </Section>
+      <SectionImg src='http://lorempixel.com/400/600' />
+    </Section>
 
-        <Section sectionImg>
-          <HeaderHr>Fast. Easy. Done.</HeaderHr>
-          <h1>Do it all, online.</h1>
-          <p>We're a team of licensed real estate professionals with an exclusive focus on strata management in Sydney and local market experts - and we're here to help make youre living stress-free.</p>
+    <Block>
+      <Container sm textCenter>
+        <h2><strong>Our duty is your satisfaction.</strong></h2>
 
-          <Paragraph brand>
-            <Anchor bordered>Sign up</Anchor>
-          </Paragraph>
+        <Paragraph lg brand>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
+      </Container>
 
-          <SectionImg src='http://lorempixel.com/400/600' />
-        </Section>
+      <Container textCenter>
+        <Testimonials />
+      </Container>
+    </Block>
 
-        <Block>
-          <Container sm textCenter>
-            <h2><strong>Our duty is your satisfaction.</strong></h2>
+    <Section>
+      <HeaderHr>Info on the go</HeaderHr>
+      <h1><Text brand>Your guides to Sydney Strata.</Text></h1>
+      <p>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</p>
 
-            <Paragraph lg brand>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
-          </Container>
+      <Guides />
+    </Section>
 
-          <Container textCenter>
-            <Testimonials />
-          </Container>
-        </Block>
+    <Section>
+      <RecentPosts />
+    </Section>
 
-        <Section>
-          <HeaderHr>Info on the go</HeaderHr>
-          <h1><Text brand>Your guides to Sydney Strata.</Text></h1>
-          <p>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</p>
-
-          <Guides />
-        </Section>
-
-        <Section>
-          <RecentPosts />
-        </Section>
-
-        <Section>
-          <Contact />
-        </Section>
-      </Layout>
-    )
-  }
-}
+    <Section>
+      <Contact />
+    </Section>
+  </Layout>
+)
 
 export default Index;

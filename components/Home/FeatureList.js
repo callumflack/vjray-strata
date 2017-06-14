@@ -11,8 +11,9 @@ const Item = styled.div`
 `;
 
 const Title = styled.h4`
-  color: ${theme.colors.brand};
   margin-top: 1.5rem;
+  font-weight: bold;
+  color: ${theme.colors.brand};
 `;
 
 const Content = styled.p`
@@ -22,11 +23,10 @@ const Content = styled.p`
 const Divider = styled.div`
   padding: 0 0.7rem;
   font-size: 3rem;
-  font-weight: 100;
   color: ${theme.colors.brand};
 `;
 
-const FeatureListWrapper = (props) => (
+const FeatureListWrapper = () => (
   <FeatureList>
     <Item>
       <img src='http://lorempixel.com/75/75' />

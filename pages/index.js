@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import theme from '../css/theme.js';
 import { initClient, getClient } from '../services/contentfulClient';
 import Layout from '../components/Layout.js';
 import Block from '../components/shared/Block.js';
@@ -9,22 +10,25 @@ import Section from '../components/Home/Section.js';
 import Anchor from '../components/shared/Anchor.js';
 import Hero from '../components/Home/Hero.js';
 import FeatureList from '../components/Home/FeatureList.js';
+import Testimonials from '../components/Home/Testimonials.js';
+import Guides from '../components/Home/Guides.js';
+import RecentPosts from '../components/shared/RecentPosts.js';
+import Contact from '../components/shared/Contact.js';
 import {
+  HeaderHr,
+  Text,
   Paragraph,
+  Uppercase,
 } from '../components/shared/Text.js';
 
-const QuoteAuthor = styled.span`
-  text-transform: uppercase;
+const SectionImg = styled.img`
+  display: block;
+  margin: 4rem auto 0;
 `;
 
-const Email = styled.p`
-  font-weight: bold;
-  color: #D3145A;
-`;
-
-const SectionPhoto = styled.img`
-  margin-top: 1.5rem;
-`;
+const QuoteAuthor = (props) => (
+  <Uppercase><small>{props.children}</small></Uppercase>
+);
 
 class Index extends React.Component {
   static async getInitialProps() {
@@ -53,24 +57,62 @@ class Index extends React.Component {
         <Hero />
 
         <Block textCenter>
+          <Container sm>
+            <h2><strong>It all adds up to a better deal.</strong></h2>
+
+            <Paragraph lg transparent>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
+          </Container>
+
           <Container>
-            <Container sm>
-              <h2><strong>It all adds up to a better deal.</strong></h2>
-
-              <Paragraph lg transparent>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
-            </Container>
-
             <FeatureList />
           </Container>
         </Block>
 
-        <Section section={this.props.sections[0]} color='#D3145A'>
+        <Section color={theme.colors.brand}>
+          <HeaderHr>Dependable and effective</HeaderHr>
+          <h1>We help make high-density Sydney living great.</h1>
+          <p>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</p>
+
           <Anchor bordered>Watch video</Anchor>
         </Section>
 
-        <Section section={this.props.sections[1]}>
-          <Email>contact@vjraystrata.com.au</Email>
-          <SectionPhoto src='http://lorempixel.com/400/600' />
+        <Section sectionImg>
+          <HeaderHr>Fast. Easy. Done.</HeaderHr>
+          <h1>Do it all, online.</h1>
+          <p>We're a team of licensed real estate professionals with an exclusive focus on strata management in Sydney and local market experts - and we're here to help make youre living stress-free.</p>
+
+          <Paragraph brand>
+            <Anchor bordered>Sign up</Anchor>
+          </Paragraph>
+
+          <SectionImg src='http://lorempixel.com/400/600' />
+        </Section>
+
+        <Block textCenter>
+          <Container sm>
+            <h2><strong>Our duty is your satisfaction.</strong></h2>
+
+            <Paragraph lg brand>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
+          </Container>
+          <Container>
+            <Testimonials />
+          </Container>
+        </Block>
+
+        <Section>
+          <HeaderHr>Info on the go</HeaderHr>
+          <h1><Text brand>Your guides to Sydney Strata.</Text></h1>
+          <p>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</p>
+
+          <Guides />
+        </Section>
+
+        <Section>
+          <RecentPosts />
+        </Section>
+
+        <Section>
+          <Contact />
         </Section>
       </Layout>
     )

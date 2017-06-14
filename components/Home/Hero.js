@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
+import theme from '../../css/theme.js';
 import Block from '../shared/Block.js';
 import Container from '../shared/Container.js';
+import {
+  Paragraph,
+} from '../shared/Text.js';
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,7 +16,7 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #D3145A;
+  color: ${theme.colors.brand};
 `;
 
 const QuoteForm = styled.form`
@@ -49,7 +53,7 @@ const Hero = () => (
       <Wrapper>
         <TextWrapper>
           <Title>We understand how valuable piece of mind is.</Title>
-          <p>Leave your apartment asset to VJ Ray and skip the hassle of management and maintenace.</p>
+          <Paragraph lg>Leave your apartment asset to VJ Ray and skip the hassle of management and maintenace.</Paragraph>
 
           <QuoteForm>
             <QuoteFormInput placeholder='Enter your email' />

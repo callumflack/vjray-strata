@@ -1,21 +1,25 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 import Block from '../shared/Block.js';
 import Container from '../shared/Container.js';
 import {
-  HeaderHr
+  HeaderHr,
 } from '../shared/Text.js';
 
-const SectionWrapper = (props) => (
-  <Block textCenter color={props.color}>
-    <Container sm>
-      <HeaderHr>{props.section.fields.primaryHeader}</HeaderHr>
-      <h1>{props.section.fields.secondaryHeader}</h1>
-      <p>{props.section.fields.content}</p>
+const BlockWrapper = styled(Block)`
+  color: ${props => props.color || 'inherit'};
 
+  ${props => props.sectionImg && css`
+    padding-bottom: 0;
+  `}
+`;
+
+const Section = (props) => (
+  <BlockWrapper textCenter color={props.color} sectionImg={props.sectionImg}>
+    <Container sm>
       {props.children}
     </Container>
-  </Block>
+  </BlockWrapper>
 );
 
-export default SectionWrapper;
+export default Section;

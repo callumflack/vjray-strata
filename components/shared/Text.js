@@ -17,7 +17,7 @@ const HeaderHr = (props) => (
   </HrWrapper>
 );
 
-const Paragraph = styled.p`
+const textStyles = css`
   ${props => props.lg && css`
     font-size: ${theme.text.lg};
   `}
@@ -25,6 +25,22 @@ const Paragraph = styled.p`
   ${props => props.transparent && css`
     opacity: ${theme.text.transparent};
   `}
+
+  ${props => props.brand && css`
+    color: ${theme.colors.brand};
+  `}
 `;
 
-export { HeaderHr, Paragraph };
+const Text = styled.span`
+  ${textStyles}
+`;
+
+const Paragraph = styled.p`
+  ${textStyles}
+`;
+
+const Uppercase = styled.span`
+  text-transform: uppercase;
+`;
+
+export { HeaderHr, Text, Paragraph, Uppercase };

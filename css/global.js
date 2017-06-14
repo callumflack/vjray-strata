@@ -31,6 +31,11 @@ a {
   color: inherit;
 }
 
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 hr {
   color: inherit;
   border: 0;

@@ -6,7 +6,7 @@ import Layout from '../components/Layout.js';
 import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
 import Section from '../components/Home/Section.js';
-import Anchor from '../components/shared/Anchor.js';
+import Button from '../components/shared/Button.js';
 import Hero from '../components/Home/Hero.js';
 import FeatureList from '../components/Home/FeatureList.js';
 import Testimonials from '../components/Home/Testimonials.js';
@@ -50,7 +50,7 @@ const Index = () => (
       <h1>We help make high-density Sydney living great.</h1>
       <p>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</p>
 
-      <Anchor bordered>Watch video</Anchor>
+      <Button bordered>Watch video</Button>
     </Section>
 
     <Section sectionImg>
@@ -59,7 +59,7 @@ const Index = () => (
       <p>We're a team of licensed real estate professionals with an exclusive focus on strata management in Sydney and local market experts - and we're here to help make youre living stress-free.</p>
 
       <Paragraph brand>
-        <Anchor bordered>Sign up</Anchor>
+        <Button bordered>Sign up</Button>
       </Paragraph>
 
       <SectionImg src='http://lorempixel.com/400/600' />

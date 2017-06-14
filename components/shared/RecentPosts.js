@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import theme from '../../css/theme.js';
-import Anchor from './Anchor.js';
+import Button from './Button.js';
 import {
   HeaderHr,
   Text,
@@ -16,12 +16,12 @@ const Image = styled.img`
 
 const RecentPosts = (props) => (
   <div>
-    <HeaderHr><Anchor>Recent posts</Anchor></HeaderHr>
+    <HeaderHr><Button clean icon>Recent posts</Button></HeaderHr>
 
     <Image src='http://lorempixel.com/300/225' />
 
     <h2><strong>The five biggest pitfalls to avoid in your Body Corp.</strong></h2>
-    <Paragraph>Adipisicing tempora unde dolorum nam sint? Tempore accusantium asperiores rem ipsa laboriosam maxime Dolor sed provident fugiat ut expedita voluptate? Molestias mollitia culpa quos labore? <Anchor><Text brand><strong>Read more</strong></Text></Anchor></Paragraph>
+    <Paragraph>Adipisicing tempora unde dolorum nam sint? Tempore accusantium asperiores rem ipsa laboriosam maxime Dolor sed provident fugiat ut expedita voluptate? Molestias mollitia culpa quos labore? <Button clean icon><Text brand><strong>Read more</strong></Text></Button></Paragraph>
   </div>
 );
 

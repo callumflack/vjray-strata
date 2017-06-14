@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styled, { css } from 'styled-components';
 
 import theme from '../../css/theme.js';
+import Button from '../shared/Button.js';
 
 
 const Form = styled.form`
@@ -48,26 +49,24 @@ const Body = styled.div`
 `;
 
 const Inputs = styled.div`
+  --lineHeight: 3;
+
   max-width: 700px;
   margin: auto;
 `;
 
 const Input = styled.input`
   flex-grow: 1;
+  margin-right: 2rem;
   border: 0;
   border-bottom: 1px solid #aaa;
-  margin-right: 2rem;
-  line-height: 3;
+  line-height: var(--lineHeight);
 `;
 
-const Button = styled.button`
-  --gutter: 0.4rem;
-  padding: 0.1rem 2.2rem;
-  background-color: ${theme.colors.text};
-  color: #fff;
-  border: 0;
-  font-weight: bold;
-  line-height: 3;
+const StyledButton = styled(Button)`
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: var(--lineHeight);
 `;
 
 
@@ -108,7 +107,7 @@ class QuickQuoteForm extends React.Component {
           <Inputs>
             <Input placeholder='Your name' />
             <Input placeholder='Your phone number' />
-            <Button type='submit'>Send</Button>
+            <StyledButton type='submit'>Send</StyledButton>
           </Inputs>
         </Body>
       </Form>

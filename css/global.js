@@ -31,6 +31,10 @@ a {
   color: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 input, textarea {
   font-family: inherit;
   font-size: inherit;

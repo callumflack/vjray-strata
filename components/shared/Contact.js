@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import theme from '../../css/theme.js';
-import Anchor from './Anchor.js';
+import Button from './Button.js';
 import {
   HeaderHr,
   Uppercase,
@@ -9,9 +9,10 @@ import {
   Text,
 } from '../shared/Text.js';
 
-const StyledAnchor = styled(Anchor)`
+const StyledButton = styled(Button)`
   display: inline-block;
   margin-top: 2rem;
+  padding: 1.5rem 6rem;
 `;
 
 const Locations = styled.div`
@@ -58,7 +59,7 @@ const Contact = (props) => (
 
     <h1>Call 1300 073 405.</h1>
 
-    <StyledAnchor fill><Uppercase>Get a fast quote</Uppercase></StyledAnchor>
+    <StyledButton fill bgColor='brand'><Uppercase>Get a fast quote</Uppercase></StyledButton>
 
     <h2><Text brand><strong>Drop-in without and appointment.</strong></Text></h2>
     <Paragraph>We're open Monday to Saturday, 9am-5pm.</Paragraph>

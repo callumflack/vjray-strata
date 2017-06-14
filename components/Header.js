@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Anchor from './shared/Anchor.js';
+import Button from './shared/Button.js';
 import Link from 'next/link';
 
 import theme from '../css/theme.js';
@@ -19,35 +19,41 @@ const Logo = styled.img`
   opacity: 0.7;
 `;
 
+const Nav = styled.nav`
+  a:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+`;
+
 const Header = () => (
   <SiteHeader>
     <Link href='/'>
-      <Anchor vSpace><Logo src='/static/img/logo.svg' /></Anchor>
+      <Logo src='/static/img/logo.svg' />
     </Link>
 
-    <nav>
+    <Nav>
       <Link href='/'>
-        <Anchor vSpace>Who we are</Anchor>
+        Who we are
       </Link>
       <Link href='/'>
-        <Anchor vSpace>What we do for you</Anchor>
+        What we do for you
       </Link>
       <Link href='/'>
-        <Anchor vSpace>Useful info</Anchor>
+        Useful info
       </Link>
       <Link href='/'>
-        <Anchor vSpace>Contact us</Anchor>
+        Contact us
       </Link>
       <Link href='/'>
-        <Anchor vSpace>1300 667 123</Anchor>
+        1300 667 123
       </Link>
-    </nav>
+    </Nav>
 
-    <nav>
+    <Nav>
       <Link href='/signin'>
-        <Anchor bordered>Sign in</Anchor>
+        <Button bordered>Sign in</Button>
       </Link>
-    </nav>
+    </Nav>
   </SiteHeader>
 );
 

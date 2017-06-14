@@ -14,10 +14,15 @@ const SiteHeader = styled.div`
   font-weight: bold;
 `;
 
+const Logo = styled.img`
+  height: 3rem;
+  opacity: 0.7;
+`;
+
 const Header = () => (
   <SiteHeader>
     <Link href='/'>
-      <Anchor vSpace>V.J.Ray</Anchor>
+      <Anchor vSpace><Logo src='/static/img/logo.svg' /></Anchor>
     </Link>
 
     <nav>

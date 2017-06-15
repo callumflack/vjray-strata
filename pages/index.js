@@ -50,7 +50,7 @@ const Index = () => (
       <h1>We help make high-density Sydney living great.</h1>
       <p>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</p>
 
-      <Button bordered>Watch video</Button>
+      <Button bordered icon>Watch video</Button>
     </Section>
 
     <Section sectionImg>

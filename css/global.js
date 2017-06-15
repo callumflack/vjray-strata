@@ -32,6 +32,8 @@ a {
 }
 
 button {
+  /* Reset for webkit */
+  font-size: inherit;
   cursor: pointer;
 }
 

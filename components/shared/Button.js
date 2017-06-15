@@ -25,6 +25,13 @@ const Button = styled.button`
     background-color: transparent;
   `}
 
+  ${props => props.icon && css`
+    :after {
+      content: '►';
+      margin-left: 0.7rem;
+    }
+  `}
+
   ${props => props.color && css`
     color: ${theme.colors[props.color]};
   `}

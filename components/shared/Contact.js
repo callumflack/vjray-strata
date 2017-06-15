@@ -59,7 +59,7 @@ const Contact = (props) => (
 
     <h1>Call 1300 073 405.</h1>
 
-    <StyledButton fill bgColor='brand'><Uppercase>Get a fast quote</Uppercase></StyledButton>
+    <StyledButton fill icon bgColor='brand'><Uppercase>Get a fast quote</Uppercase></StyledButton>
 
     <h2><Text brand><strong>Drop-in without and appointment.</strong></Text></h2>
     <Paragraph>We're open Monday to Saturday, 9am-5pm.</Paragraph>

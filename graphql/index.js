@@ -6,7 +6,7 @@ const Schema = `
   }
 
   type Query {
-    posts: [Post],
+    posts(limit: Int): [Post],
     title: String,
   }
 `;

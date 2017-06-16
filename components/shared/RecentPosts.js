@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 import theme from '../../css/theme.js';
@@ -14,15 +15,24 @@ const Image = styled.img`
   width: 300px;
 `;
 
-const RecentPosts = (props) => (
-  <div>
-    <HeaderHr><Button clean icon>Recent posts</Button></HeaderHr>
+class RecentPosts extends React.Component {
+  render() {
+    return (
+      <div>
+        <HeaderHr><Button clean icon>Recent posts</Button></HeaderHr>
 
-    <Image src='http://lorempixel.com/300/225' />
+        {this.props.posts.map((post, i) =>
+          <div key={i}>
+            <Image src='http://lorempixel.com/300/225' />
 
-    <h2><strong>The five biggest pitfalls to avoid in your Body Corp.</strong></h2>
-    <Paragraph>Adipisicing tempora unde dolorum nam sint? Tempore accusantium asperiores rem ipsa laboriosam maxime Dolor sed provident fugiat ut expedita voluptate? Molestias mollitia culpa quos labore? <Text brand><Button clean icon><strong>Read more</strong></Button></Text></Paragraph>
-  </div>
-);
+            <h2><strong>{post.title}</strong></h2>
+
+            <Paragraph>{post.content}<Text brand><Button clean icon><strong>Read more</strong></Button></Text></Paragraph>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
 export default RecentPosts;

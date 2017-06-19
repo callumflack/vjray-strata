@@ -12,10 +12,10 @@ const GuidesWrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   text-align: left;
+  margin-top: 4rem;
 `;
 
 const Guide = styled.div`
-  margin-top: 2.5rem;
   width: 175px;
   box-shadow: 0 0 15px #aaa;
 `;
@@ -42,7 +42,7 @@ const Guides = (props) => (
     <Guide>
       <GuideHead>
         <Icon>&#8486;</Icon>
-        <Text brand><small>Maintaining your strata asset</small></Text>
+        <Text brand>Maintaining your strata asset</Text>
       </GuideHead>
 
       <Image src='http://lorempixel.com/100/100' />

@@ -12,7 +12,7 @@ import Button from '../components/shared/Button.js';
 import Hero from '../components/Home/Hero.js';
 import FeatureList from '../components/Home/FeatureList.js';
 import Testimonials from '../components/Home/Testimonials.js';
-import Guides from '../components/Home/Guides.js';
+import Guides from '../components/shared/Guides.js';
 import RecentPosts from '../components/shared/RecentPosts.js';
 import Contact from '../components/shared/Contact.js';
 import {

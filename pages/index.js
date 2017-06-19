@@ -35,7 +35,7 @@ const query = gql`{
   posts(limit: 1) {
     id,
     title,
-    content,
+    description,
   }
 }`;
 

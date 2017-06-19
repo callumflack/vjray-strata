@@ -33,7 +33,7 @@ class RecentPosts extends React.Component {
 
             <h2><strong>{post.title}</strong></h2>
 
-            <Paragraph>{post.content}<PostLink clean icon>Read more</PostLink></Paragraph>
+            <Paragraph>{post.description}<PostLink clean icon>Read more</PostLink></Paragraph>
           </div>
         )}
       </div>

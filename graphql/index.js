@@ -2,7 +2,13 @@ const Schema = `
   type Post {
     id: String!,
     title: String,
-    content: String,
+    content: Markdown,
+    description: String,
+  }
+
+  type Markdown {
+    md: String,
+    html: String,
   }
 
   type Query {

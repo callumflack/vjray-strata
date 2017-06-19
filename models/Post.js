@@ -28,6 +28,7 @@ Post.add({
     options: 'draft, published, archived',
     default: 'draft',
   },
+  description: Types.Textarea,
   content: Types.Markdown,
   createdAt: {
     type: Types.Date,

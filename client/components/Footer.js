@@ -79,7 +79,9 @@ const Footer = () => (
         <FooterWrapper>
           <div>
             <Link href='/'>
-              <Logo src='/static/img/logo.svg' />
+              <a href='/'>
+                <Logo src='/static/img/logo.svg' />
+              </a>
             </Link>
             <Copyright>&copy; 2017</Copyright>
           </div>

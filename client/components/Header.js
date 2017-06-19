@@ -28,7 +28,9 @@ const Nav = styled.nav`
 const Header = () => (
   <SiteHeader>
     <Link href='/'>
-      <Logo src='/static/img/logo.svg' />
+      <a href='/'>
+        <Logo src='/static/img/logo.svg' />
+      </a>
     </Link>
 
     <Nav>

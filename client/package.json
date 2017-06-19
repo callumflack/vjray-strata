@@ -1,5 +1,5 @@
 {
-  "name": "vj-ray-test",
+  "name": "vj-ray-client",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,13 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "apollo-client": "1.4.2",
-    "express": "4.15.3",
-    "express-graphql": "0.6.6",
-    "graphql": "0.10.1",
     "graphql-tag": "2.3.0",
-    "graphql-tools": "1.0.0",
     "isomorphic-fetch": "2.2.1",
-    "keystone": "4.0.0-beta.5",
     "next": "3.0.0-beta8",
     "react": "15.4.2",
     "react-dom": "15.4.2",

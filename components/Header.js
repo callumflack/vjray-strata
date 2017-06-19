@@ -32,7 +32,7 @@ const Header = () => (
     </Link>
 
     <Nav>
-      <Link href='/'>
+      <Link href='/who-we-are'>
         Who we are
       </Link>
       <Link href='/'>

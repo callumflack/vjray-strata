@@ -61,8 +61,13 @@ const Contact = (props) => (
 
     <StyledButton fill icon bgColor='brand'><Uppercase>Get a fast quote</Uppercase></StyledButton>
 
-    <h2><Text brand><strong>Drop-in without and appointment.</strong></Text></h2>
-    <Paragraph>We're open Monday to Saturday, 9am-5pm.</Paragraph>
+    <Text transparent>
+      <Paragraph lg>
+        Or drop-in without an appointment.
+        <br />
+        We're open Monday to Saturday, 9am-5pm.
+      </Paragraph>
+    </Text>
 
     <Locations>
       {Array(2).fill(1).map(() =>
@@ -77,12 +82,22 @@ const Contact = (props) => (
 
 
           <InfoList>
-            {Array(4).fill(1).map(() =>
             <InfoListItem>
               <span>&#9742;</span>
               1300 073 405
             </InfoListItem>
-            )}
+            <InfoListItem>
+              <span>&#9742;</span>
+              campsie@vjray.com.au
+            </InfoListItem>
+            <InfoListItem>
+              <span>&#9742;</span>
+              PO Box 369 Campsie, NSW 2194
+            </InfoListItem>
+            <InfoListItem>
+              <span>&#9742;</span>
+              Emergency 1300 073 777
+            </InfoListItem>
           </InfoList>
         </LocationInfo>
       </Location>

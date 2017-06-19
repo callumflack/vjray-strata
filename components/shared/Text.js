@@ -3,11 +3,11 @@ import styled, {css} from 'styled-components';
 import theme from '../../css/theme.js';
 
 const HrWrapper = styled.h4`
-  margin: auto;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
   display: inline-block;
+  margin: auto;
+  font-size: 0.9rem;
+  text-align: center;
+  text-transform: uppercase;
 `;
 
 const HeaderHr = (props) => (

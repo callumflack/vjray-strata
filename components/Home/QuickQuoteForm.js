@@ -42,15 +42,13 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 1.5rem 1.8rem;
 `;
 
 const Inputs = styled.div`
   --lineHeight: 3;
 
+  display: flex;
   max-width: 700px;
   margin: auto;
 `;

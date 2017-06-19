@@ -15,6 +15,12 @@ const Image = styled.img`
   width: 300px;
 `;
 
+const PostLink = styled(Button)`
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: ${theme.colors.brand};
+`;
+
 class RecentPosts extends React.Component {
   render() {
     return (
@@ -27,7 +33,7 @@ class RecentPosts extends React.Component {
 
             <h2><strong>{post.title}</strong></h2>
 
-            <Paragraph>{post.content}<Text brand><Button clean icon><strong>Read more</strong></Button></Text></Paragraph>
+            <Paragraph>{post.content}<PostLink clean icon>Read more</PostLink></Paragraph>
           </div>
         )}
       </div>

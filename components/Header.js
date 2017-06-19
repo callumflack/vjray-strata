@@ -15,7 +15,7 @@ const SiteHeader = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 3rem;
+  height: 3.5rem;
   opacity: 0.7;
 `;
 

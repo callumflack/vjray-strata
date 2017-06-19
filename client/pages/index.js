@@ -33,7 +33,8 @@ const QuoteAuthor = (props) => (
 
 const query = gql`{
   posts(limit: 1) {
-    id,
+    _id,
+    slug,
     title,
     description,
   }

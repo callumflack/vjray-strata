@@ -1,9 +1,11 @@
 const Schema = `
   type Post {
-    id: String!,
+    _id: String!,
+    slug: String,
     title: String,
     content: Markdown,
     description: String,
+    createdAt: String,
   }
 
   type Markdown {
@@ -12,6 +14,7 @@ const Schema = `
   }
 
   type Query {
+    post(slug: String!): Post,
     posts(limit: Int): [Post],
     title: String,
   }

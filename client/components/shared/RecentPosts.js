@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 import theme from '../../css/theme.js';
 import Button from './Button.js';
@@ -33,7 +34,11 @@ class RecentPosts extends React.Component {
 
             <h2><strong>{post.title}</strong></h2>
 
-            <Paragraph>{post.description}<PostLink clean icon>Read more</PostLink></Paragraph>
+            <Paragraph>{post.description}
+              <Link href={`/article?slug=${post.slug}`} as={`/article/${post.slug}`}>
+                <a><PostLink clean icon>Read more</PostLink></a>
+              </Link>
+            </Paragraph>
           </div>
         )}
       </div>

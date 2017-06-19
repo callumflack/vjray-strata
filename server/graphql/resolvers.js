@@ -3,11 +3,15 @@ const Post = keystone.list('Post');
 
 const resolvers = {
   Query: {
+    post: async (obj, { slug }) => {
+      return await Post.model.findOne({ slug })
+      .exec();
+    },
     posts: async (obj, { limit=0 }) => {
       // A limit of 0 returns all documents
-      let query = Post.model.find().limit(limit);
-
-      return await query.exec();
+      return await Post.model.find()
+      .limit(limit)
+      .exec();
     },
   },
 };

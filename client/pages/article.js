@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import gql from 'graphql-tag';
 
+import apollo from '../lib/apollo.js';
 import Layout from '../components/Layout.js';
 import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
@@ -54,6 +56,31 @@ const PostImageWrapper = styled.div`
 
 
 class Article extends React.Component {
+  static async getInitialProps({ req, query }) {
+    const postQuery = gql`{
+      post(slug: "${query.slug}") {
+        _id,
+        slug,
+        title,
+        description,
+        content {
+          html,
+        },
+        createdAt,
+      }
+    }`;
+
+    return await apollo.query({
+      query: postQuery,
+    });
+  }
+
+  formatDateString(dateString) {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const date = new Date(dateString);
+    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  }
+
   render() {
     return (
       <Layout>
@@ -61,12 +88,12 @@ class Article extends React.Component {
           <Block>
             <FlexContainer>
               <PostInfo>
-                <HeaderHr>June 13, 2017</HeaderHr>
+                <HeaderHr>{this.formatDateString(this.props.data.post.createdAt)}</HeaderHr>
 
-                <PostTitle>The five biggest pitfalls to avoid in your Body Corp.</PostTitle>
+                <PostTitle>{this.props.data.post.title}</PostTitle>
                 <Text transparent>
                   <PostDescription lg>
-                    Ipsum ullam illum autem vero incidunt saepe Officia error sit ut veniam veritatis Vero ratione autem magni esse ab In cum rem ex maiores adipisci? Ipsum fugit vero et nam?
+                    {this.props.data.post.description}
                   </PostDescription>
                 </Text>
               </PostInfo>
@@ -80,16 +107,7 @@ class Article extends React.Component {
 
         <Block>
           <Container sm>
-            <Paragraph>Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Dolore ipsa qui rerum veniam exercitationem Facilis earum excepturi fugit ratione nam officia! Dicta quos mollitia aspernatur sapiente nostrum corrupti Veritatis rerum a quod consectetur rem eaque Non hic cum tenetur voluptatem laborum. Natus exercitationem id ipsum odit voluptates. Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Eius asperiores facilis quasi veniam nihil laborum! Nihil suscipit accusantium facilis eum earum. Dolore ipsa qui rerum veniam exercitationem Facilis earum excepturi fugit ratione nam officia! Dicta quos mollitia aspernatur sapiente nostrum corrupti Veritatis rerum a quod consectetur rem eaque Non hic cum tenetur voluptatem laborum. Natus exercitationem id ipsum odit voluptates. Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Dolore ipsa qui rerum veniam exercitationem Facilis earum excepturi fugit ratione nam officia! Dicta quos mollitia aspernatur sapiente nostrum corrupti Veritatis rerum a quod consectetur rem eaque Non hic cum tenetur voluptatem laborum. Natus exercitationem id ipsum odit voluptates. Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
-            <Paragraph>Eius asperiores facilis quasi veniam nihil laborum! Nihil suscipit accusantium facilis eum earum. Dolore ipsa qui rerum veniam exercitationem Facilis earum excepturi fugit ratione nam officia! Dicta quos mollitia aspernatur sapiente nostrum corrupti Veritatis rerum a quod consectetur rem eaque Non hic cum tenetur voluptatem laborum. Natus exercitationem id ipsum odit voluptates. Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Paragraph>
+            <div dangerouslySetInnerHTML={{ __html: this.props.data.post.content.html}} />
           </Container>
         </Block>
 

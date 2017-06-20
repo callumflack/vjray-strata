@@ -37,6 +37,7 @@ const query = gql`{
     _id,
     slug,
     title,
+    createdAt,
     description,
   }
 }`;

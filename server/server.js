@@ -55,6 +55,7 @@ async function setupKeystone(app) {
 
     'mongo': process.env.MONGO_URI || 'mongodb://localhost/' + pkg.name,
     'cookie secret': process.env.COOKIE_SECRET,
+    'cloudinary config': process.env.CLOUDINARY_URI,
   });
 
   keystone.import('models');

@@ -1,5 +1,6 @@
 const keystone = require('keystone');
 const Post = keystone.list('Post');
+const Guide = keystone.list('Guide');
 
 const resolvers = {
   Query: {
@@ -10,6 +11,12 @@ const resolvers = {
     posts: async (obj, { limit=0 }) => {
       // A limit of 0 returns all documents
       return await Post.model.find()
+      .limit(limit)
+      .exec();
+    },
+    guides: async (obj, { limit=0 }) => {
+      // A limit of 0 returns all documents
+      return await Guide.model.find()
       .limit(limit)
       .exec();
     },

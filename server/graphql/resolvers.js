@@ -1,6 +1,7 @@
 const keystone = require('keystone');
 const Post = keystone.list('Post');
 const Guide = keystone.list('Guide');
+const Quote = keystone.list('Quote');
 
 const resolvers = {
   Query: {
@@ -19,6 +20,13 @@ const resolvers = {
       return await Guide.model.find()
       .limit(limit)
       .exec();
+    },
+  },
+
+  Mutation: {
+    createQuote: async (_, quote) => {
+      const newQuote = new Quote.model(quote);
+      return await newQuote.save();
     },
   },
 };

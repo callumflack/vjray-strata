@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled, { css } from 'styled-components';
+import gql from 'graphql-tag';
 
+import apollo from '../../lib/apollo.js';
 import theme from '../../css/theme.js';
 import Button from '../shared/Button.js';
 
@@ -67,13 +69,26 @@ const StyledButton = styled(Button)`
   line-height: var(--lineHeight);
 `;
 
+const SuccessMessage = styled.div`
+  color: #42db41;
+  text-align: center;
+  margin-bottom: 0.5rem;
+`;
 
 class QuickQuoteForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.updateFormState = this.updateFormState.bind(this);
-    this.state = { floating: false };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handlePhoneNumberChange = this.handlePhoneNumberChange.bind(this);
+    this.state = {
+      floating: false,
+      name: '',
+      phoneNumber: '',
+      messageSent: false,
+    };
   }
 
   componentDidMount() {
@@ -97,14 +112,40 @@ class QuickQuoteForm extends React.Component {
     this.setState({ floating });
   }
 
+  async handleSubmit(event) {
+    event.preventDefault();
+
+    const mutation = gql`mutation {
+      createQuote(
+        name: "${this.state.name}",
+        phoneNumber: "${this.state.phoneNumber}"
+      ) {
+        _id,
+      }
+    }`;
+
+    await apollo.mutate({ mutation });
+    this.setState({ messageSent: true });
+  }
+
+  handleNameChange(event) {
+    this.setState({ name: event.target.value });
+  }
+
+  handlePhoneNumberChange(event) {
+    this.setState({ phoneNumber: event.target.value });
+  }
+
   render() {
     return (
-      <Form floating={this.state.floating}>
+      <Form floating={this.state.floating} onSubmit={this.handleSubmit}>
         <Header>Quick Response</Header>
         <Body>
+          { this.state.messageSent ?  <SuccessMessage>Thank you! We will get back to you soon.</SuccessMessage> : null }
+
           <Inputs>
-            <Input placeholder='Your name' />
-            <Input placeholder='Your phone number' />
+            <Input placeholder='Your name' onChange={this.handleNameChange} />
+            <Input placeholder='Your phone number' onChange={this.handlePhoneNumberChange} />
             <StyledButton type='submit'>Send</StyledButton>
           </Inputs>
         </Body>

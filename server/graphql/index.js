@@ -29,6 +29,15 @@ const Schema = `
     posts(limit: Int): [Post],
     guides(limit: Int): [Guide],
   }
+
+
+  type Quote {
+    _id: String,
+  }
+
+  type Mutation {
+    createQuote(name: String!, phoneNumber: String!): Quote,
+  }
 `;
 
 module.exports = Schema;

@@ -1,17 +1,23 @@
+import { ThemeProvider } from 'styled-components'
 import globalStyles from '../css/global.js'
+import theme from './theme.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
 
 const Layout = (props) => (
-  <div>
-    <Header />
+  <ThemeProvider theme={theme}>
+    <div>
 
-    <main>
-      {props.children}
-    </main>
+      <Header />
 
-    <Footer />
-  </div>
+      <main>
+        {props.children}
+      </main>
+
+      <Footer />
+
+    </div>
+  </ThemeProvider>
 );
 
 export default Layout;

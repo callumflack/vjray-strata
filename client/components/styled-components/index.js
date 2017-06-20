@@ -1,4 +1,6 @@
 const hoc = require('./hoc')
-
-export { hoc }
-// export default hoc
+const Box = require('./Box')
+module.exports = {
+  hoc,
+  Box
+}

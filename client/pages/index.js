@@ -1,10 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
-import gql from 'graphql-tag';
 
+import gql from 'graphql-tag';
 import apollo from '../lib/apollo.js';
 
-import theme from '../css/theme.js';
+import styled from 'styled-components';
+import { Flex, Box } from 'grid-styled';
+import { hoc } from '../components/styled-components';
+// import theme from '../css/theme.js';
+import theme from '../components/theme.js';
+
+import {
+  Texty,
+} from '../components/shared/Texty.js';
+
+import Headline from '../components/shared/Headline.js';
+
 import Layout from '../components/Layout.js';
 import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
@@ -22,6 +32,9 @@ import {
   Paragraph,
   Uppercase,
 } from '../components/shared/Text.js';
+
+
+
 
 const SectionImg = styled.img`
   display: block;
@@ -41,6 +54,9 @@ const query = gql`{
   }
 }`;
 
+
+
+
 class Index extends React.Component {
   static async getInitialProps({ req }) {
     return await apollo.query({
@@ -53,17 +69,16 @@ class Index extends React.Component {
       <Layout>
         <Hero />
 
-        <Block>
-          <Container sm textCenter>
-            <h2><strong>It all adds up to a better deal.</strong></h2>
-
-            <Paragraph lg transparent>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
+        <Box px={2} mt={[ 5, 6 ]}>
+          <Container width={theme.containers.sm} textCenter>
+            <Headline.h2 medium fontSize={[ 5, 6 ]} mb={3}>It all adds up to a better deal.</Headline.h2>
+            <Texty light fontSize={[ 4, 5 ]}>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Texty>
           </Container>
 
-          <Container textCenter>
+          <Container textCenter mt={4}>
             <FeatureList />
           </Container>
-        </Block>
+        </Box>
 
         <Section color={theme.colors.brand}>
           <HeaderHr>Dependable and effective</HeaderHr>

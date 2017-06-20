@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import { hoc } from '../styled-components'
-import theme from '../../css/theme.js';
+// import theme from '../../css/theme.js';
+import theme from '../theme.js';
 
 // const bold = props => props.bold ? `font-weight:bold;` : null
 
@@ -15,35 +16,31 @@ const headlineFonts = css`
     font-family: 'GT-Eesti-Pro-Display-Light';
   `}
 
-  ${props => props.bold && css`
+  ${props => props.medium && css`
     @font-face {
-      font-family: 'GT-Eesti-Pro-Display-Bold';
-      src: url('/static/fonts/GT-Eesti-Pro-Display-Bold.woff');
-      src: local('GT-Eesti-Pro-Display-Bold'),
-           url('/static/fonts/GT-Eesti-Pro-Display-Bold.woff') format('woff');
+      font-family: 'GT-Eesti-Pro-Display-Medium';
+      src: url('/static/fonts/GT-Eesti-Pro-Display-Medium.woff');
+      src: local('GT-Eesti-Pro-Display-Medium'),
+           url('/static/fonts/GT-Eesti-Pro-Display-Medium.woff') format('woff');
     }
-    font-family: 'GT-Eesti-Pro-Display-Bold';
+    font-family: 'GT-Eesti-Pro-Display-Medium';
   `}
 
 `;
 
-// const Headline = styled.h1`
-//   ${headlineFonts}
-//   ${space}
-//   ${fontSize}
-//   ${color}
-//   color: ${props => props.active ? theme.colors.brand : theme.colors.text};
-//   line-height: ${theme.headers.lineHeight};
-// `;
-
-// export { Headline };
-
+// line-height: ${theme.headers.lineHeight};
 
 const Headline = hoc('h1').extend`
   ${headlineFonts}
   color: ${props => props.active ? theme.colors.brand : theme.colors.text};
-  line-height: ${theme.headers.lineHeight};
+  line-height: 1.05;
 `;
 
-// export default Headline
-export { Headline }
+Headline.h1 = Headline
+Headline.h2 = Headline.withComponent('h2')
+Headline.h3 = Headline.withComponent('h3')
+Headline.h4 = Headline.withComponent('h4')
+Headline.h5 = Headline.withComponent('h5')
+Headline.h6 = Headline.withComponent('h6')
+
+export default Headline;

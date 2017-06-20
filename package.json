@@ -21,7 +21,7 @@
     "graphql": "0.10.1",
     "graphql-tag": "2.3.0",
     "graphql-tools": "1.0.0",
-    "grid-styled": "2.0.2",
+    "grid-styled": "2.0.0-4",
     "isomorphic-fetch": "2.2.1",
     "keystone": "4.0.0-beta.5",
     "next": "3.0.0-beta8",

@@ -1,3 +1,5 @@
+// import fonts from './fonts.js';
+
 const theme = {
   colors: {
     text: '#585870',
@@ -9,21 +11,22 @@ const theme = {
   containers: {
     sm: '700px',
     rg: '960px',
-    lg: '1200px',
+    lg: '1140px',
   },
   text: {
-    family: `GT-Eesti-Pro`,
+    family: 'GT-Eesti-Pro',
+    weight: 400,
     lineHeight: 1.45,
     base: '16px',
     lg: '1.333em',
     transparent: '0.8',
   },
   headers: {
-    lineHeight: 1.2,
+    lineHeight: 1.05,
     sm: '1.333em',
     rg: '1.777em',
     lg: '2.369em',
-    xl: '3.157em',
+    xl: '3.625em',
   },
 };
 

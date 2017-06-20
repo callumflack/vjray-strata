@@ -1,3 +1,5 @@
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 const { promisify } = require('util');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -52,7 +54,7 @@ async function setupKeystone(app) {
     'auto update': true,
 
     'mongo': process.env.MONGO_URI || 'mongodb://localhost/' + pkg.name,
-    'cookie secret': process.env.COOKIE_SECRET || 'R:2fClij_RT2V]&UO{zx4{f-7<5syx',
+    'cookie secret': process.env.COOKIE_SECRET,
   });
 
   keystone.import('models');

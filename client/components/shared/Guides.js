@@ -1,5 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
+import gql from 'graphql-tag';
 
+import apollo from '../../lib/apollo.js';
 import theme from '../../css/theme.js';
 import {
   Text,
@@ -36,19 +39,47 @@ const Image = styled.img`
   width: 100%;
 `;
 
-const Guides = (props) => (
-  <GuidesWrapper>
-    {Array(3).fill(1).map(() =>
-    <Guide>
-      <GuideHead>
-        <Icon>&#8486;</Icon>
-        <Text brand>Maintaining your strata asset</Text>
-      </GuideHead>
+const query = gql`{
+  guides(limit: 3) {
+    _id,
+    title,
+    featureImage {
+      secure_url,
+    },
+    createdAt,
+  }
+}`;
 
-      <Image src='http://lorempixel.com/100/100' />
-    </Guide>
-    )}
-  </GuidesWrapper>
-);
+class Guides extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      guides: [],
+    };
+  }
+
+  async componentDidMount() {
+    const { data: { guides } } = await apollo.query({ query });
+    this.setState({ guides });
+  }
+
+  render() {
+    return (
+      <GuidesWrapper>
+        {this.state.guides.map((guide, i) =>
+          <Guide key={i}>
+            <GuideHead>
+              <Icon>&#8486;</Icon>
+              <Text brand>{guide.title}</Text>
+            </GuideHead>
+
+            <Image src={guide.featureImage.secure_url} />
+          </Guide>
+        )}
+      </GuidesWrapper>
+    )
+  }
+}
 
 export default Guides;

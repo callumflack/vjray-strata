@@ -1,4 +1,9 @@
 const Schema = `
+  type Markdown {
+    md: String,
+    html: String,
+  }
+
   type Post {
     _id: String!,
     slug: String,
@@ -8,15 +13,30 @@ const Schema = `
     createdAt: String,
   }
 
-  type Markdown {
-    md: String,
-    html: String,
+  type CloudinaryImage {
+    secure_url: String,
+  }
+
+  type Guide {
+    _id: String!,
+    title: String,
+    featureImage: CloudinaryImage,
+    createdAt: String,
   }
 
   type Query {
     post(slug: String!): Post,
     posts(limit: Int): [Post],
-    title: String,
+    guides(limit: Int): [Guide],
+  }
+
+
+  type Quote {
+    _id: String,
+  }
+
+  type Mutation {
+    createQuote(name: String!, phoneNumber: String!): Quote,
   }
 `;
 

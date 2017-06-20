@@ -26,11 +26,6 @@ body {
   color: ${theme.colors.text};
 }
 
-p {
-  margin-bottom: 1.3em;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -54,14 +49,14 @@ hr {
 }
 
 h1, h2, h3, h4 {
-  margin: 0;
+  margin: 1.414em 0 0.5em;
   font-weight: inherit;
-  // line-height: ${theme.headers.lineHeight};
+  line-height: ${theme.headers.lineHeight};
 }
 
 h1 {
-  // margin-top: 0.5em;
-  // font-size: ${theme.headers.xl};
+  margin-top: 0.5em;
+  font-size: ${theme.headers.xl};
 }
 
 h2 {

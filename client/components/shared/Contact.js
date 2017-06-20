@@ -11,7 +11,6 @@ import {
 
 const StyledButton = styled(Button)`
   display: inline-block;
-  margin-top: 2rem;
   padding: 1.5rem 6rem;
 `;
 

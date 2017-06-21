@@ -4,7 +4,6 @@ import theme from './theme.js';
 
 
 injectGlobal`
-
 ${normalize()}
 
 @font-face {
@@ -12,6 +11,10 @@ ${normalize()}
   src: url('/static/fonts/GT-Eesti-Pro-Text-Book.woff');
   src: local('GT-Eesti-Pro-Text-Book'), local('GT-Eesti-Pro-Text-Book'),
        url('/static/fonts/GT-Eesti-Pro-Text-Book.woff') format('woff');
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
 body {

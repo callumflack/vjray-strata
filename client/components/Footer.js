@@ -79,7 +79,7 @@ const Footer = () => (
         <FooterWrapper>
           <div>
             <Link href='/'>
-              <a href='/'>
+              <a>
                 <Logo src='/static/img/logo.svg' />
               </a>
             </Link>
@@ -91,10 +91,10 @@ const Footer = () => (
               <NavHeader>Who we are</NavHeader>
 
               <Link href='/'>
-                Our story
+                <a>Our story</a>
               </Link>
               <Link href='/'>
-                The team
+                <a>The team</a>
               </Link>
             </Nav>
 
@@ -102,16 +102,16 @@ const Footer = () => (
               <NavHeader>What we do for you</NavHeader>
 
               <Link href='/'>
-                Services
+                <a>Services</a>
               </Link>
               <Link href='/'>
-                For tenants
+                <a>For tenants</a>
               </Link>
               <Link href='/'>
-                For owners
+                <a>For owners</a>
               </Link>
               <Link href='/'>
-                For investors
+                <a>For investors</a>
               </Link>
             </Nav>
 
@@ -119,16 +119,16 @@ const Footer = () => (
               <NavHeader>Useful info</NavHeader>
 
               <Link href='/'>
-                The Strata guide
+                <a>The Strata guide</a>
               </Link>
               <Link href='/'>
-                Useful info
+                <a>Useful info</a>
               </Link>
               <Link href='/'>
-                Understanding Stata maintenance
+                <a>Understanding Stata maintenance</a>
               </Link>
               <Link href='/'>
-                1300 667 123
+                <a>1300 667 123</a>
               </Link>
             </Nav>
 
@@ -136,13 +136,13 @@ const Footer = () => (
               <NavHeader>Contact us</NavHeader>
 
               <Link href='/'>
-                Get a quote
+                <a>Get a quote</a>
               </Link>
               <Link href='/'>
-                Report an issue
+                <a>Report an issue</a>
               </Link>
               <Link href='/'>
-                Become a member
+                <a>Become a member</a>
               </Link>
             </Nav>
           </Sitemap>
@@ -151,17 +151,17 @@ const Footer = () => (
         <Legal>
           <nav>
             <Link href='/'>
-              Terms of use
+              <a>Terms of use</a>
             </Link>
 
             <VerticalDivider />
             <Link href='/'>
-              Privacy policy
+              <a>Privacy policy</a>
             </Link>
 
             <VerticalDivider />
             <Link href='/'>
-              ABN 31 064 030 311
+              <a>ABN 31 064 030 311</a>
             </Link>
           </nav>
         </Legal>

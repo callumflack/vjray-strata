@@ -36,7 +36,15 @@ const Schema = `
   }
 
   type Mutation {
-    createQuote(name: String!, phoneNumber: String!): Quote,
+    createQuote(
+      name: String!,
+      phoneNumber: String!,
+      email: String,
+      address: String,
+      postcode: String,
+      unitsInScheme: Int,
+      comments: String,
+    ): Quote,
   }
 `;
 

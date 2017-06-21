@@ -1,8 +1,5 @@
 import React from 'react';
 
-import gql from 'graphql-tag';
-import apollo from '../lib/apollo.js';
-
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 import { hoc } from '../components/styled-components';
@@ -35,8 +32,6 @@ import {
 } from '../components/shared/Text.js';
 
 
-
-
 const SectionImg = styled.img`
   display: block;
   margin: 4rem auto 0;
@@ -46,100 +41,74 @@ const QuoteAuthor = (props) => (
   <Uppercase><small>{props.children}</small></Uppercase>
 );
 
-const query = gql`{
-  posts(limit: 1) {
-    _id,
-    slug,
-    title,
-    createdAt,
-    description,
-  }
-}`;
 
+const Index = () => (
+  <Layout>
+    <Hero />
 
+    <Box px={2} mt={[ 5, 6 ]}>
+      <Container width={theme.containers.lg} textCenter>
 
-
-class Index extends React.Component {
-  static async getInitialProps({ req }) {
-    return await apollo.query({
-      query,
-    });
-  }
-
-  render() {
-    return (
-      <Layout>
-
-        <Hero />
-
-        <Box px={2} mt={[ 5, 6 ]}>
-          <Container width={theme.containers.lg} textCenter>
-
-            <Box width={[ 5/6, 4/6 ]} mx='auto'>
-              <Headline medium fontSize={[ 5, 6 ]} mb={3}>It all adds up to a better deal.</Headline>
-              <Texty light fontSize={[ 4, 5 ]}>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Texty>
-            </Box>
-
-            <Box width={[ 1, 11/12 ]} mx='auto' mt={5}>
-              <FeatureList />
-            </Box>
-
-          </Container>
+        <Box width={[ 5/6, 4/6 ]} mx='auto'>
+          <Headline medium fontSize={[ 5, 6 ]} mb={3}>It all adds up to a better deal.</Headline>
+          <Texty light fontSize={[ 4, 5 ]}>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Texty>
         </Box>
 
+        <Box width={[ 1, 11/12 ]} mx='auto' mt={5}>
+          <FeatureList />
+        </Box>
 
+      </Container>
+    </Box>
 
+    <Section color={theme.colors.brand}>
+      <HeaderHr>Dependable and effective</HeaderHr>
+      <h1>We help make high-density Sydney living great.</h1>
+      <p>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</p>
 
-        <Section color={theme.colors.brand}>
-          <HeaderHr>Dependable and effective</HeaderHr>
-          <h1>We help make high-density Sydney living great.</h1>
-          <p>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</p>
+      <Button bordered icon>Watch video</Button>
+    </Section>
 
-          <Button bordered icon>Watch video</Button>
-        </Section>
+    <Section sectionImg>
+      <HeaderHr>Fast. Easy. Done.</HeaderHr>
+      <h1>Do it all, online.</h1>
+      <p>We're a team of licensed real estate professionals with an exclusive focus on strata management in Sydney and local market experts - and we're here to help make youre living stress-free.</p>
 
-        <Section sectionImg>
-          <HeaderHr>Fast. Easy. Done.</HeaderHr>
-          <h1>Do it all, online.</h1>
-          <p>We're a team of licensed real estate professionals with an exclusive focus on strata management in Sydney and local market experts - and we're here to help make youre living stress-free.</p>
+      <Paragraph brand>
+        <Button bordered>Sign up</Button>
+      </Paragraph>
 
-          <Paragraph brand>
-            <Button bordered>Sign up</Button>
-          </Paragraph>
+      <SectionImg src='http://lorempixel.com/400/600' />
+    </Section>
 
-          <SectionImg src='http://lorempixel.com/400/600' />
-        </Section>
+    <Block>
+      <Container sm textCenter>
+        <h2><strong>Our duty is your satisfaction.</strong></h2>
 
-        <Block>
-          <Container sm textCenter>
-            <h2><strong>Our duty is your satisfaction.</strong></h2>
+        <Paragraph lg brand>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
+      </Container>
 
-            <Paragraph lg brand>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
-          </Container>
+      <Container textCenter>
+        <Testimonials />
+      </Container>
+    </Block>
 
-          <Container textCenter>
-            <Testimonials />
-          </Container>
-        </Block>
+    <Section>
+      <HeaderHr>Info on the go</HeaderHr>
+      <h1><Text brand>Your guides to Sydney Strata.</Text></h1>
+      <p>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</p>
 
-        <Section>
-          <HeaderHr>Info on the go</HeaderHr>
-          <h1><Text brand>Your guides to Sydney Strata.</Text></h1>
-          <p>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</p>
+      <Guides />
+    </Section>
 
-          <Guides />
-        </Section>
+    <Section>
+      <RecentPosts />
+    </Section>
 
-        <Section>
-          <RecentPosts posts={this.props.data.posts} />
-        </Section>
-
-        <Section>
-          <Contact />
-        </Section>
-      </Layout>
-    )
-  }
-}
+    <Section>
+      <Contact />
+    </Section>
+  </Layout>
+)
 
 export default Index;

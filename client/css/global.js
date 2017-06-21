@@ -4,7 +4,6 @@ import theme from './theme.js';
 
 
 injectGlobal`
-
 ${normalize()}
 
 @font-face {

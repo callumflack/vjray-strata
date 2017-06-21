@@ -28,32 +28,34 @@ const Nav = styled.nav`
 const Header = () => (
   <SiteHeader>
     <Link href='/'>
-      <a href='/'>
+      <a>
         <Logo src='/static/img/logo.svg' />
       </a>
     </Link>
 
     <Nav>
       <Link href='/who-we-are'>
-        Who we are
+        <a>Who we are</a>
       </Link>
       <Link href='/'>
-        What we do for you
+        <a>What we do for you</a>
       </Link>
       <Link href='/'>
-        Useful info
+        <a>Useful info</a>
       </Link>
       <Link href='/'>
-        Contact us
+        <a>Contact us</a>
       </Link>
       <Link href='/'>
-        1300 667 123
+        <a>1300 667 123</a>
       </Link>
     </Nav>
 
     <Nav>
       <Link href='/signin'>
-        <Button bordered>Sign in</Button>
+        <a>
+          <Button bordered>Sign in</Button>
+        </a>
       </Link>
     </Nav>
   </SiteHeader>

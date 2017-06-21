@@ -9,22 +9,33 @@ const Quote = new keystone.List('Quote', {
   defaultSort: '-createdAt',
 });
 
-Quote.add({
-  name: {
-    type: String,
-    required: true,
-    initial: true,
+Quote.add(
+  'Personal Details', {
+    name: {
+      type: String,
+      required: true,
+      initial: true,
+    },
+    phoneNumber: {
+      type: String,
+      required: true,
+      initial: true,
+    },
+    email: String,
   },
-  phoneNumber: {
-    type: String,
-    required: true,
-    initial: true,
+  'Strata Details', {
+    address: String,
+    postcode: String,
+    unitsInScheme: Number,
+    comments: String,
   },
-  createdAt: {
-    type: Types.Date,
-    default: Date.now,
+  'Misc', {
+    createdAt: {
+      type: Types.Date,
+      default: Date.now,
+    },
   },
-});
+);
 
 
 // Registration

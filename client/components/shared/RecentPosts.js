@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
+import gql from 'graphql-tag';
+import apollo from '../../lib/apollo.js';
+
 import theme from '../../css/theme.js';
 import Button from './Button.js';
 import {
@@ -23,12 +26,36 @@ const PostLink = styled(Button)`
 `;
 
 class RecentPosts extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      limit: props.limit || 1,
+      posts: [],
+    }
+  }
+
+  async componentDidMount() {
+    const query = gql`{
+      posts(limit: ${this.state.limit}) {
+        _id,
+        slug,
+        title,
+        createdAt,
+        description,
+      }
+    }`;
+
+    const { data: { posts } } = await apollo.query({ query });
+    this.setState({ posts });
+  }
+
   render() {
     return (
       <div>
         <HeaderHr><Button clean icon>Recent posts</Button></HeaderHr>
 
-        {this.props.posts.map((post, i) =>
+        {this.state.posts.map((post, i) =>
           <div key={i}>
             <Image src='http://lorempixel.com/300/225' />
 

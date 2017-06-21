@@ -79,10 +79,10 @@ class QuickQuoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updateFormState = this.updateFormState.bind(this);
+    this.updateFormPosition = this.updateFormPosition.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handlePhoneNumberChange = this.handlePhoneNumberChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+
     this.state = {
       floating: false,
       name: '',
@@ -97,15 +97,15 @@ class QuickQuoteForm extends React.Component {
     const windowOffsetY = window.pageYOffset || document.documentElement.scrollTop;
     this.formRenderPosition = formOffsetYRelativeToDocument + windowOffsetY;
 
-    this.updateFormState();
-    window.addEventListener('scroll', this.updateFormState);
+    this.updateFormPosition();
+    window.addEventListener('scroll', this.updateFormPosition);
   }
 
   componentsWillUnmount() {
-    document.documentElement.removeEventListener('scroll', this.updateFormState);
+    document.documentElement.removeEventListener('scroll', this.updateFormPosition);
   }
 
-  updateFormState() {
+  updateFormPosition() {
     const scrollPosition = window.scrollY;
     const floating = scrollPosition > this.formRenderPosition;
 
@@ -128,12 +128,13 @@ class QuickQuoteForm extends React.Component {
     this.setState({ messageSent: true });
   }
 
-  handleNameChange(event) {
-    this.setState({ name: event.target.value });
-  }
+  handleChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
 
-  handlePhoneNumberChange(event) {
-    this.setState({ phoneNumber: event.target.value });
+    this.setState ({
+      [name]: value,
+    });
   }
 
   render() {
@@ -144,8 +145,8 @@ class QuickQuoteForm extends React.Component {
           { this.state.messageSent ?  <SuccessMessage>Thank you! We will get back to you soon.</SuccessMessage> : null }
 
           <Inputs>
-            <Input placeholder='Your name' onChange={this.handleNameChange} />
-            <Input placeholder='Your phone number' onChange={this.handlePhoneNumberChange} />
+            <Input placeholder='Your name' name='name' onChange={this.handleChange} />
+            <Input placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
             <StyledButton type='submit'>Send</StyledButton>
           </Inputs>
         </Body>

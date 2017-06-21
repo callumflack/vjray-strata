@@ -4,7 +4,7 @@ const theme = {
   colors: {
     text: '#585870',
     brand: '#D3145A',
-    alt: '#F7F2EC',
+    beige: '#F7F2EC',
     success: '#42db41',
     error: '#D91E1F',
   },

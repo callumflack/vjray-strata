@@ -14,6 +14,20 @@ ${normalize()}
        url('/static/fonts/GT-Eesti-Pro-Text-Book.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'GT-Eesti-Pro-Display-Light';
+  src: url('/static/fonts/GT-Eesti-Pro-Display-Light.woff');
+  src: local('GT-Eesti-Pro-Display-Light'),
+       url('/static/fonts/GT-Eesti-Pro-Display-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GT-Eesti-Pro-Display-Medium';
+  src: url('/static/fonts/GT-Eesti-Pro-Display-Medium.woff');
+  src: local('GT-Eesti-Pro-Display-Medium'),
+       url('/static/fonts/GT-Eesti-Pro-Display-Medium.woff') format('woff');
+}
+
 body {
   font-family: 'GT-Eesti-Pro-Text-Book';
   font-size: 16px;

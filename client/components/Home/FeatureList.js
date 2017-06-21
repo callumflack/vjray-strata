@@ -2,27 +2,25 @@ import styled from 'styled-components'
 import { Flex, Box } from 'grid-styled'
 import { hoc } from '../styled-components'
 import theme from '../theme.js'
-import { tint } from 'polished'
-import { Texty } from '../shared/Texty.js'
-import Headline from '../shared/Headline.js'
+// import { tint } from 'polished'
+import { Texty, LargeText } from '../shared/Texty.js'
+import { Headline } from '../shared/Headline.js'
 
+// <Headline.h4 medium active fontSize={[ 3, 4 ]} spacingTouch my={2}>
 const Header = (props) => (
-  <Headline.h4 medium active fontSize={[ 3, 4 ]}>
+  <Headline medium active fontSize={[ 3, 4 ]} spacingTouch my={2}>
     {props.children}
-  </Headline.h4>
+  </Headline>
 );
 
 // color: ${lighten(0.2, ${theme.colors.text} )}
-
-const Text = styled(Texty)`
-  color: ${tint(0.7, '#585870')};
+// color: ${tint(0.7, '#585870')};
+const Lede = styled(Texty)`
+  color: ${theme.colors.text70};
 `
-
 const Divider = () => (
   <Box>
-    <Texty medium active fontSize={[ 6, 7 ]}>
-      +
-    </Texty>
+    <Texty medium active fontSize={[ 6, 7 ]} mx={1}>+</Texty>
   </Box>
 );
 
@@ -31,7 +29,7 @@ const FeatureList = () => (
     <Box>
       <img src='http://lorempixel.com/75/75' />
       <Header>Dedicated & experienced</Header>
-      <Text>Tell us about your home and what makes it unique lorem ipsum.</Text>
+      <Lede>Tell us about your home and what makes it unique lorem ipsum.</Lede>
     </Box>
 
     <Divider />
@@ -39,7 +37,7 @@ const FeatureList = () => (
     <Box>
       <img src='http://lorempixel.com/75/75' />
       <Header>Navigate the system</Header>
-      <Text>Tell us about your home and what makes it unique lorem ipsum.</Text>
+      <Lede>Tell us about your home and what makes it unique lorem ipsum.</Lede>
     </Box>
 
     <Divider />
@@ -47,7 +45,7 @@ const FeatureList = () => (
     <Box>
       <img src='http://lorempixel.com/75/75' />
       <Header>Attendance in person</Header>
-      <Text>Tell us about your home and what makes it unique lorem ipsum.</Text>
+      <Lede>Tell us about your home and what makes it unique lorem ipsum.</Lede>
     </Box>
 
     <Divider />
@@ -55,7 +53,7 @@ const FeatureList = () => (
     <Box>
       <img src='http://lorempixel.com/75/75' />
       <Header>No lock-ins Full access.</Header>
-      <Text>Tell us about your home and what makes it unique lorem ipsum.</Text>
+      <Lede>Tell us about your home and what makes it unique lorem ipsum.</Lede>
     </Box>
   </Flex>
 );

@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components';
 import theme from '../../css/theme.js';
 
 const Block = styled.section`
-  background-color: ${props => props.altBackground ? theme.colors.alt : 'inherit'};
+  background-color: ${props => props.beigeBackground ? theme.colors.beige : 'inherit'};
   color: ${props => props.color || 'inherit'};
   padding: 7rem 3rem;
   position: relative;

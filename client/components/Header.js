@@ -9,7 +9,7 @@ const SiteHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: ${theme.colors.alt};
+  background-color: ${theme.colors.beige};
   border-bottom: 2px solid #E3DEDB;
   font-weight: bold;
 `;

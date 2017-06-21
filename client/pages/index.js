@@ -13,7 +13,8 @@ import {
   Texty,
 } from '../components/shared/Texty.js';
 
-import Headline from '../components/shared/Headline.js';
+// import Headline from '../components/shared/Headline.js';
+import {Headline} from '../components/shared/Headline.js';
 
 import Layout from '../components/Layout.js';
 import Block from '../components/shared/Block.js';
@@ -68,18 +69,26 @@ class Index extends React.Component {
   render() {
     return (
       <Layout>
+
         <Hero />
 
         <Box px={2} mt={[ 5, 6 ]}>
-          <Container width={theme.containers.sm} textCenter>
-            <Headline.h2 medium fontSize={[ 5, 6 ]} mb={3}>It all adds up to a better deal.</Headline.h2>
-            <Texty light fontSize={[ 4, 5 ]}>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Texty>
-          </Container>
+          <Container width={theme.containers.lg} textCenter>
 
-          <Container textCenter mt={4}>
-            <FeatureList />
+            <Box width={[ 5/6, 4/6 ]} mx='auto'>
+              <Headline medium fontSize={[ 5, 6 ]} mb={3}>It all adds up to a better deal.</Headline>
+              <Texty light fontSize={[ 4, 5 ]}>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Texty>
+            </Box>
+
+            <Box width={[ 1, 11/12 ]} mx='auto' mt={5}>
+              <FeatureList />
+            </Box>
+
           </Container>
         </Box>
+
+
+
 
         <Section color={theme.colors.brand}>
           <HeaderHr>Dependable and effective</HeaderHr>

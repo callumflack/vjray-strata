@@ -1,7 +1,8 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { Flex, Box } from 'grid-styled';
+// import { Flex, Box } from 'grid-styled';
+import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-components';
 // import theme from '../css/theme.js';
 import theme from '../components/theme.js';

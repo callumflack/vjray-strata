@@ -1,8 +1,10 @@
 import styled from 'styled-components'
-import { Flex, Box } from 'grid-styled'
+// import { Flex, Box } from 'grid-styled'
+import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-components'
 import theme from '../theme.js'
 // import { tint } from 'polished'
+
 import { Texty, LargeText } from '../shared/Texty.js'
 import { Headline } from '../shared/Headline.js'
 
@@ -13,7 +15,7 @@ const Header = (props) => (
   </Headline>
 );
 
-// color: ${lighten(0.2, ${theme.colors.text} )}
+// color: ${tint(0.7, ${theme.colors.text} )}
 // color: ${tint(0.7, '#585870')};
 const Lede = styled(Texty)`
   color: ${theme.colors.text70};

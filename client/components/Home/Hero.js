@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Flex, Box } from 'grid-styled';
+// import { Flex, Box } from 'grid-styled';
+import { Flex, Box } from '../styled-grid';
 import { hoc } from '../styled-components'
 import theme from '../theme.js';
 

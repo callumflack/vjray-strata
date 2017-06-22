@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { hoc } from '../styled-components'
+import { hoc } from '../styled-system/styled-components'
 // import theme from '../../css/theme.js';
 import theme from '../theme.js';
 

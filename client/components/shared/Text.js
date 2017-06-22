@@ -1,5 +1,5 @@
-import styled, {css} from 'styled-components';
-import { hoc } from '../styled-components'
+import styled, { css } from 'styled-components';
+import { hoc } from '../styled-system/styled-components'
 import theme from '../../css/theme.js';
 
 const HrWrapper = styled.h4`

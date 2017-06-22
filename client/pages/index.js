@@ -6,12 +6,8 @@ import { hoc } from '../components/styled-components';
 // import theme from '../css/theme.js';
 import theme from '../components/theme.js';
 
-import {
-  Texty,
-} from '../components/shared/Texty.js';
-
-// import Headline from '../components/shared/Headline.js';
-import {Headline} from '../components/shared/Headline.js';
+import { Texty, LargeText } from '../components/shared/Texty.js';
+import { Headline, Display } from '../components/shared/Headline.js';
 
 import Layout from '../components/Layout.js';
 import Block from '../components/shared/Block.js';
@@ -44,14 +40,15 @@ const QuoteAuthor = (props) => (
 
 const Index = () => (
   <Layout>
+
     <Hero />
 
-    <Box px={2} mt={[ 5, 6 ]}>
+    <Box px={2} my={[ 5, 6 ]}>
       <Container width={theme.containers.lg} textCenter>
 
         <Box width={[ 5/6, 4/6 ]} mx='auto'>
-          <Headline medium fontSize={[ 5, 6 ]} mb={3}>It all adds up to a better deal.</Headline>
-          <Texty light fontSize={[ 4, 5 ]}>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Texty>
+          <Headline medium dark mb={2}>It all adds up to a better deal.</Headline>
+          <LargeText grey>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></LargeText>
         </Box>
 
         <Box width={[ 1, 11/12 ]} mx='auto' mt={5}>

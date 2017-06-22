@@ -6,9 +6,9 @@ import theme from '../theme.js'
 import { Texty, LargeText } from '../shared/Texty.js'
 import { Headline } from '../shared/Headline.js'
 
-// <Headline.h4 medium active fontSize={[ 3, 4 ]} spacingTouch my={2}>
+
 const Header = (props) => (
-  <Headline medium active fontSize={[ 3, 4 ]} spacingTouch my={2}>
+  <Headline medium fontSize={[ 3, 4 ]} my={2}>
     {props.children}
   </Headline>
 );
@@ -20,7 +20,7 @@ const Lede = styled(Texty)`
 `
 const Divider = () => (
   <Box>
-    <Texty medium active fontSize={[ 6, 7 ]} mx={1}>+</Texty>
+    <Texty active fontSize={[ 6, 7 ]} mx={1}>+</Texty>
   </Box>
 );
 

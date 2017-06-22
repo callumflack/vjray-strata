@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components'
-import globalStyles from '../css/global.js'
+import globalStyles from './global.js'
 import theme from './theme.js';
 import Header from './Header.js';
 import Footer from './Footer.js';

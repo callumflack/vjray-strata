@@ -2,28 +2,48 @@ import styled, { css } from 'styled-components';
 import { hoc } from '../styled-components'
 import theme from '../theme.js';
 
-const TextRoot = hoc('p').extend`
-  color: ${props => props.active ? theme.colors.brand : theme.colors.text};
-  font-family: ${props => props.lightWeight ? theme.fonts.textBook : theme.fonts.displayLight};
+
+const Root = hoc('p').extend`
+  color: ${theme.colors.text};
   line-height: ${theme.lineHeight.text};
+
+  ${props => props.active && css`
+    color: ${theme.colors.brand};
+  `}
+
+  ${props => props.grey && css`
+    color: ${theme.colors.text70};
+  `}
+
+  ${props => props.medium && css`
+    font-family: ${theme.fonts.textMedium};
+  `}
 `;
 
-const Texty = ({ children }) => (
-  <TextRoot fontSize={[ 4, 5 ]}>
-    { children }
-  </TextRoot>
+const Texty = props => (
+  <Root fontSize={[ 2, 3 ]} {...props}>
+    { props.children }
+  </Root>
 )
 
-const LargeTextRoot = styled(TextRoot)`
+
+
+// variations
+
+const LargeTextRoot = styled(Root)`
   font-family: ${theme.fonts.displayLight};
   letter-spacing: 0.01em;
   line-height: ${theme.lineHeight.subheadline};
 `;
 
-const LargeText = ({ children }) => (
-  <LargeTextRoot fontSize={[ 4, 5 ]}>
-    { children }
+const LargeText = props => (
+  <LargeTextRoot fontSize={[ 4, 5 ]} {...props}>
+    { props.children }
   </LargeTextRoot>
 )
+
+
+
+// export
 
 export { Texty, LargeText }

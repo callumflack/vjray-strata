@@ -26,6 +26,10 @@ async function setupGraphql(app) {
     resolvers,
   });
 
+  // Storage location of guide pdf files
+  // Will be updated to use 3rd party permanant storage
+  app.use(express.static('/tmp/vjrayfiles/'));
+
   // Allow cross origin access
   app.use('/graphql', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');

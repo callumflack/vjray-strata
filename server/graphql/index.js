@@ -21,6 +21,7 @@ const Schema = `
     _id: String!,
     title: String,
     featureImage: CloudinaryImage,
+    file: String,
     createdAt: String,
   }
 

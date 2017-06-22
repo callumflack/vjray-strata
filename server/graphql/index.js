@@ -17,11 +17,15 @@ const Schema = `
     secure_url: String,
   }
 
+  type File {
+    filename: String,
+  }
+
   type Guide {
     _id: String!,
     title: String,
     featureImage: CloudinaryImage,
-    file: String,
+    file: File,
     createdAt: String,
   }
 

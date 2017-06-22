@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import gql from 'graphql-tag';
 
@@ -46,6 +47,9 @@ const query = gql`{
     featureImage {
       secure_url,
     },
+    file {
+      filename
+    },
     createdAt,
   }
 }`;
@@ -71,10 +75,19 @@ class Guides extends React.Component {
           <Guide key={i}>
             <GuideHead>
               <Icon>&#8486;</Icon>
-              <Text brand>{guide.title}</Text>
+
+              <Link href={`${process.env.SERVER_URI}/${guide.file.filename}`}>
+                <a>
+                  <Text brand>{guide.title}</Text>
+                </a>
+              </Link>
             </GuideHead>
 
-            <Image src={guide.featureImage.secure_url} />
+            <Link href={`${process.env.SERVER_URI}/${guide.file.filename}`}>
+              <a>
+                <Image src={guide.featureImage.secure_url} />
+              </a>
+            </Link>
           </Guide>
         )}
       </GuidesWrapper>

@@ -35,6 +35,13 @@ ${normalize()}
 }
 
 @font-face {
+  font-family: 'GT-Eesti-Pro-Text-Regular';
+  src: url('/static/fonts/GT-Eesti-Pro-Text-Regular.woff');
+  src: local('GT-Eesti-Pro-Text-Regular'), local('GT-Eesti-Pro-Text-Regular'),
+       url('/static/fonts/GT-Eesti-Pro-Text-Regular.woff') format('woff');
+}
+
+@font-face {
   font-family: 'GT-Eesti-Pro-Text-Medium';
   src: url('/static/fonts/GT-Eesti-Pro-Text-Medium.woff');
   src: local('GT-Eesti-Pro-Text-Medium'), local('GT-Eesti-Pro-Text-Medium'),
@@ -47,7 +54,7 @@ body {
   font-size: 16px;
   font-weight: normal;
   letter-spacing: ${theme.letterSpacing.body};
-  line-height: 1.5;
+  line-height: ${theme.lineHeight.text};
   color: ${theme.colors.text};
 }
 
@@ -68,6 +75,15 @@ p + p {
 h1, h2, h3, h4 {
   margin: 0;
   font-weight: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: inherit;
 }
 
 img {

@@ -1,114 +1,107 @@
 import React from 'react';
+import Head from 'next/head'
 
 import styled from 'styled-components';
-
-// import { Flex, Box } from 'grid-styled';
 import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
-
-// import theme from '../css/theme.js';
 import theme from '../components/theme.js';
+import { rgba } from 'polished'
 
-import { Texty, LargeText } from '../components/shared/Texty.js';
-import { Headline, Display } from '../components/shared/Headline.js';
+import { Texty, LargeText, AuthorText, LineBreak } from '../components/shared/Texty.js';
+import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline.js';
 
 import Layout from '../components/Layout.js';
-import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
-import Section from '../components/Home/Section.js';
+// import Block from '../components/shared/Block.js';
+import Block from '../components/Home/Section.js';
 import Button from '../components/shared/Button.js';
+
 import Hero from '../components/Home/Hero.js';
 import FeatureList from '../components/Home/FeatureList.js';
+import SydneyBox from '../components/Home/SydneyBox.js';
 import Testimonials from '../components/Home/Testimonials.js';
 import Guides from '../components/shared/Guides.js';
 import RecentPosts from '../components/shared/RecentPosts.js';
 import Contact from '../components/shared/Contact.js';
-import {
-  HeaderHr,
-  Text,
-  Paragraph,
-  Uppercase,
-} from '../components/shared/Text.js';
 
 
-const SectionImg = styled.img`
-  display: block;
-  margin: 4rem auto 0;
-`;
-
-const QuoteAuthor = (props) => (
-  <Uppercase><small>{props.children}</small></Uppercase>
-);
 
 
-const Index = () => (
-  <Layout>
 
-    <Hero />
 
-    <Box px={2} my={[ 5, 6 ]}>
-      <Container width={theme.containers.lg} textCenter>
 
-        <Box width={[ 5/6, 4/6 ]} mx='auto'>
-          <Headline medium dark mb={2}>It all adds up to a better deal.</Headline>
-          <LargeText grey>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></LargeText>
-        </Box>
+const BlueBox = styled(Box)`
+  background-color: ${theme.colors.blue6};
+`
 
-        <Box width={[ 1, 11/12 ]} mx='auto' mt={5}>
-          <FeatureList />
-        </Box>
 
-      </Container>
-    </Box>
 
-    <Section color={theme.colors.brand}>
-      <HeaderHr>Dependable and effective</HeaderHr>
-      <h1>We help make high-density Sydney living great.</h1>
-      <p>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</p>
 
-      <Button bordered icon>Watch video</Button>
-    </Section>
 
-    <Section sectionImg>
-      <HeaderHr>Fast. Easy. Done.</HeaderHr>
-      <h1>Do it all, online.</h1>
-      <p>We're a team of licensed real estate professionals with an exclusive focus on strata management in Sydney and local market experts - and we're here to help make youre living stress-free.</p>
+export default () => (
+  <div>
+    <Head>
+      <title>This page has a title 🤔</title>
+      <meta charSet='utf-8' />
+      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+    </Head>
 
-      <Paragraph brand>
-        <Button bordered>Sign up</Button>
-      </Paragraph>
 
-      <SectionImg src='http://lorempixel.com/400/600' />
-    </Section>
 
-    <Block>
-      <Container sm textCenter>
-        <h2><strong>Our duty is your satisfaction.</strong></h2>
 
-        <Paragraph lg brand>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." - <QuoteAuthor>Jessica, Campsie</QuoteAuthor></Paragraph>
-      </Container>
+    <Layout>
+      <Hero />
 
-      <Container textCenter>
-        <Testimonials />
-      </Container>
-    </Block>
+      <Box px={3} my={[ 5, 6 ]}>
+        <Container width={theme.containers.lg} textCenter>
+          <Box width={[ 5/6, 4/6 ]} mx='auto'>
+            <Headline medium dark mb={2} children='It all adds up to a better deal.' />
+            <LargeText grey>
+              "VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." — <AuthorText>Jessica, Campsie</AuthorText>
+            </LargeText>
+          </Box>
+          <Box width={[ 1, 11/12 ]} mx='auto' mt={4}>
+            <FeatureList />
+          </Box>
+        </Container>
+      </Box>
 
-    <Section>
-      <HeaderHr>Info on the go</HeaderHr>
-      <h1><Text brand>Your guides to Sydney Strata.</Text></h1>
-      <p>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</p>
+      <SydneyBox px={2} />
 
-      <Guides />
-    </Section>
+      <Box px={3} py={[ 5, 6 ]}>
+        <Container textCenter>
+          <Display medium dark>Our duty is your satisfaction.</Display>
+          <Container width={[ 1, 2/3 ]}>
+            <LargeText active>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." — <AuthorText>Jessica, Campsie</AuthorText></LargeText>
+          </Container>
+        </Container>
 
-    <Section>
-      <RecentPosts />
-    </Section>
+        <Container textCenter>
+          <Testimonials />
+        </Container>
+      </Box>
 
-    <Section>
-      <Contact />
-    </Section>
-  </Layout>
+      <Block blue>
+        <Subheadline>Info on the go</Subheadline>
+        <Display active>Your guides to Sydney Strata.</Display>
+        <Container width={[ 1, 2/3 ]}>
+          <Texty>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</Texty>
+        </Container>
+
+        <Guides />
+        <RecentPosts />
+      </Block>
+
+
+
+
+      <Box px={3} py={[ 5, 6 ]}>
+        <Container textCenter>
+          <Contact />
+        </Container>
+      </Box>
+
+    </Layout>
+
+  </div>
 )
-
-export default Index;

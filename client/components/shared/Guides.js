@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import gql from 'graphql-tag';
 
 import apollo from '../../lib/apollo.js';
-import theme from '../../css/theme.js';
+import theme from '../theme.js';
 import {
   Text,
 } from '../shared/Text.js';

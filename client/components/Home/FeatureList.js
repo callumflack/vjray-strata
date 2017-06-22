@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-// import { Flex, Box } from 'grid-styled'
-// import { hoc } from 'styled-components'
 import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js'
@@ -8,6 +6,7 @@ import theme from '../theme.js'
 
 import { Texty, LargeText } from '../shared/Texty.js'
 import { Headline } from '../shared/Headline.js'
+import { IconSun } from './Icons.js';
 
 
 const Header = (props) => (
@@ -23,14 +22,14 @@ const Lede = styled(Texty)`
 `
 const Divider = () => (
   <Box>
-    <Texty active fontSize={[ 6, 7 ]} mx={1}>+</Texty>
+    <Texty active fontSize={[ 6, 7 ]} mx={2}>+</Texty>
   </Box>
 );
 
 const FeatureList = () => (
   <Flex>
     <Box>
-      <img src='http://lorempixel.com/75/75' />
+      <IconSun />
       <Header>Dedicated & experienced</Header>
       <Lede>Tell us about your home and what makes it unique lorem ipsum.</Lede>
     </Box>
@@ -38,7 +37,7 @@ const FeatureList = () => (
     <Divider />
 
     <Box>
-      <img src='http://lorempixel.com/75/75' />
+      <IconSun />
       <Header>Navigate the system</Header>
       <Lede>Tell us about your home and what makes it unique lorem ipsum.</Lede>
     </Box>
@@ -46,7 +45,7 @@ const FeatureList = () => (
     <Divider />
 
     <Box>
-      <img src='http://lorempixel.com/75/75' />
+      <IconSun />
       <Header>Attendance in person</Header>
       <Lede>Tell us about your home and what makes it unique lorem ipsum.</Lede>
     </Box>
@@ -54,7 +53,7 @@ const FeatureList = () => (
     <Divider />
 
     <Box>
-      <img src='http://lorempixel.com/75/75' />
+      <IconSun />
       <Header>No lock-ins Full access.</Header>
       <Lede>Tell us about your home and what makes it unique lorem ipsum.</Lede>
     </Box>

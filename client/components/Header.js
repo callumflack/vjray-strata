@@ -1,17 +1,16 @@
-import styled from 'styled-components';
-import Button from './shared/Button.js';
 import Link from 'next/link';
+import styled from 'styled-components';
+import { Flex, Box } from './styled-grid';
+import { hoc } from './styled-system/styled-components'
+import { Texty, InlineText } from './shared/Texty.js';
+import Button from './shared/Button.js';
+import theme from './theme.js';
 
-import theme from '../css/theme.js';
-
-const SiteHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
+const Root = styled(Flex)`
   align-items: center;
   padding: 2rem;
-  background-color: ${theme.colors.beige};
-  border-bottom: 2px solid #E3DEDB;
-  font-weight: bold;
+  background-color: transparent;
+  border-bottom: 1px solid ${theme.colors.text20};
 `;
 
 const Logo = styled.img`
@@ -25,8 +24,14 @@ const Nav = styled.nav`
   }
 `;
 
+const LinkText = props => (
+  <InlineText fontSize={[ 2, 3 ]} medium>
+    { props.children }
+  </InlineText>
+)
+
 const Header = () => (
-  <SiteHeader>
+  <Root align='space-between' justify='space-between'>
     <Link href='/'>
       <a>
         <Logo src='/static/img/logo.svg' />
@@ -35,19 +40,19 @@ const Header = () => (
 
     <Nav>
       <Link href='/who-we-are'>
-        <a>Who we are</a>
+        <LinkText>Who we are</LinkText>
       </Link>
       <Link href='/'>
-        <a>What we do for you</a>
+        <LinkText>What we do for you</LinkText>
       </Link>
       <Link href='/'>
-        <a>Useful info</a>
+        <LinkText>Useful info</LinkText>
       </Link>
       <Link href='/'>
-        <a>Contact us</a>
+        <LinkText>Contact us</LinkText>
       </Link>
       <Link href='/'>
-        <a>1300 667 123</a>
+        <LinkText>1300 667 123</LinkText>
       </Link>
     </Nav>
 
@@ -58,7 +63,7 @@ const Header = () => (
         </a>
       </Link>
     </Nav>
-  </SiteHeader>
+  </Root>
 );
 
 export default Header;

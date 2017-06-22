@@ -4,69 +4,71 @@ import styled, { css } from 'styled-components';
 import gql from 'graphql-tag';
 
 import apollo from '../../lib/apollo.js';
-import theme from '../../css/theme.js';
+import theme from '../theme.js';
+import { Flex, Box } from '../styled-grid'
+import { hoc } from '../styled-system/styled-components'
+import { InlineText } from '../shared/Texty.js';
+import { HeadlineMeta } from '../shared/Headline.js';
 import Button from '../shared/Button.js';
 
 
 const Form = styled.form`
-  --HeaderHeight: 3rem;
+  --Header-height: 54px;
 
-  position: absolute;
-  z-index: 10;
-  left: 50%;
-  transform: translate(-50%, 100%);
-  bottom: var(--HeaderHeight);
   background-color: #fff;
-  box-shadow: 0 0 15px #aaa;
-  width: 700px;
+  bottom: var(--Header-height);
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0.09), 0 6px 30px 5px rgba(0,0,0,0.06), 0 8px 10px -5px rgba(0,0,0,0.15);
+  left: 50%;
+  position: absolute;
   transition: width 0.2s;
+  transform: translate(-50%, 100%);
+  width: ${theme.containers.sm};
+  z-index: 10;
 
   ${props => props.floating && css`
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
     bottom: unset;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
     transform: unset;
+    width: 100%;
   `}
 `;
 
-const Header = styled.div`
+
+const Header = styled(HeadlineMeta)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: var(--HeaderHeight);
-  text-transform: uppercase;
+  height: var(--Header-height);
   background-color: ${theme.colors.brand};
   color: #fff;
 `;
 
-const Body = styled.div`
-  padding: 1.5rem 1.8rem;
-`;
 
 const Inputs = styled.div`
-  --lineHeight: 3;
+  --Input-line-height: 54px;
 
   display: flex;
-  max-width: 700px;
+  max-width: ${theme.containers.sm};
   margin: auto;
 `;
 
-const Input = styled.input`
-  flex-grow: 1;
-  margin-right: 2rem;
+
+const Input = hoc('input').extend`
   border: 0;
-  border-bottom: 1px solid #aaa;
-  line-height: var(--lineHeight);
+  border-bottom: 1px solid ${theme.colors.text20};
+  color: ${theme.colors.text70};
+  font-family: ${theme.fonts.textBook};
+  flex-grow: 1;
+  line-height: var(--Input-line-height);
+  margin-right: 2rem;
 `;
 
+
 const StyledButton = styled(Button)`
-  padding-top: 0;
-  padding-bottom: 0;
-  line-height: var(--lineHeight);
 `;
 
 const SuccessMessage = styled.div`
@@ -140,16 +142,18 @@ class QuickQuoteForm extends React.Component {
   render() {
     return (
       <Form floating={this.state.floating} onSubmit={this.handleSubmit}>
-        <Header>Quick Response</Header>
-        <Body>
+        <Header>Get a Fast Quote</Header>
+        <Box p={3}>
           { this.state.messageSent ?  <SuccessMessage>Thank you! We will get back to you soon.</SuccessMessage> : null }
 
           <Inputs>
-            <Input placeholder='Your name' name='name' onChange={this.handleChange} />
-            <Input placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
-            <StyledButton type='submit'>Send</StyledButton>
+            <Input fontSize={[ 2, 3 ]} placeholder='Your name' name='name' onChange={this.handleChange} />
+            <Input fontSize={[ 2, 3 ]} placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
+            <InlineText fontSize={[ 2, 3 ]} book>
+              <StyledButton primary type='submit'>Send</StyledButton>
+            </InlineText>
           </Inputs>
-        </Body>
+        </Box>
       </Form>
     );
   }

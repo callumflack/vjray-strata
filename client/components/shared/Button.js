@@ -1,34 +1,79 @@
 import styled, {css} from 'styled-components';
+import theme from '../theme.js';
 
-import theme from '../../css/theme.js';
+// Using the SuitCSS button
+// https://github.com/suitcss/components-button/blob/master/lib/button.css
 
 const Button = styled.button`
-  font-weight: bold;
-  padding: 1rem 2rem;
-  background-color: ${theme.colors.text};
-  color: #fff;
-  border: 0;
+  --Button-background-color: transparent;
+  --Button-border-color: currentcolor;
+  --Button-border-width: 2px;
+  --Button-color: inherit;
+  --Button-disabled-opacity: 0.6;
+  --Button-font: inherit;
+  --Button-height: calc(54px - calc( 2 * var(--Button-border-width)) );
+  --Button-padding: 0 1.5em;
+
+  background: var(--Button-background-color);
+  border-color: var(--Button-border-color);
+  border-style: solid;
+  border-width: var(--Button-border-width);
+  color: var(--Button-color);
+  display: inline-block;
+  font-family: var(--Button-font);
+  font-size: inherit;
+  line-height: var(--Button-height);
+  margin: 0;
+  padding: var(--Button-padding);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+
+  &:-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    opacity: var(--Button-disabled-opacity);
+  }
+
+  ${props => props.primary && css`
+    --Button-background-color: ${theme.colors.text};
+    --Button-border-color: ${theme.colors.text};
+    --Button-color: white;
+  `}
 
   ${props => props.clean && css`
-    border: 0;
     background-color: transparent;
-    color: inherit;
     padding: 0;
   `}
 
-  ${props => props.bordered && css`
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    color: inherit;
-    border: 1px solid currentColor;
-    border-radius: 30px;
+  ${props => props.invert && css`
     background-color: transparent;
+    border-color: currentColor;
+    border-radius: calc( 0.5 * var(--Button-height));
+    border-radius: calc( 0.5 * 54px);
   `}
 
   ${props => props.icon && css`
     :after {
       content: '►';
-      margin-left: 0.7rem;
+      margin-left: 12px;
     }
   `}
 
@@ -39,6 +84,6 @@ const Button = styled.button`
   ${props => props.bgColor && css`
     background-color: ${theme.colors[props.bgColor]};
   `}
-`;
+`
 
 export default Button;

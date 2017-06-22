@@ -1,12 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 
 import gql from 'graphql-tag';
 import apollo from '../../lib/apollo.js';
 
-import theme from '../../css/theme.js';
+import styled from 'styled-components';
+import theme from '../theme.js';
+import { Flex, Box } from '../styled-grid';
 import Button from './Button.js';
+import { Texty } from '../shared/Texty.js';
+import { Subheadline  } from '../shared/Headline.js';
+
 import {
   HeaderHr,
   Text,
@@ -14,8 +18,6 @@ import {
 } from '../shared/Text.js';
 
 const Image = styled.img`
-  display: block;
-  margin: 3.5rem auto 2.5rem;
   width: 300px;
 `;
 
@@ -24,6 +26,10 @@ const PostLink = styled(Button)`
   font-weight: bold;
   color: ${theme.colors.brand};
 `;
+
+
+
+
 
 class RecentPosts extends React.Component {
   constructor(props) {
@@ -53,19 +59,28 @@ class RecentPosts extends React.Component {
   render() {
     return (
       <div>
-        <HeaderHr><Button clean icon>Recent posts</Button></HeaderHr>
+        {/* <HeaderHr><Button clean icon>Recent posts</Button></HeaderHr> */}
+        <Subheadline>
+          <Link href={`/`} as={`/home`}>
+            Recent posts
+          </Link>
+        </Subheadline>
+
 
         {this.state.posts.map((post, i) =>
           <div key={i}>
-            <Image src='http://lorempixel.com/300/225' />
+            <Box mt={2}>
+              <Image src='http://lorempixel.com/300/225' />
+            </Box>
 
             <h2><strong>{post.title}</strong></h2>
 
-            <Paragraph>{post.description}
+            <Texty>
+              {post.description}
               <Link href={`/article?slug=${post.slug}`} as={`/article/${post.slug}`}>
                 <a><PostLink clean icon>Read more</PostLink></a>
               </Link>
-            </Paragraph>
+            </Texty>
           </div>
         )}
       </div>

@@ -22,6 +22,12 @@ import Guides from '../components/shared/Guides.js';
 import RecentPosts from '../components/shared/RecentPosts.js';
 import Contact from '../components/shared/Contact.js';
 
+const StyledButton = styled(Button)`
+  --Button-height: 72px;
+  padding: 0 6rem;
+  text-transform: uppercase;
+`;
+
 
 export default () => (
   <div>
@@ -73,11 +79,20 @@ export default () => (
         <RecentPosts />
       </Block>
 
-      <Box px={3} py={[ 6, 5 ]}>
-        <Container textCenter>
-          <Contact />
+      <Block>
+        <Subheadline dark>Get in touch</Subheadline>
+        <Display dark>Call 1300 073 405</Display>
+        <Container width={[ 1, 1/2 ]} mb={4}>
+          <HeadlineMeta white mb={3}>
+            <StyledButton fill icon bgColor='brand'>Get a fast quote</StyledButton>
+          </HeadlineMeta>
+          <Texty fontSize={[ 3, 4 ]} grey>
+            Or drop-in without an appointment. We're open Monday to Saturday, 9am–5pm.
+          </Texty>
         </Container>
-      </Box>
+
+        <Contact />
+      </Block>
 
     </Layout>
   </div>

@@ -48,6 +48,6 @@ export default {
     subheadline: '1.25',
     text: '1.375',
   },
-  space: [0, 8, 16, 32, 64, 128, 192],
+  space: [0, 8, 16, 32, 64, 128, 160],
 
 }

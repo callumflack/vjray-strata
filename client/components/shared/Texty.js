@@ -15,6 +15,10 @@ import theme from '../theme.js';
 // color: ${props.blue ? theme.colors.blue : null}
 // color: ${props => props.color || 'inherit'};
 
+// this breaks cause it's a wrapped object yo
+// const InlineTextTest = Texty.withComponent('span').extend`
+//   display: inline-block;
+// `
 
 
 // Root
@@ -74,16 +78,14 @@ const Anchor = Root.withComponent('a')
 // `
 
 
-// this breaks
-// const InlineTextTest = Texty.withComponent('span').extend`
-//   display: inline-block;
-// `
-
-
 // Variations
 
 const SmallText = props => (
   <Texty fontSize={[ 1, 2 ]} {...props}>{ props.children }</Texty>
+)
+
+const MediumText = props => (
+  <Texty fontSize={[ 2, 3 ]} {...props}>{ props.children }</Texty>
 )
 
 const LargeTextRoot = styled(Root)`
@@ -107,4 +109,4 @@ const AuthorText = props => (
 );
 
 
-export { Texty, LargeText, SmallText, AuthorText, InlineText, Anchor, LineBreak }
+export { Texty, LargeText, MediumText, SmallText, AuthorText, InlineText, Anchor, LineBreak }

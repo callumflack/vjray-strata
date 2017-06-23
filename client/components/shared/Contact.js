@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import theme from '../../css/theme.js';
+import { Box, Flex } from '../styled-grid';
 import Button from './Button.js';
 import {
   HeaderHr,
@@ -9,22 +10,13 @@ import {
   Text,
 } from '../shared/Text.js';
 
-const StyledButton = styled(Button)`
-  display: inline-block;
-  padding: 1.5rem 6rem;
-`;
 
-const Locations = styled.div`
-  display: flex;
-  justify-content: space-evenly;
+
+const Locations = styled(Flex)`
   text-align: left;
 `;
 
-const Location = styled.div`
-  margin-top: 2.5rem;
-`;
-
-const LocationImage = styled.img`
+const Image = styled.img`
   border: 1px solid #666;
   display: block;
   margin-bottom: 1.5rem;
@@ -53,56 +45,43 @@ const InfoListItem = styled.div`
 `;
 
 const Contact = (props) => (
-  <div>
-    <HeaderHr>Get in touch</HeaderHr>
+  <Locations justify='center'>
 
-    <h1>Call 1300 073 405.</h1>
+    {Array(2).fill(1).map(() =>
 
-    <StyledButton fill icon bgColor='brand'><Uppercase>Get a fast quote</Uppercase></StyledButton>
+    <Box mx={2}>
+      <Image src='http://lorempixel.com/300/225' />
 
-    <Text transparent>
-      <Paragraph lg>
-        Or drop-in without an appointment.
-        <br />
-        We're open Monday to Saturday, 9am-5pm.
-      </Paragraph>
-    </Text>
+      <strong><Text brand>Campsie Head Office</Text></strong>
 
-    <Locations>
-      {Array(2).fill(1).map(() =>
-      <Location>
-        <LocationImage src='http://lorempixel.com/300/225' />
+      <LocationInfo>
+        <div>8 Anglo Road</div>
+        <div>Campsie, NSW 2194</div>
 
-        <strong><Text brand>Campsie Head Office</Text></strong>
+        <InfoList>
+          <InfoListItem>
+            <span>&#9742;</span>
+            1300 073 405
+          </InfoListItem>
+          <InfoListItem>
+            <span>&#9742;</span>
+            campsie@vjray.com.au
+          </InfoListItem>
+          <InfoListItem>
+            <span>&#9742;</span>
+            PO Box 369 Campsie, NSW 2194
+          </InfoListItem>
+          <InfoListItem>
+            <span>&#9742;</span>
+            Emergency 1300 073 777
+          </InfoListItem>
+        </InfoList>
 
-        <LocationInfo>
-          <div>8 Anglo Road</div>
-          <div>Campsie, NSW 2194</div>
+      </LocationInfo>
+    </Box>
+    )}
 
-
-          <InfoList>
-            <InfoListItem>
-              <span>&#9742;</span>
-              1300 073 405
-            </InfoListItem>
-            <InfoListItem>
-              <span>&#9742;</span>
-              campsie@vjray.com.au
-            </InfoListItem>
-            <InfoListItem>
-              <span>&#9742;</span>
-              PO Box 369 Campsie, NSW 2194
-            </InfoListItem>
-            <InfoListItem>
-              <span>&#9742;</span>
-              Emergency 1300 073 777
-            </InfoListItem>
-          </InfoList>
-        </LocationInfo>
-      </Location>
-      )}
-    </Locations>
-  </div>
+  </Locations>
 );
 
 export default Contact;

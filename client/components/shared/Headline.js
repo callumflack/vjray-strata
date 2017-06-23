@@ -19,6 +19,10 @@ const Root = hoc('h1').extend`
     color: ${theme.colors.text};
   `}
 
+  ${props => props.white && css`
+    color: white;
+  `}
+
   ${props => props.medium && css`
     font-family: ${theme.fonts.displayMedium};
   `}

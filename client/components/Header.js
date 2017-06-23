@@ -2,15 +2,24 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Flex, Box } from './styled-grid';
 import { hoc } from './styled-system/styled-components'
-import { Texty, InlineText } from './shared/Texty.js';
+import { Texty, InlineText, Anchor } from './shared/Texty.js';
 import Button from './shared/Button.js';
 import theme from './theme.js';
+import { rgba } from 'polished';
+
+// padding: 2rem;
+// transform: translateY(var(--Header-height));
 
 const Root = styled(Flex)`
-  align-items: center;
-  padding: 2rem;
+  --Header-height: 121px;
+
   background-color: transparent;
-  border-bottom: 1px solid ${theme.colors.text20};
+  border-bottom: 1px solid rgba(88, 88, 112, 0.15);
+  height: var(--Header-height);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 `;
 
 const Logo = styled.img`
@@ -19,19 +28,23 @@ const Logo = styled.img`
 `;
 
 const Nav = styled.nav`
+  a {
+    cursor: pointer;
+  }
+
   a:not(:last-child) {
     margin-right: 1.5rem;
   }
 `;
 
 const LinkText = props => (
-  <InlineText fontSize={[ 2, 3 ]} medium>
+  <Anchor fontSize={[ 2, 3 ]} medium>
     { props.children }
-  </InlineText>
+  </Anchor>
 )
 
 const Header = () => (
-  <Root align='space-between' justify='space-between'>
+  <Root align='center' justify='space-between' px={3}>
     <Link href='/'>
       <a>
         <Logo src='/static/img/logo.svg' />
@@ -58,9 +71,9 @@ const Header = () => (
 
     <Nav>
       <Link href='/signin'>
-        <a>
-          <Button bordered>Sign in</Button>
-        </a>
+        <LinkText>
+          <Button invert>Sign in</Button>
+        </LinkText>
       </Link>
     </Nav>
   </Root>

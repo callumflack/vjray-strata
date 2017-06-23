@@ -19,6 +19,7 @@ const Button = styled.button`
   border-style: solid;
   border-width: var(--Button-border-width);
   color: var(--Button-color);
+  cursor: pointer;
   display: inline-block;
   font-family: var(--Button-font);
   font-size: inherit;

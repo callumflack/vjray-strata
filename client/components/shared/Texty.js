@@ -13,6 +13,8 @@ import theme from '../theme.js';
 //   color: ${theme.colors[props.color]};
 // `}
 // color: ${props.blue ? theme.colors.blue : null}
+// color: ${props => props.color || 'inherit'};
+
 
 
 // Root
@@ -66,6 +68,12 @@ const InlineText = Root.withComponent('span').extend`
   display: inline-block;
 `
 
+const Anchor = Root.withComponent('a')
+// const Anchor = Root.withComponent('a').extend`
+//   cursor: pointer;
+// `
+
+
 // this breaks
 // const InlineTextTest = Texty.withComponent('span').extend`
 //   display: inline-block;
@@ -95,4 +103,4 @@ const AuthorText = props => (
 );
 
 
-export { Texty, LargeText, AuthorText, InlineText, LineBreak }
+export { Texty, LargeText, AuthorText, InlineText, Anchor, LineBreak }

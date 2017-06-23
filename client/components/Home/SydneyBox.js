@@ -16,9 +16,9 @@ const Root = styled(Box)`
   position: relative;
 `;
 
-const Background = styled(Container)`
-  background-image: url('static/img/sydney.jpg');
-  background-position: 50% 90%;
+const Background = styled(Box)`
+  background-image: url('static/img/home-sydney.jpg');
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   color: ${theme.colors.text70};
@@ -38,9 +38,16 @@ const Background = styled(Container)`
 `;
 
 const VideoIframe = styled.iframe`
+  border: 0;
   height: 100%;
   width: 100%;
-  border: 0;
+
+  bottom: 0;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 `;
 
 const Content = styled.div`
@@ -81,11 +88,12 @@ class SydneyBox extends React.Component {
   render() {
     return (
       <Root px={0}>
-        <VideoIframe ref={(ref) => this.video = ref} data-src='https://www.youtube.com/embed/x8JdtVT19hI?autoplay=1' frameborder='0' allowtransparency='true' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen='' />
+        <VideoIframe ref={(ref) => this.video = ref} data-src='https://www.youtube.com/embed/ijrkKNZRIfM?autoplay=1' frameborder='0' allowtransparency='true' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen='' />
 
         <Content isVisible={this.state.contentIsVisible}>
           <Background center textCenter width={1}>
-            <Container center>
+
+            <Container textCenter relative pt={[ 5, 6 ]}>
               <Subheadline>Dependable and effective</Subheadline>
               <Display>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
@@ -95,6 +103,7 @@ class SydneyBox extends React.Component {
                 </Texty>
               </Container>
             </Container>
+
           </Background>
         </Content>
       </Root>

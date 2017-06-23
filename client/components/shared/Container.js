@@ -5,7 +5,7 @@ import theme from '../theme.js';
 
 
 // https://www.styled-components.com/docs/basics#extending-styles?
-// const ContainerSm = Container.extend`
+// const ContainerSm = Container.extend` <= NAH
 
 
 const Container = styled(Box)`
@@ -17,8 +17,12 @@ const Container = styled(Box)`
     width: 100%;
   `}
 
-  ${props => !props.width && css`
+  ${props => !props.mx && css`
     max-width: ${theme.containers.rg};
+  `}
+
+  ${props => props.mx && css`
+    max-width: ${theme.containers[props.mx]};
   `}
 
   ${props => props.relative && css`

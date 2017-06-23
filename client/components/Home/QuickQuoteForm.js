@@ -13,7 +13,7 @@ import Button from '../shared/Button.js';
 
 
 const Form = styled.form`
-  --Header-height: 54px;
+  --Header-height: 48px;
 
   background-color: #fff;
   bottom: var(--Header-height);

@@ -1,14 +1,14 @@
 import { lighten } from 'polished'
 
+// array scale: 0 = no breakpoint, 1 = first breakpoint
+
 // text70: ${lighten(0.2, '#585870')},
 // wrappers: [700, 960, 1140]
 // color, fontSize, space & width are for `styled-system` & `grid-styled`.
 // fontSizes: [12, 16, 18, 21, 24, 29, 40, 58],
 // fontSizes: [ 12, 14, 16, 20, 24, 32, 48, 64, 72 ]
 // space: [0, 8, 16, 24, 48, 96, 192],
-
 // breakpoints: [32, 48, 64, 80, 96] = 512, 768, 1024, 1280, 1536
-
 
 export default {
   breakpoints: [32, 48, 64, 80, 96],

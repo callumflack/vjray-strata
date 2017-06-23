@@ -40,7 +40,7 @@ export default {
   letterSpacing: {
     body: '0.01em',
     tight: '-0.02em',
-    touch: '0.02em',
+    touch: '0.075em',
     meta: '0.15em',
   },
   lineHeight: {

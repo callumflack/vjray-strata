@@ -96,7 +96,6 @@ button {
 }
 
 img {
-  box-sizing: border-box;
   font-style: italic;
   max-width: 100%;
   vertical-align: middle;

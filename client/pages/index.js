@@ -6,7 +6,7 @@ import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
 import theme from '../components/theme.js';
 
-import { Text, LargeText, AuthorText, LineBreak } from '../components/shared/Text.js';
+import { Text, LargeText, SmallText, AuthorText, LineBreak } from '../components/shared/Text.js';
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline.js';
 
 import Layout from '../components/Layout.js';
@@ -22,6 +22,7 @@ import Guides from '../components/shared/Guides.js';
 import RecentPosts from '../components/shared/RecentPosts.js';
 import Contact from '../components/shared/Contact.js';
 
+
 const StyledButton = styled(Button)`
   --Button-height: 72px;
   padding: 0 6rem;
@@ -32,7 +33,7 @@ const StyledButton = styled(Button)`
 export default () => (
   <div>
     <Head>
-      <title>This page has a title 🤔</title>
+      <title>VJ Ray Strata, Sydney</title>
       <meta charSet='utf-8' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     </Head>
@@ -43,7 +44,7 @@ export default () => (
 
       <Block mx='lg'>
         <Box width={[ 4/6, 5/6 ]} mx='auto'>
-          <Headline medium dark mb={2} children='It all adds up to a better deal.' />
+          <Headline medium dark my={3} children='It all adds up to a better deal.' />
           <LargeText grey>
             "VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." — <AuthorText>Jessica, Campsie</AuthorText>
           </LargeText>
@@ -55,7 +56,7 @@ export default () => (
 
       <SydneyBox />
 
-      <Box px={3} py={[ 6, 5 ]}>
+      <Box px={3} py={[ 5, 6 ]}>
         <Container textCenter>
           <Display medium dark>Our duty is your satisfaction.</Display>
           <Container width={[ 2/3, 1 ]}>
@@ -63,7 +64,7 @@ export default () => (
           </Container>
         </Container>
 
-        <Container textCenter>
+        <Container mx='lg' pt={[ 3, 4 ]}>
           <Testimonials />
         </Container>
       </Box>

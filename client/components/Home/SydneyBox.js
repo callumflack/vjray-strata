@@ -97,7 +97,7 @@ class SydneyBox extends React.Component {
               <Subheadline>Dependable and effective</Subheadline>
               <Display>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
-                <Text active mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Text>
+                <Text color='brand' mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Text>
                 <Text medium>
                   <Button color='brand' invert icon onClick={this.triggerVideo}>Watch video</Button>
                 </Text>

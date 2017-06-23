@@ -57,14 +57,14 @@ const HeadlineMetaRoot = styled(Root)`
   text-transform: uppercase;
 `;
 
-const HeadlineMeta = props => <HeadlineMetaRoot fontSize={[ 0, 1 ]} {...props}>{ props.children }</HeadlineMetaRoot>
+const HeadlineMeta = props => <HeadlineMetaRoot fontSize={[ 0, 1 ]} {...props} />
 
 const SubheadlineRoot = styled(HeadlineMetaRoot)`
   border-bottom: 1px solid currentColor;
   display: inline-block;
 `;
 
-const Subheadline = props => <SubheadlineRoot fontSize={[ 0, 1 ]} pb={2} mb={3} mx='auto' {...props}>{ props.children }</SubheadlineRoot>
+const Subheadline = props => <SubheadlineRoot fontSize={[ 0, 1 ]} pb={2} mb={3} mx='auto' {...props} />
 
 
 // Create HTML element variations

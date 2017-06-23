@@ -22,7 +22,7 @@ const Lede = styled(Text)`
 `
 const Divider = () => (
   <Box>
-    <Text active fontSize={[ 6, 7 ]} mx={2}>+</Text>
+    <Text color='brand' fontSize={[ 6, 7 ]} mx={2}>+</Text>
   </Box>
 );
 

@@ -7,6 +7,10 @@ import theme from '../theme.js';
 // const AuthorTextRoot = styled(Root)
 // const AuthorTextRoot = styled(Root)`
 // const AuthorTextRoot = Root.withComponent('span').extend`
+// const fill = props.fill || theme.colors.brand
+
+// this fails: color: ${props.color ? theme.colors[props.color] : inherit};
+
 
 // props patterns
 // ${props => props.color && css`
@@ -23,9 +27,12 @@ import theme from '../theme.js';
 
 // Root
 
+// color: ${theme.colors.text};
 const Root = hoc('p').extend`
-  color: ${theme.colors.text};
   line-height: ${theme.lineHeight.text};
+
+
+
 
   ${props => props.active && css`
     color: ${theme.colors.brand};
@@ -37,6 +44,17 @@ const Root = hoc('p').extend`
 
   ${props => props.lightGrey && css`
     color: ${theme.colors.text40};
+  `}
+
+
+
+
+  ${props => props.color && css`
+    color: ${theme.colors[props.color]};
+  `}
+
+  ${props => props.inheritColor && css`
+    color: inherit;
   `}
 
   ${props => props.book && css`
@@ -54,10 +72,14 @@ const Root = hoc('p').extend`
   ${props => props.uppercase && css`
     text-transform: uppercase;
   `}
+
+  ${props => props.inline && css`
+    display: inline-block;
+  `}
 `;
 
 const Text = props => (
-  <Root fontSize={[ 2, 3 ]} {...props}>
+  <Root color='text' fontSize={[ 2, 3 ]} {...props}>
     { props.children }
   </Root>
 )
@@ -85,8 +107,9 @@ const Anchor = Root.withComponent('a')
 // Variations
 
 const SmallText = props => (
-  <Text fontSize={[ 1, 2 ]} {...props}>{ props.children }</Text>
+  <Text fontSize={[ 1, 2 ]} {...props} />
 )
+
 
 const MediumText = props => (
   <Text fontSize={[ 2, 3 ]} {...props}>{ props.children }</Text>
@@ -102,15 +125,21 @@ const LargeText = props => (
   <LargeTextRoot fontSize={[ 4, 5 ]} {...props}>{ props.children }</LargeTextRoot>
 )
 
-const AuthorTextRoot = Root.withComponent('span').extend`
+// .withComponent().extend doesn't seem to pass down props…
+// const AuthorTextRoot = styled(Root)`
+// const AuthorTextRoot = Root.withComponent('span').extend`
+const AuthorTextRoot = hoc('span').extend`
   color: inherit;
+  display: inline-block;
   font-family: ${theme.fonts.textBook};
-  letter-spacing: ${theme.letterSpacing.meta};
+  letter-spacing: ${theme.letterSpacing.touch};
+  text-transform: uppercase;
 `;
 
 const AuthorText = props => (
-  <AuthorTextRoot uppercase fontSize={[ 2, 3 ]} {...props}>{props.children}</AuthorTextRoot>
-);
+  <AuthorTextRoot fontSize={[ 3, 4 ]} {...props}/>
+)
+
 
 
 export { Text, LargeText, MediumText, SmallText, AuthorText, InlineText, Anchor, LineBreak }

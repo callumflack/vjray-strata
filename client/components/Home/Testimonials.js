@@ -1,62 +1,55 @@
 import styled from 'styled-components';
+import theme from '../theme.js';
+import { Box, Flex } from '../styled-grid';
+import { Text, SmallText } from '../shared/Text';
 
-import theme from '../../css/theme.js';
+// const Testimonial = styled.div`
+//   display: flex;
+//   justify-content: ;
+//   flex-direction: column;
+//   margin-top: 2.5rem;
+//   width: 275px;
+// `;
 
-const TestimonialsWrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  text-align: left;
-`;
+const Testimonial = styled(Flex)`
+  margin: 1rem 2rem;
+  width: 290px;
+`
 
-const Testimonial = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 2.5rem;
-  width: 275px;
-`;
-
-const Quote = styled.div`
+const Quote = styled(SmallText)`
+  border: 1px solid ${theme.colors.text20};
   display: inline-block;
-  padding: 1.3rem 2rem;
   margin-bottom: 1.5rem;
-  border: 1px solid #dadada;
-`;
+  padding: 1.3rem 2rem 1.4rem;
+  text-align: left;
+`
 
-const Author = styled.div`
-  margin: auto;
+const Image = styled.img`
   display: inline-block;
-`;
+`
 
-const AuthorInfo = styled.div`
-  display: inline-block;
-  margin-left: 1rem;
-`;
-
-const Organization = styled.div`
-  opacity: ${theme.text.transparent};
-`;
+const Author = styled(Flex)`
+  margin-left: 1.5rem;
+`
 
 const Testimonials = (props) => (
-  <TestimonialsWrapper>
+  <Flex justify='center' wrap>
+
     {Array(5).fill(1).map(() =>
-    <Testimonial>
-      <Quote>Sit sint quae officia asperiores provident, iusto similique Eligendi commodi quaerat provident voluptas sunt aliquam.</Quote>
+    <Testimonial justify='center' column>
+      <Quote>Sit sint quae officia asperiores provident, iusto similique Eligendi commodi quaerat provident voluptas sunt.</Quote>
 
-      <Author>
-        <img src='http://lorempixel.com/60/60' />
-
-        <AuthorInfo>
-          <div>Dennis Sievers</div>
-          <Organization>Campsie</Organization>
-        </AuthorInfo>
-      </Author>
+      <Flex mx='auto'>
+        <Image src='http://lorempixel.com/60/60' />
+        <Author justify='flex-end' column>
+          <SmallText>Dennis Sievers</SmallText>
+          <SmallText color='text70'>Campsie</SmallText>
+        </Author>
+      </Flex>
     </Testimonial>
     )}
-  </TestimonialsWrapper>
+
+  </Flex>
 );
 
 export default Testimonials;

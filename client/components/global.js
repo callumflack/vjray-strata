@@ -68,10 +68,6 @@ p {
   margin: 0;
 }
 
-p + p {
-  margin-top: 12px;
-}
-
 h1, h2, h3, h4 {
   margin: 0;
   font-weight: inherit;

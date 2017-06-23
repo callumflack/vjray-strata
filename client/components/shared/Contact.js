@@ -1,17 +1,9 @@
 import styled from 'styled-components';
-
-import theme from '../../css/theme.js';
+import theme from '../theme.js';
 import { Box, Flex } from '../styled-grid';
 import { Texty } from './Texty.js';
 import Button from './Button.js';
 import { IconContact } from '../Home/Icons.js';
-import {
-  HeaderHr,
-  Uppercase,
-  Paragraph,
-  Text,
-} from '../shared/Text.js';
-
 
 
 const Locations = styled(Flex)`
@@ -19,64 +11,39 @@ const Locations = styled(Flex)`
 `;
 
 const Image = styled.img`
-  border: 1px solid #666;
-  display: block;
-  margin-bottom: 1.5rem;
+  border: 1px solid ${theme.colors.text40};
 `;
 
-const LocationInfo = styled.div`
-  margin-top: 0.5rem;
-  opacity: ${theme.text.transparent};
-`;
+const Item = styled.div`
+  --Item-rule: ${theme.colors.text20};
 
-const InfoList = styled.div`
-  margin-top: 1.5rem;
-`;
-
-const InfoListItem = styled.div`
+  border-top: 1px solid var(--Item-rule);
+  color: ${theme.colors.text70};
   padding: 0.5rem 0;
-  border-top: 1px solid #ccc;
-
-  :last-child {
-    border-bottom: 1px solid #ccc;
-  }
-
-  span {
-    margin-right: 1rem;
-  }
+  :last-child { border-bottom: 1px solid var(--Item-rule); };
 `;
+
 
 const Contact = (props) => (
   <Locations justify='center'>
 
     {Array(2).fill(1).map(() =>
 
-    <Box mx={2}>
-      <Image src='http://lorempixel.com/300/225' />
+    <Box width={[ 1/2, 1/3 ]} mx={2}>
+      <Image src='static/img/map.jpg' />
 
-      <Texty medium active mb={1}>Campsie Head Office</Texty>
-      <Texty grey>8 Anglo Road</Texty>
-      <Texty grey>Campsie, NSW 2194</Texty>
+      <Box my={2}>
+        <Texty medium active>Campsie Head Office</Texty>
+        <Texty grey>8 Anglo Road</Texty>
+        <Texty grey>Campsie, NSW 2194</Texty>
+      </Box>
 
-      <InfoList>
-        <InfoListItem>
-          <IconContact />
-
-          1300 073 405
-        </InfoListItem>
-        <InfoListItem>
-          <span>&#9742;</span>
-          campsie@vjray.com.au
-        </InfoListItem>
-        <InfoListItem>
-          <span>&#9742;</span>
-          PO Box 369 Campsie, NSW 2194
-        </InfoListItem>
-        <InfoListItem>
-          <span>&#9742;</span>
-          Emergency 1300 073 777
-        </InfoListItem>
-      </InfoList>
+      <Box>
+        <Item><IconContact mx={1}/>1300 073 405</Item>
+        <Item><IconContact mx={1}/>campsie@vjray.com.au</Item>
+        <Item><IconContact mx={1}/>PO Box 369 Campsie, NSW 2194</Item>
+        <Item><IconContact mx={1}/>Emergency 1300 073 777</Item>
+      </Box>
 
     </Box>
     )}

@@ -17,6 +17,7 @@ export default {
     text70: '#8b8a9b',
     text40: '#BCBCC5',
     text20: '#DEDEE2',
+    text7: '#F3F3F5',
     brand: '#D3145A',
     beige: '#F7F2EC',
     blue6: '#f0f9fc',

@@ -1,4 +1,6 @@
-import styled from 'styled-components'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import styled, { css } from 'styled-components';
 import { Flex, Box } from '../styled-grid';
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js';
@@ -8,14 +10,20 @@ import { Texty, LineBreak } from '../shared/Texty.js';
 import { Display, Subheadline  } from '../shared/Headline.js';
 import Button from '../shared/Button.js';
 
+
 const Root = styled(Box)`
+  height: 75vh;
+  position: relative;
+`;
+
+const Background = styled(Container)`
   background-image: url('static/img/sydney.jpg');
   background-position: 50% 90%;
   background-repeat: no-repeat;
   background-size: cover;
   color: ${theme.colors.text70};
-  height: 75vh;
-  position: relative;
+  height: 100%;
+  width: 100%;
 
   &:before {
     background: rgba(247, 242, 236, 0.2);
@@ -27,21 +35,71 @@ const Root = styled(Box)`
     right: 0;
     top: 0;
   }
-`
+`;
 
-const SydneyBox = () => (
-  <Root px={3}>
-    <Container width={theme.containers.rg} textCenter relative pt={[ 5, 6 ]}>
-      <Subheadline>Dependable and effective</Subheadline>
-      <Display>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
-      <Container width={[ 1, 2/3 ]}>
-        <Texty active mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Texty>
-        <Texty medium>
-          <Button color='brand' invert icon>Watch video</Button>
-        </Texty>
-      </Container>
-    </Container>
-  </Root>
-);
+const VideoIframe = styled.iframe`
+  height: 100%;
+  width: 100%;
+  border: 0;
+`;
+
+const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: 0.7s opacity;
+
+  ${props => !props.isVisible && css`
+    opacity: 0;
+  `}
+`;
+
+
+class SydneyBox extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.triggerVideo = this.triggerVideo.bind(this);
+
+    this.state = {
+      contentIsVisible: true,
+    };
+  }
+
+  triggerVideo(event) {
+    event.preventDefault();
+
+    const videoRef = this.video;
+    const videoIframe = ReactDOM.findDOMNode(videoRef);
+    videoIframe.setAttribute('src', videoRef.props['data-src']);
+
+    this.setState({
+      contentIsVisible: false
+    });
+  }
+
+  render() {
+    return (
+      <Root px={0}>
+        <VideoIframe ref={(ref) => this.video = ref} data-src='https://www.youtube.com/embed/x8JdtVT19hI?autoplay=1' frameborder='0' allowtransparency='true' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen='' />
+
+        <Content isVisible={this.state.contentIsVisible}>
+          <Background center textCenter width={1}>
+            <Container center>
+              <Subheadline>Dependable and effective</Subheadline>
+              <Display>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
+              <Container width={[ 1, 2/3 ]}>
+                <Texty active mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Texty>
+                <Texty medium>
+                  <Button color='brand' invert icon onClick={this.triggerVideo}>Watch video</Button>
+                </Texty>
+              </Container>
+            </Container>
+          </Background>
+        </Content>
+      </Root>
+    )
+  }
+}
 
 export default SydneyBox

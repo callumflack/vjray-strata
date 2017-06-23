@@ -66,7 +66,7 @@ export default () => (
         </Container>
       </Box>
 
-      <SydneyBox px={2} />
+      <SydneyBox />
 
       <Box px={3} py={[ 5, 6 ]}>
         <Container textCenter>
@@ -102,6 +102,5 @@ export default () => (
       </Box>
 
     </Layout>
-
   </div>
 )

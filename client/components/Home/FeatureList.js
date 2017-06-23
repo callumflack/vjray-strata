@@ -4,7 +4,7 @@ import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js'
 // import { tint } from 'polished'
 
-import { Texty, LargeText } from '../shared/Texty.js'
+import { Text, LargeText } from '../shared/Text.js'
 import { Headline } from '../shared/Headline.js'
 import { IconSun } from './Icons.js';
 
@@ -17,12 +17,12 @@ const Header = (props) => (
 
 // color: ${tint(0.7, ${theme.colors.text} )}
 // color: ${tint(0.7, '#585870')};
-const Lede = styled(Texty)`
+const Lede = styled(Text)`
   color: ${theme.colors.text70};
 `
 const Divider = () => (
   <Box>
-    <Texty active fontSize={[ 6, 7 ]} mx={2}>+</Texty>
+    <Text active fontSize={[ 6, 7 ]} mx={2}>+</Text>
   </Box>
 );
 

@@ -6,12 +6,20 @@ import theme from '../theme'
 
 const Icon = hoc('span').extend`
   display: inline-block;
-  fill: currentColor;
   line-height: 1;
   position: relative;
   text-align: center;
-  vertical-align: baseline;
 
+  > svg {
+    --Icon-vertical-align: baseline;
+
+    fill: currentColor;
+    vertical-align: var(--Icon-vertical-align);
+
+    ${props => props.bottom && css`
+      --Icon-vertical-align: bottom;
+    `}
+  }
 `
 
 const IconSun = function IconSun(props) {
@@ -27,10 +35,10 @@ const IconSun = function IconSun(props) {
 
 const IconContact = props => (
   <Icon {...props}>
-    <svg Style xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="title">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="title">
       <title id="title">Sun</title>
       <path fill="none" d="M0 0h24v24H0z"/>
-      <path fill="currentColor" d="M22 18V3H2v15H0v2h24v-2h-2zm-8 0h-4v-1h4v1zm6-3H4V5h16v10z"/>
+      <path d="M22 18V3H2v15H0v2h24v-2h-2zm-8 0h-4v-1h4v1zm6-3H4V5h16v10z"/>
     </svg>
   </Icon>
 )

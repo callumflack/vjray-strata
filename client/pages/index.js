@@ -6,7 +6,7 @@ import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
 import theme from '../components/theme.js';
 
-import { Texty, LargeText, AuthorText, LineBreak } from '../components/shared/Texty.js';
+import { Text, LargeText, AuthorText, LineBreak } from '../components/shared/Text.js';
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline.js';
 
 import Layout from '../components/Layout.js';
@@ -72,7 +72,7 @@ export default () => (
         <Subheadline>Info on the go</Subheadline>
         <Display active>Your guides to Sydney Strata.</Display>
         <Container width={[ 1, 2/3 ]}>
-          <Texty>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</Texty>
+          <Text>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</Text>
         </Container>
 
         <Guides />
@@ -86,9 +86,9 @@ export default () => (
           <HeadlineMeta white mb={3}>
             <StyledButton fill icon bgColor='brand'>Get a fast quote</StyledButton>
           </HeadlineMeta>
-          <Texty fontSize={[ 3, 4 ]} grey>
+          <Text fontSize={[ 3, 4 ]} grey>
             Or drop-in without an appointment. We're open Monday to Saturday, 9am–5pm.
-          </Texty>
+          </Text>
         </Container>
 
         <Contact />

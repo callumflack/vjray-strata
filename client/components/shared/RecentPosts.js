@@ -8,14 +8,9 @@ import styled from 'styled-components';
 import theme from '../theme.js';
 import { Flex, Box } from '../styled-grid';
 import Button from './Button.js';
-import { Texty } from '../shared/Texty.js';
+import { Text } from '../shared/Text.js';
 import { Subheadline  } from '../shared/Headline.js';
 
-import {
-  HeaderHr,
-  Text,
-  Paragraph,
-} from '../shared/Text.js';
 
 const Image = styled.img`
   width: 300px;
@@ -75,12 +70,12 @@ class RecentPosts extends React.Component {
 
             <h2><strong>{post.title}</strong></h2>
 
-            <Texty>
+            <Text>
               {post.description}
               <Link href={`/article?slug=${post.slug}`} as={`/article/${post.slug}`}>
                 <a><PostLink clean icon>Read more</PostLink></a>
               </Link>
-            </Texty>
+            </Text>
           </div>
         )}
       </div>

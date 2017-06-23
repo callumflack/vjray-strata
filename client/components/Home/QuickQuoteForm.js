@@ -7,7 +7,7 @@ import apollo from '../../lib/apollo.js';
 import theme from '../theme.js';
 import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
-import { InlineText } from '../shared/Texty.js';
+import { InlineText } from '../shared/Text.js';
 import { HeadlineMeta } from '../shared/Headline.js';
 import Button from '../shared/Button.js';
 

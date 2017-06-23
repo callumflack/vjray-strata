@@ -7,8 +7,8 @@ import apollo from '../../lib/apollo.js';
 import theme from '../../css/theme.js';
 import Button from '../shared/Button.js';
 import {
-  Texty,
-} from '../shared/Texty.js';
+  Text,
+} from '../shared/Text.js';
 
 
 const FormContainer = styled.div`
@@ -42,7 +42,7 @@ const FormGroup = styled.div`
   }
 `;
 
-const FormGroupHeader = Texty.extend`
+const FormGroupHeader = Text.extend`
   margin-left: 1.5rem;
 `;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from '../theme.js';
 import { Box, Flex } from '../styled-grid';
-import { Texty } from './Texty.js';
+import { Text } from './Text.js';
 import Button from './Button.js';
 import { IconContact } from '../Home/Icons.js';
 
@@ -16,12 +16,15 @@ const Image = styled.img`
 
 const Item = styled.div`
   --Item-rule: ${theme.colors.text20};
-
   border-top: 1px solid var(--Item-rule);
   color: ${theme.colors.text70};
   padding: 0.5rem 0;
   :last-child { border-bottom: 1px solid var(--Item-rule); };
 `;
+
+const Icon = styled(IconContact)`
+  margin: 0 9px 0 6px;
+`
 
 
 const Contact = (props) => (
@@ -33,16 +36,16 @@ const Contact = (props) => (
       <Image src='static/img/map.jpg' />
 
       <Box my={2}>
-        <Texty medium active>Campsie Head Office</Texty>
-        <Texty grey>8 Anglo Road</Texty>
-        <Texty grey>Campsie, NSW 2194</Texty>
+        <Text medium active>Campsie Head Office</Text>
+        <Text grey>8 Anglo Road</Text>
+        <Text grey>Campsie, NSW 2194</Text>
       </Box>
 
       <Box>
-        <Item><IconContact mx={1}/>1300 073 405</Item>
-        <Item><IconContact mx={1}/>campsie@vjray.com.au</Item>
-        <Item><IconContact mx={1}/>PO Box 369 Campsie, NSW 2194</Item>
-        <Item><IconContact mx={1}/>Emergency 1300 073 777</Item>
+        <Item><Icon bottom/>1300 073 405</Item>
+        <Item><Icon bottom/>campsie@vjray.com.au</Item>
+        <Item><Icon bottom/>PO Box 369 Campsie, NSW 2194</Item>
+        <Item><Icon bottom/>Emergency 1300 073 777</Item>
       </Box>
 
     </Box>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Flex, Box } from './styled-grid';
 import { hoc } from './styled-system/styled-components'
-import { Texty, InlineText, Anchor } from './shared/Texty.js';
+import { Text, InlineText, Anchor } from './shared/Text.js';
 import Button from './shared/Button.js';
 import theme from './theme.js';
 import { rgba } from 'polished';

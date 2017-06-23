@@ -6,7 +6,7 @@ import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js';
 
 import Container from '../shared/Container.js';
-import { Texty, LineBreak } from '../shared/Texty.js';
+import { Text, LineBreak } from '../shared/Text.js';
 import { Display, Subheadline  } from '../shared/Headline.js';
 import Button from '../shared/Button.js';
 
@@ -97,10 +97,10 @@ class SydneyBox extends React.Component {
               <Subheadline>Dependable and effective</Subheadline>
               <Display>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
-                <Texty active mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Texty>
-                <Texty medium>
+                <Text active mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Text>
+                <Text medium>
                   <Button color='brand' invert icon onClick={this.triggerVideo}>Watch video</Button>
-                </Texty>
+                </Text>
               </Container>
             </Container>
 

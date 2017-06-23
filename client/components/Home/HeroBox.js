@@ -4,7 +4,7 @@ import { Flex, Box } from '../styled-grid';
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js';
 
-import { LargeText } from '../shared/Texty.js';
+import { LargeText } from '../shared/Text.js';
 import { Headline, Display } from '../shared/Headline.js';
 import Container from '../shared/Container.js';
 import QuickQuoteForm from './QuickQuoteForm.js';

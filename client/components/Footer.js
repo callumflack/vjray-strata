@@ -1,17 +1,10 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-
 import theme from './theme.js';
 import { Box, Flex } from '../components/styled-grid';
 import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
-import { Texty, SmallText } from '../components/shared/Texty.js';
-
-
-
-
-
-
+import { Text, SmallText } from '../components/shared/Text.js';
 
 
 const FooterContainer = styled(Container)`
@@ -25,11 +18,11 @@ const Logo = styled.img`
   opacity: 0.4;
 `;
 
-
 // const Root = hoc('h1').extend`
 const Nav = Flex.withComponent('nav').extend`
+  color: ${theme.colors.text40};
   margin-top: 40px;
-`
+`;
 
 const Column = styled(Box)`
   :not(:last-child) {
@@ -51,30 +44,6 @@ const Column = styled(Box)`
   }
 `;
 
-// const Column = props => (
-//   <ColumnRoot {...props}>
-//     <SmallText grey>
-//       { props.children }
-//     </SmallText>
-//   </ColumnRoot>
-// )
-
-
-
-
-
-
-const Copyright = styled.div`
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-  opacity: 0.7;
-`;
-
-const Legal = styled.div`
-  margin-top: 3.5rem;
-  opacity: 0.7;
-`;
-
 const Divider = styled.span`
   --spacing: 1rem;
   margin-left: var(--spacing);
@@ -92,7 +61,7 @@ const Footer = () => (
           <Link href='/'>
             <a><Logo src='/static/img/logo.svg' /></a>
           </Link>
-          <SmallText grey mx={1} my={2}>&copy; 2017</SmallText>
+          <SmallText lightGrey mx={1} my={2}>&copy; 2017</SmallText>
         </div>
 
         <Nav>
@@ -123,18 +92,13 @@ const Footer = () => (
         </Nav>
       </Flex>
 
-
-
-
-      <Legal>
-        <nav>
-          <Link href='/'><a>Terms of use</a></Link>
-          <Divider />
-          <Link href='/'><a>Privacy policy</a></Link>
-          <Divider />
-          <Link href='/'><a>ABN 31 064 030 311</a></Link>
-        </nav>
-      </Legal>
+      <Nav lightGrey>
+        <Link href='/'><a>Terms of use</a></Link>
+        <Divider />
+        <Link href='/'><a>Privacy policy</a></Link>
+        <Divider />
+        <Link href='/'><a>ABN 31 064 030 311</a></Link>
+      </Nav>
 
     </FooterContainer>
   </Box>

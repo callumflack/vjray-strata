@@ -11,7 +11,7 @@ import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shar
 
 import Layout from '../components/Layout.js';
 import Container from '../components/shared/Container.js';
-import Block from '../components/Home/Block.js';
+import Block from '../components/shared/Block.js';
 import Button from '../components/shared/Button.js';
 
 import HeroBox from '../components/Home/HeroBox.js';

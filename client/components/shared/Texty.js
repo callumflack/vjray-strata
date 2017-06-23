@@ -82,6 +82,10 @@ const Anchor = Root.withComponent('a')
 
 // Variations
 
+const SmallText = props => (
+  <Texty fontSize={[ 1, 2 ]} {...props}>{ props.children }</Texty>
+)
+
 const LargeTextRoot = styled(Root)`
   font-family: ${theme.fonts.displayLight};
   letter-spacing: 0.01em;
@@ -103,4 +107,4 @@ const AuthorText = props => (
 );
 
 
-export { Texty, LargeText, AuthorText, InlineText, Anchor, LineBreak }
+export { Texty, LargeText, SmallText, AuthorText, InlineText, Anchor, LineBreak }

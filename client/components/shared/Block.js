@@ -1,16 +1,21 @@
 import styled, {css} from 'styled-components';
+import { Flex, Box } from '../styled-grid';
+import { hoc } from '../styled-system/styled-components'
+import theme from '../theme.js';
+import Container from '../shared/Container.js';
 
-import theme from '../../css/theme.js';
-
-const Block = styled.section`
-  background-color: ${props => props.beigeBackground ? theme.colors.beige : 'inherit'};
-  color: ${props => props.color || 'inherit'};
-  padding: 7rem 3rem;
-  position: relative;
-
-  @media (max-width: 600px) {
-    padding: 4rem 2rem;
-  }
+const Root = hoc(Box).extend`
+  ${props => props.bg && css`
+    background-color: ${theme.colors[props.color]};
+  `}
 `;
+
+const Block = (props) => (
+  <Root bg={props.bg} px={3} py={[ 5, 6 ]}>
+    <Container mx={props.width} textCenter>
+      {props.children}
+    </Container>
+  </Root>
+);
 
 export default Block;

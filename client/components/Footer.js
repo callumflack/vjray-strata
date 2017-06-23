@@ -1,55 +1,68 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 
-import theme from '../css/theme.js';
+import theme from './theme.js';
+import { Box, Flex } from '../components/styled-grid';
 import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
-import {
-  Text,
-} from '../components/shared/Text.js';
+import { Texty, SmallText } from '../components/shared/Texty.js';
 
-const FooterBlock = styled(Block)`
-  padding-top: 0;
-  padding-bottom: 0;
-`;
+
+
+
+
+
+
 
 const FooterContainer = styled(Container)`
-  border-top: 1px solid #eaeaea;
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-`;
-
-const FooterWrapper = styled.footer`
-  display: flex;
-  justify-content: space-between;
+  border-top: 1px solid ${theme.colors.text20};
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
 `;
 
 const Logo = styled.img`
-  height: 3.5rem;
-  opacity: 0.7;
+  height: 3rem;
+  opacity: 0.4;
 `;
 
-const Sitemap = styled(Text)`
-  display: flex;
-  flex-direction: row;
-`;
 
-const Nav = styled.nav`
+// const Root = hoc('h1').extend`
+const Nav = Flex.withComponent('nav').extend`
+  margin-top: 40px;
+`
+
+const Column = styled(Box)`
   :not(:last-child) {
     margin-right: 3rem
   }
 
+  span,
+  a {
+    color: ${theme.colors.text70};
+  }
+
+  span {
+    font-family: ${theme.fonts.textRegular};
+  }
+
   a {
     display: block;
-    margin-top: 1rem;
-    max-width: 200px;
+    margin-top: 12px;
   }
 `;
 
-const NavHeader = styled.div`
-  font-weight: bold;
-  margin-top: 2rem;
-`;
+// const Column = props => (
+//   <ColumnRoot {...props}>
+//     <SmallText grey>
+//       { props.children }
+//     </SmallText>
+//   </ColumnRoot>
+// )
+
+
+
+
+
 
 const Copyright = styled.div`
   margin-top: 0.5rem;
@@ -62,112 +75,69 @@ const Legal = styled.div`
   opacity: 0.7;
 `;
 
-const VerticalDivider = styled.span`
+const Divider = styled.span`
   --spacing: 1rem;
-
   margin-left: var(--spacing);
   margin-right: var(--spacing);
-  font-weight: bold;
-
-  :after { content: ' \00b7'; }
+  :after { content: '•'; }
 `;
 
+
 const Footer = () => (
-  <FooterBlock>
-    <FooterContainer>
-      <Text transparent>
-        <FooterWrapper>
-          <div>
-            <Link href='/'>
-              <a>
-                <Logo src='/static/img/logo.svg' />
-              </a>
-            </Link>
-            <Copyright>&copy; 2017</Copyright>
-          </div>
+  <Box py={0}>
+    <FooterContainer mx="lg">
 
-          <Sitemap>
-            <Nav>
-              <NavHeader>Who we are</NavHeader>
+      <Flex justify='space-between'>
+        <div>
+          <Link href='/'>
+            <a><Logo src='/static/img/logo.svg' /></a>
+          </Link>
+          <SmallText grey mx={1} my={2}>&copy; 2017</SmallText>
+        </div>
 
-              <Link href='/'>
-                <a>Our story</a>
-              </Link>
-              <Link href='/'>
-                <a>The team</a>
-              </Link>
-            </Nav>
+        <Nav>
+          <Column>
+            <span>Who we are</span>
+            <Link href='/'><a>Our story</a></Link>
+            <Link href='/'><a>The team</a></Link>
+          </Column>
+          <Column>
+            <span>What we do for you</span>
+            <Link href='/'><a>Services</a></Link>
+            <Link href='/'><a>For tenants</a></Link>
+            <Link href='/'><a>For owners</a></Link>
+            <Link href='/'><a>For investors</a></Link>
+          </Column>
+          <Column>
+            <span>Useful info</span>
+            <Link href='/'><a>The Strata guide</a></Link>
+            <Link href='/'><a>Useful info</a></Link>
+            <Link href='/'><a>Understanding Stata</a></Link>
+          </Column>
+          <Column>
+            <span>Contact us</span>
+            <Link href='/'><a>Get a quote</a></Link>
+            <Link href='/'><a>Report an issue</a></Link>
+            <Link href='/'><a>Become a member</a></Link>
+          </Column>
+        </Nav>
+      </Flex>
 
-            <Nav>
-              <NavHeader>What we do for you</NavHeader>
 
-              <Link href='/'>
-                <a>Services</a>
-              </Link>
-              <Link href='/'>
-                <a>For tenants</a>
-              </Link>
-              <Link href='/'>
-                <a>For owners</a>
-              </Link>
-              <Link href='/'>
-                <a>For investors</a>
-              </Link>
-            </Nav>
 
-            <Nav>
-              <NavHeader>Useful info</NavHeader>
 
-              <Link href='/'>
-                <a>The Strata guide</a>
-              </Link>
-              <Link href='/'>
-                <a>Useful info</a>
-              </Link>
-              <Link href='/'>
-                <a>Understanding Stata maintenance</a>
-              </Link>
-              <Link href='/'>
-                <a>1300 667 123</a>
-              </Link>
-            </Nav>
+      <Legal>
+        <nav>
+          <Link href='/'><a>Terms of use</a></Link>
+          <Divider />
+          <Link href='/'><a>Privacy policy</a></Link>
+          <Divider />
+          <Link href='/'><a>ABN 31 064 030 311</a></Link>
+        </nav>
+      </Legal>
 
-            <Nav>
-              <NavHeader>Contact us</NavHeader>
-
-              <Link href='/'>
-                <a>Get a quote</a>
-              </Link>
-              <Link href='/'>
-                <a>Report an issue</a>
-              </Link>
-              <Link href='/'>
-                <a>Become a member</a>
-              </Link>
-            </Nav>
-          </Sitemap>
-        </FooterWrapper>
-
-        <Legal>
-          <nav>
-            <Link href='/'>
-              <a>Terms of use</a>
-            </Link>
-
-            <VerticalDivider />
-            <Link href='/'>
-              <a>Privacy policy</a>
-            </Link>
-
-            <VerticalDivider />
-            <Link href='/'>
-              <a>ABN 31 064 030 311</a>
-            </Link>
-          </nav>
-        </Legal>
-      </Text>
     </FooterContainer>
-  </FooterBlock>
+  </Box>
 );
 
 export default Footer;

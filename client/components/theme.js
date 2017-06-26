@@ -1,4 +1,4 @@
-import { lighten } from 'polished'
+// import { lighten } from 'polished'
 
 // array scale: 0 = no breakpoint, 1 = first breakpoint
 
@@ -21,6 +21,7 @@ export default {
     brand: '#D3145A',
     beige: '#F7F2EC',
     blue6: '#f0f9fc',
+    white: '#fff',
     success: '#42db41',
     error: '#D91E1F',
   },

@@ -3,6 +3,7 @@ import { hoc } from '../styled-system/styled-components'
 import theme from '../theme'
 
 // https://codepen.io/sdras/pen/a3596da23d8f9463079ac57c8e3ee9f8?editors=1010
+// https://github.com/zeit/next.js/tree/master/examples/svg-components
 
 const Icon = hoc('span').extend`
   display: inline-block;

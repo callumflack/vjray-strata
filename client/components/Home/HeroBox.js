@@ -40,7 +40,7 @@ const Image = styled(Box)`
   }
 
   @media (min-width: 1536px) {
-    background-position: 60% 100%;
+    background-position: 66% 100%;
   }
 `
 

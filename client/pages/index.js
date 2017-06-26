@@ -13,13 +13,14 @@ import Container from '../components/shared/Container.js';
 import Block from '../components/shared/Block.js';
 import Button from '../components/shared/Button.js';
 
+import Guides from '../components/shared/Guides.js';
+import RecentPosts from '../components/shared/RecentPosts.js';
+import Contact from '../components/shared/Contact.js';
+
 import HeroBox from '../components/Home/HeroBox.js';
 import FeatureList from '../components/Home/FeatureList.js';
 import SydneyBox from '../components/Home/SydneyBox.js';
 import Testimonials from '../components/Home/Testimonials.js';
-import Guides from '../components/shared/Guides.js';
-import RecentPosts from '../components/shared/RecentPosts.js';
-import Contact from '../components/shared/Contact.js';
 
 
 // this doesn't work
@@ -40,14 +41,12 @@ import Contact from '../components/shared/Contact.js';
 //   </ButtonType>
 // )
 
-
 const StyledButton = styled(Button)`
+  --Button-border-color: ${theme.colors.brand};
   --Button-height: 72px;
   padding: 0 6rem;
   text-transform: uppercase;
 `;
-
-
 
 export default () => (
   <Layout>
@@ -55,8 +54,8 @@ export default () => (
 
     <Block mx='lg'>
       <Box width={[ 4/6, 5/6 ]} mx='auto'>
-        <Headline medium color='text' my={3} children='It all adds up to a better deal.' />
-        <LargeText grey>
+        <Headline font='displayMedium' color='text' my={3} children='It all adds up to a better deal.' />
+        <LargeText color='text70'>
           "VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." — <AuthorText>Jessica, Campsie</AuthorText>
         </LargeText>
       </Box>
@@ -69,9 +68,9 @@ export default () => (
 
     <Box px={3} py={[ 5, 6 ]}>
       <Container textCenter>
-        <Display medium color='text'>Our duty is your satisfaction.</Display>
-        <Container width={[ 2/3, 1 ]}>
-          <LargeText active>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." — <AuthorText>Jessica, Campsie</AuthorText></LargeText>
+        <Display font='displayMedium' color='text' children='Our duty is your satisfaction.' />
+        <Container width={[ 1, 2/3 ]}>
+          <LargeText color='brand'>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." — <AuthorText>Jessica, Campsie</AuthorText></LargeText>
         </Container>
       </Container>
 
@@ -107,5 +106,4 @@ export default () => (
     </Block>
 
   </Layout>
-
 )

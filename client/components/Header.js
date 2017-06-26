@@ -2,17 +2,18 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Flex, Box } from './styled-grid';
 import { hoc } from './styled-system/styled-components'
-import { Text, InlineText, Anchor } from './shared/Text.js';
+import { Text, InlineText } from './shared/Text.js';
 import Button from './shared/Button.js';
 import theme from './theme.js';
 import { rgba } from 'polished';
+
+
 
 // padding: 2rem;
 // transform: translateY(var(--Header-height));
 
 const Root = styled(Flex)`
   --Header-height: 121px;
-
   background-color: transparent;
   border-bottom: 1px solid rgba(88, 88, 112, 0.15);
   height: var(--Header-height);
@@ -37,11 +38,14 @@ const Nav = styled.nav`
   }
 `;
 
-const LinkText = props => (
-  <Anchor fontSize={[ 2, 3 ]} medium>
-    { props.children }
-  </Anchor>
-)
+// const LinkText = Text.withComponent('span').extend`
+const LinkTextRoot = hoc('span').extend``
+
+const LinkText = props =>
+  <LinkTextRoot font='displayMedium' fontSize={[ 2, 3 ]} color='text' {...props} />
+
+
+
 
 const Header = () => (
   <Root align='center' justify='space-between' px={3}>
@@ -53,27 +57,27 @@ const Header = () => (
 
     <Nav>
       <Link href='/who-we-are'>
-        <LinkText>Who we are</LinkText>
+        <a><LinkText>Who we are</LinkText></a>
       </Link>
       <Link href='/'>
-        <LinkText>What we do for you</LinkText>
+        <a><LinkText>What we do for you</LinkText></a>
       </Link>
       <Link href='/'>
-        <LinkText>Useful info</LinkText>
+        <a><LinkText>Useful info</LinkText></a>
       </Link>
       <Link href='/'>
-        <LinkText>Contact us</LinkText>
+        <a><LinkText>Contact us</LinkText></a>
       </Link>
       <Link href='/'>
-        <LinkText>1300 667 123</LinkText>
+        <a><LinkText>1300 667 123</LinkText></a>
       </Link>
     </Nav>
 
     <Nav>
       <Link href='/signin'>
-        <LinkText>
+        <a><LinkText>
           <Button invert>Sign in</Button>
-        </LinkText>
+        </LinkText></a>
       </Link>
     </Nav>
   </Root>

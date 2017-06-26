@@ -1,5 +1,6 @@
 const space = require('./space')
 const width = require('./width')
+const fontFamily = require('./font-family')
 const fontSize = require('./font-size')
 const color = require('./color')
 const util = require('./util')

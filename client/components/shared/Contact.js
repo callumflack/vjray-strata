@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import theme from '../theme.js';
 import { Box, Flex } from '../styled-grid';
-import { Text } from './Text.js';
+import { Text, SmallText } from './Text.js';
 import Button from './Button.js';
-import { IconContact } from '../Home/Icons.js';
+import { IconContact } from '../shared/Icons.js';
 
 
 const Locations = styled(Flex)`
@@ -14,21 +14,23 @@ const Image = styled.img`
   border: 1px solid ${theme.colors.text40};
 `;
 
-const Item = styled.div`
+const Item = styled(SmallText)`
   --Item-rule: ${theme.colors.text20};
   border-top: 1px solid var(--Item-rule);
   color: ${theme.colors.text70};
   padding: 0.5rem 0;
-  :last-child { border-bottom: 1px solid var(--Item-rule); };
+
+  :last-child {
+    border-bottom: 1px solid var(--Item-rule);
+  };
 `;
 
 const Icon = styled(IconContact)`
   margin: 0 9px 0 6px;
 `
 
-
 const Contact = (props) => (
-  <Locations justify='center'>
+  <Flex justify='center' style={{ textAlign: 'left' }}>
 
     {Array(2).fill(1).map(() =>
 
@@ -51,7 +53,7 @@ const Contact = (props) => (
     </Box>
     )}
 
-  </Locations>
+  </Flex>
 );
 
 export default Contact;

@@ -3,26 +3,23 @@ import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js'
 // import { tint } from 'polished'
-
 import { Text, LargeText } from '../shared/Text.js'
 import { Headline } from '../shared/Headline.js'
-import { IconSun } from './Icons.js';
+import { IconSun } from '../shared/Icons.js';
 
 
-const Header = (props) => (
-  <Headline medium fontSize={[ 3, 4 ]} my={2}>
-    {props.children}
-  </Headline>
-);
+const Header = (props) =>
+  <Headline font='displayMedium' fontSize={[ 3, 4 ]} my={2} />
 
 // color: ${tint(0.7, ${theme.colors.text} )}
 // color: ${tint(0.7, '#585870')};
 const Lede = styled(Text)`
   color: ${theme.colors.text70};
 `
+
 const Divider = () => (
   <Box>
-    <Text color='brand' fontSize={[ 6, 7 ]} mx={2}>+</Text>
+    <Text font='displayLight' fontSize={[ 6, 7 ]} color='brand' mx={2}>+</Text>
   </Box>
 );
 

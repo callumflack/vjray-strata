@@ -33,6 +33,7 @@ export default {
   fonts: {
     displayLight: 'GT-Eesti-Pro-Display-Light',
     displayMedium: 'GT-Eesti-Pro-Display-Medium',
+    textLight: 'GT-Eesti-Pro-Text-Light',
     textBook: 'GT-Eesti-Pro-Text-Book',
     textRegular: 'GT-Eesti-Pro-Text-Regular',
     textMedium: 'GT-Eesti-Pro-Text-Medium',

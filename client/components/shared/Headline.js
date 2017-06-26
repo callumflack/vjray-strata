@@ -1,81 +1,75 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 import { hoc } from '../styled-system/styled-components'
-import theme from '../theme.js';
+import theme from '../theme'
 
 
-// root
-// -------------------------------------------------------
-
-// const bold = props => props.bold ? `font-weight:bold;` : null
-// color: ${props => props.active ? colors.blue : '#fff'};
-// background-color: ${theme.colors[props.bgColor]};
-
-const Root = hoc('h1').extend`
-  color: ${theme.colors.brand};
-  font-family: ${theme.fonts.displayLight};
-  line-height: ${theme.lineHeight.headline};
-
-  ${props => props.dark && css`
-    color: ${theme.colors.text};
-  `}
-
-  ${props => props.white && css`
-    color: white;
-  `}
-
-  ${props => props.medium && css`
-    font-family: ${theme.fonts.displayMedium};
-  `}
-`;
-
-const Headline = props => (
-  <Root fontSize={[ 5, 6 ]} mb={2} {...props}>
-    { props.children }
-  </Root>
-)
+// ========================================================================
+// THIS IS A WIP METHOD COMBINING BOTH STYLED-COMPONENTS AND STYLED-SYSTEM.
+//
+// These are our base Headline components.
+// They can also be extended, e.g. Home/FeatureList:12 <Header />
+//
+// The styled-system gives us props for:
+//   fontSize, fontFamily, color, width and space
+//   as well as ternary props for the theme lineHeight object.
+//
+// Start with a styled-component that uses the hoc(), which provides access
+// to the styled-system. Include any styles that are not allowed
+// to change, or that styled-system doesn't cover.
+//
+// Then wrap this root component with the flexible base styles for the
+// component, and apply the styling-system props.
+//
+// This gives us the best of styled-components and a design system that
+// uses responsive, flexible and portable themeing.
+//
+// NB. While not used here, styled-component's 'withComponent' extension
+// allows use of alternate HTML tags, e.g.:
+// Headline.h1 = Headline
+// Headline.h2 = Headline.withComponent('h2')
+// See: https://github.com/styled-components/styled-components/pull/814
+// ========================================================================
 
 
-
-// variables
-// -------------------------------------------------------
-
-const DisplayRoot = styled(Root)`
+//  Display
+const DisplayRoot = hoc('h1').extend`
   line-height: ${theme.lineHeight.display};
-`;
+`
 
-const Display = props => (
-  <DisplayRoot fontSize={[ 6, 7 ]} mb={3} {...props}>
-    { props.children }
-  </DisplayRoot>
-)
+const Display = props =>
+  <DisplayRoot font='displayLight' fontSize={[ 6, 7 ]} color='brand' mb={3} {...props} />
 
-const HeadlineMetaRoot = styled(Root)`
-  font-family: ${theme.fonts.textRegular};
+
+// Headline
+const HeadlineRoot = hoc('h2').extend`
+  line-height: ${theme.lineHeight.headline};
+`
+
+const Headline = props =>
+  <HeadlineRoot font='displayLight' fontSize={[ 5, 6 ]} color='brand' mb={2} {...props} />
+
+
+// Headline Meta
+const HeadlineMetaRoot = hoc('h3').extend`
   letter-spacing: ${theme.letterSpacing.meta};
   line-height: ${theme.lineHeight.display};
   text-align: center;
   text-transform: uppercase;
 `;
 
-const HeadlineMeta = props => <HeadlineMetaRoot fontSize={[ 0, 1 ]} {...props} />
+const HeadlineMeta = props =>
+  <HeadlineMetaRoot font='textMedium' fontSize={[ 0, 1 ]} color='text' {...props} />
 
+
+// Subheadline (ruled, styling Headline Meta)
 const SubheadlineRoot = styled(HeadlineMetaRoot)`
   border-bottom: 1px solid currentColor;
+  font-family: ${theme.fonts.textMedium};
   display: inline-block;
 `;
 
-const Subheadline = props => <SubheadlineRoot fontSize={[ 0, 1 ]} pb={2} mb={3} mx='auto' {...props} />
-
-
-// Create HTML element variations
-// https://github.com/styled-components/styled-components/pull/814
-
-// Headline.h1 = Headline
-// Headline.h2 = Headline.withComponent('h2')
-// Headline.h3 = Headline.withComponent('h3')
-// Headline.h4 = Headline.withComponent('h4')
-// Headline.h5 = Headline.withComponent('h5')
-// Headline.h6 = Headline.withComponent('h6')
+const Subheadline = props =>
+  <SubheadlineRoot fontSize={[ 0, 1 ]} color='text' pb={2} mb={3} mx='auto' {...props} />
 
 
 export { Display, Headline, Subheadline, HeadlineMeta };

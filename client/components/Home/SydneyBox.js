@@ -25,6 +25,10 @@ const Background = styled(Box)`
   height: 100%;
   width: 100%;
 
+  @media (min-width: 1536px) {
+    background-position-y: 90%;
+  }
+
   &:before {
     background: rgba(247, 242, 236, 0.2);
     background-blend-mode: multiply;
@@ -94,7 +98,7 @@ class SydneyBox extends React.Component {
           <Background center textCenter width={1}>
 
             <Container textCenter relative pt={[ 5, 6 ]}>
-              <Subheadline>Dependable and effective</Subheadline>
+              <Subheadline color='brand'>Dependable and effective</Subheadline>
               <Display>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
                 <Text color='brand' mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Text>

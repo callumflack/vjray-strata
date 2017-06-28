@@ -5,26 +5,23 @@ import gql from 'graphql-tag';
 import apollo from '../../lib/apollo.js';
 
 import styled from 'styled-components';
+import { hoc } from '../styled-system/styled-components';
 import theme from '../theme.js';
 import { Flex, Box } from '../styled-grid';
-import Button from './Button.js';
-import { Text } from '../shared/Text.js';
-import { Subheadline  } from '../shared/Headline.js';
+import { Text, InlineText } from '../shared/Text.js';
+import { Headline, Subheadline  } from '../shared/Headline.js';
 
 
-const Image = styled.img`
-  width: 300px;
-`;
-
-const PostLink = styled(Button)`
-  margin-left: 0.5rem;
-  font-weight: bold;
+const PostLink = hoc('span').extend`
   color: ${theme.colors.brand};
+  margin-left: 0.5rem;
+
+  :after {
+    content: '►';
+    font-size: 70%;
+    margin-left: 6px;
+  }
 `;
-
-
-
-
 
 class RecentPosts extends React.Component {
   constructor(props) {
@@ -54,26 +51,31 @@ class RecentPosts extends React.Component {
   render() {
     return (
       <div>
-        {/* <HeaderHr><Button clean icon>Recent posts</Button></HeaderHr> */}
         <Subheadline>
           <Link href={`/`} as={`/home`}>
             Recent posts
           </Link>
         </Subheadline>
 
-
         {this.state.posts.map((post, i) =>
           <div key={i}>
-            <Box mt={2}>
-              <Image src='http://lorempixel.com/300/225' />
+            <Box
+              width={[ 1, 2/3 ]}
+              mx='auto'
+              my={3}>
+              <img src='http://lorempixel.com/620/560' />
             </Box>
 
-            <h2><strong>{post.title}</strong></h2>
+            <Headline
+              font='displayMedium'
+              color='text'
+              my={3}
+              children={post.title} />
 
             <Text>
               {post.description}
               <Link href={`/article?slug=${post.slug}`} as={`/article/${post.slug}`}>
-                <a><PostLink clean icon>Read more</PostLink></a>
+                <a><PostLink font='textMedium'>Read more</PostLink></a>
               </Link>
             </Text>
           </div>

@@ -62,5 +62,11 @@ const InlineText = Root.withComponent('span').extend`
   display: inline-block;
 `
 
+const TextBlock = styled('div')`
+  p + p {
+    margin-top: 1em;
+  }
+`
 
-export { Text, LargeText, SmallText, AuthorText, LineBreak, InlineText }
+
+export { Text, LargeText, SmallText, AuthorText, LineBreak, InlineText, TextBlock }

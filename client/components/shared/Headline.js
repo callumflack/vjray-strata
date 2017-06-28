@@ -37,7 +37,13 @@ const DisplayRoot = hoc('h1').extend`
 `
 
 const Display = props =>
-  <DisplayRoot font='displayLight' fontSize={[ 6, 7 ]} color='brand' mb={3} {...props} />
+  <DisplayRoot
+    font='displayLight'
+    fontSize={[ 6, 7 ]}
+    color='brand'
+    mb={3}
+    {...props}
+  />
 
 
 // Headline

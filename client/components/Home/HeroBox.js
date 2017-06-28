@@ -6,6 +6,8 @@ import theme from '../theme.js';
 
 import { LargeText } from '../shared/Text.js';
 import { Headline, Display } from '../shared/Headline.js';
+
+import HeroImage from '../shared/HeroImage.js';
 import Container from '../shared/Container.js';
 import QuickQuoteForm from './QuickQuoteForm.js';
 
@@ -19,16 +21,9 @@ const Root = styled(Box)`
   position: relative;
 `
 
-const Image = styled(Box)`
+const Image = styled(HeroImage)`
   background-image: url('static/img/home-hero.jpg');
   background-position: 30% 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
 
   @media (min-width: 1024px) {
     background-size: contain;

@@ -1,26 +1,27 @@
-import React from 'react';
+import React from 'react'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
-import theme from '../components/theme.js';
+import theme from '../components/theme.js'
 
-import { Text, LargeText, SmallText, AuthorText, LineBreak } from '../components/shared/Text.js';
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline.js';
+import { Text, LargeText, SmallText, AuthorText, LineBreak } from '../components/shared/Text.js'
+import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline.js'
 
-import Layout from '../components/Layout.js';
-import Container from '../components/shared/Container.js';
-import Block from '../components/shared/Block.js';
-import Button from '../components/shared/Button.js';
+import Layout from '../components/Layout.js'
+import Container from '../components/shared/Container.js'
+import Block from '../components/shared/Block.js'
+import Button from '../components/shared/Button.js'
 
-import Guides from '../components/shared/Guides.js';
-import RecentPosts from '../components/shared/RecentPosts.js';
-import Contact from '../components/shared/Contact.js';
+import Guides from '../components/shared/Guides.js'
+import RecentPosts from '../components/shared/RecentPosts.js'
+import ContactAction from '../components/shared/ContactAction.js'
+import Contact from '../components/shared/Contact.js'
 
-import HeroBox from '../components/Home/HeroBox.js';
-import FeatureList from '../components/Home/FeatureList.js';
-import SydneyBox from '../components/Home/SydneyBox.js';
-import Testimonials from '../components/Home/Testimonials.js';
+import HeroBox from '../components/Home/HeroBox.js'
+import FeatureList from '../components/Home/FeatureList.js'
+import SydneyBox from '../components/Home/SydneyBox.js'
+import Testimonials from '../components/Home/Testimonials.js'
 
 
 // this doesn't work
@@ -41,12 +42,7 @@ import Testimonials from '../components/Home/Testimonials.js';
 //   </ButtonType>
 // )
 
-const StyledButton = styled(Button)`
-  --Button-border-color: ${theme.colors.brand};
-  --Button-height: 72px;
-  padding: 0 6rem;
-  text-transform: uppercase;
-`;
+
 
 export default () => (
   <Layout>
@@ -84,24 +80,13 @@ export default () => (
       <Display>Your guides to Sydney Strata.</Display>
       <Container width={[ 1, 2/3 ]}>
         <Text>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</Text>
+        <Guides />
+        <RecentPosts />
       </Container>
-
-      <Guides />
-      <RecentPosts />
     </Block>
 
     <Block>
-      <Subheadline dark>Get in touch</Subheadline>
-      <Display color='text'>Call 1300 073 405</Display>
-      <Container width={[ 1, 1/2 ]} mb={4}>
-        <HeadlineMeta color='white' mb={3}>
-          <StyledButton fill icon bgColor='brand'>Get a fast quote</StyledButton>
-        </HeadlineMeta>
-        <Text fontSize={[ 3, 4 ]} grey>
-          Or drop-in without an appointment. We're open Monday to Saturday, 9am–5pm.
-        </Text>
-      </Container>
-
+      <ContactAction bgColor='brand' />
       <Contact />
     </Block>
 

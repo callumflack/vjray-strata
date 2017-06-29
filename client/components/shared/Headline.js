@@ -55,7 +55,7 @@ const Headline = props =>
   <HeadlineRoot font='displayLight' fontSize={[ 5, 6 ]} color='brand' mb={2} {...props} />
 
 
-// Headline Meta
+// Meta Headline
 const HeadlineMetaRoot = hoc('h3').extend`
   letter-spacing: ${theme.letterSpacing.meta};
   line-height: ${theme.lineHeight.display};
@@ -66,6 +66,17 @@ const HeadlineMetaRoot = hoc('h3').extend`
 const HeadlineMeta = props =>
   <HeadlineMetaRoot font='textMedium' fontSize={[ 0, 1 ]} color='text' {...props} />
 
+
+// Boxed Subheadline
+const BoxedSubheadline = styled(HeadlineMeta)`
+  --Header-height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--Header-height);
+  background-color: ${theme.colors.brand};
+  color: #fff;
+`;
 
 // Subheadline (ruled, styling Headline Meta)
 const SubheadlineRoot = styled(HeadlineMetaRoot)`
@@ -78,4 +89,4 @@ const Subheadline = props =>
   <SubheadlineRoot fontSize={[ 0, 1 ]} color='text' pb={2} mb={3} mx='auto' {...props} />
 
 
-export { Display, Headline, Subheadline, HeadlineMeta };
+export { Display, Headline, Subheadline, BoxedSubheadline, HeadlineMeta };

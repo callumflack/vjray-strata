@@ -1,11 +1,12 @@
-import Link from 'next/link';
-import styled from 'styled-components';
-import { Flex, Box } from './styled-grid';
-import { hoc } from './styled-system/styled-components'
-import { Text, InlineText } from './shared/Text.js';
-import Button from './shared/Button.js';
-import theme from './theme.js';
-import { rgba } from 'polished';
+import Link from 'next/link'
+import styled from 'styled-components'
+import { Flex, Box } from '../styled-grid'
+import { hoc } from '../styled-system/styled-components'
+import { IconLogo } from '../shared/Icons'
+import { Text, InlineText } from '../shared/Text'
+import Button from '../shared/Button'
+import theme from '../theme'
+// import { rgba } from 'polished';
 
 
 
@@ -50,9 +51,7 @@ const LinkText = props =>
 const Header = () => (
   <Root align='center' justify='space-between' px={3}>
     <Link href='/'>
-      <a>
-        <Logo src='/static/img/logo.svg' />
-      </a>
+      <a><IconLogo /></a>
     </Link>
 
     <Nav>

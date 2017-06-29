@@ -5,6 +5,7 @@ import { Flex, Box } from '../styled-grid';
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js';
 
+// import HeroBox from '../shared/HeroBox.js';
 import Container from '../shared/Container.js';
 import { Text, LineBreak } from '../shared/Text.js';
 import { Display, Subheadline  } from '../shared/Headline.js';
@@ -91,8 +92,16 @@ class SydneyBox extends React.Component {
 
   render() {
     return (
-      <Root px={0}>
-        <VideoIframe ref={(ref) => this.video = ref} data-src='https://www.youtube.com/embed/ijrkKNZRIfM?autoplay=1' frameborder='0' allowtransparency='true' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen='' />
+      <Root>
+        <VideoIframe
+          ref={(ref) => this.video = ref}
+          data-src='https://www.youtube.com/embed/ijrkKNZRIfM?autoplay=1'
+          frameborder='0'
+          allowtransparency='true'
+          webkitallowfullscreen=''
+          mozallowfullscreen=''
+          allowfullscreen=''
+        />
 
         <Content isVisible={this.state.contentIsVisible}>
           <Background center textCenter width={1}>

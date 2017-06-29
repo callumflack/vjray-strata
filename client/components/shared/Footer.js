@@ -1,21 +1,17 @@
-import styled from 'styled-components';
-import Link from 'next/link';
-import theme from './theme.js';
-import { Box, Flex } from '../components/styled-grid';
-import Block from '../components/shared/Block.js';
-import Container from '../components/shared/Container.js';
-import { Text, SmallText } from '../components/shared/Text.js';
+import styled from 'styled-components'
+import Link from 'next/link'
+import theme from '../theme'
+import { Box, Flex } from '../styled-grid'
+import Block from '../shared/Block'
+import Container from '../shared/Container'
+import { Text, SmallText } from '../shared/Text'
+import { IconLogo } from '../shared/Icons'
 
 
 const FooterContainer = styled(Container)`
   border-top: 1px solid ${theme.colors.text20};
   padding-top: 1.5rem;
   padding-bottom: 3rem;
-`;
-
-const Logo = styled.img`
-  height: 3rem;
-  opacity: 0.4;
 `;
 
 // const Root = hoc('h1').extend`
@@ -59,7 +55,7 @@ const Footer = () => (
       <Flex justify='space-between'>
         <div>
           <Link href='/'>
-            <a><Logo src='/static/img/logo.svg' /></a>
+            <a><IconLogo /></a>
           </Link>
           <SmallText lightGrey mx={1} my={2}>&copy; 2017</SmallText>
         </div>
@@ -85,7 +81,7 @@ const Footer = () => (
           </Column>
           <Column>
             <span>Contact us</span>
-            <Link href='/'><a>Get a quote</a></Link>
+            <Link href='/fast-quote'><a>Get a fast quote</a></Link>
             <Link href='/'><a>Report an issue</a></Link>
             <Link href='/'><a>Become a member</a></Link>
           </Column>

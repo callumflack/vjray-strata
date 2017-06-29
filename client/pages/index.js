@@ -3,25 +3,26 @@ import React from 'react'
 import styled from 'styled-components'
 import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
-import theme from '../components/theme.js'
+import theme from '../components/theme'
 
-import { Text, LargeText, SmallText, AuthorText, LineBreak } from '../components/shared/Text.js'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline.js'
+import { Text, LargeText, SmallText, AuthorText, LineBreak } from '../components/shared/Text'
+import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
 
-import Layout from '../components/Layout.js'
-import Container from '../components/shared/Container.js'
-import Block from '../components/shared/Block.js'
-import Button from '../components/shared/Button.js'
+import Layout from '../components/shared/Layout'
+import Container from '../components/shared/Container'
+import Block from '../components/shared/Block'
+import Button from '../components/shared/Button'
 
-import Guides from '../components/shared/Guides.js'
-import RecentPosts from '../components/shared/RecentPosts.js'
-import ContactAction from '../components/shared/ContactAction.js'
-import Contact from '../components/shared/Contact.js'
+import HeroBox from '../components/shared/HeroBox'
+import Guides from '../components/shared/Guides'
+import RecentPosts from '../components/shared/RecentPosts'
+import ContactAction from '../components/shared/ContactAction'
+import Contact from '../components/shared/Contact'
 
-import HeroBox from '../components/Home/HeroBox.js'
-import FeatureList from '../components/Home/FeatureList.js'
-import SydneyBox from '../components/Home/SydneyBox.js'
-import Testimonials from '../components/Home/Testimonials.js'
+import ListeningBox from '../components/Home/ListeningBox'
+import FeatureList from '../components/Home/FeatureList'
+import SydneyBox from '../components/Home/SydneyBox'
+import Testimonials from '../components/Home/Testimonials'
 
 
 // this doesn't work
@@ -43,12 +44,11 @@ import Testimonials from '../components/Home/Testimonials.js'
 // )
 
 
-
 export default () => (
   <Layout>
-    <HeroBox />
+    <ListeningBox />
 
-    <Block mx='lg'>
+    <Block mw='lg' textCenter>
       <Box width={[ 4/6, 5/6 ]} mx='auto'>
         <Headline font='displayMedium' color='text' my={3} children='It all adds up to a better deal.' />
         <LargeText color='text70'>
@@ -70,12 +70,12 @@ export default () => (
         </Container>
       </Container>
 
-      <Container mx='lg' pt={[ 3, 4 ]}>
+      <Container mw='lg' pt={[ 3, 4 ]}>
         <Testimonials />
       </Container>
     </Box>
 
-    <Block mx='lg' bg='blue6'>
+    <Block mw='lg' bg='blue6' textCenter>
       <Subheadline>Info on the go</Subheadline>
       <Display>Your guides to Sydney Strata.</Display>
       <Container width={[ 1, 2/3 ]}>
@@ -85,7 +85,7 @@ export default () => (
       </Container>
     </Block>
 
-    <Block>
+    <Block textCenter>
       <ContactAction bgColor='brand' />
       <Contact />
     </Block>

@@ -8,7 +8,7 @@ import theme from '../theme.js';
 import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
 import { InlineText } from '../shared/Text.js';
-import { HeadlineMeta } from '../shared/Headline.js';
+import { BoxedSubheadline } from '../shared/Headline.js';
 import Button from '../shared/Button.js';
 
 
@@ -37,17 +37,6 @@ const Form = styled.form`
   `}
 `;
 
-
-const Header = styled(HeadlineMeta)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: var(--Header-height);
-  background-color: ${theme.colors.brand};
-  color: #fff;
-`;
-
-
 const Inputs = styled.div`
   --Input-line-height: 54px;
 
@@ -55,7 +44,6 @@ const Inputs = styled.div`
   max-width: ${theme.containers.sm};
   margin: auto;
 `;
-
 
 const Input = hoc('input').extend`
   border: 0;
@@ -66,7 +54,6 @@ const Input = hoc('input').extend`
   line-height: var(--Input-line-height);
   margin-right: 2rem;
 `;
-
 
 const StyledButton = styled(Button)`
 `;
@@ -142,7 +129,7 @@ class QuickQuoteForm extends React.Component {
   render() {
     return (
       <Form floating={this.state.floating} onSubmit={this.handleSubmit}>
-        <Header>Get a Fast Quote</Header>
+        <BoxedSubheadline>Get a Fast Quote</BoxedSubheadline>
         <Box p={3}>
           { this.state.messageSent ?  <SuccessMessage>Thank you! We will get back to you soon.</SuccessMessage> : null }
 

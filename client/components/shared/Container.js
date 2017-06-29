@@ -16,12 +16,12 @@ const Container = styled(Box)`
     width: 100%;
   `}
 
-  ${props => !props.mx && css`
+  ${props => !props.mw && css`
     max-width: ${theme.containers.rg};
   `}
 
-  ${props => props.mx && css`
-    max-width: ${theme.containers[props.mx]};
+  ${props => props.mw && css`
+    max-width: ${theme.containers[props.mw]};
   `}
 
   ${props => props.relative && css`

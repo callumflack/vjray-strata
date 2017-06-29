@@ -1,32 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import styled, { css } from 'styled-components';
-import gql from 'graphql-tag';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import apollo from '../../lib/apollo.js';
-import theme from '../../css/theme.js';
-import Button from '../shared/Button.js';
-import {
-  Text,
-} from '../shared/Text.js';
+import gql from 'graphql-tag'
+import apollo from '../../lib/apollo.js'
+
+import styled, { css } from 'styled-components'
+import theme from '../theme'
+import { Flex, Box } from '../styled-grid'
+import Button from '../shared/Button'
+import { Text } from '../shared/Text'
+import { Display, BoxedSubheadline } from '../shared/Headline'
 
 
-const FormContainer = styled.div`
+const FormContainer = styled(Box)`
+  background-color: white;
   border: 1px solid ${theme.colors.brand};
-  margin-top: 4rem;
 `;
 
-const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  text-transform: uppercase;
-  background-color: ${theme.colors.brand};
-  color: #fff;
-`;
-
-const Body = styled.div`
+const FormBody = styled.div`
   padding: 1.5rem 1.8rem;
 `;
 
@@ -42,17 +33,25 @@ const FormGroup = styled.div`
   }
 `;
 
-const FormGroupHeader = Text.extend`
+// const FormGroupHeader = Text.extend`
+const FormGroupHeader = styled('p')`
   margin-left: 1.5rem;
 `;
 
 const Form = styled.form`
-  input, select, textarea, button {
+  input,
+  select,
+  textarea,
+  button {
     margin-top: 1rem;
   }
 
-  input, select, textarea {
-    padding: 0.8rem 0.5rem;
+  input,
+  select,
+  textarea {
+    border: 1px solid ${theme.colors.text20};
+    height: 54px;
+    padding: 0 1rem;
     width: 100%;
   }
 `;
@@ -109,10 +108,10 @@ class FullQuoteForm extends React.Component {
 
   render() {
     return (
-      <FormContainer>
-        <Header>Quick Response Message</Header>
-        <Body>
-          { this.state.messageSent ?  <SuccessMessage>Thank you! We will get back to you soon.</SuccessMessage> : null }
+      <FormContainer mt={[ 3, 4 ]}>
+        <BoxedSubheadline>Quick Response Message</BoxedSubheadline>
+        <Box p={[ 2, 3 ]}>
+          { this.state.messageSent ?  <SuccessMessage>Thank you! We'll get back to you soon.</SuccessMessage> : null }
 
           <Form floating={this.state.floating} onSubmit={this.handleSubmit}>
             <FormGroup>
@@ -123,7 +122,7 @@ class FullQuoteForm extends React.Component {
             </FormGroup>
 
             <FormGroup>
-              <FormGroupHeader bold>Your details</FormGroupHeader>
+              <FormGroupHeader bold>Strata details</FormGroupHeader>
               <input placeholder='Your strata address' name='address' onChange={this.handleChange} />
               <input placeholder='Your postcode' name='postcode' onChange={this.handleChange} />
               <select placeholder='Total units in your strata scheme' name='unitsInScheme' onChange={this.handleChange}>
@@ -131,12 +130,12 @@ class FullQuoteForm extends React.Component {
                   <option value={i} key={i}>{i}</option>
                 )}
               </select>
-              <textarea placeholder='Add any comments...' name='comments' onChange={this.handleChange} rows='7'/>
+              <textarea placeholder='Add any comments…' name='comments' onChange={this.handleChange} rows='7'/>
 
               <Button type='submit'>Send</Button>
             </FormGroup>
           </Form>
-        </Body>
+        </Box>
       </FormContainer>
     );
   }

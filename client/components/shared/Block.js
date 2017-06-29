@@ -10,12 +10,14 @@ const Root = hoc(Box).extend`
   `}
 `;
 
+Root.Section = Root.withComponent('section')
+
 const Block = (props) => (
-  <Root bg={props.bg} px={3} py={[ 5, 6 ]}>
-    <Container mx={props.width} textCenter>
+  <Root.Section bg={props.bg} px={3} py={[ 5, 6 ]}>
+    <Container mw={props.width} textCenter={props.textCenter}>
       {props.children}
     </Container>
-  </Root>
+  </Root.Section>
 );
 
 export default Block;

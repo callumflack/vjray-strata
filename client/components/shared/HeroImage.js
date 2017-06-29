@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Flex, Box } from '../styled-grid';
+import { Box } from '../styled-grid';
 
 const HeroImage = styled(Box)`
   background-position: 50% 50%;

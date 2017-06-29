@@ -1,24 +1,19 @@
 import styled from 'styled-components'
-// import { Flex, Box } from 'grid-styled';
-import { Flex, Box } from '../styled-grid';
+import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
-import theme from '../theme.js';
+import theme from '../theme'
 
-import { LargeText } from '../shared/Text.js';
-import { Headline, Display } from '../shared/Headline.js';
+import { LargeText } from '../shared/Text'
+import { Headline, Display } from '../shared/Headline'
 
-import HeroImage from '../shared/HeroImage.js';
-import Container from '../shared/Container.js';
-import QuickQuoteForm from './QuickQuoteForm.js';
+import HeroBox from '../shared/HeroBox'
+import HeroImage from '../shared/HeroImage'
+import Container from '../shared/Container'
+import QuickQuoteForm from './QuickQuoteForm'
 
-const Root = styled(Box)`
-  --Header-height: 121px;
 
-  align-items: center;
-  background-color: ${theme.colors.beige};
-  height: calc(50vh + var(--Header-height));
-  padding-top: var(--Header-height);
-  position: relative;
+const Root = styled(HeroBox)`
+  --Hero-height: 50vh;
 `
 
 const Image = styled(HeroImage)`
@@ -26,11 +21,11 @@ const Image = styled(HeroImage)`
   background-position: 30% 100%;
 
   @media (min-width: 1024px) {
-    background-size: contain;
     background-position: 100% 100%;
   }
 
   @media (min-width: 1280px) {
+    background-size: contain !important;
     background-position: 85% 100%;
   }
 
@@ -39,11 +34,11 @@ const Image = styled(HeroImage)`
   }
 `
 
-const HeroBox = () => (
+const ListeningBox = () => (
   <Root px={3}>
     <Image />
 
-    <Container mx='lg' relative>
+    <Container mw='lg' relative>
       <Flex
         style={{ height: '50vh' }}
         align='center'
@@ -59,4 +54,4 @@ const HeroBox = () => (
   </Root>
 );
 
-export default HeroBox
+export default ListeningBox

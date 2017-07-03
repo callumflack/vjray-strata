@@ -9,10 +9,6 @@ import theme from '../theme'
 // import { rgba } from 'polished';
 
 
-
-// padding: 2rem;
-// transform: translateY(var(--Header-height));
-
 const Root = styled(Flex)`
   --Header-height: 121px;
   --Header-background-color: white;
@@ -24,9 +20,15 @@ const Root = styled(Flex)`
   top: 0;
   width: 100%;
   z-index: 1;
+  transition: opacity 0.3s;
+  opacity: 1;
 
   ${props => props.ruled && css`
     --Header-background-color: transparent;
+  `}
+
+  ${props => props.isHidden  && css`
+    opacity: 0;
   `}
 `;
 
@@ -58,40 +60,72 @@ const LinkText = props =>
   <LinkTextRoot font='displayRegular' fontSize={[ 2, 3 ]} color='text' {...props} />
 
 
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.handleScroll = this.handleScroll.bind(this)
 
-const Header = () => (
-  <Root align='center' justify='space-between' px={3}>
-    <Link href='/'>
-      <a><IconLogo /></a>
-    </Link>
+    this.state = {
+      isVisible: true,
+      previousScrollPos: 0,
+    };
+  }
 
-    <Nav hideAtMobile>
-      <Link href='/who-we-are'>
-        <a><LinkText>Who we are</LinkText></a>
-      </Link>
-      <Link href='/'>
-        <a><LinkText>What we do for you</LinkText></a>
-      </Link>
-      <Link href='/'>
-        <a><LinkText>Useful info</LinkText></a>
-      </Link>
-      <Link href='/'>
-        <a><LinkText>Contact us</LinkText></a>
-      </Link>
-      <Link href='/'>
-        <a><LinkText>1300 667 123</LinkText></a>
-      </Link>
-    </Nav>
+  componentDidMount() {
+    const scrollPos = window.scrollY;
+    const previousScrollPos = this.state.previousScrollPos;
+    this.setState({ previousScrollPos: scrollPos });
 
-    <Nav>
-      <Link href='/signin'>
-        <a><LinkText>
-          <Button invert>Sign in</Button>
-        </LinkText></a>
-      </Link>
-    </Nav>
-  </Root>
-);
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    const scrollPos = window.scrollY;
+    const previousScrollPos = this.state.previousScrollPos;
+    const scrolledDown = scrollPos > previousScrollPos;
+
+    this.setState({
+      previousScrollPos: scrollPos,
+      isVisible: !scrolledDown,
+    });
+  }
+
+  render() {
+    return (
+      <Root align='center' justify='space-between' px={3} isHidden={!this.state.isVisible}>
+        <Link href='/'>
+          <a><IconLogo /></a>
+        </Link>
+
+        <Nav hideAtMobile>
+          <Link href='/who-we-are'>
+            <a><LinkText>Who we are</LinkText></a>
+          </Link>
+          <Link href='/'>
+            <a><LinkText>What we do for you</LinkText></a>
+          </Link>
+          <Link href='/'>
+            <a><LinkText>Useful info</LinkText></a>
+          </Link>
+          <Link href='/'>
+            <a><LinkText>Contact us</LinkText></a>
+          </Link>
+          <Link href='/'>
+            <a><LinkText>1300 667 123</LinkText></a>
+          </Link>
+        </Nav>
+
+        <Nav>
+          <Link href='/signin'>
+            <a><LinkText>
+              <Button invert>Sign in</Button>
+            </LinkText></a>
+          </Link>
+        </Nav>
+      </Root>
+    )
+  }
+}
 
 export default Header;

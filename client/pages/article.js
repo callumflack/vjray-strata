@@ -1,34 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import gql from 'graphql-tag';
+import { Flex } from '../components/styled-grid'
 
 import apollo from '../lib/apollo.js';
-import Layout from '../components/Layout.js';
+import Layout from '../components/shared/Layout.js';
 import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
 import Guides from '../components/shared/Guides.js';
+import ContactAction from '../components/shared/ContactAction'
 import Contact from '../components/shared/Contact.js';
-import {
-  HeaderHr,
-  Text,
-  Paragraph,
-} from '../components/shared/Text.js';
+import { Text } from '../components/shared/Text.js';
+import { Display, Subheadline } from '../components/shared/Headline'
 
 
 const Hero = styled.div`
   background-color: #F0FAFC;
-`;
-
-const FlexContainer = styled(Container)`
-  display: flex;
-  flex-direction: row;
-`;
-
-const PostTitle = styled.h1`
-  margin-top: 1rem;
-`;
-
-const PostDescription = styled(Paragraph)`
 `;
 
 const PostInfo = styled.div`
@@ -86,43 +73,40 @@ class Article extends React.Component {
       <Layout>
         <Hero>
           <Block>
-            <FlexContainer>
+            <Flex>
               <PostInfo>
-                <HeaderHr>{this.formatDateString(this.props.data.post.createdAt)}</HeaderHr>
+                <Subheadline>{this.formatDateString(this.props.data.post.createdAt)}</Subheadline>
 
-                <PostTitle>{this.props.data.post.title}</PostTitle>
-                <Text transparent>
-                  <PostDescription lg>
-                    {this.props.data.post.description}
-                  </PostDescription>
+                <Display color='text'>{this.props.data.post.title}</Display>
+                <Text fontSize={[ 3, 4 ]} grey>
+                  {this.props.data.post.description}
                 </Text>
               </PostInfo>
 
               <PostImageWrapper>
                 <img src='http://lorempixel.com/400/300' />
               </PostImageWrapper>
-            </FlexContainer>
+            </Flex>
           </Block>
         </Hero>
 
         <Block>
-          <Container sm>
+          <Container mw='sm'>
             <div dangerouslySetInnerHTML={{ __html: this.props.data.post.content.html}} />
           </Container>
         </Block>
 
         <Block>
-          <Container sm textCenter>
-            <HeaderHr>See all guides and articles</HeaderHr>
+          <Container mw='sm' textCenter>
+            <Subheadline>See all guides and articles</Subheadline>
 
             <Guides />
           </Container>
         </Block>
 
         <Block>
-          <Container sm textCenter>
-            <Contact />
-          </Container>
+          <ContactAction bgColor='brand' />
+          <Contact />
         </Block>
       </Layout>
     )

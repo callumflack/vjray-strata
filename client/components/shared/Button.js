@@ -29,6 +29,7 @@ const Button = styled.button`
   position: relative;
   text-align: center;
   text-decoration: none;
+  text-transform: inherit;
   user-select: none;
 
   &:-moz-focus-inner {
@@ -53,10 +54,28 @@ const Button = styled.button`
     opacity: var(--Button-disabled-opacity);
   }
 
+  ${props => props.color && css`
+    --Button-color: ${theme.colors[props.color]};
+  `}
+
+  ${props => props.bgColor && css`
+    --Button-background-color: ${theme.colors[props.bgColor]};
+  `}
+
   ${props => props.primary && css`
-    --Button-background-color: ${theme.colors.text};
-    --Button-border-color: ${theme.colors.text};
+    --Button-background-color: ${theme.colors[props.bgColor] || theme.colors.brand};
+    --Button-border-color: ${theme.colors[props.bgColor] || theme.colors.brand};
     --Button-color: white;
+  `}
+
+  ${props => props.large && css`
+    --Button-border-color: ${theme.colors[props.bgColor] || theme.colors.brand};
+    --Button-height: 72px;
+    padding: 0 4rem;
+
+    @media (min-width: ${theme.containers.sm}px) {
+      padding: 0 6rem;
+    }
   `}
 
   ${props => props.clean && css`
@@ -74,16 +93,9 @@ const Button = styled.button`
   ${props => props.icon && css`
     :after {
       content: '►';
+      font-size: 85%;
       margin-left: 12px;
     }
-  `}
-
-  ${props => props.color && css`
-    color: ${theme.colors[props.color]};
-  `}
-
-  ${props => props.bgColor && css`
-    background-color: ${theme.colors[props.bgColor]};
   `}
 `
 

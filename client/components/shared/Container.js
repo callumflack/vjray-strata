@@ -24,6 +24,10 @@ const Container = styled(Box)`
     max-width: ${theme.containers[props.mw]};
   `}
 
+  @media (max-width: 699px) {
+    max-width: 100%;
+  }
+
   ${props => props.relative && css`
     position: relative;
   `}

@@ -85,7 +85,7 @@ export default () => (
       </Container>
     </Block>
 
-    <Block textCenter>
+    <Block>
       <ContactAction bgColor='brand' />
       <Contact />
     </Block>

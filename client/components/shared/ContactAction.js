@@ -6,7 +6,7 @@ import Button from './Button'
 import Container from './Container'
 
 const ContactAction = (props) => (
-  <div>
+  <Container textCenter>
     <Subheadline>Get in touch</Subheadline>
     <Display color='text'>Call 1300 073 405</Display>
     <Container width={[ 1, 1/2 ]} mb={4}>
@@ -17,7 +17,7 @@ const ContactAction = (props) => (
           Or drop-in without an appointment. We're open Monday to Saturday, 9am–5pm.
         </Text>
     </Container>
-  </div>
+  </Container>
 )
 
 export default ContactAction

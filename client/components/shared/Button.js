@@ -66,7 +66,7 @@ const Button = styled.button`
     --Button-background-color: ${theme.colors[props.bgColor] || theme.colors.brand};
     --Button-border-color: ${theme.colors[props.bgColor] || theme.colors.brand};
     --Button-color: white;
-  `}
+  `};
 
   ${props => props.large && css`
     --Button-border-color: ${theme.colors[props.bgColor] || theme.colors.brand};

@@ -7,14 +7,15 @@ module.exports = props => {
   const bp = breaks(props)
   const palette = idx([ 'theme', 'fonts' ], props) || {}
 
-  const key = 'font'
-  const val = arr(props[key])
-  const prop = properties[key] || key
-  return val
-    .map(cx(palette))
-    .map(dec(prop))
-    .map(media(bp))
-    .reduce(joinObj, {})
+  return keys.map(key => {
+    const val = arr(props[key])
+    const prop = properties[key] || key
+    return val
+      .map(cx(palette))
+      .map(dec(prop))
+      .map(media(bp))
+      .reduce(joinObj, {})
+    });
 }
 
 const cx = obj => n => obj[n] || n

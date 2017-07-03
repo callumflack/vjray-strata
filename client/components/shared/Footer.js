@@ -55,20 +55,18 @@ const Footer = () => (
       <Flex justify='space-between'>
         <div>
           <Link href='/'>
-            <a><IconLogo /></a>
+            <a><IconLogo color='text70' /></a>
           </Link>
-          <SmallText lightGrey mx={1} my={2}>&copy; 2017</SmallText>
+          <SmallText color='text40' mx={1} my={2}>&copy; 2017</SmallText>
         </div>
 
         <Nav>
           <Column>
             <span>Who we are</span>
-            <Link href='/'><a>Our story</a></Link>
-            <Link href='/'><a>The team</a></Link>
+            <Link href='/who-we-are'><a>Our story</a></Link>
           </Column>
           <Column>
             <span>What we do for you</span>
-            <Link href='/'><a>Services</a></Link>
             <Link href='/'><a>For tenants</a></Link>
             <Link href='/'><a>For owners</a></Link>
             <Link href='/'><a>For investors</a></Link>
@@ -82,8 +80,8 @@ const Footer = () => (
           <Column>
             <span>Contact us</span>
             <Link href='/fast-quote'><a>Get a fast quote</a></Link>
-            <Link href='/'><a>Report an issue</a></Link>
-            <Link href='/'><a>Become a member</a></Link>
+            <Link href='/contact'><a>Report an issue</a></Link>
+            <Link href='/contact'><a>Talk to us</a></Link>
           </Column>
         </Nav>
       </Flex>

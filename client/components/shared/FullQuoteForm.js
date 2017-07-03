@@ -9,7 +9,7 @@ import theme from '../theme'
 import { Flex, Box } from '../styled-grid'
 import Button from '../shared/Button'
 import { Text } from '../shared/Text'
-import { Display, BoxedSubheadline } from '../shared/Headline'
+import { Display, BoxedSubheadline, HeadlineDetail } from '../shared/Headline'
 
 
 const FormContainer = styled(Box)`
@@ -34,9 +34,14 @@ const FormGroup = styled.div`
 `;
 
 // const FormGroupHeader = Text.extend`
-const FormGroupHeader = styled('p')`
-  margin-left: 1.5rem;
+// const FormGroupHeadline = styled('p')`
+const FormGroupHeadline = styled(HeadlineDetail)`
+  margin-left: 1rem;
 `;
+
+// this flakes…
+FormGroupHeadline.h5 = FormGroupHeadline.withComponent('h5')
+
 
 const Form = styled.form`
   input,
@@ -115,14 +120,14 @@ class FullQuoteForm extends React.Component {
 
           <Form floating={this.state.floating} onSubmit={this.handleSubmit}>
             <FormGroup>
-              <FormGroupHeader bold>Your details</FormGroupHeader>
+              <FormGroupHeadline>Your details</FormGroupHeadline>
               <input placeholder='Your name' name='name' onChange={this.handleChange} />
               <input placeholder='Your email' name='email' onChange={this.handleChange} />
               <input placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
             </FormGroup>
 
             <FormGroup>
-              <FormGroupHeader bold>Strata details</FormGroupHeader>
+              <FormGroupHeadline>Strata details</FormGroupHeadline>
               <input placeholder='Your strata address' name='address' onChange={this.handleChange} />
               <input placeholder='Your postcode' name='postcode' onChange={this.handleChange} />
               <select placeholder='Total units in your strata scheme' name='unitsInScheme' onChange={this.handleChange}>

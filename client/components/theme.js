@@ -32,12 +32,15 @@ export default {
     lg: '1140px',
   },
   fonts: {
+    displayThin: 'GT-Eesti-Pro-Display-Thin',
     displayLight: 'GT-Eesti-Pro-Display-Light',
+    displayRegular: 'GT-Eesti-Pro-Display-Regular',
     displayMedium: 'GT-Eesti-Pro-Display-Medium',
     textLight: 'GT-Eesti-Pro-Text-Light',
     textBook: 'GT-Eesti-Pro-Text-Book',
     textRegular: 'GT-Eesti-Pro-Text-Regular',
     textMedium: 'GT-Eesti-Pro-Text-Medium',
+    textBold: 'GT-Eesti-Pro-Text-Bold',
   },
   fontSizes: [12, 14, 16, 19, 23, 32, 44, 56],
   letterSpacing: {

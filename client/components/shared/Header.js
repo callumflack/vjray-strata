@@ -43,7 +43,7 @@ const Nav = styled.nav`
 const LinkTextRoot = hoc('span').extend``
 
 const LinkText = props =>
-  <LinkTextRoot font='displayMedium' fontSize={[ 2, 3 ]} color='text' {...props} />
+  <LinkTextRoot font='displayRegular' fontSize={[ 2, 3 ]} color='text' {...props} />
 
 
 

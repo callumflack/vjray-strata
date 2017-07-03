@@ -52,7 +52,12 @@ const HeadlineRoot = hoc('h2').extend`
 `
 
 const Headline = props =>
-  <HeadlineRoot font='displayLight' fontSize={[ 5, 6 ]} color='brand' mb={2} {...props} />
+  <HeadlineRoot
+    font='displayLight'
+    fontSize={[ 5, 6 ]}
+    color='brand'
+    mb={2}
+    {...props} />
 
 
 // Meta Headline
@@ -64,7 +69,11 @@ const HeadlineMetaRoot = hoc('h3').extend`
 `;
 
 const HeadlineMeta = props =>
-  <HeadlineMetaRoot font='textMedium' fontSize={[ 0, 1 ]} color='text' {...props} />
+  <HeadlineMetaRoot
+    font='textMedium'
+    fontSize={[ 0, 1 ]}
+    color='text'
+    {...props} />
 
 
 // Boxed Subheadline
@@ -86,7 +95,25 @@ const SubheadlineRoot = styled(HeadlineMetaRoot)`
 `;
 
 const Subheadline = props =>
-  <SubheadlineRoot fontSize={[ 0, 1 ]} color='text' pb={2} mb={3} mx='auto' {...props} />
+  <SubheadlineRoot
+    fontSize={[ 0, 1 ]}
+    color='text'
+    pb={2}
+    mb={3}
+    mx='auto'
+    {...props} />
+
+// Detail Headline, currently used for form group
+const HeadlineDetailRoot = styled(HeadlineMetaRoot)`
+  text-align: initial;
+`;
+
+const HeadlineDetail = props =>
+  <HeadlineDetailRoot
+    font='textLight'
+    fontSize={[ 0, 1 ]}
+    color='text70'
+    {...props} />
 
 
-export { Display, Headline, Subheadline, BoxedSubheadline, HeadlineMeta };
+export { Display, Headline, Subheadline, BoxedSubheadline, HeadlineMeta, HeadlineDetail };

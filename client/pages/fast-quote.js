@@ -53,18 +53,18 @@ class FastQuote extends React.Component {
     return (
       <Layout>
         <BrightBox py={[ 5, 6 ]}>
-          <Container mx='sm' textCenter>
+          <Container mw='sm' textCenter>
             <Subheadline>Confidential & no obligation</Subheadline>
             <Display>Get a fast quote.</Display>
             <LargeText color='text70'>Forms not your thing? <LineBreak m='auto'>Call us on 1300 073 or drop in Monday to Saturday, 9am-5pm.</LineBreak></LargeText>
           </Container>
 
-          <Container mx='sm'>
+          <Container mw='sm'>
             <FullQuoteForm />
           </Container>
         </BrightBox>
 
-        <Block>
+        <Block textCenter>
           <ContactAction bgColor='brand' />
           <Contact />
         </Block>

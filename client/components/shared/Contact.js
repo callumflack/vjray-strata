@@ -43,7 +43,7 @@ const Contact = (props) => (
     {Array(2).fill(1).map(() =>
 
     <Location width={[ 1, 1/3 ]} px={2}>
-      <Image src='static/img/map.jpg' />
+      <Image src='/static/img/map.jpg' />
 
       <Box my={2}>
         <Text color='brand' font='textMedium'>Campsie Head Office</Text>

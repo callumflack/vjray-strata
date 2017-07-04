@@ -12,6 +12,13 @@ import { Text, InlineText } from '../shared/Text.js';
 import { Headline, Subheadline  } from '../shared/Headline.js';
 
 
+const PostsSubheadline = props =>
+  <Subheadline>
+    <Link href={`/`} as={`/home`}>
+      {props.children || 'Recent posts'}
+    </Link>
+  </Subheadline>
+
 const PostLink = hoc('span').extend`
   color: ${theme.colors.brand};
   margin-left: 0.5rem;
@@ -51,11 +58,7 @@ class RecentPosts extends React.Component {
   render() {
     return (
       <div>
-        <Subheadline>
-          <Link href={`/`} as={`/home`}>
-            Recent posts
-          </Link>
-        </Subheadline>
+        <PostsSubheadline />
 
         {this.state.posts.map((post, i) =>
           <div key={i}>
@@ -63,7 +66,7 @@ class RecentPosts extends React.Component {
               width={[ 1, 2/3 ]}
               mx='auto'
               my={3}>
-              <img src='http://lorempixel.com/620/560' />
+              <img src='http://lorempixel.com/620/460' />
             </Box>
 
             <Headline

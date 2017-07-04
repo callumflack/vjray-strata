@@ -8,7 +8,7 @@ import { Box } from '../components/styled-grid'
 import Layout from '../components/shared/Layout'
 import Block from '../components/shared/Block'
 import Container from '../components/shared/Container'
-import { Display, Headline, Subheadline, HeadlineMeta, Test } from '../components/shared/Headline'
+import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
 import { Text, LargeText, LineBreak } from '../components/shared/Text'
 import Button from '../components/shared/Button'
 
@@ -18,7 +18,7 @@ import ContactAction from '../components/shared/ContactAction'
 import Contact from '../components/shared/Contact'
 
 
-const ContactColorBox = styled(ColorBox)`
+const StyledColorBox = styled(ColorBox)`
   background-color: ${theme.colors.blue6};
   background-image:
     linear-gradient(
@@ -51,9 +51,8 @@ class ContactUs extends React.Component {
   render() {
     return (
       <Layout>
-        <ContactColorBox py={[ 5, 6 ]} px={3}>
+        <StyledColorBox py={[ 5, 6 ]} px={3}>
           <Container mw='sm' textCenter mb={4}>
-            <Test medium uppercase children='YO' />
             <Subheadline children='Get in touch' />
             <Display color='brandAlt' font='displayMedium' children='How can we help?' />
             <LargeText color='brandAlt70'>Talk to us face-to-face anytime <LineBreak m='auto'>Monday to Saturday, 9am–5pm.</LineBreak></LargeText>
@@ -62,7 +61,7 @@ class ContactUs extends React.Component {
           <Container>
             <Contact />
           </Container>
-        </ContactColorBox>
+        </StyledColorBox>
 
         <Block mw='sm' textCenter>
           <Subheadline children='Contact us' />

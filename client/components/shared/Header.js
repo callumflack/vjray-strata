@@ -51,17 +51,27 @@ const Nav = styled.nav`
   `}
 `;
 
-// const LinkText = Text.withComponent('span').extend`
+// `this comment stops Atom rendering the wrong colours after a s-c.
+
 const LinkTextRoot = hoc('span').extend``
 
 const LinkText = props =>
-  <LinkTextRoot font='displayRegular' fontSize={[ 2, 3 ]} color='text' {...props} />
+  <LinkTextRoot
+    font='displayRegular'
+    fontSize={[ 2, 3 ]}
+    color='text'
+    {...props}
+  />
 
 
 
 
 const Header = () => (
-  <Root align='center' justify='space-between' px={3}>
+  <Root
+    align='center'
+    justify='space-between'
+    px={3}>
+
     <Link href='/'>
       <a><IconLogo /></a>
     </Link>

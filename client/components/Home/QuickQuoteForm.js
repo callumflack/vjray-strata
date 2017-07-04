@@ -131,9 +131,8 @@ class QuickQuoteForm extends React.Component {
       <Form floating={this.state.floating} onSubmit={this.handleSubmit}>
         <BoxedSubheadline color='white'>Get a Fast Quote</BoxedSubheadline>
         <Box p={3}>
-          { this.state.messageSent
-            ?  <SuccessMessage>Thank you! We will get back to you soon.</SuccessMessage>
-            : null
+          { this.state.messageSent &&
+            <SuccessMessage>Thank you! We will get back to you soon.</SuccessMessage>
           }
 
           <Inputs>

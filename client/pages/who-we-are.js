@@ -82,7 +82,7 @@ const Who = () => (
         <Box width={[ 1, 11/12 ]} mx='auto'>
 
           <Flex mx={-3}>
-            <Box width={[ 1, 1/3, 1/4 ]} mx={3}>
+            <Box width={[ 1, 1/3, 1/4 ]} px={3}>
               <Box mt={1}>
                 <img src='static/img/mike-pollard.jpg' />
               </Box>
@@ -90,7 +90,7 @@ const Who = () => (
               <Text color='text70'>Owner</Text>
             </Box>
 
-            <Box width={[ 1, 2/3, 3/4 ]} mx={3}>
+            <Box width={[ 1, 2/3, 3/4 ]} px={3}>
               <TextBlock>
                 <Text>Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
                 <Text>Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>

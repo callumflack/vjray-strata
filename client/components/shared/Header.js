@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
 import { IconLogo } from '../shared/Icons'
@@ -15,13 +15,19 @@ import theme from '../theme'
 
 const Root = styled(Flex)`
   --Header-height: 121px;
-  background-color: transparent;
+  --Header-background-color: white;
+
+  background-color: var(--Header-background-color);
   border-bottom: 1px solid rgba(88, 88, 112, 0.15);
   height: var(--Header-height);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
+
+  ${props => props.ruled && css`
+    --Header-background-color: transparent;
+  `}
 `;
 
 const Logo = styled.img`
@@ -37,6 +43,12 @@ const Nav = styled.nav`
   a:not(:last-child) {
     margin-right: 1.5rem;
   }
+
+  ${props => props.hideAtMobile && css`
+    @media (max-width: 699px) {
+      display: none;
+    }
+  `}
 `;
 
 // const LinkText = Text.withComponent('span').extend`
@@ -54,7 +66,7 @@ const Header = () => (
       <a><IconLogo /></a>
     </Link>
 
-    <Nav>
+    <Nav hideAtMobile>
       <Link href='/who-we-are'>
         <a><LinkText>Who we are</LinkText></a>
       </Link>

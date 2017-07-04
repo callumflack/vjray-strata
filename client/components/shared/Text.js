@@ -1,59 +1,63 @@
 import styled, { css } from 'styled-components';
-import { hoc } from '../styled-system/styled-components'
+import { hoc, test } from '../styled-system/styled-components'
 import theme from '../theme.js';
 
+// import { test } from '../styled-system/test'
 
 
-// Root style
-const Root = hoc('p').extend`
-  line-height: ${theme.lineHeight.text};
-
-  ${props => props.uppercase && css`
-    text-transform: uppercase;
-  `}
-`
+// Root styles
+const Root = hoc('p').extend``
+const Test = test('p').extend``
 
 const Text = props =>
-  <Root font='textLight' fontSize={[ 2, 3 ]} color='text' {...props} />
+  <Root
+    color='text'
+    font='textLight'
+    fontSize={[ 2, 3 ]}
+    {...props}
+  />
 
-// Small text
 const SmallText = props =>
-  <Text fontSize={[ 1, 2 ]} {...props} />
-
-// Large text
-const LargeTextRoot = styled(Root)`
-  font-family: ${theme.fonts.displayLight};
-  letter-spacing: 0.01em;
-  line-height: ${theme.lineHeight.subheadline};
-`;
+  <Text
+    fontSize={[ 1, 2 ]}
+    {...props}
+  />
 
 const LargeText = props =>
-  <LargeTextRoot fontSize={[ 4, 5 ]} {...props} />
+  <Text
+    font='displayLight'
+    fontSize={[ 4, 5 ]}
+    lineHeight='subheadline'
+    {...props}
+  />
+
 
 // Author (meta) text
-// .withComponent().extend doesn't pass down props
-// because it's a function of a function…
 // const AuthorTextRoot = styled(Root)`
 // const AuthorTextRoot = Root.withComponent('span').extend`
-const AuthorTextRoot = hoc('span').extend`
-  color: inherit;
-  display: inline-block;
-  font-family: ${theme.fonts.textBook};
-  letter-spacing: ${theme.letterSpacing.touch};
-  text-transform: uppercase;
-`;
+const AuthorRoot = hoc('span').extend``
 
 const AuthorText = props =>
-  <AuthorTextRoot fontSize={[ 3, 4 ]} {...props} />
+  <AuthorRoot
+    color='inherit'
+    font='textBook'
+    fontSize={[ 3, 4 ]}
+    letterSpacing='touch'
+    uppercase
+    {...props}
+  />
+
+
 
 
 // Utils
 
 // Will add ternarys to LineBreak as needed.
 const LineBreak = hoc('span').extend`
+  font: inherit;
+
   @media (min-width: 1024px) {
       display: table !important;
-      font: inherit;
   }
 `
 
@@ -69,4 +73,12 @@ const TextBlock = styled('div')`
 `
 
 
-export { Text, LargeText, SmallText, AuthorText, LineBreak, InlineText, TextBlock }
+export {
+  Text,
+  LargeText,
+  SmallText,
+  AuthorText,
+  LineBreak,
+  InlineText,
+  TextBlock
+}

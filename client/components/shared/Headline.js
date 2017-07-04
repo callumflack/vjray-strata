@@ -14,10 +14,14 @@ import theme from '../theme'
 //   as well as ternary props for the theme lineHeight object.
 //
 // Start with a styled-component that uses the hoc(), which provides access
-// to the styled-system. Include any styles that are not allowed
-// to change, or that styled-system doesn't cover.
+// to the styled-system.
+
+// Method:
+
+// 1. Include any styles that are not allowed to change, or that styled-system
+// doesn't cover.
 //
-// Then wrap this root component with the flexible base styles for the
+// 2. Then wrap this root component with the flexible base styles for the
 // component, and apply the styling-system props.
 //
 // This gives us the best of styled-components and a design system that
@@ -31,89 +35,142 @@ import theme from '../theme'
 // ========================================================================
 
 
+// const hoc = Comp =>
+//   ({ width, ...props }) =>
+//     <Comp {...props} w={width} />
+//
+// module.exports = (Component, props) => {
+//   const SystemComponent = styled(Component)``
+// }
+
+
+// const order = props => props.order ? `order:${props.order};` : null
+const lineHeight = props => props.lineHeight ? `line-height:${theme.lineHeight[props.lineHeight]};` : `line-height:${theme.lineHeight.text};`;
+const medium = props => props.medium ? `font-family:${theme.fonts.displayMedium};` : `font-family:${theme.fonts.displayLight};`
+const uppercase = props => props.uppercase ? `text-transform:uppercase;` : null
+
+const Test = styled('h1')`
+  ${medium}
+  ${uppercase}
+  ${lineHeight}
+  font-size: 16px;
+  @media (min-width: 700px) { font-size: 20px; }
+`
+
+
 //  Display
 const DisplayRoot = hoc('h1').extend`
-  line-height: ${theme.lineHeight.display};
+  ${props => props.ruled && css`
+    &:before {
+      border-top: 1px solid currentColor;
+      content: " ";
+      display: block;
+      height: 1px;
+      margin: 0 auto ${theme.space[3]}px;
+      width: ${theme.space[4]}px;
+    }
+  `}
 `
 
 const Display = props =>
   <DisplayRoot
+    color='brand'
     font='displayLight'
     fontSize={[ 6, 7 ]}
-    color='brand'
+    lineHeight='display'
     mb={3}
     {...props}
   />
 
 
 // Headline
-const HeadlineRoot = hoc('h2').extend`
-  line-height: ${theme.lineHeight.headline};
-`
+const HeadlineRoot = hoc('h2').extend``
 
 const Headline = props =>
   <HeadlineRoot
+    color='brand'
     font='displayLight'
     fontSize={[ 5, 6 ]}
-    color='brand'
     mb={2}
-    {...props} />
+    lineHeight='headline'
+    {...props}
+  />
 
 
 // Meta Headline
-const HeadlineMetaRoot = hoc('h3').extend`
-  letter-spacing: ${theme.letterSpacing.meta};
-  line-height: ${theme.lineHeight.display};
-  text-align: center;
-  text-transform: uppercase;
-`;
+const HeadlineMetaRoot = hoc('h3').extend``
 
 const HeadlineMeta = props =>
   <HeadlineMetaRoot
+    align='center'
+    color='text'
     font='textMedium'
     fontSize={[ 0, 1 ]}
+    letterSpacing='meta'
+    lineHeight='display'
+    uppercase
+    {...props}
+  />
+
+
+// Subheadline (ruled)
+// Example of where HeadlineMeta.extend would make more sense…
+const SubheadlineRoot = hoc('h4').extend`
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+`
+
+const Subheadline = props =>
+  <SubheadlineRoot
     color='text'
+    font='textMedium'
+    fontSize={[ 0, 1 ]}
+    letterSpacing='meta'
+    lineHeight='display'
+    mb={3}
+    mx='auto'
+    pb={2}
+    uppercase
+    {...props}
+  />
+
+
+// Detail Headline, currently used for form group
+// Example of where HeadlineMeta.extend would make more sense…
+const HeadlineDetailRoot = hoc('p').extend``
+
+const HeadlineDetail = props =>
+  <HeadlineDetailRoot
+    align='initial'
+    color='text70'
+    font='textLight'
+    fontSize={[ 0, 1 ]}
+    letterSpacing='meta'
+    lineHeight='display'
+    uppercase
     {...props} />
 
 
 // Boxed Subheadline
+// We can style() here because the component
+// we're styling isn't wrapped as a stateless function.
 const BoxedSubheadline = styled(HeadlineMeta)`
   --Header-height: 48px;
   display: flex;
+  font-family: ${theme.fonts.textRegular};
   justify-content: center;
   align-items: center;
   height: var(--Header-height);
   background-color: ${theme.colors.brand};
-  color: #fff;
-`;
-
-// Subheadline (ruled, styling Headline Meta)
-const SubheadlineRoot = styled(HeadlineMetaRoot)`
-  border-bottom: 1px solid currentColor;
-  font-family: ${theme.fonts.textMedium};
-  display: inline-block;
-`;
-
-const Subheadline = props =>
-  <SubheadlineRoot
-    fontSize={[ 0, 1 ]}
-    color='text'
-    pb={2}
-    mb={3}
-    mx='auto'
-    {...props} />
-
-// Detail Headline, currently used for form group
-const HeadlineDetailRoot = styled(HeadlineMetaRoot)`
-  text-align: initial;
-`;
-
-const HeadlineDetail = props =>
-  <HeadlineDetailRoot
-    font='textLight'
-    fontSize={[ 0, 1 ]}
-    color='text70'
-    {...props} />
+`
 
 
-export { Display, Headline, Subheadline, BoxedSubheadline, HeadlineMeta, HeadlineDetail };
+export {
+  Display,
+  Headline,
+  Subheadline,
+  BoxedSubheadline,
+  HeadlineMeta,
+  HeadlineDetail,
+  Test
+}

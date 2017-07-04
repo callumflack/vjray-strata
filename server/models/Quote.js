@@ -34,7 +34,7 @@ Quote.add(
       type: Types.Date,
       default: Date.now,
     },
-  },
+  }
 );
 
 

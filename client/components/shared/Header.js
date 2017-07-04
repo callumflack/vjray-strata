@@ -9,10 +9,6 @@ import theme from '../theme'
 // import { rgba } from 'polished';
 
 
-
-// padding: 2rem;
-// transform: translateY(var(--Header-height));
-
 const Root = styled(Flex)`
   --Header-height: 121px;
   --Header-background-color: white;
@@ -24,9 +20,15 @@ const Root = styled(Flex)`
   top: 0;
   width: 100%;
   z-index: 1;
+  transition: opacity 0.3s;
+  opacity: 1;
 
   ${props => props.ruled && css`
     --Header-background-color: transparent;
+  `}
+
+  ${props => props.isHidden  && css`
+    opacity: 0;
   `}
 `;
 
@@ -64,8 +66,24 @@ const LinkText = props =>
   />
 
 
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.handleScroll = this.handleScroll.bind(this)
 
+    this.state = {
+      isVisible: true,
+      previousScrollPos: 0,
+    };
+  }
+
+  componentDidMount() {
+    const scrollPos = window.scrollY;
+    const previousScrollPos = this.state.previousScrollPos;
+    this.setState({ previousScrollPos: scrollPos });
+
+<<<<<<< HEAD
 const Header = () => (
   <Root
     align='center'
@@ -103,5 +121,57 @@ const Header = () => (
     </Nav>
   </Root>
 );
+=======
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    const scrollPos = window.scrollY;
+    const previousScrollPos = this.state.previousScrollPos;
+    const scrolledDown = scrollPos > previousScrollPos;
+
+    this.setState({
+      previousScrollPos: scrollPos,
+      isVisible: !scrolledDown,
+    });
+  }
+
+  render() {
+    return (
+      <Root align='center' justify='space-between' px={3} isHidden={!this.state.isVisible}>
+        <Link href='/'>
+          <a><IconLogo /></a>
+        </Link>
+
+        <Nav hideAtMobile>
+          <Link href='/who-we-are'>
+            <a><LinkText>Who we are</LinkText></a>
+          </Link>
+          <Link href='/'>
+            <a><LinkText>What we do for you</LinkText></a>
+          </Link>
+          <Link href='/'>
+            <a><LinkText>Useful info</LinkText></a>
+          </Link>
+          <Link href='/'>
+            <a><LinkText>Contact us</LinkText></a>
+          </Link>
+          <Link href='/'>
+            <a><LinkText>1300 667 123</LinkText></a>
+          </Link>
+        </Nav>
+
+        <Nav>
+          <Link href='/signin'>
+            <a><LinkText>
+              <Button invert>Sign in</Button>
+            </LinkText></a>
+          </Link>
+        </Nav>
+      </Root>
+    )
+  }
+}
+>>>>>>> 6930d07bb0ff8a0e06fbc5525cbd02dd1574701e
 
 export default Header;

@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Formsy, { HOC } from 'formsy-react';
+
 
 import gql from 'graphql-tag'
 import apollo from '../../lib/apollo.js'
@@ -9,7 +11,16 @@ import theme from '../theme'
 import { Flex, Box } from '../styled-grid'
 import Button from '../shared/Button'
 import { Text } from '../shared/Text'
-import { Display, BoxedSubheadline, HeadlineDetail } from '../shared/Headline'
+import { Display, BoxedSubheadline } from '../shared/Headline'
+import {
+  Form,
+  Input,
+  Select,
+  Textarea,
+  FormGroup,
+  FormGroupHeadline,
+  SuccessMessage,
+} from '../shared/Form';
 
 
 const FormContainer = styled(Box)`
@@ -17,87 +28,31 @@ const FormContainer = styled(Box)`
   border: 1px solid ${theme.colors.brand};
 `;
 
-const FormBody = styled.div`
-  padding: 1.5rem 1.8rem;
-`;
-
-const SuccessMessage = styled.div`
-  color: #42db41;
-  text-align: center;
-  margin-bottom: 0.5rem;
-`;
-
-const FormGroup = styled.div`
-  & + & {
-    margin-top: 3rem;
-  }
-`;
-
-// const FormGroupHeader = Text.extend`
-// const FormGroupHeadline = styled('p')`
-const FormGroupHeadline = styled(HeadlineDetail)`
-  margin-left: 1rem;
-`;
-
-// this flakes…
-FormGroupHeadline.h5 = FormGroupHeadline.withComponent('h5')
-
-
-const Form = styled.form`
-  input,
-  select,
-  textarea,
-  button {
-    margin-top: 1rem;
-  }
-
-  input,
-  select,
-  textarea {
-    border: 1px solid ${theme.colors.text20};
-    height: 54px;
-    padding: 0 1rem;
-    width: 100%;
-
-    &::-webkit-input-placeholder { color: ${theme.colors.text40}; }
-    &::-moz-placeholder          { color: ${theme.colors.text40}; }
-    &:-ms-input-placeholder      { color: ${theme.colors.text40}; }
-    &:-moz-placeholder           { color: ${theme.colors.text40}; }
-  }
-`;
-
-
 class FullQuoteForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.enableButton = this.enableButton.bind(this);
+    this.disableButton = this.disableButton.bind(this);
 
     this.state = {
       messageSent: false,
-      name: '',
-      email: '',
-      phoneNumber: '',
-      address: '',
-      postcode: '',
-      unitsInScheme: 0,
-      comments: '',
+      canSubmit: false,
     };
   }
 
-  async handleSubmit(event) {
-    event.preventDefault();
-
+  async handleSubmit(model) {
+    const comments = JSON.stringify(model.comments) || '';
     const mutation = gql`mutation {
       createQuote(
-        name: "${this.state.name}",
-        email: "${this.state.email}",
-        phoneNumber: "${this.state.phoneNumber}",
-        address: "${this.state.address}",
-        postcode: "${this.state.postcode}",
-        unitsInScheme: ${this.state.unitsInScheme},
-        comments: ${JSON.stringify(this.state.comments)},
+        name: "${model.name || ''}",
+        email: "${model.email || ''}",
+        phoneNumber: "${model.phoneNumber || ''}",
+        address: "${model.address || ''}",
+        postcode: "${model.postcode || ''}",
+        unitsInScheme: ${model.unitsInScheme || 0},
+        comments: "${comments}",
       ) {
         _id,
       }
@@ -107,12 +62,15 @@ class FullQuoteForm extends React.Component {
     this.setState({ messageSent: true });
   }
 
-  handleChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
+  enableButton() {
+    this.setState({
+      canSubmit: true,
+    });
+  }
 
-    this.setState ({
-      [name]: value,
+  disableButton() {
+    this.setState({
+      canSubmit: false,
     });
   }
 
@@ -126,27 +84,29 @@ class FullQuoteForm extends React.Component {
             : null
           }
 
-          <Form floating={this.state.floating} onSubmit={this.handleSubmit}>
+          <Form onValidSubmit={this.handleSubmit} onValid={this.enableButton} onInvalid={this.disableButton}>
             <FormGroup>
               <FormGroupHeadline>Your details</FormGroupHeadline>
-              <input placeholder='Your name' name='name' onChange={this.handleChange} />
-              <input placeholder='Your email' name='email' onChange={this.handleChange} />
-              <input placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
+
+              <Input placeholder='Your name' name='name' required />
+              <Input placeholder='Your email' name='email' validations='isEmail' validationError='Not a valid email' required />
+              <Input placeholder='Your phone number' name='phoneNumber' required />
             </FormGroup>
 
             <FormGroup>
               <FormGroupHeadline>Strata details</FormGroupHeadline>
-              <input placeholder='Your strata address' name='address' onChange={this.handleChange} />
-              <input placeholder='Your postcode' name='postcode' onChange={this.handleChange} />
-              <select placeholder='Total units in your strata scheme' name='unitsInScheme' onChange={this.handleChange}>
-                {Array(10).fill(0).map((item, i) =>
+
+              <Input placeholder='Your strata address' name='address' />
+              <Input placeholder='Your postcode' name='postcode' />
+              <Select placeholder='Total units in your strata scheme' name='unitsInScheme'>
+                {Array(11).fill(0).map((item, i) =>
                   <option value={i} key={i}>{i}</option>
                 )}
-              </select>
-              <textarea placeholder='Add any comments…' name='comments' onChange={this.handleChange} rows='7'/>
+              </Select>
+              <Textarea placeholder='Add any comments…' name='comments' rows='7' />
 
               <Text align='right'>
-                <Button primary type='submit'>Send</Button>
+                <Button primary type='submit' disabled={!this.state.canSubmit}>Send</Button>
               </Text>
             </FormGroup>
           </Form>

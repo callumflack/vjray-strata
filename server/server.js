@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const { promisify } = require('util');
 const express = require('express');
-const mongoose = require('mongoose');
 const { makeExecutableSchema } = require('graphql-tools');
 const graphqlHTTP = require('express-graphql');
 const keystone = require('keystone');
@@ -58,6 +57,12 @@ async function setupKeystone(app) {
     'auto update': true,
 
     'mongo': process.env.MONGO_URI || 'mongodb://localhost/' + pkg.name,
+    'mongo options': {
+      server: {
+        keepAlive: 1,
+      }
+    },
+
     'cookie secret': process.env.COOKIE_SECRET,
     'cloudinary config': process.env.CLOUDINARY_URI,
   });

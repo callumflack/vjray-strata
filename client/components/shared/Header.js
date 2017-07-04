@@ -20,7 +20,8 @@ const Root = styled(Flex)`
   top: 0;
   width: 100%;
   z-index: 1;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, visibility 0s 0s;
+  visibility: visible;
   opacity: 1;
 
   ${props => props.ruled && css`
@@ -28,6 +29,8 @@ const Root = styled(Flex)`
   `}
 
   ${props => props.isHidden  && css`
+  transition: opacity 0.3s, visibility 0s 0.3s;
+    visibility: hidden;
     opacity: 0;
   `}
 `;

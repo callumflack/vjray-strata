@@ -54,10 +54,10 @@ class ContactUs extends React.Component {
   render() {
     const tabs = [{
       name: 'Report an issue',
-      content: <FullQuoteForm />
+      content: <IssueForm />
     }, {
       name: 'Quick response message',
-      content: <IssueForm />
+      content: <FullQuoteForm />
     }];
 
     return (

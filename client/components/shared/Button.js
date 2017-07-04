@@ -11,6 +11,7 @@ const Button = styled.button`
   --Button-color: inherit;
   --Button-disabled-opacity: 0.6;
   --Button-font: inherit;
+  --Button-letter-spacing: 0.025em;
   --Button-height: calc(54px - calc( 2 * var(--Button-border-width)) );
   --Button-padding: 0 1.5em;
 
@@ -23,6 +24,7 @@ const Button = styled.button`
   display: inline-block;
   font-family: var(--Button-font);
   font-size: inherit;
+  letter-spacing: var(--Button-letter-spacing);
   line-height: var(--Button-height);
   margin: 0;
   padding: var(--Button-padding);
@@ -62,6 +64,11 @@ const Button = styled.button`
     --Button-background-color: ${theme.colors[props.bgColor]};
   `}
 
+  ${props => props.clean && css`
+    --Button-background-color: transparent;
+    --Button-border-color: transparent;
+  `}
+
   ${props => props.primary && css`
     --Button-background-color: ${theme.colors[props.bgColor] || theme.colors.brand};
     --Button-border-color: ${theme.colors[props.bgColor] || theme.colors.brand};
@@ -78,10 +85,7 @@ const Button = styled.button`
     }
   `}
 
-  ${props => props.clean && css`
-    background-color: transparent;
-    padding: 0;
-  `}
+
 
   ${props => props.invert && css`
     background-color: transparent;

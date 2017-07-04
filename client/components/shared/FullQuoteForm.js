@@ -58,6 +58,11 @@ const Form = styled.form`
     height: 54px;
     padding: 0 1rem;
     width: 100%;
+
+    &::-webkit-input-placeholder { color: ${theme.colors.text40}; }
+    &::-moz-placeholder          { color: ${theme.colors.text40}; }
+    &:-ms-input-placeholder      { color: ${theme.colors.text40}; }
+    &:-moz-placeholder           { color: ${theme.colors.text40}; }
   }
 `;
 
@@ -114,9 +119,12 @@ class FullQuoteForm extends React.Component {
   render() {
     return (
       <FormContainer mt={[ 3, 4 ]}>
-        <BoxedSubheadline>Quick Response Message</BoxedSubheadline>
+        <BoxedSubheadline bg='brand' color='white'>Quick Response Message</BoxedSubheadline>
         <Box p={[ 2, 3 ]}>
-          { this.state.messageSent ?  <SuccessMessage>Thank you! We'll get back to you soon.</SuccessMessage> : null }
+          { this.state.messageSent
+            ?  <SuccessMessage>Thank you! We'll get back to you soon.</SuccessMessage>
+            : null
+          }
 
           <Form floating={this.state.floating} onSubmit={this.handleSubmit}>
             <FormGroup>
@@ -137,7 +145,9 @@ class FullQuoteForm extends React.Component {
               </select>
               <textarea placeholder='Add any comments…' name='comments' onChange={this.handleChange} rows='7'/>
 
-              <Button type='submit'>Send</Button>
+              <Text align='right'>
+                <Button primary type='submit'>Send</Button>
+              </Text>
             </FormGroup>
           </Form>
         </Box>

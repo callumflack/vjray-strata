@@ -105,7 +105,7 @@ const Who = () => (
       </Container>
     </Box>
 
-    <Block>
+    <Block textCenter>
       <ContactAction bgColor='brandAlt' />
       <Contact />
     </Block>

@@ -20,6 +20,7 @@ export default {
     text7: '#F3F3F5',
     brand: '#D3145A',
     brandAlt: '#404070',
+    brandAlt70: '#797A9A',
     beige: '#F7F2EC',
     blue6: '#f0f9fc',
     white: '#fff',

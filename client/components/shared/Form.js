@@ -11,10 +11,8 @@ class InputRoot extends React.Component {
     return (
       <div>
         <input
-          value={this.props.getValue() || ''}
           onChange={(e) => this.props.setValue(e.target.value)}
           placeholder={this.props.placeholder}
-          required={this.props.required}
         />
         <ErrorMessage>{this.props.getErrorMessage()}</ErrorMessage>
       </div>
@@ -29,7 +27,6 @@ class SelectRoot extends React.Component {
         <select
           onChange={(e) => this.props.setValue(e.target.value)}
           placeholder={this.props.placeholder}
-          required={this.props.required}
         >
           {this.props.children}
         </select>
@@ -44,10 +41,8 @@ class TextareaRoot extends React.Component {
     return (
       <div>
         <textarea
-          value={this.props.children || ''}
           onChange={(e) => this.props.setValue(e.target.value)}
           placeholder={this.props.placeholder}
-          required={this.props.required}
           rows={this.props.rows}
           cols={this.props.cols}
         />

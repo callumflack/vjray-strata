@@ -88,9 +88,9 @@ class FullQuoteForm extends React.Component {
             <FormGroup>
               <FormGroupHeadline>Your details</FormGroupHeadline>
 
-              <Input placeholder='Your name' name='name' required />
-              <Input placeholder='Your email' name='email' validations='isEmail' validationError='Not a valid email' required />
-              <Input placeholder='Your phone number' name='phoneNumber' required />
+              <Input placeholder='Your name' name='name' validations='isExisty' validationError='Your name is required' />
+              <Input placeholder='Your email' name='email' validations={{isExisty: true, isEmail: true}} validationErrors={{isExisty: 'Your email is required', isEmail: 'Not a valid email'}} />
+              <Input placeholder='Your phone number' name='phoneNumber' validations='isExisty' validationError='Your phone number is required' />
             </FormGroup>
 
             <FormGroup>

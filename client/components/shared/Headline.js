@@ -45,17 +45,27 @@ import theme from '../theme'
 
 
 // const order = props => props.order ? `order:${props.order};` : null
-const lineHeight = props => props.lineHeight ? `line-height:${theme.lineHeight[props.lineHeight]};` : `line-height:${theme.lineHeight.text};`;
-const medium = props => props.medium ? `font-family:${theme.fonts.displayMedium};` : `font-family:${theme.fonts.displayLight};`
-const uppercase = props => props.uppercase ? `text-transform:uppercase;` : null
+// const lineHeight = props => props.lineHeight ? `line-height:${theme.lineHeight[props.lineHeight]};` : `line-height:${theme.lineHeight.text};`;
+// const medium = props => props.medium ? `font-family:${theme.fonts.displayMedium};` : `font-family:${theme.fonts.displayLight};`
+// const uppercase = props => props.uppercase ? `text-transform:uppercase;` : null
+//
+// const Test = styled('h1')`
+//   ${medium}
+//   ${uppercase}
+//   ${lineHeight}
+//   font-size: 16px;
+//   @media (min-width: 700px) { font-size: 20px; }
+// `
 
-const Test = styled('h1')`
-  ${medium}
-  ${uppercase}
-  ${lineHeight}
-  font-size: 16px;
-  @media (min-width: 700px) { font-size: 20px; }
-`
+
+
+// Set all available HTML tags
+const H1 = hoc('h1').extend``
+const H2 = hoc('h2').extend``
+const H3 = hoc('h3').extend``
+const H4 = hoc('h4').extend``
+const H5 = hoc('h5').extend``
+
 
 
 //  Display
@@ -87,7 +97,7 @@ const Display = props =>
 const HeadlineRoot = hoc('h2').extend``
 
 const Headline = props =>
-  <HeadlineRoot
+  <H2
     color='brand'
     font='displayLight'
     fontSize={[ 5, 6 ]}
@@ -98,23 +108,24 @@ const Headline = props =>
 
 
 // Meta Headline
-const HeadlineMetaRoot = hoc('h3').extend``
+const HeadlineMetaBaseStyles = {
+    color: 'text',
+    font: 'textMedium',
+    fontSize: [ 0, 1 ],
+    letterSpacing: 'meta',
+    lineHeight: 'display',
+    uppercase: 'true'
+}
 
 const HeadlineMeta = props =>
-  <HeadlineMetaRoot
+  <H3
+    {...HeadlineMetaBaseStyles}
     align='center'
-    color='text'
-    font='textMedium'
-    fontSize={[ 0, 1 ]}
-    letterSpacing='meta'
-    lineHeight='display'
-    uppercase
     {...props}
   />
 
-
 // Subheadline (ruled)
-// Example of where HeadlineMeta.extend would make more sense…
+// Example of where HeadlineMeta.extend would make more sense?
 const SubheadlineRoot = hoc('h4').extend`
   border-bottom: 1px solid currentColor;
   display: inline-block;
@@ -122,46 +133,34 @@ const SubheadlineRoot = hoc('h4').extend`
 
 const Subheadline = props =>
   <SubheadlineRoot
-    color='text'
-    font='textMedium'
-    fontSize={[ 0, 1 ]}
-    letterSpacing='meta'
-    lineHeight='display'
+    {...HeadlineMetaBaseStyles}
     mb={3}
     mx='auto'
     pb={2}
-    uppercase
     {...props}
   />
 
-
 // Detail Headline, currently used for form group
-// Example of where HeadlineMeta.extend would make more sense…
-const HeadlineDetailRoot = hoc('p').extend``
-
+// Example of where HeadlineMeta.extend would make more sense?
+// const HeadlineDetailRoot = hoc('h5').extend``
 const HeadlineDetail = props =>
-  <HeadlineDetailRoot
+  <H5
+    {...HeadlineMetaBaseStyles}
     align='initial'
     color='text70'
     font='textLight'
-    fontSize={[ 0, 1 ]}
-    letterSpacing='meta'
-    lineHeight='display'
-    uppercase
     {...props} />
 
-
 // Boxed Subheadline
-// We can style() here because the component
-// we're styling isn't wrapped as a stateless function.
+// We can style() here because… why again?
 const BoxedSubheadline = styled(HeadlineMeta)`
   --Header-height: 48px;
+  align-items: center;
+  background-color: ${theme.colors.brand};
   display: flex;
   font-family: ${theme.fonts.textRegular};
-  justify-content: center;
-  align-items: center;
   height: var(--Header-height);
-  background-color: ${theme.colors.brand};
+  justify-content: center;
 `
 
 
@@ -172,5 +171,4 @@ export {
   BoxedSubheadline,
   HeadlineMeta,
   HeadlineDetail,
-  Test
 }

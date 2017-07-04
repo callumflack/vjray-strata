@@ -36,7 +36,10 @@ const Column = styled(Box)`
 
   a {
     display: block;
-    margin-top: 12px;
+
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
   }
 `;
 
@@ -72,13 +75,13 @@ const Footer = () => (
             <Link href='/'><a>For investors</a></Link>
           </Column>
           <Column>
-            <span>Useful info</span>
+            <Link href='/useful-info'><a><span>Useful info</span></a></Link>
             <Link href='/'><a>The Strata guide</a></Link>
             <Link href='/'><a>Useful info</a></Link>
             <Link href='/'><a>Understanding Stata</a></Link>
           </Column>
           <Column>
-            <span>Contact us</span>
+            <Link href='/contact'><a><span>Contact us</span></a></Link>
             <Link href='/fast-quote'><a>Get a fast quote</a></Link>
             <Link href='/contact'><a>Report an issue</a></Link>
             <Link href='/contact'><a>Talk to us</a></Link>

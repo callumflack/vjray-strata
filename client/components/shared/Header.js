@@ -82,46 +82,6 @@ class Header extends React.Component {
     const scrollPos = window.scrollY;
     const previousScrollPos = this.state.previousScrollPos;
     this.setState({ previousScrollPos: scrollPos });
-
-<<<<<<< HEAD
-const Header = () => (
-  <Root
-    align='center'
-    justify='space-between'
-    px={3}>
-
-    <Link href='/'>
-      <a><IconLogo /></a>
-    </Link>
-
-    <Nav hideAtMobile>
-      <Link href='/who-we-are'>
-        <a><LinkText>Who we are</LinkText></a>
-      </Link>
-      <Link href='/'>
-        <a><LinkText>What we do for you</LinkText></a>
-      </Link>
-      <Link href='/'>
-        <a><LinkText>Useful info</LinkText></a>
-      </Link>
-      <Link href='/'>
-        <a><LinkText>Contact us</LinkText></a>
-      </Link>
-      <Link href='/'>
-        <a><LinkText>1300 667 123</LinkText></a>
-      </Link>
-    </Nav>
-
-    <Nav>
-      <Link href='/signin'>
-        <a><LinkText>
-          <Button invert>Sign in</Button>
-        </LinkText></a>
-      </Link>
-    </Nav>
-  </Root>
-);
-=======
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -172,6 +132,5 @@ const Header = () => (
     )
   }
 }
->>>>>>> 6930d07bb0ff8a0e06fbc5525cbd02dd1574701e
 
 export default Header;

@@ -1,10 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import gql from 'graphql-tag'
 import apollo from '../lib/apollo'
 
 import theme from '../components/theme'
-import { Box } from '../components/styled-grid'
+import { Flex, Box } from '../components/styled-grid'
 import Layout from '../components/shared/Layout'
 import Block from '../components/shared/Block'
 import Container from '../components/shared/Container'
@@ -14,6 +14,9 @@ import Button from '../components/shared/Button'
 
 import ColorBox from '../components/shared/ColorBox'
 import FullQuoteForm from '../components/shared/FullQuoteForm'
+import IssueForm from '../components/shared/IssueForm'
+import { FormHeader } from '../components/shared/Form.js'
+import { Tabs, Pane } from '../components/shared/Tabs.js'
 import ContactAction from '../components/shared/ContactAction'
 import Contact from '../components/shared/Contact'
 
@@ -49,6 +52,14 @@ class ContactUs extends React.Component {
   }
 
   render() {
+    const tabs = [{
+      name: 'Report an issue',
+      content: <FullQuoteForm />
+    }, {
+      name: 'Quick response message',
+      content: <IssueForm />
+    }];
+
     return (
       <Layout>
         <StyledColorBox py={[ 5, 6 ]} px={3}>
@@ -63,11 +74,20 @@ class ContactUs extends React.Component {
           </Container>
         </StyledColorBox>
 
-        <Block mw='sm' textCenter>
-          <Subheadline children='Contact us' />
-          <Display color='brand' children='Write to us' />
-          <Text color='text70' children='For emergencies, call 1300 073 123 any time.' />
-          <FullQuoteForm />
+        <Block mw='sm'>
+          <Container textCenter>
+            <Subheadline children='Contact us' />
+            <Display color='brand' children='Write to us' />
+            <Text color='text70' children='For emergencies, call 1300 073 123 any time.' />
+          </Container>
+
+          <Container mt={[3, 4]}>
+            <Tabs selected={0}>
+              {tabs.map(tab =>
+                <Pane label={tab.name}>{tab.content}</Pane>)
+              }
+            </Tabs>
+          </Container>
         </Block>
 
         <Box px={3} pb={[ 5, 6 ]}>

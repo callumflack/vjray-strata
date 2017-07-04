@@ -161,6 +161,11 @@ const BoxedSubheadline = styled(HeadlineMeta)`
   font-family: ${theme.fonts.textRegular};
   height: var(--Header-height);
   justify-content: center;
+
+  ${props => props.inactive && css`
+    background-color: ${theme.colors.grey};
+    color: ${theme.colors.text70};
+  `}
 `
 
 

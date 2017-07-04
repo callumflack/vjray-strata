@@ -89,6 +89,8 @@ const Form = styled(Formsy.Form)`
   }
 `;
 
+const FormHeader = props => <BoxedSubheadline bg='brand' color='white' {...props} />
+
 const FormGroup = styled.div`
   & + & {
     margin-top: 3rem;
@@ -110,7 +112,6 @@ const ErrorMessage = styled.div`
   margin-top: 0.5rem;
 `;
 
-
 export {
   Form,
   Input,
@@ -119,4 +120,5 @@ export {
   FormGroup,
   FormGroupHeadline,
   SuccessMessage,
+  FormHeader,
 };

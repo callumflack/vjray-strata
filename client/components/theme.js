@@ -24,6 +24,7 @@ export default {
     beige: '#F7F2EC',
     blue6: '#f0f9fc',
     white: '#fff',
+    grey: '#EEEEF0',
     success: '#42db41',
     error: '#D91E1F',
   },

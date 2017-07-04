@@ -11,6 +11,7 @@ import Container from '../components/shared/Container'
 import { Display, Headline, Subheadline } from '../components/shared/Headline'
 import { Text, LargeText, LineBreak } from '../components/shared/Text'
 
+import { FormHeader } from '../components/shared/Form.js'
 import FullQuoteForm from '../components/shared/FullQuoteForm'
 import ContactAction from '../components/shared/ContactAction'
 import Contact from '../components/shared/Contact'
@@ -59,7 +60,8 @@ class FastQuote extends React.Component {
             <LargeText color='text70'>Forms not your thing? <LineBreak m='auto'>Call us on 1300 073 or drop in Monday to Saturday, 9am-5pm.</LineBreak></LargeText>
           </Container>
 
-          <Container mw='sm'>
+          <Container mw='sm' mt={[3, 4]}>
+            <FormHeader bg='brand' color='white'>Quick response message</FormHeader>
             <FullQuoteForm />
           </Container>
         </BrightBox>

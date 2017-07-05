@@ -3,18 +3,12 @@ import theme from '../theme'
 import { SmallText } from '../styled-elements/Text'
 import Button from '../styled-elements/Button'
 import { IconDownload } from '../styled-elements/Icons'
-
-const Image = styled('img')`
-  box-shadow:
-    0 16px 24px 2px rgba(0,0,0,0.18),
-    0 6px 30px 5px rgba(0,0,0,0.12),
-    0 8px 10px -5px rgba(0,0,0,0.30);
-`
+import { ImageWithShadow } from './ImageWithShadow'
 
 export default (props) => (
   <div>
     <a href='#'>
-      <Image src='static/img/guide-pdf-placeholder.jpg' />
+      <ImageWithShadow src='static/img/guide-pdf-placeholder.jpg' />
     </a>
     <SmallText
       align='center'

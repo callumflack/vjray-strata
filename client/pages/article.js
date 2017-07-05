@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import { Flex } from '../components/styled-grid'
 
 import apollo from '../lib/apollo.js';
+import { formatDateString } from '../lib/date.js';
 import Layout from '../components/shared/Layout.js';
 import Block from '../components/shared/Block.js';
 import Container from '../components/shared/Container.js';
@@ -62,12 +63,6 @@ class Article extends React.Component {
     });
   }
 
-  formatDateString(dateString) {
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const date = new Date(dateString);
-    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-  }
-
   render() {
     return (
       <Layout>
@@ -75,7 +70,7 @@ class Article extends React.Component {
           <Block>
             <Flex>
               <PostInfo>
-                <Subheadline>{this.formatDateString(this.props.data.post.createdAt)}</Subheadline>
+                <Subheadline>{formatDateString(this.props.data.post.createdAt)}</Subheadline>
 
                 <Display color='text'>{this.props.data.post.title}</Display>
                 <Text fontSize={[ 3, 4 ]} grey>

@@ -4,9 +4,9 @@ import gql from 'graphql-tag'
 import apollo from '../lib/apollo'
 
 import styled from 'styled-components'
+import theme from '../components/theme'
 import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
-import theme from '../components/theme'
 
 import { Text, TextBlock, LineBreak } from '../components/shared/Text'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
@@ -17,6 +17,7 @@ import Footer from '../components/shared/Footer'
 import Container from '../components/shared/Container'
 import Block from '../components/shared/Block'
 import HeroImage from '../components/shared/HeroImage'
+import FlexMobileColumn from '../components/shared/FlexMobileColumn'
 import Button from '../components/shared/Button'
 import ContactAction from '../components/shared/ContactAction'
 import Contact from '../components/shared/Contact'
@@ -33,7 +34,8 @@ const Hero = styled(Box)`
   position: relative;
 
   &:after {
-    background: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(79, 144, 200, 0.25);
     background-blend-mode: multiply;
     bottom: 0;
     content: " ";
@@ -61,10 +63,21 @@ const Image = styled(HeroImage)`
   }
 `
 
+const FlexMobileOrderFirst = styled(Flex)`
+  margin-top: 0;
+  margin-bottom: ${theme.space[4]}px;
+  order: -1;
+
+  @media (min-width: ${theme.containers.sm}px) {
+    margin: 0;
+    order: initial;
+  }
+`
+
+
 
 const Who = () => (
   <Layout>
-
     <Header clear invert />
 
     <Hero px={3}>
@@ -78,7 +91,7 @@ const Who = () => (
       >
         <Subheadline color='white'>About us</Subheadline>
         <Display color='white' reverseShadow>
-          We believe in better
+          We believe in better&nbsp;
           <LineBreak mx='auto'>Sydney Strata management.</LineBreak>
         </Display>
       </Container>
@@ -88,16 +101,24 @@ const Who = () => (
       <Container>
         <Box width={[ 1, 11/12 ]} mx='auto'>
 
-          <Flex mx={-3}>
-            <Box width={[ 1, 1/3, 1/4 ]} px={3}>
+          <FlexMobileColumn
+            retainCellOrder
+            mx={-3}>
+
+            <Flex
+              column
+              width={[ 1, 1/3, 1/4 ]}
+              px={[ 4, 3 ]}>
               <Box mt={1}>
                 <img src='static/img/mike-pollard.jpg' />
               </Box>
               <Text color='text70' mt={2}>Mike Pollard</Text>
               <Text color='text70'>Owner</Text>
-            </Box>
+            </Flex>
 
-            <Box width={[ 1, 2/3, 3/4 ]} px={3}>
+            <FlexMobileOrderFirst
+              width={[ 1, 2/3, 3/4 ]}
+              px={3}>
               <TextBlock>
                 <Text>Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
                 <Text>Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
@@ -105,8 +126,8 @@ const Who = () => (
                 <Text>Dolore ipsa qui rerum veniam exercitationem Facilis earum excepturi fugit ratione nam officia! Dicta quos mollitia aspernatur sapiente nostrum corrupti Veritatis rerum a quod consectetur rem eaque Non hic cum tenetur voluptatem laborum. Natus exercitationem id ipsum odit voluptates. Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
                 <Text>Eius asperiores facilis quasi veniam nihil laborum! Nihil suscipit accusantium facilis eum earum. Dolore ipsa qui rerum veniam exercitationem Facilis earum excepturi fugit ratione nam officia! Dicta quos mollitia aspernatur sapiente nostrum corrupti Veritatis rerum a quod consectetur rem eaque Non hic cum tenetur voluptatem laborum. Natus exercitationem id ipsum odit voluptates. Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
               </TextBlock>
-            </Box>
-          </Flex>
+            </FlexMobileOrderFirst>
+          </FlexMobileColumn>
 
         </Box>
       </Container>
@@ -118,7 +139,6 @@ const Who = () => (
     </Block>
 
     <Footer />
-
   </Layout>
 );
 

@@ -25,13 +25,7 @@ const Root = Flex.withComponent('a').extend`
 export default (props) =>
   <Root href='#'>
     <Flex align='flex-end' width={[ 1, 1/4 ]}>
-      <Text
-        align='left'
-        color='text70'
-        mt={3}
-        mb={[ 0, 3 ]}
-        style={{ transform: 'translateY(-3px)' }}
-      >
+      <Text align='left' color='text70' mt={3} mb={[ 0, 3 ]} style={{ transform: 'translateY(-3px)' }}>
         {formatDateString(props.post.createdAt)}
       </Text>
     </Flex>

@@ -22,7 +22,7 @@ const Icon = hoc('span').extend`
   `}
 
   ${props => props.contact && css`
-    margin: 0 12px 0 3px;
+    margin: 0 9px 0 3px;
 
     > svg {
       --Icon-vertical-align: bottom;

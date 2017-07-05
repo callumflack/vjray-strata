@@ -8,11 +8,12 @@ const Root = styled(Box)`
 
 const Ratio = styled(Box)`
   --ratio: 1;
-  ${props => props.ratio && css`
-    --ratio: ${props.ratio || 1};
-  `}
   padding-bottom: calc(100% * var(--ratio));
   width: 100%;
+
+  ${props => props.ratio && css`
+    --ratio: ${props.ratio};
+  `}
 `
 
 //`

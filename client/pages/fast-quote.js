@@ -9,7 +9,7 @@ import Layout from '../components/shared/Layout'
 import Header from '../components/shared/Header'
 import Footer from '../components/shared/Footer'
 import Block from '../components/shared/Block'
-import HeroBox from '../components/shared/HeroBox'
+import ColorBox from '../components/shared/ColorBox'
 import Container from '../components/shared/Container'
 import { Display, Headline, Subheadline } from '../components/shared/Headline'
 import { MediumText, LargeText, LineBreak } from '../components/shared/Text'
@@ -20,8 +20,7 @@ import ContactAction from '../components/shared/ContactAction'
 import Contact from '../components/shared/Contact'
 
 
-const BrightBox = styled(HeroBox)`
-  align-items: initial;
+const StyledColorBox = styled(ColorBox)`
   background-color: ${theme.colors.beige};
   background-image:
     linear-gradient(
@@ -29,8 +28,6 @@ const BrightBox = styled(HeroBox)`
       rgba(222, 202, 178, 0.2),
       ${theme.colors.beige} 40%
     );
-  height: auto;
-  margin-top: var(--Header-height);
 `
 
 class FastQuote extends React.Component {
@@ -56,10 +53,10 @@ class FastQuote extends React.Component {
   render() {
     return (
       <Layout>
-        <Header />
+        <Header clear />
 
-        <BrightBox py={[ 5, 6 ]}>
-          <Container mw='sm' textCenter>
+        <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
+          <Container mw='sm' mt={[ 4, 5, 6 ]} textCenter>
             <Subheadline>Confidential & no obligation</Subheadline>
             <Display>Get a fast quote.</Display>
             <MediumText color='text'>
@@ -72,7 +69,7 @@ class FastQuote extends React.Component {
             <FormHeader bg='brand' color='white'>Quick response message</FormHeader>
             <FullQuoteForm />
           </Container>
-        </BrightBox>
+        </StyledColorBox>
 
         <Block textCenter>
           <ContactAction btnColor='brandAlt' />

@@ -14,17 +14,17 @@ import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styl
 import { Text, LargeText, LineBreak } from '../components/styled-elements/Text'
 import Button from '../components/styled-elements/Button'
 
-import Header from '../components/Shared/Header'
-import Footer from '../components/Shared/Footer'
-import Block from '../components/Shared/Block'
-import ColorBox from '../components/Shared/ColorBox'
-import FullQuoteForm from '../components/Shared/FullQuoteForm'
-import IssueForm from '../components/Shared/IssueForm'
-import { FormHeader } from '../components/Shared/Form.js'
-import { Tabs, Pane } from '../components/Shared/Tabs.js'
-import ContactAction from '../components/Shared/ContactAction'
-import Contact from '../components/Shared/Contact'
-import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import Header from '../components/Sharedy/Header'
+import Footer from '../components/Sharedy/Footer'
+import Block from '../components/Sharedy/Block'
+import ColorBox from '../components/Sharedy/ColorBox'
+import FullQuoteForm from '../components/Sharedy/FullQuoteForm'
+import IssueForm from '../components/Sharedy/IssueForm'
+import { FormHeader } from '../components/Sharedy/Form.js'
+import { Tabs, Pane } from '../components/Sharedy/Tabs.js'
+import ContactAction from '../components/Sharedy/ContactAction'
+import Contact from '../components/Sharedy/Contact'
+import LargeButtonStyler from '../components/Sharedy/LargeButtonStyler'
 
 
 const StyledColorBox = styled(ColorBox)`

@@ -6,18 +6,18 @@ import apollo from '../lib/apollo'
 import theme from '../components/theme'
 
 import Layout from '../components/styled-elements/Layout'
-import Header from '../components/Shared/Header'
-import Footer from '../components/Shared/Footer'
-import Block from '../components/Shared/Block'
-import ColorBox from '../components/Shared/ColorBox'
+import Header from '../components/Sharedy/Header'
+import Footer from '../components/Sharedy/Footer'
+import Block from '../components/Sharedy/Block'
+import ColorBox from '../components/Sharedy/ColorBox'
 import Container from '../components/styled-elements/Container'
 import { Display, Headline, Subheadline } from '../components/styled-elements/Headline'
 import { MediumText, LargeText, LineBreak } from '../components/styled-elements/Text'
 
-import { FormHeader } from '../components/Shared/Form.js'
-import FullQuoteForm from '../components/Shared/FullQuoteForm'
-import ContactAction from '../components/Shared/ContactAction'
-import Contact from '../components/Shared/Contact'
+import { FormHeader } from '../components/Sharedy/Form.js'
+import FullQuoteForm from '../components/Sharedy/FullQuoteForm'
+import ContactAction from '../components/Sharedy/ContactAction'
+import Contact from '../components/Sharedy/Contact'
 
 
 const StyledColorBox = styled(ColorBox)`

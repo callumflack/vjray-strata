@@ -12,15 +12,15 @@ import { Text, TextBlock, LineBreak } from '../components/styled-elements/Text'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 
 import Layout from '../components/styled-elements/Layout'
-import Header from '../components/Shared/Header'
-import Footer from '../components/Shared/Footer'
+import Header from '../components/Sharedy/Header'
+import Footer from '../components/Sharedy/Footer'
 import Container from '../components/styled-elements/Container'
-import Block from '../components/Shared/Block'
+import Block from '../components/Sharedy/Block'
 import CoverImage from '../components/styled-elements/CoverImage'
-import FlexMobileColumn from '../components/Shared/FlexMobileColumn'
+import FlexMobileColumn from '../components/Sharedy/FlexMobileColumn'
 import Button from '../components/styled-elements/Button'
-import ContactAction from '../components/Shared/ContactAction'
-import Contact from '../components/Shared/Contact'
+import ContactAction from '../components/Sharedy/ContactAction'
+import Contact from '../components/Sharedy/Contact'
 
 
 const Hero = styled(Box)`

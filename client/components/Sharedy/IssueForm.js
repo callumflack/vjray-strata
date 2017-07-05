@@ -6,7 +6,7 @@ import gql from 'graphql-tag'
 import apollo from '../../lib/apollo.js'
 
 import theme from '../theme'
-import FormContainer from '../Shared/FormContainer'
+import FormContainer from '../Sharedy/FormContainer'
 import {
   Form,
   Input,
@@ -14,7 +14,7 @@ import {
   Textarea,
   FormGroup,
   FormGroupHeadline,
-} from '../Shared/Form';
+} from '../Sharedy/Form';
 
 
 class IssueForm extends React.Component {

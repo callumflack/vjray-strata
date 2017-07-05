@@ -38,11 +38,15 @@ const Item = styled(SmallText)`
 `;
 
 const Contact = (props) => (
-  <Locations justify='center' mx={-2}>
+  <Locations
+    justify='center'
+    mx={-2}>
 
     {Array(2).fill(1).map(() =>
 
-    <Location width={[ 1, 1/3 ]} px={2}>
+    <Location
+      width={[ 1, 1/3 ]}
+      px={[ 3, 2 ]}>
       <Image src='/static/img/map.jpg' />
 
       <Box my={2}>

@@ -45,7 +45,7 @@ const Root = styled(Flex)`
   `}
 
   ${props => props.isHidden  && css`
-  transition: opacity 0.3s, visibility 0s 0.3s;
+    transition: opacity 0.3s, visibility 0s 0.3s;
     visibility: hidden;
     opacity: 0;
     transform: translate3d(0, 0, 0) translateY(-121px);

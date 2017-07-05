@@ -48,12 +48,15 @@ const Modal = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0;
   transition: opacity 0.7s 0.4s;
+  opacity: 0;
+  visibility: hidden;
 
   ${props => props.isVisible && css`
     z-index: 15;
+    transition: opacity 0.3s, visibility 0s 0.3s;
     opacity: 1;
+    visibility: visible;
   `}
 `;
 

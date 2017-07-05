@@ -75,6 +75,14 @@ const FlexMobileOrderFirst = styled(Flex)`
 `
 
 
+{/* <Hero px={3}>
+  <Image />
+  <Container
+    mw='lg'
+    pt={[ 5, 6 ]}
+    relative
+    style={{ zIndex: 1 }}
+  > */}
 
 const Who = () => (
   <Layout>
@@ -84,18 +92,19 @@ const Who = () => (
       <Image />
       <Container
         mw='lg'
-        pt={[ 5, 6 ]}
         relative
         style={{ zIndex: 1 }}
       >
-        <Box w={[ 1, 2/3 ]}>
-          <Subheadline color='brandAlt'>About us</Subheadline>
-          <Display color='brandAlt'>
-            We believe in better&nbsp;
-            <LineBreak>Strata management </LineBreak>
-            <LineBreak>for Sydney.</LineBreak>
-          </Display>
-        </Box>
+        <Flex align='center' style={{ height: 'calc(70vh - 121px)' }}>
+          <Box w={[ 1, 2/3 ]} style={{ transform: 'translateY(-32px)' }}>
+            <Subheadline color='brandAlt'>About us</Subheadline>
+            <Display color='brandAlt'>
+              We believe in better&nbsp;
+              <LineBreak>Strata management </LineBreak>
+              <LineBreak>for Sydney.</LineBreak>
+            </Display>
+          </Box>
+        </Flex>
       </Container>
     </Hero>
 

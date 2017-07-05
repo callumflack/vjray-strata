@@ -10,7 +10,7 @@ const ColorBox = styled(HeroBox)`
       rgb(210,235,246),
       ${theme.colors.blue6} 40%
     );
-  height: auto;
+  height: auto !important;
 `
 // margin-top: var(--Header-height);
 // ColorBox.Section = ColorBox.withComponent('section')?

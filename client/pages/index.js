@@ -1,49 +1,30 @@
 import React from 'react'
+import Link from 'next/link';
 
 import styled from 'styled-components'
 import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
 import theme from '../components/theme'
 
-import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak } from '../components/shared/Text'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
+import Layout from '../components/styled-elements/Layout'
+import Container from '../components/styled-elements/Container'
+import Button from '../components/styled-elements/Button'
+import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak } from '../components/styled-elements/Text'
+import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 
-import Layout from '../components/shared/Layout'
-import Header from '../components/shared/Header'
-import Footer from '../components/shared/Footer'
-import Container from '../components/shared/Container'
-import Block from '../components/shared/Block'
-import Button from '../components/shared/Button'
-
-import HeroBox from '../components/shared/HeroBox'
-import Guides from '../components/shared/Guides'
-import RecentPosts from '../components/shared/RecentPosts'
-import ContactAction from '../components/shared/ContactAction'
-import Contact from '../components/shared/Contact'
+import Header from '../components/Shared/Header'
+import Footer from '../components/Shared/Footer'
+import Block from '../components/Shared/Block'
+import HeroBox from '../components/Shared/HeroBox'
+import Guides from '../components/Shared/Guides'
+import RecentPosts from '../components/Shared/RecentPosts'
+import ContactAction from '../components/Shared/ContactAction'
+import Contact from '../components/Shared/Contact'
 
 import ListeningBox from '../components/Home/ListeningBox'
 import FeatureList from '../components/Home/FeatureList'
 import SydneyBox from '../components/Home/SydneyBox'
 import Testimonials from '../components/Home/Testimonials'
-
-
-// this doesn't work
-// const ButtonType = HeadlineMeta.withComponent('span').extend`
-//   color: white;
-//   margin-bottom: 32px;
-// `
-//
-// const ButtonStyle = styled(Button)`
-//   --Button-height: 72px;
-//   padding: 0 6rem;
-//   text-transform: uppercase;
-// `;
-//
-// const QuoteButton = props => (
-//   <ButtonType color='white' mb={3}>
-//     <ButtonStyle fill icon bgColor='brand'>Get a fast quote</ButtonStyle>
-//   </ButtonType>
-// )
 
 
 export default () => (
@@ -79,14 +60,19 @@ export default () => (
       </Container>
     </Box>
 
-    <Block mw='lg' bg='blue6' textCenter>
+    <Block mw='sm' bg='blue6' textCenter>
       <Subheadline>Info on the go</Subheadline>
       <Display color='brandAlt'>Your guides to Sydney Strata.</Display>
-      <Container width={[ 1, 2/3 ]}>
-        <MediumText color='text70'>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</MediumText>
-        <Guides />
-        <RecentPosts />
-      </Container>
+      <MediumText color='text70'>
+        Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.
+      </MediumText>
+
+      <Guides />
+
+      <Subheadline>
+        <Link href={`/`} as={`/home`}><a>Recent posts</a></Link>
+      </Subheadline>
+      <RecentPosts />
     </Block>
 
     <Block>

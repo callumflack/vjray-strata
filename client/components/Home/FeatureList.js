@@ -3,9 +3,9 @@ import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js'
 // import { tint } from 'polished'
-import { Text, LargeText } from '../shared/Text.js'
-import { Headline } from '../shared/Headline.js'
-import { IconSun } from '../shared/Icons.js';
+import { Text, LargeText } from '../styled-elements/Text.js'
+import { Headline } from '../styled-elements/Headline.js'
+import { IconSun } from '../styled-elements/Icons.js';
 
 
 const Header = (props) =>

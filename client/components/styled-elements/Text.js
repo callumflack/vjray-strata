@@ -57,6 +57,7 @@ const AuthorText = props =>
 
 
 // Utils
+// =====================================================================
 
 // TODO: add ternarys to LineBreak as needed.
 const LineBreak = hoc('span').extend`
@@ -78,6 +79,13 @@ const TextBlock = styled('div')`
   }
 `
 
+const Divider = styled.span`
+  --spacing: 1rem;
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
+  :after { content: '•'; }
+`;
+
 
 export {
   Text,
@@ -87,5 +95,6 @@ export {
   AuthorText,
   LineBreak,
   InlineText,
-  TextBlock
+  TextBlock,
+  Divider
 }

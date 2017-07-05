@@ -1,40 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { formatDateString } from '../lib/date.js'
+
 import theme from '../components/theme'
 import { hoc } from '../components/styled-system/styled-components'
 import { Box, Flex } from '../components/styled-grid'
 
-import { formatDateString } from '../lib/date.js'
-import Layout from '../components/shared/Layout'
-import Header from '../components/shared/Header'
-import Footer from '../components/shared/Footer'
-import Block from '../components/shared/Block'
-import Container from '../components/shared/Container'
-import FlexMobileColumn from '../components/shared/FlexMobileColumn'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
-import { Text, LargeText, SmallText, LineBreak } from '../components/shared/Text'
-import Button from '../components/shared/Button'
+import Layout from '../components/styled-elements/Layout'
+import Container from '../components/styled-elements/Container'
+import FlexMobileColumn from '../components/Shared/FlexMobileColumn'
+// import { IconDownload } from '../components/styled-elements/Icons'
+import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
+import { Text, LargeText, SmallText, LineBreak } from '../components/styled-elements/Text'
+import Button from '../components/styled-elements/Button'
 
-import ColorBox from '../components/shared/ColorBox'
-// import { IconDownload } from '../components/shared/Icons'
-import GuideButton from '../components/shared/GuideButton'
-import RecentPosts from '../components/shared/RecentPosts'
-import ArticleArchive from '../components/shared/ArticleArchive'
-import ContactAction from '../components/shared/ContactAction'
-import ContactActionAlt from '../components/shared/ContactActionAlt'
-import Contact from '../components/shared/Contact'
+import Block from '../components/Shared/Block'
+import ColorBox from '../components/Shared/ColorBox'
+import Contact from '../components/Shared/Contact'
+import ContactAction from '../components/Shared/ContactAction'
+import ContactActionAlt from '../components/Shared/ContactActionAlt'
+import Footer from '../components/Shared/Footer'
+import GuideButton from '../components/Shared/GuideButton'
+import Header from '../components/Shared/Header'
+import PostContainer from '../components/Shared/PostContainer'
+import RecentPosts from '../components/Shared/RecentPosts'
 
 
-// rgba(0,0,0,0.2),
 const StyledColorBox = styled(ColorBox)`
-  background-color: ${theme.colors.brandAlt};
   background-image:
     linear-gradient(
       to bottom,
-      rgba(64, 64, 112, 0.2),
+      rgb(64, 64, 112),
       ${theme.colors.brandAlt70} 70%
-    );
+    )!important;
 `
 
 const Rule = styled(Container)`
@@ -56,17 +55,9 @@ const Rule = styled(Container)`
 //     }
 // `
 
-
-
-{/* <Subheadline
-  align='center'
-  mb={[ 3, 4 ]}
-  children='Article archive' /> */}
-
-
 export default () => (
   <Layout>
-    <Header clear invert />
+    <Header />
 
     <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
       <Container mw='rg' mt={[ 4, 5, 6 ]} >
@@ -106,7 +97,10 @@ export default () => (
 
     <Box pb={[ 5, 6 ]} px={3}>
       <Container mw='lg' textCenter>
-        <ArticleArchive />
+        <Container textCenter mb={4}>
+          <Subheadline children='Posts archive' />
+        </Container>
+        <PostContainer />
       </Container>
     </Box>
 

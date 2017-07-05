@@ -1,11 +1,12 @@
 import Link from 'next/link'
+
+import theme from '../theme'
 import styled, { css } from 'styled-components'
 import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
-import { IconLogo } from '../shared/Icons'
-import { Text, InlineText } from '../shared/Text'
-import Button from '../shared/Button'
-import theme from '../theme'
+import { IconLogo } from '../styled-elements/Icons'
+import { Text, InlineText, Divider } from '../styled-elements/Text'
+import Button from '../styled-elements/Button'
 // import { rgba } from 'polished';
 
 
@@ -83,6 +84,11 @@ const LinkText = props =>
     {...props}
   />
 
+const StyledDivider = styled(Divider)`
+  margin-left: 0;
+`
+
+
 
 class Header extends React.Component {
   constructor(props) {
@@ -141,6 +147,7 @@ class Header extends React.Component {
           <Link href='/contact'>
             <a><LinkText>Contact us</LinkText></a>
           </Link>
+          <StyledDivider />
           <Link href='tel:1300-667-123'>
             <a><LinkText>1300 667 123</LinkText></a>
           </Link>

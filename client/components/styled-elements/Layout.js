@@ -1,9 +1,7 @@
-import { ThemeProvider } from 'styled-components'
 import Head from 'next/head'
-import globalStyles from '../global'
+import { ThemeProvider } from 'styled-components'
 import theme from '../theme';
-import Header from '../shared/Header';
-import Footer from '../shared/Footer';
+import globalStyles from './global'
 
 // https://github.com/zeit/next.js/blob/master/examples/layout-component/components/layout.js
 

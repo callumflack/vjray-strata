@@ -6,7 +6,7 @@ import gql from 'graphql-tag'
 import apollo from '../../lib/apollo.js'
 
 import theme from '../theme'
-import FormContainer from '../shared/FormContainer'
+import FormContainer from '../Shared/FormContainer'
 import {
   Form,
   Input,
@@ -14,7 +14,7 @@ import {
   Textarea,
   FormGroup,
   FormGroupHeadline,
-} from '../shared/Form';
+} from '../Shared/Form';
 
 
 class IssueForm extends React.Component {
@@ -29,8 +29,6 @@ class IssueForm extends React.Component {
     return (
       <FormContainer submit={this.submit}>
         <FormGroup>
-          <FormGroupHeadline>Issue details</FormGroupHeadline>
-
           <Input
             placeholder='Your name'
             name='name'

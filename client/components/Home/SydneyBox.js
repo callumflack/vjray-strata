@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import styled, { css } from 'styled-components';
 import { Flex, Box } from '../styled-grid';
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js';
 
-// import HeroBox from '../shared/HeroBox.js';
-import Container from '../shared/Container.js';
-import { Text, LineBreak } from '../shared/Text.js';
-import { Display, Subheadline  } from '../shared/Headline.js';
-import Button from '../shared/Button.js';
+// import HeroBox from '../Shared/HeroBox.js';
+import Container from '../styled-elements/Container.js';
+import { Text, LineBreak } from '../styled-elements/Text.js';
+import { Display, Subheadline  } from '../styled-elements/Headline.js';
+import Button from '../styled-elements/Button.js';
 
 
 const Root = styled(Box)`
-  height: 75vh;
+  height: 70vh;
 `;
 
 const Background = styled(Box)`

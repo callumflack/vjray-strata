@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components'
 import theme from '../theme'
 import { hoc } from '../styled-system/styled-components'
 import { Box, Flex } from '../styled-grid'
-import Container from '../shared/Container'
-import { Text, SmallText } from '../shared/Text'
-import { IconLogo } from '../shared/Icons'
+import Container from '../styled-elements/Container'
+import { Text, SmallText, Divider } from '../styled-elements/Text'
+import { IconLogo } from '../styled-elements/Icons'
 
 
 const Root = hoc(Box).extend`
@@ -49,13 +49,6 @@ const Column = styled(Box)`
       margin-top: 12px;
     }
   }
-`;
-
-const Divider = styled.span`
-  --spacing: 1rem;
-  margin-left: var(--spacing);
-  margin-right: var(--spacing);
-  :after { content: '•'; }
 `;
 
 

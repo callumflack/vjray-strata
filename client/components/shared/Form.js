@@ -3,7 +3,7 @@ import Formsy, { HOC } from 'formsy-react';
 
 import styled, { css } from 'styled-components'
 import theme from '../theme'
-import { Display, BoxedSubheadline, HeadlineDetail } from '../shared/Headline'
+import { Display, BoxedSubheadline, HeadlineDetail } from '../styled-elements/Headline'
 
 
 class InputRoot extends React.Component {

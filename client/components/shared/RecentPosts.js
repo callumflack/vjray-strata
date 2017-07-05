@@ -5,22 +5,14 @@ import gql from 'graphql-tag';
 import apollo from '../../lib/apollo.js';
 
 import styled from 'styled-components';
-import { hoc } from '../styled-system/styled-components';
 import theme from '../theme.js';
-import { Flex, Box } from '../styled-grid';
-import { Text, InlineText } from '../shared/Text.js';
-import { Headline, Subheadline  } from '../shared/Headline.js';
+import { hoc } from '../styled-system/styled-components';
+import { Box } from '../styled-grid';
+import { Text } from '../styled-elements/Text.js';
+import { Headline  } from '../styled-elements/Headline.js';
 
-
-const PostsSubheadline = props =>
-  <Subheadline mb={4}>
-    <Link href={`/`} as={`/home`}>
-      {props.children || 'Recent posts'}
-    </Link>
-  </Subheadline>
 
 const PostLink = hoc('span').extend`
-  color: ${theme.colors.brand};
   margin-left: 0.5rem;
 
   :after {
@@ -58,8 +50,6 @@ class RecentPosts extends React.Component {
   render() {
     return (
       <div>
-        <PostsSubheadline />
-
         {this.state.posts.map((post, i) =>
           <div key={i}>
 
@@ -83,11 +73,11 @@ class RecentPosts extends React.Component {
               <Text align='left'>
                 {post.description}
                 <Link href={`/article?slug=${post.slug}`} as={`/article/${post.slug}`}>
-                  <a><PostLink font='textLight'>Read more</PostLink></a>
+                  <a><PostLink color='brand' font='textLight'>Read more</PostLink></a>
                 </Link>
               </Text>
-
             </Box>
+
           </div>
         )}
       </div>

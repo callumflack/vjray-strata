@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Button from '../shared/Button.js';
+import Button from '../styled-elements/Button.js';
 
 storiesOf('Button', module)
   .add('Default', () => (

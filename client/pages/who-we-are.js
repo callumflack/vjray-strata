@@ -8,24 +8,24 @@ import theme from '../components/theme'
 import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
 
-import { Text, TextBlock, LineBreak } from '../components/shared/Text'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
+import { Text, TextBlock, LineBreak } from '../components/styled-elements/Text'
+import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 
-import Layout from '../components/shared/Layout'
-import Header from '../components/shared/Header'
-import Footer from '../components/shared/Footer'
-import Container from '../components/shared/Container'
-import Block from '../components/shared/Block'
-import HeroImage from '../components/shared/HeroImage'
-import FlexMobileColumn from '../components/shared/FlexMobileColumn'
-import Button from '../components/shared/Button'
-import ContactAction from '../components/shared/ContactAction'
-import Contact from '../components/shared/Contact'
+import Layout from '../components/styled-elements/Layout'
+import Header from '../components/Shared/Header'
+import Footer from '../components/Shared/Footer'
+import Container from '../components/styled-elements/Container'
+import Block from '../components/Shared/Block'
+import CoverImage from '../components/styled-elements/CoverImage'
+import FlexMobileColumn from '../components/Shared/FlexMobileColumn'
+import Button from '../components/styled-elements/Button'
+import ContactAction from '../components/Shared/ContactAction'
+import Contact from '../components/Shared/Contact'
 
 
 const Hero = styled(Box)`
   --Header-height: 121px;
-  --Hero-height: 75vh;
+  --Hero-height: 70vh;
 
   align-items: center;
   background-color: #4F90C8;
@@ -34,8 +34,8 @@ const Hero = styled(Box)`
   position: relative;
 
   &:after {
-    background-color: rgba(0, 0, 0, 0.1);
     background-color: rgba(79, 144, 200, 0.25);
+    background-color: rgba(255, 255, 255, 0.15);
     background-blend-mode: multiply;
     bottom: 0;
     content: " ";
@@ -46,7 +46,7 @@ const Hero = styled(Box)`
   }
 `
 
-const Image = styled(HeroImage)`
+const Image = styled(CoverImage)`
   background-image: url('static/img/who-cronulla.jpg');
   background-position: 50% 50%;
 
@@ -59,7 +59,7 @@ const Image = styled(HeroImage)`
   }
 
   @media (min-width: 1536px) {
-    background-position: 10% 100%;
+    background-position: 30% 100%;
   }
 `
 
@@ -68,7 +68,7 @@ const FlexMobileOrderFirst = styled(Flex)`
   margin-bottom: ${theme.space[4]}px;
   order: -1;
 
-  @media (min-width: ${theme.containers.sm}px) {
+  @media (min-width: ${theme.containers.sm}) {
     margin: 0;
     order: initial;
   }
@@ -78,22 +78,24 @@ const FlexMobileOrderFirst = styled(Flex)`
 
 const Who = () => (
   <Layout>
-    <Header clear invert />
+    <Header />
 
     <Hero px={3}>
       <Image />
       <Container
-        mx='sm'
+        mw='lg'
         pt={[ 5, 6 ]}
         relative
-        textCenter
         style={{ zIndex: 1 }}
       >
-        <Subheadline color='white'>About us</Subheadline>
-        <Display color='white' reverseShadow>
-          We believe in better&nbsp;
-          <LineBreak mx='auto'>Sydney Strata management.</LineBreak>
-        </Display>
+        <Box w={[ 1, 2/3 ]}>
+          <Subheadline color='brandAlt'>About us</Subheadline>
+          <Display color='brandAlt'>
+            We believe in better&nbsp;
+            <LineBreak>Strata management </LineBreak>
+            <LineBreak>for Sydney.</LineBreak>
+          </Display>
+        </Box>
       </Container>
     </Hero>
 
@@ -101,14 +103,8 @@ const Who = () => (
       <Container>
         <Box width={[ 1, 11/12 ]} mx='auto'>
 
-          <FlexMobileColumn
-            retainCellOrder
-            mx={-3}>
-
-            <Flex
-              column
-              width={[ 1, 1/3, 1/4 ]}
-              px={[ 4, 3 ]}>
+          <FlexMobileColumn retainCellOrder mx={-3}>
+            <Flex column width={[ 1, 1/3, 1/4 ]} px={[ 4, 3 ]}>
               <Box mt={1}>
                 <img src='static/img/mike-pollard.jpg' />
               </Box>

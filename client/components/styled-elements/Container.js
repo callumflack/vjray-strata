@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Flex, Box } from '../styled-grid';
+import { Box } from '../styled-grid';
 import theme from '../theme.js';
 
 

@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import theme from '../theme'
-import { MediumText } from './Text'
-import { Display, Subheadline, HeadlineMeta } from './Headline'
-import Button from './Button'
-import Container from './Container'
+import { MediumText } from '../styled-elements/Text'
+import { Display, Subheadline } from '../styled-elements/Headline'
+import Button from '../styled-elements/Button'
+import Container from '../styled-elements/Container'
+
+import LargeButtonStyler from './LargeButtonStyler'
 
 const ContactAction = (props) => (
   <Container textCenter>
@@ -13,11 +15,11 @@ const ContactAction = (props) => (
 
     <Container width={[ 1, 1/2 ]} mb={4}>
       { props.withButton &&
-        <HeadlineMeta color='white' mb={3}>
+        <LargeButtonStyler color='white' mt={3} mb={3}>
           <Link href='/fast-quote'>
             <Button large icon bgColor={props.btnColor} children='Get a fast quote' />
           </Link>
-        </HeadlineMeta>
+        </LargeButtonStyler>
       }
 
       <MediumText color='text70'>

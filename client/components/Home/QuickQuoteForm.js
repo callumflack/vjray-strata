@@ -7,9 +7,9 @@ import apollo from '../../lib/apollo.js';
 import theme from '../theme.js';
 import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
-import { InlineText } from '../shared/Text.js';
-import { BoxedSubheadline } from '../shared/Headline.js';
-import Button from '../shared/Button.js';
+import { InlineText } from '../styled-elements/Text.js';
+import { BoxedSubheadline } from '../styled-elements/Headline.js';
+import Button from '../styled-elements/Button.js';
 
 
 const Form = styled.form`

@@ -1,9 +1,10 @@
 import { injectGlobal } from 'styled-components';
 import { normalize } from 'polished';
-import theme from './theme.js';
+import theme from '../theme.js';
 
 
 injectGlobal`
+
 ${normalize()}
 
 @font-face {
@@ -98,7 +99,11 @@ p {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
   font-weight: inherit;
 }

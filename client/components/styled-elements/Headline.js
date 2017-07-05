@@ -53,6 +53,16 @@ const H4 = hoc('h4').extend``
 const H5 = hoc('h5').extend``
 
 
+// Ruled styles
+const RuledStyles = {
+  borderTop: '1px solid currentColor',
+  content: " ",
+  display: 'block',
+  height: '1px',
+  margin: '0 auto ${theme.space[3]}px',
+  width: '${theme.space[4]}px'
+}
+
 
 //  Display
 const DisplayRoot = hoc('h1').extend`
@@ -78,21 +88,32 @@ const Display = props =>
     font='displayRegular'
     fontSize={[ 6, 7 ]}
     lineHeight='display'
-    mb={3}
+    mb={2}
     {...props}
   />
 
 
 // Headline
-const HeadlineRoot = hoc('h2').extend``
+const HeadlineRoot = hoc('h2').extend`
+  ${props => props.ruled && css`
+    &:before {
+      border-top: 1px solid currentColor;
+      content: " ";
+      display: block;
+      height: 1px;
+      margin: 0 auto ${theme.space[3]}px;
+      width: ${theme.space[4]}px;
+    }
+  `}
+`
 
 const Headline = props =>
-  <H2
+  <HeadlineRoot
     color='brand'
     font='displayLight'
     fontSize={[ 5, 6 ]}
-    mb={2}
     lineHeight='headline'
+    mb={2}
     {...props}
   />
 

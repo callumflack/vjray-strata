@@ -4,12 +4,12 @@ import styled, { css } from 'styled-components'
 
 import { Box } from '../styled-grid'
 import theme from '../theme'
-import Button from '../shared/Button'
-import { Text } from '../shared/Text'
+import Button from '../styled-elements/Button'
+import { Text } from '../styled-elements/Text'
 import {
   Form,
   SuccessMessage,
-} from '../shared/Form';
+} from '../Shared/Form';
 
 
 const Root = styled(Box)`

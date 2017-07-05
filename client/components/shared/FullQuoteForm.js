@@ -5,7 +5,7 @@ import gql from 'graphql-tag'
 import apollo from '../../lib/apollo.js'
 
 import theme from '../theme'
-import FormContainer from '../shared/FormContainer'
+import FormContainer from '../Shared/FormContainer'
 import {
   Form,
   Input,
@@ -13,7 +13,7 @@ import {
   Textarea,
   FormGroup,
   FormGroupHeadline,
-} from '../shared/Form';
+} from '../Shared/Form';
 
 
 class FullQuoteForm extends React.Component {

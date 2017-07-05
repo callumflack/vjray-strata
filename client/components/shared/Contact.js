@@ -2,9 +2,9 @@ import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
 import { Box, Flex } from '../styled-grid'
-import { Text, SmallText } from './Text'
-import Button from './Button'
-import { IconPhone, IconEmail, IconAddress, IconEmergency } from '../shared/Icons'
+import { Text, SmallText } from '../styled-elements/Text'
+import Button from '../styled-elements/Button'
+import { IconPhone, IconEmail, IconAddress, IconEmergency } from '../styled-elements/Icons'
 
 
 const Locations = styled(Flex)`

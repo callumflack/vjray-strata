@@ -5,19 +5,19 @@ import apollo from '../lib/apollo'
 
 import theme from '../components/theme'
 
-import Layout from '../components/shared/Layout'
-import Header from '../components/shared/Header'
-import Footer from '../components/shared/Footer'
-import Block from '../components/shared/Block'
-import ColorBox from '../components/shared/ColorBox'
-import Container from '../components/shared/Container'
-import { Display, Headline, Subheadline } from '../components/shared/Headline'
-import { MediumText, LargeText, LineBreak } from '../components/shared/Text'
+import Layout from '../components/styled-elements/Layout'
+import Header from '../components/Shared/Header'
+import Footer from '../components/Shared/Footer'
+import Block from '../components/Shared/Block'
+import ColorBox from '../components/Shared/ColorBox'
+import Container from '../components/styled-elements/Container'
+import { Display, Headline, Subheadline } from '../components/styled-elements/Headline'
+import { MediumText, LargeText, LineBreak } from '../components/styled-elements/Text'
 
-import { FormHeader } from '../components/shared/Form.js'
-import FullQuoteForm from '../components/shared/FullQuoteForm'
-import ContactAction from '../components/shared/ContactAction'
-import Contact from '../components/shared/Contact'
+import { FormHeader } from '../components/Shared/Form.js'
+import FullQuoteForm from '../components/Shared/FullQuoteForm'
+import ContactAction from '../components/Shared/ContactAction'
+import Contact from '../components/Shared/Contact'
 
 
 const StyledColorBox = styled(ColorBox)`
@@ -57,16 +57,16 @@ class FastQuote extends React.Component {
 
         <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
           <Container mw='sm' mt={[ 4, 5, 6 ]} textCenter>
-            <Subheadline>Confidential & no obligation</Subheadline>
-            <Display>Get a fast quote.</Display>
+            <Subheadline children='Confidential & no obligation' />
+            <Display children='Get a fast quote.' />
             <MediumText color='text'>
               Forms not your thing? Call us on 1300 073
-              <LineBreak m='auto'>or drop in Monday to Saturday, 9am-5pm.</LineBreak>
+              <LineBreak m='auto' children='or drop in Monday to Saturday, 9am-5pm.' />
             </MediumText>
           </Container>
 
           <Container mw='sm' mt={[3, 4]}>
-            <FormHeader bg='brand' color='white'>Quick response message</FormHeader>
+            <FormHeader bg='brand' color='white' children='Fast quote form' />
             <FullQuoteForm />
           </Container>
         </StyledColorBox>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Box } from '../styled-grid';
 
-const HeroImage = styled(Box)`
+const CoverImage = styled(Box)`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,4 +12,4 @@ const HeroImage = styled(Box)`
   top: 0;
 `
 
-export default HeroImage
+export default CoverImage

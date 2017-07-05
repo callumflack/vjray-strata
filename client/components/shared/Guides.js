@@ -7,7 +7,7 @@ import apollo from '../../lib/apollo.js';
 import theme from '../theme.js';
 import {
   Text,
-} from '../shared/Text.js';
+} from '../styled-elements/Text.js';
 
 const GuidesWrapper = styled.div`
   display: flex;

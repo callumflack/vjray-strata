@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Flex } from '../styled-grid'
-import { FormHeader } from '../shared/Form.js'
+import { FormHeader } from '../Shared/Form.js'
 
 const Label = styled.a`
   flex-grow: 1;

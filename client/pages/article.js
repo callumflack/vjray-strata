@@ -1,18 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import gql from 'graphql-tag';
-import { Flex } from '../components/styled-grid'
 
 import apollo from '../lib/apollo.js';
 import { formatDateString } from '../lib/date.js';
-import Layout from '../components/shared/Layout.js';
-import Block from '../components/shared/Block.js';
-import Container from '../components/shared/Container.js';
-import Guides from '../components/shared/Guides.js';
-import ContactAction from '../components/shared/ContactAction'
-import Contact from '../components/shared/Contact.js';
-import { Text } from '../components/shared/Text.js';
-import { Display, Subheadline } from '../components/shared/Headline'
+
+import { Flex } from '../components/styled-grid'
+import Layout from '../components/styled-elements/Layout.js';
+import Container from '../components/styled-elements/Container.js';
+import { Text } from '../components/styled-elements/Text.js';
+import { Display, Subheadline } from '../components/styled-elements/Headline'
+
+import Header from '../components/Shared/Header.js';
+import Footer from '../components/Shared/Footer.js';
+import Block from '../components/Shared/Block.js';
+import Guides from '../components/Shared/Guides.js';
+import ContactAction from '../components/Shared/ContactAction'
+import Contact from '../components/Shared/Contact.js';
 
 
 const Hero = styled.div`
@@ -66,6 +70,8 @@ class Article extends React.Component {
   render() {
     return (
       <Layout>
+        <Header />
+
         <Hero>
           <Block>
             <Flex>
@@ -100,9 +106,11 @@ class Article extends React.Component {
         </Block>
 
         <Block>
-          <ContactAction btnColor='brand' />
+          <ContactAction btnColor='brand' withButton />
           <Contact />
         </Block>
+
+        <Footer />
       </Layout>
     )
   }

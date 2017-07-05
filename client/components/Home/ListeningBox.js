@@ -3,12 +3,12 @@ import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme'
 
-import { LargeText } from '../shared/Text'
-import { Headline, Display } from '../shared/Headline'
+import { LargeText } from '../styled-elements/Text'
+import { Headline, Display } from '../styled-elements/Headline'
+import CoverImage from '../styled-elements/CoverImage'
+import Container from '../styled-elements/Container'
 
-import HeroBox from '../shared/HeroBox'
-import HeroImage from '../shared/HeroImage'
-import Container from '../shared/Container'
+import HeroBox from '../Shared/HeroBox'
 import QuickQuoteForm from './QuickQuoteForm'
 
 
@@ -16,7 +16,7 @@ const Root = styled(HeroBox)`
   --Hero-height: 50vh;
 `
 
-const Image = styled(HeroImage)`
+const Image = styled(CoverImage)`
   background-image: url('static/img/home-hero.jpg');
   background-position: 30% 100%;
 

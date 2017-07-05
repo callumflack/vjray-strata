@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import theme from '../theme'
-import { SmallText } from './Text'
-import Button from './Button'
-import { IconDownload } from './Icons'
+import { SmallText } from '../styled-elements/Text'
+import Button from '../styled-elements/Button'
+import { IconDownload } from '../styled-elements/Icons'
 
 const Image = styled('img')`
   box-shadow:

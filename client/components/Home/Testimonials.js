@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from '../theme.js';
 import { Box, Flex } from '../styled-grid';
-import { Text, SmallText } from '../shared/Text';
+import { Text, SmallText } from '../styled-elements/Text';
 
 // const Testimonial = styled.div`
 //   display: flex;

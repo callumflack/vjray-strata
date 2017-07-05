@@ -60,10 +60,7 @@ class RecentPosts extends React.Component {
               <img src='http://lorempixel.com/620/460' />
             </Box>
 
-            <Box
-              width={[ 1, 5/6 ]}
-              mx='auto'>
-
+            <Box width={[ 1, 5/6 ]} mx='auto'>
               <Headline
                 font='displayMedium'
                 color='text'

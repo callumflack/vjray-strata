@@ -11,12 +11,12 @@ import Container from '../components/styled-elements/Container.js';
 import { Text } from '../components/styled-elements/Text.js';
 import { Display, Subheadline } from '../components/styled-elements/Headline'
 
-import Header from '../components/Sharedy/Header.js';
-import Footer from '../components/Sharedy/Footer.js';
-import Block from '../components/Sharedy/Block.js';
-import Guides from '../components/Sharedy/Guides.js';
-import ContactAction from '../components/Sharedy/ContactAction'
-import Contact from '../components/Sharedy/Contact.js';
+import Header from '../components/Shared/Header.js';
+import Footer from '../components/Shared/Footer.js';
+import Block from '../components/Shared/Block.js';
+import Guides from '../components/Shared/Guides.js';
+import ContactAction from '../components/Shared/ContactAction'
+import Contact from '../components/Shared/Contact.js';
 
 
 const Hero = styled.div`

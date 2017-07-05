@@ -9,7 +9,7 @@ import { Text } from '../styled-elements/Text'
 import {
   Form,
   SuccessMessage,
-} from '../Sharedy/Form';
+} from '../Shared/Form';
 
 
 const Root = styled(Box)`

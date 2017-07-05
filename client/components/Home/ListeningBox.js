@@ -8,7 +8,7 @@ import { Headline, Display } from '../styled-elements/Headline'
 import CoverImage from '../styled-elements/CoverImage'
 import Container from '../styled-elements/Container'
 
-import HeroBox from '../Sharedy/HeroBox'
+import HeroBox from '../Shared/HeroBox'
 import QuickQuoteForm from './QuickQuoteForm'
 
 

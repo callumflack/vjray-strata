@@ -6,11 +6,11 @@ import { Flex, Box } from '../styled-grid';
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme.js';
 
-// import HeroBox from '../Shared/HeroBox.js';
 import Container from '../styled-elements/Container.js';
 import { Text, LineBreak } from '../styled-elements/Text.js';
 import { Display, Subheadline  } from '../styled-elements/Headline.js';
 import Button from '../styled-elements/Button.js';
+import { FlexEmbed } from '../styled-elements/FlexEmbed.js';
 
 
 const Root = styled(Box)`
@@ -43,53 +43,45 @@ const Background = styled(Box)`
 `;
 
 const Modal = styled.div`
-  position: fixed;
-  content: " ";
-  top: 0;
+  background-color: #151515;
   bottom: 0;
+  content: " ";
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.7s 0.4s;
   left: 0;
   right: 0;
-  transition: opacity 0.7s 0.4s;
-  opacity: 0;
   visibility: hidden;
 
   ${props => props.isVisible && css`
-    z-index: 15;
-    transition: opacity 0.3s, visibility 0s 0.3s;
     opacity: 1;
+    transition: opacity 0.3s, visibility 0s 0.3s;
     visibility: visible;
+    z-index: 15;
   `}
 `;
 
 const VideoIframe = styled.iframe`
-  border: 0;
   height: 100%;
   width: 100%;
 `;
 
 const ModalClose = styled.a`
-  position: fixed;
-  content: " ";
-  line-height: 1;
-  top: 3rem;
-  right: 3rem;
+  --Close-space: 3rem;
   color: #fff;
-  font-size: 3rem;
-  font-weight: bold;
+  content: " ";
+  cursor: pointer;
+  font-size: 5rem;
+  font-family: ${theme.fonts.displayThin};
+  line-height: 1;
+  position: fixed;
+  right: var(--Close-space);
+  top: calc( 0.7 * var(--Close-space));
 `;
 
-const Content = styled.div`
-  width: 100%;
+const StyledBox = styled.div`
   height: 100%;
-
-  ${'' /* bottom: 0;
-  content: " ";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%; */}
 `;
 
 
@@ -133,18 +125,24 @@ class SydneyBox extends React.Component {
       <Root>
         <Modal isVisible={!this.state.contentIsVisible} >
           <ModalClose onClick={this.closeModal} href='#'>&times;</ModalClose>
-          <VideoIframe
-            ref={(ref) => this.video = ref}
-            data-src='https://www.youtube.com/embed/ijrkKNZRIfM?autoplay=1'
-            frameborder='0'
-            allowtransparency='true'
-            webkitallowfullscreen=''
-            mozallowfullscreen=''
-            allowfullscreen=''
-          />
+          <Flex align='center' style={{ height: '100vh' }}>
+            <Container mw='lg' w='1140px'>
+              <FlexEmbed ratio='9/16'>
+                <VideoIframe
+                  ref={(ref) => this.video = ref}
+                  data-src='https://www.youtube.com/embed/ijrkKNZRIfM?autoplay=1'
+                  frameborder='0'
+                  allowtransparency='true'
+                  webkitallowfullscreen=''
+                  mozallowfullscreen=''
+                  allowfullscreen=''
+                />
+              </FlexEmbed>
+            </Container>
+          </Flex>
         </Modal>
 
-        <Content isVisible={this.state.contentIsVisible}>
+        <StyledBox isVisible={this.state.contentIsVisible}>
           <Background center textCenter width={1}>
 
             <Container textCenter relative pt={[ 5, 6 ]}>
@@ -159,7 +157,7 @@ class SydneyBox extends React.Component {
             </Container>
 
           </Background>
-        </Content>
+        </StyledBox>
       </Root>
     )
   }

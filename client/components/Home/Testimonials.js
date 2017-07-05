@@ -11,17 +11,27 @@ import { Text, SmallText } from '../styled-elements/Text';
 //   width: 275px;
 // `;
 
-const Testimonial = styled(Flex)`
+const StyledFlex = styled(Flex)`
   margin: 1rem 2rem;
+  position: relative;
   width: 290px;
 `
 
 const Quote = styled(SmallText)`
   border: 1px solid ${theme.colors.text20};
-  display: inline-block;
-  margin-bottom: 1.5rem;
+  display: block;
   padding: 1.3rem 2rem 1.4rem;
   text-align: left;
+`
+
+const StyledBox = styled(Box)`
+  position: relative;
+  top: -1px;
+`
+
+const QuoteTriangle = styled('div')`
+  color: ${theme.colors.text20};
+  display: inline-block;
 `
 
 const Image = styled.img`
@@ -29,24 +39,32 @@ const Image = styled.img`
 `
 
 const Author = styled(Flex)`
-  margin-left: 1.5rem;
+  ${'' /* margin-left: 1.5rem; */}
 `
 
 const Testimonials = (props) => (
   <Flex justify='center' wrap>
 
     {Array(5).fill(1).map(() =>
-    <Testimonial justify='center' column>
+    <StyledFlex justify='center' column>
       <Quote>Sit sint quae officia asperiores provident, iusto similique Eligendi commodi quaerat provident voluptas sunt.</Quote>
+      <StyledBox mb={1} ml={[ 3, 4 ]}>
+        <QuoteTriangle>
+          <svg width="30" height="30" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <polygon fill="currentColor" points="18.59 0 1 17.59 1 0 0 0 0 20 20 0 18.59 0"/>
+            <polygon fill="white" points="1 0 1 17.59 18.59 0 1 0"/>
+          </svg>
+        </QuoteTriangle>
+      </StyledBox>
 
-      <Flex mx='auto'>
-        <Image src='http://lorempixel.com/60/60' />
+      <Box ml={[ 3, 4 ]}>
+        {/* <Image src='http://lorempixel.com/60/60' /> */}
         <Author justify='flex-end' column>
           <SmallText>Dennis Sievers</SmallText>
           <SmallText color='text70'>Campsie</SmallText>
         </Author>
-      </Flex>
-    </Testimonial>
+      </Box>
+    </StyledFlex>
     )}
 
   </Flex>

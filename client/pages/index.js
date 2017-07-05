@@ -63,22 +63,23 @@ export default () => (
       </Container>
     </Box>
 
-    <Block mw='sm' bg='blue6' textCenter>
+    <Block bg='blue6' textCenter>
       <Subheadline>Info on the go</Subheadline>
-      <Display color='brandAlt'>
-        Your guides to&nbsp;
-        <LineBreak mx='auto'>Sydney Strata.</LineBreak>
-      </Display>
+      <Display color='brandAlt' children='Your guides to Sydney Strata.' />
       <MediumText color='text70'>
         Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.
       </MediumText>
 
-      <Guides />
+      <Box p={4}>
+        <Guides />
+      </Box>
 
-      <Subheadline>
-        <Link href={`/`} as={`/home`}><a>Recent posts</a></Link>
-      </Subheadline>
-      <RecentPosts />
+      <Container mt={5} mw='sm'>
+        <Subheadline>
+          <Link href={`/`} as={`/home`}><a>Recent posts</a></Link>
+        </Subheadline>
+        <RecentPosts />
+      </Container>
     </Block>
 
     <Block>

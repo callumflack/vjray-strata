@@ -49,9 +49,12 @@ export default () => (
 
     <Box px={3} py={[ 5, 6 ]}>
       <Container textCenter>
-        <Display font='displayMedium' color='text' children='Our duty is your satisfaction.' />
+        <Display children='Our duty is your satisfaction.' />
         <Container width={[ 1, 2/3 ]}>
-          <LargeText color='brand'>"VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." — <AuthorText>Jessica, Campsie</AuthorText></LargeText>
+          <LargeText color='text70'>
+            "VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." —&nbsp;
+            <AuthorText>Jessica, Campsie</AuthorText>
+          </LargeText>
         </Container>
       </Container>
 
@@ -62,7 +65,10 @@ export default () => (
 
     <Block mw='sm' bg='blue6' textCenter>
       <Subheadline>Info on the go</Subheadline>
-      <Display color='brandAlt'>Your guides to Sydney Strata.</Display>
+      <Display color='brandAlt'>
+        Your guides to&nbsp;
+        <LineBreak mx='auto'>Sydney Strata.</LineBreak>
+      </Display>
       <MediumText color='text70'>
         Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.
       </MediumText>

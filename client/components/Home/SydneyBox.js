@@ -29,7 +29,7 @@ const Background = styled(Box)`
     background-position-y: 90%;
   }
 
-  &:before {
+  ${'' /* &:before {
     background: rgba(247, 242, 236, 0.2);
     background-blend-mode: multiply;
     bottom: 0;
@@ -38,7 +38,7 @@ const Background = styled(Box)`
     position: absolute;
     right: 0;
     top: 0;
-  }
+  } */}
 `;
 
 const Modal = styled.div`
@@ -77,6 +77,15 @@ const ModalClose = styled.a`
 const Content = styled.div`
   width: 100%;
   height: 100%;
+
+  ${'' /* bottom: 0;
+  content: " ";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%; */}
 `;
 
 
@@ -135,12 +144,12 @@ class SydneyBox extends React.Component {
           <Background center textCenter width={1}>
 
             <Container textCenter relative pt={[ 5, 6 ]}>
-              <Subheadline color='brand'>Dependable and effective</Subheadline>
-              <Display>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
+              <Subheadline color='brandAlt'>Dependable and effective</Subheadline>
+              <Display color='brandAlt'>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
                 <Text color='text' mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Text>
                 <Text font='textMedium'>
-                  <Button color='brand' invert icon onClick={this.openModal}>Watch video</Button>
+                  <Button color='brandAlt' bg='white' invert icon onClick={this.openModal}>Watch video</Button>
                 </Text>
               </Container>
             </Container>

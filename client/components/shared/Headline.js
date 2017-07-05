@@ -35,6 +35,7 @@ import theme from '../theme'
 // ========================================================================
 
 
+// Higher order comp examples…
 // const hoc = Comp =>
 //   ({ width, ...props }) =>
 //     <Comp {...props} w={width} />
@@ -42,21 +43,6 @@ import theme from '../theme'
 // module.exports = (Component, props) => {
 //   const SystemComponent = styled(Component)``
 // }
-
-
-// const order = props => props.order ? `order:${props.order};` : null
-// const lineHeight = props => props.lineHeight ? `line-height:${theme.lineHeight[props.lineHeight]};` : `line-height:${theme.lineHeight.text};`;
-// const medium = props => props.medium ? `font-family:${theme.fonts.displayMedium};` : `font-family:${theme.fonts.displayLight};`
-// const uppercase = props => props.uppercase ? `text-transform:uppercase;` : null
-//
-// const Test = styled('h1')`
-//   ${medium}
-//   ${uppercase}
-//   ${lineHeight}
-//   font-size: 16px;
-//   @media (min-width: 700px) { font-size: 20px; }
-// `
-
 
 
 // Set all available HTML tags
@@ -70,6 +56,10 @@ const H5 = hoc('h5').extend``
 
 //  Display
 const DisplayRoot = hoc('h1').extend`
+  ${props => props.reverseShadow && css`
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  `}
+
   ${props => props.ruled && css`
     &:before {
       border-top: 1px solid currentColor;

@@ -9,7 +9,7 @@ import Block from '../components/shared/Block'
 import HeroBox from '../components/shared/HeroBox'
 import Container from '../components/shared/Container'
 import { Display, Headline, Subheadline } from '../components/shared/Headline'
-import { Text, LargeText, LineBreak } from '../components/shared/Text'
+import { MediumText, LargeText, LineBreak } from '../components/shared/Text'
 
 import { FormHeader } from '../components/shared/Form.js'
 import FullQuoteForm from '../components/shared/FullQuoteForm'
@@ -57,7 +57,10 @@ class FastQuote extends React.Component {
           <Container mw='sm' textCenter>
             <Subheadline>Confidential & no obligation</Subheadline>
             <Display>Get a fast quote.</Display>
-            <LargeText color='text70'>Forms not your thing? <LineBreak m='auto'>Call us on 1300 073 or drop in Monday to Saturday, 9am-5pm.</LineBreak></LargeText>
+            <MediumText color='text'>
+              Forms not your thing? Call us on 1300 073
+              <LineBreak m='auto'>or drop in Monday to Saturday, 9am-5pm.</LineBreak>
+            </MediumText>
           </Container>
 
           <Container mw='sm' mt={[3, 4]}>
@@ -67,7 +70,7 @@ class FastQuote extends React.Component {
         </BrightBox>
 
         <Block textCenter>
-          <ContactAction bgColor='brand' />
+          <ContactAction btnColor='brandAlt' />
           <Contact />
         </Block>
       </Layout>

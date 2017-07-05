@@ -3,6 +3,8 @@ import theme from '../theme.js';
 
 // Using the SuitCSS button
 // https://github.com/suitcss/components-button/blob/master/lib/button.css
+// --Button-letter-spacing: 0.025em;
+// letter-spacing: var(--Button-letter-spacing);
 
 const Button = styled.button`
   --Button-background-color: transparent;
@@ -11,7 +13,6 @@ const Button = styled.button`
   --Button-color: inherit;
   --Button-disabled-opacity: 0.6;
   --Button-font: inherit;
-  --Button-letter-spacing: 0.025em;
   --Button-height: calc(54px - calc( 2 * var(--Button-border-width)) );
   --Button-padding: 0 1.5em;
 
@@ -24,7 +25,7 @@ const Button = styled.button`
   display: inline-block;
   font-family: var(--Button-font);
   font-size: inherit;
-  letter-spacing: var(--Button-letter-spacing);
+  letter-spacing: inherit;
   line-height: var(--Button-height);
   margin: 0;
   padding: var(--Button-padding);

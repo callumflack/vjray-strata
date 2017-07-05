@@ -23,6 +23,12 @@ const SmallText = props =>
     {...props}
   />
 
+const MediumText = props =>
+  <Text
+    fontSize={[ 3, 4 ]}
+    {...props}
+  />
+
 const LargeText = props =>
   <Text
     font='displayLight'
@@ -52,7 +58,7 @@ const AuthorText = props =>
 
 // Utils
 
-// Will add ternarys to LineBreak as needed.
+// TODO: add ternarys to LineBreak as needed.
 const LineBreak = hoc('span').extend`
   font: inherit;
 
@@ -76,6 +82,7 @@ const TextBlock = styled('div')`
 export {
   Text,
   LargeText,
+  MediumText,
   SmallText,
   AuthorText,
   LineBreak,

@@ -105,7 +105,7 @@ class Article extends React.Component {
         </Block>
 
         <Block>
-          <ContactAction bgColor='brand' />
+          <ContactAction btnColor='brand' />
           <Contact />
         </Block>
       </Layout>

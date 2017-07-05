@@ -10,19 +10,23 @@
 // space: [0, 8, 16, 24, 48, 96, 192],
 // breakpoints: [32, 48, 64, 80, 96] = 512, 768, 1024, 1280, 1536
 
+// text: '#585870',
+// brand: '#D3145A',
+
 export default {
   breakpoints: [32, 48, 64, 80, 96],
   colors: {
-    text: '#585870',
+    text: '#4b4b60',
     text70: '#8b8a9b',
     text40: '#BCBCC5',
     text20: '#DEDEE2',
     text7: '#F3F3F5',
-    brand: '#D3145A',
+    brand: '#c90b50',
     brandAlt: '#404070',
     brandAlt70: '#797A9A',
     beige: '#F7F2EC',
     blue6: '#f0f9fc',
+    offWhite: '#f6f6f6',
     white: '#fff',
     grey: '#EEEEF0',
     success: '#42db41',
@@ -46,8 +50,9 @@ export default {
   },
   fontSizes: [12, 14, 16, 19, 23, 32, 44, 56],
   letterSpacing: {
-    body: '0.01em',
+    body: '0.02em',
     tight: '-0.02em',
+    button: '0.025em',
     touch: '0.075em',
     meta: '0.15em',
   },

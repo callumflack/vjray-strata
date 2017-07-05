@@ -9,35 +9,48 @@ import theme from '../theme'
 // import { rgba } from 'polished';
 
 
+// rgba(255,255,255,0.9)
+
 const Root = styled(Flex)`
   --Header-height: 121px;
   --Header-background-color: white;
+  --Header-border-color: rgba(88, 88, 112, 0.15);
 
   background-color: var(--Header-background-color);
-  border-bottom: 1px solid rgba(88, 88, 112, 0.15);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--Header-border-color);
   height: var(--Header-height);
+  opacity: 1;
   position: fixed;
   top: 0;
+  transform: translate3d(0, 0, 0) translateY(0px);
+  transition:
+    opacity 0.25s ease-in-out 0.5s,
+    transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
   width: 100%;
   z-index: 1;
-  transition: opacity 0.3s, visibility 0s 0s;
-  visibility: visible;
-  opacity: 1;
 
-  ${props => props.ruled && css`
+  ${props => props.clear && css`
     --Header-background-color: transparent;
+  `}
+
+  ${props => props.invert && css`
+    --Header-border-color: rgba(255, 255, 255, 0.25);
+
+    a,
+    a span {
+      color: white;
+    }
   `}
 
   ${props => props.isHidden  && css`
   transition: opacity 0.3s, visibility 0s 0.3s;
     visibility: hidden;
     opacity: 0;
+    transform: translate3d(0, 0, 0) translateY(-121px);
+    transition-delay: 0;
   `}
-`;
-
-const Logo = styled.img`
-  height: 3.5rem;
-  opacity: 0.7;
 `;
 
 const Nav = styled.nav`
@@ -49,6 +62,10 @@ const Nav = styled.nav`
     margin-right: 1.5rem;
   }
 
+  ${props => props.clear && css`
+
+  `}
+
   ${props => props.hideAtMobile && css`
     @media (max-width: 699px) {
       display: none;
@@ -56,13 +73,13 @@ const Nav = styled.nav`
   `}
 `;
 
-// `this comment stops Atom rendering the wrong colours after a s-c.
+// `this backticked comment stops Atom rendering the wrong colours after a s-c.
 
 const LinkTextRoot = hoc('span').extend``
 
 const LinkText = props =>
   <LinkTextRoot
-    font='displayRegular'
+    font='textRegular'
     fontSize={[ 2, 3 ]}
     color='text'
     {...props}
@@ -101,7 +118,14 @@ class Header extends React.Component {
 
   render() {
     return (
-      <Root align='center' justify='space-between' px={3} isHidden={!this.state.isVisible}>
+      <Root
+        align='center'
+        justify='space-between'
+        px={3}
+        clear={this.props.clear}
+        invert={this.props.invert}
+        isHidden={!this.state.isVisible}>
+
         <Link href='/'>
           <a><IconLogo /></a>
         </Link>
@@ -113,13 +137,13 @@ class Header extends React.Component {
           <Link href='/'>
             <a><LinkText>What we do for you</LinkText></a>
           </Link>
-          <Link href='/'>
+          <Link href='/useful-info'>
             <a><LinkText>Useful info</LinkText></a>
           </Link>
-          <Link href='/'>
+          <Link href='/contact'>
             <a><LinkText>Contact us</LinkText></a>
           </Link>
-          <Link href='/'>
+          <Link href='tel:1300-667-123'>
             <a><LinkText>1300 667 123</LinkText></a>
           </Link>
         </Nav>

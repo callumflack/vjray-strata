@@ -63,7 +63,7 @@ class ContactUs extends React.Component {
     return (
       <Layout>
         <StyledColorBox py={[ 5, 6 ]} px={3}>
-          <Container mw='sm' textCenter mb={4}>
+          <Container mw='sm' mt={[ 4, 5, 6 ]} mb={4} textCenter>
             <Subheadline children='Get in touch' />
             <Display color='brandAlt' font='displayMedium' children='How can we help?' />
             <LargeText color='brandAlt70'>Talk to us face-to-face anytime <LineBreak m='auto'>Monday to Saturday, 9am–5pm.</LineBreak></LargeText>

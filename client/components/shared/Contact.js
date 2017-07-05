@@ -46,7 +46,7 @@ const Contact = (props) => (
       <Image src='/static/img/map.jpg' />
 
       <Box my={2}>
-        <Text color='brand' font='textMedium'>Campsie Head Office</Text>
+        <Text color='brand' font='textMedium' mb='6px'>Campsie Head Office</Text>
         <Text color='text70'>8 Anglo Road</Text>
         <Text color='text70'>Campsie, NSW 2194</Text>
       </Box>

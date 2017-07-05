@@ -60,16 +60,16 @@ const Footer = () => (
           <Link href='/'>
             <a><IconLogo color='text70' /></a>
           </Link>
-          <SmallText color='text40' mx={1} my={2}>&copy; 2017</SmallText>
+          <SmallText color='text40' mx={2} my={1}>&copy; 2017</SmallText>
         </div>
 
         <Nav>
           <Column>
-            <span>Who we are</span>
+            <Link href='/who-we-are'><a><span>Who we are</span></a></Link>
             <Link href='/who-we-are'><a>Our story</a></Link>
           </Column>
           <Column>
-            <span>What we do for you</span>
+            <Link href='/'><a><span>What we do for you</span></a></Link>
             <Link href='/'><a>For tenants</a></Link>
             <Link href='/'><a>For owners</a></Link>
             <Link href='/'><a>For investors</a></Link>

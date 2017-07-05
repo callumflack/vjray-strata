@@ -3,9 +3,13 @@ import styled from 'styled-components'
 
 import theme from '../components/theme'
 import { Box, Flex } from '../components/styled-grid'
+
 import Layout from '../components/shared/Layout'
+import Header from '../components/shared/Header'
+import Footer from '../components/shared/Footer'
 import Block from '../components/shared/Block'
 import Container from '../components/shared/Container'
+
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
 import { Text, LargeText, SmallText, LineBreak } from '../components/shared/Text'
 import Button from '../components/shared/Button'
@@ -15,16 +19,18 @@ import ColorBox from '../components/shared/ColorBox'
 import GuideButton from '../components/shared/GuideButton'
 import RecentPosts from '../components/shared/RecentPosts'
 import ContactAction from '../components/shared/ContactAction'
+import ContactActionAlt from '../components/shared/ContactActionAlt'
 import Contact from '../components/shared/Contact'
 
 
+// rgba(0,0,0,0.2),
 const StyledColorBox = styled(ColorBox)`
   background-color: ${theme.colors.brandAlt};
   background-image:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,0.2),
-      ${theme.colors.brandAlt} 40%
+      rgba(64, 64, 112, 0.2),
+      ${theme.colors.brandAlt70} 70%
     );
 `
 
@@ -33,32 +39,95 @@ const Rule = styled(Container)`
   height: 1px;
 `
 
+const FlexMobileColumn = styled(Flex)`
+    flex-direction: column;
+
+    @media (min-width: ${theme.containers.sm}) {
+      flex-direction: row;
+    }
+
+    @media (max-width: ${theme.containers.sm}) {
+      div + div {
+        margin-top: ${theme.space[4]}px;
+      }
+    }
+`
+
+const ArticleRoot = Flex.withComponent('a').extend`
+  border-bottom: 1px solid ${theme.colors.text20};
+  flex-direction: column;
+
+  &:first-child {
+    border-top: 1px solid ${theme.colors.text20};
+  }
+
+  @media (min-width: ${theme.containers.sm}) {
+    flex-direction: row;
+  }
+`
+
+const Article = props =>
+  <ArticleRoot href='#'>
+    <Flex align='flex-end' width={[ 1, 1/4 ]}>
+      <Text
+        align='left'
+        color='text70'
+        mt={3}
+        mb={[ 0, 3 ]}
+        style={{ transform: 'translateY(-3px)' }}>
+        May 01, 2017
+      </Text>
+    </Flex>
+    <Flex width={[ 1, 3/4 ]}>
+      <LargeText
+        align='left'
+        font='displayRegular'
+        mt={[ 1, 3 ]}
+        mb={3}>
+        The five biggest pitfalls to avoid in your Body Corp
+      </LargeText>
+    </Flex>
+  </ArticleRoot>
+
+
+{/* <Subheadline
+  align='center'
+  mb={[ 3, 4 ]}
+  children='Article archive' /> */}
+
 export default () => (
   <Layout>
-    <StyledColorBox py={[ 5, 6 ]} px={3}>
-      <Container mw='lg'>
-        <Flex>
-          <Box width={[ 1, 1/2 ]} mt={[ 2, 3 ]}>
+    <Header clear invert />
+
+    <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
+      <Container mw='rg' mt={[ 4, 5, 6 ]}>
+        <FlexMobileColumn>
+          <Box
+            width={[ 1, 1/2 ]}
+            mt={[ 0, 3 ]}>
             <Subheadline color='white' children='Info on the go' />
-            <Display color='white'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
+            <Display color='white' font='displayRegular'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
             <LargeText color='text40'>Download your complete guide for successful Strata living.</LargeText>
           </Box>
-          <Box width={[ 1, 1/2 ]} px={[ 3, 4, 5 ]}>
+          <Box
+            width={[ 1, 1/2 ]}
+            px={[ 3, 4 ]}>
             <GuideButton icon />
           </Box>
-        </Flex>
+        </FlexMobileColumn>
       </Container>
 
-      <Rule mw='lg' my={[ 3, 4 ]} />
+      <Rule mw='lg' my={4} />
+
       <Container textCenter>
-        <Subheadline color='white' mt={[ 1, 2 ]} children='All our guides' />
-        <Flex mx={-3} mt={[ 3, 4 ]}>
+        <Subheadline color='white' mt={[ 1, 2 ]} mb={4} children='All our guides' />
+        <FlexMobileColumn mx={-3}>
           {Array(3).fill(1).map(() =>
-            <Box width={[ 1, 1/3 ]} px={3}>
+            <Box width={[ 1, 1/3 ]} px={[ 4, 3 ]}>
               <GuideButton children='NSW Strata legislation 2017' />
             </Box>
           )}
-        </Flex>
+        </FlexMobileColumn>
       </Container>
     </StyledColorBox>
 
@@ -66,11 +135,19 @@ export default () => (
       <RecentPosts subheading='Latest article' />
     </Block>
 
-    <Box px={3} pb={[ 5, 6 ]}>
-      <Container mw='sm' textCenter>
-        <Subheadline children='Article archive' />
+    <Box pb={[ 5, 6 ]} px={3}>
+      <Container mw='lg' textCenter>
+        {Array(8).fill(1).map(() =>
+          <Article />
+        )}
       </Container>
     </Box>
 
+    <Block bg='offWhite'>
+      <ContactActionAlt />
+      <Contact />
+    </Block>
+
+    <Footer />
   </Layout>
 )

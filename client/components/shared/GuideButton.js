@@ -16,7 +16,11 @@ export default (props) => (
     <a href='#'>
       <Image src='static/img/guide-pdf-placeholder.jpg' />
     </a>
-    <SmallText align='center' font='textRegular' mt={3}>
+    <SmallText
+      align='center'
+      font='textRegular'
+      letterSpacing='button'
+      mt={3}>
       <Button clean color='white'>
         {props.icon && <IconDownload bottom mr={1} />}
         {props.children || 'Download'}

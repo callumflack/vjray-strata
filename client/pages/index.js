@@ -5,10 +5,12 @@ import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
 import theme from '../components/theme'
 
-import { Text, LargeText, SmallText, AuthorText, LineBreak } from '../components/shared/Text'
+import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak } from '../components/shared/Text'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
 
 import Layout from '../components/shared/Layout'
+import Header from '../components/shared/Header'
+import Footer from '../components/shared/Footer'
 import Container from '../components/shared/Container'
 import Block from '../components/shared/Block'
 import Button from '../components/shared/Button'
@@ -46,9 +48,10 @@ import Testimonials from '../components/Home/Testimonials'
 
 export default () => (
   <Layout>
+    <Header clear />
     <ListeningBox />
 
-    <Block mw='lg' textCenter>
+    <Block mw='rg' textCenter>
       <Box width={[ 4/6, 5/6 ]} mx='auto'>
         <Headline font='displayMedium' color='text' my={3} children='It all adds up to a better deal.' />
         <LargeText color='text70'>
@@ -77,18 +80,19 @@ export default () => (
 
     <Block mw='lg' bg='blue6' textCenter>
       <Subheadline>Info on the go</Subheadline>
-      <Display>Your guides to Sydney Strata.</Display>
+      <Display color='brandAlt'>Your guides to Sydney Strata.</Display>
       <Container width={[ 1, 2/3 ]}>
-        <Text>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</Text>
+        <MediumText color='text70'>Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.</MediumText>
         <Guides />
         <RecentPosts />
       </Container>
     </Block>
 
     <Block>
-      <ContactAction bgColor='brand' />
+      <ContactAction btnColor='brandAlt' />
       <Contact />
     </Block>
 
+    <Footer />
   </Layout>
 )

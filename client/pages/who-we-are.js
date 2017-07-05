@@ -8,10 +8,12 @@ import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
 import theme from '../components/theme'
 
-import { Text, TextBlock } from '../components/shared/Text'
+import { Text, TextBlock, LineBreak } from '../components/shared/Text'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
 
 import Layout from '../components/shared/Layout'
+import Header from '../components/shared/Header'
+import Footer from '../components/shared/Footer'
 import Container from '../components/shared/Container'
 import Block from '../components/shared/Block'
 import HeroImage from '../components/shared/HeroImage'
@@ -31,7 +33,7 @@ const Hero = styled(Box)`
   position: relative;
 
   &:after {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
     background-blend-mode: multiply;
     bottom: 0;
     content: " ";
@@ -63,6 +65,8 @@ const Image = styled(HeroImage)`
 const Who = () => (
   <Layout>
 
+    <Header clear invert />
+
     <Hero px={3}>
       <Image />
       <Container
@@ -73,7 +77,10 @@ const Who = () => (
         style={{ zIndex: 1 }}
       >
         <Subheadline color='white'>About us</Subheadline>
-        <Display color='white'>We believe in better Sydney Strata management.</Display>
+        <Display color='white' reverseShadow>
+          We believe in better
+          <LineBreak mx='auto'>Sydney Strata management.</LineBreak>
+        </Display>
       </Container>
     </Hero>
 
@@ -106,9 +113,12 @@ const Who = () => (
     </Box>
 
     <Block textCenter>
-      <ContactAction bgColor='brandAlt' />
+      <ContactAction btnColor='brandAlt' />
       <Contact />
     </Block>
+
+    <Footer />
+
   </Layout>
 );
 

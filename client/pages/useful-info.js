@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import theme from '../components/theme'
 import { Box, Flex } from '../components/styled-grid'
 
+import { formatDateString } from '../lib/date.js'
 import Layout from '../components/shared/Layout'
 import Header from '../components/shared/Header'
 import Footer from '../components/shared/Footer'
@@ -18,6 +19,7 @@ import ColorBox from '../components/shared/ColorBox'
 // import { IconDownload } from '../components/shared/Icons'
 import GuideButton from '../components/shared/GuideButton'
 import RecentPosts from '../components/shared/RecentPosts'
+import ArticleArchive from '../components/shared/ArticleArchive'
 import ContactAction from '../components/shared/ContactAction'
 import ContactActionAlt from '../components/shared/ContactActionAlt'
 import Contact from '../components/shared/Contact'
@@ -53,41 +55,6 @@ const FlexMobileColumn = styled(Flex)`
     }
 `
 
-const ArticleRoot = Flex.withComponent('a').extend`
-  border-bottom: 1px solid ${theme.colors.text20};
-  flex-direction: column;
-
-  &:first-child {
-    border-top: 1px solid ${theme.colors.text20};
-  }
-
-  @media (min-width: ${theme.containers.sm}) {
-    flex-direction: row;
-  }
-`
-
-const Article = props =>
-  <ArticleRoot href='#'>
-    <Flex align='flex-end' width={[ 1, 1/4 ]}>
-      <Text
-        align='left'
-        color='text70'
-        mt={3}
-        mb={[ 0, 3 ]}
-        style={{ transform: 'translateY(-3px)' }}>
-        May 01, 2017
-      </Text>
-    </Flex>
-    <Flex width={[ 1, 3/4 ]}>
-      <LargeText
-        align='left'
-        font='displayRegular'
-        mt={[ 1, 3 ]}
-        mb={3}>
-        The five biggest pitfalls to avoid in your Body Corp
-      </LargeText>
-    </Flex>
-  </ArticleRoot>
 
 
 {/* <Subheadline
@@ -137,9 +104,7 @@ export default () => (
 
     <Box pb={[ 5, 6 ]} px={3}>
       <Container mw='lg' textCenter>
-        {Array(8).fill(1).map(() =>
-          <Article />
-        )}
+        <ArticleArchive />
       </Container>
     </Box>
 

@@ -143,7 +143,7 @@ class SydneyBox extends React.Component {
         </Modal>
 
         <StyledBox isVisible={this.state.contentIsVisible}>
-          <Background center textCenter width={1}>
+          <Background>
 
             <Container textCenter relative pt={[ 5, 6 ]}>
               <Subheadline color='brandAlt'>Dependable and effective</Subheadline>

@@ -89,7 +89,8 @@ const Form = styled(Formsy.Form)`
   }
 `;
 
-const FormHeader = props => <BoxedSubheadline bg='brand' color='white' {...props} />
+const FormHeader = props =>
+  <BoxedSubheadline bg='brand' color='white' {...props} />
 
 const FormGroup = styled.div`
   & + & {

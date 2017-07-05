@@ -75,7 +75,7 @@ const DisplayRoot = hoc('h1').extend`
 const Display = props =>
   <DisplayRoot
     color='brand'
-    font='displayLight'
+    font='displayRegular'
     fontSize={[ 6, 7 ]}
     lineHeight='display'
     mb={3}

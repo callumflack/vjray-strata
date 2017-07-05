@@ -49,6 +49,7 @@ import Testimonials from '../components/Home/Testimonials'
 export default () => (
   <Layout>
     <Header clear />
+
     <ListeningBox />
 
     <Block mw='rg' textCenter>
@@ -89,7 +90,7 @@ export default () => (
     </Block>
 
     <Block>
-      <ContactAction btnColor='brandAlt' />
+      <ContactAction btnColor='brandAlt' withButton />
       <Contact />
     </Block>
 

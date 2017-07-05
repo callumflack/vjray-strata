@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import theme from '../components/theme'
+import { hoc } from '../components/styled-system/styled-components'
 import { Box, Flex } from '../components/styled-grid'
 
 import { formatDateString } from '../lib/date.js'
@@ -10,7 +11,7 @@ import Header from '../components/shared/Header'
 import Footer from '../components/shared/Footer'
 import Block from '../components/shared/Block'
 import Container from '../components/shared/Container'
-
+import FlexMobileColumn from '../components/shared/FlexMobileColumn'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
 import { Text, LargeText, SmallText, LineBreak } from '../components/shared/Text'
 import Button from '../components/shared/Button'
@@ -41,19 +42,19 @@ const Rule = styled(Container)`
   height: 1px;
 `
 
-const FlexMobileColumn = styled(Flex)`
-    flex-direction: column;
-
-    @media (min-width: ${theme.containers.sm}) {
-      flex-direction: row;
-    }
-
-    @media (max-width: ${theme.containers.sm}) {
-      div + div {
-        margin-top: ${theme.space[4]}px;
-      }
-    }
-`
+// const FlexMobileColumn = styled(Flex)`
+//     flex-direction: column;
+//
+//     @media (min-width: ${theme.containers.sm}) {
+//       flex-direction: row;
+//     }
+//
+//     @media (max-width: ${theme.containers.sm}) {
+//       div + div {
+//         margin-top: ${theme.space[4]}px;
+//       }
+//     }
+// `
 
 
 
@@ -62,12 +63,13 @@ const FlexMobileColumn = styled(Flex)`
   mb={[ 3, 4 ]}
   children='Article archive' /> */}
 
+
 export default () => (
   <Layout>
     <Header clear invert />
 
     <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
-      <Container mw='rg' mt={[ 4, 5, 6 ]}>
+      <Container mw='rg' mt={[ 4, 5, 6 ]} >
         <FlexMobileColumn>
           <Box
             width={[ 1, 1/2 ]}
@@ -84,7 +86,7 @@ export default () => (
         </FlexMobileColumn>
       </Container>
 
-      <Rule mw='lg' my={4} />
+      <Rule mw='lg' my={[ 3, 4 ]} />
 
       <Container textCenter>
         <Subheadline color='white' mt={[ 1, 2 ]} mb={4} children='All our guides' />
@@ -109,10 +111,10 @@ export default () => (
     </Box>
 
     <Block bg='offWhite'>
-      <ContactActionAlt />
+      <ContactActionAlt btnColor='brandAlt' />
       <Contact />
     </Block>
 
-    <Footer />
+    <Footer bg='offWhite' />
   </Layout>
 )

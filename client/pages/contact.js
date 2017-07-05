@@ -5,7 +5,10 @@ import apollo from '../lib/apollo'
 
 import theme from '../components/theme'
 import { Flex, Box } from '../components/styled-grid'
+
 import Layout from '../components/shared/Layout'
+import Header from '../components/shared/Header'
+import Footer from '../components/shared/Footer'
 import Block from '../components/shared/Block'
 import Container from '../components/shared/Container'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/shared/Headline'
@@ -62,6 +65,8 @@ class ContactUs extends React.Component {
 
     return (
       <Layout>
+        <Header />
+
         <StyledColorBox py={[ 5, 6 ]} px={3}>
           <Container mw='sm' mt={[ 4, 5, 6 ]} mb={4} textCenter>
             <Subheadline children='Get in touch' />
@@ -99,6 +104,7 @@ class ContactUs extends React.Component {
           </Container>
         </Box>
 
+        <Footer />
       </Layout>
     )
   }

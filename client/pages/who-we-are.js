@@ -113,7 +113,7 @@ const Who = () => (
     </Box>
 
     <Block textCenter>
-      <ContactAction btnColor='brandAlt' />
+      <ContactAction btnColor='brandAlt' withButton />
       <Contact />
     </Block>
 

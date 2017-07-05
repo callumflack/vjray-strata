@@ -162,8 +162,9 @@ const BoxedSubheadline = styled(HeadlineMeta)`
 export {
   Display,
   Headline,
+  HeadlineMetaBaseStyles,
+  HeadlineMeta,
   Subheadline,
   BoxedSubheadline,
-  HeadlineMeta,
   HeadlineDetail,
 }

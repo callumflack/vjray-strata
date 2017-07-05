@@ -1,14 +1,22 @@
-import styled from 'styled-components'
 import Link from 'next/link'
+import styled, { css } from 'styled-components'
 import theme from '../theme'
+import { hoc } from '../styled-system/styled-components'
 import { Box, Flex } from '../styled-grid'
-import Block from '../shared/Block'
 import Container from '../shared/Container'
 import { Text, SmallText } from '../shared/Text'
 import { IconLogo } from '../shared/Icons'
 
 
-const FooterContainer = styled(Container)`
+const Root = hoc(Box).extend`
+  font-family: inherit;
+
+  ${props => props.bg && css`
+    background-color: ${theme.colors[props.color]};
+  `}
+`;
+
+const StyledContainer = styled(Container)`
   border-top: 1px solid ${theme.colors.text20};
   padding-top: 1.5rem;
   padding-bottom: 3rem;
@@ -51,9 +59,12 @@ const Divider = styled.span`
 `;
 
 
-const Footer = () => (
-  <Box py={0}>
-    <FooterContainer mx="lg">
+const Footer = (props) => (
+  <Root
+    py={0}
+    bg={props.bg}>
+
+    <StyledContainer mx="lg">
 
       <Flex justify='space-between'>
         <div>
@@ -97,8 +108,8 @@ const Footer = () => (
         <Link href='/'><a>ABN 31 064 030 311</a></Link>
       </Nav>
 
-    </FooterContainer>
-  </Box>
+    </StyledContainer>
+  </Root>
 );
 
 export default Footer;

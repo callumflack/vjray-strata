@@ -4,7 +4,10 @@ import gql from 'graphql-tag'
 import apollo from '../lib/apollo'
 
 import theme from '../components/theme'
+
 import Layout from '../components/shared/Layout'
+import Header from '../components/shared/Header'
+import Footer from '../components/shared/Footer'
 import Block from '../components/shared/Block'
 import HeroBox from '../components/shared/HeroBox'
 import Container from '../components/shared/Container'
@@ -53,6 +56,8 @@ class FastQuote extends React.Component {
   render() {
     return (
       <Layout>
+        <Header />
+
         <BrightBox py={[ 5, 6 ]}>
           <Container mw='sm' textCenter>
             <Subheadline>Confidential & no obligation</Subheadline>
@@ -73,6 +78,8 @@ class FastQuote extends React.Component {
           <ContactAction btnColor='brandAlt' />
           <Contact />
         </Block>
+
+        <Footer />
       </Layout>
     )
   }

@@ -14,7 +14,7 @@ import theme from '../theme'
 const Root = styled(Flex)`
   --Header-height: 121px;
   --Header-background-color: white;
-  --Header-border-color: rgba(88, 88, 112, 0.15);
+  --Header-border-color: rgba(88, 88, 112, 0.25);
 
   background-color: var(--Header-background-color);
   border-bottom-width: 1px;
@@ -26,7 +26,7 @@ const Root = styled(Flex)`
   top: 0;
   transform: translate3d(0, 0, 0) translateY(0px);
   transition:
-    opacity 0.25s ease-in-out 0.5s,
+    opacity 0.25s ease-in-out 0.25s,
     transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
   width: 100%;
   z-index: 1;
@@ -45,11 +45,9 @@ const Root = styled(Flex)`
   `}
 
   ${props => props.isHidden  && css`
-    transition: opacity 0.3s, visibility 0s 0.3s;
-    visibility: hidden;
+    ${'' /* transition: opacity 0.3s, visibility 0s 0.3s; */}
     opacity: 0;
     transform: translate3d(0, 0, 0) translateY(-121px);
-    transition-delay: 0;
   `}
 `;
 

@@ -135,6 +135,9 @@ class Header extends React.Component {
         </Link>
 
         <Nav hideAtMobile>
+          <Link href='/'>
+            <a><LinkText>Home</LinkText></a>
+          </Link>
           <Link href='/who-we-are'>
             <a><LinkText>Who we are</LinkText></a>
           </Link>

@@ -45,7 +45,7 @@ const ListeningBox = () => (
         >
         <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]}>
           <Display font='displayRegular'>Skip the hassle of Strata management.</Display>
-          <LargeText>At VJ Ray Strata, we understand how valuable piece of mind is.</LargeText>
+          <LargeText>At VJ Ray Strata, we understand how valuable peace of mind is.</LargeText>
         </Box>
       </Flex>
     </Container>

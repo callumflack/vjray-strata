@@ -84,67 +84,88 @@ const FlexMobileOrderFirst = styled(Flex)`
     style={{ zIndex: 1 }}
   > */}
 
-const Who = () => (
-  <Layout>
-    <Header />
+const pageQuery = gql`{
+  page(page: "Who we are") {
+    _id,
+    who {
+      post,
+    },
+  }
+}`;
 
-    <Hero px={3}>
-      <Image />
-      <Container
-        mw='lg'
-        relative
-        style={{ zIndex: 1 }}
-      >
-        <Flex align='center' style={{ height: 'calc(70vh - 121px)' }}>
-          <Box w={[ 1, 2/3 ]} style={{ transform: 'translateY(-32px)' }}>
-            <Subheadline color='brandAlt'>About us</Subheadline>
-            <Display color='brandAlt'>
-              We believe in better&nbsp;
-              <LineBreak>Strata management </LineBreak>
-              <LineBreak>for Sydney.</LineBreak>
-            </Display>
-          </Box>
-        </Flex>
-      </Container>
-    </Hero>
 
-    <Box px={3} pt={[ 5, 6 ]}>
-      <Container>
-        <Box width={[ 1, 11/12 ]} mx='auto'>
+class WhoContainer extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-          <FlexMobileColumn retainCellOrder mx={-3}>
-            <Flex column width={[ 1, 1/3, 1/4 ]} px={[ 4, 3 ]}>
-              <Box mt={1}>
-                <img src='static/img/mike-pollard.jpg' />
+  static async getInitialProps({ req, query }) {
+    const { data: { page } } = await apollo.query({
+      query: pageQuery,
+    });
+
+    return page;
+  }
+
+  render() {
+    return (
+      <Layout>
+        <Header />
+
+        <Hero px={3}>
+          <Image />
+          <Container
+            mw='lg'
+            relative
+            style={{ zIndex: 1 }}
+          >
+            <Flex align='center' style={{ height: 'calc(70vh - 121px)' }}>
+              <Box w={[ 1, 2/3 ]} style={{ transform: 'translateY(-32px)' }}>
+                <Subheadline color='brandAlt'>About us</Subheadline>
+                <Display color='brandAlt'>
+                  We believe in better&nbsp;
+                  <LineBreak>Strata management </LineBreak>
+                  <LineBreak>for Sydney.</LineBreak>
+                </Display>
               </Box>
-              <Text color='text70' mt={2}>Mike Pollard</Text>
-              <Text color='text70'>Owner</Text>
             </Flex>
+          </Container>
+        </Hero>
 
-            <FlexMobileOrderFirst
-              width={[ 1, 2/3, 3/4 ]}
-              px={3}>
-              <TextBlock>
-                <Text>Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
-                <Text>Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
-                <Text>Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
-                <Text>Dolore ipsa qui rerum veniam exercitationem Facilis earum excepturi fugit ratione nam officia! Dicta quos mollitia aspernatur sapiente nostrum corrupti Veritatis rerum a quod consectetur rem eaque Non hic cum tenetur voluptatem laborum. Natus exercitationem id ipsum odit voluptates. Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
-                <Text>Eius asperiores facilis quasi veniam nihil laborum! Nihil suscipit accusantium facilis eum earum. Dolore ipsa qui rerum veniam exercitationem Facilis earum excepturi fugit ratione nam officia! Dicta quos mollitia aspernatur sapiente nostrum corrupti Veritatis rerum a quod consectetur rem eaque Non hic cum tenetur voluptatem laborum. Natus exercitationem id ipsum odit voluptates. Sint quis odio odit obcaecati ut doloribus? Culpa praesentium sunt cumque sapiente adipisci cum ipsum blanditiis Quibusdam cum omnis tenetur corporis recusandae Laudantium optio sit id consequuntur expedita Neque nesciunt debitis voluptate debitis.</Text>
-              </TextBlock>
-            </FlexMobileOrderFirst>
-          </FlexMobileColumn>
+        <Box px={3} pt={[ 5, 6 ]}>
+          <Container>
+            <Box width={[ 1, 11/12 ]} mx='auto'>
 
+              <FlexMobileColumn retainCellOrder mx={-3}>
+                <Flex column width={[ 1, 1/3, 1/4 ]} px={[ 4, 3 ]}>
+                  <Box mt={1}>
+                    <img src='static/img/mike-pollard.jpg' />
+                  </Box>
+                  <Text color='text70' mt={2}>Mike Pollard</Text>
+                  <Text color='text70'>Owner</Text>
+                </Flex>
+
+                <FlexMobileOrderFirst
+                  width={[ 1, 2/3, 3/4 ]}
+                  px={3}
+                >
+                  <TextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
+                </FlexMobileOrderFirst>
+              </FlexMobileColumn>
+
+            </Box>
+          </Container>
         </Box>
-      </Container>
-    </Box>
 
-    <Block textCenter>
-      <ContactAction btnColor='brandAlt' withButton />
-      <Contact />
-    </Block>
+        <Block textCenter>
+          <ContactAction btnColor='brandAlt' withButton />
+          <Contact />
+        </Block>
 
-    <Footer />
-  </Layout>
-);
+        <Footer />
+      </Layout>
+    )
+  }
+}
 
-export default Who;
+export default WhoContainer;

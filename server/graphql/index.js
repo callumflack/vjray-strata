@@ -29,10 +29,20 @@ const Schema = `
     createdAt: String,
   }
 
+  type Who {
+    post: String,
+  }
+
+  type Page {
+    _id: String!,
+    who: Who,
+  }
+
   type Query {
     post(slug: String!): Post,
     posts(limit: Int): [Post],
     guides(limit: Int): [Guide],
+    page(page: String!): Page,
   }
 
 

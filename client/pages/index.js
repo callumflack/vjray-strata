@@ -27,7 +27,7 @@ import SydneyBox from '../components/Home/SydneyBox'
 import Testimonials from '../components/Home/Testimonials'
 
 
-export default () => (
+const Index = () => (
   <Layout>
     <Header clear />
 
@@ -90,3 +90,6 @@ export default () => (
     <Footer />
   </Layout>
 )
+
+
+export default Index;

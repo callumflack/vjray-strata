@@ -36,7 +36,7 @@ const StyledBox = styled(Box)`
       linear-gradient(
         to bottom,
         white,
-        rgba(193,230,243, 0.333) 40%
+        rgba(193,230,243, 0.25) 40%
       );
     bottom: 0;
     content: " ";
@@ -50,7 +50,7 @@ const StyledBox = styled(Box)`
 `;
 
 const TalkBox = (props) => (
-  <Root>
+  <Root justify='center'>
     <StyledBox />
     { props.children }
   </Root>

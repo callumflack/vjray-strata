@@ -13,7 +13,7 @@ import QuickQuoteForm from './QuickQuoteForm'
 
 
 const Root = styled(HeroBox)`
-  --Hero-height: 50vh;
+  --Hero-height: ${theme.blockHeights.hero};
 `
 
 const Image = styled(CoverImage)`

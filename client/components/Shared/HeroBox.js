@@ -3,8 +3,8 @@ import { Box } from '../styled-grid';
 import theme from '../theme.js';
 
 const HeroBox = styled(Box)`
-  --Header-height: 121px;
-  --Hero-height: 50vh;
+  --Header-height: ${theme.blockHeights.navBar};
+  --Hero-height: ${theme.blockHeights.hero};
 
   align-items: center;
   background-color: ${theme.colors.beige};

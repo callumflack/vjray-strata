@@ -14,6 +14,11 @@
 // brand: '#D3145A',
 
 export default {
+  blockHeights: {
+    navBar: '121px',
+    hero: '50vh',
+    super: '70vh'
+  },
   breakpoints: [32, 48, 64, 80, 96],
   colors: {
     text: '#4b4b60',

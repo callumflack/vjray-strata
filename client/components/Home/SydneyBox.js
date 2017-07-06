@@ -14,10 +14,10 @@ import { FlexEmbed } from '../styled-elements/FlexEmbed.js';
 
 
 const Root = styled(Box)`
-  height: 70vh;
+  height: ${theme.blockHeights.super};
 `;
 
-const Background = styled(Box)`
+const StyledBox = styled(Box)`
   background-image: url('static/img/home-sydney.jpg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -80,7 +80,7 @@ const ModalClose = styled.a`
   top: calc( 0.7 * var(--Close-space));
 `;
 
-const StyledBox = styled.div`
+const FullBoxHeight = styled.div`
   height: 100%;
 `;
 
@@ -142,8 +142,8 @@ class SydneyBox extends React.Component {
           </Flex>
         </Modal>
 
-        <StyledBox isVisible={this.state.contentIsVisible}>
-          <Background>
+        <FullBoxHeight isVisible={this.state.contentIsVisible}>
+          <StyledBox>
 
             <Container textCenter relative pt={[ 5, 6 ]}>
               <Subheadline color='brandAlt'>Dependable and effective</Subheadline>
@@ -156,8 +156,8 @@ class SydneyBox extends React.Component {
               </Container>
             </Container>
 
-          </Background>
-        </StyledBox>
+          </StyledBox>
+        </FullBoxHeight>
       </Root>
     )
   }

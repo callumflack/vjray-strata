@@ -8,7 +8,7 @@ import theme from '../components/theme'
 import { Flex, Box } from '../components/styled-grid'
 import { hoc } from '../components/styled-system/styled-components'
 
-import { Text, TextBlock, LineBreak } from '../components/styled-elements/Text'
+import { Text, TextBlock, DangerouslyResetTextBlock, LineBreak } from '../components/styled-elements/Text'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 
 import Layout from '../components/styled-elements/Layout'
@@ -50,17 +50,9 @@ const Image = styled(CoverImage)`
   background-image: url('static/img/who-cronulla.jpg');
   background-position: 50% 50%;
 
-  @media (min-width: 1024px) {
-    background-position: 50% 50%;
-  }
-
-  @media (min-width: 1280px) {
-    background-position: 50% 50%;
-  }
-
-  @media (min-width: 1536px) {
-    background-position: 30% 100%;
-  }
+  @media (min-width: 1024px) { background-position: 50% 50%; }
+  @media (min-width: 1280px) { background-position: 50% 50%; }
+  @media (min-width: 1536px) { background-position: 30% 100%; }
 `
 
 const FlexMobileOrderFirst = styled(Flex)`
@@ -137,7 +129,7 @@ class WhoContainer extends React.Component {
             <Box width={[ 1, 11/12 ]} mx='auto'>
 
               <FlexMobileColumn retainCellOrder mx={-3}>
-                <Flex column width={[ 1, 1/3, 1/4 ]} px={[ 4, 3 ]}>
+                <Flex column width={[ 1, 1, 1/3, 1/4 ]} px={[ 4, 3 ]}>
                   <Box mt={1}>
                     <img src='static/img/mike-pollard.jpg' />
                   </Box>
@@ -145,11 +137,8 @@ class WhoContainer extends React.Component {
                   <Text color='text70'>Owner</Text>
                 </Flex>
 
-                <FlexMobileOrderFirst
-                  width={[ 1, 2/3, 3/4 ]}
-                  px={3}
-                >
-                  <TextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
+                <FlexMobileOrderFirst width={[ 1, 1, 2/3, 3/4 ]} px={3}>
+                  <DangerouslyResetTextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
                 </FlexMobileOrderFirst>
               </FlexMobileColumn>
 

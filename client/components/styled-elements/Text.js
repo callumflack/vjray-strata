@@ -79,6 +79,21 @@ const TextBlock = styled('div')`
   }
 `
 
+const DangerouslyResetTextBlock = styled(TextBlock)`
+  > div {
+    font-size: 16px;
+    font-family: ${theme.fonts.textLight};
+    margin: 0;
+    order: initial;
+    padding: 0;
+    width: 100%;
+
+    @media (min-width: ${theme.containers.sm}) {
+      font-size: 19px;
+    }
+  }
+`
+
 const Divider = styled.span`
   --spacing: 1rem;
   margin-left: var(--spacing);
@@ -96,5 +111,6 @@ export {
   LineBreak,
   InlineText,
   TextBlock,
+  DangerouslyResetTextBlock,
   Divider
 }

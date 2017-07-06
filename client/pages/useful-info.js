@@ -21,7 +21,7 @@ import Contact from '../components/Shared/Contact'
 import ContactAction from '../components/Shared/ContactAction'
 import ContactActionAlt from '../components/Shared/ContactActionAlt'
 import Footer from '../components/Shared/Footer'
-import GuideButton from '../components/Shared/GuideButton'
+import Guides, { GuideButton } from '../components/Shared/Guides'
 import Header from '../components/Shared/Header'
 import PostContainer from '../components/Shared/PostContainer'
 import RecentPosts from '../components/Shared/RecentPosts'
@@ -81,13 +81,7 @@ export default () => (
 
       <Container textCenter>
         <Subheadline color='white' mt={[ 1, 2 ]} mb={4} children='All our guides' />
-        <FlexMobileColumn mx={-3}>
-          {Array(3).fill(1).map(() =>
-            <Box width={[ 1, 1/3 ]} px={[ 4, 3 ]}>
-              <GuideButton children='NSW Strata legislation 2017' />
-            </Box>
-          )}
-        </FlexMobileColumn>
+        <Guides buttons />
       </Container>
     </StyledColorBox>
 

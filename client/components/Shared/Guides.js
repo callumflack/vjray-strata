@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Link from 'next/link';
 
 import gql from 'graphql-tag';
@@ -7,8 +7,44 @@ import apollo from '../../lib/apollo.js';
 import theme from '../theme.js';
 import styled from 'styled-components';
 import { Box, Flex } from '../styled-grid';
-import { Text } from '../styled-elements/Text.js';
+import { Text, SmallText } from '../styled-elements/Text.js';
+import FlexMobileColumn from '../Shared/FlexMobileColumn'
+import Button from '../styled-elements/Button'
+import { IconDownload } from '../styled-elements/Icons'
 import { ImageWithShadow } from './ImageWithShadow'
+
+
+const GuideButton = (props) => (
+  <SmallText
+    align='center'
+    font='textRegular'
+    letterSpacing='button'
+    mt={3}
+  >
+    <Button clean color='white'>
+      {props.icon && <IconDownload bottom mr={1} />}
+      {props.title || 'Download'}
+    </Button>
+  </SmallText>
+);
+
+const Guides = (props) => (
+  <FlexMobileColumn mx={-3} align='center' justify='space-between'>
+    {props.guides.map((guide, i) =>
+      <Box width={[ 1, 1/3 ]} px={[ 4, 3 ]} key={guide._id}>
+        <Link href={`${process.env.SERVER_URI}/${guide.file.filename}`}>
+          <a href='#'>
+            <ImageWithShadow src={guide.featureImage.secure_url} />
+          </a>
+        </Link>
+
+        {props.buttons && (
+          <GuideButton title={guide.title} icon={props.icon} />
+        )}
+      </Box>
+    )}
+  </FlexMobileColumn>
+);
 
 
 const query = gql`{
@@ -25,7 +61,8 @@ const query = gql`{
   }
 }`;
 
-class Guides extends React.Component {
+
+class GuidesContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -40,18 +77,23 @@ class Guides extends React.Component {
   }
 
   render() {
-    return (
-      <Flex align='center' justify='space-between' mx={-3}>
-        {this.state.guides.map((guide, i) =>
-          <Box key={i} px={3}>
-            <Link href={`${process.env.SERVER_URI}/${guide.file.filename}`}>
-              <a><ImageWithShadow src={guide.featureImage.secure_url} /></a>
-            </Link>
-          </Box>
-        )}
-      </Flex>
-    )
+    return <Guides guides={this.state.guides} {...this.props} />
   }
 }
 
-export default Guides;
+GuidesContainer.propTypes = {
+  buttons: PropTypes.bool,
+  icon: PropTypes.bool,
+};
+
+GuidesContainer.defaultProps = {
+  buttons: false,
+  icon: false,
+};
+
+
+export default GuidesContainer;
+
+export {
+  GuideButton,
+};

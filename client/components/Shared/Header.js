@@ -6,14 +6,16 @@ import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
 import { IconLogo } from '../styled-elements/Icons'
 import { Text, InlineText, Divider } from '../styled-elements/Text'
+import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
 // import { rgba } from 'polished';
 
 
 // rgba(255,255,255,0.9)
 
+const headerHeight = '121px';
+
 const Root = styled(Flex)`
-  --Header-height: 121px;
   --Header-background-color: white;
   --Header-border-color: rgba(88, 88, 112, 0.25);
 
@@ -21,7 +23,7 @@ const Root = styled(Flex)`
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--Header-border-color);
-  height: var(--Header-height);
+  height: ${headerHeight};
   opacity: 1;
   position: fixed;
   top: 0;
@@ -48,7 +50,7 @@ const Root = styled(Flex)`
   ${props => props.isHidden  && css`
     ${'' /* transition: opacity 0.3s, visibility 0s 0.3s; */}
     opacity: 0;
-    transform: translate3d(0, 0, 0) translateY(-121px);
+    transform: translate3d(0, 0, 0) translateY(${-1 * headerHeight});
   `}
 `;
 
@@ -61,8 +63,10 @@ const Nav = styled.nav`
     margin-right: 1.5rem;
   }
 
-  ${props => props.clear && css`
-
+  ${props => props.hideAtDesktop && css`
+    @media (min-width: 699px) {
+      display: none;
+    }
   `}
 
   ${props => props.hideAtMobile && css`
@@ -70,6 +74,27 @@ const Nav = styled.nav`
       display: none;
     }
   `}
+`;
+
+const MobileModal = styled(Flex)`
+  position: fixed;
+  z-index: 15;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: ${headerHeight};
+  background-color: #fff;
+
+  ${props => !props.isVisible && css`
+    display: none;
+  `}
+`;
+
+const MobileNav = styled.nav`
+  a {
+    margin: 0.4rem 0;
+  }
 `;
 
 // `this backticked comment stops Atom rendering the wrong colours after a s-c.
@@ -88,6 +113,9 @@ const StyledDivider = styled(Divider)`
   margin-left: 0;
 `
 
+const MobileLinkText = props =>
+  <LinkText fontSize={4} {...props} />
+
 
 
 class Header extends React.Component {
@@ -95,10 +123,13 @@ class Header extends React.Component {
     super(props);
 
     this.handleScroll = this.handleScroll.bind(this)
+    this.handleModalClick = this.handleModalClick.bind(this);
+    this.handleModalTriggerClick = this.handleModalTriggerClick.bind(this);
 
     this.state = {
       isVisible: true,
       previousScrollPos: 0,
+      isModalVisible: false,
     };
   }
 
@@ -120,50 +151,129 @@ class Header extends React.Component {
     });
   }
 
+  handleModalClick() {
+    this.setState({
+      isModalVisible: false,
+    });
+  }
+
+  handleModalTriggerClick() {
+    this.setState({
+      isModalVisible: true,
+    });
+  }
+
   render() {
     return (
-      <Root
-        align='center'
-        justify='space-between'
-        px={3}
-        clear={this.props.clear}
-        invert={this.props.invert}
-        isHidden={!this.state.isVisible}>
+      <div>
+        <Root
+          align='center'
+          justify='space-between'
+          px={3}
+          clear={this.props.clear}
+          invert={this.props.invert}
+          isHidden={!this.state.isVisible}>
 
-        <Link href='/'>
-          <a><IconLogo /></a>
-        </Link>
-
-        <Nav hideAtMobile>
           <Link href='/'>
-            <a><LinkText>Home</LinkText></a>
+            <a><IconLogo /></a>
           </Link>
-          <Link href='/who-we-are'>
-            <a><LinkText>Who we are</LinkText></a>
-          </Link>
-          <Link href='/'>
-            <a><LinkText>What we do for you</LinkText></a>
-          </Link>
-          <Link href='/useful-info'>
-            <a><LinkText>Useful info</LinkText></a>
-          </Link>
-          <Link href='/contact'>
-            <a><LinkText>Contact us</LinkText></a>
-          </Link>
-          <StyledDivider />
-          <Link href='tel:1300-667-123'>
-            <a><LinkText>1300 667 123</LinkText></a>
-          </Link>
-        </Nav>
 
-        <Nav>
-          <Link href='/signin'>
-            <a><LinkText>
-              <Button invert>Sign in</Button>
-            </LinkText></a>
-          </Link>
-        </Nav>
-      </Root>
+          <Nav hideAtMobile>
+            <Link href='/'>
+              <a><LinkText>Home</LinkText></a>
+            </Link>
+            <Link href='/who-we-are'>
+              <a><LinkText>Who we are</LinkText></a>
+            </Link>
+            <Link href='/'>
+              <a><LinkText>What we do for you</LinkText></a>
+            </Link>
+            <Link href='/useful-info'>
+              <a><LinkText>Useful info</LinkText></a>
+            </Link>
+            <Link href='/contact'>
+              <a><LinkText>Contact us</LinkText></a>
+            </Link>
+            <StyledDivider />
+            <Link href='tel:1300-667-123'>
+              <a><LinkText>1300 667 123</LinkText></a>
+            </Link>
+          </Nav>
+
+          <Nav hideAtMobile>
+            <Link href='/signin'>
+              <a><LinkText>
+                <Button invert>Sign in</Button>
+              </LinkText></a>
+            </Link>
+          </Nav>
+
+          <Nav hideAtDesktop>
+            <a href='#' onClick={this.handleModalTriggerClick}>
+              <LinkText fontSize={5}>
+                &#9776;
+              </LinkText>
+            </a>
+          </Nav>
+        </Root>
+
+        <MobileModal
+          align='center'
+          justify='center'
+          column
+          bg='brand'
+          onClick={this.handleModalClick}
+          isVisible={this.state.isModalVisible}
+        >
+          <Root
+            align='center'
+            justify='space-between'
+            px={3}
+            clear={this.props.clear}
+            invert={this.props.invert}
+          >
+            <Box py={3}>
+              <Link href='/'>
+                <a><IconLogo /></a>
+              </Link>
+            </Box>
+
+            <Nav>
+              <a href='#'>
+                <LinkText fontSize={7}>
+                  &times;
+                </LinkText>
+              </a>
+            </Nav>
+          </Root>
+
+          <MobileNav>
+            <Container textCenter>
+              <Flex column>
+                <Link href='/'>
+                  <a><MobileLinkText>Home</MobileLinkText></a>
+                </Link>
+                <Link href='/who-we-are'>
+                  <a><MobileLinkText>Who we are</MobileLinkText></a>
+                </Link>
+                <Link href='/'>
+                  <a><MobileLinkText>What we do for you</MobileLinkText></a>
+                </Link>
+                <Link href='/useful-info'>
+                  <a><MobileLinkText>Useful info</MobileLinkText></a>
+                </Link>
+                <Link href='/contact'>
+                  <a><MobileLinkText>Contact us</MobileLinkText></a>
+                </Link>
+                <Divider />
+                <Link href='tel:1300-667-123'>
+                  <a><MobileLinkText>1300 667 123</MobileLinkText></a>
+                </Link>
+              </Flex>
+            </Container>
+          </MobileNav>
+        </MobileModal>
+      </div>
     )
   }
 }

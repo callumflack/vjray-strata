@@ -24,6 +24,7 @@ import Contact from '../components/Shared/Contact'
 import ListeningBox from '../components/Home/ListeningBox'
 import FeatureList from '../components/Home/FeatureList'
 import SydneyBox from '../components/Home/SydneyBox'
+import TalkBox from '../components/Home/TalkBox'
 import Testimonials from '../components/Home/Testimonials'
 
 
@@ -47,23 +48,25 @@ const Index = () => (
 
     <SydneyBox />
 
-    <Box px={3} py={[ 5, 6 ]}>
-      <Container textCenter>
-        <Display children='Our duty is your satisfaction.' />
-        <Container width={[ 1, 2/3 ]}>
-          <LargeText color='text70'>
-            "VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." —&nbsp;
-            <AuthorText>Jessica, Campsie</AuthorText>
-          </LargeText>
+    <TalkBox>
+      <Box px={3} py={[ 5, 6 ]} style={{ position: 'relative' }}>
+        <Container textCenter>
+          <Display children='Our duty is your satisfaction.' />
+          <Container width={[ 1, 2/3 ]}>
+            <LargeText color='text70'>
+              "VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." —&nbsp;
+              <AuthorText>Jessica, Campsie</AuthorText>
+            </LargeText>
+          </Container>
         </Container>
-      </Container>
 
-      <Container mw='lg' pt={[ 3, 4 ]}>
-        <Testimonials />
-      </Container>
-    </Box>
+        <Container mw='lg' pt={[ 3, 4 ]}>
+          <Testimonials />
+        </Container>
+      </Box>
+    </TalkBox>
 
-    <Block bg='blue6' textCenter>
+    <Block textCenter>
       <Subheadline>Info on the go</Subheadline>
       <Display color='brandAlt' children='Your guides to Sydney Strata.' />
       <MediumText color='text70'>
@@ -82,12 +85,12 @@ const Index = () => (
       </Container>
     </Block>
 
-    <Block>
+    <Block bg='offWhite'>
       <ContactAction btnColor='brandAlt' withButton />
       <Contact />
     </Block>
 
-    <Footer />
+    <Footer bg='offWhite'/>
   </Layout>
 )
 

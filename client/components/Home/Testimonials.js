@@ -3,13 +3,6 @@ import theme from '../theme.js';
 import { Box, Flex } from '../styled-grid';
 import { Text, SmallText } from '../styled-elements/Text';
 
-// const Testimonial = styled.div`
-//   display: flex;
-//   justify-content: ;
-//   flex-direction: column;
-//   margin-top: 2.5rem;
-//   width: 275px;
-// `;
 
 const StyledFlex = styled(Flex)`
   margin: 1rem 2rem;
@@ -18,7 +11,8 @@ const StyledFlex = styled(Flex)`
 `
 
 const Quote = styled(SmallText)`
-  border: 1px solid ${theme.colors.text20};
+  background-color: white;
+  border: 1px solid ${theme.colors.text};
   display: block;
   padding: 1.3rem 2rem 1.4rem;
   text-align: left;
@@ -60,8 +54,8 @@ const Testimonials = (props) => (
       <Box ml={[ 3, 4 ]}>
         {/* <Image src='http://lorempixel.com/60/60' /> */}
         <Author justify='flex-end' column>
-          <SmallText>Dennis Sievers</SmallText>
-          <SmallText color='text70'>Campsie</SmallText>
+          <SmallText font="textMedium" color='brand'>Dennis Sievers</SmallText>
+          <SmallText color='brand'>Campsie</SmallText>
         </Author>
       </Box>
     </StyledFlex>

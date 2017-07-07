@@ -67,7 +67,7 @@ export default () => (
             mt={[ 0, 3 ]}>
             <Subheadline color='white' children='Info on the go' />
             <Display color='white' font='displayRegular'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
-            <LargeText color='text40'>Download your complete guide for successful Strata living.</LargeText>
+            <LargeText color='text40'>Download your complete guide to successful Strata living.</LargeText>
           </Box>
 
           <Guides primary button />

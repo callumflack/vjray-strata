@@ -41,5 +41,5 @@ Quote.add(
 // Registration
 // -----------------
 
-Quote.defaultColumns = 'title, createdAt';
+Quote.defaultColumns = 'name, createdAt';
 Quote.register();

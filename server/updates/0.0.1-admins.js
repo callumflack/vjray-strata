@@ -1,3 +1,22 @@
+const guideFeatureImage = {
+  "public_id": "zwwyun8ziin4tavzhax6",
+  "version": 1499395726,
+  "signature": "b37a96168598d9aee07b82ff30861fe4c95c408a",
+  "width": 600,
+  "height": 927,
+  "format": "png",
+  "resource_type": "image",
+  "url": "http://res.cloudinary.com/duniidrb8/image/upload/v1499395726/zwwyun8ziin4tavzhax6.png",
+  "secure_url": "https://res.cloudinary.com/duniidrb8/image/upload/v1499395726/zwwyun8ziin4tavzhax6.png"
+};
+
+const guideFile = {
+  "mimetype": "application/pdf",
+  "size": 7945,
+  "filename": "OWhtwj2r4nQrwjvV.pdf",
+  "url": "https://vj-ray.s3-us-west-2.amazonaws.com/assets/OWhtwj2r4nQrwjvV.pdf"
+};
+
 exports.create = {
   User: [{
     'username': 'Admin User',
@@ -10,6 +29,25 @@ exports.create = {
     'title': 'Example post',
     'description': 'Dolor vitae repellat repudiandae minima qui Eos nihil vel delectus ipsum soluta Pariatur provident dolorem voluptatum aliquid corrupti illum Porro ab doloribus enim assumenda reprehenderit! Libero culpa doloribus animi blanditiis',
     'content': 'Ipsum nihil adipisicing sapiente sunt nemo Consectetur consequatur officia repudiandae ex ad deserunt Esse vero libero cumque impedit excepturi, odio Pariatur id totam enim fuga labore? Excepturi error sint magnam distinctio ipsam Facere aut deleniti ab at fugiat Repellat amet esse eum ipsam iste Dicta praesentium ipsa eveniet adipisci aperiam.',
+  }],
+  Guide: [{
+    "title": "Example Guide",
+    "isFeatured": true,
+    "isPrimary": true,
+    featureImage: guideFeatureImage,
+    file: guideFile,
+  }, {
+    "title": "Example Guide 2",
+    "isFeatured": true,
+    "isPrimary": false,
+    featureImage: guideFeatureImage,
+    file: guideFile,
+  }, {
+    "title": "Example Guide 3",
+    "isFeatured": true,
+    "isPrimary": false,
+    featureImage: guideFeatureImage,
+    file: guideFile,
   }],
   Page: [{
     'page': 'Who we are',

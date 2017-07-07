@@ -18,7 +18,7 @@ const Schema = `
   }
 
   type File {
-    filename: String,
+    url: String,
   }
 
   type Guide {

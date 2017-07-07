@@ -5,12 +5,22 @@ const Types = keystone.Field.Types;
 // File Storage
 // -----------------
 
-var storage = new keystone.Storage({
-  adapter: keystone.Storage.Adapters.FS,
-  fs: {
-    path: '/tmp/vjrayfiles',
+const storage = new keystone.Storage({
+  adapter: require('keystone-storage-adapter-s3'),
+  s3: {
+    key: process.env.S3_KEY,
+    secret: process.env.S3_SECRET,
+    bucket: process.env.S3_BUCKET,
+    path: '/assets',
+    region: 'us-west-2',
+    headers: {
+      'x-amz-acl': 'public-read',
+    }
   },
-});
+  schema: {
+    url: true, // (optional) generate & store a public URL
+  }
+})
 
 
 // Model
@@ -31,9 +41,6 @@ Guide.add({
     initial: true,
   },
   featureImage: Types.CloudinaryImage,
-  // Types.LocalFile has been removed from keystone
-  // Documentation - https://github.com/keystonejs/keystone/tree/master/lib/storage/adapters/fs
-  // Upgrade Guide - https://github.com/keystonejs/keystone/wiki/File-Fields-Upgrade-Guide
   file: {
     type: Types.File,
     storage,

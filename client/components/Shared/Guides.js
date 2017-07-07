@@ -48,8 +48,8 @@ const Guides = (props) => (
         px={[4, 3]}
         key={guide._id}
       >
-        <Link href={`${process.env.SERVER_URI}/${guide.file.filename}`}>
-          <a href='#'>
+        <Link href={`${guide.file.url}`}>
+          <a href={`${guide.file.url}`}>
             <ImageWithShadow src={guide.featureImage.secure_url} />
           </a>
         </Link>
@@ -86,7 +86,7 @@ class GuidesContainer extends React.Component {
           secure_url,
         },
         file {
-          filename
+          url,
         },
         createdAt,
       }

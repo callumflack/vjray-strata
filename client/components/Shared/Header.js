@@ -86,7 +86,7 @@ const MobileModal = styled(Flex)`
   padding-top: ${headerHeight};
   background-color: #fff;
 
-  ${props => !props.isVisible && css`
+  ${props => !props.isModalVisible && css`
     display: none;
   `}
 `;
@@ -218,60 +218,60 @@ class Header extends React.Component {
         </Root>
 
         <MobileModal
-          align='center'
-          justify='center'
-          column
-          bg='brand'
           onClick={this.handleModalClick}
-          isVisible={this.state.isModalVisible}
-        >
-          <Root
+          isModalVisible={this.state.isModalVisible}
             align='center'
-            justify='space-between'
-            px={3}
-            clear={this.props.clear}
-            invert={this.props.invert}
-          >
-            <Box py={3}>
-              <Link href='/'>
-                <a><IconLogo /></a>
-              </Link>
-            </Box>
-
-            <Nav>
-              <a href='#'>
-                <LinkText fontSize={7}>
-                  &times;
-                </LinkText>
-              </a>
-            </Nav>
-          </Root>
-
-          <MobileNav>
-            <Container textCenter>
-              <Flex column>
+            justify='center'
+            column
+            bg='brand'
+        >
+            <Root
+              align='center'
+              justify='space-between'
+              px={3}
+              clear={this.props.clear}
+              invert={this.props.invert}
+            >
+              <Box py={3}>
                 <Link href='/'>
-                  <a><MobileLinkText>Home</MobileLinkText></a>
+                  <a><IconLogo /></a>
                 </Link>
-                <Link href='/who-we-are'>
-                  <a><MobileLinkText>Who we are</MobileLinkText></a>
-                </Link>
-                <Link href='/'>
-                  <a><MobileLinkText>What we do for you</MobileLinkText></a>
-                </Link>
-                <Link href='/useful-info'>
-                  <a><MobileLinkText>Useful info</MobileLinkText></a>
-                </Link>
-                <Link href='/contact'>
-                  <a><MobileLinkText>Contact us</MobileLinkText></a>
-                </Link>
-                <Divider />
-                <Link href='tel:1300-667-123'>
-                  <a><MobileLinkText>1300 667 123</MobileLinkText></a>
-                </Link>
-              </Flex>
-            </Container>
-          </MobileNav>
+              </Box>
+
+              <Nav>
+                <a href='#'>
+                  <LinkText fontSize={7}>
+                    &times;
+                  </LinkText>
+                </a>
+              </Nav>
+            </Root>
+
+            <MobileNav>
+              <Container textCenter>
+                <Flex column>
+                  <Link href='/'>
+                    <a><MobileLinkText>Home</MobileLinkText></a>
+                  </Link>
+                  <Link href='/who-we-are'>
+                    <a><MobileLinkText>Who we are</MobileLinkText></a>
+                  </Link>
+                  <Link href='/'>
+                    <a><MobileLinkText>What we do for you</MobileLinkText></a>
+                  </Link>
+                  <Link href='/useful-info'>
+                    <a><MobileLinkText>Useful info</MobileLinkText></a>
+                  </Link>
+                  <Link href='/contact'>
+                    <a><MobileLinkText>Contact us</MobileLinkText></a>
+                  </Link>
+                  <Divider />
+                  <Link href='tel:1300-667-123'>
+                    <a><MobileLinkText>1300 667 123</MobileLinkText></a>
+                  </Link>
+                </Flex>
+              </Container>
+            </MobileNav>
         </MobileModal>
       </div>
     )

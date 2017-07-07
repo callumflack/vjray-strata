@@ -69,11 +69,8 @@ export default () => (
             <Display color='white' font='displayRegular'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
             <LargeText color='text40'>Download your complete guide for successful Strata living.</LargeText>
           </Box>
-          <Box
-            width={[ 1, 1/2 ]}
-            px={[ 3, 4 ]}>
-            <GuideButton icon />
-          </Box>
+
+          <Guides primary button />
         </FlexMobileColumn>
       </Container>
 

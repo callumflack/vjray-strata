@@ -41,7 +41,7 @@ const Schema = `
   type Query {
     post(slug: String!): Post,
     posts(limit: Int): [Post],
-    guides(limit: Int): [Guide],
+    guides(limit: Int, primary: Boolean, featured: Boolean): [Guide],
     page(page: String!): Page,
   }
 

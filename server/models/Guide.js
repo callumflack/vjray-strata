@@ -42,11 +42,13 @@ Guide.add({
     type: Types.Date,
     default: Date.now,
   },
+  isPrimary: Types.Boolean,
+  isFeatured: Types.Boolean,
 });
 
 
 // Registration
 // -----------------
 
-Guide.defaultColumns = 'title, createdAt';
+Guide.defaultColumns = 'title, isPrimary, isFeatured';
 Guide.register();

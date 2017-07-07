@@ -14,6 +14,18 @@ import { IconDownload } from '../styled-elements/Icons'
 import { ImageWithShadow } from './ImageWithShadow'
 
 
+const Root = (props) => (
+  <div>
+    {props.primary ? (
+      <div>
+        {props.children}
+      </div>
+    ) : (
+      <FlexMobileColumn mx={-3} align='center' justify='space-between'>{props.children}</FlexMobileColumn>
+    )}
+  </div>
+);
+
 const GuideButton = (props) => (
   <SmallText
     align='center'
@@ -29,9 +41,13 @@ const GuideButton = (props) => (
 );
 
 const Guides = (props) => (
-  <FlexMobileColumn mx={-3} align='center' justify='space-between'>
+  <Root primary={props.primary}>
     {props.guides.map((guide, i) =>
-      <Box width={[ 1, 1/3 ]} px={[ 4, 3 ]} key={guide._id}>
+      <Box
+        width={props.primary ? [1, 1/2] : [1, 1/3]}
+        px={[4, 3]}
+        key={guide._id}
+      >
         <Link href={`${process.env.SERVER_URI}/${guide.file.filename}`}>
           <a href='#'>
             <ImageWithShadow src={guide.featureImage.secure_url} />
@@ -43,23 +59,9 @@ const Guides = (props) => (
         )}
       </Box>
     )}
-  </FlexMobileColumn>
+  </Root>
 );
 
-
-const query = gql`{
-  guides(limit: 3) {
-    _id,
-    title,
-    featureImage {
-      secure_url,
-    },
-    file {
-      filename
-    },
-    createdAt,
-  }
-}`;
 
 
 class GuidesContainer extends React.Component {
@@ -72,6 +74,24 @@ class GuidesContainer extends React.Component {
   }
 
   async componentDidMount() {
+    const query = gql`{
+      guides(
+        primary: ${this.props.primary},
+        featured: ${this.props.featured},
+        limit: ${this.props.limit},
+      ) {
+        _id,
+        title,
+        featureImage {
+          secure_url,
+        },
+        file {
+          filename
+        },
+        createdAt,
+      }
+    }`;
+
     const { data: { guides } } = await apollo.query({ query });
     this.setState({ guides });
   }
@@ -82,11 +102,17 @@ class GuidesContainer extends React.Component {
 }
 
 GuidesContainer.propTypes = {
+  limit: PropTypes.number,
+  primary: PropTypes.bool,
+  featured: PropTypes.bool,
   buttons: PropTypes.bool,
   icon: PropTypes.bool,
 };
 
 GuidesContainer.defaultProps = {
+  limit: 0,
+  primary: false,
+  featured: false,
   buttons: false,
   icon: false,
 };

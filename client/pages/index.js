@@ -74,7 +74,7 @@ const Index = () => (
       </MediumText>
 
       <Box p={4}>
-        <Guides />
+        <Guides featured limit={3} />
       </Box>
 
       <Container mt={5} mw='sm'>

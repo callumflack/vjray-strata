@@ -16,7 +16,24 @@ const resolvers = {
       .limit(limit)
       .exec();
     },
-    guides: async (obj, { limit=0 }) => {
+    guides: async (obj, { limit=0, primary=false, featured=false }) => {
+      if (primary) {
+        const guide = await Guide.model.findOne({
+          isPrimary: true,
+        })
+        .exec();
+
+        return [guide];
+      }
+
+      if (featured) {
+        return await Guide.model.find({
+          isFeatured: true,
+        })
+        .limit(limit)
+        .exec();
+      }
+
       // A limit of 0 returns all documents
       return await Guide.model.find()
       .limit(limit)

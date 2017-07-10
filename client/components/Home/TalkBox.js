@@ -36,7 +36,7 @@ const StyledBox = styled(Box)`
       linear-gradient(
         to bottom,
         white,
-        rgba(193,230,243, 0.25) 40%
+        rgba(64, 64, 112, 0.1) 40%
       );
     bottom: 0;
     content: " ";

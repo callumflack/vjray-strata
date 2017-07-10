@@ -38,7 +38,7 @@ const Root = (props) => (
         <GuideButton icon />
       </BoxReset>
     ) : (
-      <FlexMobileColumn mx={-3} align='center' justify='space-between'>{props.children}</FlexMobileColumn>
+      <FlexMobileColumn mx={-3} align='center' justify='center'>{props.children}</FlexMobileColumn>
     )}
   </div>
 );

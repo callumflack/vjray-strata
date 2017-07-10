@@ -102,7 +102,7 @@ class WhoContainer extends React.Component {
   render() {
     return (
       <Layout>
-        <Header />
+        <Header clear />
 
         <Hero px={3}>
           <Image />
@@ -124,7 +124,7 @@ class WhoContainer extends React.Component {
           </Container>
         </Hero>
 
-        <Box px={3} pt={[ 5, 6 ]}>
+        <Box px={3} py={[ 5, 6 ]}>
           <Container>
             <Box width={[ 1, 11/12 ]} mx='auto'>
 
@@ -138,7 +138,9 @@ class WhoContainer extends React.Component {
                 </Flex>
 
                 <FlexMobileOrderFirst width={[ 1, 1, 2/3, 3/4 ]} px={3}>
-                  <DangerouslyResetTextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
+                  <TextBlock>
+                    <TextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
+                  </TextBlock>
                 </FlexMobileOrderFirst>
               </FlexMobileColumn>
 
@@ -146,7 +148,7 @@ class WhoContainer extends React.Component {
           </Container>
         </Box>
 
-        <Block textCenter>
+        <Block border textCenter>
           <ContactAction btnColor='brandAlt' withButton />
           <Contact />
         </Block>

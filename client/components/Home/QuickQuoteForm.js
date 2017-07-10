@@ -17,7 +17,10 @@ const Form = styled.form`
 
   background-color: #fff;
   bottom: var(--Header-height);
-  box-shadow: 0 16px 24px 2px rgba(0,0,0,0.09), 0 6px 30px 5px rgba(0,0,0,0.06), 0 8px 10px -5px rgba(0,0,0,0.15);
+  box-shadow: 
+    0 16px 24px 2px rgba(0,0,0,0.09), 
+    0 6px 30px 5px rgba(0,0,0,0.06), 
+    0 8px 10px -5px rgba(0,0,0,0.15);
   left: 50%;
   position: absolute;
   transition: width 0.2s;

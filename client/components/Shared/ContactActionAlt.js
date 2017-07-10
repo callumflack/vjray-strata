@@ -22,7 +22,7 @@ const StyledBox = styled(Box)`
 export default (props) => (
   <StyledBox pb={[ 3, 4, 5 ]}>
     <Subheadline children='Get in touch' />
-    <Display color='text' font='displayLight' mb={3}>
+    <Display color='text' font='displayRegular' mb={3}>
       Skip the hassle of&nbsp;
       <LineBreak m='auto'>Strata management.</LineBreak>
     </Display>

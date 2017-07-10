@@ -7,7 +7,7 @@ import theme from '../theme.js';
 
 // Root styles
 const Root = hoc('p').extend``
-const Test = test('p').extend``
+const Test = test('span').extend``
 
 const Text = props =>
   <Root
@@ -74,13 +74,27 @@ const InlineText = Root.withComponent('span').extend`
 `
 
 const TextBlock = styled('div')`
+  p {
+    font-size: 16px;
+    font-family: ${theme.fonts.textLight};
+    margin: 0;
+    order: initial;
+    padding: 0;
+    width: 100%;
+
+    @media (min-width: ${theme.containers.sm}) {
+      font-size: 19px;
+    }
+  }
+
   p + p {
     margin-top: 1em;
   }
 `
 
 const DangerouslyResetTextBlock = styled(TextBlock)`
-  > div {
+  > div,
+  > div div {
     font-size: 16px;
     font-family: ${theme.fonts.textLight};
     margin: 0;

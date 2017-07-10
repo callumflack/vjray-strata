@@ -82,14 +82,15 @@ export default () => (
     </StyledColorBox>
 
     <Block mw='sm' textCenter>
-      <RecentPosts subheading='Latest article' />
+      <Subheadline children='Latest article' />
+      <RecentPosts />
     </Block>
 
-    <Block bg='offWhite'>
+    <Block border>
       <ContactActionAlt btnColor='brandAlt' />
       <Contact />
     </Block>
 
-    <Footer bg='offWhite' />
+    <Footer />
   </Layout>
 )

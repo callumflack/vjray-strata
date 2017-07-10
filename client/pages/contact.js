@@ -86,7 +86,7 @@ class ContactUs extends React.Component {
           <Container textCenter>
             <Subheadline children='Contact us' />
             <Display color='brand' children='Write to us.' />
-            <Text color='text70' children='For emergencies, call 1300 073 123 any time.' />
+            <LargeText color='text70' children='Emergency? Call 1300 073 123 any time.' />
           </Container>
 
           <Container mt={[3, 4]}>
@@ -100,10 +100,10 @@ class ContactUs extends React.Component {
 
         <Box px={3} pb={[ 5, 6 ]}>
           <Container mw='sm' textCenter>
-            <Headline font='displayRegular' color='text70' mb={3} ruled>
+            <Display font='displayRegular' color='text' mb={3} ruled>
               Skip the hassle of&nbsp;
               <LineBreak m='auto' children='Strata management.' />
-            </Headline>
+            </Display>
             <LargeButtonStyler>
               <Link href='/fast-quote'>
                 <Button large icon bgColor='brandAlt' children='Get a fast quote' />

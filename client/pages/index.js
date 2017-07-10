@@ -85,12 +85,12 @@ const Index = () => (
       </Container>
     </Block>
 
-    <Block bg='offWhite'>
+    <Block border >
       <ContactAction btnColor='brandAlt' withButton />
       <Contact />
     </Block>
 
-    <Footer bg='offWhite'/>
+    <Footer />
   </Layout>
 )
 

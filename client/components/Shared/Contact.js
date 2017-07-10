@@ -22,7 +22,7 @@ const locationList = [{
   subOne: '18 President Avenue',
   subTwo: 'Caringbah, NSW 2229',
   phoneNumber: '1300 073 405',
-  email: 'campsie@vjray.com.au',
+  email: 'caringbah@vjray.com.au',
   poBox: 'PO Box 369 Campsie, NSW 2194',
   emergencyPhoneNumber: '1300 073 777',
   googleMapsUrl: 'https://www.google.co.nz/maps/place/V.J.+Ray/@-34.0432583,151.1198929,17z',
@@ -58,7 +58,7 @@ const Location = (props) => (
     <Box my={2}>
       <Link href={props.location.googleMapsUrl}>
         <a>
-          <Text color='brandAlt' font='textMedium' mb='6px'>{props.location.name}</Text>
+          <Text color='text' font='textMedium'>{props.location.name}</Text>
         </a>
       </Link>
 

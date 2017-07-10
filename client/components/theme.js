@@ -12,6 +12,7 @@
 
 // text: '#585870',
 // brand: '#D3145A',
+// brandAlt: '#a4003b',
 
 export default {
   blockHeights: {
@@ -22,10 +23,10 @@ export default {
   breakpoints: [32, 48, 64, 80, 96],
   colors: {
     text: '#4b4b60',
-    text70: '#8b8a9b',
-    text40: '#BCBCC5',
-    text20: '#DEDEE2',
-    text7: '#F3F3F5',
+    text70: '#818190',
+    text40: '#b7b7bf',
+    text20: '#dbdbdf',
+    text7: '#f2f2f4',
     brand: '#c90b50',
     brandAlt: '#404070',
     brandAlt70: '#797A9A',

@@ -10,6 +10,10 @@ const Root = hoc(Box).extend`
   ${props => props.bg && css`
     background-color: ${theme.colors[props.color]};
   `}
+
+  ${props => props.border && css`
+    border-top: 1px solid ${theme.colors.text20};
+  `}
 `;
 
 Root.Section = Root.withComponent('section')
@@ -29,6 +33,7 @@ Root.Section = Root.withComponent('section')
 const Block = (props) => (
   <Root.Section
     bg={props.bg}
+    border={props.border}
     px={3}
     py={[ 5, 6 ]}>
     <Container mw={props.mw} textCenter={props.textCenter}>

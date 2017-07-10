@@ -57,22 +57,27 @@ class RecentPosts extends React.Component {
           <div key={i}>
 
             <Box
-              width={[ 1, 2/3 ]}
+              width={1}
               mx='auto'
-              my={3}>
+              my={3}
+            >
               <img src={post.featureImage.secure_url} />
-            </Box>
-
-            <Box width={[ 1, 5/6 ]} mx='auto'>
+            </ Box>
+            <Box
+              width={[ 1, 5/6 ]}
+              mx='auto'
+              my={3}
+            >
               <Headline
-                font='displayMedium'
+                align='left'
+                font='displayRegular'
                 color='text'
                 my={3}
-                children={post.title} />
-
+                children={post.title}
+              />
               <Text align='left'>
                 {post.description}
-                <Link href={`/article?slug=${post.slug}`} as={`/article/${post.slug}`}>
+                <Link href={`/article?slug=${post.slug}`} as={`/blog/${post.slug}`}>
                   <a><PostLink color='brand' font='textLight'>Read more</PostLink></a>
                 </Link>
               </Text>

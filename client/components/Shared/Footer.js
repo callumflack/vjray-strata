@@ -54,8 +54,8 @@ const Column = styled(Box)`
 
 const Footer = (props) => (
   <Root
-    py={0}
-    bg={props.bg}>
+    bg={props.bg}
+    py={0}>
 
     <StyledContainer mx="lg">
 
@@ -66,39 +66,40 @@ const Footer = (props) => (
           </Link>
           <SmallText color='text40' mx={2} my={1}>&copy; 2017</SmallText>
         </div>
+        
+        <div>
+          <Nav>
+            <Column>
+              <Link href='/who-we-are'><a><span>Who we are</span></a></Link>
+              <Link href='/who-we-are'><a>Our story</a></Link>
+            </Column>
+            <Column>
+              <Link href='/'><a><span>What we do for you</span></a></Link>
+              <Link href='/'><a>For tenants</a></Link>
+              <Link href='/'><a>For owners</a></Link>
+              <Link href='/'><a>For investors</a></Link>
+            </Column>
+            <Column>
+              <Link href='/useful-info'><a><span>Useful info</span></a></Link>
+              <Link href='/'><a>Our Strata guides</a></Link>
+              <Link href='/'><a>Strata blog</a></Link>
+            </Column>
+            <Column>
+              <Link href='/contact'><a><span>Contact us</span></a></Link>
+              <Link href='/fast-quote'><a>Get a fast quote</a></Link>
+              <Link href='/contact'><a>Report an issue</a></Link>
+            </Column>
+          </Nav>
 
-        <Nav>
-          <Column>
-            <Link href='/who-we-are'><a><span>Who we are</span></a></Link>
-            <Link href='/who-we-are'><a>Our story</a></Link>
-          </Column>
-          <Column>
-            <Link href='/'><a><span>What we do for you</span></a></Link>
-            <Link href='/'><a>For tenants</a></Link>
-            <Link href='/'><a>For owners</a></Link>
-            <Link href='/'><a>For investors</a></Link>
-          </Column>
-          <Column>
-            <Link href='/useful-info'><a><span>Useful info</span></a></Link>
-            <Link href='/'><a>Our Strata guides</a></Link>
-            <Link href='/'><a>Strata blog</a></Link>
-          </Column>
-          <Column>
-            <Link href='/contact'><a><span>Contact us</span></a></Link>
-            <Link href='/fast-quote'><a>Get a fast quote</a></Link>
-            <Link href='/contact'><a>Report an issue</a></Link>
-            <Link href='/contact'><a>Talk to us</a></Link>
-          </Column>
-        </Nav>
+          <Nav>
+            <Link href='/'><a>Terms of use</a></Link>
+            <Divider />
+            <Link href='/'><a>Privacy policy</a></Link>
+            <Divider />
+            <Link href='/'><a>ABN 31 064 030 311</a></Link>
+          </Nav>
+        </div>
       </Flex>
-
-      <Nav lightGrey>
-        <Link href='/'><a>Terms of use</a></Link>
-        <Divider />
-        <Link href='/'><a>Privacy policy</a></Link>
-        <Divider />
-        <Link href='/'><a>ABN 31 064 030 311</a></Link>
-      </Nav>
 
     </StyledContainer>
   </Root>

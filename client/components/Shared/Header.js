@@ -32,7 +32,7 @@ const Root = styled(Flex)`
     opacity 0.25s ease-in-out 0.25s,
     transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
   width: 100%;
-  z-index: 1;
+  z-index: 3;
 
   ${props => props.clear && css`
     --Header-background-color: transparent;
@@ -47,6 +47,16 @@ const Root = styled(Flex)`
     }
   `}
 
+  ${props => props.isVisible  && css`
+    box-shadow: 
+      0 16px 24px 2px rgba(0,0,0,0.06), 
+      0 6px 30px 5px rgba(0,0,0,0.03);
+    
+    ${props => props.bg && css`
+      background-color: ${theme.colors[props.bg] || theme.colors.white};
+    `}
+  `}
+  
   ${props => props.isHidden  && css`
     ${'' /* transition: opacity 0.3s, visibility 0s 0.3s; */}
     opacity: 0;
@@ -96,8 +106,6 @@ const MobileNav = styled.nav`
     margin: 0.4rem 0;
   }
 `;
-
-// `this backticked comment stops Atom rendering the wrong colours after a s-c.
 
 const LinkTextRoot = hoc('span').extend``
 
@@ -220,10 +228,10 @@ class Header extends React.Component {
         <MobileModal
           onClick={this.handleModalClick}
           isModalVisible={this.state.isModalVisible}
-            align='center'
-            justify='center'
-            column
-            bg='brand'
+          align='center'
+          justify='center'
+          column
+          bg='brand'
         >
             <Root
               align='center'
@@ -273,6 +281,8 @@ class Header extends React.Component {
               </Container>
             </MobileNav>
         </MobileModal>
+
+
       </div>
     )
   }

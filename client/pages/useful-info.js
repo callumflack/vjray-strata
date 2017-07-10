@@ -41,19 +41,18 @@ const Rule = styled(Container)`
   height: 1px;
 `
 
-// const FlexMobileColumn = styled(Flex)`
-//     flex-direction: column;
-//
-//     @media (min-width: ${theme.containers.sm}) {
-//       flex-direction: row;
-//     }
-//
-//     @media (max-width: ${theme.containers.sm}) {
-//       div + div {
-//         margin-top: ${theme.space[4]}px;
-//       }
-//     }
-// `
+// moved the Posts lists here to run off
+// until they have more than 1 blog post.
+const PostsList = props => (
+  <Box pb={[ 5, 6 ]} px={3}>
+    <Container mw='lg' textCenter>
+      <Container textCenter mb={4}>
+        <Subheadline children='Posts archive' />
+      </Container>
+      <PostContainer />
+    </Container>
+  </Box>
+)
 
 export default () => (
   <Layout>
@@ -62,19 +61,19 @@ export default () => (
     <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
       <Container mw='rg' mt={[ 4, 5, 6 ]} >
         <FlexMobileColumn>
-          <Box
-            width={[ 1, 1/2 ]}
-            mt={[ 0, 3 ]}>
+          <Box width={[ 1, 1/2 ]} mt={[ 0, 3 ]}>
             <Subheadline color='white' children='Info on the go' />
             <Display color='white' font='displayRegular'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
-            <LargeText color='text40'>Download your complete guide to successful Strata living.</LargeText>
+            <LargeText color='text40'>Download your complete <LineBreak>guide to Strata living.</LineBreak></LargeText>
           </Box>
 
-          <Guides primary button />
+          <Box width={[ 1, 1/2 ]} px={[ 3, 4 ]}>
+            <Guides primary button />
+          </Box>
         </FlexMobileColumn>
       </Container>
 
-      <Rule mw='lg' my={[ 3, 4 ]} />
+      <Rule mw='rg' my={[ 3, 4 ]} />
 
       <Container textCenter>
         <Subheadline color='white' mt={[ 1, 2 ]} mb={4} children='All our guides' />
@@ -85,15 +84,6 @@ export default () => (
     <Block mw='sm' textCenter>
       <RecentPosts subheading='Latest article' />
     </Block>
-
-    <Box pb={[ 5, 6 ]} px={3}>
-      <Container mw='lg' textCenter>
-        <Container textCenter mb={4}>
-          <Subheadline children='Posts archive' />
-        </Container>
-        <PostContainer />
-      </Container>
-    </Box>
 
     <Block bg='offWhite'>
       <ContactActionAlt btnColor='brandAlt' />

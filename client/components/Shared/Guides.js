@@ -8,23 +8,13 @@ import theme from '../theme.js';
 import styled from 'styled-components';
 import { Box, Flex } from '../styled-grid';
 import { Text, SmallText } from '../styled-elements/Text.js';
-import FlexMobileColumn from '../Shared/FlexMobileColumn'
 import Button from '../styled-elements/Button'
 import { IconDownload } from '../styled-elements/Icons'
+
+import BoxReset from './BoxReset'
 import { ImageWithShadow } from './ImageWithShadow'
+import FlexMobileColumn from './FlexMobileColumn'
 
-
-const Root = (props) => (
-  <div>
-    {props.primary ? (
-      <div>
-        {props.children}
-      </div>
-    ) : (
-      <FlexMobileColumn mx={-3} align='center' justify='space-between'>{props.children}</FlexMobileColumn>
-    )}
-  </div>
-);
 
 const GuideButton = (props) => (
   <SmallText
@@ -38,6 +28,19 @@ const GuideButton = (props) => (
       {props.title || 'Download'}
     </Button>
   </SmallText>
+);
+
+const Root = (props) => (
+  <div>
+    {props.primary ? (
+      <BoxReset>
+        {props.children}
+        <GuideButton icon />
+      </BoxReset>
+    ) : (
+      <FlexMobileColumn mx={-3} align='center' justify='space-between'>{props.children}</FlexMobileColumn>
+    )}
+  </div>
 );
 
 const Guides = (props) => (
@@ -61,8 +64,6 @@ const Guides = (props) => (
     )}
   </Root>
 );
-
-
 
 class GuidesContainer extends React.Component {
   constructor(props) {

@@ -19,6 +19,7 @@ Post.add({
     type: String,
     initial: true,
   },
+  featureImage: Types.CloudinaryImage,
   author: {
     type: Types.Relationship,
     ref: 'User',

@@ -38,6 +38,9 @@ class RecentPosts extends React.Component {
         _id,
         slug,
         title,
+        featureImage {
+          secure_url,
+        },
         createdAt,
         description,
       }
@@ -57,7 +60,7 @@ class RecentPosts extends React.Component {
               width={[ 1, 2/3 ]}
               mx='auto'
               my={3}>
-              <img src='http://lorempixel.com/620/460' />
+              <img src={post.featureImage.secure_url} />
             </Box>
 
             <Box width={[ 1, 5/6 ]} mx='auto'>

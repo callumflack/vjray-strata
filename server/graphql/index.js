@@ -8,6 +8,7 @@ const Schema = `
     _id: String!,
     slug: String,
     title: String,
+    featureImage: CloudinaryImage,
     content: Markdown,
     description: String,
     createdAt: String,
@@ -44,7 +45,6 @@ const Schema = `
     guides(limit: Int, primary: Boolean, featured: Boolean): [Guide],
     page(page: String!): Page,
   }
-
 
   type Quote {
     _id: String,

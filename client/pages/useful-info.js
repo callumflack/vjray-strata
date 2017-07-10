@@ -21,7 +21,7 @@ import Contact from '../components/Shared/Contact'
 import ContactAction from '../components/Shared/ContactAction'
 import ContactActionAlt from '../components/Shared/ContactActionAlt'
 import Footer from '../components/Shared/Footer'
-import Guides, { GuideButton } from '../components/Shared/Guides'
+import Guides from '../components/Shared/Guides'
 import Header from '../components/Shared/Header'
 import PostContainer from '../components/Shared/PostContainer'
 import RecentPosts from '../components/Shared/RecentPosts'
@@ -68,7 +68,7 @@ export default () => (
           </Box>
 
           <Box width={[ 1, 1/2 ]} px={[ 3, 4 ]}>
-            <Guides primary button />
+            <Guides primary buttons />
           </Box>
         </FlexMobileColumn>
       </Container>

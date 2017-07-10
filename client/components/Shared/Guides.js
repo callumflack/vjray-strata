@@ -23,10 +23,14 @@ const GuideButton = (props) => (
     letterSpacing='button'
     mt={3}
   >
-    <Button clean color='white'>
-      {props.icon && <IconDownload bottom mr={1} />}
-      {props.title || 'Download'}
-    </Button>
+    <Link href={`${props.guide.file.url}`}>
+      <a href={`${props.guide.file.url}`}>
+        <Button clean color='white'>
+          {props.icon && <IconDownload bottom mr={1} />}
+          {props.guide.title || 'Download'}
+        </Button>
+      </a>
+    </Link>
   </SmallText>
 );
 
@@ -35,7 +39,6 @@ const Root = (props) => (
     {props.primary ? (
       <BoxReset>
         {props.children}
-        <GuideButton icon />
       </BoxReset>
     ) : (
       <FlexMobileColumn mx={-3} align='center' justify='center'>{props.children}</FlexMobileColumn>
@@ -58,7 +61,7 @@ const Guides = (props) => (
         </Link>
 
         {props.buttons && (
-          <GuideButton title={guide.title} icon={props.icon} />
+          <GuideButton guide={guide} icon={props.icon} />
         )}
       </Box>
     )}

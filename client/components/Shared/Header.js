@@ -48,15 +48,15 @@ const Root = styled(Flex)`
   `}
 
   ${props => props.isVisible  && css`
-    box-shadow: 
-      0 16px 24px 2px rgba(0,0,0,0.06), 
+    box-shadow:
+      0 16px 24px 2px rgba(0,0,0,0.06),
       0 6px 30px 5px rgba(0,0,0,0.03);
-    
+
     ${props => props.bg && css`
       background-color: ${theme.colors[props.bg] || theme.colors.white};
     `}
   `}
-  
+
   ${props => props.isHidden  && css`
     ${'' /* transition: opacity 0.3s, visibility 0s 0.3s; */}
     opacity: 0;
@@ -86,7 +86,7 @@ const Nav = styled.nav`
   `}
 `;
 
-const MobileModal = styled(Flex)`
+const MobileModal = Flex.extend`
   position: fixed;
   z-index: 15;
   top: 0;
@@ -96,7 +96,7 @@ const MobileModal = styled(Flex)`
   padding-top: ${headerHeight};
   background-color: #fff;
 
-  ${props => !props.isModalVisible && css`
+  ${props => !props.isVisible && css`
     display: none;
   `}
 `;
@@ -227,7 +227,7 @@ class Header extends React.Component {
 
         <MobileModal
           onClick={this.handleModalClick}
-          isModalVisible={this.state.isModalVisible}
+          isVisible={this.state.isModalVisible}
           align='center'
           justify='center'
           column

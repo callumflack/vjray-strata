@@ -1,4 +1,4 @@
-const { breaks, idx, joinObj, arr, dec, media } = require('./util')
+const { breaks, idx, merge, arr, dec, media } = require('./util')
 
 const REG = /^color|bg$/
 
@@ -14,11 +14,12 @@ module.exports = props => {
       .map(cx(palette))
       .map(dec(prop))
       .map(media(bp))
-      .reduce(joinObj, {})
-  }).reduce(joinObj, {})
+      .reduce(merge, {})
+  }).reduce(merge, {})
 }
 
-const cx = obj => n => obj[n] || n
+const cx = obj => n => idx(getKeys(n), obj) || n
+const getKeys = n => typeof n === 'string' ? n.split('.') : [ n ]
 
 const properties = {
   bg: 'backgroundColor'

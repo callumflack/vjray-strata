@@ -68,6 +68,9 @@ typings/
 ### OS Mac ###
 .DS_Store
 
+### VS Code ###
+.vscode
+
 ### Next.js ###
 .next
 

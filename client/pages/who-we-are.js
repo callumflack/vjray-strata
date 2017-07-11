@@ -102,7 +102,7 @@ class WhoContainer extends React.Component {
   render() {
     return (
       <Layout>
-        <Header clear />
+        <Header blue clear />
 
         <Hero px={3}>
           <Image />

@@ -41,7 +41,7 @@ const Root = (props) => (
         {props.children}
       </BoxReset>
     ) : (
-      <FlexMobileColumn mx={-3} align='center' justify='center'>{props.children}</FlexMobileColumn>
+      <FlexMobileColumn justify='center' mx={-3}>{props.children}</FlexMobileColumn>
     )}
   </div>
 );

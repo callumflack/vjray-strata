@@ -3,7 +3,7 @@ import { Flex, Box } from '../styled-grid'
 import { hoc } from '../styled-system/styled-components'
 import theme from '../theme'
 
-import { LargeText } from '../styled-elements/Text'
+import { LargeText, LineBreak } from '../styled-elements/Text'
 import { Headline, Display } from '../styled-elements/Headline'
 import CoverImage from '../styled-elements/CoverImage'
 import Container from '../styled-elements/Container'
@@ -44,7 +44,10 @@ const ListeningBox = () => (
         align='center'
         >
         <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]}>
-          <Display font='displayRegular'>Skip the hassle of Strata management.</Display>
+          <Display font='displayRegular'>
+            Skip the hassle of 
+            <LineBreak>Strata management.</LineBreak>
+          </Display>
           <LargeText>At VJ Ray Strata, we understand how valuable peace of mind is.</LargeText>
         </Box>
       </Flex>

@@ -22,6 +22,11 @@ const PostLink = hoc('span').extend`
   }
 `;
 
+const HeadlineAligner = hoc('span').extend`
+  display: inline-block;
+  margin-top: 6px;
+`
+
 class RecentPosts extends React.Component {
   constructor(props) {
     super(props);
@@ -73,8 +78,9 @@ class RecentPosts extends React.Component {
                 font='displayRegular'
                 color='text'
                 my={3}
-                children={post.title}
-              />
+              >
+                <HeadlineAligner>{post.title}</HeadlineAligner>
+              </Headline>
               <Text align='left'>
                 {post.description}
                 <Link href={`/article?slug=${post.slug}`} as={`/blog/${post.slug}`}>

@@ -12,7 +12,7 @@ const Root = hoc(Box).extend`
   `}
 
   ${props => props.border && css`
-    border-top: 1px solid ${theme.colors.text20};
+    border-top: 1px solid ${theme.colors.text10};
   `}
 `;
 
@@ -35,7 +35,8 @@ const Block = (props) => (
     bg={props.bg}
     border={props.border}
     px={3}
-    py={[ 5, 6 ]}>
+    py={[ 5, 6 ]}
+    pb={props.pb}>
     <Container mw={props.mw} textCenter={props.textCenter}>
       {props.children}
     </Container>

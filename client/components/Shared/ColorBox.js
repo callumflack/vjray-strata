@@ -8,7 +8,7 @@ const ColorBox = styled(HeroBox)`
     linear-gradient(
       to bottom,
       rgb(210,235,246),
-      ${theme.colors.blue6} 40%
+      ${theme.colors.offBlue} 40%
     );
   height: auto !important;
 `

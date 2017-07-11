@@ -58,7 +58,8 @@ const Input = hoc('input').extend`
   margin-right: 2rem;
 `;
 
-const StyledButton = styled(Button)`
+const ButtonText = hoc('span').extend`
+  display: inline-block;
 `;
 
 const SuccessMessage = styled.div`
@@ -141,9 +142,9 @@ class QuickQuoteForm extends React.Component {
           <Inputs>
             <Input fontSize={[ 2, 3 ]} placeholder='Your name' name='name' onChange={this.handleChange} />
             <Input fontSize={[ 2, 3 ]} placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
-            <InlineText fontSize={[ 2, 3 ]} book>
-              <StyledButton primary type='submit'>Send</StyledButton>
-            </InlineText>
+            <ButtonText font='textBook' fontSize={[ 2, 3 ]} letterSpacing='button'>
+              <Button primary type='submit'>Send</Button>
+            </ButtonText>
           </Inputs>
         </Box>
       </Form>

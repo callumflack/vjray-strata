@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import contactDetails from '../constants'
+
 import theme from '../theme'
 import styled, { css } from 'styled-components'
 import { Flex, Box } from '../styled-grid'
@@ -27,6 +29,7 @@ const Root = styled(Flex)`
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--Header-border-color);
+  color: ${theme.colors.text};
   height: ${headerHeight};
   opacity: 1;
   position: fixed;
@@ -37,6 +40,10 @@ const Root = styled(Flex)`
     transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
   width: 100%;
   z-index: 3;
+
+  ${props => props.blue && css`
+    color: ${theme.colors.brandAlt};
+  `}
 
   ${props => props.clear && css`
     --Header-background-color: transparent;
@@ -121,7 +128,7 @@ const LinkText = props =>
   <LinkTextRoot
     font='textRegular'
     fontSize={[ 2, 3 ]}
-    color='text'
+    color='inherit'
     {...props}
   />
 
@@ -199,6 +206,7 @@ class Header extends React.Component {
           align='center'
           justify='space-between'
           px={3}
+          blue={this.props.blue}
           clear={this.props.clear}
           invert={this.props.invert}
           isHidden={!this.state.isVisible}
@@ -226,8 +234,8 @@ class Header extends React.Component {
               <a><LinkText>Contact us</LinkText></a>
             </Link>
             <StyledDivider />
-            <Link href='tel:1300-667-123'>
-              <a><LinkText>1300 667 123</LinkText></a>
+            <Link href='tel:{contactDetails.phone}'>
+              <a><LinkText>{contactDetails.phone}</LinkText></a>
             </Link>
           </Nav>
 

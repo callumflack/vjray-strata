@@ -11,7 +11,7 @@ import LargeButtonStyler from './LargeButtonStyler'
 const ContactAction = (props) => (
   <Container textCenter>
     <Subheadline>Get in touch</Subheadline>
-    <Display color='text'>Call 1300 073 405</Display>
+    <Display color={props.headlineColor || 'text' }>Call 1300 073 405</Display>
 
     <Container width={[ 1, 1/2 ]} mb={4}>
       { props.withButton &&

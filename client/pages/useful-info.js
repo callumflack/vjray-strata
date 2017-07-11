@@ -56,7 +56,7 @@ const PostsList = props => (
 
 export default () => (
   <Layout>
-    <Header />
+    <Header clear invert />
 
     <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
       <Container mw='rg' mt={[ 4, 5, 6 ]} >

@@ -21,13 +21,15 @@ import Contact from '../components/Shared/Contact'
 
 
 const StyledColorBox = styled(ColorBox)`
-  background-color: ${theme.colors.beige};
+  background-color: ${theme.colors.offBlue};
+  background-color: transparent;
   background-image:
     linear-gradient(
       to bottom,
-      rgba(222, 202, 178, 0.2),
-      ${theme.colors.beige} 40%
-    );
+      rgba(0, 153, 209, 0.2),
+      ${theme.colors.offBlue} 70%
+      
+    ); 
 `
 
 class FastQuote extends React.Component {
@@ -72,7 +74,7 @@ class FastQuote extends React.Component {
         </StyledColorBox>
 
         <Block textCenter>
-          <ContactAction btnColor='brandAlt' />
+          <ContactAction headlineColor='brandAlt' />
           <Contact />
         </Block>
 

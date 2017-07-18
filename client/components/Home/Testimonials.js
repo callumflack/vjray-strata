@@ -50,7 +50,7 @@ const testimonialList = [{
   location: 'Caringbah',
 }, {
   name: 'Linda Appleford & Terry Jones',
-  quote: 'You guys are very quick to respond and handle things efficiently — no complaints here!',
+  quote: 'You guys are very quick to respond and handle things efficiently — no complaints here.',
   location: 'Jindabyne',
 }];
 

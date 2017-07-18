@@ -37,9 +37,11 @@ const Index = () => (
     <Block mw='rg' textCenter>
       <Box width={[ 4/6, 5/6 ]} mx='auto'>
         <Headline font='displayMedium' color='text' my={3} children='It all adds up to a better deal.' />
-        <LargeText color='text70'>
+        <Container width={[ 1, 5/6 ]}>
+          <LargeText color='text70'>
             "You guys are very quick to respond and handle things efficiently, no complaints here" — <AuthorText>Linda Appleford & Terry Jones, Jindabyne</AuthorText>
-        </LargeText>
+          </LargeText>
+        </Container>
       </Box>
       <Box width={[ 11/12, 1 ]} mx='auto' mt={4}>
         <FeatureList />

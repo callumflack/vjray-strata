@@ -24,7 +24,7 @@ const GuideButton = (props) => (
     mt={3}
   >
     <Link href={`${props.guide.file.url}`}>
-      <a href={`${props.guide.file.url}`}>
+      <a>
         <Button clean color='white'>
           {props.icon && <IconDownload bottom mr={1} />}
           {props.guide.title || 'Download'}
@@ -41,9 +41,16 @@ const Root = (props) => (
         {props.children}
       </BoxReset>
     ) : (
-      <FlexMobileColumn justify='center' mx={-3}>{props.children}</FlexMobileColumn>
+      <FlexMobileColumn 
+        direction={[ 'column', 'row' ]}
+        justify='center' 
+        mx={-3}>
+        {props.children}
+      </FlexMobileColumn>
+
     )}
   </div>
+
 );
 
 const Guides = (props) => (

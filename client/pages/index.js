@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import styled from 'styled-components'
 import { Flex, Box } from '../components/styled-grid'
-import { hoc } from '../components/styled-system/styled-components'
+import hoc from '../components/styled-elements/hoc'
 import theme from '../components/theme'
 
 import Layout from '../components/styled-elements/Layout'

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Flex, Box } from '../styled-grid'
-import { hoc } from '../styled-system/styled-components'
+import hoc from '../styled-elements/hoc'
 import theme from '../theme.js'
 // import { tint } from 'polished'
 import { Text, LargeText } from '../styled-elements/Text.js'

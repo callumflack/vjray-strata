@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { formatDateString } from '../lib/date.js'
 
 import theme from '../components/theme'
-import { hoc } from '../components/styled-system/styled-components'
+import hoc from '../components/styled-elements/hoc'
 import { Box, Flex } from '../components/styled-grid'
 
 import Layout from '../components/styled-elements/Layout'

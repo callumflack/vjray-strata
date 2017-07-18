@@ -6,7 +6,7 @@ import apollo from '../lib/apollo'
 import styled from 'styled-components'
 import theme from '../components/theme'
 import { Flex, Box } from '../components/styled-grid'
-import { hoc } from '../components/styled-system/styled-components'
+import hoc from '../components/styled-elements/hoc'
 
 import { Text, TextBlock, DangerouslyResetTextBlock, LineBreak } from '../components/styled-elements/Text'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'

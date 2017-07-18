@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import theme from '../theme'
-import { hoc } from '../styled-system/styled-components'
+import hoc from '../styled-elements/hoc'
 import { HeadlineMetaBaseStyles } from '../styled-elements/Headline'
 import Button from '../styled-elements/Button'
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Flex, Box } from '../styled-grid'
-import { hoc } from '../styled-system/styled-components'
+import hoc from '../styled-elements/hoc'
 import theme from '../theme'
 
 import { LargeText, LineBreak } from '../styled-elements/Text'

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import styled from 'styled-components'
 import theme from '../theme'
-import { hoc } from '../styled-system/styled-components'
+import hoc from '../styled-elements/hoc'
 import { Box } from '../styled-grid'
 import Container from '../styled-elements/Container'
 import { Display, Subheadline, HeadlineMetaBaseStyles, HeadlineMeta } from '../styled-elements/Headline'

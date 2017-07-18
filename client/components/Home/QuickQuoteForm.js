@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import apollo from '../../lib/apollo.js';
 import theme from '../theme.js';
 import { Flex, Box } from '../styled-grid'
-import { hoc } from '../styled-system/styled-components'
+import hoc from '../styled-elements/hoc'
 import { InlineText } from '../styled-elements/Text.js';
 import { BoxedSubheadline } from '../styled-elements/Headline.js';
 import Button from '../styled-elements/Button.js';

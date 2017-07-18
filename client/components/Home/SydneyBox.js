@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import styled, { css } from 'styled-components';
 import { Flex, Box } from '../styled-grid';
-import { hoc } from '../styled-system/styled-components'
+import hoc from '../styled-elements/hoc'
 import theme from '../theme.js';
 
 import Container from '../styled-elements/Container.js';

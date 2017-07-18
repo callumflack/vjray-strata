@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
-import { hoc } from '../styled-system/styled-components'
+import hoc from '../styled-elements/hoc'
 import { Box, Flex } from '../styled-grid'
 import Container from '../styled-elements/Container'
 import { Text, SmallText, Divider } from '../styled-elements/Text'

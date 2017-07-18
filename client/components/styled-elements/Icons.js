@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { hoc } from '../styled-system/styled-components'
+import hoc from '../styled-elements/hoc'
 import theme from '../theme'
 
 // https://codepen.io/sdras/pen/a3596da23d8f9463079ac57c8e3ee9f8?editors=1010

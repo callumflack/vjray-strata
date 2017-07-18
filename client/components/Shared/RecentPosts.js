@@ -6,7 +6,7 @@ import apollo from '../../lib/apollo.js';
 
 import styled from 'styled-components';
 import theme from '../theme.js';
-import { hoc } from '../styled-system/styled-components';
+import hoc from '../styled-elements/hoc';
 import { Box } from '../styled-grid';
 import { Text } from '../styled-elements/Text.js';
 import { Headline  } from '../styled-elements/Headline.js';

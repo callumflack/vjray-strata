@@ -38,7 +38,7 @@ const Index = () => (
       <Box width={[ 4/6, 5/6 ]} mx='auto'>
         <Headline font='displayMedium' color='text' my={3} children='It all adds up to a better deal.' />
         <LargeText color='text70'>
-          "VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." — <AuthorText>Jessica, Campsie</AuthorText>
+            "You guys are very quick to respond and handle things efficiently, no complaints here!" — <AuthorText>Linda Appleford & Terry Jones, Jindabyne</AuthorText>
         </LargeText>
       </Box>
       <Box width={[ 11/12, 1 ]} mx='auto' mt={4}>
@@ -51,11 +51,10 @@ const Index = () => (
     <TalkBox>
       <Box px={3} py={[ 5, 6 ]} style={{ position: 'relative' }}>
         <Container textCenter>
-          <Display children='Our duty is your satisfaction.' />
+          <Display>It's our job to sort it.</Display>
           <Container width={[ 1, 2/3 ]}>
             <LargeText color='text70'>
-              "VJ Ray made everything easier. We all know our block is looked after, and friendly neighbours are far more easier to live with." —&nbsp;
-              <AuthorText>Jessica, Campsie</AuthorText>
+              "I have been happy and have known VJ Ray for years. I cannot fault you. Thank you!" — <AuthorText>Petrania Evans, Belmore</AuthorText>
             </LargeText>
           </Container>
         </Container>

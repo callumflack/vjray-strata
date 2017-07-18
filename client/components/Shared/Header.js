@@ -58,16 +58,6 @@ const Root = styled(Flex)`
     }
   `}
 
-  ${props => props.isVisible  && css`
-    box-shadow:
-      0 16px 24px 2px rgba(0,0,0,0.06),
-      0 6px 30px 5px rgba(0,0,0,0.03);
-
-    ${props => props.bg && css`
-      background-color: ${theme.colors[props.bg] || theme.colors.white};
-    `}
-  `}
-
   ${props => props.isHidden  && css`
     ${'' /* transition: opacity 0.3s, visibility 0s 0.3s; */}
     opacity: 0;
@@ -76,6 +66,10 @@ const Root = styled(Flex)`
 
   ${props => props.hasScrolledDown  && css`
       background-color: ${theme.colors[props.bg] || theme.colors.white};
+      box-shadow:
+        0 16px 24px 2px rgba(0,0,0,0.06),
+        0 6px 30px 5px rgba(0,0,0,0.03);
+      color: ${theme.colors[props.color] || theme.colors.text};
   `}
 `;
 

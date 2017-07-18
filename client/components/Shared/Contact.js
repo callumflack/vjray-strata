@@ -7,6 +7,26 @@ import Button from '../styled-elements/Button'
 import { IconPhone, IconEmail, IconAddress, IconEmergency } from '../styled-elements/Icons'
 
 
+const Locations = styled(Flex)`
+  flex-direction: column;
+  text-align: left;
+
+  @media (min-width: 512px) {
+    flex-direction: row;
+  }
+`;
+
+const Item = styled(SmallText)`
+  --Item-rule: ${theme.colors.text20};
+  border-bottom: 1px solid var(--Item-rule);
+  color: ${theme.colors.text70} !important;
+  padding: 0.45rem 0;
+
+  ${props => props.borderTop && css`
+    border-top: 1px solid var(--Item-rule);
+  `}
+`;
+
 const locationList = [{
   name: 'Campsie Head Office',
   subOne: '8 Anglo Road',
@@ -30,27 +50,6 @@ const locationList = [{
   googleMapsUrl: 'https://www.google.co.nz/maps/place/V.J.+Ray/@-34.0432583,151.1198929,17z',
   imageName: 'map.jpg',
 }];
-
-
-const Locations = styled(Flex)`
-  flex-direction: column;
-  text-align: left;
-
-  @media (min-width: 512px) {
-    flex-direction: row;
-  }
-`;
-
-const Item = styled(SmallText)`
-  --Item-rule: ${theme.colors.text20};
-  border-bottom: 1px solid var(--Item-rule);
-  color: ${theme.colors.text70} !important;
-  padding: 0.45rem 0;
-
-  ${props => props.borderTop && css`
-    border-top: 1px solid var(--Item-rule);
-  `}
-`;
 
 const Location = (props) => (
   <Box

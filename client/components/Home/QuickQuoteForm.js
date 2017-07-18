@@ -26,7 +26,6 @@ const Form = styled.form`
   transition: width 0.2s;
   transform: translate(-50%, 100%);
   width: ${theme.containers.sm};
-  z-index: 10;
 
   ${props => props.floating && css`
     bottom: unset;
@@ -37,6 +36,7 @@ const Form = styled.form`
     top: 0;
     transform: unset;
     width: 100%;
+    z-index: 10;
   `}
 `;
 

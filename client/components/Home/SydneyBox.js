@@ -148,7 +148,7 @@ class SydneyBox extends React.Component {
 
             <Container textCenter relative pt={[ 5, 6 ]}>
               <Subheadline color='text'>Dependable and effective</Subheadline>
-              <Display color='brandAlt'>We help make high-density <LineBreak m='auto'>Sydney living great.</LineBreak></Display>
+              <Display color='brandAlt'>We help make Sydney <LineBreak m='auto'>strata living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
                 <Text color='text' mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Text>
                 <Text font='textMedium'>

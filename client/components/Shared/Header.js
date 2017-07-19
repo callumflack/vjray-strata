@@ -31,8 +31,8 @@ const Root = styled(Flex)`
   position: fixed;
   top: 0;
   transform: translate3d(0, 0, 0) translateY(0px);
-  transition: 
-    opacity ${fade.duration}s ease-in-out ${fade.delay}s, 
+  transition:
+    opacity ${fade.duration}s ease-in-out ${fade.delay}s,
     transform ${fade.duration}s;
   width: 100%;
   z-index: 3;
@@ -52,8 +52,8 @@ const Root = styled(Flex)`
   ${props => props.isHidden && css`
     opacity: 0;
     transform: translate3d(0, 0, 0) translateY(${-1 * headerHeight});
-    transition: 
-      opacity 0.3s, 
+    transition:
+      opacity 0.3s,
       visibility 0s 0.3s;
   `}
 
@@ -214,6 +214,10 @@ class Header extends React.Component {
     const previousScrollPos = this.state.previousScrollPos;
     this.setState({ previousScrollPos: scrollPos });
     window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll(event) {

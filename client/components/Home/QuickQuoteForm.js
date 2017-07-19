@@ -94,8 +94,8 @@ class QuickQuoteForm extends React.Component {
     window.addEventListener('scroll', this.updateFormPosition);
   }
 
-  componentsWillUnmount() {
-    document.documentElement.removeEventListener('scroll', this.updateFormPosition);
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.updateFormPosition);
   }
 
   updateFormPosition() {

@@ -60,35 +60,35 @@ class RecentPosts extends React.Component {
       <div>
         {this.state.posts.map((post, i) =>
           <div key={i}>
+            <Link href={`/article?slug=${post.slug}`} as={`/blog/${post.slug}`}><a>
 
-            <Box
-              width={1}
-              mx='auto'
-              my={3}
-            >
-              <img src={post.featureImage.secure_url} />
-            </ Box>
-            <Box
-              width={[ 1, 5/6 ]}
-              mx='auto'
-              my={3}
-            >
-              <Headline
-                align='left'
-                font='displayRegular'
-                color='text'
+              <Box
+                width={1}
+                mx='auto'
                 my={3}
               >
-                <HeadlineAligner>{post.title}</HeadlineAligner>
-              </Headline>
-              <Text align='left'>
-                {post.description}
-                <Link href={`/article?slug=${post.slug}`} as={`/blog/${post.slug}`}>
-                  <a><PostLink color='brand' font='textLight'>Read more</PostLink></a>
-                </Link>
-              </Text>
-            </Box>
+                <img src={post.featureImage.secure_url} />
+              </ Box>
+              <Box
+                width={[ 1, 5/6 ]}
+                mx='auto'
+                my={3}
+              >
+                <Headline
+                  align='left'
+                  font='displayRegular'
+                  color='text'
+                  my={3}
+                >
+                  <HeadlineAligner>{post.title}</HeadlineAligner>
+                </Headline>
+                <Text align='left'>
+                  {post.description}
+                  <PostLink color='brand' font='textLight'>Read more</PostLink>
+                </Text>
+              </Box>
 
+            </a></Link>
           </div>
         )}
       </div>

@@ -35,9 +35,7 @@ const Root = styled(Flex)`
   position: fixed;
   top: 0;
   transform: translate3d(0, 0, 0) translateY(0px);
-  transition:
-    opacity ${fade.duration}s ease-in-out ${fade.delay}s;
-    transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity ${fade.duration}s ease-in-out ${fade.delay}s, all ${fade.duration}s;
   width: 100%;
   z-index: 3;
 
@@ -64,12 +62,12 @@ const Root = styled(Flex)`
     transform: translate3d(0, 0, 0) translateY(${-1 * headerHeight});
   `}
 
-  ${props => props.hasScrolledDown  && css`
-      background-color: ${theme.colors[props.bg] || theme.colors.white};
-      box-shadow:
-        0 16px 24px 2px rgba(0,0,0,0.06),
-        0 6px 30px 5px rgba(0,0,0,0.03);
-      color: ${theme.colors[props.color] || theme.colors.text};
+  ${props => props.hasScrolledDown && css`
+    background-color: ${theme.colors[props.bg] || theme.colors.white};
+    box-shadow:
+      0 16px 24px 2px rgba(0,0,0,0.06),
+      0 6px 30px 5px rgba(0,0,0,0.03);
+    color: ${theme.colors[props.color] || theme.colors.text};
   `}
 `;
 
@@ -136,6 +134,8 @@ const MobileLinkText = props =>
 
 
 class Header extends React.Component {
+  static timeout = null;
+
   constructor(props) {
     super(props);
 
@@ -163,22 +163,22 @@ class Header extends React.Component {
     const previousScrollPos = this.state.previousScrollPos;
     const scrolledDown = scrollPos > previousScrollPos;
 
-    if (scrolledDown && !this.state.hasScrolledDown) {
-      // Extra timeout to give leeway for the unpredicatable duration of
-      // operations such as waiting for the css transition to be triggered
-      const leeway = 0.10;
-
-      setTimeout(() => {
-        this.setState({
-          hasScrolledDown: scrolledDown,
-        });
-      }, (fade.duration + fade.delay + leeway) * 1000);
-    }
-
     this.setState({
       previousScrollPos: scrollPos,
       isVisible: !scrolledDown,
     });
+
+    if (scrollPos <= 200) {
+      return this.setState({
+        hasScrolledDown: false,
+      });
+    }
+
+    if (scrolledDown && !this.state.hasScrolledDown) {
+      this.setState({
+        hasScrolledDown: scrolledDown,
+      });
+    }
   }
 
   handleModalClick() {

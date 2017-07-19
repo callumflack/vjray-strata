@@ -43,6 +43,16 @@ const StyledBox = styled(Box)`
   } */}
 `;
 
+const FullBoxHeight = styled.div`
+  height: 100%;
+`;
+
+const transition = {
+  duration: 0.7,
+  delay: 0.4,
+  type: 'ease-in-out'
+};
+
 const Modal = styled.div`
   background-color: #151515;
   bottom: 0;
@@ -50,14 +60,21 @@ const Modal = styled.div`
   opacity: 0;
   position: fixed;
   top: 0;
-  transition: opacity 0.7s 0.4s;
+  transition: 
+    opacity 0s,
+    visibility 0s,
+    z-index 0s;
   left: 0;
   right: 0;
   visibility: hidden;
+  z-index: -1;
 
   ${props => props.isVisible && css`
     opacity: 1;
-    transition: opacity 0.3s, visibility 0s 0.3s;
+    transition: 
+      opacity ${transition.duration}s ${transition.type} ${transition.delay}s,
+      visibility 0s linear ${transition.delay}s,
+      z-index 0s linear ${transition.delay}s;
     visibility: visible;
     z-index: 15;
   `}
@@ -79,10 +96,6 @@ const ModalClose = styled.a`
   position: fixed;
   right: var(--Close-space);
   top: calc( 0.7 * var(--Close-space));
-`;
-
-const FullBoxHeight = styled.div`
-  height: 100%;
 `;
 
 
@@ -143,16 +156,16 @@ class SydneyBox extends React.Component {
           </Flex>
         </Modal>
 
-        <FullBoxHeight isVisible={this.state.contentIsVisible}>
+        <FullBoxHeight>
           <StyledBox>
 
             <Container textCenter relative pt={[ 5, 6 ]}>
-              <Subheadline color='text'>Dependable and effective</Subheadline>
-              <Display color='brandAlt'>We help make Sydney <LineBreak m='auto'>strata living great.</LineBreak></Display>
+              <Subheadline color='text' children='Dependable and effective' />
+              <Display color='brandAlt' mb={3}>We help make Sydney <LineBreak m='auto'>strata living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
                 <Text color='text' mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Text>
                 <Text font='textMedium'>
-                  <Button color='brandAlt' bg='white' invert icon onClick={this.openModal}>Watch video</Button>
+                  <Button color='brandAlt' bg='white' invert icon onClick={this.openModal} children='Watch video' />
                 </Text>
               </Container>
             </Container>

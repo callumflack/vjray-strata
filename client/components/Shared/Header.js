@@ -95,7 +95,7 @@ const AnimatedHamburger = styled.div`
   }
 
   span:nth-child(1) {
-    top: 0px;
+    top: 0;
   }
 
   span:nth-child(2), span:nth-child(3) {
@@ -359,7 +359,6 @@ class Header extends React.Component {
             </Container>
           </MobileNav>
         </MobileModal>
-
 
       </div>
     )

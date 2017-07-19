@@ -69,6 +69,69 @@ const Root = styled(Flex)`
       0 6px 30px 5px rgba(0,0,0,0.03);
     color: ${theme.colors[props.color] || theme.colors.text};
   `}
+
+  ${props => props.isModalVisible && css`
+    transition: all 0s;
+  `}
+`;
+
+const AnimatedHamburger = styled.div`
+  --bar-height: 5px;
+  --bar-spacing: 14px;
+
+  width: 40px;
+  height: calc((var(--bar-spacing) * 2) + var(--bar-height));
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: var(--bar-height);
+    width: 100%;
+    background: currentColor;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+
+  span:nth-child(1) {
+    top: 0px;
+  }
+
+  span:nth-child(2), span:nth-child(3) {
+    top: var(--bar-spacing);
+  }
+
+  span:nth-child(4) {
+    top: calc(var(--bar-spacing) * 2);
+  }
+
+  ${props => props.isOpen && css`
+    span:nth-child(1) {
+      top: var(--bar-spacing);
+      width: 0%;
+      left: 50%;
+    }
+
+    span:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    span:nth-child(4) {
+      top: var(--bar-spacing);
+      width: 0%;
+      left: 50%;
+    }
+  `}
 `;
 
 const Nav = styled.nav`
@@ -100,7 +163,7 @@ const MobileModal = Flex.extend`
   bottom: 0;
   left: 0;
   right: 0;
-  padding-top: ${headerHeight};
+  top: ${headerHeight};
   background-color: #fff;
 
   ${props => !props.isVisible && css`
@@ -158,10 +221,12 @@ class Header extends React.Component {
     window.addEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll() {
+  handleScroll(event) {
     const scrollPos = window.scrollY;
     const previousScrollPos = this.state.previousScrollPos;
     const scrolledDown = scrollPos > previousScrollPos;
+
+    if (this.state.isModalVisible) return;
 
     this.setState({
       previousScrollPos: scrollPos,
@@ -182,14 +247,27 @@ class Header extends React.Component {
   }
 
   handleModalClick() {
+    const scrollPos = window.scrollY;
+
+    if (scrollPos <= 200) {
+      this.setState({
+        hasScrolledDown: false,
+      });
+    }
+
     this.setState({
       isModalVisible: false,
     });
   }
 
   handleModalTriggerClick() {
+    const scrollPos = window.scrollY;
+    const areHidingModel = this.state.isModalVisible;
+
     this.setState({
-      isModalVisible: true,
+      isVisible: true,
+      hasScrolledDown: !areHidingModel || !(areHidingModel && scrollPos <= 200),
+      isModalVisible: !this.state.isModalVisible,
     });
   }
 
@@ -205,6 +283,7 @@ class Header extends React.Component {
           invert={this.props.invert}
           isHidden={!this.state.isVisible}
           hasScrolledDown={this.state.hasScrolledDown}
+          isModalVisible={this.state.isModalVisible}
         >
 
           <Link href='/'>
@@ -242,11 +321,12 @@ class Header extends React.Component {
           </Nav>
 
           <Nav hideAtDesktop>
-            <a href='#' onClick={this.handleModalTriggerClick}>
-              <LinkText fontSize={5}>
-                &#9776;
-              </LinkText>
-            </a>
+            <AnimatedHamburger onClick={this.handleModalTriggerClick} isOpen={this.state.isModalVisible}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </AnimatedHamburger>
           </Nav>
         </Root>
 
@@ -258,53 +338,31 @@ class Header extends React.Component {
           column
           bg='brand'
         >
-            <Root
-              align='center'
-              justify='space-between'
-              px={3}
-              clear={this.props.clear}
-              invert={this.props.invert}
-            >
-              <Box py={3}>
+          <MobileNav>
+            <Container textCenter>
+              <Flex column>
                 <Link href='/'>
-                  <a><IconLogo /></a>
+                  <a><MobileLinkText>Home</MobileLinkText></a>
                 </Link>
-              </Box>
-
-              <Nav>
-                <a href='#'>
-                  <LinkText fontSize={7}>
-                    &times;
-                  </LinkText>
-                </a>
-              </Nav>
-            </Root>
-
-            <MobileNav>
-              <Container textCenter>
-                <Flex column>
-                  <Link href='/'>
-                    <a><MobileLinkText>Home</MobileLinkText></a>
-                  </Link>
-                  <Link href='/who-we-are'>
-                    <a><MobileLinkText>Who we are</MobileLinkText></a>
-                  </Link>
-                  <Link href='/'>
-                    <a><MobileLinkText>What we do for you</MobileLinkText></a>
-                  </Link>
-                  <Link href='/useful-info'>
-                    <a><MobileLinkText>Useful info</MobileLinkText></a>
-                  </Link>
-                  <Link href='/contact'>
-                    <a><MobileLinkText>Contact us</MobileLinkText></a>
-                  </Link>
-                  <Divider />
-                  <Link href='tel:1300-667-123'>
-                    <a><MobileLinkText>1300 667 123</MobileLinkText></a>
-                  </Link>
-                </Flex>
-              </Container>
-            </MobileNav>
+                <Link href='/who-we-are'>
+                  <a><MobileLinkText>Who we are</MobileLinkText></a>
+                </Link>
+                <Link href='/'>
+                  <a><MobileLinkText>What we do for you</MobileLinkText></a>
+                </Link>
+                <Link href='/useful-info'>
+                  <a><MobileLinkText>Useful info</MobileLinkText></a>
+                </Link>
+                <Link href='/contact'>
+                  <a><MobileLinkText>Contact us</MobileLinkText></a>
+                </Link>
+                <Divider />
+                <Link href='tel:1300-667-123'>
+                  <a><MobileLinkText>1300 667 123</MobileLinkText></a>
+                </Link>
+              </Flex>
+            </Container>
+          </MobileNav>
         </MobileModal>
 
 

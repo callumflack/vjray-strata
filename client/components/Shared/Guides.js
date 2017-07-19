@@ -13,7 +13,6 @@ import { IconDownload } from '../styled-elements/Icons'
 
 import BoxReset from './BoxReset'
 import { ImageWithShadow } from './ImageWithShadow'
-import FlexMobileColumn from './FlexMobileColumn'
 
 
 const GuideButton = (props) => (
@@ -41,12 +40,12 @@ const Root = (props) => (
         {props.children}
       </BoxReset>
     ) : (
-      <FlexMobileColumn 
+      <Flex 
         direction={[ 'column', 'row' ]}
         justify='center' 
         mx={-3}>
         {props.children}
-      </FlexMobileColumn>
+      </Flex>
 
     )}
   </div>

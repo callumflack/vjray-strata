@@ -17,9 +17,9 @@ const Form = styled.form`
 
   background-color: #fff;
   bottom: var(--Header-height);
-  box-shadow: 
-    0 16px 24px 2px rgba(0,0,0,0.09), 
-    0 6px 30px 5px rgba(0,0,0,0.06), 
+  box-shadow:
+    0 16px 24px 2px rgba(0,0,0,0.09),
+    0 6px 30px 5px rgba(0,0,0,0.06),
     0 8px 10px -5px rgba(0,0,0,0.15);
   left: 50%;
   position: absolute;
@@ -77,9 +77,9 @@ class QuickQuoteForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      floating: false,
       name: '',
       phoneNumber: '',
+      floating: false,
       messageSent: false,
     };
   }
@@ -108,17 +108,19 @@ class QuickQuoteForm extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
 
-    const mutation = gql`mutation {
-      createQuote(
-        name: "${this.state.name}",
-        phoneNumber: "${this.state.phoneNumber}"
-      ) {
-        _id,
-      }
-    }`;
-
-    await apollo.mutate({ mutation });
     this.setState({ messageSent: true });
+
+    const response = await fetch('https://formspree.io/quickquote@vjray.com.au', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        phoneNumber: this.state.phoneNumber,
+      }),
+    });
   }
 
   handleChange(event) {

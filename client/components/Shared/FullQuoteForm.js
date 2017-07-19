@@ -22,22 +22,14 @@ class FullQuoteForm extends React.Component {
   }
 
   async submit(model) {
-    const comments = JSON.stringify(model.comments) || '';
-    const mutation = gql`mutation {
-      createQuote(
-        name: "${model.name || ''}",
-        email: "${model.email || ''}",
-        phoneNumber: "${model.phoneNumber || ''}",
-        address: "${model.address || ''}",
-        postcode: "${model.postcode || ''}",
-        unitsInScheme: ${model.unitsInScheme || 0},
-        comments: "${comments}",
-      ) {
-        _id,
-      }
-    }`;
-
-    await apollo.mutate({ mutation });
+    const response = await fetch('https://formspree.io/hellothere@vjray.com.au', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(model),
+    });
   }
 
   render() {

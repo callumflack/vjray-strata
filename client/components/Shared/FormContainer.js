@@ -57,7 +57,13 @@ class FormContainer extends React.Component {
             : null
           }
 
-          <Form onValidSubmit={this.handleSubmit} onValid={this.enableButton} onInvalid={this.disableButton}>
+          <Form
+            onValidSubmit={this.handleSubmit}
+            onValid={this.enableButton}
+            onInvalid={this.disableButton}
+            method={this.props.method}
+            action={this.props.action}
+          >
             {this.props.children}
 
             <Text align='right'>

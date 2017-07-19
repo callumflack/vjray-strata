@@ -23,6 +23,14 @@ class IssueForm extends React.Component {
   }
 
   async submit(model) {
+    const response = await fetch('https://formspree.io/helpme@vjray.com.au', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(model),
+    });
   }
 
   render() {

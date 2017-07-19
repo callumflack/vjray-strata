@@ -53,7 +53,7 @@ const Index = () => (
     <TalkBox>
       <Box px={3} py={[ 5, 6 ]} style={{ position: 'relative' }}>
         <Container textCenter>
-          <Display>It's our job to sort it.</Display>
+          <Display children="It's our job to sort it." />
           <Container width={[ 1, 2/3 ]}>
             <LargeText color='text70'>
               "I have been happy and have known VJ Ray for years. I cannot fault you. Thank you!" — <AuthorText>Petrania Evans, Belmore</AuthorText>

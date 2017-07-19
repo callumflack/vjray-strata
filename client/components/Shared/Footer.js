@@ -66,7 +66,7 @@ const Footer = (props) => (
           </Link>
           <SmallText color='text40' mx={2} my={1}>&copy; 2017</SmallText>
         </div>
-        
+
         <div>
           <Nav>
             <Column>
@@ -81,9 +81,9 @@ const Footer = (props) => (
             </Column>
             <Column>
               <Link href='/useful-info'><a><span>Useful info</span></a></Link>
-              <Link href='/useful-info'><a>Our Strata guides</a></Link>
+              <Link href='/useful-info'><a>Strata guides</a></Link>
               <Link href='/useful-info'><a>Strata blog</a></Link>
-              <Link href='/useful-info'><a>Forms and fact sheets</a></Link>
+              <Link href='/useful-info'><a>Forms and facts</a></Link>
             </Column>
             <Column>
               <Link href='/contact'><a><span>Contact us</span></a></Link>

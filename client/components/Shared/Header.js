@@ -10,10 +10,7 @@ import { IconLogo } from '../styled-elements/Icons'
 import { Text, InlineText, Divider } from '../styled-elements/Text'
 import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
-// import { rgba } from 'polished';
 
-
-// rgba(255,255,255,0.9)
 
 const headerHeight = '121px';
 const fade = {
@@ -23,51 +20,49 @@ const fade = {
 
 const Root = styled(Flex)`
   --Header-background-color: white;
-  --Header-border-color: rgba(88, 88, 112, 0.25);
+  --Header-border-color: rgba(88, 88, 112, 0.15);
 
   background-color: var(--Header-background-color);
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--Header-border-color);
-  color: ${theme.colors.text};
   height: ${headerHeight};
   opacity: 1;
   position: fixed;
   top: 0;
   transform: translate3d(0, 0, 0) translateY(0px);
-  transition: opacity ${fade.duration}s ease-in-out ${fade.delay}s, all ${fade.duration}s;
+  transition: 
+    opacity ${fade.duration}s ease-in-out ${fade.delay}s, 
+    transform ${fade.duration}s;
   width: 100%;
   z-index: 3;
 
-  ${props => props.blue && css`
-    color: ${theme.colors.brandAlt};
+  ${props => props.color && css`
+    color: ${theme.colors[props.color] || theme.colors.text};
   `}
 
   ${props => props.clear && css`
     --Header-background-color: transparent;
   `}
 
-  ${props => props.invert && css`
-    --Header-border-color: rgba(255, 255, 255, 0.25);
-
-    a,
-    a span {
-      color: white;
-    }
+  ${props => props.reverseBorder && css`
+    --Header-border-color: rgba(255, 255, 255, 0.15);
   `}
 
-  ${props => props.isHidden  && css`
-    ${'' /* transition: opacity 0.3s, visibility 0s 0.3s; */}
+  ${props => props.isHidden && css`
     opacity: 0;
     transform: translate3d(0, 0, 0) translateY(${-1 * headerHeight});
+    transition: 
+      opacity 0.3s, 
+      visibility 0s 0.3s;
   `}
 
   ${props => props.hasScrolledDown && css`
     background-color: ${theme.colors[props.bg] || theme.colors.white};
     box-shadow:
-      0 16px 24px 2px rgba(0,0,0,0.06),
+      0 16px 24px 2px rgba(0,0,0,0.03),
       0 6px 30px 5px rgba(0,0,0,0.03);
-    color: ${theme.colors[props.color] || theme.colors.text};
+    color: ${theme.colors.text};
   `}
 
   ${props => props.isModalVisible && css`
@@ -188,7 +183,7 @@ const LinkText = props =>
   />
 
 const StyledDivider = styled(Divider)`
-  margin-left: 0;
+  margin-left: 0 !important;
 `
 
 const MobileLinkText = props =>
@@ -278,9 +273,9 @@ class Header extends React.Component {
           align='center'
           justify='space-between'
           px={3}
-          blue={this.props.blue}
+          color={this.props.color}
           clear={this.props.clear}
-          invert={this.props.invert}
+          reverseBorder={this.props.reverseBorder}
           isHidden={!this.state.isVisible}
           hasScrolledDown={this.state.hasScrolledDown}
           isModalVisible={this.state.isModalVisible}

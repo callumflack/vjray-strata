@@ -23,7 +23,7 @@ const ContactAction = (props) => (
       }
 
       <MediumText color='text70'>
-        Or drop-in without an appointment. We're open Monday to Saturday, 9am–5pm.
+        Or drop-in without an appointment. We're open Monday to Friday, 9am–5pm. And every Saturday, 9am–4pm.
       </MediumText>
     </Container>
   </Container>

@@ -45,10 +45,10 @@ const ListeningBox = () => (
         >
         <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]}>
           <Display font='displayRegular'>
-            Skip the hassle of 
+            Skip the hassle of
             <LineBreak>Strata management.</LineBreak>
           </Display>
-          <LargeText>At VJ Ray Strata, we understand how valuable peace of mind is.</LargeText>
+          <LargeText>At VJ Ray Strata, we understand how valuable your peace of mind is.</LargeText>
         </Box>
       </Flex>
     </Container>

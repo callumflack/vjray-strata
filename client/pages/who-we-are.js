@@ -17,7 +17,6 @@ import Footer from '../components/Shared/Footer'
 import Container from '../components/styled-elements/Container'
 import Block from '../components/Shared/Block'
 import CoverImage from '../components/styled-elements/CoverImage'
-import FlexMobileColumn from '../components/Shared/FlexMobileColumn'
 import Button from '../components/styled-elements/Button'
 import ContactAction from '../components/Shared/ContactAction'
 import Contact from '../components/Shared/Contact'
@@ -55,14 +54,12 @@ const Image = styled(CoverImage)`
   @media (min-width: 1536px) { background-position: 30% 100%; }
 `
 
-const FlexMobileOrderFirst = styled(Flex)`
+const StyledFlex = styled(Flex)`
   margin-top: 0;
   margin-bottom: ${theme.space[4]}px;
-  order: -1;
 
   @media (min-width: ${theme.containers.sm}) {
     margin: 0;
-    order: initial;
   }
 `
 
@@ -128,7 +125,7 @@ class WhoContainer extends React.Component {
           <Container>
             <Box width={[ 1, 11/12 ]} mx='auto'>
 
-              <FlexMobileColumn retainCellOrder mx={-3}>
+              <Flex direction={[ 'column', 'row' ]} mx={-3}>
                 <Flex column width={[ 1, 1, 1/3, 1/4 ]} px={[ 4, 3 ]}>
                   <Box mt={1}>
                     <img src='static/img/mike-pollard.jpg' />
@@ -137,12 +134,10 @@ class WhoContainer extends React.Component {
                   <Text color='text70' children='Owner' />
                 </Flex>
 
-                <FlexMobileOrderFirst width={[ 1, 1, 2/3, 3/4 ]} px={3}>
-                  <TextBlock>
-                    <TextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
-                  </TextBlock>
-                </FlexMobileOrderFirst>
-              </FlexMobileColumn>
+                <StyledFlex order={[ '-1', 'initial' ]} px={3} width={[ 1, 1, 2/3, 3/4 ]}>
+                  <TextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
+                </StyledFlex>
+              </Flex>
 
             </Box>
           </Container>

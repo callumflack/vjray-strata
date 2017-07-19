@@ -9,8 +9,6 @@ import { Box, Flex } from '../components/styled-grid'
 
 import Layout from '../components/styled-elements/Layout'
 import Container from '../components/styled-elements/Container'
-import FlexMobileColumn from '../components/Shared/FlexMobileColumn'
-// import { IconDownload } from '../components/styled-elements/Icons'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 import { Text, LargeText, SmallText, LineBreak } from '../components/styled-elements/Text'
 import Button from '../components/styled-elements/Button'
@@ -41,8 +39,8 @@ const Rule = styled(Container)`
   height: 1px;
 `
 
-// moved the Posts lists here to run off
-// until they have more than 1 blog post.
+// moved the Posts lists here until
+// they have more than 1 blog post.
 const PostsList = props => (
   <Box pb={[ 5, 6 ]} px={3}>
     <Container mw='lg' textCenter>
@@ -60,7 +58,7 @@ export default () => (
 
     <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
       <Container mw='rg' mt={[ 4, 5, 6 ]} >
-        <FlexMobileColumn>
+        <Flex direction={[ 'column', 'row' ]}>
           <Box width={[ 1, 1/2 ]} mt={[ 0, 3 ]}>
             <Subheadline color='white' children='Info on the go' />
             <Display color='white' font='displayRegular'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
@@ -68,9 +66,9 @@ export default () => (
           </Box>
 
           <Box width={[ 1, 1/2 ]} px={[ 3, 4 ]}>
-            <Guides primary buttons />
+            <Guides primary buttons icon />
           </Box>
-        </FlexMobileColumn>
+        </Flex >
       </Container>
 
       <Rule mw='rg' my={[ 3, 4 ]} />

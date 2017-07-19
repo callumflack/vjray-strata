@@ -133,8 +133,8 @@ class WhoContainer extends React.Component {
                   <Box mt={1}>
                     <img src='static/img/mike-pollard.jpg' />
                   </Box>
-                  <Text color='text70' mt={2}>Mike Pollard</Text>
-                  <Text color='text70'>Owner</Text>
+                  <Text color='text70' mt={2} children='Mike Pollard' />
+                  <Text color='text70' children='Owner' />
                 </Flex>
 
                 <FlexMobileOrderFirst width={[ 1, 1, 2/3, 3/4 ]} px={3}>

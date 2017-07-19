@@ -125,10 +125,10 @@ class ContactUs extends React.Component {
           </Container>
         </StyledHeroBox>
 
-        <Block textCenter pb={[ 0, 0 ]}>
+        <Block textCenter pb={0} style={{ paddingBottom: '0' }}>
           <Display color='brandAlt'>
             Walk in anytime, 
-            <LineBreak mx='auto'>no appointments.</LineBreak>
+            <LineBreak mx='auto'>no appointment.</LineBreak>
           </Display>
           <LargeText color='text70'>Monday to Friday, 9am–5pm. <LineBreak mx='auto'>Saturdays, 9am–4pm.</LineBreak></LargeText>
           <Box mt={[ 3, 4 ]}>

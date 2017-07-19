@@ -2,6 +2,11 @@ import styled, { css } from 'styled-components'
 import { Flex } from '../styled-grid'
 import theme from '../theme'
 
+// ------------------------------------------
+// This can be removed as we can now use 
+// responsiveStyle within the Flex component.
+// ------------------------------------------
+
 // {$props => props.retainCellOrder && css`
 //   @media (max-width: ${theme.containers.sm}) {
 //     div + div {

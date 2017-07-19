@@ -82,9 +82,10 @@ class FullQuoteForm extends React.Component {
           />
 
           <Select
-            placeholder='Total units in your strata scheme'
+            placeholder=''
             name='unitsInScheme'
           >
+            <option selected disabled>Total units in your strata scheme</option>
             {Array(11).fill(0).map((item, i) =>
               <option value={i} key={i}>{i}</option>
             )}

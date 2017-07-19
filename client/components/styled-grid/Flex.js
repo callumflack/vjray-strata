@@ -12,9 +12,9 @@ const column = props => props.column ? `flex-direction:column;` : null
 const Flex = styled(Box)([],
   { display: 'flex' },
   responsiveStyle('flex-direction', 'direction'),
+  responsiveStyle('order', 'order'),
   align,
   justify,
-  order,
   wrap,
   column
 )

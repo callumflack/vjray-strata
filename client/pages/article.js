@@ -8,20 +8,22 @@ import { formatDateString } from '../lib/date.js';
 import { Flex } from '../components/styled-grid'
 import Layout from '../components/styled-elements/Layout.js';
 import Container from '../components/styled-elements/Container.js';
-import { Text } from '../components/styled-elements/Text.js';
+import { Text, TextBlock, DangerouslyResetTextBlock } from '../components/styled-elements/Text.js';
 import { Display, Subheadline } from '../components/styled-elements/Headline'
 
 import Header from '../components/Shared/Header.js';
 import Footer from '../components/Shared/Footer.js';
+import ColorBox from '../components/Shared/ColorBox'
 import Block from '../components/Shared/Block.js';
 import Guides from '../components/Shared/Guides.js';
 import ContactAction from '../components/Shared/ContactAction'
 import Contact from '../components/Shared/Contact.js';
 
 
-const Hero = styled.div`
-  background-color: #F0FAFC;
-`;
+const StyledColorBox = styled(ColorBox)`
+  background-color: ${theme.colors.offBlue};
+  background-image: none;
+`
 
 const PostInfo = styled.div`
   flex-grow: 1;
@@ -45,7 +47,6 @@ const PostImageWrapper = styled.div`
     max-width: 100%;
   }
 `;
-
 
 class Article extends React.Component {
   static async getInitialProps({ req, query }) {
@@ -72,7 +73,7 @@ class Article extends React.Component {
       <Layout>
         <Header />
 
-        <Hero>
+        <StyledColorBox>
           <Block>
             <Flex>
               <PostInfo>
@@ -89,23 +90,22 @@ class Article extends React.Component {
               </PostImageWrapper>
             </Flex>
           </Block>
-        </Hero>
+        </StyledColorBox>
 
         <Block>
           <Container mw='sm'>
-            <div dangerouslySetInnerHTML={{ __html: this.props.data.post.content.html}} />
+            <TextBlock dangerouslySetInnerHTML={{ __html: this.props.data.post.content.html}} />
           </Container>
         </Block>
 
         <Block>
           <Container mw='sm' textCenter>
-            <Subheadline>See all guides and articles</Subheadline>
-
+            <Subheadline children='See all guides and articles' />
             <Guides />
           </Container>
         </Block>
 
-        <Block>
+        <Block border>
           <ContactAction btnColor='brand' withButton />
           <Contact />
         </Block>

@@ -52,8 +52,8 @@ const StyledHeroBox = styled(HeroBox)`
       to bottom,
       rgba(0, 153, 209, 0.2),
       ${theme.colors.offBlue} 70%
-      
-    );  
+
+    );
 `
 
 const Image = styled(CoverImage)`
@@ -125,9 +125,9 @@ class ContactUs extends React.Component {
           </Container>
         </StyledHeroBox>
 
-        <Block textCenter pb={0} style={{ paddingBottom: '0' }}>
+        <Block textCenter pb={[ 0, 0 ]}>
           <Display color='brandAlt'>
-            Walk in anytime, 
+            Walk in anytime,
             <LineBreak mx='auto'>no appointment.</LineBreak>
           </Display>
           <LargeText color='text70'>Monday to Friday, 9am–5pm. <LineBreak mx='auto'>Saturdays, 9am–4pm.</LineBreak></LargeText>

@@ -10,6 +10,8 @@ async function start() {
   await nextApp.prepare();
   const app = express();
 
+  app.use(express.static('static'));
+
   app.get('/blog/:slug', (req, res) => {
     return nextApp.render(req, res, '/blog', req.params)
   })

@@ -30,7 +30,7 @@ export default (props) =>
       </Text>
     </Flex>
     <Flex width={[ 1, 3/4 ]}>
-      <Link href={`/article?slug=${props.post.slug}`} as={`/article/${props.post.slug}`}>
+      <Link href={`/blog?slug=${props.post.slug}`} as={`/blog/${props.post.slug}`}>
         <LargeText
           align='left'
           font='displayRegular'

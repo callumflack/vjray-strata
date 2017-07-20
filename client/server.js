@@ -10,8 +10,8 @@ async function start() {
   await nextApp.prepare();
   const app = express();
 
-  app.get('/article/:slug', (req, res) => {
-    return nextApp.render(req, res, '/article', req.params)
+  app.get('/blog/:slug', (req, res) => {
+    return nextApp.render(req, res, '/blog', req.params)
   })
 
   app.get('*', (req, res) => {

@@ -60,15 +60,15 @@ class RecentPosts extends React.Component {
       <div>
         {this.state.posts.map((post, i) =>
           <div key={i}>
-            <Link href={`/article?slug=${post.slug}`} as={`/blog/${post.slug}`}><a>
-
+            <Link href={`/blog?slug=${post.slug}`} as={`/blog/${post.slug}`}><a>
               <Box
                 width={1}
                 mx='auto'
                 my={3}
               >
                 <img src={post.featureImage.secure_url} />
-              </ Box>
+              </Box>
+
               <Box
                 width={[ 1, 5/6 ]}
                 mx='auto'
@@ -87,7 +87,6 @@ class RecentPosts extends React.Component {
                   <PostLink color='brand' font='textLight'>Read more</PostLink>
                 </Text>
               </Box>
-
             </a></Link>
           </div>
         )}

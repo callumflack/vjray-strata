@@ -11,6 +11,7 @@ import Container from '../components/styled-elements/Container.js';
 import { Text, TextBlock, DangerouslyResetTextBlock } from '../components/styled-elements/Text.js';
 import { Display, Subheadline } from '../components/styled-elements/Headline'
 
+import theme from '../components/theme.js';
 import Header from '../components/Shared/Header.js';
 import Footer from '../components/Shared/Footer.js';
 import ColorBox from '../components/Shared/ColorBox'

@@ -52,9 +52,9 @@ const PostsList = props => (
   </Box>
 )
 
-export default () => (
+const Root = (props) => (
   <Layout>
-    <Header clear reverseBorder color='white' />
+    <Header pathname={props.pathname} clear reverseBorder color='white' />
 
     <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
       <Container mw='rg' mt={[ 4, 5, 6 ]} >
@@ -92,3 +92,17 @@ export default () => (
     <Footer />
   </Layout>
 )
+
+class UsefulInfo extends React.Component {
+  static async getInitialProps({ pathname }) {
+    return {
+      pathname,
+    }
+  }
+
+  render() {
+    return <Root pathname={this.props.pathname} />
+  }
+}
+
+export default UsefulInfo;

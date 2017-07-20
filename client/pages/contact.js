@@ -76,23 +76,10 @@ const Image = styled(CoverImage)`
 
 
 class ContactUs extends React.Component {
-  static async getInitialProps({ req, query }) {
-    const postQuery = gql`{
-      post(slug: "${query.slug}") {
-        _id,
-        slug,
-        title,
-        description,
-        content {
-          html,
-        },
-        createdAt,
-      }
-    }`;
-
-    return await apollo.query({
-      query: postQuery,
-    });
+  static async getInitialProps({ pathname }) {
+    return {
+      pathname,
+    }
   }
 
   render() {
@@ -106,7 +93,7 @@ class ContactUs extends React.Component {
 
     return (
       <Layout>
-        <Header clear />
+        <Header pathname={this.props.pathname} clear />
 
         <StyledHeroBox px={3}>
           <Image />

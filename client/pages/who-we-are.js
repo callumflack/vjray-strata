@@ -88,18 +88,21 @@ class WhoContainer extends React.Component {
     super(props);
   }
 
-  static async getInitialProps({ req, query }) {
+  static async getInitialProps({ query, pathname }) {
     const { data: { page } } = await apollo.query({
       query: pageQuery,
     });
 
-    return page;
+    return {
+      ...page,
+      pathname,
+    }
   }
 
   render() {
     return (
       <Layout>
-        <Header clear color='brandAlt' />
+        <Header pathname={this.props.pathname} clear color='brandAlt' />
 
         <Hero px={3}>
           <Image />

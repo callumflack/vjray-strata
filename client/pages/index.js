@@ -28,9 +28,9 @@ import TalkBox from '../components/Home/TalkBox'
 import Testimonials from '../components/Home/Testimonials'
 
 
-const Index = () => (
+const Root = (props) => (
   <Layout>
-    <Header clear />
+    <Header pathname={props.pathname} clear />
 
     <ListeningBox />
 
@@ -94,6 +94,17 @@ const Index = () => (
     <Footer />
   </Layout>
 )
+
+class Index extends React.Component {
+  static async getInitialProps({ pathname }) {
+    return {
+      pathname,
+    }
+  }
+  render() {
+    return <Root pathname={this.props.pathname} />
+  }
+}
 
 
 export default Index;

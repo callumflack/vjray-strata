@@ -11,7 +11,6 @@ import { Text, InlineText, Divider } from '../styled-elements/Text'
 import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
 
-
 const headerHeight = '121px';
 const fade = {
   duration: 0.25,
@@ -175,7 +174,13 @@ const MobileNav = styled.nav`
   }
 `;
 
-const LinkTextRoot = hoc('span').extend``
+const LinkTextRoot = hoc('span').extend`
+  ${props => props.isActive && css`
+    border-bottom: 2px solid ${theme.colors.text};
+  `}
+`
+
+// `
 
 const LinkText = props =>
   <LinkTextRoot
@@ -287,26 +292,25 @@ class Header extends React.Component {
           hasScrolledDown={this.state.hasScrolledDown}
           isModalVisible={this.state.isModalVisible}
         >
-
           <Link href='/'>
             <a><IconLogo /></a>
           </Link>
 
           <Nav hideAtMobile>
             <Link href='/'>
-              <a><LinkText>Home</LinkText></a>
+              <a><LinkText isActive={this.props.pathname === '/'}>Home</LinkText></a>
             </Link>
             <Link href='/who-we-are'>
-              <a><LinkText>Who we are</LinkText></a>
+              <a><LinkText isActive={this.props.pathname === '/who-we-are'}>Who we are</LinkText></a>
             </Link>
             <Link href='/'>
-              <a><LinkText>What we do for you</LinkText></a>
+              <a><LinkText isActive={this.props.pathname === '/what we do'}>What we do for you</LinkText></a>
             </Link>
             <Link href='/useful-info'>
-              <a><LinkText>Useful info</LinkText></a>
+              <a><LinkText isActive={this.props.pathname === '/useful-info'}>Useful info</LinkText></a>
             </Link>
             <Link href='/contact'>
-              <a><LinkText>Contact us</LinkText></a>
+              <a><LinkText isActive={this.props.pathname === '/contact'}>Contact us</LinkText></a>
             </Link>
             <StyledDivider />
             <Link href='tel:{contactDetails.phone}'>

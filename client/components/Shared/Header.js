@@ -33,7 +33,7 @@ const Root = styled(Flex)`
   transform: translate3d(0, 0, 0) translateY(0px);
   transition:
     opacity ${fade.duration}s ease-in-out ${fade.delay}s,
-    transform ${fade.duration}s;
+    transform ${fade.duration}s ease-in-out ${fade.delay}s;
   width: 100%;
   z-index: 3;
 
@@ -51,10 +51,10 @@ const Root = styled(Flex)`
 
   ${props => props.isHidden && css`
     opacity: 0;
-    transform: translate3d(0, 0, 0) translateY(${-1 * headerHeight});
+    transform: translate3d(0, 0, 0) translateY(-${headerHeight});
     transition:
-      opacity 0.3s,
-      visibility 0s 0.3s;
+      opacity ${fade.duration}s ease-in-out,
+      transform ${fade.duration}s ease-in-out;
   `}
 
   ${props => props.hasScrolledDown && css`
@@ -63,6 +63,9 @@ const Root = styled(Flex)`
       0 16px 24px 2px rgba(0,0,0,0.03),
       0 6px 30px 5px rgba(0,0,0,0.03);
     color: ${theme.colors.text};
+    transition:
+      opacity ${fade.duration}s ease-in-out,
+      transform ${fade.duration}s ease-in-out;
   `}
 
   ${props => props.isModalVisible && css`

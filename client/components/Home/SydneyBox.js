@@ -60,7 +60,7 @@ const Modal = styled.div`
   opacity: 0;
   position: fixed;
   top: 0;
-  transition: 
+  transition:
     opacity 0s,
     visibility 0s,
     z-index 0s;
@@ -71,7 +71,7 @@ const Modal = styled.div`
 
   ${props => props.isVisible && css`
     opacity: 1;
-    transition: 
+    transition:
       opacity ${transition.duration}s ${transition.type} ${transition.delay}s,
       visibility 0s linear ${transition.delay}s,
       z-index 0s linear ${transition.delay}s;
@@ -144,7 +144,7 @@ class SydneyBox extends React.Component {
               <FlexEmbed ratio='9/16'>
                 <VideoIframe
                   ref={(ref) => this.video = ref}
-                  data-src='https://www.youtube.com/embed/ijrkKNZRIfM?autoplay=1'
+                  data-src='https://www.youtube.com/embed/1QJBUBemFKI?autoplay=1'
                   frameborder='0'
                   allowtransparency='true'
                   webkitallowfullscreen=''

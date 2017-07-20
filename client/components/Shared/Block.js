@@ -35,8 +35,8 @@ const Block = (props) => (
     bg={props.bg}
     border={props.border}
     px={3}
-    py={[ 5, 6 ]}
-    pb={props.pb}>
+    pt={props.pt || [ 5, 6 ]}
+    pb={props.pb || [ 5, 6 ]}>
     <Container mw={props.mw} textCenter={props.textCenter}>
       {props.children}
     </Container>

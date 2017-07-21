@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from 'next/link';
+import PropTypes from 'prop-types'
+import Link from 'next/link'
 
 import { formatDateString } from '../../lib/date.js'
 
@@ -22,7 +23,7 @@ const Root = Flex.withComponent('a').extend`
   }
 `
 
-export default (props) =>
+const Post = (props) => (
   <Root href='#'>
     <Flex align='flex-end' width={[ 1, 1/4 ]}>
       <Text align='left' color='text70' mt={3} mb={[ 0, 3 ]} style={{ transform: 'translateY(-3px)' }}>
@@ -42,3 +43,10 @@ export default (props) =>
       </Link>
     </Flex>
   </Root>
+)
+
+Post.propTypes = {
+  post: PropTypes.object,
+};
+
+export default Post

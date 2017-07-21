@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
@@ -105,5 +106,9 @@ const Footer = (props) => (
     </StyledContainer>
   </Root>
 );
+
+Footer.propsTypes = {
+  bg: PropTypes.string,
+};
 
 export default Footer;

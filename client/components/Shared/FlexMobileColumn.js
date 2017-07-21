@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Flex } from '../styled-grid'
 import theme from '../theme'
 
 // ------------------------------------------
-// This can be removed as we can now use 
+// This can be removed as we can now use
 // responsiveStyle within the Flex component.
 // ------------------------------------------
 
@@ -26,5 +27,13 @@ const FlexMobileColumn = styled(Flex)`
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   `}
 `
+
+FlexMobileColumn.propTypes = {
+  reverseShadow: PropTypes.bool,
+}
+
+FlexMobileColumn.defaultProps = {
+  reverseShadow: false,
+}
 
 export default FlexMobileColumn

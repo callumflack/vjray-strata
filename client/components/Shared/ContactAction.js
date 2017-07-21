@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Link from 'next/link'
 import styled from 'styled-components'
 import theme from '../theme'
@@ -28,5 +29,16 @@ const ContactAction = (props) => (
     </Container>
   </Container>
 )
+
+ContactAction.propTypes = {
+  headlineColor: PropTypes.string,
+  btnColor: PropTypes.string,
+  withButton: PropTypes.bool,
+}
+
+ContactAction.defaultProps = {
+  headlineColor: 'text',
+  withButton: false,
+}
 
 export default ContactAction

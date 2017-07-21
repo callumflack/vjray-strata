@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import Link from 'next/link';
 
 import gql from 'graphql-tag';
@@ -32,14 +33,13 @@ class RecentPosts extends React.Component {
     super(props);
 
     this.state = {
-      limit: props.limit || 1,
       posts: [],
     }
   }
 
   async componentDidMount() {
     const query = gql`{
-      posts(limit: ${this.state.limit}) {
+      posts(limit: ${this.props.limit}) {
         _id,
         slug,
         title,
@@ -94,5 +94,13 @@ class RecentPosts extends React.Component {
     );
   }
 }
+
+RecentPosts.propTypes = {
+  limit: PropTypes.number,
+};
+
+RecentPosts.defaultProps = {
+  limit: 1,
+};
 
 export default RecentPosts;

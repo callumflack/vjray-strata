@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
+import { css } from 'styled-components';
 import Button from '../styled-elements/Button.js';
 
 const LaddaButtonRoot = Button.extend`
@@ -89,5 +90,13 @@ const LaddaButton = (props) => (
     <span className="spinner"></span>
   </LaddaButtonRoot>
 )
+
+LaddaButton.propTypes = {
+  loading: PropTypes.bool,
+};
+
+LaddaButton.defaultProps = {
+  loading: false,
+};
 
 export default LaddaButton;

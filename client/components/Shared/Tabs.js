@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import { Flex } from '../styled-grid'
 import { FormHeader } from '../Shared/Form.js'
@@ -22,8 +23,8 @@ class Tabs extends React.Component {
       const isSelected = this.state.selected === idx;
 
       return (
-        <Label onClick={this.onClick.bind(this, idx)} href='#'>
-          <FormHeader role='tab' key={idx} aria-controls={`panel${idx}`} inactive={!isSelected}>{child.props.label}</FormHeader>
+        <Label onClick={this.onClick.bind(this, idx)} href='#' key={idx}>
+          <FormHeader role='tab' aria-controls={`panel${idx}`} inactive={!isSelected}>{child.props.label}</FormHeader>
         </Label>
       );
     }
@@ -58,6 +59,15 @@ class Tabs extends React.Component {
 const Pane = (props) => {
   return <div>{props.children}</div>;
 }
+
+Tabs.propTypes = {
+  selected: PropTypes.number,
+  chlidren: PropTypes.element,
+};
+
+Tabs.defaultProps = {
+  selected: 0,
+};
 
 export {
   Tabs,

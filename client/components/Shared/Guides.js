@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 import gql from 'graphql-tag';
@@ -40,9 +41,9 @@ const Root = (props) => (
         {props.children}
       </BoxReset>
     ) : (
-      <Flex 
+      <Flex
         direction={[ 'column', 'row' ]}
-        justify='center' 
+        justify='center'
         mx={-3}>
         {props.children}
       </Flex>

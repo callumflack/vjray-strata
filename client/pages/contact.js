@@ -75,7 +75,7 @@ const Image = styled(CoverImage)`
 `
 
 
-class ContactUs extends React.Component {
+class ContactPage extends React.Component {
   static async getInitialProps({ pathname }) {
     return {
       pathname,
@@ -84,9 +84,11 @@ class ContactUs extends React.Component {
 
   render() {
     const tabs = [{
+      _id: 0,
       name: 'Quick response message',
       content: <FullQuoteForm />
     }, {
+      _id: 1,
       name: 'Report an issue',
       content: <IssueForm />
     }];
@@ -132,9 +134,9 @@ class ContactUs extends React.Component {
           </Container>
 
           <Container mt={[3, 4]}>
-            <Tabs selected={0}>
+            <Tabs>
               {tabs.map(tab =>
-                <Pane label={tab.name}>{tab.content}</Pane>)
+                <Pane label={tab.name} key={tab._id}>{tab.content}</Pane>)
               }
             </Tabs>
           </Container>
@@ -160,4 +162,4 @@ class ContactUs extends React.Component {
   }
 }
 
-export default ContactUs;
+export default ContactPage;

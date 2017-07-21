@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 
 import styled from 'styled-components'
@@ -19,7 +20,7 @@ const StyledBox = styled(Box)`
 {/* <StyledColorBox py={[ 4, 5, 6 ]} px={3}> */}
 {/* <Container mw='sm' textCenter> */}
 
-export default (props) => (
+const ContactActionAlt = (props) => (
   <StyledBox pb={[ 3, 4, 5 ]}>
     <Subheadline children='Get in touch' />
     <Display color='text' font='displayRegular' mb={3}>
@@ -33,3 +34,9 @@ export default (props) => (
     </LargeButtonStyler>
   </StyledBox>
 )
+
+ContactActionAlt.propTypes = {
+  btnColor: PropTypes.string,
+}
+
+export default ContactActionAlt

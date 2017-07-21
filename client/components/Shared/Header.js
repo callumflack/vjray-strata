@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 
 import contactDetails from '../constants'
 
@@ -375,5 +376,18 @@ class Header extends React.Component {
     )
   }
 }
+
+Header.propTypes = {
+  color: PropTypes.string,
+  clear: PropTypes.bool,
+  reverseBorder: PropTypes.bool,
+  pathname: PropTypes.string,
+};
+
+Header.defaultProps = {
+  color: 'text',
+  clear: false,
+  reverseBorder: false,
+};
 
 export default Header;

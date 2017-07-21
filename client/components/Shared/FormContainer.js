@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 import { Box } from '../styled-grid'
 import theme from '../theme'
-import Button from '../styled-elements/Button'
+import LaddaButton from '../Shared/LaddaButton.js'
 import { Text } from '../styled-elements/Text'
 import {
   Form,
@@ -28,12 +28,21 @@ class FormContainer extends React.Component {
     this.state = {
       messageSent: false,
       canSubmit: false,
+      loading: false,
     };
   }
 
   async handleSubmit(model) {
-    this.props.submit(model);
-    this.setState({ messageSent: true });
+    this.setState({
+      loading: true,
+    });
+
+    await this.props.submit(model);
+
+    this.setState({
+      messageSent: true,
+      loading: false,
+    });
   }
 
   enableButton() {
@@ -67,7 +76,7 @@ class FormContainer extends React.Component {
             {this.props.children}
 
             <Text align='right'>
-              <Button primary type='submit' disabled={!this.state.canSubmit}>Send</Button>
+              <LaddaButton primary loading={this.state.loading} type='submit' disabled={!this.state.canSubmit}>Send</LaddaButton>
             </Text>
           </Form>
         </Box>

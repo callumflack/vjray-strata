@@ -9,7 +9,7 @@ import { Flex, Box } from '../styled-grid'
 import hoc from '../styled-elements/hoc'
 import { InlineText } from '../styled-elements/Text.js';
 import { BoxedSubheadline } from '../styled-elements/Headline.js';
-import Button from '../styled-elements/Button.js';
+import LaddaButton from '../Shared/LaddaButton.js';
 
 
 const Form = styled.form`
@@ -68,6 +68,7 @@ const SuccessMessage = styled.div`
   margin-bottom: 0.5rem;
 `;
 
+
 class QuickQuoteForm extends React.Component {
   constructor(props) {
     super(props);
@@ -79,6 +80,7 @@ class QuickQuoteForm extends React.Component {
     this.state = {
       name: '',
       phoneNumber: '',
+      loading: false,
       floating: false,
       messageSent: false,
     };
@@ -108,7 +110,9 @@ class QuickQuoteForm extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
 
-    this.setState({ messageSent: true });
+    this.setState({
+      loading: true,
+    });
 
     const response = await fetch('https://formspree.io/quickquote@vjray.com.au', {
       method: 'POST',
@@ -120,6 +124,11 @@ class QuickQuoteForm extends React.Component {
         name: this.state.name,
         phoneNumber: this.state.phoneNumber,
       }),
+    });
+
+    this.setState({
+      messageSent: true,
+      loading: false,
     });
   }
 
@@ -145,7 +154,7 @@ class QuickQuoteForm extends React.Component {
             <Input fontSize={[ 2, 3 ]} placeholder='Your name' name='name' onChange={this.handleChange} />
             <Input fontSize={[ 2, 3 ]} placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
             <ButtonText font='textBook' fontSize={[ 2, 3 ]} letterSpacing='button'>
-              <Button primary type='submit'>Send</Button>
+              <LaddaButton primary loading={this.state.loading} type='submit'>Submit</LaddaButton>
             </ButtonText>
           </Inputs>
         </Box>

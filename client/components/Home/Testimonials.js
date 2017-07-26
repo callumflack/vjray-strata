@@ -33,23 +33,23 @@ const Image = styled.img`
 `
 
 const testimonialList = [{
-  name: 'Happy Carole Super Fund',
-  quote: 'I think your office works well keeping members up to date with minimal work on our side. So keep doing what you are doing.',
-  location: 'South Coogee',
-}, {
-  name: 'Neil Franke',
-  quote: 'Extremely happy with the service that is given to our complex.',
-  location: 'Caringbah',
-}, {
-  name: 'Jean Sargent',
+  name: 'Jean',
   quote: 'We are happy with everything. Can\'t think of a change currently. Thanks guys, you are terrific.',
   location: 'Picnic Point',
 }, {
-  name: 'Daniel & Ruth Romaine',
+  name: 'Andrew',
+  quote: 'Nothing but great service and friendly staff.',
+  location: 'Campsie',
+}, {
+  name: 'Neil',
+  quote: 'Extremely happy with the service that is given to our complex.',
+  location: 'Caringbah',
+}, {
+  name: 'Daniel & Ruth',
   quote: 'Love dealing with Sueallen. She responds immediately and organises what is needed or requested straight away.',
   location: 'Caringbah',
 }, {
-  name: 'Linda Appleford & Terry Jones',
+  name: 'Linda & Terry',
   quote: 'You guys are very quick to respond and handle things efficiently — no complaints here.',
   location: 'Jindabyne',
 }];

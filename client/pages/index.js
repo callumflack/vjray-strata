@@ -36,10 +36,11 @@ const Root = (props) => (
 
     <Block mw='rg' textCenter>
       <Box width={[ 4/6, 5/6 ]} mx='auto'>
-        <Headline font='displayMedium' color='text' my={3} children='It all adds up to a better deal.' />
+        <Headline font='displayMedium' color='text' mt={4} mb={3} children='It all adds up to a better deal.' />
         <Container width={[ 1, 5/6 ]}>
           <LargeText color='text70'>
-            "You guys are very quick to respond and handle things efficiently, no complaints here" — <AuthorText>Linda Appleford & Terry Jones, Jindabyne</AuthorText>
+            "You guys are very quick to respond and handle things efficiently, no complaints here"
+            <LineBreak m='auto'><AuthorText>— Linda & Terry, Jindabyne</AuthorText></LineBreak>
           </LargeText>
         </Container>
       </Box>
@@ -56,7 +57,7 @@ const Root = (props) => (
           <Display children="It's our job to sort it." />
           <Container width={[ 1, 2/3 ]}>
             <LargeText color='text70'>
-              "I have been happy and have known VJ Ray for years. I cannot fault you. Thank you!" — <AuthorText>Petrania Evans, Belmore</AuthorText>
+              "I have been happy and have known VJ Ray for years. I cannot fault you. Thank you!" <AuthorText>— Petrania, Belmore</AuthorText>
             </LargeText>
           </Container>
         </Container>

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link'
 import styled from 'styled-components'
 import theme from '../theme'
-import { MediumText } from '../styled-elements/Text'
+import { LargeText } from '../styled-elements/Text'
 import { Display, Subheadline } from '../styled-elements/Headline'
 import Button from '../styled-elements/Button'
 import Container from '../styled-elements/Container'
@@ -23,9 +23,7 @@ const ContactAction = (props) => (
         </LargeButtonStyler>
       }
 
-      <MediumText color='text70'>
-        Or drop-in without an appointment. We're open Monday to Friday, 9am–5pm. And every Saturday, 9am–4pm.
-      </MediumText>
+      <LargeText color='text70' children='Or drop-in without an appointment.' />
     </Container>
   </Container>
 )

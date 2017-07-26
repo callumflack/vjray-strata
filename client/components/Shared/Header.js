@@ -177,7 +177,8 @@ const MobileNav = styled.nav`
 
 const LinkTextRoot = hoc('span').extend`
   ${props => props.isActive && css`
-    border-bottom: 2px solid ${theme.colors.text};
+    border-bottom: 1px solid ${theme.colors.text};
+    padding-bottom: ${theme.space[2]}px;
   `}
 `
 
@@ -298,9 +299,6 @@ class Header extends React.Component {
           </Link>
 
           <Nav hideAtMobile>
-            <Link href='/'>
-              <a><LinkText isActive={this.props.pathname === '/'}>Home</LinkText></a>
-            </Link>
             <Link href='/who-we-are'>
               <a><LinkText isActive={this.props.pathname === '/who-we-are'}>Who we are</LinkText></a>
             </Link>

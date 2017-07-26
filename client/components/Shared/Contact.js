@@ -5,7 +5,7 @@ import theme from '../theme'
 import { Box, Flex } from '../styled-grid'
 import { Text, SmallText } from '../styled-elements/Text'
 import Button from '../styled-elements/Button'
-import { IconPhone, IconEmail, IconAddress, IconEmergency } from '../styled-elements/Icons'
+import { IconPhone, IconEmail, IconAddress, IconEmergency, IconOpen } from '../styled-elements/Icons'
 
 
 const Locations = styled(Flex)`
@@ -17,8 +17,9 @@ const Locations = styled(Flex)`
   }
 `;
 
-const Item = styled(SmallText)`
+const Item = styled(Flex)`
   --Item-rule: ${theme.colors.text20};
+  align-items: flex-start;
   border-bottom: 1px solid var(--Item-rule);
   color: ${theme.colors.text70} !important;
   padding: 0.45rem 0;
@@ -28,10 +29,17 @@ const Item = styled(SmallText)`
   `}
 `;
 
+const ItemBody = styled('div')`
+  color: ${theme.colors.text70} !important;
+  flex: 1;
+`;
+
 const locationList = [{
   name: 'Campsie Head Office',
   subOne: '8 Anglo Road',
   subTwo: 'Campsie, NSW 2194',
+  openOne: 'Monday-Thursday 9-5.30pm',
+  openTwo: 'Friday 9-5pm & Saturday 9-4pm',
   phoneNumber: '02 9784 7900',
   faxNumber: '02 9787 2952',
   email: 'campsie@vjray.com.au',
@@ -43,7 +51,9 @@ const locationList = [{
   name: 'Caringbah Office',
   subOne: '18 President Avenue',
   subTwo: 'Caringbah, NSW 2229',
-  phoneNumber: '02 9714 8622',
+  openOne: 'Monday-Thursday 9-5.30pm',
+  openTwo: 'Friday 9-5pm & Saturday 9-2pm',
+  phoneNumber: '02 9541 3300',
   faxNumber: '02 9643 2220',
   email: 'caringbah@vjray.com.au',
   poBox: 'PO Box 369 Campsie, NSW 2194',
@@ -72,24 +82,32 @@ const Location = (props) => (
     </Box>
 
     <Box>
-      <Link href='tel:{props.location.phoneNumber}'>
-        <a><Item borderTop>
-          <IconPhone contact />{props.location.phoneNumber}
-        </Item></a>
-      </Link>
-      <Link href='mailto:{props.location.email}'>
-        <a><Item>
-          <IconEmail contact />{props.location.email}
-        </Item></a>
-      </Link>
-      <Item>
-        <IconAddress contact />{props.location.poBox}
+      <Item borderTop>
+        <div><IconOpen contact /></div>
+        <ItemBody>
+          <SmallText color='text70'>{props.location.openOne}</SmallText>
+          <SmallText color='text70'>{props.location.openTwo}</SmallText>
+        </ItemBody>
       </Item>
-      <Link href='tel:{props.location.emergencyPhoneNumber}'>
-        <a><Item>
-          <IconEmergency contact />Emergency {props.location.emergencyPhoneNumber}
-        </Item></a>
-      </Link>
+
+      <Link href='tel:${props.location.phoneNumber}'><a>
+        <Item>
+          <div><IconPhone contact /></div>
+          {props.location.phoneNumber}
+        </Item>
+      </a></Link>
+
+      <Link href='mailto:${props.location.email}'><a>
+        <Item>
+          <div><IconEmail contact /></div>
+          {props.location.email}
+        </Item>
+      </a></Link>
+
+      <Item>
+        <div><IconAddress contact /></div>
+        {props.location.poBox}
+      </Item>
 
     </Box>
   </Box>

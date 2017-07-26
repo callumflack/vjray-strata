@@ -14,7 +14,6 @@ import LaddaButton from '../Shared/LaddaButton.js';
 
 const Form = styled.form`
   --Header-height: 48px;
-
   background-color: #fff;
   bottom: var(--Header-height);
   box-shadow:
@@ -42,7 +41,6 @@ const Form = styled.form`
 
 const Inputs = styled.div`
   --Input-line-height: 54px;
-
   display: flex;
   max-width: ${theme.containers.sm};
   margin: auto;
@@ -56,6 +54,22 @@ const Input = hoc('input').extend`
   flex-grow: 1;
   line-height: var(--Input-line-height);
   margin-right: 2rem;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  resize: none;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &:focus,
+  &:active,
+  &:hover,
+  &:visited {
+    outline: 0;
+  }
+
+  &:focus {
+    border-color: ${theme.colors.brand};
+  }
 `;
 
 const ButtonText = hoc('span').extend`
@@ -147,7 +161,7 @@ class QuickQuoteForm extends React.Component {
         <BoxedSubheadline color='white'>Get a Fast Quote</BoxedSubheadline>
         <Box p={3}>
           { this.state.messageSent &&
-            <SuccessMessage>Thank you! We will get back to you soon.</SuccessMessage>
+            <SuccessMessage>Thanks! We'll contact you soon.</SuccessMessage>
           }
 
           <Inputs>

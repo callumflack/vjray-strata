@@ -3,23 +3,19 @@ import { css } from 'styled-components';
 import Button from '../styled-elements/Button.js';
 
 const LaddaButtonRoot = Button.extend`
-	position: relative;
-	border: 0;
-	padding: 0.8em 1em;
-	cursor: pointer;
+  position: relative;
+  border: 0;
+  border: 1px solid transparent;
+  cursor: pointer;
   outline: 0;
-
-	-webkit-appearance: none;
-	-webkit-font-smoothing: antialiased;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-	border-radius: 2px;
-	border: 1px solid transparent;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   ${props => props.dataLoading && css`
-		cursor: default;
-		border-color: rgba( 0, 0, 0, 0.07 );
-		background-color: #999;
+    cursor: default;
+    border-color: rgba( 0, 0, 0, 0.07 );
+    background-color: #999;
   `}
 
   /* Spinner animation */

@@ -14,7 +14,7 @@ import Layout from '../components/styled-elements/Layout'
 import Container from '../components/styled-elements/Container'
 import CoverImage from '../components/styled-elements/CoverImage'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
-import { Text, LargeText, LineBreak } from '../components/styled-elements/Text'
+import { Text, SmallText, LargeText, LineBreak } from '../components/styled-elements/Text'
 import Button from '../components/styled-elements/Button'
 
 import Header from '../components/Shared/Header'
@@ -26,7 +26,7 @@ import FullQuoteForm from '../components/Shared/FullQuoteForm'
 import IssueForm from '../components/Shared/IssueForm'
 import { FormHeader } from '../components/Shared/Form.js'
 import { Tabs, Pane } from '../components/Shared/Tabs.js'
-import ContactAction from '../components/Shared/ContactAction'
+import ContactActionAlt from '../components/Shared/ContactActionAlt'
 import Contact from '../components/Shared/Contact'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
@@ -116,21 +116,25 @@ class ContactPage extends React.Component {
 
         <Block textCenter pb={[ 0, 0 ]}>
           <Display color='brandAlt'>
-            Walk in anytime,
-            <LineBreak mx='auto'>no appointment.</LineBreak>
+            Visit us anytime.
           </Display>
-          <LargeText color='text70'>Monday to Friday, 9am–5pm. <LineBreak mx='auto'>Saturdays, 9am–4pm.</LineBreak></LargeText>
+          <LargeText color='text70' children='No appointment necessary.' />
           <Box mt={[ 3, 4 ]}>
             <Contact />
+            <SmallText color='text70' mt={[ 3, 4 ]}>
+              Looking for the Auburn office? They aren't affiliated with us.
+              <LineBreak mx='auto'>
+                You can find them&nbsp;
+                <Link href='http://vjrayauburn.com.au/'>here.</Link>
+              </LineBreak>
+            </SmallText>
           </Box>
         </Block>
 
-        <Block mw='sm'>
+        <Block mw='sm' pb={[ 0, 0 ]}>
           <Container textCenter>
             <Display color='brand' children='Write to us.' />
-            <LargeText color='text70'>
-              Emergency? Call {contactDetails.phone} any time.
-            </LargeText>
+            <LargeText color='text70'>We'll respond quick smart.</LargeText>
           </Container>
 
           <Container mt={[3, 4]}>
@@ -142,19 +146,19 @@ class ContactPage extends React.Component {
           </Container>
         </Block>
 
-        <Box px={3} pb={[ 5, 6 ]}>
-          <Container mw='sm' textCenter>
-            <Display font='displayRegular' color='text' mb={3} ruled>
-              Skip the hassle of&nbsp;
-              <LineBreak m='auto' children='Strata management.' />
-            </Display>
-            <LargeButtonStyler>
-              <Link href='/fast-quote'>
-                <Button large icon bgColor='brandAlt' children='Get a fast quote' />
-              </Link>
-            </LargeButtonStyler>
-          </Container>
-        </Box>
+        <Block textCenter>
+          <Display color='brand' children='Is it an emergency?' />
+          <LargeText color='text70' mb={3}>For all types of after-hours repairs.</LargeText>
+          <LargeButtonStyler>
+            <Link href='/fast-quote'>
+              <Button large icon bgColor='brand' children='Emergencies' />
+            </Link>
+          </LargeButtonStyler>
+        </Block>
+
+        <Block border>
+          <ContactActionAlt btnColor='brandAlt' />
+        </Block>
 
         <Footer />
       </Layout>

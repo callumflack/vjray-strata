@@ -156,6 +156,10 @@ p {
   margin: 0;
 }
 
+p a {
+  text-decoration: underline;
+}
+
 h1,
 h2,
 h3,

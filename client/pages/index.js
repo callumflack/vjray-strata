@@ -88,7 +88,7 @@ const Root = (props) => (
     </Block>
 
     <Block border >
-      <ContactAction btnColor='brandAlt' withButton />
+      <ContactAction btnColor='brandAlt' withButton withByline />
       <Contact />
     </Block>
 

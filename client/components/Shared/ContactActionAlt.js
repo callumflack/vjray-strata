@@ -22,7 +22,7 @@ const StyledBox = styled(Box)`
 
 const ContactActionAlt = (props) => (
   <StyledBox pb={[ 3, 4, 5 ]}>
-    <Subheadline children='Get in touch' />
+    <Subheadline>Let's talk</Subheadline>
     <Display color='text' font='displayRegular' mb={3}>
       Skip the hassle of&nbsp;
       <LineBreak m='auto'>Strata management.</LineBreak>

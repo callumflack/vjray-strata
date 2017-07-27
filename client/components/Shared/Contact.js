@@ -46,7 +46,7 @@ const locationList = [{
   poBox: 'PO Box 369 Campsie, NSW 2194',
   emergencyPhoneNumber: '1300 073 405',
   googleMapsUrl: 'https://www.google.co.nz/maps/place/V+J+Ray/@-33.9113278,151.1011612,17z',
-  imageName: 'map.jpg',
+  imageName: 'map-campsie.jpg',
 }, {
   name: 'Caringbah Office',
   subOne: '18 President Avenue',
@@ -59,7 +59,7 @@ const locationList = [{
   poBox: 'PO Box 369 Campsie, NSW 2194',
   emergencyPhoneNumber: '1300 073 405',
   googleMapsUrl: 'https://www.google.co.nz/maps/place/V.J.+Ray/@-34.0432583,151.1198929,17z',
-  imageName: 'map.jpg',
+  imageName: 'map-carringbah.jpg',
 }];
 
 const Location = (props) => (

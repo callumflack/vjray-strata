@@ -90,6 +90,7 @@ const Footer = (props) => (
               <Link href='/contact'><a><span>Contact us</span></a></Link>
               <Link href='/fast-quote'><a>Get a fast quote</a></Link>
               <Link href='/contact'><a>Report an issue</a></Link>
+              <Link href='/contact'><a>Emergencies</a></Link>
             </Column>
           </Nav>
 

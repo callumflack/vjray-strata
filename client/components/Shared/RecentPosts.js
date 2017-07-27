@@ -62,7 +62,7 @@ class RecentPosts extends React.Component {
           <div key={i}>
             <Link href={`/blog?slug=${post.slug}`} as={`/blog/${post.slug}`}><a>
               <Box
-                width={1}
+                width={[ 1, 5/6 ]}
                 mx='auto'
                 my={3}
               >

@@ -38,32 +38,25 @@ class IssueForm extends React.Component {
       <FormContainer submit={this.submit}>
         <FormGroup>
           <Input
-            placeholder='Your name'
+            placeholder='Your name*'
             name='name'
-            validationErrors={{
-              isDefaultRequiredValue: 'Your name is required'
-            }}
             required
           />
           <Input
-            placeholder='Your email'
+            placeholder='Your email*'
             name='email'
             validations={{
               isEmail: true
             }}
             validationErrors={{
-              isDefaultRequiredValue: 'Your email is required',
               isEmail: 'Not a valid email'
             }}
             required
           />
           <Input
-            placeholder='Your phone number'
+            placeholder='Your phone number*'
             name='phoneNumber'
             validations='isExisty'
-            validationErrors={{
-              isDefaultRequiredValue: 'Your phone number is required'
-            }}
             required
           />
         </FormGroup>

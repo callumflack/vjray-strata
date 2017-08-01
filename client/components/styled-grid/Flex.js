@@ -13,7 +13,7 @@ const Flex = styled(Box)([],
   { display: 'flex' },
   responsiveStyle('flex-direction', 'direction'),
   responsiveStyle('order', 'order'),
-  align,
+  responsiveStyle('align-items', 'align'),
   justify,
   wrap,
   column

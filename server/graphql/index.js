@@ -30,6 +30,15 @@ const Schema = `
     createdAt: String,
   }
 
+  type PdfSheet {
+    _id: String!,
+    file: File,
+    type: String,
+    headline: String,
+    subheadline: String,
+    createdAt: String,
+  }
+
   type Who {
     post: String,
   }
@@ -44,6 +53,7 @@ const Schema = `
     posts(limit: Int): [Post],
     guides(limit: Int, primary: Boolean, featured: Boolean): [Guide],
     page(page: String!): Page,
+    pdfSheets(type: String!): [PdfSheet],
   }
 
   type Quote {

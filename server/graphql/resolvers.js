@@ -3,6 +3,7 @@ const Post = keystone.list('Post');
 const Guide = keystone.list('Guide');
 const Quote = keystone.list('Quote');
 const Page = keystone.list('Page');
+const PdfSheet = keystone.list('PdfSheet');
 
 const resolvers = {
   Query: {
@@ -10,12 +11,14 @@ const resolvers = {
       return await Post.model.findOne({ slug })
       .exec();
     },
+
     posts: async (obj, { limit=0 }) => {
       // A limit of 0 returns all documents
       return await Post.model.find()
       .limit(limit)
       .exec();
     },
+
     guides: async (obj, { limit=0, primary=false, featured=false }) => {
       if (primary) {
         const guide = await Guide.model.findOne({
@@ -39,8 +42,16 @@ const resolvers = {
       .limit(limit)
       .exec();
     },
+
     page: async (obj, { page }) => {
       return await Page.model.findOne({ page })
+      .exec();
+    },
+
+    pdfSheets: async (obj, { type }) => {
+      return await PdfSheet.model.find({
+        type,
+      })
       .exec();
     },
   },

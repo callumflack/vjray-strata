@@ -10,7 +10,7 @@ const guideFeatureImage = {
   "secure_url": "https://res.cloudinary.com/duniidrb8/image/upload/v1499395726/zwwyun8ziin4tavzhax6.png"
 };
 
-const guideFile = {
+const pdfFile = {
   "mimetype": "application/pdf",
   "size": 7945,
   "filename": "OWhtwj2r4nQrwjvV.pdf",
@@ -35,19 +35,45 @@ exports.create = {
     "isFeatured": true,
     "isPrimary": true,
     featureImage: guideFeatureImage,
-    file: guideFile,
+    file: pdfFile,
   }, {
     "title": "Example Guide 2",
     "isFeatured": true,
     "isPrimary": false,
     featureImage: guideFeatureImage,
-    file: guideFile,
+    file: pdfFile,
   }, {
     "title": "Example Guide 3",
     "isFeatured": true,
     "isPrimary": false,
     featureImage: guideFeatureImage,
-    file: guideFile,
+    file: pdfFile,
+  }],
+  PdfSheet: [{
+    "headline": "Example Form",
+    "subheadline": "Say something here concisely",
+    file: pdfFile,
+    "type": "Form",
+  }, {
+    "headline": "Example Form 2",
+    "subheadline": "Say something here concisely",
+    file: pdfFile,
+    "type": "Form",
+  }, {
+    "headline": "Example Form 3",
+    "subheadline": "Say something here concisely",
+    file: pdfFile,
+    "type": "Form",
+  }, {
+    "headline": "Example Face Sheet",
+    "subheadline": "Say something here concisely",
+    file: pdfFile,
+    "type": "Fact Sheet",
+  }, {
+    "title": "Example Face Sheet 2",
+    "subheadline": "Say something here concisely",
+    file: pdfFile,
+    "type": "Fact Sheet",
   }],
   Page: [{
     'page': 'Who we are',

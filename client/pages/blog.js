@@ -53,12 +53,12 @@ class Article extends React.Component {
   render() {
     return (
       <Layout>
-        <Header />
+        <Header clear />
 
         <StyledColorBox>
           <Block>
             <Flex mx={-3}>
-              <Box width={1/2} mx={3}>
+              <Box width={[ 1, 6/12]} mx={3}>
                 <Subheadline color='brandAlt'>{formatDateString(this.props.data.post.createdAt)}</Subheadline>
                 <Display color='brandAlt'>{this.props.data.post.title}</Display>
                 <Text fontSize={[ 3, 4 ]} color='brandAlt70'>
@@ -66,7 +66,7 @@ class Article extends React.Component {
                 </Text>
               </Box>
 
-              <Flex width={1/2} mx={3} align='center'>
+              <Flex width={[ 1, 6/12 ]} mx={3} align='center'>
                 <img src={this.props.data.post.featureImage.secure_url} />
               </Flex>
             </Flex>

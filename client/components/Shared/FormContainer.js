@@ -15,8 +15,14 @@ import {
 
 const Root = styled(Box)`
   background-color: white;
-  border: 1px solid ${theme.colors.brand};
+  border: 1px solid ${theme.colors.brandAlt};
+
+  ${props => props.brand && css`
+    border: 1px solid ${theme.colors.brand};
+  `}
 `;
+
+// `
 
 class FormContainer extends React.Component {
   constructor(props) {
@@ -58,15 +64,10 @@ class FormContainer extends React.Component {
     });
   }
 
-  render() {
+  render(props) {
     return (
-      <Root>
+      <Root brand={this.props.brand}>
         <Box p={[ 2, 3 ]}>
-          { this.state.messageSent
-            ?  <SuccessMessage>Thank you! We'll get back to you soon.</SuccessMessage>
-            : null
-          }
-
           <Form
             onValidSubmit={this.handleSubmit}
             onValid={this.enableButton}
@@ -77,7 +78,12 @@ class FormContainer extends React.Component {
             {this.props.children}
 
             <Text align='right'>
-              <LaddaButton primary loading={this.state.loading} type='submit' disabled={!this.state.canSubmit}>Send</LaddaButton>
+              { this.state.messageSent &&
+                <SuccessMessage>Thanks! We'll contact you within 48 hours.</SuccessMessage>
+              }
+              <LaddaButton primary loading={this.state.loading} type='submit' disabled={!this.state.canSubmit}>
+                { this.state.messageSent ? 'Sent' : 'Send'}
+              </LaddaButton>
             </Text>
           </Form>
         </Box>

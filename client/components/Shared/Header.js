@@ -12,7 +12,6 @@ import { Text, InlineText, Divider } from '../styled-elements/Text'
 import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
 
-const headerHeight = '121px';
 const fade = {
   duration: 0.25,
   delay: 0.25,
@@ -21,12 +20,11 @@ const fade = {
 const Root = styled(Flex)`
   --Header-background-color: white;
   --Header-border-color: rgba(88, 88, 112, 0.15);
-
   background-color: var(--Header-background-color);
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--Header-border-color);
-  height: ${headerHeight};
+  height: ${theme.blockHeights.navBar};
   opacity: 1;
   position: fixed;
   top: 0;
@@ -51,10 +49,10 @@ const Root = styled(Flex)`
 
   ${props => props.isHidden && css`
     opacity: 0;
-    transform: translate3d(0, 0, 0) translateY(-${headerHeight});
+    transform: translate3d(0, 0, 0) translateY(-${theme.blockHeights.navBar});
     transition:
-      opacity ${fade.duration}s ease-in-out,
-      transform ${fade.duration}s ease-in-out;
+      opacity ${fade.duration}s ease-in-out 1s,
+      transform ${fade.duration}s ease-in-out 1s;
   `}
 
   ${props => props.hasScrolledDown && css`
@@ -161,7 +159,7 @@ const MobileModal = Flex.extend`
   bottom: 0;
   left: 0;
   right: 0;
-  top: ${headerHeight};
+  top: ${theme.blockHeights.navBar};
   background-color: #fff;
 
   ${props => !props.isVisible && css`
@@ -177,8 +175,8 @@ const MobileNav = styled.nav`
 
 const LinkTextRoot = hoc('span').extend`
   ${props => props.isActive && css`
-    border-bottom: 1px solid ${theme.colors.text};
-    padding-bottom: ${theme.space[2]}px;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 43px;
   `}
 `
 

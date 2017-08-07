@@ -16,7 +16,7 @@
 
 export default {
   blockHeights: {
-    navBar: '121px',
+    navBar: '111px',
     hero: '50vh',
     super: '70vh'
   },
@@ -68,6 +68,7 @@ export default {
     headline: '1.05',
     subheadline: '1.25',
     text: '1.375',
+    feedback: '2.5',
   },
   space: [0, 8, 16, 32, 64, 128, 160],
 

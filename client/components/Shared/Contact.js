@@ -39,7 +39,8 @@ const locationList = [{
   subOne: '8 Anglo Road',
   subTwo: 'Campsie, NSW 2194',
   openOne: 'Monday-Thursday 9-5.30pm',
-  openTwo: 'Friday 9-5pm & Saturday 9-4pm',
+  openTwo: 'Friday 9-5pm',
+  openThree: 'Saturday 9-4pm',
   phoneNumber: '02 9784 7900',
   faxNumber: '02 9787 2952',
   email: 'campsie@vjray.com.au',
@@ -52,7 +53,8 @@ const locationList = [{
   subOne: '18 President Avenue',
   subTwo: 'Caringbah, NSW 2229',
   openOne: 'Monday-Thursday 9-5.30pm',
-  openTwo: 'Friday 9-5pm & Saturday 9-2pm',
+  openTwo: 'Friday 9-5pm',
+  openThree: 'Saturday 9-2pm',
   phoneNumber: '02 9541 3300',
   faxNumber: '02 9643 2220',
   email: 'caringbah@vjray.com.au',
@@ -82,16 +84,8 @@ const Location = (props) => (
     </Box>
 
     <Box>
-      <Item borderTop>
-        <div><IconOpen contact /></div>
-        <ItemBody>
-          <SmallText color='text70'>{props.location.openOne}</SmallText>
-          <SmallText color='text70'>{props.location.openTwo}</SmallText>
-        </ItemBody>
-      </Item>
-
       <Link href='tel:${props.location.phoneNumber}'><a>
-        <Item>
+        <Item borderTop>
           <div><IconPhone contact /></div>
           {props.location.phoneNumber}
         </Item>
@@ -105,9 +99,20 @@ const Location = (props) => (
       </a></Link>
 
       <Item>
+        <div><IconOpen contact /></div>
+        <ItemBody>
+          <SmallText color='text70'>{props.location.openOne}</SmallText>
+          <SmallText color='text70'>{props.location.openTwo}</SmallText>
+          <SmallText color='text70'>{props.location.openThree}</SmallText>
+        </ItemBody>
+      </Item>
+
+      <Item>
         <div><IconAddress contact /></div>
         {props.location.poBox}
       </Item>
+
+
 
     </Box>
   </Box>

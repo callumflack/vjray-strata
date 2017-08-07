@@ -1,13 +1,13 @@
 import React from 'react'
-import Formsy, { HOC } from 'formsy-react';
-
+import Formsy, { HOC } from 'formsy-react'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
+import { Text } from '../styled-elements/Text'
 import { Display, BoxedSubheadline, HeadlineDetail } from '../styled-elements/Headline'
 
 
 const Form = styled(Formsy.Form)`
-  --elementHeight: 54px;
+  --fieldHeight: 54px;
 
   input,
   select,
@@ -20,7 +20,8 @@ const Form = styled(Formsy.Form)`
   select,
   textarea {
     border: 1px solid ${theme.colors.text20};
-    height: var(--elementHeight);
+    color: ${theme.colors.text};
+    height: var(--fieldHeight);
     padding: 0 1rem;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     resize: none;
@@ -36,8 +37,8 @@ const Form = styled(Formsy.Form)`
     }
 
     &:focus {
-      border-color: ${theme.colors.brand};
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+      border-color: ${theme.colors.brandAlt};
+      ${'' /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); */}
     }
 
     &::-webkit-input-placeholder { color: ${theme.colors.text40}; }
@@ -47,15 +48,22 @@ const Form = styled(Formsy.Form)`
   }
 
   textarea {
-    min-height: var(--elementHeight);
+    min-height: var(--fieldHeight);
     height: auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
+  select {
+    background: #fff url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 10'><path fill='%23333' d='m10,7.4l-7.4,-7.4l-2.6,0l10,10l10,-10l-2.6,0'/></svg>") no-repeat right .75rem center;
+    background-size: 15px 10px;
+    border-radius: 0;
+    cursor: pointer;
+  }
 `;
 
 const FormHeader = props =>
-  <BoxedSubheadline bg='brand' color='white' {...props} />
+  <BoxedSubheadline bg='brandAlt' color='white' {...props} />
 
 const FormGroup = styled.div`
   & + & {
@@ -67,16 +75,18 @@ const FormGroupHeadline = styled(HeadlineDetail)`
   margin-left: 1rem;
 `;
 
-const SuccessMessage = styled.div`
-  color: #42db41;
-  text-align: center;
-  margin-bottom: 0.5rem;
+const SuccessMessage = styled.span`
+  color: ${theme.colors.text70};
+  margin-right: 1em;
 `;
 
-const ErrorMessage = styled.div`
-  color: #f23030;
-  margin-top: 0.5rem;
-`;
+const ErrorMessage = props =>
+  <Text
+    color='#f23030'
+    fontSize={[ 0, 1 ]}
+    lineHeight='feedback'
+    {...props}
+  />
 
 
 class InputRoot extends React.Component {

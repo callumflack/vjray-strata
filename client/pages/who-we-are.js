@@ -130,7 +130,7 @@ class WhoContainer extends React.Component {
 
               <Flex direction={[ 'column', 'row' ]} mx={-3}>
                 <Flex column width={[ 1, 1, 1/3, 1/4 ]} px={[ 4, 3 ]}>
-                  <Box mt={1}>
+                  <Box mt='6px'>
                     <img src='static/img/mike-pollard.jpg' />
                   </Box>
                   <Text color='text70' mt={2} children='Mike Pollard' />

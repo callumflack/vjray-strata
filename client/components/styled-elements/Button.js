@@ -53,6 +53,7 @@ const Button = styled.button`
 
   &:disabled,
   &.is-disabled {
+    --Button-background-color: ${theme.colors.text70};
     cursor: default;
     opacity: var(--Button-disabled-opacity);
   }

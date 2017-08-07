@@ -16,13 +16,13 @@ import {
 } from '../Shared/Form';
 
 
-class FullQuoteForm extends React.Component {
+class FormQuote extends React.Component {
   constructor(props) {
     super(props);
   }
 
   async submit(model) {
-    const response = await fetch('https://formspree.io/hellothere@vjray.com.au', {
+    const response = await fetch('https://formspree.io/quickquote@vjray.com.au', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -34,7 +34,7 @@ class FullQuoteForm extends React.Component {
 
   render() {
     return (
-      <FormContainer submit={this.submit}>
+      <FormContainer border submit={this.submit}>
         <FormGroup>
           <FormGroupHeadline>Your details (Required)</FormGroupHeadline>
 
@@ -78,7 +78,7 @@ class FullQuoteForm extends React.Component {
             placeholder=''
             name='unitsInScheme'
           >
-            <option selected disabled>Total units in your strata scheme</option>
+            <option disabled>Total units in your strata scheme</option>
             {Array(11).fill(0).map((item, i) =>
               <option value={i} key={i}>{i}</option>
             )}
@@ -95,4 +95,4 @@ class FullQuoteForm extends React.Component {
   }
 }
 
-export default FullQuoteForm;
+export default FormQuote;

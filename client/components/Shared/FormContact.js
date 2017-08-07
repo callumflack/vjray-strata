@@ -1,6 +1,5 @@
 import React from 'react'
 import Formsy, { HOC } from 'formsy-react';
-import styled, { css } from 'styled-components'
 
 import gql from 'graphql-tag'
 import apollo from '../../lib/apollo.js'
@@ -17,13 +16,13 @@ import {
 } from '../Shared/Form';
 
 
-class IssueForm extends React.Component {
+class FormContact extends React.Component {
   constructor(props) {
     super(props);
   }
 
   async submit(model) {
-    const response = await fetch('https://formspree.io/helpme@vjray.com.au', {
+    const response = await fetch('https://formspree.io/hellothere@vjray.com.au', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -37,6 +36,8 @@ class IssueForm extends React.Component {
     return (
       <FormContainer submit={this.submit}>
         <FormGroup>
+          <FormGroupHeadline>Your details (Required)</FormGroupHeadline>
+
           <Input
             placeholder='Your name*'
             name='name'
@@ -59,10 +60,15 @@ class IssueForm extends React.Component {
             validations='isExisty'
             required
           />
+          <Textarea
+            placeholder='Add any comments…'
+            name='comments'
+            rows='7'
+          />
         </FormGroup>
       </FormContainer>
     );
   }
 }
 
-export default IssueForm;
+export default FormContact;

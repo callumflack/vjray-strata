@@ -22,8 +22,8 @@ import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
 import ColorBox from '../components/Shared/ColorBox'
 import HeroBox from '../components/Shared/HeroBox'
-import FullQuoteForm from '../components/Shared/FullQuoteForm'
-import IssueForm from '../components/Shared/IssueForm'
+import FormContact from '../components/Shared/FormContact'
+import FormIssue from '../components/Shared/FormIssue'
 import { FormHeader } from '../components/Shared/Form.js'
 import { Tabs, Pane } from '../components/Shared/Tabs.js'
 import ContactActionAlt from '../components/Shared/ContactActionAlt'
@@ -86,11 +86,11 @@ class ContactPage extends React.Component {
     const tabs = [{
       _id: 0,
       name: 'Quick response message',
-      content: <FullQuoteForm />
+      content: <FormContact />
     }, {
       _id: 1,
       name: 'Report an issue',
-      content: <IssueForm />
+      content: <FormIssue />
     }];
 
     return (
@@ -115,7 +115,7 @@ class ContactPage extends React.Component {
         </StyledHeroBox>
 
         <Block textCenter pb={[ 0, 0 ]}>
-          <Display color='brandAlt'>
+          <Display color='brand'>
             Visit us anytime.
           </Display>
           <LargeText color='text70' children='No appointment necessary.' />
@@ -133,7 +133,7 @@ class ContactPage extends React.Component {
 
         <Block mw='sm' pb={[ 0, 0 ]}>
           <Container textCenter>
-            <Display color='brand' children='Write to us.' />
+            <Display color='brandAlt' children='Write to us.' />
             <LargeText color='text70'>We'll respond quick smart.</LargeText>
           </Container>
 

@@ -4,6 +4,7 @@ import gql from 'graphql-tag'
 import apollo from '../lib/apollo'
 
 import theme from '../components/theme'
+import contactDetails from '../components/constants'
 
 import Layout from '../components/styled-elements/Layout'
 import Header from '../components/Shared/Header'
@@ -15,21 +16,19 @@ import { Display, Headline, Subheadline } from '../components/styled-elements/He
 import { MediumText, LargeText, LineBreak } from '../components/styled-elements/Text'
 
 import { FormHeader } from '../components/Shared/Form.js'
-import FullQuoteForm from '../components/Shared/FullQuoteForm'
+import FormQuote from '../components/Shared/FormQuote'
 import ContactAction from '../components/Shared/ContactAction'
 import Contact from '../components/Shared/Contact'
 
 
 const StyledColorBox = styled(ColorBox)`
-  background-color: ${theme.colors.offBlue};
   background-color: transparent;
   background-image:
     linear-gradient(
       to bottom,
-      rgba(0, 153, 209, 0.2),
-      ${theme.colors.offBlue} 70%
-      
-    ); 
+      rgba(222, 202, 178, 0.4),
+      ${theme.colors.beige} 70%
+    );
 `
 
 class FastQuote extends React.Component {
@@ -62,14 +61,14 @@ class FastQuote extends React.Component {
             <Subheadline children='Confidential & no obligation' />
             <Display children='Get a fast quote.' />
             <MediumText color='text'>
-              Forms not your thing? Call us on 1300 073
-              <LineBreak m='auto' children='or drop in Monday to Saturday, 9am-5pm.' />
+              Forms not your thing? Call us on {contactDetails.phone}
+              <LineBreak m='auto' children='or drop in anytime without an appointment.' />
             </MediumText>
           </Container>
 
           <Container mw='sm' mt={[3, 4]}>
             <FormHeader bg='brand' color='white' children='Fast quote form' />
-            <FullQuoteForm />
+            <FormQuote />
           </Container>
         </StyledColorBox>
 

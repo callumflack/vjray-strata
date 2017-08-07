@@ -56,6 +56,7 @@ const Root = styled(Flex)`
   `}
 
   ${props => props.hasScrolledDown && css`
+    --Header-border-color: transparent;
     background-color: ${theme.colors[props.bg] || theme.colors.white};
     box-shadow:
       0 16px 24px 2px rgba(0,0,0,0.03),

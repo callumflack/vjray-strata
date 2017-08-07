@@ -84,7 +84,7 @@ const Footer = (props) => (
               <Link href='/useful-info'><a><span>Useful info</span></a></Link>
               <Link href='/useful-info'><a>Strata guides</a></Link>
               <Link href='/useful-info'><a>Strata blog</a></Link>
-              <Link href='/useful-info'><a>Forms and facts</a></Link>
+              <Link href='/useful-info/forms-and-fact-sheets'><a>Forms and facts</a></Link>
             </Column>
             <Column>
               <Link href='/contact'><a><span>Contact us</span></a></Link>

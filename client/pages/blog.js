@@ -26,28 +26,6 @@ const StyledColorBox = styled(ColorBox)`
   background-image: none;
 `
 
-const PostInfo = styled.div`
-  flex-grow: 1;
-  flex-basis: 0;
-`;
-
-const PostImageWrapper = styled.div`
-  position: relative;
-  flex-grow: 1;
-  flex-basis: 0;
-  padding: 0 2rem;
-  text-align: center;
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    margin: auto;
-    max-width: 100%;
-  }
-`;
 
 class Article extends React.Component {
   static async getInitialProps({ req, query }) {
@@ -99,7 +77,7 @@ class Article extends React.Component {
           </Container>
         </Block>
 
-        <Block>
+        <Block pt={[ 0, 0 ]}>
           <Container mw='sm' textCenter>
             <Subheadline mb={4} children='See all guides and articles' />
             <Guides />

@@ -158,7 +158,7 @@ const HeadlineDetail = props =>
   <H5
     {...HeadlineMetaBaseStyles}
     align='initial'
-    color='text70'
+    color='text'
     font='textLight'
     {...props} />
 
@@ -167,11 +167,14 @@ const HeadlineDetail = props =>
 const BoxedSubheadline = styled(HeadlineMeta)`
   --Header-height: 48px;
   align-items: center;
-  background-color: ${theme.colors.brand};
   display: flex;
   font-family: ${theme.fonts.textRegular};
   height: var(--Header-height);
   justify-content: center;
+
+  ${props => props.bg && css`
+    background-color: ${theme.colors[props.bg] || theme.colors.brand};
+  `}
 
   ${props => props.inactive && css`
     background-color: ${theme.colors.grey};
@@ -179,6 +182,7 @@ const BoxedSubheadline = styled(HeadlineMeta)`
   `}
 `
 
+// `
 
 export {
   Display,

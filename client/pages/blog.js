@@ -38,6 +38,9 @@ class Article extends React.Component {
         content {
           html,
         },
+        featureImage {
+          secure_url,
+        },
         createdAt,
       }
     }`;
@@ -64,8 +67,7 @@ class Article extends React.Component {
               </Box>
 
               <Flex width={1/2} mx={3} align='center'>
-                <img src={this.props.data.post.featureImage} />
-                <img src='https://ia.net/wp-content/uploads/migration/A-B-C-12-13-14-3@2x.png' />
+                <img src={this.props.data.post.featureImage.secure_url} />
               </Flex>
             </Flex>
           </Block>

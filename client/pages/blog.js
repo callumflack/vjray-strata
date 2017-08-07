@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import apollo from '../lib/apollo.js';
 import { formatDateString } from '../lib/date.js';
 
-import { Flex } from '../components/styled-grid'
+import { Box, Flex } from '../components/styled-grid'
 import Layout from '../components/styled-elements/Layout.js';
 import Container from '../components/styled-elements/Container.js';
 import { Text, TextBlock, DangerouslyResetTextBlock } from '../components/styled-elements/Text.js';
@@ -76,19 +76,19 @@ class Article extends React.Component {
 
         <StyledColorBox>
           <Block>
-            <Flex>
-              <PostInfo>
-                <Subheadline>{formatDateString(this.props.data.post.createdAt)}</Subheadline>
-
-                <Display color='text'>{this.props.data.post.title}</Display>
-                <Text fontSize={[ 3, 4 ]} grey>
+            <Flex mx={-3}>
+              <Box width={1/2} mx={3}>
+                <Subheadline color='brandAlt'>{formatDateString(this.props.data.post.createdAt)}</Subheadline>
+                <Display color='brandAlt'>{this.props.data.post.title}</Display>
+                <Text fontSize={[ 3, 4 ]} color='brandAlt70'>
                   {this.props.data.post.description}
                 </Text>
-              </PostInfo>
+              </Box>
 
-              <PostImageWrapper>
-                <img src='http://lorempixel.com/400/300' />
-              </PostImageWrapper>
+              <Flex width={1/2} mx={3} align='center'>
+                <img src={this.props.data.post.featureImage} />
+                <img src='https://ia.net/wp-content/uploads/migration/A-B-C-12-13-14-3@2x.png' />
+              </Flex>
             </Flex>
           </Block>
         </StyledColorBox>
@@ -101,7 +101,7 @@ class Article extends React.Component {
 
         <Block>
           <Container mw='sm' textCenter>
-            <Subheadline children='See all guides and articles' />
+            <Subheadline mb={4} children='See all guides and articles' />
             <Guides />
           </Container>
         </Block>

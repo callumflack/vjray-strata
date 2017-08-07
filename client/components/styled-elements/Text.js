@@ -74,7 +74,8 @@ const InlineText = Root.withComponent('span').extend`
 `
 
 const TextBlock = styled('div')`
-  p {
+  p,
+  li {
     font-size: 16px;
     font-family: ${theme.fonts.textLight};
     margin: 0;
@@ -87,8 +88,20 @@ const TextBlock = styled('div')`
     }
   }
 
-  p + p {
-    margin-top: 1em;
+  p + p,
+  ul + p {
+    margin-top: 2em;
+  }
+
+  ul {
+    margin: 2em 0;
+  }
+
+  li {
+    list-style-type: disc;
+    margin-left: 1em;
+    padding-left: 8px;
+    width: auto;
   }
 `
 

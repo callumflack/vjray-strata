@@ -7,6 +7,7 @@ const color = require('../styled-system/color')
 const theme = require ('../theme').default
 
 // console.log( JSON.stringify(theme, null, 2) );
+// stolen from: https://github.com/jxnblk/styled-system/blob/master/docs/styled-components/hoc.js
 
 module.exports = (Component, props) => {
   const SystemComponent = styled(Component)`

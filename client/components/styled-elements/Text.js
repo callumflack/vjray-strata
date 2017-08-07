@@ -1,13 +1,14 @@
-import styled, { css } from 'styled-components';
-import { hoc, test } from '../styled-system/styled-components'
-import theme from '../theme.js';
+import styled, { css } from 'styled-components'
+// import { hoc, test } from '../styled-system/styled-components'
+import hoc from './hoc'
+import theme from '../theme.js'
 
 // import { test } from '../styled-system/test'
 
 
 // Root styles
 const Root = hoc('p').extend``
-const Test = test('span').extend``
+// const Test = test('span').extend``
 
 const Text = props =>
   <Root

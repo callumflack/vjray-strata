@@ -76,9 +76,10 @@ const Image = styled(CoverImage)`
 
 
 class ContactPage extends React.Component {
-  static async getInitialProps({ pathname }) {
+  static async getInitialProps({ pathname, query }) {
     return {
       pathname,
+      defaultForm: query.form,
     }
   }
 
@@ -131,14 +132,14 @@ class ContactPage extends React.Component {
           </Box>
         </Block>
 
-        <Block mw='sm' pb={[ 0, 0 ]}>
+        <Block id='contact-forms' mw='sm' pb={[ 0, 0 ]}>
           <Container textCenter>
             <Display color='brandAlt' children='Write to us.' />
             <LargeText color='text70'>We'll respond quick smart.</LargeText>
           </Container>
 
           <Container mt={[3, 4]}>
-            <Tabs>
+            <Tabs selected={this.props.defaultForm === 'report' ? 1 : 0}>
               {tabs.map(tab =>
                 <Pane label={tab.name} key={tab._id}>{tab.content}</Pane>)
               }

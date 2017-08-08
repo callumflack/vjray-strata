@@ -93,6 +93,7 @@ class FormContainer extends React.Component {
 }
 
 FormContainer.propTypes = {
+  brand: PropTypes.bool,
   children: PropTypes.element.isRequired,
   submit: PropTypes.func.isRequired,
 };

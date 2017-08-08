@@ -34,7 +34,7 @@ class FormQuote extends React.Component {
 
   render() {
     return (
-      <FormContainer border submit={this.submit}>
+      <FormContainer brand submit={this.submit}>
         <FormGroup>
           <FormGroupHeadline>Your details (Required)</FormGroupHeadline>
 
@@ -77,8 +77,9 @@ class FormQuote extends React.Component {
           <Select
             placeholder=''
             name='unitsInScheme'
+            value='Total units in your strata scheme'
           >
-            <option disabled>Total units in your strata scheme</option>
+            <option selected disabled>Total units in your strata scheme</option>
             {Array(11).fill(0).map((item, i) =>
               <option value={i} key={i}>{i}</option>
             )}

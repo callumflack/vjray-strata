@@ -15,7 +15,6 @@ import {
   FormGroupHeadline,
 } from '../Shared/Form';
 
-
 class FormQuote extends React.Component {
   constructor(props) {
     super(props);
@@ -75,12 +74,11 @@ class FormQuote extends React.Component {
           />
 
           <Select
-            placeholder=''
             name='unitsInScheme'
-            value='Total units in your strata scheme'
+            defaultValue=''
           >
-            <option selected disabled>Total units in your strata scheme</option>
-            {Array(11).fill(0).map((item, i) =>
+            <option value='' hidden>Total units in your strata scheme</option>
+            {Array.from({length: 10}, (v, k) => k+1).map(i =>
               <option value={i} key={i}>{i}</option>
             )}
           </Select>

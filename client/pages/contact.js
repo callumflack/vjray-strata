@@ -4,7 +4,7 @@ import Link from 'next/link'
 import gql from 'graphql-tag'
 import apollo from '../lib/apollo'
 
-import contactDetails from '../components/constants'
+import { contactDetails } from '../components/constants'
 
 import theme from '../components/theme'
 import styled, { css } from 'styled-components'

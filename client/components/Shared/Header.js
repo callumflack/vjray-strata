@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-import contactDetails from '../constants'
+import { contactDetails } from '../constants'
 
 import theme from '../theme'
 import styled, { css } from 'styled-components'

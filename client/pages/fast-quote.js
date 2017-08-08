@@ -4,7 +4,7 @@ import gql from 'graphql-tag'
 import apollo from '../lib/apollo'
 
 import theme from '../components/theme'
-import contactDetails from '../components/constants'
+import { contactDetails } from '../components/constants'
 
 import Layout from '../components/styled-elements/Layout'
 import Header from '../components/Shared/Header'

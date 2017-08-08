@@ -58,7 +58,7 @@ class FastQuote extends React.Component {
 
         <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
           <Container mw='sm' mt={[ 4, 5, 6 ]} textCenter>
-            <Subheadline children='Confidential & no obligation' />
+            <Subheadline color='brand' children='Confidential & no obligation' />
             <Display children='Get a fast quote.' />
             <MediumText color='text'>
               Forms not your thing? Call us on {contactDetails.phone}

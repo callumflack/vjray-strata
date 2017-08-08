@@ -57,7 +57,7 @@ const Root = (props) => (
           <Display children="It's our job to sort it." />
           <Container width={[ 1, 2/3 ]}>
             <LargeText color='text70'>
-              "I have been happy and have known VJ Ray for years. I cannot fault you. Thank you!" <AuthorText>— Petrania, Belmore</AuthorText>
+              "I have known and been happy with VJ Ray for years. I cannot fault you. Thank you!" <AuthorText>— Petrania, Belmore</AuthorText>
             </LargeText>
           </Container>
         </Container>
@@ -70,10 +70,13 @@ const Root = (props) => (
 
     <Block textCenter>
       <Subheadline>Info on the go</Subheadline>
-      <Display color='brandAlt' children='Your guides to Sydney Strata.' />
-      <MediumText color='text70'>
-        Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.
-      </MediumText>
+      <Display color='brandAlt' mb={3} children='Your guides to Sydney Strata.' />
+      <Container width={[ 1, 2/3 ]}>
+        <Text color='text70'>
+          Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.
+        </Text>
+      </Container>
+
 
       <Box p={4}>
         <Guides featured limit={3} />

@@ -70,12 +70,11 @@ const Root = styled(Flex)`
   ${props => props.isModalVisible && css`
     transition: all 0s;
   `}
-`;
+`;// `
 
 const AnimatedHamburger = styled.div`
   --bar-height: 5px;
   --bar-spacing: 14px;
-
   width: 40px;
   height: calc((var(--bar-spacing) * 2) + var(--bar-height));
   position: relative;
@@ -129,7 +128,7 @@ const AnimatedHamburger = styled.div`
       left: 50%;
     }
   `}
-`;
+`;// `
 
 const Nav = styled.nav`
   a {
@@ -141,17 +140,17 @@ const Nav = styled.nav`
   }
 
   ${props => props.hideAtDesktop && css`
-    @media (min-width: 699px) {
+    @media (min-width: 1024px) {
       display: none;
     }
   `}
 
   ${props => props.hideAtMobile && css`
-    @media (max-width: 699px) {
+    @media (max-width: 1024px) {
       display: none;
     }
   `}
-`;
+`;//`
 
 const MobileModal = Flex.extend`
   position: fixed;
@@ -181,8 +180,6 @@ const LinkTextRoot = hoc('span').extend`
   `}
 `
 
-// `
-
 const LinkText = props =>
   <LinkTextRoot
     font='textRegular'
@@ -199,6 +196,11 @@ const MobileLinkText = props =>
   <LinkText fontSize={4} {...props} />
 
 
+
+
+/**
+  final component
+**/
 
 class Header extends React.Component {
   static timeout = null;
@@ -293,36 +295,42 @@ class Header extends React.Component {
           hasScrolledDown={this.state.hasScrolledDown}
           isModalVisible={this.state.isModalVisible}
         >
-          <Link href='/'>
-            <a><IconLogo /></a>
-          </Link>
-
-          <Nav hideAtMobile>
-            <Link href='/who-we-are'>
-              <a><LinkText isActive={this.props.pathname === '/who-we-are'}>Who we are</LinkText></a>
-            </Link>
+          <Box w={2/9}>
             <Link href='/'>
-              <a><LinkText isActive={this.props.pathname === '/what we do'}>What we do for you</LinkText></a>
+              <a><IconLogo /></a>
             </Link>
-            <Link href='/useful-info'>
-              <a><LinkText isActive={this.props.pathname === '/useful-info'}>Useful info</LinkText></a>
-            </Link>
-            <Link href='/contact'>
-              <a><LinkText isActive={this.props.pathname === '/contact'}>Contact us</LinkText></a>
-            </Link>
-            {/* <StyledDivider />
-            <Link href='tel:{contactDetails.phone}'>
-              <a><LinkText>{contactDetails.phone}</LinkText></a>
-            </Link> */}
-          </Nav>
+          </Box>
 
-          <Nav hideAtMobile>
-            <Link href='tel:{contactDetails.phone}'>
-              <a><LinkText>
-                <Button invert>T: {contactDetails.phone}</Button>
-              </LinkText></a>
-            </Link>
-          </Nav>
+          <Box w={5/9} style={{ textAlign: 'center' }}>
+            <Nav hideAtMobile>
+              <Link href='/who-we-are'>
+                <a><LinkText isActive={this.props.pathname === '/who-we-are'}>Who we are</LinkText></a>
+              </Link>
+              <Link href='/'>
+                <a><LinkText isActive={this.props.pathname === '/what we do'}>What we do for you</LinkText></a>
+              </Link>
+              <Link href='/useful-info'>
+                <a><LinkText isActive={this.props.pathname === '/useful-info'}>Useful info</LinkText></a>
+              </Link>
+              <Link href='/contact'>
+                <a><LinkText isActive={this.props.pathname === '/contact'}>Contact us</LinkText></a>
+              </Link>
+              {/* <StyledDivider />
+              <Link href='tel:{contactDetails.phone}'>
+                <a><LinkText>{contactDetails.phone}</LinkText></a>
+              </Link> */}
+            </Nav>
+          </Box>
+
+          <Box w={2/9}>
+            <Nav hideAtMobile style={{ textAlign: 'right' }}>
+              <Link href='tel:{contactDetails.phone}'>
+                <a><LinkText>
+                  <Button invert>Call: {contactDetails.phone}</Button>
+                </LinkText></a>
+              </Link>
+            </Nav>
+          </Box>
 
           <Nav hideAtDesktop>
             <AnimatedHamburger onClick={this.handleModalTriggerClick} isOpen={this.state.isModalVisible}>
@@ -361,8 +369,8 @@ class Header extends React.Component {
                   <a><MobileLinkText>Contact us</MobileLinkText></a>
                 </Link>
                 <Divider />
-                <Link href='tel:1300-667-123'>
-                  <a><MobileLinkText>1300 667 123</MobileLinkText></a>
+                <Link href='tel:{contactDetails.phone}'>
+                  <a><MobileLinkText>{contactDetails.phone}</MobileLinkText></a>
                 </Link>
               </Flex>
             </Container>

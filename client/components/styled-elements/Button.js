@@ -14,7 +14,7 @@ const Button = styled.button`
   --Button-disabled-opacity: 0.6;
   --Button-font: inherit;
   --Button-height: calc(54px - calc( 2 * var(--Button-border-width)) );
-  --Button-padding: 0 1.5em;
+  --Button-padding: 0 1.25rem;
 
   background: var(--Button-background-color);
   border-color: var(--Button-border-color);
@@ -79,12 +79,12 @@ const Button = styled.button`
 
   ${props => props.large && css`
     --Button-border-color: ${theme.colors[props.bgColor] || theme.colors.brand};
-    --Button-height: 72px;
-    padding: 0 4rem;
+    --Button-height: 54px;
+    padding: 0 2rem;
 
-    @media (min-width: ${theme.containers.sm}px) {
+    ${'' /* @media (min-width: ${theme.containers.sm}px) {
       padding: 0 6rem;
-    }
+    } */}
   `}
 
 
@@ -99,8 +99,10 @@ const Button = styled.button`
   ${props => props.icon && css`
     :after {
       content: '►';
-      font-size: 85%;
-      margin-left: 12px;
+      font-size: 75%;
+      margin-left: 9px;
+      position: relative;
+      top: -1px;
     }
   `}
 `

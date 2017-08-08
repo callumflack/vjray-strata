@@ -8,7 +8,7 @@ import { Box, Flex } from '../../components/styled-grid'
 
 import theme from '../../components/theme'
 
-import { hoc } from '../../components/styled-elements/hoc'
+import hoc from '../../components/styled-elements/hoc'
 // import { hoc } from '../../components/styled-system/styled-components'
 import Layout from '../../components/styled-elements/Layout'
 import Container from '../../components/styled-elements/Container'
@@ -42,7 +42,7 @@ const ListItemRoot = styled(Box)`
 
 // const ItemLedeRoot = hoc('span').extend``
 // const ItemLedeRoot = styled('span')``
-// const ItemRoot = hoc('span').extend``
+const ItemRoot = hoc('span').extend``
 
 const ItemLede = props =>
   <InlineText

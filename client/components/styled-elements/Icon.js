@@ -6,6 +6,8 @@ import theme from '../theme'
 // https://github.com/zeit/next.js/tree/master/examples/svg-components
 // https://medium.com/@david.gilbertson/icons-as-react-components-de3e33cb8792
 
+// THIS?: https://github.com/jxnblk/reline
+
 const Icon = props => (
   <IconRoot {...props}>
     <svg
@@ -14,7 +16,7 @@ const Icon = props => (
       height={`${props.size}px`}
       viewBox="0 0 100 100"
     >
-      <rect fill="none" width="100" height="100"/>
+      <rect fill="none" width={`${props.size}px`} height={`${props.size}px`} />
       <path
         d={props.icon}
       ></path>

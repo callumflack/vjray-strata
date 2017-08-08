@@ -310,16 +310,16 @@ class Header extends React.Component {
             <Link href='/contact'>
               <a><LinkText isActive={this.props.pathname === '/contact'}>Contact us</LinkText></a>
             </Link>
-            <StyledDivider />
+            {/* <StyledDivider />
             <Link href='tel:{contactDetails.phone}'>
               <a><LinkText>{contactDetails.phone}</LinkText></a>
-            </Link>
+            </Link> */}
           </Nav>
 
           <Nav hideAtMobile>
-            <Link href='/signin'>
+            <Link href='tel:{contactDetails.phone}'>
               <a><LinkText>
-                <Button invert>Sign in</Button>
+                <Button invert>T: {contactDetails.phone}</Button>
               </LinkText></a>
             </Link>
           </Nav>

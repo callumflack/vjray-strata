@@ -151,7 +151,7 @@ class ContactPage extends React.Component {
           <Display color='brand' children='Is it an emergency?' />
           <LargeText color='text70' mb={3}>For all types of after-hours repairs.</LargeText>
           <LargeButtonStyler>
-            <Link href='/fast-quote'>
+            <Link href='/emergency'>
               <Button large icon bgColor='brand' children='Emergencies' />
             </Link>
           </LargeButtonStyler>

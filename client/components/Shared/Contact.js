@@ -112,8 +112,6 @@ const Location = (props) => (
         {props.location.poBox}
       </Item>
 
-
-
     </Box>
   </Box>
 );

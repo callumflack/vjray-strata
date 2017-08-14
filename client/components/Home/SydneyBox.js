@@ -14,7 +14,7 @@ import { FlexEmbed } from '../styled-elements/FlexEmbed.js';
 
 
 const Root = styled(Box)`
-  height: ${theme.blockHeights.super};
+  height: ${theme.blockHeights.superHero};
   height: 80vh;
 `;
 

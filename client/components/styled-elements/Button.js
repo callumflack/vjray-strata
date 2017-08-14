@@ -87,8 +87,6 @@ const Button = styled.button`
     } */}
   `}
 
-
-
   ${props => props.invert && css`
     background-color: transparent;
     border-color: currentColor;

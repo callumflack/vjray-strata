@@ -42,7 +42,7 @@ const ListItemRoot = styled(Box)`
 
 // const ItemLedeRoot = hoc('span').extend``
 // const ItemLedeRoot = styled('span')``
-const ItemRoot = hoc('span').extend``
+// const ItemRoot = hoc('span').extend``
 
 const ItemLede = props =>
   <InlineText

@@ -48,7 +48,7 @@ const ListeningBox = () => (
             Skip the hassle of
             <LineBreak>Strata management.</LineBreak>
           </Display>
-          <LargeText>At VJ Ray Strata, we understand how valuable your peace of mind is.</LargeText>
+          <LargeText>At V J Ray Strata, we understand how valuable your peace of mind is.</LargeText>
         </Box>
       </Flex>
     </Container>

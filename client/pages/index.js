@@ -59,7 +59,7 @@ const Root = (props) => (
           <Display children="It's our job to sort it." />
           <Container width={[ 1, 2/3 ]}>
             <LargeText color='text70'>
-              "I have known and been happy with VJ Ray for years. I cannot fault you. Thank you!" <AuthorText>— Petrania, Belmore</AuthorText>
+              "I have known and been happy with V J Ray for years. I cannot fault you. Thank you!" <AuthorText>— Petrania, Belmore</AuthorText>
             </LargeText>
             <Text font='textMedium' mt={3}>
               <Link href='/what-we-do-for-you'>

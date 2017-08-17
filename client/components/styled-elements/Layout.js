@@ -5,7 +5,7 @@ import globalStyles from './global'
 
 // https://github.com/zeit/next.js/blob/master/examples/layout-component/components/layout.js
 
-export default ({ children, title = 'VJ Ray Strata, Sydney' }) => (
+export default ({ children, title = 'V J Ray Strata, Sydney' }) => (
   <ThemeProvider theme={ theme }>
     <div>
       <Head>

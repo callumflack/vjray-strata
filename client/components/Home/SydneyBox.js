@@ -166,7 +166,7 @@ class SydneyBox extends React.Component {
               <Display color='brandAlt' mb={3}>We help make Sydney <LineBreak m='auto'>strata living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
                 <Text color='text' mb={3}>
-                  This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.&nbsp;
+                  This paragraph is about V J Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.&nbsp;
                   <Link href="/who-we-are">
                     <a>Read about who we are.</a>
                   </Link>

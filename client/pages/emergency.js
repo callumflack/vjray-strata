@@ -66,7 +66,7 @@ const words = [{
   text: 'In the case of a natural disaster such as a major storm or flood etc please contact the NSW State Emergency Service on 132 500.',
 }, {
   headline: 'Is it a rental property?',
-  text: 'If your repair relates to a property that you are renting through one of our offices please go to the VJ Ray Group website.'
+  text: 'If your repair relates to a property that you are renting through one of our offices please go to the V J Ray Group website.'
 }, {
   headline: 'Is it within business hours?',
   text: 'Please contact us by telephone on 9784 7900 if your repair is urgent and during office hours. Please don\'t rely on an email for an urgent repair as your strata manager may not see the email in time to contact the relevant repairer.',
@@ -95,7 +95,7 @@ const Emergency = (props) => (
           <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]}>
             <Subheadline children='Emergencies' />
             <Display color='brand' font='displayRegular'>It happens.<LineBreak>We're prepared.</LineBreak></Display>
-            <LargeText color='text70'>At VJ Ray Strata,<LineBreak>we'll sort it for you.</LineBreak></LargeText>
+            <LargeText color='text70'>At V J Ray Strata,<LineBreak>we'll sort it for you.</LineBreak></LargeText>
           </Box>
         </Flex>
       </Container>
@@ -110,7 +110,7 @@ const Emergency = (props) => (
           <LargeText font='displayRegular' mb={1} children='Is it a rental property?' />
           <Text mb={4} color='text70'>
             If your repair relates to a property that you are renting through one of our offices, please go to the&nbsp;
-            <Link href="http://www.vjray.com.au/"><a>VJ Ray Group website</a></Link>.
+            <Link href="http://www.vjray.com.au/"><a>V J Ray Group website</a></Link>.
           </Text>
 
           <LargeText font='displayRegular' mb={1} children='Is it a non-urgent issue?' />

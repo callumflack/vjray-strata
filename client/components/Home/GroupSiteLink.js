@@ -26,7 +26,7 @@ const GroupSiteLink = () => (
         We offer full spectrum Real Estate services.
         <LineBreak mx='auto'>
           Find out more on our&nbsp;
-          <Link href='#'><a>Group website.</a></Link>
+          <Link href='http://www.vjray.com.au/'><a>Group website.</a></Link>
         </LineBreak>
       </LargeText>
     </Container>

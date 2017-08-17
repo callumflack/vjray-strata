@@ -157,7 +157,12 @@ p {
 }
 
 p a {
-  text-decoration: underline;
+  background-image: linear-gradient(to bottom, rgba(74, 74, 85, 0) 50%, rgba(74, 74, 85, 0.5) 50%);
+  background-repeat: repeat-x;
+  background-size: 1px 2px;
+  background-position: 0 100%;
+  color: currentColor;
+  text-decoration: none;
 }
 
 h1,

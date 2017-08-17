@@ -21,7 +21,7 @@ const StyledBox = styled(Box)`
 {/* <Container mw='sm' textCenter> */}
 
 const ContactActionAlt = (props) => (
-  <StyledBox pb={[ 3, 4, 5 ]}>
+  <StyledBox>
     <Subheadline>Let's talk</Subheadline>
     <Display color='text' font='displayRegular' mb={3}>
       Skip the hassle of&nbsp;

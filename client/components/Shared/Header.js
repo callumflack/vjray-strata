@@ -128,7 +128,7 @@ const AnimatedHamburger = styled.div`
       left: 50%;
     }
   `}
-`;// `
+`;//`
 
 const Nav = styled.nav`
   a {
@@ -176,7 +176,7 @@ const MobileNav = styled.nav`
 const LinkTextRoot = hoc('span').extend`
   ${props => props.isActive && css`
     border-bottom: 2px solid currentColor;
-    padding-bottom: 43px;
+    padding-bottom: 38px;
   `}
 `
 
@@ -306,8 +306,8 @@ class Header extends React.Component {
               <Link href='/who-we-are'>
                 <a><LinkText isActive={this.props.pathname === '/who-we-are'}>Who we are</LinkText></a>
               </Link>
-              <Link href='/'>
-                <a><LinkText isActive={this.props.pathname === '/what we do'}>What we do for you</LinkText></a>
+              <Link href='/what-we-do-for-you'>
+                <a><LinkText isActive={this.props.pathname === '/what-we-do-for-you'}>What we do for you</LinkText></a>
               </Link>
               <Link href='/useful-info'>
                 <a><LinkText isActive={this.props.pathname === '/useful-info'}>Useful info</LinkText></a>
@@ -326,7 +326,7 @@ class Header extends React.Component {
             <Nav hideAtMobile style={{ textAlign: 'right' }}>
               <Link href='tel:{contactDetails.phone}'>
                 <a><LinkText>
-                  <Button invert>Call: {contactDetails.phone}</Button>
+                  <Button invert>Call {contactDetails.phone}</Button>
                 </LinkText></a>
               </Link>
             </Nav>
@@ -359,7 +359,7 @@ class Header extends React.Component {
                 <Link href='/who-we-are'>
                   <a><MobileLinkText>Who we are</MobileLinkText></a>
                 </Link>
-                <Link href='/'>
+                <Link href='/what-we-do-for-you'>
                   <a><MobileLinkText>What we do for you</MobileLinkText></a>
                 </Link>
                 <Link href='/useful-info'>

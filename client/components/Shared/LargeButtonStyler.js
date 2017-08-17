@@ -11,6 +11,6 @@ export default (props) =>
   <Root
     {...HeadlineMetaBaseStyles}
     align='center'
-    color='white'
+    color={props.bgColor || 'white'}
     {...props}
   />

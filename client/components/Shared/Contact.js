@@ -8,21 +8,13 @@ import Button from '../styled-elements/Button'
 import { IconPhone, IconEmail, IconAddress, IconEmergency, IconOpen } from '../styled-elements/Icons'
 
 
-const Locations = styled(Flex)`
-  flex-direction: column;
-  text-align: left;
-
-  @media (min-width: 512px) {
-    flex-direction: row;
-  }
-`;
-
 const Item = styled(Flex)`
   --Item-rule: ${theme.colors.text20};
   align-items: flex-start;
   border-bottom: 1px solid var(--Item-rule);
   color: ${theme.colors.text70} !important;
   padding: 0.45rem 0;
+  text-align: left;
 
   ${props => props.borderTop && css`
     border-top: 1px solid var(--Item-rule);
@@ -64,10 +56,10 @@ const locationList = [{
   imageName: 'map-carringbah.jpg',
 }];
 
+
 const Location = (props) => (
   <Box
     width={[ 1, 1/3 ]}
-    mt={[ 4, 0 ]}
     px={[ 3, 2 ]}>
     <Link href={props.location.googleMapsUrl}>
       <a>
@@ -77,10 +69,10 @@ const Location = (props) => (
 
     <Box my={2}>
       <Link href={props.location.googleMapsUrl}>
-        <a><Text color='text' font='textRegular'>{props.location.name}</Text></a>
+        <a><Text color='text' align='left' font='textRegular'>{props.location.name}</Text></a>
       </Link>
-      <Text color='text70'>{props.location.subOne}</Text>
-      <Text color='text70'>{props.location.subTwo}</Text>
+      <Text color='text70' align='left'>{props.location.subOne}</Text>
+      <Text color='text70' align='left'>{props.location.subTwo}</Text>
     </Box>
 
     <Box>
@@ -120,15 +112,18 @@ Location.propTypes = {
   location: PropTypes.object,
 };
 
+
 const Contact = (props) => (
-  <Locations
+  <Flex
+    direction={[ 'column', 'row' ]}
     justify='center'
+    mt={props.mt || [ 4, 4 ]}
     mx={-2}>
 
     {locationList.map((location, i) =>
       <Location location={location} key={i} />
     )}
-  </Locations>
+  </Flex>
 );
 
 export default Contact;

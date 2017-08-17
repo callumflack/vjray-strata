@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 import theme from '../../components/theme'
@@ -19,6 +20,8 @@ import Guides from '../../components/Shared/Guides'
 import Header from '../../components/Shared/Header'
 import PostContainer from '../../components/Shared/PostContainer'
 import RecentPosts from '../../components/Shared/RecentPosts'
+import Button from '../../components/styled-elements/Button'
+import LargeButtonStyler from '../../components/Shared/LargeButtonStyler'
 
 
 const StyledColorBox = styled(ColorBox)`
@@ -28,6 +31,11 @@ const StyledColorBox = styled(ColorBox)`
       rgb(64, 64, 112),
       ${theme.colors.brandAlt70} 70%
     )!important;
+`
+
+const FactsBox = styled(ColorBox)`
+  background-color: ${theme.colors.beige};
+  background-image: initial;
 `
 
 const Rule = styled(Container)`
@@ -64,7 +72,7 @@ const Root = (props) => (
           <Box width={[ 1, 1/2 ]} px={[ 3, 4 ]}>
             <Guides primary buttons icon />
           </Box>
-        </Flex >
+        </Flex>
       </Container>
 
       <Rule mw='rg' my={[ 3, 4 ]} />
@@ -75,7 +83,23 @@ const Root = (props) => (
       </Container>
     </StyledColorBox>
 
-    <Block mw='sm' textCenter>
+    <Block bg='beige'>
+      <Container textCenter>
+        <Subheadline mt={[ 1, 2 ]} children='Take action' />
+        <Display color='brandAlt' children='Forms and fact sheets.' />
+        <LargeText color='brandAlt70' mb={3}>
+          Readily available PDF downloads
+          <LineBreak m='auto'>to manage your Strata.</LineBreak>
+        </LargeText>
+        <LargeButtonStyler>
+          <Link href='/useful-info/forms-and-fact-sheets'>
+            <Button large icon bgColor='brandAlt' children='See the list' />
+          </Link>
+        </LargeButtonStyler>
+      </Container>
+    </Block>
+
+    <Block mw='sm' textCenter id="blog">
       <Subheadline children='Latest article' />
       <RecentPosts />
     </Block>

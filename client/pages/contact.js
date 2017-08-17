@@ -33,15 +33,6 @@ import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 import ListeningBox from '../components/Home/ListeningBox'
 
 
-const StyledColorBox = styled(ColorBox)`
-  background-color: ${theme.colors.offBlue};
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(210,235,246,0.5),
-      ${theme.colors.offBlue} 40%
-    );
-`
 
 const StyledHeroBox = styled(HeroBox)`
   --Hero-height: ${theme.blockHeights.hero};
@@ -52,7 +43,6 @@ const StyledHeroBox = styled(HeroBox)`
       to bottom,
       rgba(0, 153, 209, 0.2),
       ${theme.colors.offBlue} 70%
-
     );
 `
 
@@ -109,7 +99,7 @@ class ContactPage extends React.Component {
               <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]}>
                 <Subheadline children='Get in touch' />
                 <Display color='brand' font='displayRegular' children='How can we help?' />
-                <LargeText color='text70'>Visit, call or write to us, <LineBreak>we're ready and waiting.</LineBreak></LargeText>
+                <LargeText color='text70'>Visit, call or write to us. <LineBreak>We're ready and waiting.</LineBreak></LargeText>
               </Box>
             </Flex>
           </Container>
@@ -167,4 +157,4 @@ class ContactPage extends React.Component {
   }
 }
 
-export default ContactPage;
+export default ContactPage

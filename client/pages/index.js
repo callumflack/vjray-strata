@@ -20,12 +20,14 @@ import Guides from '../components/Shared/Guides'
 import RecentPosts from '../components/Shared/RecentPosts'
 import ContactAction from '../components/Shared/ContactAction'
 import Contact from '../components/Shared/Contact'
+import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
 import ListeningBox from '../components/Home/ListeningBox'
 import FeatureList from '../components/Home/FeatureList'
 import SydneyBox from '../components/Home/SydneyBox'
 import TalkBox from '../components/Home/TalkBox'
 import Testimonials from '../components/Home/Testimonials'
+import GroupSiteLink from '../components/Home/GroupSiteLink'
 
 
 const Root = (props) => (
@@ -73,7 +75,10 @@ const Root = (props) => (
       <Display color='brandAlt' mb={3} children='Your guides to Sydney Strata.' />
       <Container width={[ 1, 2/3 ]}>
         <Text color='text70'>
-          Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem. Non aspernatur sed vero ipsam ut.
+          Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem.&nbsp;
+          <Link href="/useful-info">
+            <a>Check all our guides.</a>
+          </Link>
         </Text>
       </Container>
 
@@ -82,13 +87,15 @@ const Root = (props) => (
         <Guides featured limit={3} />
       </Box>
 
-      <Container mt={5} mw='sm'>
+      <Container mt={4} mw='sm'>
         <Subheadline>
           <Link href={`/`} as={`/home`}><a>Recent posts</a></Link>
         </Subheadline>
         <RecentPosts />
       </Container>
     </Block>
+
+    <GroupSiteLink />
 
     <Block border >
       <ContactAction btnColor='brandAlt' withButton withByline />

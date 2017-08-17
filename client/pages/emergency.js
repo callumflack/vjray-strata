@@ -80,10 +80,6 @@ const words = [{
 
 
 
-
-
-
-
 const Emergency = (props) => (
   <Layout>
     <Header clear />
@@ -117,7 +113,7 @@ const Emergency = (props) => (
             <Link href="http://www.vjray.com.au/"><a>VJ Ray Group website</a></Link>.
           </Text>
 
-          <LargeText font='displayRegular' mb={1} children='Can it be done later?' />
+          <LargeText font='displayRegular' mb={1} children='Is it a non-urgent issue?' />
           <Text color='text70' mb={4}>
             For non-urgent repairs please&nbsp;
             <Link href='/contact?form=report#contact-forms'>
@@ -129,8 +125,8 @@ const Emergency = (props) => (
           <LargeText font='displayRegular' mb={1} children='Is it within business hours?' />
           <Text color='text70' mb={4}>
             If your repair is urgent and the time is currently office hours, please contact us by calling&nbsp;
-            {contactDetails.emergencyBusinessHours}
-            &nbsp;. Please don't rely on an email for an urgent repair as your strata manager may not see the email in time to contact the relevant repairer.
+            {contactDetails.emergencyBusinessHours}.
+            Please don't rely on an email for an urgent repair as your strata manager may not see the email in time to contact the relevant repairer.
           </Text>
 
           <LargeText font='displayRegular' mb={1} children='Is it after-hours?' />
@@ -147,7 +143,7 @@ const Emergency = (props) => (
 
     <Block border textCenter>
       <ContactAction btnColor='brandAlt' withButton />
-      <Contact />
+      <Contact mt={[ 3, 4 ]} />
     </Block>
 
     <Footer />

@@ -23,10 +23,10 @@ const StyledContainer = styled(Container)`
   padding-bottom: 3rem;
 `;
 
-// const Root = hoc('h1').extend`
+// as soon as you extend it, you lose the hoc()
 const Nav = Flex.withComponent('nav').extend`
   color: ${theme.colors.text40};
-  margin-top: 40px;
+  margin-top: ${theme.space[3]}px;
 `;
 
 const Column = styled(Box)`
@@ -71,19 +71,14 @@ const Footer = (props) => (
         <div>
           <Nav>
             <Column>
-              <Link href='/who-we-are'><a><span>Who we are</span></a></Link>
-              <Link href='/who-we-are'><a>Our story</a></Link>
-            </Column>
-            <Column>
-              <Link href='/'><a><span>What we do for you</span></a></Link>
-              <Link href='/'><a>For tenants</a></Link>
-              <Link href='/'><a>For owners</a></Link>
-              <Link href='/'><a>For investors</a></Link>
+              <Link href='/who-we-are'><a><span>About us</span></a></Link>
+              <Link href='/who-we-are'><a>Who we are</a></Link>
+              <Link href='/what-we-do-for-you'><a>What we do for you</a></Link>
             </Column>
             <Column>
               <Link href='/useful-info'><a><span>Useful info</span></a></Link>
               <Link href='/useful-info'><a>Strata guides</a></Link>
-              <Link href='/useful-info'><a>Strata blog</a></Link>
+              <Link href='/useful-info#blog'><a>Strata blog</a></Link>
               <Link href='/useful-info/forms-and-fact-sheets'><a>Forms and facts</a></Link>
             </Column>
             <Column>
@@ -93,15 +88,17 @@ const Footer = (props) => (
               <Link href='/emergency'><a>Emergencies</a></Link>
             </Column>
           </Nav>
-
-          <Nav>
-            <Link href='/'><a>Terms of use</a></Link>
-            <Divider />
-            <Link href='/'><a>Privacy policy</a></Link>
-            <Divider />
-            <Link href='/'><a>ABN 31 064 030 311</a></Link>
-          </Nav>
         </div>
+      </Flex>
+
+      <Flex justify='center' mt={2}>
+        <Nav>
+          <Link href='/'><a>Terms of use</a></Link>
+          <Divider />
+          <Link href='/'><a>Privacy policy</a></Link>
+          <Divider />
+          <Link href='/'><a>ABN 31 064 030 311</a></Link>
+        </Nav>
       </Flex>
 
     </StyledContainer>

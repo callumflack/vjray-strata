@@ -14,7 +14,7 @@ const Button = styled.button`
   --Button-disabled-opacity: 0.6;
   --Button-font: inherit;
   --Button-height: calc(54px - calc( 2 * var(--Button-border-width)) );
-  --Button-padding: 0 1.25rem;
+  --Button-padding: 2px 1.25rem 0;
 
   background: var(--Button-background-color);
   border-color: var(--Button-border-color);
@@ -80,11 +80,8 @@ const Button = styled.button`
   ${props => props.large && css`
     --Button-border-color: ${theme.colors[props.bgColor] || theme.colors.brand};
     --Button-height: 54px;
-    padding: 0 2rem;
-
-    ${'' /* @media (min-width: ${theme.containers.sm}px) {
-      padding: 0 6rem;
-    } */}
+    padding-left: 2rem;
+    padding-right: 2rem;
   `}
 
   ${props => props.invert && css`
@@ -97,8 +94,8 @@ const Button = styled.button`
   ${props => props.icon && css`
     :after {
       content: '►';
-      font-size: 75%;
-      margin-left: 9px;
+      font-size: 55%;
+      margin-left: 8px;
       position: relative;
       top: -1px;
     }

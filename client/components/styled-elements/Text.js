@@ -34,6 +34,7 @@ const LargeText = props =>
   <Text
     font='displayLight'
     fontSize={[ 4, 5 ]}
+    letterSpacing='body'
     lineHeight='subheadline'
     {...props}
   />
@@ -69,7 +70,6 @@ const LineBreak = hoc('span').extend`
   }
 `
 
-// WIP. Not sure this is required…
 const InlineText = Root.withComponent('span').extend`
   display: inline-block;
 `

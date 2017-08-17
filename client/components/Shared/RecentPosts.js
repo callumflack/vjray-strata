@@ -18,8 +18,9 @@ const PostLink = hoc('span').extend`
 
   :after {
     content: '►';
-    font-size: 70%;
+    font-size: 55%;
     margin-left: 6px;
+    margin-bottom: 2px;
   }
 `;
 
@@ -27,6 +28,20 @@ const HeadlineAligner = hoc('span').extend`
   display: inline-block;
   margin-top: 6px;
 `
+
+/**
+
+Post image for safe-keeping
+
+<Box
+  width={[ 1, 5/6 ]}
+  mx='auto'
+  my={3}
+>
+  <img src={post.featureImage.secure_url} />
+</Box>
+
+**/
 
 class RecentPosts extends React.Component {
   constructor(props) {
@@ -61,30 +76,23 @@ class RecentPosts extends React.Component {
         {this.state.posts.map((post, i) =>
           <div key={i}>
             <Link href={`/blog?slug=${post.slug}`} as={`/blog/${post.slug}`}><a>
-              <Box
-                width={[ 1, 5/6 ]}
-                mx='auto'
-                my={3}
-              >
-                <img src={post.featureImage.secure_url} />
-              </Box>
 
               <Box
                 width={[ 1, 5/6 ]}
                 mx='auto'
-                my={3}
+                mt={3}
               >
                 <Headline
-                  align='left'
-                  font='displayRegular'
-                  color='text'
+                  align='center'
+                  font='displayMedium'
+                  color='brandAlt'
                   my={3}
                 >
                   <HeadlineAligner>{post.title}</HeadlineAligner>
                 </Headline>
                 <Text align='left'>
                   {post.description}
-                  <PostLink color='brand' font='textLight'>Read more</PostLink>
+                  <PostLink color='brandAlt' font='textLight'>Read more</PostLink>
                 </Text>
               </Box>
             </a></Link>

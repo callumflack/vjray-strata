@@ -1,6 +1,6 @@
 export default {
   blockHeights: {
-    navBar: '111px',
+    navBar: '101px',
     hero: '50vh',
     superHero: '70vh'
   },

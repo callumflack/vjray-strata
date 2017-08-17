@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Link from 'next/link';
 
 import styled, { css } from 'styled-components';
 import { Flex, Box } from '../styled-grid';
@@ -164,7 +165,12 @@ class SydneyBox extends React.Component {
               <Subheadline color='text' children='Dependable and effective' />
               <Display color='brandAlt' mb={3}>We help make Sydney <LineBreak m='auto'>strata living great.</LineBreak></Display>
               <Container width={[ 1, 2/3 ]}>
-                <Text color='text' mb={3}>This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.</Text>
+                <Text color='text' mb={3}>
+                  This paragraph is about VJ Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.&nbsp;
+                  <Link href="/who-we-are">
+                    <a>Read about who we are.</a>
+                  </Link>
+                </Text>
                 <Text font='textMedium'>
                   <Button color='brandAlt' bg='white' invert icon onClick={this.openModal} children='Watch video' />
                 </Text>

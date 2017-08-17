@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Box } from '../styled-grid';
 
+// background-position: 50% 50%;
 const CoverImage = styled(Box)`
-  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   bottom: 0;

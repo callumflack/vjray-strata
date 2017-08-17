@@ -35,7 +35,7 @@
   },
   "now": {
     "alias": [
-      "vjray-strata.now.sh"
+      "vjray.now.sh"
     ],
     "env": {
       "NODE_ENV": "production",

@@ -115,6 +115,7 @@ function createPdfSheetQuery(type) {
 
 class FactsAndForms extends React.Component {
   static async getInitialProps({ pathname }) {
+    const basePathname = pathname.substr(0, pathname.indexOf('/', 1));
     const formsQuery = createPdfSheetQuery('Form');
     const factSheetsQuery = createPdfSheetQuery('Fact Sheet');
 
@@ -126,7 +127,7 @@ class FactsAndForms extends React.Component {
     const factSheets = factSheetData.data.pdfSheets;
 
     return {
-      pathname,
+      pathname: basePathname,
       forms,
       factSheets,
     };

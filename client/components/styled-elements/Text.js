@@ -7,8 +7,13 @@ import theme from '../theme.js'
 
 
 // Root styles
-const Root = hoc('p').extend``
-// const Test = test('span').extend``
+const Root = hoc('p').extend`
+  a {
+    ${props => props.noUnderline && css`
+      background-image: initial;
+    `}
+  }
+`
 
 const Text = props =>
   <Root

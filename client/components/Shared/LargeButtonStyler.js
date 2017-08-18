@@ -5,7 +5,11 @@ import hoc from '../styled-elements/hoc'
 import { HeadlineMetaBaseStyles } from '../styled-elements/Headline'
 import Button from '../styled-elements/Button'
 
-const Root = hoc('div').extend``
+const Root = hoc('div').extend`
+  a {
+    background-image: initial;
+  }
+`
 
 export default (props) =>
   <Root

@@ -22,6 +22,7 @@ const GuideButton = (props) => (
     font='textRegular'
     letterSpacing='button'
     mt={3}
+    noUnderline
   >
     <Link href={`${props.guide.file.url}`}>
       <a>

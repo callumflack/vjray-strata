@@ -75,8 +75,7 @@ const Root = (props) => (
 
       <Box>
         <Container mw='sm'>
-          <Subheadline children='Fact sheets' mb={2} />
-
+          <Subheadline mb={2} children='Fact sheets' />
           <div>
             {props.factSheets.map(factSheet => (
               <ListItem

@@ -6,11 +6,15 @@ import { contactDetails } from '../constants'
 import theme from '../theme'
 import styled, { css } from 'styled-components'
 import { Flex, Box } from '../styled-grid'
+
 import hoc from '../styled-elements/hoc'
 import { IconLogo } from '../styled-elements/Icons'
 import { Text, InlineText, Divider } from '../styled-elements/Text'
 import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
+
+import Hamburger from './Hamburger'
+
 
 const fade = {
   duration: 0.25,
@@ -70,69 +74,37 @@ const Root = styled(Flex)`
   ${props => props.isModalVisible && css`
     transition: all 0s;
   `}
-`;// `
+`;
 
-const AnimatedHamburger = styled.div`
-  --bar-height: 5px;
-  --bar-spacing: 14px;
-  width: 40px;
-  height: calc((var(--bar-spacing) * 2) + var(--bar-height));
-  position: relative;
-  transform: rotate(0deg);
-  transition: .5s ease-in-out;
-  cursor: pointer;
-
-  span {
-    display: block;
-    position: absolute;
-    height: var(--bar-height);
-    width: 100%;
-    background: currentColor;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-  }
-
-  span:nth-child(1) {
-    top: 0;
-  }
-
-  span:nth-child(2), span:nth-child(3) {
-    top: var(--bar-spacing);
-  }
-
-  span:nth-child(4) {
-    top: calc(var(--bar-spacing) * 2);
-  }
-
-  ${props => props.isOpen && css`
-    span:nth-child(1) {
-      top: var(--bar-spacing);
-      width: 0%;
-      left: 50%;
-    }
-
-    span:nth-child(2) {
-      transform: rotate(45deg);
-    }
-
-    span:nth-child(3) {
-      transform: rotate(-45deg);
-    }
-
-    span:nth-child(4) {
-      top: var(--bar-spacing);
-      width: 0%;
-      left: 50%;
+const StyledBox = styled(Box)`
+  ${props => props.hideAtDesktop && css`
+    @media (min-width: 1024px) {
+      display: none;
     }
   `}
-`;//`
+
+  ${props => props.hideAtMobile && css`
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  `}
+`
+const DesktopNav = StyledBox.extend`
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+`
 
 const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+
   a {
     cursor: pointer;
+    line-height: ${theme.blockHeights.navBar};
   }
 
   a:not(:last-child) {
@@ -150,17 +122,16 @@ const Nav = styled.nav`
       display: none;
     }
   `}
-`;//`
+`;
 
 const MobileModal = Flex.extend`
-  position: fixed;
-  z-index: 15;
-  top: 0;
+  background-color: white;
   bottom: 0;
   left: 0;
+  position: fixed;
   right: 0;
   top: ${theme.blockHeights.navBar};
-  background-color: #fff;
+  z-index: 15;
 
   ${props => !props.isVisible && css`
     display: none;
@@ -169,7 +140,7 @@ const MobileModal = Flex.extend`
 
 const MobileNav = styled.nav`
   a {
-    margin: 0.4rem 0;
+    margin: 0.5rem 0;
   }
 `;
 
@@ -194,6 +165,16 @@ const StyledDivider = styled(Divider)`
 
 const MobileLinkText = props =>
   <LinkText fontSize={4} {...props} />
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -281,6 +262,10 @@ class Header extends React.Component {
     });
   }
 
+
+
+
+
   render() {
     return (
       <div>
@@ -295,14 +280,8 @@ class Header extends React.Component {
           hasScrolledDown={this.state.hasScrolledDown}
           isModalVisible={this.state.isModalVisible}
         >
-          <Box w={2/9}>
-            <Link href='/'>
-              <a><IconLogo /></a>
-            </Link>
-          </Box>
-
-          <Box w={5/9} style={{ textAlign: 'center' }}>
-            <Nav hideAtMobile>
+          <DesktopNav hideAtMobile w={5/9} style={{ textAlign: 'center' }}>
+            <Nav>
               <Link href='/who-we-are'>
                 <a><LinkText isActive={this.props.pathname === '/who-we-are'}>Who we are</LinkText></a>
               </Link>
@@ -317,29 +296,36 @@ class Header extends React.Component {
               </Link>
               {/* <StyledDivider />
               <Link href='tel:{contactDetails.phone}'>
-                <a><LinkText>{contactDetails.phone}</LinkText></a>
+              <a><LinkText>{contactDetails.phone}</LinkText></a>
               </Link> */}
             </Nav>
+          </DesktopNav>
+
+          <Box>
+            <Link href='/'>
+              <a><IconLogo /></a>
+            </Link>
           </Box>
 
-          <Box w={2/9}>
-            <Nav hideAtMobile style={{ textAlign: 'right' }}>
+          <StyledBox hideAtMobile>
+            <Nav style={{ textAlign: 'right' }}>
               <Link href='tel:{contactDetails.phone}'>
                 <a><LinkText>
                   <Button invert>Call {contactDetails.phone}</Button>
                 </LinkText></a>
               </Link>
             </Nav>
-          </Box>
+          </StyledBox>
 
           <Nav hideAtDesktop>
-            <AnimatedHamburger onClick={this.handleModalTriggerClick} isOpen={this.state.isModalVisible}>
+            <Hamburger onClick={this.handleModalTriggerClick} isOpen={this.state.isModalVisible}>
               <span></span>
               <span></span>
               <span></span>
               <span></span>
-            </AnimatedHamburger>
+            </Hamburger>
           </Nav>
+
         </Root>
 
         <MobileModal
@@ -372,6 +358,7 @@ class Header extends React.Component {
                 <Link href='tel:{contactDetails.phone}'>
                   <a><MobileLinkText>{contactDetails.phone}</MobileLinkText></a>
                 </Link>
+
               </Flex>
             </Container>
           </MobileNav>

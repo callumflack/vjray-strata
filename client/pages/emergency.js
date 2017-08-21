@@ -82,7 +82,7 @@ const words = [{
 
 const Emergency = (props) => (
   <Layout>
-    <Header clear />
+    <Header pathname='/contact' clear />
 
     <StyledHeroBox px={3}>
       <Image />

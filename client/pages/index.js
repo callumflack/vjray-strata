@@ -46,9 +46,8 @@ const Root = (props) => (
           </LargeText>
         </Container>
       </Box>
-      <Box width={[ 11/12, 1 ]} mx='auto' mt={4}>
-        <FeatureList />
-      </Box>
+
+      <FeatureList />
     </Block>
 
     <SydneyBox />

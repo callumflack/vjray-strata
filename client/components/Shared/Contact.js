@@ -8,6 +8,13 @@ import Button from '../styled-elements/Button'
 import { IconPhone, IconEmail, IconAddress, IconEmergency, IconOpen } from '../styled-elements/Icons'
 
 
+const LocationRoot = styled(Box)`
+  @media (max-width: 700px) {
+    :last-child {
+      margin-top: 3rem;
+    }
+  }
+`
 const Item = styled(Flex)`
   --Item-rule: ${theme.colors.text20};
   align-items: flex-start;
@@ -15,6 +22,10 @@ const Item = styled(Flex)`
   color: ${theme.colors.text70} !important;
   padding: 0.45rem 0;
   text-align: left;
+
+  @media (max-width: 700px) {
+    font-size: 14px;
+  }
 
   ${props => props.borderTop && css`
     border-top: 1px solid var(--Item-rule);
@@ -58,7 +69,7 @@ const locationList = [{
 
 
 const Location = (props) => (
-  <Box
+  <LocationRoot
     width={[ 1, 1/3 ]}
     px={[ 3, 2 ]}>
     <Link href={props.location.googleMapsUrl}>
@@ -105,7 +116,7 @@ const Location = (props) => (
       </Item>
 
     </Box>
-  </Box>
+  </LocationRoot>
 );
 
 Location.propTypes = {

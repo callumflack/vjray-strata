@@ -56,7 +56,7 @@ class FastQuote extends React.Component {
   render() {
     return (
       <Layout>
-        <Header clear />
+        <Header pathname='/contact' clear />
 
         <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
           <Container mw='sm' mt={[ 4, 5, 6 ]} textCenter>

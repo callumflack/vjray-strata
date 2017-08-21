@@ -26,12 +26,36 @@ const StyledContainer = styled(Container)`
 // as soon as you extend it, you lose the hoc()
 const Nav = Flex.withComponent('nav').extend`
   color: ${theme.colors.text40};
-  margin-top: ${theme.space[3]}px;
+  margin-top: ${theme.space[2]}px;
+
+  @media (min-width: 700px) {
+    margin-top: {theme.space[3]}px;
+  }
+`;
+
+const StyledNav = styled(Nav)`
+  a:not(:first-child) {
+    margin-top: 12px;
+  }
+
+  @media (min-width: 700px) {
+    a:not(:first-child) {
+      margin-top: 0;
+    }
+  }
 `;
 
 const Column = styled(Box)`
-  :not(:last-child) {
-    margin-right: 3rem
+  @media (max-width: 700px) {
+    :not(:first-child) {
+      margin-top: 2rem
+    }
+  }
+
+  @media (min-width: 700px) {
+    :not(:last-child) {
+      margin-right: 3rem
+    }
   }
 
   span,
@@ -52,24 +76,27 @@ const Column = styled(Box)`
   }
 `;
 
+const StyledDivider = styled(Divider)`
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+
 
 const Footer = (props) => (
-  <Root
-    bg={props.bg}
-    py={0}>
-
+  <Root bg={props.bg} px={3}>
     <StyledContainer mx="lg">
 
-      <Flex justify='space-between'>
+      <Flex direction={[ 'column', 'row' ]} justify='space-between'>
         <div>
           <Link href='/'>
             <a><IconLogo color='text70' /></a>
           </Link>
-          <SmallText color='text40' mx={2} my={1}>&copy; 2017</SmallText>
+          <SmallText color='text40' mx={2} my={1} children='&copy; 2017' />
         </div>
 
         <div>
-          <Nav>
+          <Nav direction={[ 'column', 'row' ]}>
             <Column>
               <Link href='/who-we-are'><a><span>About us</span></a></Link>
               <Link href='/who-we-are'><a>Who we are</a></Link>
@@ -91,14 +118,12 @@ const Footer = (props) => (
         </div>
       </Flex>
 
-      <Flex justify='center' mt={2}>
-        <Nav>
+      <Flex justify={[ 'center']} mt={2}>
+        <StyledNav direction={[ 'column', 'row' ]}>
           <Link href='/'><a>Terms of use</a></Link>
-          <Divider />
+          <StyledDivider />
           <Link href='/'><a>Privacy policy</a></Link>
-          <Divider />
-          <Link href='/'><a>ABN 31 064 030 311</a></Link>
-        </Nav>
+        </StyledNav>
       </Flex>
 
     </StyledContainer>

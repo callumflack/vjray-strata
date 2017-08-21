@@ -15,20 +15,20 @@ import Block from '../Shared/Block'
 
 
 const StyledIcon = (props) =>
-  <Icon color='brand' size='150' icon={ props.icon } />
+  <Icon color='brand' size='100' icon={ props.icon } />
 
 const GroupSiteLink = () => (
   <Block border>
     <Container mw='sm' textCenter>
       <StyledIcon icon={ icons.service } />
       <Headline font='displayMedium' color='brand' children='Looking for more than Strata?' />
-      <LargeText color='text70'>
-        We offer full spectrum Real Estate services.
+      <Text color='text70'>
+        We offer full spectrum Real Estate services.&nbsp;
         <LineBreak mx='auto'>
           Find out more on our&nbsp;
           <Link href='http://www.vjray.com.au/'><a>Group website.</a></Link>
         </LineBreak>
-      </LargeText>
+      </Text>
     </Container>
   </Block>
 )

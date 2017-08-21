@@ -14,9 +14,7 @@ export default ({ children, title = 'V J Ray Strata, Sydney' }) => (
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
 
-      <main>
-        { children }
-      </main>
+      { children }
 
     </div>
   </ThemeProvider>

@@ -24,7 +24,12 @@ const Form = styled.form`
   position: absolute;
   transition: width 0.2s;
   transform: translate(-50%, 100%);
-  width: ${theme.containers.sm};
+  width: 100%;
+
+  @media (min-width: 700px) {
+    margin: auto;
+    width: ${theme.containers.sm};
+  }
 
   ${props => props.floating && css`
     bottom: unset;
@@ -39,13 +44,20 @@ const Form = styled.form`
   `}
 `;
 
-const Inputs = styled.div`
+const Inputs = styled(Flex)`
   --Input-line-height: 54px;
-  display: flex;
-  max-width: ${theme.containers.sm};
-  margin: auto;
+  width: 100%;
+
+  @media (min-width: 700px) {
+    margin: auto;
+    max-width: ${theme.containers.sm};
+  }
+
+  @media (max-width: 700px) {
+  }
 `;
 
+// width: 100%;
 const Input = hoc('input').extend`
   border: 0;
   border-bottom: 1px solid ${theme.colors.text20};
@@ -53,10 +65,8 @@ const Input = hoc('input').extend`
   font-family: ${theme.fonts.textBook};
   flex-grow: 1;
   line-height: var(--Input-line-height);
-  margin-right: 2rem;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   resize: none;
-  width: 100%;
   -moz-appearance: none;
   -webkit-appearance: none;
 
@@ -69,6 +79,10 @@ const Input = hoc('input').extend`
 
   &:focus {
     border-color: ${theme.colors.brand};
+  }
+
+  @media (min-width: 700px) {
+    margin-right: 2rem;
   }
 `;
 
@@ -165,7 +179,7 @@ class QuickQuoteForm extends React.Component {
           }
         </BoxedSubheadline>
         <Box p={3}>
-          <Inputs>
+          <Inputs direction={[ 'column', 'row' ]}>
             <Input fontSize={[ 2, 3 ]} placeholder='Your name' name='name' onChange={this.handleChange} />
             <Input fontSize={[ 2, 3 ]} placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
             <ButtonText font='textBook' fontSize={[ 2, 3 ]} letterSpacing='button'>

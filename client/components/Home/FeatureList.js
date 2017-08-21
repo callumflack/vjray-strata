@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import theme from '../theme'
 import { icons } from '../constants'
 
-import { Flex, Box } from '../styled-grid'
+import { Flex, Box, Grid } from '../styled-grid'
 import hoc from '../styled-elements/hoc'
 
 import { Headline } from '../styled-elements/Headline'
@@ -10,10 +10,17 @@ import { Text, SmallText, LargeText } from '../styled-elements/Text'
 import Icon from '../styled-elements/Icon';
 
 
-const StyledBox = hoc(Box).extend`
-  min-width: 20%;
-  margin: 0 auto;
+
+const GridRoot = styled(Grid)`
+  @media (max-width: 1024px) {
+    :not(first-child) {
+      margin-top: 2rem;
+    }
+  }
 `
+
+const StyledGrid = props =>
+  <GridRoot w={[ 1, 1/2, 1/2, 1/4 ]} px={3} {...props} />
 
 const Header = (props) =>
   <Headline font='displayMedium' fontSize={[ 3, 4 ]} my={2} {...props} />
@@ -24,44 +31,48 @@ const Lede = styled(SmallText)`
 const StyledIcon = (props) =>
   <Icon color='brand' size='100' icon={ props.icon } />
 
+const RootDivider = styled(Box)`
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`
+
 const Divider = () => (
-  <Box>
+  <RootDivider>
     <Text font='displayLight' fontSize={[ 6, 7 ]} color='brand' mx={2}>+</Text>
-  </Box>
+  </RootDivider>
 );
 
+
+
 const FeatureList = () => (
-  <Flex>
-    <StyledBox>
-      <StyledIcon icon={ icons.experience } />
-      <Header>Over half a century young</Header>
-      <Lede>We've pretty much seen it all, so we know how to solve it.</Lede>
-    </StyledBox>
+  <Box w={[ 5/6, 5/6, 5/6, 1 ]} mx='auto' mt={4}>
+    <Box mx={-3}>
+      <StyledGrid>
+        <StyledIcon icon={ icons.experience } />
+        <Header>Over 55 years young</Header>
+        <Lede>We've pretty much seen it all, so we know how to solve it.</Lede>
+      </StyledGrid>
 
-    <Divider />
+      <StyledGrid>
+        <StyledIcon icon={ icons.lockin } />
+        <Header>No lock-in contracts</Header>
+        <Lede>Stay because you're happy, not because you're stuck with us.</Lede>
+      </StyledGrid>
 
-    <StyledBox>
-      <StyledIcon icon={ icons.lockin } />
-      <Header>No lock-in contracts</Header>
-      <Lede>Stay because you're happy, not because you're stuck with us.</Lede>
-    </StyledBox>
+      <StyledGrid>
+        <StyledIcon icon={ icons.service } />
+        <Header>Open 6 days a week</Header>
+        <Lede>We're open Saturdays, because not everyone has time during the week.</Lede>
+      </StyledGrid>
 
-    <Divider />
-
-    <StyledBox>
-      <StyledIcon icon={ icons.service } />
-      <Header>Open 6 days a week</Header>
-      <Lede>We're open Saturdays, because not everyone has time during the week.</Lede>
-    </StyledBox>
-
-    <Divider />
-
-    <StyledBox>
-      <StyledIcon icon={ icons.emergency } />
-      <Header>24/7 emergency contact</Header>
-      <Lede>Because emergencies happen, speak to one of our senior staff anytime!</Lede>
-    </StyledBox>
-  </Flex>
+      <StyledGrid>
+        <StyledIcon icon={ icons.emergency } />
+        <Header>24/7 emergency contact</Header>
+        <Lede>Because emergencies happen, speak to one of our senior staff anytime!</Lede>
+      </StyledGrid>
+    </Box>
+  </Box>
 );
 
 export default FeatureList

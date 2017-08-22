@@ -66,13 +66,32 @@ const AuthorText = props =>
 // Utils
 // =====================================================================
 
-// TODO: add ternarys to LineBreak as needed.
 const LineBreak = hoc('span').extend`
   font: inherit;
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${theme.breakpoints[2]}em) {
       display: table !important;
   }
+
+  ${props => props.bp && css`
+    @media (min-width: ${theme.breakpoints[props.bp]}em) {
+        display: table !important;
+    }
+  `}
+`
+
+const LineBreakMax = hoc('span').extend`
+  font: inherit;
+
+  @media (max-width: ${theme.breakpoints[1]}em) {
+      display: table !important;
+  }
+
+  ${props => props.bp && css`
+    @media (max-width: ${theme.breakpoints[props.bp]}em) {
+        display: table !important;
+    }
+  `}
 `
 
 const InlineText = Root.withComponent('span').extend`
@@ -147,6 +166,7 @@ export {
   SmallText,
   AuthorText,
   LineBreak,
+  LineBreakMax,
   InlineText,
   TextBlock,
   DangerouslyResetTextBlock,

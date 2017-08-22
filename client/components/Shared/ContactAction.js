@@ -29,7 +29,7 @@ const ContactAction = (props) => (
       }
 
       { props.withByline &&
-        <LargeText color='text70' children='Or drop-in without an appointment.' />
+        <LargeText color='text70' children='…or drop-in without an appointment:' />
       }
     </Box>
   </Container>

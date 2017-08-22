@@ -13,12 +13,25 @@ import QuickQuoteForm from './QuickQuoteForm'
 
 
 const Root = styled(HeroBox)`
-  --Hero-height: ${theme.blockHeights.hero};
+  --Header-height: ${theme.blockHeights.navBar};
+  height: calc(70vh + var(--Header-height)) !important;
+
+  @media (min-width: 768px) {
+    height: calc(50vh + var(--Header-height)) !important;
+  }
+`
+
+const StyledFlex = styled(Flex)`
+  height: 70vh;
+
+  @media (min-width: 768px) {
+    height: 50vh;
+  }
 `
 
 const Image = styled(CoverImage)`
   background-image: url('static/img/home-hero.jpg');
-  background-position: 30% 100%;
+  background-position: 40% 100%;
 
   @media (min-width: 1024px) {
     background-position: 100% 100%;
@@ -34,23 +47,24 @@ const Image = styled(CoverImage)`
   }
 `
 
+
+
+
+
 const ListeningBox = () => (
   <Root px={3}>
     <Image />
 
     <Container mw='lg' relative>
-      <Flex
-        style={{ height: '50vh' }}
-        align='center'
-        >
-        <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]}>
+      <StyledFlex align='center'>
+        <Box width={[ 9/12, 5/12, 1/2 ]} ml={[ null, 3 ]}>
           <Display font='displayRegular'>
-            Skip the hassle of
+            Skip the hassle of&nbsp;
             <LineBreak>Strata management.</LineBreak>
           </Display>
           <LargeText>At V J Ray Strata, we understand how valuable your peace of mind is.</LargeText>
         </Box>
-      </Flex>
+      </StyledFlex>
     </Container>
 
     <QuickQuoteForm />

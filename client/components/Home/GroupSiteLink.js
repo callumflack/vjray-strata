@@ -9,7 +9,7 @@ import { icons } from '../constants'
 import hoc from '../styled-elements/hoc'
 import Container from '../styled-elements/Container'
 import { Headline } from '../styled-elements/Headline.js'
-import { Text, SmallText, LargeText, LineBreak } from '../styled-elements/Text.js'
+import { Text, SmallText, LargeText, LineBreak, LineBreakMax } from '../styled-elements/Text.js'
 import Icon from '../styled-elements/Icon.js';
 import Block from '../Shared/Block'
 
@@ -21,7 +21,10 @@ const GroupSiteLink = () => (
   <Block border>
     <Container mw='sm' textCenter>
       <StyledIcon icon={ icons.service } />
-      <Headline font='displayMedium' color='brand' children='Looking for more than Strata?' />
+      <Headline font='displayMedium' color='brand'>
+        Looking for more&nbsp;
+        <LineBreakMax mx='auto' children='than Strata?' />
+      </Headline>
       <Text color='text70'>
         We offer full spectrum Real Estate services.&nbsp;
         <LineBreak mx='auto'>

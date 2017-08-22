@@ -72,6 +72,7 @@ const servicesList = [{
 
 const StyledHeroBox = styled(HeroBox)`
   --Hero-height: ${theme.blockHeights.hero};
+  --Header-height: ${theme.blockHeights.navBar};
   background-color: transparent;
   background-image:
     linear-gradient(
@@ -79,6 +80,12 @@ const StyledHeroBox = styled(HeroBox)`
       rgba(222, 202, 178, 0.4),
       ${theme.colors.beige} 70%
     );
+
+  height: calc(70vh + var(--Header-height)) !important;
+
+  @media (min-width: 768px) {
+    height: calc(var(--Hero-height) + var(--Header-height)) !important;
+  }
 `
 
 const Image = styled(CoverImage)`

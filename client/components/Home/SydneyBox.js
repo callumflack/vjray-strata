@@ -15,18 +15,25 @@ import { FlexEmbed } from '../styled-elements/FlexEmbed.js';
 
 
 const Root = styled(Box)`
-  height: ${theme.blockHeights.superHero};
-  height: 80vh;
+  height: 100vh;
+
+  @media (min-width: 768px) {
+    height: 70vh;
+  }
 `;
 
 const StyledBox = styled(Box)`
   background-image: url('static/img/home-sydney.jpg');
-  background-position: 50% 50%;
+  background-position: 0% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   color: ${theme.colors.text70};
   height: 100%;
   width: 100%;
+
+  @media (min-width: 768px) {
+    background-position-y: 50%;
+  }
 
   @media (min-width: 1536px) {
     background-position-y: 90%;
@@ -159,11 +166,14 @@ class SydneyBox extends React.Component {
         </Modal>
 
         <FullBoxHeight>
-          <StyledBox>
+          <StyledBox px={3}>
 
-            <Container textCenter relative pt={[ 5, 6 ]}>
+            <Container textCenter relative pt={[ 4, 5, 6 ]}>
               <Subheadline color='text' children='Dependable and effective' />
-              <Display color='brandAlt' mb={3}>We help make Sydney <LineBreak m='auto'>strata living great.</LineBreak></Display>
+              <Display color='brandAlt' mb={3}>
+                We help make Sydney&nbsp;
+                <LineBreak bp='1' m='auto'>strata living great.</LineBreak>
+              </Display>
               <Container width={[ 1, 2/3 ]}>
                 <Text color='text' mb={3}>
                   This paragraph is about V J Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.&nbsp;

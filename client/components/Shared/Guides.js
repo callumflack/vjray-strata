@@ -13,7 +13,7 @@ import Button from '../styled-elements/Button'
 import { IconDownload } from '../styled-elements/Icons'
 
 import BoxReset from './BoxReset'
-import { ImageWithShadow } from './ImageWithShadow'
+import ImageWithShadow from './ImageWithShadow'
 
 
 const GuideButton = (props) => (
@@ -48,30 +48,42 @@ const Root = (props) => (
         mx={-3}>
         {props.children}
       </Flex>
-
     )}
   </div>
-
 );
+
+const StyledBox = styled(Box)`
+  @media (max-width: 512px) {
+    &:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+`
+
+const StyledLink = styled(Box)`
+  border: 1px solid ${theme.colors.text10};
+`
 
 const Guides = (props) => (
   <Root primary={props.primary}>
     {props.guides.map((guide, i) =>
-      <Box
-        width={props.primary ? [1, 1/2] : [1, 1/3]}
-        px={[4, 3]}
+      <StyledBox
+        width={props.primary ? [1, 1/2] : [1, 1/2, 1/3]}
+        px={[3, 3]}
         key={guide._id}
       >
-        <Link href={`${guide.file.url}`}>
-          <a href={`${guide.file.url}`}>
-            <ImageWithShadow src={guide.featureImage.secure_url} />
-          </a>
-        </Link>
+        <StyledLink>
+          <Link href={`${guide.file.url}`}>
+            <a href={`${guide.file.url}`}>
+              <ImageWithShadow src={guide.featureImage.secure_url} />
+            </a>
+          </Link>
+        </StyledLink>
 
         {props.buttons && (
           <GuideButton guide={guide} icon={props.icon} />
         )}
-      </Box>
+      </StyledBox>
     )}
   </Root>
 );

@@ -128,7 +128,7 @@ const Contact = (props) => (
   <Flex
     direction={[ 'column', 'row' ]}
     justify='center'
-    mt={props.mt || [ 4, 4 ]}
+    mt={props.mt || [ 3, 4, 4 ]}
     mx={-2}>
 
     {locationList.map((location, i) =>

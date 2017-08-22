@@ -9,7 +9,7 @@ import theme from '../components/theme'
 import Layout from '../components/styled-elements/Layout'
 import Container from '../components/styled-elements/Container'
 import Button from '../components/styled-elements/Button'
-import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak } from '../components/styled-elements/Text'
+import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak, LineBreakMax } from '../components/styled-elements/Text'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 
 import Header from '../components/Shared/Header'
@@ -37,11 +37,11 @@ const Root = (props) => (
     <ListeningBox />
 
     <Block mw='rg' textCenter>
-      <Box width={[ 4/6, 5/6 ]} mx='auto'>
-        <Headline font='displayMedium' color='text' mt={4} mb={3} children='It all adds up to a better deal.' />
-        <Container width={[ 1, 5/6 ]}>
+      <Box width={[ 1, 5/6 ]} pt={[ 5, 0 ]} mx='auto'>
+        <Headline font='displayMedium' color='text' mt={5} mb={3} children='It all adds up to a better deal.' />
+        <Container width={[ 1, 1, 5/6 ]}>
           <LargeText color='text70'>
-            "You guys are very quick to respond and handle things efficiently, no complaints here"
+            "You guys are very quick to respond and handle things efficiently, no complaints here"&nbsp;
             <LineBreak m='auto'><AuthorText>— Linda & Terry, Jindabyne</AuthorText></LineBreak>
           </LargeText>
         </Container>
@@ -53,9 +53,12 @@ const Root = (props) => (
     <SydneyBox />
 
     <TalkBox>
-      <Box px={3} py={[ 5, 6 ]} style={{ position: 'relative' }}>
+      <Box px={3} py={[ 4, 5, 6 ]} style={{ position: 'relative' }}>
         <Container textCenter>
-          <Display children="It's our job to sort it." />
+          <Display>
+            It's our job&nbsp;
+            <LineBreakMax mx='auto' children='to sort it.' />
+          </Display>
           <Container width={[ 1, 2/3 ]}>
             <LargeText color='text70'>
               "I have known and been happy with V J Ray for years. I cannot fault you. Thank you!" <AuthorText>— Petrania, Belmore</AuthorText>
@@ -86,8 +89,7 @@ const Root = (props) => (
         </Text>
       </Container>
 
-
-      <Box p={4}>
+      <Box pt={4} pb={3} px={[ 3, 4 ]}>
         <Guides featured limit={3} />
       </Box>
 

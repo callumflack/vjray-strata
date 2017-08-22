@@ -41,7 +41,7 @@ export default {
   },
   font: 'GT-Eesti-Pro-Text',
   headlineFont: 'GT-Eesti-Pro-Display',
-  fontSizes: [12, 14, 16, 19, 23, 30, 40, 54],
+  fontSizes: [12, 14, 16, 19, 23, 30, 39, 54],
   letterSpacing: {
     body: '0.02em',
     tight: '-0.02em',
@@ -50,8 +50,8 @@ export default {
     meta: '0.15em',
   },
   lineHeight: {
-    display: '1',
-    headline: '1.05',
+    display: '1.05',
+    headline: '1.15',
     subheadline: '1.25',
     text: '1.375',
     feedback: '2.5',

@@ -85,10 +85,14 @@ const Button = styled.button`
   `}
 
   ${props => props.invert && css`
-    background-color: transparent;
+    background-color: rgba(255,255,255,0.4);
     border-color: currentColor;
     border-radius: calc( 0.5 * var(--Button-height));
-    border-radius: calc( 0.5 * 54px);
+    border-radius: calc( 0.5 * 59px);
+
+    @media (min-width: 768px) {
+      background-color: transparent;
+    }
   `}
 
   ${props => props.icon && css`

@@ -20,6 +20,7 @@ const Form = styled.form`
     0 16px 24px 2px rgba(0,0,0,0.09),
     0 6px 30px 5px rgba(0,0,0,0.06),
     0 8px 10px -5px rgba(0,0,0,0.15);
+  display: none;
   left: 50%;
   position: absolute;
   transition: width 0.2s;
@@ -27,6 +28,7 @@ const Form = styled.form`
   width: 100%;
 
   @media (min-width: 700px) {
+    display: block;
     margin: auto;
     width: ${theme.containers.sm};
   }
@@ -81,13 +83,18 @@ const Input = hoc('input').extend`
     border-color: ${theme.colors.brand};
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 768px) {
     margin-right: 2rem;
   }
 `;
 
 const ButtonText = hoc('span').extend`
   display: inline-block;
+  text-align: right;
+
+  @media (min-width: 768px) {
+    text-align: initial;
+  }
 `;
 
 const SuccessMessage = styled.div`
@@ -178,12 +185,12 @@ class QuickQuoteForm extends React.Component {
             : 'Get a Fast Quote'
           }
         </BoxedSubheadline>
-        <Box p={3}>
+        <Box p={[ 2, 3 ]}>
           <Inputs direction={[ 'column', 'row' ]}>
             <Input fontSize={[ 2, 3 ]} placeholder='Your name' name='name' onChange={this.handleChange} />
-            <Input fontSize={[ 2, 3 ]} placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
-            <ButtonText font='textBook' fontSize={[ 2, 3 ]} letterSpacing='button'>
-              <LaddaButton primary loading={this.state.loading} type='submit'>Submit</LaddaButton>
+            <Input fontSize={[ 2, 3 ]} mt={[ 2, 0 ]} placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
+            <ButtonText font='textBook' fontSize={[ 2, 3 ]} letterSpacing='button' mt={[ 2, 0 ]}>
+              <LaddaButton primary loading={this.state.loading} type='submit' children='Submit' />
             </ButtonText>
           </Inputs>
         </Box>

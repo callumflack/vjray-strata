@@ -14,7 +14,7 @@ import Icon from '../styled-elements/Icon';
 const GridRoot = styled(Grid)`
   @media (max-width: 1024px) {
     :not(first-child) {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
   }
 `
@@ -23,7 +23,7 @@ const StyledGrid = props =>
   <GridRoot w={[ 1, 1/2, 1/2, 1/4 ]} px={3} {...props} />
 
 const Header = (props) =>
-  <Headline font='displayMedium' fontSize={[ 3, 4 ]} my={2} {...props} />
+  <Headline font='displayMedium' fontSize={[ 3, 4 ]} mt={[ 0, 2 ]} mb={[ 1, 2 ]} {...props} />
 
 const Lede = styled(SmallText)`
   color: ${theme.colors.text70};`
@@ -46,7 +46,7 @@ const Divider = () => (
 
 
 const FeatureList = () => (
-  <Box w={[ 5/6, 5/6, 5/6, 1 ]} mx='auto' mt={4}>
+  <Box w={[ 5/6, 5/6, 5/6, 1 ]} mx='auto' mt={[ 2, 4 ]}>
     <Box mx={-3}>
       <StyledGrid>
         <StyledIcon icon={ icons.experience } />

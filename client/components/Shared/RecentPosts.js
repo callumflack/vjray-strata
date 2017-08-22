@@ -80,15 +80,15 @@ class RecentPosts extends React.Component {
               <Box
                 width={[ 1, 5/6 ]}
                 mx='auto'
-                mt={3}
+
               >
                 <Headline
                   align='center'
                   font='displayMedium'
                   color='brandAlt'
-                  my={3}
+                  mb={3}
                 >
-                  <HeadlineAligner>{post.title}</HeadlineAligner>
+                  {post.title}
                 </Headline>
                 <Text align='left'>
                   {post.description}

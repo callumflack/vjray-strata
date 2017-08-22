@@ -23,14 +23,18 @@ import Contact from '../components/Shared/Contact'
 
 
 const Hero = styled(Box)`
-  --Header-height: 121px;
-  --Hero-height: 70vh;
+  --Hero-height: ${theme.blockHeights.superHero};
+  --Header-height: ${theme.blockHeights.navBar};
 
   align-items: center;
   background-color: #4F90C8;
-  height: calc(var(--Hero-height) + var(--Header-height));
   padding-top: var(--Header-height);
   position: relative;
+
+  height: calc(70vh + var(--Header-height)) !important;
+  @media (min-width: 768px) {
+    height: calc(var(--Hero-height) + var(--Header-height)) !important;
+  }
 
   &:after {
     background-color: rgba(79, 144, 200, 0.25);
@@ -45,6 +49,22 @@ const Hero = styled(Box)`
   }
 `
 
+const HeroTitleFlex = styled(Flex)`
+  height: 70vh;
+
+  @media (min-width: 768px) {
+    height: var(--Hero-height);
+  }
+`
+
+const HeroTitleBox = styled(Box)`
+  transform: translateY(-64px);
+
+  @media (min-width: 768px) {
+    transform: translateY(-64px);
+  }
+`
+
 const Image = styled(CoverImage)`
   background-image: url('static/img/who-cronulla.jpg');
   background-position: 50% 50%;
@@ -54,7 +74,7 @@ const Image = styled(CoverImage)`
   @media (min-width: 1536px) { background-position: 30% 100%; }
 `
 
-const StyledFlex = styled(Flex)`
+const TextBlockWrapper = styled(Flex)`
   margin-top: 0;
   margin-bottom: ${theme.space[4]}px;
 
@@ -64,14 +84,6 @@ const StyledFlex = styled(Flex)`
 `
 
 
-{/* <Hero px={3}>
-  <Image />
-  <Container
-    mw='lg'
-    pt={[ 5, 6 ]}
-    relative
-    style={{ zIndex: 1 }}
-  > */}
 
 const pageQuery = gql`{
   page(page: "Who we are") {
@@ -108,28 +120,30 @@ class WhoContainer extends React.Component {
           <Image />
           <Container
             mw='lg'
+            pl={[ 0, 3, 3, 0 ]}
             relative
             style={{ zIndex: 1 }}
           >
-            <Flex align='center' style={{ height: 'calc(70vh - 121px)' }}>
-              <Box w={[ 1, 2/3 ]} style={{ transform: 'translateY(-32px)' }}>
+            <HeroTitleFlex align='center'>
+              <HeroTitleBox w={[ 5/6, 2/3 ]}>
                 <Subheadline color='brandAlt'>About us</Subheadline>
                 <Display color='brandAlt'>
                   We believe in better&nbsp;
                   <LineBreak>Strata management </LineBreak>
                   <LineBreak>for Sydney.</LineBreak>
                 </Display>
-              </Box>
-            </Flex>
+              </HeroTitleBox>
+            </HeroTitleFlex>
           </Container>
         </Hero>
 
-        <Box px={3} py={[ 5, 6 ]}>
+        <Box px={3} pt={[ 4, 5, 6 ]} pb={[ 4, 5, 6 ]}>
           <Container>
             <Box width={[ 1, 11/12 ]} mx='auto'>
 
-              <Flex direction={[ 'column', 'row' ]} mx={-3}>
-                <Flex column width={[ 1, 1, 1/3, 1/4 ]} px={[ 4, 3 ]}>
+              <Flex direction={[ 'column', 'column', 'row' ]} mx={-3}>
+
+                <Flex column width={[ 1, 1, 1/3, 1/4 ]} px={[ 4, 5, 3 ]}>
                   <Box mt='6px'>
                     <img src='static/img/mike-pollard.jpg' />
                   </Box>
@@ -137,9 +151,9 @@ class WhoContainer extends React.Component {
                   <Text color='text70' children='Owner' />
                 </Flex>
 
-                <StyledFlex order={[ '-1', 'initial' ]} px={3} width={[ 1, 1, 2/3, 3/4 ]}>
+                <TextBlockWrapper order={[ '-1', '-1', 'initial' ]} px={3} width={[ 1, 1, 2/3, 3/4 ]}>
                   <TextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
-                </StyledFlex>
+                </TextBlockWrapper>
               </Flex>
 
             </Box>

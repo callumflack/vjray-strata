@@ -9,4 +9,4 @@ const ImageWithShadow = styled('img')`
   box-shadow: 0 18px 30px 0 rgba(0,0,0,0.25);
 `
 
-export { ImageWithShadow }
+export default ImageWithShadow

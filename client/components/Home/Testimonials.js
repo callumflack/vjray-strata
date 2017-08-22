@@ -5,17 +5,25 @@ import { Text, SmallText } from '../styled-elements/Text';
 
 
 const StyledFlex = styled(Flex)`
-  margin: 1rem 2rem;
+  margin: 1rem;
   position: relative;
-  width: 290px;
+
+  @media (min-width: 768px) {
+    margin: 1rem 2rem;
+    width: 290px;
+  }
 `
 
 const Quote = styled(SmallText)`
   background-color: white;
-  border: 1px solid ${theme.colors.text};
+  border: 1px solid ${theme.colors.text40};
   display: block;
-  padding: 1.3rem 2rem 1.4rem;
+  padding: 1.3rem 1.4rem 1.4rem;
   text-align: left;
+
+  @media (min-width: 768px) {
+    padding: 1.3rem 2rem 1.4rem;
+  }
 `
 
 const StyledBox = styled(Box)`
@@ -24,7 +32,7 @@ const StyledBox = styled(Box)`
 `
 
 const QuoteTriangle = styled('div')`
-  color: ${theme.colors.text};
+  color: ${theme.colors.text40};
   display: inline-block;
 `
 

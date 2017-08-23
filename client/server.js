@@ -1,5 +1,8 @@
 const express = require('express');
 const next = require('next');
+const contentRepo = require('./content-repo');
+
+const serialize = data => JSON.stringify({ data });
 
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev });
@@ -14,6 +17,26 @@ async function start() {
 
   app.get('/blog/:slug', (req, res) => {
     return nextApp.render(req, res, '/blog', req.params)
+  })
+
+  app.get('/api/:page', async (req, res) => {
+    let post;
+
+    try {
+      post = await contentRepo.fetch(req.params.page);
+    } catch (err) {
+      if (err.code === 'ENOENT') {
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        return res.end(serialize({
+          error: `Unable to find markdown file`,
+        }));
+      }
+
+      throw err;
+    }
+
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    return res.end(serialize(post));
   })
 
   app.get('*', (req, res) => {

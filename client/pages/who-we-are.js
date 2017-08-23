@@ -96,12 +96,20 @@ class WhoContainer extends React.Component {
     super(props);
   }
 
-  static async getInitialProps({ query, pathname }) {
+  static async getInitialProps({ query, req, pathname }) {
     const { data: { page } } = await apollo.query({
       query: pageQuery,
     });
 
+    const origin = req ?
+      `${req.protocol}://${req.get('host')}` :
+      window.location.origin;
+
+    const response = await fetch(`${origin}/api/mikes-letter`);
+    const { data: mikesLetter } = await response.json();
+
     return {
+      mikesLetter,
       ...page,
       pathname,
     }
@@ -128,7 +136,7 @@ class WhoContainer extends React.Component {
                 </Flex>
 
                 <TextBlockWrapper order={[ '-1', '-1', 'initial' ]} px={3} width={[ 1, 1, 2/3, 3/4 ]}>
-                  <TextBlock dangerouslySetInnerHTML={{__html: this.props.who.post}} />
+                  <TextBlock dangerouslySetInnerHTML={{__html: this.props.mikesLetter.body.html}} />
                 </TextBlockWrapper>
               </Flex>
 

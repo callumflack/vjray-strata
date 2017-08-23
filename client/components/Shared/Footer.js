@@ -61,6 +61,10 @@ const Column = styled(Box)`
   span,
   a {
     color: ${theme.colors.text70};
+
+    @media (max-width: 512px) {
+      font-size: 14px;
+    }
   }
 
   span {
@@ -71,7 +75,7 @@ const Column = styled(Box)`
     display: block;
 
     &:not(:first-child) {
-      margin-top: 12px;
+      margin-top: 0.5rem;
     }
   }
 `;

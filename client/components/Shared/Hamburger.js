@@ -3,8 +3,8 @@ import theme from '../theme.js';
 
 const Hamburger = styled.div`
   --bar-height: 3px;
-  --bar-spacing: 11px;
-  width: 2.5rem;
+  --bar-spacing: 10px;
+  width: 2.25rem;
   height: calc((var(--bar-spacing) * 2) + var(--bar-height));
   position: relative;
   transform: rotate(0deg);

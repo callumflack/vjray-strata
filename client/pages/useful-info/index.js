@@ -13,7 +13,7 @@ import { Text, LargeText, SmallText, LineBreak } from '../../components/styled-e
 
 import Block from '../../components/Shared/Block'
 import { ColorBox } from '../../components/Shared/Hero'
-import Contact from '../../components/Shared/Contact'
+import Contacts from '../../components/Shared/Contacts'
 import ContactActionAlt from '../../components/Shared/ContactActionAlt'
 import Footer from '../../components/Shared/Footer'
 import Guides from '../../components/Shared/Guides'
@@ -104,7 +104,7 @@ const Root = (props) => (
 
     <Block border>
       <ContactActionAlt btnColor='brandAlt' />
-      <Contact />
+      <Contacts />
     </Block>
 
     <Footer />

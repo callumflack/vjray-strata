@@ -25,7 +25,7 @@ import FormIssue from '../components/Shared/FormIssue'
 import { FormHeader } from '../components/Shared/Form.js'
 import { Tabs, Pane } from '../components/Shared/Tabs.js'
 import ContactAction from '../components/Shared/ContactAction'
-import Contact from '../components/Shared/Contact'
+import Contacts from '../components/Shared/Contacts'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 import { HeroBox, HeroContainer, HeroFlex } from '../components/Shared/Hero'
 
@@ -56,7 +56,7 @@ const Hero = props => (
       <HeroFlex>
         <Box width={1} ml={[ null, 3 ]} mb={4}>
           <Subheadline children='Emergencies' />
-          <Display color='brand' font='displayRegular' mb={2}>It happens. <LineBreakAll>We're prepared.</LineBreakAll></Display>
+          <Display color='brand' font='displayMedium' mb={2}>It happens. <LineBreakAll>We're prepared.</LineBreakAll></Display>
           <LargeText>At V J Ray Strata, <LineBreakAll>we'll sort it for you.</LineBreakAll></LargeText>
         </Box>
       </HeroFlex>
@@ -72,16 +72,16 @@ const Emergency = (props) => (
     <Block mw='sm'>
       <Box width={[ 1, 9/12, 9/12, 1 ]} mx='auto'>
 
-        <LargeText font='displayRegular' mb={1} children='Is it due to a natural disaster?' />
+        <LargeText font='displayMedium' mb={1} children='Is it due to a natural disaster?' />
         <Text mb={4} color='text70'>In the case of a natural disaster such as a major storm or flood, please contact the NSW State Emergency Service on 132 500.</Text>
 
-        <LargeText font='displayRegular' mb={1} children='Is it a rental property?' />
+        <LargeText font='displayMedium' mb={1} children='Is it a rental property?' />
         <Text mb={4} color='text70'>
           If your repair relates to a property that you are renting through one of our offices, please go to the&nbsp;
           <Link href="http://www.vjray.com.au/"><a>V J Ray Group website</a></Link>.
         </Text>
 
-        <LargeText font='displayRegular' mb={1} children='Is it a non-urgent issue?' />
+        <LargeText font='displayMedium' mb={1} children='Is it a non-urgent issue?' />
         <Text color='text70'>
           For non-urgent repairs please report the issue with as much detail as possible.
         </Text>
@@ -91,7 +91,7 @@ const Emergency = (props) => (
           </Link>
         </LargeButtonStyler>
 
-        <LargeText font='displayRegular' mb={1} children='Is it within business hours?' />
+        <LargeText font='displayMedium' mb={1} children='Is it within business hours?' />
         <Text color='text70' mb={2}>
           If your repair is urgent and the time is currently office hours, please contact us by calling {contactDetails.emergencyBusinessHours}.
         </Text>
@@ -99,7 +99,7 @@ const Emergency = (props) => (
           Please don't rely on an email for an urgent repair as your strata manager may not see the email in time to contact the relevant repairer.
         </Text>
 
-        <LargeText font='displayRegular' mb={1} children='Is it after-hours?' />
+        <LargeText font='displayMedium' mb={1} children='Is it after-hours?' />
         <Text color='text70'>Remember, our business hours include Saturdays until 4pm (2pm at our Carringbah office). For after-hours emergency repairs only, contact our director Mike Pollard on {contactDetails.emergencyAfterHours}. Note that additional charges will apply.</Text>
         <LargeButtonStyler color='white' align='left' mt={2}>
           <Link href='tel:{contactDetails.emergencyAfterHours}'>
@@ -112,7 +112,7 @@ const Emergency = (props) => (
 
     <Block border textCenter>
       <ContactAction btnColor='brandAlt' />
-      <Contact mt={[ 3, 4 ]} />
+      <Contacts mt={[ 3, 4 ]} />
     </Block>
 
     <Footer />

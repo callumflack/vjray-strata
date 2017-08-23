@@ -1,6 +1,6 @@
 export default {
   blockHeights: {
-    navBar: '101px',
+    navBar: '91px',
     hero: '50vh',
     superHero: '70vh'
   },
@@ -41,9 +41,10 @@ export default {
   },
   font: 'GT-Eesti-Pro-Text',
   headlineFont: 'GT-Eesti-Pro-Display',
-  fontSizes: [12, 14, 16, 19, 23, 30, 39, 54],
+  fontSizes: [11, 13, 16, 18, 21, 27, 36, 48],
   letterSpacing: {
-    body: '0.02em',
+    body: '0.03em',
+    text: '0.02em',
     tight: '-0.02em',
     button: '0.025em',
     touch: '0.075em',

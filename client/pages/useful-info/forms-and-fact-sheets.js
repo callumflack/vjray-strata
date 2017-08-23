@@ -15,7 +15,7 @@ import { LargeText, MediumText, Text, InlineText, LineBreak } from '../../compon
 
 import Block from '../../components/Shared/Block'
 import ContactAction from '../../components/Shared/ContactAction'
-import Contact from '../../components/Shared/Contact'
+import Contacts from '../../components/Shared/Contacts'
 import Footer from '../../components/Shared/Footer'
 import Header from '../../components/Shared/Header'
 
@@ -134,7 +134,7 @@ const Root = (props) => (
 
     <Block border textCenter>
       <ContactAction headlineColor='brandAlt' />
-      <Contact />
+      <Contacts />
     </Block>
 
     <Footer />

@@ -5,7 +5,7 @@ import { Text, SmallText } from '../styled-elements/Text';
 
 
 const StyledFlex = styled(Flex)`
-  margin: 1rem;
+  margin: 0.75rem;
   position: relative;
 
   @media (min-width: 768px) {
@@ -18,11 +18,11 @@ const Quote = styled(SmallText)`
   background-color: white;
   border: 1px solid ${theme.colors.text40};
   display: block;
-  padding: 1.3rem 1.4rem 1.4rem;
+  padding: 1rem 1.25rem;
   text-align: left;
 
   @media (min-width: 768px) {
-    padding: 1.3rem 2rem 1.4rem;
+    padding: 1.25rem 1.5rem;
   }
 `
 
@@ -65,7 +65,7 @@ const testimonialList = [{
 const Testimonial = (props) => (
   <StyledFlex justify='center' column>
     <Quote color='text'>{props.testimonial.quote}</Quote>
-    <StyledBox mb={1} ml={[ 3, 4 ]}>
+    <StyledBox mb={[ 0, 1 ]} ml={[ 3, 4 ]}>
       <QuoteTriangle>
         <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
           <polygon fill="currentColor" points="28.59 0 1 27.59 1 0 0 0 0 30 30 0 28.59 0"/>

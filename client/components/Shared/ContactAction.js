@@ -9,8 +9,8 @@ import { LargeText } from '../styled-elements/Text'
 import { Display, Subheadline } from '../styled-elements/Headline'
 import Button from '../styled-elements/Button'
 import Container from '../styled-elements/Container'
-
 import LargeButtonStyler from './LargeButtonStyler'
+
 
 const ContactAction = (props) => (
   <Container textCenter>

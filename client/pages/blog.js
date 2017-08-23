@@ -18,7 +18,7 @@ import ColorBox from '../components/Shared/ColorBox'
 import Block from '../components/Shared/Block.js';
 import Guides from '../components/Shared/Guides.js';
 import ContactAction from '../components/Shared/ContactAction'
-import Contact from '../components/Shared/Contact.js';
+import Contacts from '../components/Shared/Contacts.js';
 
 
 const StyledColorBox = styled(ColorBox)`
@@ -88,7 +88,7 @@ class Article extends React.Component {
 
         <Block border>
           <ContactAction btnColor='brand' withButton />
-          <Contact />
+          <Contacts />
         </Block>
 
         <Footer />

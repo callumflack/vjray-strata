@@ -10,16 +10,15 @@ import Layout from '../components/styled-elements/Layout'
 import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
-// import ColorBox from '../components/Shared/ColorBox'
-import { ColorBox } from '../components/Shared/Hero'
 import Container from '../components/styled-elements/Container'
 import { Display, Headline, Subheadline } from '../components/styled-elements/Headline'
 import { MediumText, LargeText, LineBreak } from '../components/styled-elements/Text'
 
+import { ColorBox } from '../components/Shared/Hero'
 import { FormHeader } from '../components/Shared/Form.js'
 import FormQuote from '../components/Shared/FormQuote'
 import ContactAction from '../components/Shared/ContactAction'
-import Contact from '../components/Shared/Contact'
+import Contacts from '../components/Shared/Contacts'
 
 
 const StyledColorBox = styled(ColorBox)`
@@ -31,8 +30,6 @@ const StyledColorBox = styled(ColorBox)`
       ${theme.colors.beige} 70%
     );
 `
-
-
 
 class FastQuote extends React.Component {
   static async getInitialProps({ req, query }) {
@@ -61,7 +58,7 @@ class FastQuote extends React.Component {
 
         <StyledColorBox pb={[ 4, 5, 6 ]}>
           <Container mw='sm' mt={[ 4, 5, 6 ]} textCenter>
-            <Subheadline children='Confidential & no obligation' />
+            <Subheadline children='Confidential, no obligation' />
             <Display children='Get a fast quote.' mb={2} />
             <MediumText color='text'>
               Forms not your thing? Call us on {contactDetails.phone} <LineBreak m='auto' children='or drop in anytime without an appointment:' />
@@ -76,7 +73,7 @@ class FastQuote extends React.Component {
 
         <Block textCenter>
           <ContactAction headlineColor='brandAlt' />
-          <Contact />
+          <Contacts />
         </Block>
 
         <Footer />

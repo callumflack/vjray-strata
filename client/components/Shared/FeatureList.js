@@ -29,7 +29,7 @@ const Lede = styled(SmallText)`
   color: ${theme.colors.text70};`
 
 const StyledIcon = (props) =>
-  <Icon color='brand' size='100' icon={ props.icon } />
+  <Icon color='brand' size='90' icon={ props.icon } />
 
 const RootDivider = styled(Box)`
   @media (max-width: 1024px) {

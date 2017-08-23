@@ -18,7 +18,7 @@ import Block from '../components/Shared/Block'
 import Guides from '../components/Shared/Guides'
 import RecentPosts from '../components/Shared/RecentPosts'
 import ContactAction from '../components/Shared/ContactAction'
-import Contact from '../components/Shared/Contact'
+import Contacts from '../components/Shared/Contacts'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 import HeroListening from '../components/Shared/HeroListening'
 
@@ -35,7 +35,7 @@ const Root = (props) => (
     <HeroListening />
 
     <Block mw='rg' textCenter>
-      <Box width={[ 1, 5/6 ]} pt={[ 5, 0 ]} mx='auto'>
+      <Box width={[ 11/12, 5/6 ]} mx='auto'>
         <Headline font='displayMedium' color='text' mt={[ 0, 3 ]} mb={2} children='It all adds up to a better deal.' />
         <Container width={[ 1, 1, 5/6 ]}>
           <LargeText color='text70'>
@@ -54,10 +54,10 @@ const Root = (props) => (
       <Box px={3} py={[ 4, 5, 6 ]} style={{ position: 'relative' }}>
         <Container textCenter>
           <Subheadline children='Our service' />
-          <Display mb={2}>
+          <Display>
             It's our job <LineBreakMax mx='auto' children='to sort it.' />
           </Display>
-          <Container width={[ 1, 2/3 ]}>
+          <Container width={[ 1, 7/12 ]}>
             <LargeText color='text70'>
               "I have known and been happy with V J Ray for years. I cannot fault you. Thank you!" <AuthorText>— Petrania, Belmore</AuthorText>
             </LargeText>
@@ -102,8 +102,8 @@ const Root = (props) => (
     <GroupSiteLink />
 
     <Block>
-      <ContactAction btnColor='brandAlt' withButton withByline />
-      <Contact />
+      <ContactAction btnColor='brandAlt' withButton />
+      <Contacts />
     </Block>
 
     <Footer />

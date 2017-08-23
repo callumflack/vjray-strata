@@ -13,7 +13,7 @@ import { Flex, Box } from '../components/styled-grid'
 import Layout from '../components/styled-elements/Layout'
 import Container from '../components/styled-elements/Container'
 import CoverImage from '../components/styled-elements/CoverImage'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
+import { Display, Headline, Subheadline, MobileSubheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 import { Text, SmallText, LargeText, LineBreak } from '../components/styled-elements/Text'
 import Button from '../components/styled-elements/Button'
 
@@ -26,7 +26,7 @@ import FormIssue from '../components/Shared/FormIssue'
 import { FormHeader } from '../components/Shared/Form.js'
 import { Tabs, Pane } from '../components/Shared/Tabs.js'
 import ContactActionAlt from '../components/Shared/ContactActionAlt'
-import Contact from '../components/Shared/Contact'
+import Contacts from '../components/Shared/Contacts'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
 
@@ -38,29 +38,45 @@ const StyledHeroBox = styled(HeroBox)`
       rgba(0, 153, 209, 0.2),
       ${theme.colors.offBlue} 70%
     );
+  background-image: initial;
+  background-color: #d7e5eb;
+  background-color: #eaf3f7;
+
+  &:after {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 153, 209, 0.96);
+    background-color: rgba(64, 64, 112, 0.1);
+    background-blend-mode: multiply;
+    bottom: 0;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 `
 
 const Image = styled(CoverImage)`
   background-image: url('static/img/contact-hero.png');
-  background-position-x: 30%;
-  @media (min-width: 1024px) { background-position-x: 30%; }
-  @media (min-width: 1280px) { background-position-x: 85%; }
-  @media (min-width: 1536px) { background-position-x: 66%; }
+  background-position-x: 20%;
+  @media (min-width: 1024px) { background-position-x: 20%; }
+  @media (min-width: 1280px) { background-position-x: -50%; }
+  @media (min-width: 1536px) { background-position-x: 110%; }
   @media (min-width: 1800px) { background-position-x: 60%; }
 
   @media (min-width: 1536px) { background-size: contain !important; }
 `
 
-{/* <Subheadline children='Get in touch' /> */}
 const Hero = props => (
   <StyledHeroBox>
     <Image />
-    <HeroContainer mw='lg'>
+    <HeroContainer mw='rg'>
       <HeroFlex>
-      <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]} mb={4}>
-        <Display color='brand' font='displayRegular' children='How can we help?' />
-        <LargeText>Visit, call or write to us. <LineBreak>We're ready and waiting.</LineBreak></LargeText>
-      </Box>
+        <Box width={[ 7/12, 5/12, 1/2 ]} ml={[ null, 3 ]} mb={4}>
+          <MobileSubheadline color='brandAlt' children='Contact us' />
+          <Display color='brandAlt' mb={2} children='How can we help?' />
+          <LargeText color='text'>Visit, call or write to us. <LineBreak>We're ready and waiting.</LineBreak></LargeText>
+        </Box>
       </HeroFlex>
     </HeroContainer>
   </StyledHeroBox>
@@ -79,7 +95,7 @@ class ContactPage extends React.Component {
   render() {
     const tabs = [{
       _id: 0,
-      name: 'Quick response message',
+      name: 'Quick response',
       content: <FormContact />
     }, {
       _id: 1,
@@ -89,16 +105,16 @@ class ContactPage extends React.Component {
 
     return (
       <Layout>
-        <Header pathname={this.props.pathname} clear />
+        <Header pathname={this.props.pathname} clear color='brandAlt' />
         <Hero />
 
         <Block textCenter pb={[ 0, 0 ]}>
-          <Display color='brand'>
+          <Display color='brand' mb={1}>
             Visit us anytime.
           </Display>
           <LargeText color='text70' children='No appointment necessary.' />
           <Box mt={[ 3, 4 ]}>
-            <Contact />
+            <Contacts />
             <SmallText color='text70' mt={[ 3, 4 ]}>
               Looking for the Auburn office? They aren't affiliated with us.
               <LineBreak mx='auto'>
@@ -111,7 +127,7 @@ class ContactPage extends React.Component {
 
         <Block id='contact-forms' mw='sm' pb={[ 0, 0 ]}>
           <Container textCenter>
-            <Display color='brandAlt' children='Write to us.' />
+            <Display color='brandAlt' mb={1} children='Write to us.' />
             <LargeText color='text70'>We'll respond quick smart.</LargeText>
           </Container>
 
@@ -125,7 +141,7 @@ class ContactPage extends React.Component {
         </Block>
 
         <Block textCenter>
-          <Display color='brand' children='Is it an emergency?' />
+          <Display color='brand' mb={1} children='Is it an emergency?' />
           <LargeText color='text70' mb={3}>For all types of after-hours repairs.</LargeText>
           <LargeButtonStyler>
             <Link href='/emergency'>

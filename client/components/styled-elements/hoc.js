@@ -29,7 +29,7 @@ module.exports = (Component, props) => {
     `}
 
     ${props => props.letterSpacing && css`
-      letter-spacing: ${theme.letterSpacing[props.letterSpacing] || theme.letterSpacing.body};
+      letter-spacing: ${theme.letterSpacing[props.letterSpacing] || theme.letterSpacing.text};
     `}
 
     ${props => props.lineHeight && css`

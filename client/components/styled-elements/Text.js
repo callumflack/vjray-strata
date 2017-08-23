@@ -26,6 +26,7 @@ const Text = props =>
 const SmallText = props =>
   <Text
     fontSize={[ 1, 2 ]}
+    letterSpacing='body'
     {...props}
   />
 
@@ -39,7 +40,7 @@ const LargeText = props =>
   <Text
     font='displayLight'
     fontSize={[ 4, 5 ]}
-    letterSpacing='body'
+    letterSpacing='text'
     lineHeight='subheadline'
     {...props}
   />

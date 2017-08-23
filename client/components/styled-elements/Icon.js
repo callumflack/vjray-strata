@@ -8,15 +8,17 @@ import theme from '../theme'
 
 // THIS?: https://github.com/jxnblk/reline
 
+{/* <rect fill="none" width={`${props.size}px`} height={`${props.size}px`} /> */}
+
 const Icon = props => (
   <IconRoot {...props}>
     <svg
       xmlns='http://www.w3.org/2000/svg'
       width={`${props.size}px`}
       height={`${props.size}px`}
-      viewBox="0 0 100 100"
+      viewBox="0 0 90 90"
     >
-      <rect fill="none" width={`${props.size}px`} height={`${props.size}px`} />
+      <rect fill="none" width='90px' height='90px' />
       <path
         d={props.icon}
       ></path>

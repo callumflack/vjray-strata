@@ -6,7 +6,7 @@ import Container from '../styled-elements/Container'
 const HeroBox = styled(Box)`
   --Header-height: ${theme.blockHeights.navBar};
   --Hero-height: ${theme.blockHeights.hero};
-  --Hero-height-mobile: ${theme.blockHeights.superHero};
+  --Hero-height-mobile: 60vh;
   align-items: center;
   height: calc(var(--Hero-height-mobile) + var(--Header-height));
   padding-top: var(--Header-height);
@@ -33,6 +33,7 @@ const HeroFlex = styled(Flex)`
   align-items: center;
   height: inherit;
   position: relative;
+  z-index: 1;
 `
 
 export { HeroBox, ColorBox, HeroContainer, HeroFlex }

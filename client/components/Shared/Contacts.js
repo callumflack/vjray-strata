@@ -10,6 +10,9 @@ import { IconPhone, IconEmail, IconAddress, IconEmergency, IconOpen } from '../s
 
 const LocationRoot = styled(Box)`
   @media (max-width: 700px) {
+    margin-left: auto;
+    margin-right: auto;
+
     :last-child {
       margin-top: 3rem;
     }
@@ -70,7 +73,7 @@ const locationList = [{
 
 const Location = (props) => (
   <LocationRoot
-    width={[ 1, 1/3 ]}
+    width={[ 9/10, 1/3 ]}
     px={[ 3, 2 ]}>
     <Link href={props.location.googleMapsUrl}>
       <a>
@@ -128,7 +131,7 @@ const Contact = (props) => (
   <Flex
     direction={[ 'column', 'row' ]}
     justify='center'
-    mt={props.mt || [ 3, 4, 4 ]}
+    mt={props.mt || [ 3, 4 ]}
     mx={-2}>
 
     {locationList.map((location, i) =>

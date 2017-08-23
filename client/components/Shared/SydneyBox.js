@@ -169,8 +169,8 @@ class SydneyBox extends React.Component {
           <StyledBox px={3}>
 
             <Container textCenter relative pt={[ 4, 5, 6 ]}>
-              <Subheadline color='text' children='Dependable and effective' />
-              <Display color='brandAlt' mb={3}>
+              <Subheadline color='brandAlt' children='Dependable and effective' />
+              <Display color='brandAlt'>
                 We help make Sydney <LineBreak bp='1' m='auto'>strata living great.</LineBreak>
               </Display>
               <Container width={[ 1, 2/3 ]}>

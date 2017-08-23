@@ -19,7 +19,7 @@ import Block from '../components/Shared/Block'
 import CoverImage from '../components/styled-elements/CoverImage'
 import Button from '../components/styled-elements/Button'
 import ContactAction from '../components/Shared/ContactAction'
-import Contact from '../components/Shared/Contact'
+import Contacts from '../components/Shared/Contacts'
 import { HeroBox, HeroContainer, HeroFlex } from '../components/Shared/Hero'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
@@ -138,7 +138,7 @@ class WhoContainer extends React.Component {
 
         <Block border textCenter>
           <ContactAction btnColor='brandAlt' withButton />
-          <Contact />
+          <Contacts />
         </Block>
 
         <Footer />

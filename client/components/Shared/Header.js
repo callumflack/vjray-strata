@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-import { contactDetails } from '../constants'
+import { contactDetails, icons } from '../constants'
 import theme from '../theme'
 
 import styled, { css } from 'styled-components'
@@ -9,6 +9,7 @@ import { Flex, Box } from '../styled-grid'
 
 import hoc from '../styled-elements/hoc'
 import { IconLogo } from '../styled-elements/Icons'
+import Icon from '../styled-elements/Icon';
 import { Text, InlineText, Divider } from '../styled-elements/Text'
 import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
@@ -75,7 +76,7 @@ const Root = styled(Flex)`
   `}
 `;
 
-const StyledBox = styled(Box)`
+const ResponsiveToggle = styled(Box)`
   ${props => props.hideAtDesktop && css`
     @media (min-width: 1024px) {
       display: none;
@@ -88,7 +89,7 @@ const StyledBox = styled(Box)`
     }
   `}
 `
-const DesktopNav = StyledBox.extend`
+const DesktopNav = ResponsiveToggle.extend`
   bottom: 0;
   left: 0;
   position: absolute;
@@ -146,7 +147,7 @@ const MobileNav = styled.nav`
 const LinkTextRoot = hoc('span').extend`
   ${props => props.isActive && css`
     border-bottom: 2px solid currentColor;
-    padding-bottom: 38px;
+    padding-bottom: 33px;
   `}
 `
 
@@ -271,7 +272,7 @@ class Header extends React.Component {
         <Root
           align='center'
           justify='space-between'
-          px={3}
+          px={[2,3]}
           color={this.props.color}
           clear={this.props.clear}
           reverseBorder={this.props.reverseBorder}
@@ -302,28 +303,32 @@ class Header extends React.Component {
 
           <Box>
             <Link href='/'>
-              <a><IconLogo /></a>
+              <a><Icon
+                color={this.props.color}
+                size='80'
+                icon={icons.logo}
+              /></a>
             </Link>
           </Box>
 
-          <StyledBox hideAtMobile>
+          <ResponsiveToggle hideAtMobile p={2}>
             <Nav style={{ textAlign: 'right' }}>
               <Link href='tel:{contactDetails.phone}'>
                 <a><LinkText>
-                  <Button invert>Call {contactDetails.phone}</Button>
+                  <Button invert>T {contactDetails.phone}</Button>
                 </LinkText></a>
               </Link>
             </Nav>
-          </StyledBox>
+          </ResponsiveToggle>
 
-          <Nav hideAtDesktop>
+          <ResponsiveToggle hideAtDesktop p={2}>
             <Hamburger onClick={this.handleModalTriggerClick} isOpen={this.state.isModalVisible}>
               <span></span>
               <span></span>
               <span></span>
               <span></span>
             </Hamburger>
-          </Nav>
+          </ResponsiveToggle>
 
         </Root>
 

@@ -88,7 +88,8 @@ const Display = props =>
     font='displayRegular'
     fontSize={[ 6, 7 ]}
     lineHeight='display'
-    mb={1}
+    mt={[ 0, 1 ]}
+    mb={3}
     {...props}
   />
 
@@ -145,11 +146,17 @@ const SubheadlineRoot = hoc('h4').extend`
 const Subheadline = props =>
   <SubheadlineRoot
     {...HeadlineMetaBaseStyles}
-    mb={[ 2, 3 ]}
+    mb={2}
     mx='auto'
     pb={2}
     {...props}
   />
+
+const MobileSubheadline = styled(Subheadline)`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
 
 // Detail Headline, currently used for form group
 // Example of where HeadlineMeta.extend would make more sense?
@@ -190,6 +197,7 @@ export {
   HeadlineMetaBaseStyles,
   HeadlineMeta,
   Subheadline,
+  MobileSubheadline,
   BoxedSubheadline,
   HeadlineDetail,
 }

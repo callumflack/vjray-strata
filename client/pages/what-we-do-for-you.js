@@ -9,7 +9,7 @@ import { Flex, Box } from '../components/styled-grid'
 import hoc from '../components/styled-elements/hoc'
 
 import { LargeText, Text, TextBlock, LineBreak } from '../components/styled-elements/Text'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
+import { Display, Headline, Subheadline, MobileSubheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 import Button from '../components/styled-elements/Button'
 import Container from '../components/styled-elements/Container'
 import CoverImage from '../components/styled-elements/CoverImage'
@@ -17,7 +17,7 @@ import Icon from '../components/styled-elements/Icon';
 import Layout from '../components/styled-elements/Layout'
 
 import Block from '../components/Shared/Block'
-import Contact from '../components/Shared/Contact'
+import Contacts from '../components/Shared/Contacts'
 import ContactAction from '../components/Shared/ContactAction'
 import Footer from '../components/Shared/Footer'
 import Header from '../components/Shared/Header'
@@ -32,19 +32,28 @@ const StyledHeroBox = styled(HeroBox)`
       rgba(222, 202, 178, 0.4),
       ${theme.colors.beige} 70%
     );
+  background-image: initial;
+  background-color: #ebe5df;
 `
 
 const Image = styled(CoverImage)`
   background-image: url('static/img/what-hero.png');
-  background-position-x: 38%;
-  @media (min-width: 768px) { background-position-x: 30%; }
-  @media (min-width: 1024px) { background-position-x: 30%; }
+  background-position-x: 32%;
+  @media (min-width: 768px) { background-position-x: 35%; }
+  @media (min-width: 1024px) { background-position-x: 35%; }
   @media (min-width: 1280px) { background-position-x: 85%; }
   @media (min-width: 1536px) { background-position-x: 66%; }
   @media (min-width: 1800px) { background-position-x: 60%; }
 
   @media (min-width: 1536px) { background-size: contain !important; }
 `
+
+// background-position-x: 20%;
+// @media (min-width: 1024px) { background-position-x: 20%; }
+// @media (min-width: 1280px) { background-position-x: -50%; }
+// @media (min-width: 1536px) { background-position-x: 110%; }
+// @media (min-width: 1800px) { background-position-x: 60%; }
+
 
 {/* <Subheadline children='Our extra services' /> */}
 const Hero = props => (
@@ -53,11 +62,12 @@ const Hero = props => (
     <HeroContainer mw='rg'>
       <HeroFlex>
         <Box w={[ 8/12, 5/12, 4/10, 1/2 ]} ml={[ null, 3 ]} mb={4}>
-          <Display color='brand'>
+          <MobileSubheadline color='brand' children='Services' />
+          <Display color='brand' mb={2}>
             What we do <LineBreak>for you.</LineBreak>
           </Display>
           <LargeText>
-            We’ll help you get <LineBreak>peace of mind.</LineBreak>
+            We’ll go further to help you <LineBreak>find peace of mind.</LineBreak>
           </LargeText>
         </Box>
       </HeroFlex>
@@ -137,7 +147,7 @@ const WhatPage = (props) => (
       <ContactAction
         btnColor='brandAlt'
         withButton />
-      <Contact />
+      <Contacts />
     </Block>
 
     <Footer />

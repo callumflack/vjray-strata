@@ -18,7 +18,11 @@ const StyledIcon = (props) =>
   <Icon color='brand' size='100' icon={ props.icon } />
 
 const GroupSiteLink = () => (
-  <Block bg='beige'>
+  <Block
+    bg='beige'
+    pt={[ 3, 4, 5 ]}
+    pb={[ 3, 4, 5 ]}
+    >
     <Container
       mw='sm'
       textCenter

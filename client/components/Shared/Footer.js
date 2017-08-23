@@ -93,6 +93,12 @@ const Footer = (props) => (
             <a><IconLogo color='text70' /></a>
           </Link>
           <SmallText color='text40' mx={2} my={1} children='&copy; 2017' />
+
+          <StyledNav direction={[ 'column', 'row' ]}>
+            <Link href='/'><a>Terms</a></Link>
+            <StyledDivider />
+            <Link href='/'><a>Privacy</a></Link>
+          </StyledNav>
         </div>
 
         <div>
@@ -118,13 +124,7 @@ const Footer = (props) => (
         </div>
       </Flex>
 
-      <Flex justify={[ 'center']} mt={2}>
-        <StyledNav direction={[ 'column', 'row' ]}>
-          <Link href='/'><a>Terms of use</a></Link>
-          <StyledDivider />
-          <Link href='/'><a>Privacy policy</a></Link>
-        </StyledNav>
-      </Flex>
+
 
     </StyledContainer>
   </Root>

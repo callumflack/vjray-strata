@@ -94,6 +94,11 @@ const LineBreakMax = hoc('span').extend`
   `}
 `
 
+const LineBreakAll = hoc('span').extend`
+  font: inherit;
+  display: table;
+`
+
 const InlineText = Root.withComponent('span').extend`
   display: inline-block;
 `
@@ -167,6 +172,7 @@ export {
   AuthorText,
   LineBreak,
   LineBreakMax,
+  LineBreakAll,
   InlineText,
   TextBlock,
   DangerouslyResetTextBlock,

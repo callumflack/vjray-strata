@@ -12,7 +12,7 @@ import { Display, Headline, Subheadline, HeadlineMeta } from '../../components/s
 import { Text, LargeText, SmallText, LineBreak } from '../../components/styled-elements/Text'
 
 import Block from '../../components/Shared/Block'
-import ColorBox from '../../components/Shared/ColorBox'
+import { ColorBox } from '../../components/Shared/Hero'
 import Contact from '../../components/Shared/Contact'
 import ContactActionAlt from '../../components/Shared/ContactActionAlt'
 import Footer from '../../components/Shared/Footer'
@@ -65,7 +65,7 @@ const Root = (props) => (
         <Flex direction={[ 'column', 'row' ]}>
           <Box width={[ 1, 1/2 ]} mt={[ 0, 3 ]}>
             <Subheadline color='white' children='Info on the go' />
-            <Display color='white' font='displayRegular'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
+            <Display color='white' font='displayRegular'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
             <LargeText color='text40'>Download your complete <LineBreak>guide to Strata living.</LineBreak></LargeText>
           </Box>
 
@@ -83,20 +83,18 @@ const Root = (props) => (
       </Container>
     </StyledColorBox>
 
-    <Block bg='beige'>
-      <Container textCenter>
-        <Subheadline mt={[ 1, 2 ]} children='Take action' />
-        <Display color='brandAlt' children='Forms and fact sheets.' />
-        <LargeText color='brandAlt70' mb={3}>
-          Readily available PDF downloads
-          <LineBreak m='auto'>to manage your Strata.</LineBreak>
-        </LargeText>
-        <LargeButtonStyler>
-          <Link href='/useful-info/forms-and-fact-sheets'>
-            <Button large icon bgColor='brandAlt' children='See the list' />
-          </Link>
-        </LargeButtonStyler>
-      </Container>
+    <Block bg='beige' textCenter>
+      <Subheadline mt={[ 1, 2 ]} children='Take action' />
+      <Display color='brandAlt' children='Forms and fact sheets.' />
+      <LargeText color='brandAlt70' mb={3}>
+        Readily available PDF downloads
+        <LineBreak m='auto'>to manage your Strata.</LineBreak>
+      </LargeText>
+      <LargeButtonStyler>
+        <Link href='/useful-info/forms-and-fact-sheets'>
+          <Button large icon bgColor='brandAlt' children='See the list' />
+        </Link>
+      </LargeButtonStyler>
     </Block>
 
     <Block mw='sm' textCenter id="blog">

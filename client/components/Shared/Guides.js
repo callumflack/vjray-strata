@@ -61,7 +61,7 @@ const StyledBox = styled(Box)`
 `
 
 const StyledLink = styled(Box)`
-  border: 1px solid ${theme.colors.text10};
+  border: 1px solid rgba(0,0,0,0.1);
 `
 
 const Guides = (props) => (

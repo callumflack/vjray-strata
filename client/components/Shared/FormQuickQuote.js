@@ -41,7 +41,7 @@ const Form = styled.form`
     right: 0;
     top: 0;
     transform: unset;
-    width: 100%;
+    width: 100% !important;
     z-index: 10;
   `}
 `;

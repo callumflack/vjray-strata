@@ -1,8 +1,12 @@
 import styled from 'styled-components'
-import HeroBox from './HeroBox'
+import { Box } from '../styled-grid'
+// import { HeroBox } from './Hero'
 import theme from '../theme.js'
 
-const ColorBox = styled(HeroBox)`
+// import { HeroBox, HeroContainer, HeroFlex } from '../components/Shared/Hero'
+
+
+const ColorBox = styled(Box)`
   align-items: initial;
   background-image:
     linear-gradient(

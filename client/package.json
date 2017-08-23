@@ -28,7 +28,7 @@
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "send": "0.15.3",
-    "styled-components": "2.0.0"
+    "styled-components": "2.1.2"
   },
   "devDependencies": {
     "@storybook/react": "^3.1.3"

@@ -20,21 +20,17 @@ import CoverImage from '../components/styled-elements/CoverImage'
 import Button from '../components/styled-elements/Button'
 import ContactAction from '../components/Shared/ContactAction'
 import Contact from '../components/Shared/Contact'
+import { HeroBox, HeroContainer, HeroFlex } from '../components/Shared/Hero'
+import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
 
-const Hero = styled(Box)`
-  --Hero-height: ${theme.blockHeights.superHero};
-  --Header-height: ${theme.blockHeights.navBar};
 
-  align-items: center;
+// const Hero = styled(Box)`
+const StyledHeroBox = styled(HeroBox)`
+  --Hero-height: ${theme.blockHeights.superHero} !important;
+  --Hero-height-mobile: ${theme.blockHeights.hero} !important;
   background-color: #4F90C8;
-  padding-top: var(--Header-height);
-  position: relative;
-
-  height: calc(70vh + var(--Header-height)) !important;
-  @media (min-width: 768px) {
-    height: calc(var(--Hero-height) + var(--Header-height)) !important;
-  }
+  background-image: initial;
 
   &:after {
     background-color: rgba(79, 144, 200, 0.25);
@@ -49,22 +45,6 @@ const Hero = styled(Box)`
   }
 `
 
-const HeroTitleFlex = styled(Flex)`
-  height: 70vh;
-
-  @media (min-width: 768px) {
-    height: var(--Hero-height);
-  }
-`
-
-const HeroTitleBox = styled(Box)`
-  transform: translateY(-64px);
-
-  @media (min-width: 768px) {
-    transform: translateY(-64px);
-  }
-`
-
 const Image = styled(CoverImage)`
   background-image: url('static/img/who-cronulla.jpg');
   background-position: 50% 50%;
@@ -73,6 +53,22 @@ const Image = styled(CoverImage)`
   @media (min-width: 1280px) { background-position: 50% 50%; }
   @media (min-width: 1536px) { background-position: 30% 100%; }
 `
+
+{/* <Subheadline color='brandAlt' children='About us' /> */}
+const Hero = props => (
+  <StyledHeroBox>
+    <Image />
+    <HeroContainer mw='lg'>
+      <HeroFlex style={{ zIndex: '1' }}>
+        <Box w={[ 5/6, 5/6, 6/12, 2/3 ]} ml={[ null, 3 ]} mb={[ 4, 5, 6 ]}>
+          <Display color='brandAlt'>
+            We believe in better <LineBreak>Strata management </LineBreak><LineBreak>for Sydney.</LineBreak>
+          </Display>
+        </Box>
+      </HeroFlex>
+    </HeroContainer>
+  </StyledHeroBox>
+)
 
 const TextBlockWrapper = styled(Flex)`
   margin-top: 0;
@@ -115,29 +111,9 @@ class WhoContainer extends React.Component {
     return (
       <Layout>
         <Header pathname={this.props.pathname} clear color='brandAlt' />
+        <Hero />
 
-        <Hero px={3}>
-          <Image />
-          <Container
-            mw='lg'
-            pl={[ 0, 3, 3, 0 ]}
-            relative
-            style={{ zIndex: 1 }}
-          >
-            <HeroTitleFlex align='center'>
-              <HeroTitleBox w={[ 5/6, 2/3 ]}>
-                <Subheadline color='brandAlt'>About us</Subheadline>
-                <Display color='brandAlt'>
-                  We believe in better&nbsp;
-                  <LineBreak>Strata management </LineBreak>
-                  <LineBreak>for Sydney.</LineBreak>
-                </Display>
-              </HeroTitleBox>
-            </HeroTitleFlex>
-          </Container>
-        </Hero>
-
-        <Box px={3} pt={[ 4, 5, 6 ]} pb={[ 4, 5, 6 ]}>
+        <Box px={3} py={[ 4, 5, 6 ]}>
           <Container>
             <Box width={[ 1, 11/12 ]} mx='auto'>
 

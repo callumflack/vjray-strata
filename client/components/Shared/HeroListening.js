@@ -6,27 +6,13 @@ import theme from '../theme'
 import { LargeText, LineBreak } from '../styled-elements/Text'
 import { Headline, Display } from '../styled-elements/Headline'
 import CoverImage from '../styled-elements/CoverImage'
-import Container from '../styled-elements/Container'
 
-import HeroBox from '../Shared/HeroBox'
-import QuickQuoteForm from './QuickQuoteForm'
+import { HeroBox, HeroContainer, HeroFlex } from './Hero'
+import FormQuickQuote from './FormQuickQuote'
 
 
-const Root = styled(HeroBox)`
-  --Header-height: ${theme.blockHeights.navBar};
-  height: calc(70vh + var(--Header-height)) !important;
-
-  @media (min-width: 768px) {
-    height: calc(50vh + var(--Header-height)) !important;
-  }
-`
-
-const StyledFlex = styled(Flex)`
-  height: 70vh;
-
-  @media (min-width: 768px) {
-    height: 50vh;
-  }
+const StyledHeroBox = styled(HeroBox)`
+  background-color: ${theme.colors.beige};
 `
 
 const Image = styled(CoverImage)`
@@ -47,28 +33,22 @@ const Image = styled(CoverImage)`
   }
 `
 
-
-
-
-
-const ListeningBox = () => (
-  <Root px={3}>
+const HeroListening = () => (
+  <StyledHeroBox>
     <Image />
-
-    <Container mw='lg' relative>
-      <StyledFlex align='center'>
-        <Box width={[ 9/12, 5/12, 1/2 ]} ml={[ null, 3 ]}>
+    <HeroContainer mw='lg'>
+      <HeroFlex>
+        <Box width={[ 9/12, 5/12, 1/2 ]} ml={[ null, 3 ]} mb={4}>
           <Display font='displayRegular'>
-            Skip the hassle of&nbsp;
-            <LineBreak>Strata management.</LineBreak>
+            Skip the hassle of <LineBreak>Strata management.</LineBreak>
           </Display>
           <LargeText>At V J Ray Strata, we understand how valuable your peace of mind is.</LargeText>
         </Box>
-      </StyledFlex>
-    </Container>
+      </HeroFlex>
+    </HeroContainer>
 
-    <QuickQuoteForm />
-  </Root>
+    <FormQuickQuote />
+  </StyledHeroBox>
 );
 
-export default ListeningBox
+export default HeroListening

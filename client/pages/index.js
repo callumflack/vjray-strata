@@ -15,30 +15,28 @@ import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styl
 import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
-import HeroBox from '../components/Shared/HeroBox'
 import Guides from '../components/Shared/Guides'
 import RecentPosts from '../components/Shared/RecentPosts'
 import ContactAction from '../components/Shared/ContactAction'
 import Contact from '../components/Shared/Contact'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import HeroListening from '../components/Shared/HeroListening'
 
-import ListeningBox from '../components/Home/ListeningBox'
-import FeatureList from '../components/Home/FeatureList'
-import SydneyBox from '../components/Home/SydneyBox'
-import TalkBox from '../components/Home/TalkBox'
-import Testimonials from '../components/Home/Testimonials'
-import GroupSiteLink from '../components/Home/GroupSiteLink'
+import FeatureList from '../components/Shared/FeatureList'
+import SydneyBox from '../components/Shared/SydneyBox'
+import TalkBox from '../components/Shared/TalkBox'
+import Testimonials from '../components/Shared/Testimonials'
+import GroupSiteLink from '../components/Shared/GroupSiteLink'
 
 
 const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear />
-
-    <ListeningBox />
+    <HeroListening />
 
     <Block mw='rg' textCenter>
       <Box width={[ 1, 5/6 ]} pt={[ 5, 0 ]} mx='auto'>
-        <Headline font='displayMedium' color='text' mt={5} mb={3} children='It all adds up to a better deal.' />
+        <Headline font='displayMedium' color='text' mt={[ 0, 3 ]} mb={2} children='It all adds up to a better deal.' />
         <Container width={[ 1, 1, 5/6 ]}>
           <LargeText color='text70'>
             "You guys are very quick to respond and handle things efficiently, no complaints here"&nbsp;
@@ -55,9 +53,9 @@ const Root = (props) => (
     <TalkBox>
       <Box px={3} py={[ 4, 5, 6 ]} style={{ position: 'relative' }}>
         <Container textCenter>
-          <Display>
-            It's our job&nbsp;
-            <LineBreakMax mx='auto' children='to sort it.' />
+          <Subheadline children='Our service' />
+          <Display mb={2}>
+            It's our job <LineBreakMax mx='auto' children='to sort it.' />
           </Display>
           <Container width={[ 1, 2/3 ]}>
             <LargeText color='text70'>
@@ -78,7 +76,7 @@ const Root = (props) => (
     </TalkBox>
 
     <Block textCenter>
-      <Subheadline>Info on the go</Subheadline>
+      <Subheadline children='Info on the go' />
       <Display color='brandAlt' mb={3} children='Your guides to Sydney Strata.' />
       <Container width={[ 1, 2/3 ]}>
         <Text color='text70'>
@@ -103,7 +101,7 @@ const Root = (props) => (
 
     <GroupSiteLink />
 
-    <Block border >
+    <Block>
       <ContactAction btnColor='brandAlt' withButton withByline />
       <Contact />
     </Block>

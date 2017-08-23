@@ -20,6 +20,58 @@ import Footer from '../../components/Shared/Footer'
 import Header from '../../components/Shared/Header'
 
 
+const HeroBox = styled(Box)`
+  --Hero-height: ${theme.blockHeights.hero};
+  --Header-height: ${theme.blockHeights.navBar};
+
+  align-items: center;
+  height: calc(50vh + var(--Header-height)) !important;
+  padding-top: var(--Header-height);
+  position: relative;
+
+  @media (min-width: 768px) {
+    height: calc(var(--Hero-height) + var(--Header-height)) !important;
+  }
+`
+
+const HeroTitleFlex = styled(Flex)`
+  height: 50vh;
+
+  @media (min-width: 768px) {
+    height: var(--Hero-height);
+  }
+`
+
+const HeroTitleBox = styled(Box)`
+
+`
+
+const Hero = props => (
+  <HeroBox px={3}>
+    <Container
+      mw='sm'
+      pb={[0]}
+      pl={[ 0, 3, 3, 0 ]}
+      relative
+      style={{ zIndex: 1 }}
+      >
+      <HeroTitleFlex
+        align='center'
+        width={[ 10/12, 1, 2/3, 2/3 ]}
+        >
+        <HeroTitleBox>
+          <Display color='brand'>
+            Strata forms <LineBreak>and fact sheets.</LineBreak>
+          </Display>
+          <LargeText color='text70'>
+            Readily available PDF downloads <LineBreak>to help your Strata management.</LineBreak>
+          </LargeText>
+        </HeroTitleBox>
+      </HeroTitleFlex>
+    </Container>
+  </HeroBox>
+)
+
 const ListItemRoot = styled(Box)`
   border-bottom: 1px solid ${theme.colors.text20};
 `;
@@ -27,7 +79,7 @@ const ListItemRoot = styled(Box)`
 const ListItem = props => (
   <Link href={`${props.fileUrl}`}>
     <a>
-      <ListItemRoot py={3}>
+      <ListItemRoot py={[2,3]}>
         <Flex align='baseline' wrap='nowrap'>
           <LargeText color='text' mr={2}>{props.headline}</LargeText>
           <Text color='text70'>{props.subheadline}</Text>
@@ -39,23 +91,14 @@ const ListItem = props => (
 );
 
 // `${theme.blockHeights.navBar}px`
+// <Subheadline children='Take action' />
+
 const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear />
+    <Hero />
 
-    <Block mw='sm' pb={[0]}>
-      <Box width={[ 1, 1, 2/3, 2/3 ]} style={{ paddingTop: theme.blockHeights.navBar }}>
-        <Subheadline children='Take action' />
-        <Display color='brand'>
-          Strata forms <LineBreak>and fact sheets.</LineBreak>
-        </Display>
-        <LargeText color='text70'>
-          Readily available PDF downloads <LineBreak>to help your Strata management.</LineBreak>
-        </LargeText>
-      </Box>
-    </Block>
-
-    <Box py={[ 4, 5, 6 ]} px={3}>
+    <Box pb={[ 4, 5, 6 ]} px={3}>
       <Box pb={[ 4, 5 ]}>
         <Container mw='sm' >
           <Subheadline children='Forms' mb={2} />

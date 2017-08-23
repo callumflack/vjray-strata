@@ -59,6 +59,11 @@ class FormIssue extends React.Component {
             validations='isExisty'
             required
           />
+          <Textarea
+            placeholder='Please describe your issue…'
+            name='comments'
+            rows='7'
+          />
         </FormGroup>
       </FormContainer>
     );

@@ -2,8 +2,8 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 import { contactDetails } from '../constants'
-
 import theme from '../theme'
+
 import styled, { css } from 'styled-components'
 import { Flex, Box } from '../styled-grid'
 
@@ -12,7 +12,6 @@ import { IconLogo } from '../styled-elements/Icons'
 import { Text, InlineText, Divider } from '../styled-elements/Text'
 import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
-
 import Hamburger from './Hamburger'
 
 

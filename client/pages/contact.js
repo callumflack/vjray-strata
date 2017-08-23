@@ -20,8 +20,7 @@ import Button from '../components/styled-elements/Button'
 import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
-import ColorBox from '../components/Shared/ColorBox'
-import HeroBox from '../components/Shared/HeroBox'
+import { HeroBox, HeroContainer, HeroFlex } from '../components/Shared/Hero'
 import FormContact from '../components/Shared/FormContact'
 import FormIssue from '../components/Shared/FormIssue'
 import { FormHeader } from '../components/Shared/Form.js'
@@ -30,14 +29,9 @@ import ContactActionAlt from '../components/Shared/ContactActionAlt'
 import Contact from '../components/Shared/Contact'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
-import ListeningBox from '../components/Home/ListeningBox'
-
 
 
 const StyledHeroBox = styled(HeroBox)`
-  --Hero-height: ${theme.blockHeights.hero};
-  background-color: ${theme.colors.offBlue};
-  background-color: transparent;
   background-image:
     linear-gradient(
       to bottom,
@@ -48,21 +42,30 @@ const StyledHeroBox = styled(HeroBox)`
 
 const Image = styled(CoverImage)`
   background-image: url('static/img/contact-hero.png');
-  background-position: 30% 100%;
+  background-position-x: 30%;
+  @media (min-width: 1024px) { background-position-x: 30%; }
+  @media (min-width: 1280px) { background-position-x: 85%; }
+  @media (min-width: 1536px) { background-position-x: 66%; }
+  @media (min-width: 1800px) { background-position-x: 60%; }
 
-  @media (min-width: 1024px) {
-    background-position: 100% 100%;
-  }
-
-  @media (min-width: 1280px) {
-    background-size: contain !important;
-    background-position: 85% 100%;
-  }
-
-  @media (min-width: 1536px) {
-    background-position: 66% 100%;
-  }
+  @media (min-width: 1536px) { background-size: contain !important; }
 `
+
+{/* <Subheadline children='Get in touch' /> */}
+const Hero = props => (
+  <StyledHeroBox>
+    <Image />
+    <HeroContainer mw='lg'>
+      <HeroFlex>
+      <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]} mb={4}>
+        <Display color='brand' font='displayRegular' children='How can we help?' />
+        <LargeText>Visit, call or write to us. <LineBreak>We're ready and waiting.</LineBreak></LargeText>
+      </Box>
+      </HeroFlex>
+    </HeroContainer>
+  </StyledHeroBox>
+)
+
 
 
 class ContactPage extends React.Component {
@@ -87,23 +90,7 @@ class ContactPage extends React.Component {
     return (
       <Layout>
         <Header pathname={this.props.pathname} clear />
-
-        <StyledHeroBox px={3}>
-          <Image />
-
-          <Container mw='lg' relative>
-            <Flex
-              style={{ height: theme.blockHeights.hero }}
-              align='center'
-              >
-              <Box width={[ 5/12, 1/2 ]} ml={[ null, 3 ]}>
-                <Subheadline children='Get in touch' />
-                <Display color='brand' font='displayRegular' children='How can we help?' />
-                <LargeText color='text70'>Visit, call or write to us. <LineBreak>We're ready and waiting.</LineBreak></LargeText>
-              </Box>
-            </Flex>
-          </Container>
-        </StyledHeroBox>
+        <Hero />
 
         <Block textCenter pb={[ 0, 0 ]}>
           <Display color='brand'>
@@ -156,5 +143,28 @@ class ContactPage extends React.Component {
     )
   }
 }
+
+// class ContactPage extends React.Component {
+//   static async getInitialProps({ pathname, query }) {
+//     return {
+//       pathname,
+//       defaultForm: query.form,
+//     }
+//   }
+//
+//   render() {
+//     const tabs = [{
+//       _id: 0,
+//       name: 'Quick response message',
+//       content: <FormContact />
+//     }, {
+//       _id: 1,
+//       name: 'Report an issue',
+//       content: <FormIssue />
+//     }];
+//
+//     return <Root pathname={this.props.pathname} />
+//   }
+// }
 
 export default ContactPage

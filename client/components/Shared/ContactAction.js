@@ -14,8 +14,8 @@ import LargeButtonStyler from './LargeButtonStyler'
 
 const ContactAction = (props) => (
   <Container textCenter>
-    <Subheadline>Get in touch</Subheadline>
-    <Display color={props.headlineColor || 'text' } font='displayRegular'>Call 1300 073 405</Display>
+    <Subheadline children='Get in touch' />
+    <Display color={props.headlineColor || 'text' } font='displayRegular' children='Call 1300 073 405' />
 
     <Box
       width={[ 1, 7/12 ]}

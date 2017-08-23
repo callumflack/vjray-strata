@@ -4,6 +4,23 @@ const contactDetails = {
     emergencyBusinessHours: '9784 7900'
 }
 
+const emergencyList = [{
+  headline: 'Is it due to a natural disaster?',
+  text: 'In the case of a natural disaster such as a major storm or flood etc please contact the NSW State Emergency Service on 132 500.',
+}, {
+  headline: 'Is it a rental property?',
+  text: 'If your repair relates to a property that you are renting through one of our offices please go to the V J Ray Group website.'
+}, {
+  headline: 'Is it within business hours?',
+  text: 'Please contact us by telephone on 9784 7900 if your repair is urgent and during office hours. Please don\'t rely on an email for an urgent repair as your strata manager may not see the email in time to contact the relevant repairer.',
+}, {
+  headline: 'Is it after hours?',
+  text: 'For after hours emergency repairs only contact our director Mike Pollard on 0418 245 545. Note that additional charges will apply for after hour repairs.',
+}, {
+  headline: 'Is it really urgent?',
+  text: 'For non-urgent repairs please use the form below and provide us as much detail as possible about your repair request.',
+}]
+
 const icons = {
     emergency: 'M29.65,61.67c-.77.79-7.52,7.8-7.52,12.08a8.26,8.26,0,0,0,16.52,0c0-4.3-6.75-11.3-7.52-12.08A1.07,1.07,0,0,0,29.65,61.67Zm.73,18.27a6.21,6.21,0,0,1-6.2-6.2c0-2.6,4-7.43,6.2-9.85,2.23,2.42,6.2,7.26,6.2,9.85A6.21,6.21,0,0,1,30.38,79.93ZM76.83,28.32H64.45v-1a1,1,0,0,0-1-1V24.6l8.11,1.6a3.53,3.53,0,0,0,.63.06,3.93,3.93,0,0,0,3.65-4.13c0-2.52-2-4.51-4.28-4.07l-8.11,1.6V19a1,1,0,0,0-1-1H58.25a1,1,0,0,0-1,1v.63l-8.1-1.6c-2.27-.44-4.28,1.56-4.28,4.07a3.92,3.92,0,0,0,3.65,4.13,2.59,2.59,0,0,0,.63-.08l8.1-1.6v1.66a1,1,0,0,0-1,1v1H37.62A13.44,13.44,0,0,0,24.2,41.75V53.09h-1a1,1,0,0,0-1,1v4.13a1,1,0,0,0,1,1H39.68a1,1,0,0,0,1-1V54.12a1,1,0,0,0-1-1h-1V43.81a1,1,0,0,1,1-1h16.5v1a1,1,0,0,0,1,1h6.2a1,1,0,0,0,1-1v-1H76.83a1,1,0,0,0,1-1V29.35A1,1,0,0,0,76.83,28.32ZM63.42,21.77l8.5-1.68c1-.2,1.83.82,1.83,2s-.87,2.23-1.83,2l-8.5-1.68ZM38.65,57.23H24.2V55.17H38.65ZM56.19,40.72H39.68a3.1,3.1,0,0,0-3.1,3.1v9.27H26.26V41.75A11.36,11.36,0,0,1,37.62,30.4H56.19Zm1-18.21-8.49,1.67c-1,.19-1.83-.82-1.83-2a1.9,1.9,0,0,1,1.59-2.07h.24l8.49,1.67Zm2.07.84V20.07h2.07v6.19H59.29Zm3.1,6V42.77H58.25v-1s0,0,0-.06V29.36s0,0,0-.06v-1h4.13ZM75.8,40.72H64.45V30.4H75.8Z',
 
@@ -24,4 +41,47 @@ const icons = {
     sun: 'M28.44,34.2l-3.86-2.58-1.29,1.93,3.86,2.58Zm12.42-9.31L37.3,16.3l-2.15.89,3.56,8.57ZM51.16,14H48.84v9.28h2.32Zm-5.23,9.57L45,19l-2.28.45L43.65,24Zm-14,6.72-6.56-6.56-1.64,1.64,6.56,6.56ZM57.26,19.47,55,19l-.91,4.56,2.28.45ZM36.12,27.15l-2.58-3.87-1.93,1.29,2.58,3.87ZM65.8,28.44l2.58-3.87-1.93-1.29-2.58,3.87Zm14.73,14.3L76,43.65l.45,2.28L81,45Zm0,14.51L81,55l-4.56-.91L76,56.35Zm-5.41-16.4L83.7,37.3l-.89-2.15L74.24,38.7Zm-3.55-6.66,1.29,1.93,3.87-2.58-1.29-1.93ZM50,27.89A22.11,22.11,0,1,0,72.11,50,22.14,22.14,0,0,0,50,27.89Zm0,41.9A19.79,19.79,0,1,1,69.79,50,19.8,19.8,0,0,1,50,69.79Zm14.85-52.6L62.7,16.3l-3.56,8.59,2.15.88ZM25.76,38.7l-8.57-3.56L16.3,37.3l8.59,3.56ZM69.7,31.93l6.56-6.56-1.64-1.64-6.56,6.56ZM19.47,42.74,19,45l4.56.91L24,43.65Zm44.4,30.11,2.58,3.87,1.93-1.29-2.58-3.87Zm-4.72,2.27L62.7,83.7l2.15-.89L61.3,74.23Zm8.91-5.41,6.56,6.56,1.64-1.64L69.7,68.07Zm-14,6.71L55,81l2.28-.45L56.35,76ZM76.72,48.84v2.32H86V48.84ZM48.84,86h2.32V76.72H48.84Zm25.4-24.7,8.57,3.56.89-2.15-8.59-3.56ZM19,55l.45,2.28L24,56.35l-.45-2.28ZM71.56,65.8l3.86,2.58,1.29-1.93-3.86-2.58ZM24.88,59.15l-8.59,3.56.89,2.15,8.59-3.56Zm-1.6-10.31H14v2.32h9.28ZM42.74,80.53,45,81l.91-4.56L43.65,76ZM28.44,65.8l-1.29-1.93-3.87,2.58,1.29,1.93Zm6.71,17,2.15.89,3.55-8.58-2.15-.89ZM30.28,68.07l-6.56,6.56,1.64,1.64,6.56-6.56Zm3.91,3.49-2.58,3.87,1.93,1.29,2.58-3.87Z',
 }
 
-export { icons, contactDetails }
+const servicesIntro = 'Of course we provide all of the usual services you would expect from a strata manager. We arrange your meetings, collect your levies, manage repairs and help with disputes. But we believe it shouldn’t stop there. Our mission is to help make life in a strata scheme easier by also doing the following:'
+
+const servicesList = [{
+  icon: 'emergency',
+  headline: 'After-hours emergencies',
+  text: 'We know that emergencies don’t just happen during office hours. And rather than just leave you with the phone number for a message service we have our most senior staff on call to help you with emergency repairs, whenever they occur.',
+  link: false,
+  buttonUrl: '/emergency',
+  buttonLabel: 'Emergencies'
+}, {
+  icon: 'contents',
+  headline: 'Contents insurance',
+  text: 'Many owners and residents aren’t aware that damage to their furniture and possessions is not covered by the buildings insurance. That’s why we help with arranging contents insurance too. And depending on which company the building is insured with, there can be considerable savings by reducing insurances excess amounts.',
+  link: false
+}, {
+  icon: 'bylaw',
+  headline: 'By-law registration',
+  text: 'With the introduction of the Strata Schemes Management Act 2015, the need for By-laws to be adopted and amended increased greatly. For example, did you know you often need to create a By-law BEFORE you renovate your bathroom?',
+  link: false
+}, {
+  icon: 'contractor',
+  headline: 'Contractor management',
+  text: 'We all know how complex the licensing, WHS & insurance laws surrounding contractors are these days, so at V J Ray we enlist the help of an independent company to continually monitor each and every contractor used by all of our strata schemes so that there is never any doubt that they comply.',
+  link: false,
+  buttonUrl: '/contact?form=report#contact-forms',
+  buttonLabel: 'Report an issue'
+}, {
+  icon: 'voting',
+  headline: 'Electronic voting',
+  text: 'With the introduction of the Strata Schemes Management Act 2015, there is now the opportunity for strata schemes to elect to make some of the less complex decisions at a meeting by voting electronically, rather than attending the meeting in person.',
+  link: false
+}, {
+  icon: 'service',
+  headline: 'Online portal',
+  text: 'We understand that its often quicker for you to help yourself, particularly if you are seeking information after hours. So we provide access to much of the commonly needed items through an online portal for each owner.',
+  link: false
+}, {
+  icon: 'sun',
+  headline: 'Coming soon…',
+  text: 'We are constantly working to improve our help to strata owners and residents by taking advantage of technology as it becomes available. Things such as video meetings, an App to report repairs and maintenance items, and online contractor supervision are just a few of the things we are currently working on, so be sure to check back soon to see how they are coming along.',
+  link: false
+}]
+
+export { icons, contactDetails, servicesIntro, servicesList }

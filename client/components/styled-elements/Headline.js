@@ -88,7 +88,7 @@ const Display = props =>
     font='displayRegular'
     fontSize={[ 6, 7 ]}
     lineHeight='display'
-    mb={2}
+    mb={1}
     {...props}
   />
 
@@ -145,7 +145,7 @@ const SubheadlineRoot = hoc('h4').extend`
 const Subheadline = props =>
   <SubheadlineRoot
     {...HeadlineMetaBaseStyles}
-    mb={3}
+    mb={[ 2, 3 ]}
     mx='auto'
     pb={2}
     {...props}

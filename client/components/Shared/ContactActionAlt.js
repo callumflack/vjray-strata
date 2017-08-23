@@ -24,8 +24,7 @@ const ContactActionAlt = (props) => (
   <StyledBox>
     <Subheadline>Let's talk</Subheadline>
     <Display color='text' font='displayRegular' mb={3}>
-      Skip the hassle of&nbsp;
-      <LineBreak m='auto'>Strata management.</LineBreak>
+      Skip the hassle of <LineBreak m='auto'>Strata management.</LineBreak>
     </Display>
     <LargeButtonStyler>
       <Link href='/fast-quote'>

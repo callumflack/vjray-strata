@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Flex, Box } from '../styled-grid'
 import hoc from '../styled-elements/hoc'
 import theme from '../theme'
-import setCloudinaryImages from '../../lib/cloudinaryDimensions.js'
 
 import { LargeText, LineBreak } from '../styled-elements/Text'
 import { Headline, Display } from '../styled-elements/Headline'
@@ -27,7 +26,7 @@ const Image = styled(CoverImage)`
   @media (min-width: 1280px) { background-size: contain !important; }
 `
 
-const Root = () => (
+const HeroListening = () => (
   <StyledHeroBox>
     <Image src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503542523/home-hero_eq4eot.jpg' />
     <HeroContainer mw='lg'>
@@ -44,15 +43,5 @@ const Root = () => (
     <FormQuickQuote />
   </StyledHeroBox>
 );
-
-class HeroListening extends React.Component {
-  componentDidMount() {
-    setCloudinaryImages();
-  }
-
-  render() {
-    return <Root />
-  }
-}
 
 export default HeroListening

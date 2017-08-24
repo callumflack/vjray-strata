@@ -117,7 +117,7 @@ class Index extends React.Component {
     }
   }
   render() {
-    return <Root pathname={this.props.pathname} />
+    return <Root {...this.props} />
   }
 }
 

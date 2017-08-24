@@ -15,10 +15,9 @@ const StyledHeroBox = styled(HeroBox)`
   background-color: ${theme.colors.beige};
 `
 
+// background-image: url('static/img/home-hero.jpg');
 const Image = styled(CoverImage)`
-  background-image: url('static/img/home-hero.jpg');
   background-position: 35% 100%;
-
   @media (min-width: 1024px) { background-position-x: 100%; }
   @media (min-width: 1280px) { background-position-x: 85%; }
   @media (min-width: 1536px) { background-position-x: 66%; }
@@ -28,7 +27,7 @@ const Image = styled(CoverImage)`
 
 const HeroListening = () => (
   <StyledHeroBox>
-    <Image />
+    <Image src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503542523/home-hero_eq4eot.jpg' />
     <HeroContainer mw='lg'>
       <HeroFlex>
         <Box width={[ 8/10, 5/12, 4/10 ]} ml={[ null, 3 ]} mb={[ 3, 4 ]}>

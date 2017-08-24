@@ -23,8 +23,8 @@ import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 import HeroListening from '../components/Shared/HeroListening'
 
 import FeatureList from '../components/Shared/FeatureList'
-import SydneyBox from '../components/Shared/SydneyBox'
-import TalkBox from '../components/Shared/TalkBox'
+import HeroSydney from '../components/Shared/HeroSydney'
+import HeroQuotes from '../components/Shared/HeroQuotes'
 import Testimonials from '../components/Shared/Testimonials'
 import GroupSiteLink from '../components/Shared/GroupSiteLink'
 
@@ -48,9 +48,9 @@ const Root = (props) => (
       <FeatureList />
     </Block>
 
-    <SydneyBox />
+    <HeroSydney />
 
-    <TalkBox>
+    <HeroQuotes>
       <Box px={3} py={[ 4, 5, 6 ]} style={{ position: 'relative' }}>
         <Container textCenter>
           <Subheadline children='Our service' />
@@ -73,7 +73,7 @@ const Root = (props) => (
           <Testimonials />
         </Container>
       </Box>
-    </TalkBox>
+    </HeroQuotes>
 
     <Block textCenter>
       <Subheadline children='Info on the go' />

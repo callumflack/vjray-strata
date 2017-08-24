@@ -44,8 +44,6 @@ const StyledBox = styled(Box)`
     position: absolute;
     right: 0;
     top: 0;
-
-
   }
 `;
 

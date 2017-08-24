@@ -153,7 +153,7 @@ const DangerouslyResetTextBlock = styled(TextBlock)`
 `
 
 const Divider = styled.span`
-  --spacing: 1rem;
+  --spacing: 0.75rem;
   color: inherit;
   margin-left: var(--spacing);
   margin-right: var(--spacing);

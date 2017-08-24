@@ -16,6 +16,8 @@ export default ({ children, title = 'V J Ray Strata, Sydney' }) => (
 
       { children }
 
+      <script src='static/js/cloudinaryDimensions.js'></script>
+
     </div>
   </ThemeProvider>
 );

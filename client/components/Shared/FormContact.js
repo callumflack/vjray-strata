@@ -61,7 +61,7 @@ class FormContact extends React.Component {
             required
           />
           <Textarea
-            placeholder='Add any comments…'
+            placeholder='Add your comments…'
             name='comments'
             rows='7'
           />

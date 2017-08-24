@@ -31,15 +31,17 @@ import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
 
 
+// #cbd7fc,
 const StyledHeroBox = styled(HeroBox)`
+  background-color: #d7e5eb;
+  background-color: initial;
+  background-image: initial;
   background-image:
     linear-gradient(
       to bottom,
-      rgba(0, 153, 209, 0.2),
-      ${theme.colors.offBlue} 70%
+      rgba(62, 62, 157, 0.25),
+      #eaf3f7 80%
     );
-  background-image: initial;
-  background-color: #d7e5eb;
   background-color: #eaf3f7;
 
   &:after {
@@ -58,7 +60,8 @@ const StyledHeroBox = styled(HeroBox)`
 
 const Image = styled(CoverImage)`
   background-image: url('static/img/contact-hero.png');
-  background-position-x: 20%;
+  background-position-x: 31%;
+  @media (min-width: 768px)  { background-position-x: 21%; }
   @media (min-width: 1024px) { background-position-x: 20%; }
   @media (min-width: 1280px) { background-position-x: -50%; }
   @media (min-width: 1536px) { background-position-x: 110%; }
@@ -74,8 +77,8 @@ const Hero = props => (
       <HeroFlex>
         <Box width={[ 7/12, 5/12, 1/2 ]} ml={[ null, 3 ]} mb={4}>
           <MobileSubheadline color='brandAlt' children='Contact us' />
-          <Display color='brandAlt' mb={2} children='How can we help?' />
-          <LargeText color='text'>Visit, call or write to us. <LineBreak>We're ready and waiting.</LineBreak></LargeText>
+          <Display color='brandAlt' mb={2} children='How can we help you?' />
+          <LargeText color='text'>Visit, call or write to us.</LargeText>
         </Box>
       </HeroFlex>
     </HeroContainer>

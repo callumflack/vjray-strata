@@ -153,7 +153,7 @@ const Subheadline = props =>
   />
 
 const MobileSubheadline = styled(Subheadline)`
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `

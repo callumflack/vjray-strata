@@ -87,8 +87,7 @@ const Root = (props) => (
       <Subheadline mt={[ 1, 2 ]} children='Take action' />
       <Display color='brandAlt' children='Forms and fact sheets.' />
       <LargeText color='brandAlt70' mb={3}>
-        Readily available PDF downloads
-        <LineBreak m='auto'>to manage your Strata.</LineBreak>
+        Readily available PDF downloads <LineBreak m='auto'>to manage your Strata.</LineBreak>
       </LargeText>
       <LargeButtonStyler>
         <Link href='/useful-info/forms-and-fact-sheets'>

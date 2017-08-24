@@ -1,11 +1,18 @@
 ---
-title: Hello World
+title: Mike's letter
 ---
 
-Amet ad ea nisi nesciunt cupiditate? Nisi explicabo odio voluptatem corporis incidunt deleniti cupiditate molestias. Totam a totam iure dolor repellat Laboriosam porro enim possimus expedita quibusdam? Eos nostrum quo!
+Way back in 1962, in a one-room office in Campsie, V J Ray started its journey in the Sydney real estate scene.
 
-Sit quam itaque ipsam praesentium velit. Tenetur itaque veritatis ut esse ea! Maiores ab hic incidunt eos impedit quas! Saepe odit laborum odio optio tempore Facilis eos quod placeat temporibus
+Today, over 55 years later, our Strata Team has 27 staff, all with just one goal, to help people.
 
-Amet ad ea nisi nesciunt cupiditate? Nisi explicabo odio voluptatem corporis incidunt deleniti cupiditate molestias. Totam a totam iure dolor repellat Laboriosam porro enim possimus expedita quibusdam? Eos nostrum quo!
+V J Ray is a family company that was started by Leon Pollard and is currently owned and operated by his son Mike Pollard.
 
-Lorem amet ipsa vel minima hic? Quia qui ducimus fugit inventore labore itaque commodi, consequatur Quis labore laudantium nam nam quisquam! Excepturi doloribus accusamus ea perferendis quisquam, numquam. Illum recusandae veniam unde ullam molestiae natus quisquam facilis odit Est alias elit officiis nostrum assumenda Natus quasi similique pariatur iure molestias!
+The guiding principal behind the V J Ray culture has been to maintain the original family company atmosphere that is so often lost as companies grow into corporate giants.
+
+At V J Ray we know that our job is much more that just looking after buildings, its about caring for and helping the people that own or live in those buildings. Its the people
+that matter.
+
+That's why our mission statement is so simple.
+
+We Help People.

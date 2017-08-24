@@ -10,7 +10,7 @@ V J Ray is a family company that was started by Leon Pollard and is currently ow
 
 The guiding principal behind the V J Ray culture has been to maintain the original family company atmosphere that is so often lost as companies grow into corporate giants.
 
-At V J Ray we know that our job is much more that just looking after buildings, its about caring for and helping the people that own or live in those buildings. Its the people
+At V J Ray we know that our job is much more that just looking after buildings, its about caring for and helping the people that own or live in those buildings. It's the people
 that matter.
 
 That's why our mission statement is so simple.

@@ -68,7 +68,7 @@ const Guides = (props) => (
   <Root primary={props.primary}>
     {props.guides.map((guide, i) =>
       <StyledBox
-        width={props.primary ? [1, 1/2] : [1, 1/2, 1/3]}
+        width={props.primary ? [1, 1/2] : [1, 1/2, 1/2, 1/3]}
         px={[3, 3]}
         key={guide._id}
       >
@@ -140,7 +140,6 @@ GuidesContainer.defaultProps = {
   buttons: false,
   icon: false,
 };
-
 
 export default GuidesContainer;
 

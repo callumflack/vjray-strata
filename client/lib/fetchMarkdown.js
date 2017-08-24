@@ -6,7 +6,7 @@
  * @returns {object}
  * @returns {object.body.md} - content of file in markdown
  * @returns {object.body.html} - content of file in html
- * @returns {object.attirbute} - object with key pair values of files front-matter
+ * @returns {object.attirbutes} - object with key pair values of files front-matter
  */
 async function fetchMarkdown(req, markdownFile) {
   const origin = req ?

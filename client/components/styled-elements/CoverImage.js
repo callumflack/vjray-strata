@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import ReactDOM from 'react-dom'
-
 import styled, { css } from 'styled-components'
 import { Box } from '../styled-grid';
 
-// bg-pos is set via a styled-component prop
+
 const Root = styled(Box)`
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -24,9 +23,15 @@ const Root = styled(Box)`
 
     @media (min-width: 1280px) { background-size: contain !important; }
   `}
-`
 
-// data-bg is for cloudinary
+  ${props => props.who && css`
+    background-image: url('static/img/who-cronulla.jpg');
+
+    @media (min-width: 1024px) { background-position: 50% 50%; }
+    @media (min-width: 1280px) { background-position: 50% 50%; }
+    @media (min-width: 1536px) { background-position: 30% 100%; }
+  `}
+`
 
 class CoverImage extends React.Component {
   constructor(props) {
@@ -65,7 +70,7 @@ class CoverImage extends React.Component {
         style={{
           backgroundImage: this.state.url
         }}
-        {...props}
+        {...this.props}
       />
     )
   }

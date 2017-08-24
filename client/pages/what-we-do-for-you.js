@@ -48,14 +48,6 @@ const Image = styled(CoverImage)`
   @media (min-width: 1536px) { background-size: contain !important; }
 `
 
-// background-position-x: 20%;
-// @media (min-width: 1024px) { background-position-x: 20%; }
-// @media (min-width: 1280px) { background-position-x: -50%; }
-// @media (min-width: 1536px) { background-position-x: 110%; }
-// @media (min-width: 1800px) { background-position-x: 60%; }
-
-
-{/* <Subheadline children='Our extra services' /> */}
 const Hero = props => (
   <StyledHeroBox>
     <Image />
@@ -95,7 +87,7 @@ const Item = (props) => (
     <Box px={[ 2 ]}>
       <ItemIcon
         color='brand'
-        size='100'
+        size='90'
         icon={icons[props.item.icon]}
       />
     </Box>
@@ -123,10 +115,10 @@ const Item = (props) => (
   </ItemRoot>
 )
 
-const WhatPage = (props) => (
+const Root = (props) => (
   <Layout>
     <Header
-      pathname='/what-we-do-for-you'
+      pathname={props.pathname}
       clear />
     <Hero />
 
@@ -153,5 +145,16 @@ const WhatPage = (props) => (
     <Footer />
   </Layout>
 )
+
+class WhatPage extends React.Component {
+  static async getInitialProps({ pathname }) {
+    return {
+      pathname,
+    }
+  }
+  render() {
+    return <Root pathname={this.props.pathname} />
+  }
+}
 
 export default WhatPage

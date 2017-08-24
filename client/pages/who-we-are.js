@@ -10,7 +10,7 @@ import { Flex, Box } from '../components/styled-grid'
 import hoc from '../components/styled-elements/hoc'
 
 import { Text, TextBlock, DangerouslyResetTextBlock, LineBreak } from '../components/styled-elements/Text'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
+import { Display, Headline, Subheadline, MobileSubheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 
 import Layout from '../components/styled-elements/Layout'
 import Header from '../components/Shared/Header'
@@ -46,22 +46,13 @@ const StyledHeroBox = styled(HeroBox)`
   }
 `
 
-const Image = styled(CoverImage)`
-  background-image: url('static/img/who-cronulla.jpg');
-  background-position: 50% 50%;
-
-  @media (min-width: 1024px) { background-position: 50% 50%; }
-  @media (min-width: 1280px) { background-position: 50% 50%; }
-  @media (min-width: 1536px) { background-position: 30% 100%; }
-`
-
-{/* <Subheadline color='brandAlt' children='About us' /> */}
 const Hero = props => (
   <StyledHeroBox>
     <Image />
     <HeroContainer mw='lg'>
       <HeroFlex style={{ zIndex: '1' }}>
         <Box w={[ 5/6, 5/6, 6/12, 2/3 ]} ml={[ null, 3 ]} mb={[ 4, 5, 6 ]}>
+          <MobileSubheadline color='brandAlt' children='About us' />
           <Display color='brandAlt'>
             We believe in better <LineBreak>Strata management </LineBreak><LineBreak>for Sydney.</LineBreak>
           </Display>
@@ -80,17 +71,13 @@ const TextBlockWrapper = styled(Flex)`
   }
 `
 
-
-
-const Root = (props) => (
+const Root = props => (
   <Layout>
     <Header pathname={props.pathname} clear color='brandAlt' />
     <Hero />
-
     <Box px={3} py={[ 4, 5, 6 ]}>
       <Container>
         <Box width={[ 1, 11/12 ]} mx='auto'>
-
           <Flex direction={[ 'column', 'column', 'row' ]} mx={-3}>
 
             <Flex column width={[ 1, 1, 1/3, 1/4 ]} px={[ 4, 5, 3 ]}>
@@ -100,31 +87,30 @@ const Root = (props) => (
               <Text color='text70' mt={2} children='Mike Pollard' />
               <Text color='text70' children='Owner' />
             </Flex>
-
             <TextBlockWrapper order={[ '-1', '-1', 'initial' ]} px={3} width={[ 1, 1, 2/3, 3/4 ]}>
               <TextBlock dangerouslySetInnerHTML={{__html: props.mikesLetter.body.html}} />
             </TextBlockWrapper>
-          </Flex>
 
+          </Flex>
         </Box>
       </Container>
     </Box>
-
     <Block border textCenter>
       <ContactAction btnColor='brandAlt' withButton />
       <Contacts />
     </Block>
-
     <Footer />
   </Layout>
 )
+
+
 
 class WhoContainer extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  static async getInitialProps({ query, req, pathname }) {
+  static async getInitialProps({ req, pathname }) {
     const mikesLetter = await fetchMarkdown(req, 'mikes-letter');
 
     return {

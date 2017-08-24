@@ -175,10 +175,7 @@ class SydneyBox extends React.Component {
               </Display>
               <Container width={[ 1, 2/3 ]}>
                 <Text color='text' mb={3}>
-                  This paragraph is about V J Ray's history in Sydney, how they love Sydney and want to see it progress upwards and stave off housing uncertainty and more pain points that hit customer in the guts.&nbsp;
-                  <Link href="/who-we-are">
-                    <a>Read about who we are.</a>
-                  </Link>
+                  At V J Ray we know that our job is much more that just looking after buildings, its about caring for and helping the people that own or live in those buildings. Its the people that matter. <Link href="/who-we-are"><a>Read about who we are.</a></Link>
                 </Text>
                 <Text font='textMedium'>
                   <Button color='brandAlt' bg='white' invert icon onClick={this.openModal} children='Watch video' />

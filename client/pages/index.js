@@ -72,18 +72,16 @@ const Root = (props) => (
         <Container mw='lg' pt={[ 3, 4 ]}>
           <Testimonials />
         </Container>
+
       </Box>
     </HeroQuotes>
 
     <Block textCenter>
       <Subheadline children='Info on the go' />
       <Display color='brandAlt' mb={3} children='Your guides to Sydney Strata.' />
-      <Container width={[ 1, 2/3 ]}>
+      <Container width={[ 1, 2/3, 2/3, 1/2 ]}>
         <Text color='text70'>
-          Ipsum odit corrupti ullam in nam expedita corporis Magnam nemo corrupti suscipit recusandae voluptatem.&nbsp;
-          <Link href="/useful-info">
-            <a>Check all our guides.</a>
-          </Link>
+          We write guides and articles to help you navigate your Strata living. <Link href="/useful-info"><a>Check all our guides.</a></Link>
         </Text>
       </Container>
 
@@ -120,6 +118,5 @@ class Index extends React.Component {
     return <Root {...this.props} />
   }
 }
-
 
 export default Index;

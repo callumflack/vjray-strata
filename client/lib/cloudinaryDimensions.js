@@ -1,7 +1,7 @@
 // https://codepen.io/geelen/pen/RGvQyJ
 // Use the attibute data-bg-square to ensure an images dimensions will be 1:1
 
-(() => {
+function setCloudinaryImages() {
     const baseUrl = 'https://res.cloudinary.com/pw-img-cdn/image/fetch';
     const calcImageDimension = (length, pixelRatio) => 100 * Math.round(length * pixelRatio / 100);
 
@@ -16,7 +16,9 @@
         const gPosition = image.hasAttribute('data-bg-face') ? 'g_face' : 'g_center';
         const imageParams = `w_${imageWidth},h_${imageHeight},c_fill,${gPosition},f_auto`;
         const url = `${baseUrl}/${imageParams}/${image.dataset.bg}`;
-        
+
         image.style.backgroundImage = `url('${url}')`;
     });
-})()
+}
+
+export default setCloudinaryImages

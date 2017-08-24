@@ -26,6 +26,50 @@ const StyledColorBox = styled(ColorBox)`
   background-image: none;
 `
 
+const Root = props => (
+  <Layout>
+    <Header pathname='/useful-info' clear />
+
+    <StyledColorBox>
+      <Block>
+        <Flex mx={-3}>
+          <Box width={[ 1, 6/12]} mx={3}>
+            <Subheadline color='brandAlt'>{formatDateString(props.data.post.createdAt)}</Subheadline>
+            <Display color='brandAlt'>{props.data.post.title}</Display>
+            <Text fontSize={[ 3, 4 ]} color='brandAlt70'>
+              {props.data.post.description}
+            </Text>
+          </Box>
+
+          <Flex width={[ 1, 6/12 ]} mx={3} align='center'>
+            <img src={props.data.post.featureImage.secure_url} />
+          </Flex>
+        </Flex>
+      </Block>
+    </StyledColorBox>
+
+    <Block>
+      <Container mw='sm'>
+        <TextBlock dangerouslySetInnerHTML={{ __html: props.data.post.content.html}} />
+      </Container>
+    </Block>
+
+    <Block pt={[ 0, 0 ]}>
+      <Container mw='sm' textCenter>
+        <Subheadline mb={4} children='See all guides and articles' />
+        <Guides />
+      </Container>
+    </Block>
+
+    <Block border>
+      <ContactAction btnColor='brand' withButton />
+      <Contacts />
+    </Block>
+
+    <Footer />
+  </Layout>
+)
+
 
 class Article extends React.Component {
   static async getInitialProps({ req, query }) {
@@ -51,49 +95,7 @@ class Article extends React.Component {
   }
 
   render() {
-    return (
-      <Layout>
-        <Header clear />
-
-        <StyledColorBox>
-          <Block>
-            <Flex mx={-3}>
-              <Box width={[ 1, 6/12]} mx={3}>
-                <Subheadline color='brandAlt'>{formatDateString(this.props.data.post.createdAt)}</Subheadline>
-                <Display color='brandAlt'>{this.props.data.post.title}</Display>
-                <Text fontSize={[ 3, 4 ]} color='brandAlt70'>
-                  {this.props.data.post.description}
-                </Text>
-              </Box>
-
-              <Flex width={[ 1, 6/12 ]} mx={3} align='center'>
-                <img src={this.props.data.post.featureImage.secure_url} />
-              </Flex>
-            </Flex>
-          </Block>
-        </StyledColorBox>
-
-        <Block>
-          <Container mw='sm'>
-            <TextBlock dangerouslySetInnerHTML={{ __html: this.props.data.post.content.html}} />
-          </Container>
-        </Block>
-
-        <Block pt={[ 0, 0 ]}>
-          <Container mw='sm' textCenter>
-            <Subheadline mb={4} children='See all guides and articles' />
-            <Guides />
-          </Container>
-        </Block>
-
-        <Block border>
-          <ContactAction btnColor='brand' withButton />
-          <Contacts />
-        </Block>
-
-        <Footer />
-      </Layout>
-    )
+    return <Root {...this.props} />
   }
 }
 

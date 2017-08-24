@@ -2,12 +2,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Box } from '../styled-grid';
 
-// background-=position is set via a styled-component.
-// background-position: 50% 50%;
+// bg-pos is set via a styled-component prop
 const Root = styled(Box)`
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   bottom: 0;
@@ -15,6 +15,15 @@ const Root = styled(Box)`
   position: absolute;
   right: 0;
   top: 0;
+
+  ${props => props.listening && css`
+    background-position: 35% 100%;
+    @media (min-width: 1024px) { background-position-x: 100%; }
+    @media (min-width: 1280px) { background-position-x: 85%; }
+    @media (min-width: 1536px) { background-position-x: 66%; }
+
+    @media (min-width: 1280px) { background-size: contain !important; }
+  `}
 `
 
 // data-bg is for cloudinary
@@ -56,6 +65,7 @@ class CoverImage extends React.Component {
         style={{
           backgroundImage: this.state.url
         }}
+        {...props}
       />
     )
   }

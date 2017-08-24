@@ -54,11 +54,11 @@ const StyledNav = styled(Nav)`
   p,
   span,
   a {
-    color: ${theme.colors.text40};
+    color: ${theme.colors.text40} !important;
   }
 
   span {
-    font-family: ${theme.fonts.textLight};
+    font-family: ${theme.fonts.textLight} !important;
   }
 
   a:not(:first-child) {
@@ -84,8 +84,6 @@ const Column = styled(Box)`
       margin-right: 3rem
     }
   }
-
-
 
   a {
     display: block;

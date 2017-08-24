@@ -2,6 +2,7 @@ import React from 'react'
 
 import gql from 'graphql-tag'
 import apollo from '../lib/apollo'
+import fetchMarkdown from '../lib/fetchMarkdown.js'
 
 import styled from 'styled-components'
 import theme from '../components/theme'
@@ -101,12 +102,7 @@ class WhoContainer extends React.Component {
       query: pageQuery,
     });
 
-    const origin = req ?
-      `${req.protocol}://${req.get('host')}` :
-      window.location.origin;
-
-    const response = await fetch(`${origin}/api/mikes-letter`);
-    const { data: mikesLetter } = await response.json();
+    const mikesLetter = await fetchMarkdown(req, 'mikes-letter');
 
     return {
       mikesLetter,

@@ -9,7 +9,7 @@ import { Box, Flex } from '../../components/styled-grid'
 import Layout from '../../components/styled-elements/Layout'
 import Container from '../../components/styled-elements/Container'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../../components/styled-elements/Headline'
-import { Text, LargeText, SmallText, LineBreak } from '../../components/styled-elements/Text'
+import { Text, LargeText, SmallText, LineBreak, LineBreakAll } from '../../components/styled-elements/Text'
 
 import Block from '../../components/Shared/Block'
 import { ColorBox } from '../../components/Shared/Hero'
@@ -83,11 +83,16 @@ const Root = (props) => (
       </Container>
     </StyledColorBox>
 
-    <Block bg='beige' textCenter>
+    <Block
+      bg='beige'
+      textCenter
+      pt={[ 2, 3, 4 ]}
+      pb={[ 2, 3, 4 ]}
+    >
       <Subheadline mt={[ 1, 2 ]} children='Take action' />
       <Display color='brandAlt' children='Forms and fact sheets.' />
       <LargeText color='brandAlt70' mb={3}>
-        Readily available PDF downloads <LineBreak m='auto'>to manage your Strata.</LineBreak>
+        Readily available PDF downloads <LineBreakAll m='auto'>to manage your Strata.</LineBreakAll>
       </LargeText>
       <LargeButtonStyler>
         <Link href='/useful-info/forms-and-fact-sheets'>

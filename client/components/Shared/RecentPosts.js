@@ -10,7 +10,7 @@ import theme from '../theme.js';
 import hoc from '../styled-elements/hoc';
 import { Box } from '../styled-grid';
 import { Text } from '../styled-elements/Text.js';
-import { Headline  } from '../styled-elements/Headline.js';
+import { Display, Headline  } from '../styled-elements/Headline.js';
 
 
 const PostLink = hoc('span').extend`
@@ -76,21 +76,22 @@ class RecentPosts extends React.Component {
         {this.state.posts.map((post, i) =>
           <div key={i}>
             <Link href={`/blog?slug=${post.slug}`} as={`/blog/${post.slug}`}><a>
-
               <Box
                 width={[ 1, 5/6 ]}
                 mx='auto'
-
               >
-                <Headline
+                <Display
                   align='center'
-                  font='displayMedium'
                   color='brandAlt'
                   mb={3}
                 >
                   {post.title}
-                </Headline>
-                <Text align='left'>
+                </Display>
+                <Text
+                  align='left'
+                  mx='auto'
+                  w={[ 1, 10/12 ]}
+                >
                   {post.description}
                   <PostLink color='brandAlt' font='textLight'>Read more</PostLink>
                 </Text>

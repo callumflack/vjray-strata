@@ -3,17 +3,24 @@ import styled from 'styled-components'
 import { Flex, Box } from '../styled-grid'
 import hoc from '../styled-elements/hoc'
 import theme from '../theme'
-
 import { LargeText, LineBreak } from '../styled-elements/Text'
-import { Headline, Display } from '../styled-elements/Headline'
+import { Display, Headline, MobileSubheadline } from '../styled-elements/Headline'
 import CoverImage from '../styled-elements/CoverImage'
-
 import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Hero'
-import FormQuickQuote from './FormQuickQuote'
 
 
+// #cbd7fc,
 const StyledHeroBox = styled(HeroBox)`
-  background-color: ${theme.colors.beige};
+  background-color: initial;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(222, 202, 178, 0.4),
+      ${theme.colors.beige} 70%
+    );
+
+  background-image: initial;
+  background-color: #ebe5df;
 
   @media (max-width: 512px) {
     &:after {
@@ -21,39 +28,40 @@ const StyledHeroBox = styled(HeroBox)`
       background-color: rgba(64, 64, 112, 0.1);
       background-color: rgba(0, 0, 0, 0.25);
       background-color: rgba(121, 122, 154, 0.5);
-      background-color: rgba(247, 242, 236, 0.5);
-      background-color: rgba(71, 39, 0, 0.25);
-      background-color: rgba(223, 212, 184, 0.5);
+      background-color: rgba(42, 43, 73, 0.5);
       background-color: initial;
-      background-image: initial;
-
       background-image:
         linear-gradient(
           to right,
           rgba(223, 212, 184, 0.5),
-          rgba(223, 212, 184, 0.1) 100%
+          rgba(223, 212, 184, 0.25) 70%
         );
-
     }
   }
+
 `
-// ml={[ null, 3 ]}
-const HeroListening = () => (
+
+const HeroWhat = props => (
   <StyledHeroBox>
-    <CoverImage constrain listening src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503542523/home-hero_eq4eot.jpg' />
+    <CoverImage constrain what src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618862/hero-what-_i582ye.png' />
     <HeroContainer mw='lg'>
       <HeroFlex>
-        <HeroTitleBox width={[ 5/10, 5/12, 6/12 ]} mb={[ 3, 4 ]}>
-          <Display mb={2}>
-            Skip the hassle of <LineBreak>Strata management.</LineBreak>
+        <HeroTitleBox
+          w={[ 6/12, 5/12, 4/10, 1/2 ]}
+          mb={[ 3, 4 ]}
+        >
+          <MobileSubheadline color='brandAlt' children='Services' />
+          <Display color='brand' mb={2}>
+            What we do for you.
           </Display>
-          <LargeText children='At V J Ray Strata, we understand how valuable your peace of mind is.' />
+          <LargeText hideAtMobile>
+            We’ll go further to help you <LineBreak>find peace of mind.</LineBreak>
+          </LargeText>
+
         </HeroTitleBox>
       </HeroFlex>
     </HeroContainer>
-
-    <FormQuickQuote />
   </StyledHeroBox>
-);
+)
 
-export default HeroListening
+export default HeroWhat

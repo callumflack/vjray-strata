@@ -22,9 +22,8 @@ const Block = (props) => (
   <Root.Section
     bg={props.bg}
     border={props.border}
-    px={3}
-    pt={props.pt || [ 4, 5, 6 ]}
-    pb={props.pb || [ 4, 5, 6 ]}
+    pt={props.pt || [ 4, 4, 5, 5, 6 ]}
+    pb={props.pb || [ 4, 4, 5, 5, 6 ]}
     id={props.id}
   >
     <Container

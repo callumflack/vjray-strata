@@ -11,6 +11,7 @@ import Icon from '../styled-elements/Icon';
 
 
 const Root = hoc(Box).extend`
+  border-top: 1px solid ${theme.colors.text20};
   font-family: inherit;
 
   ${props => props.bg && css`
@@ -20,8 +21,6 @@ const Root = hoc(Box).extend`
 
 const StyledContainer = styled(Container)`
   border-top: 1px solid ${theme.colors.text20};
-  padding-top: ${theme.space[2]}px;
-  padding-bottom: ${theme.space[4]}px;
 `;
 
 // as soon as you extend it, you lose the hoc()
@@ -89,7 +88,7 @@ const Column = styled(Box)`
     display: block;
 
     &:not(:first-child) {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
   }
 `;
@@ -102,44 +101,60 @@ const StyledDivider = styled(Divider)`
 
 
 const Footer = (props) => (
-  <Root bg={props.bg} px={3}>
-    <StyledContainer mx="lg">
+  <Root bg={props.bg}>
+    <Container
+      mw="lg"
+      pt={[ 0, 2 ]}
+      pb={[ 3, 4 ]}
+    >
+      <Flex direction={[ 'column', 'row' ]} justify='space-between'>
 
-      <Box>
-        <Flex direction={[ 'column', 'row' ]} justify='center'>
-          <Nav direction={[ 'column', 'row' ]}>
-            <Column>
-              <Link href='/who-we-are'><a><span>About us</span></a></Link>
-              <Link href='/'><a>Why choose us</a></Link>
-              <Link href='/who-we-are'><a>Who we are</a></Link>
-              <Link href='/what-we-do-for-you'><a>What we do for you</a></Link>
-            </Column>
-            <Column>
-              <Link href='/useful-info'><a><span>Useful info</span></a></Link>
-              <Link href='/useful-info'><a>Strata guides</a></Link>
-              <Link href='/useful-info#blog'><a>Strata blog</a></Link>
-              <Link href='/useful-info/forms-and-fact-sheets'><a>Forms and facts</a></Link>
-            </Column>
-            <Column>
-              <Link href='/contact'><a><span>Contact us</span></a></Link>
-              <Link href='/fast-quote'><a>Get a fast quote</a></Link>
-              <Link href='/contact?form=report#contact-forms'><a>Report an issue</a></Link>
-              <Link href='/emergency'><a>Emergencies</a></Link>
-            </Column>
-          </Nav>
+        <Flex>
+          <Box>
+            <Link href='/'>
+              <a><Icon
+                color='brandAlt'
+                size='80'
+                icon={icons.logo}
+              /></a>
+            </Link>
+          </Box>
+          {/* <Box>
+            <StyledNav direction={[ 'column', 'row' ]}>
+              <Link href='/'><a>Terms of use</a></Link>
+              <StyledDivider />
+              <Link href='/'><a>Privacy</a></Link>
+            </StyledNav>
+          </Box> */}
         </Flex>
-      </Box>
-      <Box>
-        <StyledNav direction={[ 'column', 'row' ]} justify='center'>
-          <span>&copy; 2017 VJ Ray</span>
-          <StyledDivider />
-          <Link href='/'><a>Terms of use</a></Link>
-          <StyledDivider />
-          <Link href='/'><a>Privacy policy</a></Link>
-        </StyledNav>
-      </Box>
 
-    </StyledContainer>
+        <Box>
+          <Flex direction={[ 'column', 'row' ]} justify='center'>
+            <Nav direction={[ 'column', 'row' ]}>
+              <Column>
+                <Link href='/who-we-are'><a><span>About Us</span></a></Link>
+                <Link href='/who-we-are'><a>Who we are</a></Link>
+                <Link href='/what-we-do-for-you'><a>What we do for you</a></Link>
+              </Column>
+              <Column>
+                <Link href='/useful-info'><a><span>Useful Info</span></a></Link>
+                <Link href='/useful-info'><a>Strata guides</a></Link>
+                <Link href='/useful-info#blog'><a>Strata blog</a></Link>
+                <Link href='/useful-info/forms-and-fact-sheets'><a>Forms and facts</a></Link>
+              </Column>
+              <Column>
+                <Link href='/contact'><a><span>Contact Us</span></a></Link>
+                <Link href='/fast-quote'><a>Get a fast quote</a></Link>
+                <Link href='/contact?form=report#contact-forms'><a>Report an issue</a></Link>
+                <Link href='/emergency'><a>Emergencies</a></Link>
+              </Column>
+            </Nav>
+          </Flex>
+
+        </Box>
+
+      </Flex>
+    </Container>
   </Root>
 );
 

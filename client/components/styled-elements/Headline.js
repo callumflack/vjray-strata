@@ -86,10 +86,10 @@ const Display = props =>
   <DisplayRoot
     color='brand'
     font='displayRegular'
-    fontSize={[ 6, 7 ]}
+    fontSize={[ 5, 5, 6, 7 ]}
     lineHeight='display'
     mt={[ 0, 1 ]}
-    mb={3}
+    mb={[ 2, 2, 2, 3 ]}
     {...props}
   />
 
@@ -112,7 +112,7 @@ const Headline = props =>
   <HeadlineRoot
     color='brand'
     font='displayLight'
-    fontSize={[ 5, 6 ]}
+    fontSize={[ 4, 4, 5, 6 ]}
     lineHeight='headline'
     mb={2}
     {...props}
@@ -123,7 +123,7 @@ const Headline = props =>
 const HeadlineMetaBaseStyles = {
     color: 'text',
     font: 'textMedium',
-    fontSize: [ 0, 1 ],
+    fontSize: [ 0, 0, 1 ],
     letterSpacing: 'meta',
     lineHeight: 'display',
     uppercase: 'true'
@@ -148,7 +148,7 @@ const Subheadline = props =>
     {...HeadlineMetaBaseStyles}
     mb={2}
     mx='auto'
-    pb={2}
+    pb={[ 1, 2 ]}
     {...props}
   />
 

@@ -15,21 +15,50 @@ const Root = styled(Box)`
   right: 0;
   top: 0;
 
-  ${props => props.listening && css`
-    background-position: 35% 100%;
-    @media (min-width: 1024px) { background-position-x: 100%; }
-    @media (min-width: 1280px) { background-position-x: 85%; }
-    @media (min-width: 1536px) { background-position-x: 66%; }
+  ${props => props.constrain && css`
+    @media (min-width: 1536px) {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1600px;
+    }
+  `}
 
-    @media (min-width: 1280px) { background-size: contain !important; }
+  ${props => props.listening && css`
+    left: 25%;
+    @media (min-width: 1024px) { left: 20%; }
+    @media (min-width: 1280px) { left: 5%; }
+    @media (min-width: 1536px) { left: 10%; }
   `}
 
   ${props => props.who && css`
-    background-image: url('static/img/who-cronulla.jpg');
-
+    max-width: none;
     @media (min-width: 1024px) { background-position: 50% 50%; }
     @media (min-width: 1280px) { background-position: 50% 50%; }
     @media (min-width: 1536px) { background-position: 30% 100%; }
+  `}
+
+  ${props => props.what && css`
+    left: 12%;
+    @media (min-width: 768px)  { left: 22%; }
+    @media (min-width: 1024px) { left: 10%; }
+    @media (min-width: 1280px) { left: 5%; }
+    @media (min-width: 1800px) { left: 5%; }
+  `}
+
+  ${props => props.contact && css`
+    left: 12%;
+    @media (min-width: 768px)  { left: 22%; }
+    @media (min-width: 1024px) { left: 10%; }
+    @media (min-width: 1280px) { left: 5%; }
+    @media (min-width: 1800px) { left: 20%; }
+  `}
+
+  ${props => props.emergency && css`
+    left: 12%;
+    @media (min-width: 768px)  { left: 22%; }
+    @media (min-width: 1024px) { left: 10%; }
+    @media (min-width: 1280px) { left: 8%; }
+    @media (min-width: 1800px) { left: 8%; }
   `}
 `
 

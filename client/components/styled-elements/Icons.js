@@ -6,13 +6,13 @@ import theme from '../theme'
 // https://github.com/zeit/next.js/tree/master/examples/svg-components
 
 const Icon = hoc('span').extend`
+  --Icon-vertical-align: baseline;
   display: inline-block;
   line-height: 1;
   position: relative;
   text-align: center;
 
   > svg {
-    --Icon-vertical-align: baseline;
     fill: currentColor;
     vertical-align: var(--Icon-vertical-align);
   }
@@ -22,17 +22,17 @@ const Icon = hoc('span').extend`
   `}
 
   ${props => props.contact && css`
+    --Icon-vertical-align: bottom;
     margin: 0 9px 0 3px;
-
-    > svg {
-      --Icon-vertical-align: bottom;
-    }
   `}
 
   ${props => props.bottom && css`
-    > svg {
-      --Icon-vertical-align: bottom;
-    }
+    --Icon-vertical-align: bottom;
+  `}
+
+  ${props => props.navBar && css`
+    --Icon-vertical-align: top;
+    margin-right: 8px;
   `}
 `
 

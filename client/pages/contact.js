@@ -20,7 +20,7 @@ import Button from '../components/styled-elements/Button'
 import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
-import { HeroBox, HeroContainer, HeroFlex } from '../components/Shared/Hero'
+import HeroContact from '../components/Shared/HeroContact'
 import FormContact from '../components/Shared/FormContact'
 import FormIssue from '../components/Shared/FormIssue'
 import { FormHeader } from '../components/Shared/Form.js'
@@ -31,61 +31,60 @@ import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
 
 
-// #cbd7fc,
-const StyledHeroBox = styled(HeroBox)`
-  background-color: #d7e5eb;
-  background-color: initial;
-  background-image: initial;
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(62, 62, 157, 0.25),
-      #eaf3f7 80%
-    );
-  background-color: #eaf3f7;
+const Root = props => (
+  <Layout>
+    <Header
+      pathname={props.pathname}
+      clear
+      color='brandAlt'
+    />
+    <HeroContact />
 
-  &:after {
-    background-color: rgba(0, 0, 0, 0.25);
-    background-color: rgba(0, 153, 209, 0.96);
-    background-color: rgba(64, 64, 112, 0.1);
-    background-blend-mode: multiply;
-    bottom: 0;
-    content: " ";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-`
+    <Block textCenter pb={[ 0, 0 ]}>
+      <Display color='brand' mb={1}>
+        Visit us anytime.
+      </Display>
+      <LargeText color='text70' children='No appointment necessary.' />
+      <Box mt={0}>
+        <Contacts />
+        <SmallText color='text70' mt={[ 3, 4 ]}>
+          Looking for the Auburn office? They aren't affiliated with us. <LineBreak mx='auto'>You can find them <Link href='http://vjrayauburn.com.au/'>here.</Link></LineBreak>
+        </SmallText>
+      </Box>
+    </Block>
 
-const Image = styled(CoverImage)`
-  background-image: url('static/img/contact-hero.png');
-  background-position-x: 31%;
-  @media (min-width: 768px)  { background-position-x: 21%; }
-  @media (min-width: 1024px) { background-position-x: 20%; }
-  @media (min-width: 1280px) { background-position-x: -50%; }
-  @media (min-width: 1536px) { background-position-x: 110%; }
-  @media (min-width: 1800px) { background-position-x: 60%; }
+    <Block id='contact-forms' mw='sm' pb={[ 0, 0 ]}>
+      <Container textCenter>
+        <Display color='brandAlt' mb={1} children='Write to us.' />
+        <LargeText color='text70'>We'll respond quick smart.</LargeText>
+      </Container>
 
-  @media (min-width: 1536px) { background-size: contain !important; }
-`
+      <Box mt={[ 3, 3, 3, 4]}>
+        <Tabs selected={props.defaultForm === 'report' ? 1 : 0}>
+          {props.tabs.map(tab =>
+            <Pane label={tab.name} key={tab._id}>{tab.content}</Pane>)
+          }
+        </Tabs>
+      </Box>
+    </Block>
 
-const Hero = props => (
-  <StyledHeroBox>
-    <Image />
-    <HeroContainer mw='rg'>
-      <HeroFlex>
-        <Box width={[ 7/12, 5/12, 1/2 ]} ml={[ null, 3 ]} mb={4}>
-          <MobileSubheadline color='brandAlt' children='Contact us' />
-          <Display color='brandAlt' mb={2} children='How can we help you?' />
-          <LargeText color='text'>Visit, call or write to us.</LargeText>
-        </Box>
-      </HeroFlex>
-    </HeroContainer>
-  </StyledHeroBox>
+    <Block textCenter>
+      <Display color='brand' mb={1} children='Is it an emergency?' />
+      <LargeText color='text70' mb={3}>For all types of after-hours repairs.</LargeText>
+      <LargeButtonStyler>
+        <Link href='/emergency'>
+          <Button large icon bgColor='brand' children='Emergencies' />
+        </Link>
+      </LargeButtonStyler>
+    </Block>
+
+    <Block border>
+      <ContactActionAlt btnColor='brandAlt' />
+    </Block>
+
+    <Footer />
+  </Layout>
 )
-
-
 
 class ContactPage extends React.Component {
   static async getInitialProps({ pathname, query }) {
@@ -107,83 +106,9 @@ class ContactPage extends React.Component {
     }];
 
     return (
-      <Layout>
-        <Header pathname={this.props.pathname} clear color='brandAlt' />
-        <Hero />
-
-        <Block textCenter pb={[ 0, 0 ]}>
-          <Display color='brand' mb={1}>
-            Visit us anytime.
-          </Display>
-          <LargeText color='text70' children='No appointment necessary.' />
-          <Box mt={[ 3, 4 ]}>
-            <Contacts />
-            <SmallText color='text70' mt={[ 3, 4 ]}>
-              Looking for the Auburn office? They aren't affiliated with us.
-              <LineBreak mx='auto'>
-                You can find them&nbsp;
-                <Link href='http://vjrayauburn.com.au/'>here.</Link>
-              </LineBreak>
-            </SmallText>
-          </Box>
-        </Block>
-
-        <Block id='contact-forms' mw='sm' pb={[ 0, 0 ]}>
-          <Container textCenter>
-            <Display color='brandAlt' mb={1} children='Write to us.' />
-            <LargeText color='text70'>We'll respond quick smart.</LargeText>
-          </Container>
-
-          <Container mt={[3, 4]}>
-            <Tabs selected={this.props.defaultForm === 'report' ? 1 : 0}>
-              {tabs.map(tab =>
-                <Pane label={tab.name} key={tab._id}>{tab.content}</Pane>)
-              }
-            </Tabs>
-          </Container>
-        </Block>
-
-        <Block textCenter>
-          <Display color='brand' mb={1} children='Is it an emergency?' />
-          <LargeText color='text70' mb={3}>For all types of after-hours repairs.</LargeText>
-          <LargeButtonStyler>
-            <Link href='/emergency'>
-              <Button large icon bgColor='brand' children='Emergencies' />
-            </Link>
-          </LargeButtonStyler>
-        </Block>
-
-        <Block border>
-          <ContactActionAlt btnColor='brandAlt' />
-        </Block>
-
-        <Footer />
-      </Layout>
+      <Root pathname={this.props.pathname} tabs={tabs} />
     )
   }
 }
-
-// class ContactPage extends React.Component {
-//   static async getInitialProps({ pathname, query }) {
-//     return {
-//       pathname,
-//       defaultForm: query.form,
-//     }
-//   }
-//
-//   render() {
-//     const tabs = [{
-//       _id: 0,
-//       name: 'Quick response message',
-//       content: <FormContact />
-//     }, {
-//       _id: 1,
-//       name: 'Report an issue',
-//       content: <FormIssue />
-//     }];
-//
-//     return <Root pathname={this.props.pathname} />
-//   }
-// }
 
 export default ContactPage

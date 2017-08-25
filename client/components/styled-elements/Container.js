@@ -1,15 +1,20 @@
 import styled, { css } from 'styled-components';
-import { Box } from '../styled-grid';
+import { Box, Flex } from '../styled-grid';
 import theme from '../theme.js';
 
 
 // https://www.styled-components.com/docs/basics#extending-styles?
 // const ContainerSm = Container.extend` <= NAH
+// width: 100%;
 
-
-const Container = styled(Box)`
+const Root = styled(Box)`
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
 
   ${props => props.fullSize && css`
     height: 100%;
@@ -23,10 +28,6 @@ const Container = styled(Box)`
   ${props => props.mw && css`
     max-width: ${theme.containers[props.mw]};
   `}
-
-  @media (max-width: 699px) {
-    max-width: 100%;
-  }
 
   ${props => props.relative && css`
     position: relative;
@@ -45,5 +46,12 @@ const Container = styled(Box)`
     text-align: center;
   `}
 `;
+
+const Container = props =>
+  <Root
+    px={3}
+    mx='auto'
+    {...props}
+  />
 
 export default Container

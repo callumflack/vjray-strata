@@ -18,12 +18,16 @@ const LocationRoot = styled(Box)`
     }
   }
 `
-const Item = styled(Flex)`
+const ItemsBox = styled(Box)`
   --Item-rule: ${theme.colors.text20};
-  align-items: flex-start;
   border-bottom: 1px solid var(--Item-rule);
+  border-top: 1px solid var(--Item-rule);
+`
+
+const Item = styled(Flex)`
+  align-items: flex-start;
   color: ${theme.colors.text70} !important;
-  padding: 0.45rem 0;
+  padding: 0.333rem 0;
   text-align: left;
 
   @media (max-width: 700px) {
@@ -31,7 +35,6 @@ const Item = styled(Flex)`
   }
 
   ${props => props.borderTop && css`
-    border-top: 1px solid var(--Item-rule);
   `}
 `;
 
@@ -74,7 +77,8 @@ const locationList = [{
 const Location = (props) => (
   <LocationRoot
     width={[ 9/10, 1/3 ]}
-    px={[ 3, 2 ]}>
+    px={[ 3, 2 ]}
+    >
     <Link href={props.location.googleMapsUrl}>
       <a>
         <img src={'/static/img/' + props.location.imageName} />
@@ -89,7 +93,7 @@ const Location = (props) => (
       <Text color='text70' align='left'>{props.location.subTwo}</Text>
     </Box>
 
-    <Box>
+    <ItemsBox py={1}>
       <Link href='tel:${props.location.phoneNumber}'><a>
         <Item borderTop>
           <div><IconPhone contact /></div>
@@ -118,7 +122,7 @@ const Location = (props) => (
         {props.location.poBox}
       </Item>
 
-    </Box>
+    </ItemsBox>
   </LocationRoot>
 );
 
@@ -131,7 +135,7 @@ const Contact = (props) => (
   <Flex
     direction={[ 'column', 'row' ]}
     justify='center'
-    mt={props.mt || 4}
+    mt={props.mt || [ 3, 3, 3, 4 ]}
     mx={-2}>
 
     {locationList.map((location, i) =>

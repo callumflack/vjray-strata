@@ -13,33 +13,58 @@ const Root = hoc('p').extend`
       background-image: initial;
     `}
   }
+
+  ${props => props.hideAtDesktop && css`
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  `}
+
+  ${props => props.hideAtTablet && css`
+    @media (max-width: 768px) {
+      display: none;
+    }
+  `}
+
+  ${props => props.hideAtMobile && css`
+    @media (max-width: 512px) {
+      display: none;
+    }
+  `}
 `
 
 const Text = props =>
   <Root
     color='text'
     font='textLight'
-    fontSize={[ 2, 3 ]}
+    fontSize={[ 2, 2, 2, 3 ]}
+    {...props}
+  />
+
+const TinyText = props =>
+  <Text
+    fontSize={[ 0, 0, 1 ]}
+    letterSpacing='body'
     {...props}
   />
 
 const SmallText = props =>
   <Text
-    fontSize={[ 1, 2 ]}
+    fontSize={[ 1, 1, 2 ]}
     letterSpacing='body'
     {...props}
   />
 
 const MediumText = props =>
   <Text
-    fontSize={[ 3, 4 ]}
+    fontSize={[ 3, 3, 4 ]}
     {...props}
   />
 
 const LargeText = props =>
   <Text
     font='displayLight'
-    fontSize={[ 4, 5 ]}
+    fontSize={[ 3, 3, 4, 5 ]}
     letterSpacing='text'
     lineHeight='subheadline'
     {...props}
@@ -55,7 +80,7 @@ const AuthorText = props =>
   <AuthorRoot
     color='inherit'
     font='textBook'
-    fontSize={[ 3, 4 ]}
+    fontSize={[ 2, 2, 2, 3, 4 ]}
     letterSpacing='touch'
     uppercase
     {...props}

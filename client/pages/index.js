@@ -9,7 +9,7 @@ import theme from '../components/theme'
 import Layout from '../components/styled-elements/Layout'
 import Container from '../components/styled-elements/Container'
 import Button from '../components/styled-elements/Button'
-import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak, LineBreakMax } from '../components/styled-elements/Text'
+import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak, LineBreakMax, LineBreakAll } from '../components/styled-elements/Text'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
 
 import Header from '../components/Shared/Header'
@@ -35,14 +35,12 @@ const Root = (props) => (
     <HeroListening />
 
     <Block mw='rg' textCenter>
-      <Box width={[ 11/12, 5/6 ]} mx='auto'>
-        <Headline font='displayMedium' color='text' mt={[ 0, 3 ]} mb={2} children='It all adds up to a better deal.' />
-        <Container width={[ 1, 1, 5/6 ]}>
-          <LargeText color='text70'>
-            "You guys are very quick to respond and handle things efficiently, no complaints here"&nbsp;
-            <LineBreak m='auto'><AuthorText>— Linda & Terry, Jindabyne</AuthorText></LineBreak>
-          </LargeText>
-        </Container>
+      <Box mx='auto' width={[ 1, 1, 5/6 ]}>
+        <Headline font='displayMedium' color='text' mt={[ 0, 4, 4, 3 ]} mb={2} children='It all adds up to a better deal.' />
+        <LargeText color='text70'>
+          "You guys are very quick to respond and handle things efficiently, no complaints here"&nbsp;
+          <LineBreak m='auto'><AuthorText>— Linda & Terry, Jindabyne</AuthorText></LineBreak>
+        </LargeText>
       </Box>
 
       <FeatureList />
@@ -51,22 +49,25 @@ const Root = (props) => (
     <HeroSydney />
 
     <HeroQuotes>
-      <Box px={3} py={[ 4, 5, 6 ]} style={{ position: 'relative' }}>
+      <Box px={3} py={[ 4, 4, 5, 5, 6 ]} style={{ position: 'relative' }}>
         <Container textCenter>
           <Subheadline children='Our service' />
           <Display>
-            It's our job <LineBreakMax mx='auto' children='to sort it.' />
+            It's our job to sort it.
           </Display>
-          <Container width={[ 1, 7/12 ]}>
+          {/* width={[ 1, 9/12, 9/12, 7/12 ]} */}
+          <Box w={[ 1, 1, 9/12 ]}>
             <LargeText color='text70'>
-              "I have known and been happy with V J Ray for years. I cannot fault you. Thank you!" <AuthorText>— Petrania, Belmore</AuthorText>
+              "I have known and been happy with V J Ray for years. I cannot fault you. Thank you!" <LineBreakAll mx='auto'>
+                <AuthorText>— Petrania, Belmore</AuthorText>
+              </LineBreakAll>
             </LargeText>
             <Text font='textMedium' mt={3}>
               <Link href='/what-we-do-for-you'>
                 <Button color='brand' bg='white' invert icon children='What we do for you' />
               </Link>
             </Text>
-          </Container>
+          </Box>
         </Container>
 
         <Container mw='lg' pt={[ 3, 4 ]}>
@@ -79,22 +80,25 @@ const Root = (props) => (
     <Block textCenter>
       <Subheadline children='Info on the go' />
       <Display color='brandAlt' mb={3} children='Your guides to Sydney Strata.' />
-      <Container width={[ 1, 2/3, 2/3, 1/2 ]}>
-        <Text color='text70'>
-          We write guides and articles to help you navigate your Strata living. <Link href="/useful-info"><a>Check all our guides.</a></Link>
-        </Text>
-      </Container>
+      <Text
+        color='text70'
+        mx='auto'
+        width={[ 1, 2/3, 2/3, 1/2 ]}
+      >
+        We've got guides and articles to help your Strata management. <Link href="/useful-info"><a>Check all our guides.</a></Link>
+      </Text>
 
-      <Box pt={4} pb={3} px={[ 3, 4 ]}>
+      <Box pt={4} pb={3}>
         <Guides featured limit={3} />
       </Box>
 
       <Container mt={4} mw='sm'>
-        <Subheadline>
-          <Link href={`/`} as={`/home`}><a>Recent posts</a></Link>
-        </Subheadline>
-        <RecentPosts />
+
       </Container>
+      <Subheadline>
+        <Link href={`/`} as={`/home`}><a>Recent posts</a></Link>
+      </Subheadline>
+      <RecentPosts />
     </Block>
 
     <GroupSiteLink />

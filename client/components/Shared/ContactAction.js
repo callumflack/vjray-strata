@@ -12,8 +12,12 @@ import Container from '../styled-elements/Container'
 import LargeButtonStyler from './LargeButtonStyler'
 
 
+const Root = styled(Box)`
+  text-align: center;
+`
+
 const ContactAction = (props) => (
-  <Container textCenter>
+  <Root>
     <Subheadline children='Get in touch' />
     <Display color={props.headlineColor || 'text' } font='displayRegular' children='Call 1300 073 405' />
 
@@ -32,7 +36,7 @@ const ContactAction = (props) => (
         <LargeText color='text70' children='…or drop-in without an appointment:' />
       }
     </Box>
-  </Container>
+  </Root>
 )
 
 ContactAction.propTypes = {

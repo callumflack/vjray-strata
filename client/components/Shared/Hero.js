@@ -5,17 +5,36 @@ import Container from '../styled-elements/Container'
 
 const HeroBox = styled(Box)`
   --Header-height: ${theme.blockHeights.navBar};
-  --Hero-height: ${theme.blockHeights.hero};
-  --Hero-height-mobile: 60vh;
+  --Hero-height: 50vh;
+  --Hero-height-mobile: 50vh;
+  --Hero-height-tablet: 40vh;
+  --Hero-height-laptop: 66vh;
+
   align-items: center;
   height: calc(var(--Hero-height-mobile) + var(--Header-height));
   padding-top: var(--Header-height);
-  padding-left: ${theme.space[3]}px;
-  padding-right: ${theme.space[3]}px;
   position: relative;
 
   @media (min-width: 768px) {
+    height: calc(var(--Hero-height-tablet) + var(--Header-height)) !important;
+  }
+
+  @media (min-width: 1024px) {
+    height: calc(var(--Hero-height-laptop) + var(--Header-height)) !important;
+  }
+
+  @media (min-width: 1536px) {
     height: calc(var(--Hero-height) + var(--Header-height)) !important;
+  }
+
+  &:after {
+    background-blend-mode: multiply;
+    bottom: 0;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 `
 
@@ -36,4 +55,23 @@ const HeroFlex = styled(Flex)`
   z-index: 1;
 `
 
-export { HeroBox, ColorBox, HeroContainer, HeroFlex }
+const HeroTitleBoxRoot = styled(Box)`
+  ${props => props.invertTextOnMobile && css`
+    @media (max-width: 512px) {
+      h4 { color: ${theme.colors.text7}; }
+      h1 { color: white; }
+      p { color: ${theme.colors.text20}; }
+    }
+  `}
+`
+
+const HeroTitleBox = props =>
+  <HeroTitleBoxRoot ml={[ 0, 0, 4, 0 ]} {...props} />
+
+export {
+  HeroBox,
+  ColorBox,
+  HeroContainer,
+  HeroFlex,
+  HeroTitleBox
+}

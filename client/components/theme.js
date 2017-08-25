@@ -24,7 +24,7 @@ export default {
     error: '#D91E1F',
   },
   containers: {
-    sm: '700px',
+    sm: '672px',
     rg: '960px',
     lg: '1140px',
   },
@@ -53,7 +53,7 @@ export default {
   lineHeight: {
     display: '1.05',
     headline: '1.15',
-    subheadline: '1.25',
+    subheadline: '1.3',
     text: '1.375',
     feedback: '2.5',
   },

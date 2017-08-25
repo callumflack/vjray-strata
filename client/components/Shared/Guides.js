@@ -45,7 +45,7 @@ const Root = (props) => (
       <Flex
         direction={[ 'column', 'row' ]}
         justify='center'
-        mx={-3}>
+        mx={-2}>
         {props.children}
       </Flex>
     )}
@@ -68,8 +68,9 @@ const Guides = (props) => (
   <Root primary={props.primary}>
     {props.guides.map((guide, i) =>
       <StyledBox
-        width={props.primary ? [1, 1/2] : [1, 1/2, 1/2, 1/3]}
-        px={[3, 3]}
+        width={props.primary ? [1, 1/2] : [8/12, 1/2, 5/12 ]}
+        mx='auto'
+        px={2}
         key={guide._id}
       >
         <StyledLink>

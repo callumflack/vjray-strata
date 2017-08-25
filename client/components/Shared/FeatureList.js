@@ -26,7 +26,7 @@ const Header = (props) =>
   <Headline font='displayMedium' fontSize={[ 3, 4 ]} mt={[ 0, 2 ]} mb={[ 1, 2 ]} {...props} />
 
 const Lede = styled(SmallText)`
-  color: ${theme.colors.text70};`
+  color: ${theme.colors.text70} !important;`
 
 const StyledIcon = (props) =>
   <Icon color='brand' size='90' icon={ props.icon } />
@@ -43,10 +43,8 @@ const Divider = () => (
   </RootDivider>
 );
 
-
-
 const FeatureList = () => (
-  <Box w={[ 5/6, 5/6, 5/6, 1 ]} mx='auto' mt={[ 2, 4 ]}>
+  <Box w={[ 5/6, 5/6, 5/6, 1 ]} mx='auto' mt={[ 2, 2, 2, 4 ]}>
     <Box mx={-3}>
       <StyledGrid>
         <StyledIcon icon={ icons.experience } />
@@ -63,7 +61,7 @@ const FeatureList = () => (
       <StyledGrid>
         <StyledIcon icon={ icons.service } />
         <Header>Open 6 days a week</Header>
-        <Lede>We're open Saturdays, because not everyone has time during the week.</Lede>
+        <Lede>We're open Saturdays, because not everyone has time in work hours.</Lede>
       </StyledGrid>
 
       <StyledGrid>

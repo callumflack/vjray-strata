@@ -8,8 +8,9 @@ import styled, { css } from 'styled-components'
 import { Flex, Box } from '../styled-grid'
 
 import hoc from '../styled-elements/hoc'
-import { IconLogo } from '../styled-elements/Icons'
+import { IconPhone } from '../styled-elements/Icons'
 import Icon from '../styled-elements/Icon';
+import { Display } from '../styled-elements/Headline'
 import { Text, InlineText, Divider } from '../styled-elements/Text'
 import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
@@ -38,6 +39,23 @@ const Root = styled(Flex)`
     transform ${fade.duration}s ease-in-out ${fade.delay}s;
   width: 100%;
   z-index: 3;
+
+  button {
+    border-width: 1px;
+  }
+
+  @media (max-width: 512px) {
+    button {
+      border-width: 1px;
+      padding: 0 0.75rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    button span {
+      display: none;
+    }
+  }
 
   ${props => props.color && css`
     color: ${theme.colors[props.color] || theme.colors.text};
@@ -74,7 +92,27 @@ const Root = styled(Flex)`
   ${props => props.isModalVisible && css`
     transition: all 0s;
   `}
+
+  ${props => props.invertTextOnMobile && css`
+    @media (max-width: 512px) {
+      --Header-border-color: rgba(255, 255, 255, 0.15);
+
+      a,
+      span {
+        color: ${theme.colors.text20} !important;
+      }
+
+      button {
+        border-color: --Header-border-color;
+      }
+    }
+  `}
 `;
+
+
+
+
+
 
 const ResponsiveToggle = styled(Box)`
   ${props => props.hideAtDesktop && css`
@@ -84,12 +122,12 @@ const ResponsiveToggle = styled(Box)`
   `}
 
   ${props => props.hideAtMobile && css`
-    @media (max-width: 1024px) {
+    @media (max-width: 768px) {
       display: none;
     }
   `}
 `
-const DesktopNav = ResponsiveToggle.extend`
+const DesktopNav = styled(ResponsiveToggle)`
   bottom: 0;
   left: 0;
   position: absolute;
@@ -98,7 +136,7 @@ const DesktopNav = ResponsiveToggle.extend`
   width: 100%;
 `
 
-const Nav = styled.nav`
+const Nav = styled(ResponsiveToggle)`
   display: flex;
   justify-content: center;
 
@@ -110,32 +148,6 @@ const Nav = styled.nav`
   a:not(:last-child) {
     margin-right: 1.5rem;
   }
-
-  ${props => props.hideAtDesktop && css`
-    @media (min-width: 1024px) {
-      display: none;
-    }
-  `}
-
-  ${props => props.hideAtMobile && css`
-    @media (max-width: 1024px) {
-      display: none;
-    }
-  `}
-`;
-
-const MobileModal = Flex.extend`
-  background-color: white;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: ${theme.blockHeights.navBar};
-  z-index: 15;
-
-  ${props => !props.isVisible && css`
-    display: none;
-  `}
 `;
 
 const MobileNav = styled.nav`
@@ -143,6 +155,12 @@ const MobileNav = styled.nav`
     margin: 0.5rem 0;
   }
 `;
+
+
+
+
+
+
 
 const LinkTextRoot = hoc('span').extend`
   ${props => props.isActive && css`
@@ -164,11 +182,37 @@ const StyledDivider = styled(Divider)`
 `
 
 const MobileLinkText = props =>
-  <LinkText fontSize={4} {...props} />
+  <Display align='left' color='text' {...props} />
 
+const MobileModal = Flex.extend`
+  background-color: ${theme.colors.brand};
+  background-color: ${theme.colors.offWhite};
+  bottom: 0;
+  left: 0;
+  padding: ${theme.space[3]}px;
+  position: fixed;
+  right: 0;
+  top: ${theme.blockHeights.navBar};
+  z-index: 15;
 
+  ${props => !props.isVisible && css`
+    display: none;
+  `}
+`;
 
-
+const MobileNavFlex = Flex.extend`
+  align-content: flex-end;
+  // opacity: 0;
+  // transform: translateY(0);
+  //
+  // ${props => !props.isVisible && css`
+  //   opacity: 1;
+  //   transform: translateY(20vh);
+  //   transition:
+  //     opacity ${fade.duration}s ease-in-out,
+  //     transform ${fade.duration}s ease-in-out;
+  // `}
+`
 
 
 
@@ -270,79 +314,86 @@ class Header extends React.Component {
     return (
       <div>
         <Root
-          align='center'
-          justify='space-between'
-          px={[2,3]}
           color={this.props.color}
           clear={this.props.clear}
           reverseBorder={this.props.reverseBorder}
+          invertTextOnMobile={this.props.invertTextOnMobile}
           isHidden={!this.state.isVisible}
           hasScrolledDown={this.state.hasScrolledDown}
           isModalVisible={this.state.isModalVisible}
         >
-          <DesktopNav hideAtMobile w={5/9} style={{ textAlign: 'center' }}>
-            <Nav>
-              <Link href='/who-we-are'>
-                <a><LinkText isActive={this.props.pathname === '/who-we-are'}>Who we are</LinkText></a>
-              </Link>
-              <Link href='/what-we-do-for-you'>
-                <a><LinkText isActive={this.props.pathname === '/what-we-do-for-you'}>What we do for you</LinkText></a>
-              </Link>
-              <Link href='/useful-info'>
-                <a><LinkText isActive={this.props.pathname === '/useful-info'}>Useful info</LinkText></a>
-              </Link>
-              <Link href='/contact'>
-                <a><LinkText isActive={this.props.pathname === '/contact'}>Contact us</LinkText></a>
-              </Link>
-              {/* <StyledDivider />
-              <Link href='tel:{contactDetails.phone}'>
-              <a><LinkText>{contactDetails.phone}</LinkText></a>
-              </Link> */}
-            </Nav>
-          </DesktopNav>
+          <Container
+            px={[ 1, 2, 2, 3 ]}
+            mw='lg'
+            w={1}
+          >
+            <Flex
+              align='center'
+              justify='space-between'
+            >
 
-          <Box>
-            <Link href='/'>
-              <a><Icon
-                color={this.props.color}
-                size='80'
-                icon={icons.logo}
-              /></a>
-            </Link>
-          </Box>
+              <DesktopNav hideAtMobile w={5/9} style={{ textAlign: 'center' }}>
+                <Nav>
+                  {/* <Link href='/'>
+                    <a><LinkText isActive={this.props.pathname === '/'}>Home</LinkText></a>
+                  </Link> */}
+                  <Link href='/who-we-are'>
+                    <a><LinkText isActive={this.props.pathname === '/who-we-are'}>Who We Are</LinkText></a>
+                  </Link>
+                  <Link href='/what-we-do-for-you'>
+                    <a><LinkText isActive={this.props.pathname === '/what-we-do-for-you'}>What We Do For You</LinkText></a>
+                  </Link>
+                  <Link href='/useful-info'>
+                    <a><LinkText isActive={this.props.pathname === '/useful-info'}>Useful Info</LinkText></a>
+                  </Link>
+                  <Link href='/contact'>
+                    <a><LinkText isActive={this.props.pathname === '/contact'}>Contact Us</LinkText></a>
+                  </Link>
+                </Nav>
+              </DesktopNav>
 
-          <ResponsiveToggle hideAtMobile p={2}>
-            <Nav style={{ textAlign: 'right' }}>
-              <Link href='tel:{contactDetails.phone}'>
-                <a><LinkText>
-                  <Button invert>T {contactDetails.phone}</Button>
-                </LinkText></a>
-              </Link>
-            </Nav>
-          </ResponsiveToggle>
+              <Box>
+                <Link href='/'>
+                  <a><Icon
+                    color={this.props.color}
+                    size='80'
+                    icon={icons.logo}
+                  /></a>
+                </Link>
+              </Box>
 
-          <ResponsiveToggle hideAtDesktop p={2}>
-            <Hamburger onClick={this.handleModalTriggerClick} isOpen={this.state.isModalVisible}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </Hamburger>
-          </ResponsiveToggle>
+              <Nav>
+                <Link href='tel:{contactDetails.phone}'>
+                  <a><LinkText>
+                    <Button invert>
+                      <IconPhone navBar />
+                      {contactDetails.phone}
+                    </Button>
+                  </LinkText></a>
+                </Link>
+              </Nav>
 
+              <ResponsiveToggle hideAtDesktop p={2}>
+                <Hamburger onClick={this.handleModalTriggerClick} isOpen={this.state.isModalVisible}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </Hamburger>
+              </ResponsiveToggle>
+
+            </Flex>
+          </Container>
         </Root>
 
         <MobileModal
           onClick={this.handleModalClick}
           isVisible={this.state.isModalVisible}
-          align='center'
-          justify='center'
           column
-          bg='brand'
         >
           <MobileNav>
             <Container textCenter>
-              <Flex column>
+              <MobileNavFlex column>
                 <Link href='/'>
                   <a><MobileLinkText>Home</MobileLinkText></a>
                 </Link>
@@ -358,12 +409,8 @@ class Header extends React.Component {
                 <Link href='/contact'>
                   <a><MobileLinkText>Contact us</MobileLinkText></a>
                 </Link>
-                <Divider />
-                <Link href='tel:{contactDetails.phone}'>
-                  <a><MobileLinkText>{contactDetails.phone}</MobileLinkText></a>
-                </Link>
 
-              </Flex>
+              </MobileNavFlex>
             </Container>
           </MobileNav>
         </MobileModal>
@@ -376,13 +423,15 @@ class Header extends React.Component {
 Header.propTypes = {
   color: PropTypes.string,
   clear: PropTypes.bool,
-  reverseBorder: PropTypes.bool,
+  invertTextOnMobile: PropTypes.bool,
   pathname: PropTypes.string,
+  reverseBorder: PropTypes.bool,
 };
 
 Header.defaultProps = {
   color: 'text',
   clear: false,
+  invertTextOnMobile: false,
   reverseBorder: false,
 };
 

@@ -16,56 +16,14 @@ import CoverImage from '../components/styled-elements/CoverImage'
 import Icon from '../components/styled-elements/Icon';
 import Layout from '../components/styled-elements/Layout'
 
+import HeroWhat from '../components/Shared/HeroWhat'
 import Block from '../components/Shared/Block'
 import Contacts from '../components/Shared/Contacts'
 import ContactAction from '../components/Shared/ContactAction'
 import Footer from '../components/Shared/Footer'
 import Header from '../components/Shared/Header'
-import { HeroBox, HeroContainer, HeroFlex } from '../components/Shared/Hero'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 
-
-const StyledHeroBox = styled(HeroBox)`
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(222, 202, 178, 0.4),
-      ${theme.colors.beige} 70%
-    );
-  background-image: initial;
-  background-color: #ebe5df;
-`
-
-const Image = styled(CoverImage)`
-  background-image: url('static/img/what-hero.png');
-  background-position-x: 32%;
-  @media (min-width: 768px) { background-position-x: 35%; }
-  @media (min-width: 1024px) { background-position-x: 35%; }
-  @media (min-width: 1280px) { background-position-x: 85%; }
-  @media (min-width: 1536px) { background-position-x: 66%; }
-  @media (min-width: 1800px) { background-position-x: 60%; }
-
-  @media (min-width: 1536px) { background-size: contain !important; }
-`
-
-const Hero = props => (
-  <StyledHeroBox>
-    <Image />
-    <HeroContainer mw='rg'>
-      <HeroFlex>
-        <Box w={[ 8/12, 5/12, 4/10, 1/2 ]} ml={[ null, 3 ]} mb={4}>
-          <MobileSubheadline color='brand' children='Services' />
-          <Display color='brand' mb={2}>
-            What we do <LineBreak>for you.</LineBreak>
-          </Display>
-          <LargeText>
-            We’ll go further to help you <LineBreak>find peace of mind.</LineBreak>
-          </LargeText>
-        </Box>
-      </HeroFlex>
-    </HeroContainer>
-  </StyledHeroBox>
-)
 
 const ItemRoot = styled(Flex)`
   &:last-child {
@@ -105,7 +63,7 @@ const Item = (props) => (
         }
       </Text>
       {props.item.buttonUrl &&
-        <LargeButtonStyler align='left' color='white' mt={[ 2, 3 ]}>
+        <LargeButtonStyler align='left' color='white' mt={2}>
           <Link href={props.item.buttonUrl}>
             <Button large icon color='brand' bgColor='transparent' children={props.item.buttonLabel} />
           </Link>
@@ -117,28 +75,23 @@ const Item = (props) => (
 
 const Root = (props) => (
   <Layout>
-    <Header
-      pathname={props.pathname}
-      clear />
-    <Hero />
-
-    <Block mw='sm'>
+    <Header pathname={props.pathname} clear />
+    <HeroWhat />
+    <Block mw='sm' pb={[ 0, 0 ]}>
       <LargeText
         color='text70'
-        mb={[ 4, 5 ]}
+        w={[ 1, 2/3, 1 ]}
         children={servicesIntro}
       />
+    </Block>
+    <Block mw='sm'>
       {servicesList.map((item, i) =>
         <Item item={item} key={i} />
       )}
     </Block>
 
-    <Block
-      border
-      textCenter>
-      <ContactAction
-        btnColor='brandAlt'
-        withButton />
+    <Block border textCenter>
+      <ContactAction btnColor='brandAlt' withButton />
       <Contacts />
     </Block>
 

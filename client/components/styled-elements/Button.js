@@ -14,7 +14,7 @@ const Button = styled.button`
   --Button-color: inherit;
   --Button-disabled-opacity: 0.6;
   --Button-font: inherit;
-  --Button-height: 48px;
+  --Button-height: 44px;
   --Button-padding: 2px 1.25rem 0;
 
   background: var(--Button-background-color);
@@ -80,16 +80,20 @@ const Button = styled.button`
 
   ${props => props.large && css`
     --Button-border-color: ${theme.colors[props.bgColor] || theme.colors.brand};
-    --Button-height: 48px;
+    --Button-height: 46px;
     padding-left: 2rem;
     padding-right: 1.8rem;
   `}
 
   ${props => props.invert && css`
-    background-color: rgba(255,255,255,0.4);
     border-color: currentColor;
     border-radius: calc( 0.5 * var(--Button-height));
     border-radius: calc( 0.5 * 54px);
+    border-radius: 5px;
+  `}
+
+  ${props => props.invertLegible && css`
+    background-color: rgba(255,255,255,0.4);
 
     @media (min-width: 768px) {
       background-color: transparent;

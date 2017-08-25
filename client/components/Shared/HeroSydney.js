@@ -15,11 +15,10 @@ import { FlexEmbed } from '../styled-elements/FlexEmbed.js';
 
 
 const Root = styled(Box)`
-  height: 100vh;
+  height: 80vh;
 
-  @media (min-width: 768px) {
-    height: 70vh;
-  }
+  @media (min-width: 768px) { height: 70vh; }
+  @media (min-width: 768px) { height: 70vh; }
 `;
 
 const StyledBox = styled(Box)`
@@ -166,21 +165,36 @@ class SydneyBox extends React.Component {
         </Modal>
 
         <FullBoxHeight>
-          <StyledBox px={3}>
+          <StyledBox>
 
-            <Container textCenter relative pt={[ 4, 5, 6 ]}>
+            <Container
+              mw='sm'
+              textCenter
+              relative
+              pt={[ 4, 4, 5, 5, 6 ]}
+            >
               <Subheadline color='brandAlt' children='Dependable and effective' />
               <Display color='brandAlt'>
                 We help make Sydney <LineBreak bp='1' m='auto'>strata living great.</LineBreak>
               </Display>
-              <Container width={[ 1, 2/3 ]}>
-                <Text color='text' mb={3}>
-                  At V J Ray we know that our job is much more that just looking after buildings, its about caring for and helping the people that own or live in those buildings. Its the people that matter. <Link href="/who-we-are"><a>Read about who we are.</a></Link>
-                </Text>
-                <Text font='textMedium'>
-                  <Button color='brandAlt' bg='white' invert icon onClick={this.openModal} children='Watch video' />
-                </Text>
-              </Container>
+              <Text
+                color='text'
+                mb={3}
+                mx='auto'
+                w={[ 1, 10/12 ]}
+              >
+                We know that our job is much more that just looking after buildings. Its the people that matter. <Link href="/who-we-are"><a>Read about who we are.</a></Link>
+              </Text>
+              <Text font='textMedium'>
+                <Button
+                  color='brandAlt'
+                  bg='white'
+                  invert
+                  icon
+                  onClick={this.openModal}
+                  children='Watch video'
+                />
+              </Text>
             </Container>
 
           </StyledBox>

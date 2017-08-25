@@ -2,6 +2,8 @@
 title: Terms of use
 ---
 
+# Terms of use
+
 Please read this legal information carefully This web site and its contents ('Web Site') are owned and operated by VJ Ray Pty. Ltd. (VJ Ray). The use of this Web Site is governed by the following terms and conditions, as amended from time to time (the 'Terms and Conditions'). These Terms and Conditions apply in favor of, and are enforceable by, VJ Ray.
 
 By using this Web Site you acknowledge that you have read and understood these Terms and Conditions and agree to be bound by them. If you do not agree with these Terms and Conditions you should immediately cease using the Web Site. The Web Site may be updated from time to time, including these Terms and Conditions. By continuing to use this Web Site after these Terms and Conditions have been updated, you acknowledge that you have read and understood the updated Terms and Conditions and agree to be bound by them.

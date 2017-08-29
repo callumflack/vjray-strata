@@ -26,16 +26,6 @@ const HeroBox = styled(Box)`
   @media (min-width: 1536px) {
     height: calc(var(--Hero-height) + var(--Header-height)) !important;
   }
-
-  &:after {
-    background-blend-mode: multiply;
-    bottom: 0;
-    content: " ";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
 `
 
 const ColorBox = styled(HeroBox)`

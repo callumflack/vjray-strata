@@ -14,6 +14,8 @@ import { Display } from '../styled-elements/Headline'
 import { Text, InlineText, Divider } from '../styled-elements/Text'
 import Container from '../styled-elements/Container'
 import Button from '../styled-elements/Button'
+
+// import ResponsiveToggle from './ResponsiveToggle'
 import Hamburger from './Hamburger'
 
 
@@ -113,11 +115,6 @@ const Root = styled(Flex)`
   `}
 `;
 
-
-
-
-
-
 const ResponsiveToggle = styled(Box)`
   ${props => props.hideAtDesktop && css`
     @media (min-width: 1024px) {
@@ -131,6 +128,7 @@ const ResponsiveToggle = styled(Box)`
     }
   `}
 `
+
 const DesktopNav = styled(ResponsiveToggle)`
   bottom: 0;
   left: 0;
@@ -153,7 +151,6 @@ const Nav = styled(ResponsiveToggle)`
     margin-right: 1.5rem;
   }
 `;
-
 
 
 /*
@@ -204,8 +201,6 @@ const MobileModal = Flex.extend`
   `}
 `;
 
-
-
 const LinkTextRoot = hoc('span').extend`
   ${props => props.isActive && css`
     border-bottom: 2px solid currentColor;
@@ -238,12 +233,9 @@ const MobileLinkText = props =>
 
 
 
-
-
-
-/**
-  final component
-**/
+/*
+ * final component
+ */
 
 class Header extends React.Component {
   static timeout = null;

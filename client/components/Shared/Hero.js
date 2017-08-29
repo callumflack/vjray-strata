@@ -3,6 +3,11 @@ import { Box, Flex } from '../styled-grid';
 import theme from '../theme.js';
 import Container from '../styled-elements/Container'
 
+/*
+ * 1. This keeps banner images from impinging
+ *    on the main menu.
+ */
+
 const HeroBox = styled(Box)`
   --Header-height: ${theme.blockHeights.navBar};
   --Hero-height: 50vh;
@@ -25,6 +30,11 @@ const HeroBox = styled(Box)`
 
   @media (min-width: 1536px) {
     height: calc(var(--Hero-height) + var(--Header-height)) !important;
+  }
+
+  /* 1 */
+  @media (min-height: 1000px) and (min-width: 1024px) {
+    > div:first-child > div:first-child { bottom: calc(-0.333333 * var(--Header-height)); }
   }
 `
 

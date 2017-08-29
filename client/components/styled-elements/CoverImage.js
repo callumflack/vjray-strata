@@ -5,6 +5,19 @@ import styled, { css } from 'styled-components'
 import { Box } from '../styled-grid';
 
 
+/*
+ * 1. Pin is used to position the Image position downards
+ *    at certain breakpoints. Currently, this is managed in <Hero>.
+ */
+
+const Pin = styled(Box)`
+  bottom: 0;
+  left: 0;
+  overflow: hidden; /*1*/
+  position: absolute;
+  top: 0;
+  right: 0;
+`
 const Root = styled(Box)`
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -93,14 +106,16 @@ class CoverImage extends React.Component {
 
   render() {
     return (
-      <Root
-        ref={(ref) => this._image = ref}
-        url={this.state.url}
-        style={{
-          backgroundImage: this.state.url
-        }}
-        {...this.props}
-      />
+      <Pin>
+        <Root
+          ref={(ref) => this._image = ref}
+          url={this.state.url}
+          style={{
+            backgroundImage: this.state.url
+          }}
+          {...this.props}
+        />
+      </Pin>
     )
   }
 }

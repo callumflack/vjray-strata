@@ -63,23 +63,11 @@ const Root = props => (
 )
 
 class FastQuote extends React.Component {
-  static async getInitialProps({ req, query }) {
-    const postQuery = gql`{
-      post(slug: "${query.slug}") {
-        _id,
-        slug,
-        title,
-        description,
-        content {
-          html,
-        },
-        createdAt,
-      }
-    }`;
-
-    return await apollo.query({
-      query: postQuery,
-    });
+  static async getInitialProps({ pathname, query }) {
+    return {
+      pathname,
+      defaultForm: query.form,
+    }
   }
 
   render() {

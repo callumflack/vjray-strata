@@ -56,7 +56,7 @@ const Root = (props) => (
             It's our job to sort it.
           </Display>
           {/* width={[ 1, 9/12, 9/12, 7/12 ]} */}
-          <Box w={[ 1, 1, 9/12 ]}>
+          <Box w={[ 1, 1, 8/12 ]} mx='auto'>
             <LargeText color='text70'>
               "I have known and been happy with V J Ray for years. I cannot fault you. Thank you!" <LineBreakAll mx='auto'>
                 <AuthorText>— Petrania, Belmore</AuthorText>
@@ -85,7 +85,7 @@ const Root = (props) => (
         mx='auto'
         width={[ 1, 2/3, 2/3, 1/2 ]}
       >
-        We've got guides and articles to help your Strata management. <Link href="/useful-info"><a>Check all our guides.</a></Link>
+        We've got guides and articles to help your Strata Management. <Link href="/useful-info"><a>Check all our guides.</a></Link>
       </Text>
 
       <Box pt={4} pb={3}>

@@ -64,7 +64,7 @@ const Hero = props => (
             Strata forms <LineBreak>and fact sheets.</LineBreak>
           </Display>
           <LargeText color='text70'>
-            Readily available PDF downloads <LineBreak>to help your Strata management.</LineBreak>
+            Readily available PDF downloads <LineBreak>to help your Strata Management.</LineBreak>
           </LargeText>
         </HeroTitleBox>
       </HeroTitleFlex>

@@ -66,9 +66,7 @@ const servicesList = [{
   icon: 'contractor',
   headline: 'Contractor management',
   text: 'We all know how complex the licensing, WHS & insurance laws surrounding contractors are these days, so at V J Ray we enlist the help of an independent company to continually monitor each and every contractor used by all of our strata schemes so that there is never any doubt that they comply.',
-  link: false,
-  buttonUrl: '/contact?form=report#contact-forms',
-  buttonLabel: 'Report an issue'
+  link: false
 }, {
   icon: 'voting',
   headline: 'Electronic voting',

@@ -19,7 +19,7 @@ const ContactActionAlt = (props) => (
   <Root>
     <Subheadline>Let's talk</Subheadline>
     <Display color='text' font='displayRegular' mb={3}>
-      Skip the hassle of <LineBreakAll m='auto'>Strata management.</LineBreakAll>
+      Skip the hassle of <LineBreakAll m='auto'>Strata Management.</LineBreakAll>
     </Display>
     <LargeButtonStyler>
       <Link href='/fast-quote'>

@@ -49,7 +49,7 @@ const HeroWho = props => (
         <HeroTitleBox w={[ 7/12, 5/6, 6/12, 2/3 ]} mb={[ 4, 5, 6 ]}>
           <MobileSubheadline color='brandAlt' children='About us' />
           <Display color='brandAlt'>
-            We believe in better <LineBreak>Strata management </LineBreak><LineBreak>for Sydney.</LineBreak>
+            We believe in better <LineBreak>Strata Management </LineBreak><LineBreak>for Sydney.</LineBreak>
           </Display>
         </HeroTitleBox>
       </HeroFlex>

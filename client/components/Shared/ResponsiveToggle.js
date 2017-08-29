@@ -3,8 +3,6 @@ import hoc from '../styled-elements/hoc'
 import theme from '../theme.js'
 
 const ResponsiveToggle = hoc('span').extend`
-  background-color: salmon;
-
   ${props => props.hideAtDesktop && css`
     @media (min-width: 1024px) {
       display: none;

@@ -35,20 +35,17 @@ const GuideButton = (props) => (
   </SmallText>
 );
 
+// Box or BoxReset?
 const Root = (props) => (
   <div>
-    {props.primary ? (
-      <BoxReset>
-        {props.children}
-      </BoxReset>
-    ) : (
       <Flex
-        direction={[ 'column', 'row' ]}
+        direction={!props.primary && [ 'column', 'row' ]}
         justify='center'
         mx={-2}>
         {props.children}
       </Flex>
-    )}
+      <BoxReset>
+    </BoxReset>
   </div>
 );
 
@@ -64,11 +61,15 @@ const StyledLink = styled(Box)`
   border: 1px solid rgba(0,0,0,0.1);
 `
 
+// {props.buttons && (
+//   <GuideButton guide={guide} icon={props.icon} />
+// )}
+
 const Guides = (props) => (
   <Root primary={props.primary}>
     {props.guides.map((guide, i) =>
       <StyledBox
-        width={props.primary ? [1, 1/2] : [8/12, 1/2, 5/12 ]}
+        width={props.primary ? [8/12, 1/2, 8/12] : [8/12, 1/2, 5/12 ]}
         mx='auto'
         px={2}
         key={guide._id}
@@ -81,9 +82,6 @@ const Guides = (props) => (
           </Link>
         </StyledLink>
 
-        {props.buttons && (
-          <GuideButton guide={guide} icon={props.icon} />
-        )}
       </StyledBox>
     )}
   </Root>

@@ -2,19 +2,17 @@ import styled, { css } from 'styled-components';
 import { Box, Flex } from '../styled-grid';
 import theme from '../theme.js';
 
-
 // https://www.styled-components.com/docs/basics#extending-styles?
 // const ContainerSm = Container.extend` <= NAH
 // width: 100%;
+// @media (max-width: 767px) {
+//   max-width: 100%;
+// }
 
 const Root = styled(Box)`
   margin-left: auto;
   margin-right: auto;
   position: relative;
-
-  @media (max-width: 767px) {
-    max-width: 100%;
-  }
 
   ${props => props.fullSize && css`
     height: 100%;

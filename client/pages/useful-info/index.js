@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import theme from '../../components/theme'
 import hoc from '../../components/styled-elements/hoc'
@@ -38,9 +38,11 @@ const FactsBox = styled(ColorBox)`
   background-image: initial;
 `
 
+// const Rule = Container.extend` errors, WTF???
 const Rule = styled(Container)`
   background-color: rgba(255,255,255, 0.15);
   height: 1px;
+  max-width: calc(960px - 64px);
 `
 
 // moved the Posts lists here until
@@ -60,16 +62,16 @@ const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear reverseBorder color='white' />
 
-    <StyledColorBox pb={[ 4, 5, 6 ]} px={3}>
-      <Container mw='rg' mt={[ 4, 5, 6 ]} >
+    <StyledColorBox pb={[ 4, 5, 6 ]} px={[ 0, 3 ]}>
+      <Container mw='rg' mt={[ 4, 5, 6 ]} pb={[ 2, 3 ]}>
         <Flex direction={[ 'column', 'row' ]}>
-          <Box width={[ 1, 1/2 ]} mt={[ 0, 3 ]}>
+          <Box width={[ 9/12, 5/12 ]} mt={[ 0, 3 ]}>
             <Subheadline color='white' children='Info on the go' />
-            <Display color='white' font='displayRegular'>Your guides to <LineBreak>Sydney Strata.</LineBreak></Display>
+            <Display color='white' font='displayRegular'>Your guides to <LineBreakAll>Sydney Strata.</LineBreakAll></Display>
             <LargeText color='text40'>Download your complete <LineBreak>guide to Strata living.</LineBreak></LargeText>
           </Box>
 
-          <Box width={[ 1, 1/2 ]} px={[ 3, 4 ]}>
+          <Box width={[ 1, 9/12 ]} pt={[ 3, 0 ]}>
             <Guides primary buttons icon />
           </Box>
         </Flex>
@@ -78,7 +80,7 @@ const Root = (props) => (
       <Rule mw='rg' my={[ 3, 4 ]} />
 
       <Container textCenter>
-        <Subheadline color='white' mt={[ 1, 2 ]} mb={4} children='All our guides' />
+        <Subheadline color='white' mt={[ 1, 2 ]} mb={[ 3, 4 ]} children='All our guides' />
         <Guides buttons />
       </Container>
     </StyledColorBox>
@@ -86,8 +88,8 @@ const Root = (props) => (
     <Block
       bg='beige'
       textCenter
-      pt={[ 2, 3, 4 ]}
-      pb={[ 2, 3, 4 ]}
+      pt={4}
+      pb={4}
     >
       <Subheadline mt={[ 1, 2 ]} children='Take action' />
       <Display color='brandAlt' children='Forms and fact sheets.' />

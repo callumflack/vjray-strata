@@ -86,11 +86,114 @@ const AuthorText = props =>
     {...props}
   />
 
+const Divider = styled.span`
+  --spacing: 0.75rem;
+  color: inherit;
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
+
+  :after {
+    color: inherit;
+    content: '•';
+  }
+`;
+
+/*
+ * -----------
+ * Text blocks
+ * -----------
+ */
+
+const TextBlock = styled('div')`
+  h1 {
+    font-family: ${theme.fonts.displayRegular};
+    font-size: ${theme.fontSizes[5]}px;
+    line-height: ${theme.lineHeight.display};
+    margin-bottom: ${theme.space[2]}px;
+
+    @media (min-width: ${theme.breakpoints[0]}em) {
+      margin-top: ${theme.space[1]}px;
+    }
+
+    @media (min-width: ${theme.breakpoints[2]}em) {
+      font-size: ${theme.fontSizes[6]}px;
+    }
+
+    @media (min-width: ${theme.breakpoints[2]}em) {
+      margin-bottom: ${theme.space[3]}px;
+    }
+  }
+
+  h2 {
+    font-family: ${theme.fonts.displayRegular};
+    font-size: ${theme.fontSizes[3]}px;
+    letterSpacing: ${theme.letterSpacing.text};
+    line-height: ${theme.lineHeight.subheadline};
+    margin-bottom: ${theme.space[1]}px;
+
+    @media (min-width: ${theme.breakpoints[2]}em) {
+      font-size: ${theme.fontSizes[4]}px;
+    }
+
+    @media (min-width: ${theme.breakpoints[3]}em) {
+      font-size: ${theme.fontSizes[5]}px;
+    }
+  }
+
+  p,
+  li {
+    font-size: 16px;
+    font-family: ${theme.fonts.textLight};
+    margin: 0;
+    order: initial;
+    padding: 0;
+    width: 100%;
+
+    @media (min-width: ${theme.containers.sm}) {
+      font-size: 19px;
+    }
+  }
+
+  p + p,
+  p + h2,
+  ul + p {
+    margin-top: 2em;
+  }
+
+  ul {
+    margin: 2em 0;
+  }
+
+  li {
+    list-style-type: disc;
+    margin-left: 1em;
+    padding-left: 8px;
+    width: auto;
+  }
+`
+
+const DangerouslyResetTextBlock = styled(TextBlock)`
+  > div,
+  > div div {
+    font-size: 16px;
+    font-family: ${theme.fonts.textLight};
+    margin: 0;
+    order: initial;
+    padding: 0;
+    width: 100%;
+
+    @media (min-width: ${theme.containers.sm}) {
+      font-size: 19px;
+    }
+  }
+`
 
 
-
-// Utils
-// =====================================================================
+/*
+ * ------
+ * Utils
+ * ------
+ */
 
 const LineBreak = hoc('span').extend`
   font: inherit;
@@ -129,65 +232,6 @@ const InlineText = Root.withComponent('span').extend`
   display: inline-block;
 `
 
-const TextBlock = styled('div')`
-  p,
-  li {
-    font-size: 16px;
-    font-family: ${theme.fonts.textLight};
-    margin: 0;
-    order: initial;
-    padding: 0;
-    width: 100%;
-
-    @media (min-width: ${theme.containers.sm}) {
-      font-size: 19px;
-    }
-  }
-
-  p + p,
-  ul + p {
-    margin-top: 2em;
-  }
-
-  ul {
-    margin: 2em 0;
-  }
-
-  li {
-    list-style-type: disc;
-    margin-left: 1em;
-    padding-left: 8px;
-    width: auto;
-  }
-`
-
-const DangerouslyResetTextBlock = styled(TextBlock)`
-  > div,
-  > div div {
-    font-size: 16px;
-    font-family: ${theme.fonts.textLight};
-    margin: 0;
-    order: initial;
-    padding: 0;
-    width: 100%;
-
-    @media (min-width: ${theme.containers.sm}) {
-      font-size: 19px;
-    }
-  }
-`
-
-const Divider = styled.span`
-  --spacing: 0.75rem;
-  color: inherit;
-  margin-left: var(--spacing);
-  margin-right: var(--spacing);
-
-  :after {
-    color: inherit;
-    content: '•';
-  }
-`;
 
 
 export {

@@ -1,5 +1,7 @@
 import React from 'react'
 import fetchMarkdown from '../lib/fetchMarkdown.js'
+import theme from '../components/theme.js'
+import { Box } from '../components/styled-grid'
 import Layout from '../components/styled-elements/Layout'
 import { TextBlock } from '../components/styled-elements/Text'
 import Header from '../components/Shared/Header'
@@ -9,11 +11,13 @@ import Block from '../components/Shared/Block'
 
 const Root = props => (
   <Layout>
-    <Header clear color='brandAlt' />
+    <Header clear />
 
-    <Block mw='sm'>
-      <TextBlock dangerouslySetInnerHTML={{__html: props.privacy.body.html}} />
-    </Block>
+    <Box style={{ marginTop: '45px' }}>
+      <Block mw='sm'>
+        <TextBlock dangerouslySetInnerHTML={{__html: props.privacy.body.html}} />
+      </Block>
+    </Box>
 
     <Footer />
   </Layout>

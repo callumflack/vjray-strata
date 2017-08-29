@@ -90,6 +90,10 @@ const Root = styled(Flex)`
   `}
 
   ${props => props.isModalVisible && css`
+    --Header-background-color: ${theme.colors.offWhite};
+    --Header-border-color: rgba(88, 88, 112, 0.15);
+    background-color: var(--Header-background-color);
+    border-bottom: 1px solid var(--Header-border-color);
     transition: all 0s;
   `}
 
@@ -150,15 +154,55 @@ const Nav = styled(ResponsiveToggle)`
   }
 `;
 
+
+
+/*
+ * -----------
+ * Mobile nav
+ * -----------
+ */
+
 const MobileNav = styled.nav`
   a {
     margin: 0.5rem 0;
   }
 `;
 
+const MobileNavContainer = styled(Container)`
+  @media (max-width: ${theme.breakpoints[1]}em) {
+    padding: 0;
+  }
+`
 
+const MobileNavFlex = Flex.extend`
+  align-content: flex-end;
+  opacity: 0;
+  transform: translateY(-32px);
 
+  ${props => props.isVisible && css`
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity ${fade.duration}s ease-in-out,
+      transform ${fade.duration}s ease-in-out;
+  `}
+`
 
+const MobileModal = Flex.extend`
+  background-color: ${theme.colors.brand};
+  background-color: ${theme.colors.offWhite};
+  bottom: 0;
+  left: 0;
+  padding: ${theme.space[3]}px;
+  position: fixed;
+  right: 0;
+  top: ${theme.blockHeights.navBar};
+  z-index: 15;
+
+  ${props => !props.isVisible && css`
+    display: none;
+  `}
+`;
 
 
 
@@ -184,35 +228,9 @@ const StyledDivider = styled(Divider)`
 const MobileLinkText = props =>
   <Display align='left' color='text' {...props} />
 
-const MobileModal = Flex.extend`
-  background-color: ${theme.colors.brand};
-  background-color: ${theme.colors.offWhite};
-  bottom: 0;
-  left: 0;
-  padding: ${theme.space[3]}px;
-  position: fixed;
-  right: 0;
-  top: ${theme.blockHeights.navBar};
-  z-index: 15;
 
-  ${props => !props.isVisible && css`
-    display: none;
-  `}
-`;
 
-const MobileNavFlex = Flex.extend`
-  align-content: flex-end;
-  // opacity: 0;
-  // transform: translateY(0);
-  //
-  // ${props => !props.isVisible && css`
-  //   opacity: 1;
-  //   transform: translateY(20vh);
-  //   transition:
-  //     opacity ${fade.duration}s ease-in-out,
-  //     transform ${fade.duration}s ease-in-out;
-  // `}
-`
+
 
 
 
@@ -332,7 +350,7 @@ class Header extends React.Component {
               justify='space-between'
             >
 
-              <DesktopNav hideAtMobile w={5/9} style={{ textAlign: 'center' }}>
+              <DesktopNav hideAtMobile style={{ textAlign: 'center' }}>
                 <Nav>
                   {/* <Link href='/'>
                     <a><LinkText isActive={this.props.pathname === '/'}>Home</LinkText></a>
@@ -363,7 +381,7 @@ class Header extends React.Component {
               </Box>
 
               <Nav>
-                <Link href='tel:{contactDetails.phone}'>
+                <Link href={'tel:' + contactDetails.phone}>
                   <a><LinkText>
                     <Button invert>
                       <IconPhone navBar />
@@ -392,8 +410,8 @@ class Header extends React.Component {
           column
         >
           <MobileNav>
-            <Container textCenter>
-              <MobileNavFlex column>
+            <MobileNavContainer textCenter>
+              <MobileNavFlex column isVisible={this.state.isModalVisible}>
                 <Link href='/'>
                   <a><MobileLinkText>Home</MobileLinkText></a>
                 </Link>
@@ -406,12 +424,15 @@ class Header extends React.Component {
                 <Link href='/useful-info'>
                   <a><MobileLinkText>Useful info</MobileLinkText></a>
                 </Link>
+                <Link href='/fast-quote'>
+                  <a><MobileLinkText>Get a fast quote</MobileLinkText></a>
+                </Link>
                 <Link href='/contact'>
                   <a><MobileLinkText>Contact us</MobileLinkText></a>
                 </Link>
 
               </MobileNavFlex>
-            </Container>
+            </MobileNavContainer>
           </MobileNav>
         </MobileModal>
 

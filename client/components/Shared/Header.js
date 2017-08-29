@@ -237,6 +237,8 @@ const MobileLinkText = props =>
  * final component
  */
 
+// `
+
 class Header extends React.Component {
   static timeout = null;
 
@@ -269,7 +271,11 @@ class Header extends React.Component {
   handleScroll(event) {
     const scrollPos = window.scrollY;
     const previousScrollPos = this.state.previousScrollPos;
-    const scrolledDown = scrollPos > previousScrollPos;
+    // iOS hides the header when scrolled to top
+    // The cause is believed to be that it's possible to scroll a little below
+    // 0 on the Y axis with a bounce back animation which scrolls back to 0.
+    // scollPos is checked to be above 0 to exclude scroll events caused by the bounce back animaiton
+    const scrolledDown = scrollPos > previousScrollPos && scrollPos > 0;
 
     if (this.state.isModalVisible) return;
 

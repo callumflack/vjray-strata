@@ -77,7 +77,7 @@ class FormQuote extends React.Component {
             name='unitsInScheme'
             defaultValue=''
           >
-            <option value='' hidden>Total units in your strata</option>
+            <option value='' selected hidden>Total units in your strata</option>
             {Array.from({length: 10}, (v, k) => k+1).map(i =>
               <option value={i} key={i}>{i}</option>
             )}

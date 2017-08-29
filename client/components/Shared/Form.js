@@ -88,6 +88,12 @@ const ErrorMessage = props =>
     {...props}
   />
 
+const StyledSelect = styled.select`
+  ${props => props.unselected && css `
+    color: grey !important;
+  `}
+`
+
 
 class InputRoot extends React.Component {
   render() {
@@ -104,15 +110,35 @@ class InputRoot extends React.Component {
 };
 
 class SelectRoot extends React.Component {
+  constructor(props) {
+    super(props)
+
+    //this.setValue = this.props.setValue.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+
+    this.state = {
+      selected: false
+    }
+  }
+
+  handleChange(e) {
+    this.setState({
+      selected: true
+    })
+
+    this.props.setValue(e.target.value)
+  }
+
   render() {
     return (
       <div>
-        <select
-          onChange={(e) => this.props.setValue(e.target.value)}
+        <StyledSelect
+          onChange={this.handleChange}
           placeholder={this.props.placeholder}
+          unselected={!this.state.selected}
         >
           {this.props.children}
-        </select>
+        </StyledSelect>
         <ErrorMessage>{this.props.getErrorMessage()}</ErrorMessage>
       </div>
     )

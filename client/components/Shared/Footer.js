@@ -19,16 +19,23 @@ const Root = hoc(Box).extend`
   `}
 `;
 
-const StyledContainer = styled(Container)`
-  border-top: 1px solid ${theme.colors.text20};
-`;
+const LogoBox = styled(Box)`
+  @media (max-width: 512px) {
+    margin-top: 12px;
+    transform: translateX(-6px);
+  }
+`
 
 // as soon as you extend it, you lose the hoc()
 // so I'm assigning margins manually…
 // this is why proper Rebass is so good…
 const Nav = Flex.withComponent('nav').extend`
   color: ${theme.colors.text40};
-  margin-top: ${theme.space[3]}px;
+  margin-top: ${theme.space[2]}px;
+
+  @media (min-width: 768px) {
+    margin-top: {theme.space[4]}px;
+  }
 
   p,
   span,
@@ -43,42 +50,16 @@ const Nav = Flex.withComponent('nav').extend`
   span {
     font-family: ${theme.fonts.textRegular};
   }
-
-  @media (min-width: 700px) {
-    margin-top: {theme.space[4]}px;
-  }
-`;
-
-const StyledNav = styled(Nav)`
-  p,
-  span,
-  a {
-    color: ${theme.colors.text40} !important;
-  }
-
-  span {
-    font-family: ${theme.fonts.textLight} !important;
-  }
-
-  a:not(:first-child) {
-    margin-top: 12px;
-  }
-
-  @media (min-width: 700px) {
-    a:not(:first-child) {
-      margin-top: 0;
-    }
-  }
 `;
 
 const Column = styled(Box)`
-  @media (max-width: 700px) {
+  @media (max-width: 767px) {
     :not(:first-child) {
       margin-top: 2rem
     }
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 768px) {
     :not(:last-child) {
       margin-right: 3rem
     }
@@ -93,10 +74,28 @@ const Column = styled(Box)`
   }
 `;
 
-const StyledDivider = styled(Divider)`
-  @media (max-width: 700px) {
-    display: none;
+/*
+ * -------------
+ * Secondary nav
+ * -------------
+ */
+
+const RuledBox = styled(Box)`
+  border-top: 1px solid ${theme.colors.text10};
+  margin-top: ${theme.space[3]}px;
+  padding-top: ${theme.space[2]}px;
+
+  @media (min-width: 768px) {
+    margin-top: ${theme.space[4]}px;
   }
+`;
+
+const SecondNav = Flex.withComponent('nav').extend`
+  color: ${theme.colors.text40};
+`;
+
+const StyledDivider = styled(Divider)`
+  --spacing: 0.5rem;
 `
 
 
@@ -105,27 +104,20 @@ const Footer = (props) => (
     <Container
       mw="lg"
       pt={[ 0, 2 ]}
-      pb={[ 3, 4 ]}
+      pb={[ 3, null, null, 4 ]}
     >
       <Flex direction={[ 'column', 'row' ]} justify='space-between'>
 
-        <Flex>
-          <Box>
+        <Flex column>
+          <LogoBox>
             <Link href='/'>
               <a><Icon
-                color='brandAlt'
+                color='text'
                 size='80'
                 icon={icons.logo}
               /></a>
             </Link>
-          </Box>
-          {/* <Box>
-            <StyledNav direction={[ 'column', 'row' ]}>
-              <Link href='/'><a>Terms of use</a></Link>
-              <StyledDivider />
-              <Link href='/'><a>Privacy</a></Link>
-            </StyledNav>
-          </Box> */}
+          </LogoBox>
         </Flex>
 
         <Box>
@@ -152,8 +144,18 @@ const Footer = (props) => (
           </Flex>
 
         </Box>
-
       </Flex>
+
+      <RuledBox>
+        <SecondNav>
+          © 2017 VJ Ray
+          <StyledDivider />
+          <Link href='/terms-of-use'><a>Terms</a></Link>
+          <StyledDivider />
+          <Link href='/privacy-policy'><a>Privacy</a></Link>
+        </SecondNav>
+      </RuledBox>
+
     </Container>
   </Root>
 );

@@ -21,7 +21,7 @@ const Hamburger = styled.div`
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
-    transition: .2s ease-in-out;
+    transition: .15s ease-in-out;
   }
 
   span:nth-child(1) {

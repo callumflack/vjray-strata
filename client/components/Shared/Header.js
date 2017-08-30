@@ -25,7 +25,7 @@ const fade = {
 };
 
 const Root = styled(Flex)`
-  --Header-background-color: white;
+  --Header-background-color: rbga(255, 255, 255, 1);
   --Header-border-color: rgba(88, 88, 112, 0.15);
   background-color: var(--Header-background-color);
   border-bottom-width: 1px;
@@ -38,7 +38,9 @@ const Root = styled(Flex)`
   transform: translate3d(0, 0, 0) translateY(0px);
   transition:
     opacity ${fade.duration}s ease-in-out ${fade.delay}s,
-    transform ${fade.duration}s ease-in-out ${fade.delay}s;
+    transform ${fade.duration}s ease-in-out ${fade.delay}s,
+    background-color ${fade.duration}s ease-in-out 0s,
+    border ${fade.duration}s ease-in-out 0s;
   width: 100%;
   z-index: 3;
 
@@ -64,7 +66,7 @@ const Root = styled(Flex)`
   `}
 
   ${props => props.clear && css`
-    --Header-background-color: transparent;
+    --Header-background-color: rbga(255, 255, 255, 0);
   `}
 
   ${props => props.reverseBorder && css`
@@ -76,19 +78,23 @@ const Root = styled(Flex)`
     transform: translate3d(0, 0, 0) translateY(-${theme.blockHeights.navBar});
     transition:
       opacity ${fade.duration}s ease-in-out 1s,
-      transform ${fade.duration}s ease-in-out 1s;
+      transform ${fade.duration}s ease-in-out 1s,
+      background-color ${fade.duration}s ease-in-out,
+      border ${fade.duration}s ease-in-out 0s;
   `}
 
   ${props => props.hasScrolledDown && css`
     --Header-border-color: transparent;
-    background-color: ${theme.colors[props.bg] || theme.colors.white};
+    background-color: ${theme.colors[props.bg] || 'rgba(255, 255, 255, 1)'};
     box-shadow:
       0 16px 24px 2px rgba(0,0,0,0.03),
       0 6px 30px 5px rgba(0,0,0,0.03);
     color: ${theme.colors.text};
     transition:
       opacity ${fade.duration}s ease-in-out,
-      transform ${fade.duration}s ease-in-out;
+      transform ${fade.duration}s ease-in-out,
+      background-color ${fade.duration}s ease-in-out,
+      border ${fade.duration}s ease-in-out;
   `}
 
   ${props => props.isModalVisible && css`
@@ -96,7 +102,11 @@ const Root = styled(Flex)`
     --Header-border-color: rgba(88, 88, 112, 0.15);
     background-color: var(--Header-background-color);
     border-bottom: 1px solid var(--Header-border-color);
-    transition: all 0s;
+    transition:
+      opacity ${fade.duration}s ease-in-out,
+      transform ${fade.duration}s ease-in-out,
+      background-color ${fade.duration}s ease-in-out,
+      border ${fade.duration}s ease-in-out;
   `}
 
   ${props => props.invertTextOnMobile && css`
@@ -186,7 +196,11 @@ const MobileNavFlex = Flex.extend`
 `
 
 const MobileModal = Flex.extend`
-  background-color: ${theme.colors.brand};
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity ${fade.duration}s ease-in-out,
+    transform 0s ease-in-out 0s;
   background-color: ${theme.colors.offWhite};
   bottom: 0;
   left: 0;
@@ -197,7 +211,11 @@ const MobileModal = Flex.extend`
   z-index: 15;
 
   ${props => !props.isVisible && css`
-    display: none;
+    opacity: 0;
+    transform: translateY(100vh);
+    transition:
+      opacity ${fade.duration}s ease-in-out,
+      transform 0s ease-in-out ${fade.duration}s;
   `}
 `;
 
@@ -232,12 +250,10 @@ const MobileLinkText = props =>
 
 
 
-
 /*
  * final component
  */
 
-// `
 
 class Header extends React.Component {
   static timeout = null;

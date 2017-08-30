@@ -17,42 +17,38 @@ import Button from '../components/styled-elements/Button'
 import theme from '../components/theme.js';
 import Header from '../components/Shared/Header.js';
 import Footer from '../components/Shared/Footer.js';
-import ColorBox from '../components/Shared/ColorBox'
 import Block from '../components/Shared/Block.js';
 import Guides from '../components/Shared/Guides.js';
 import ContactAction from '../components/Shared/ContactAction'
 import Contacts from '../components/Shared/Contacts.js';
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import { HeroFrame } from '../components/Shared/Hero'
 
 
-const blockStyle = {
-  backgroundImage: 'linear-gradient(to bottom, rgba(219, 183, 140, 0.4), #F7F2EC 70% )'
-}
+// block y spacings:
+// pt={[ 4, 4, 5, 5, 6 ]}
+// pb={[ 4, 4, 5, 5, 6 ]}
 
 const Root = props => (
   <Layout>
-    <Header pathname='/useful-info' clear />
+    <Header pathname='/useful-info' clear color='brandAlt' />
 
-    <Block
-      mw='lg'
-      style={blockStyle}
-    >
-      <Flex mx={-3}>
-        <Box width={[ 1, 6/12]} mx={3}>
+    <HeroFrame>
+      <Box pt={[ 3, 4, 4, 5, 5 ]}>
+        <Container mw='sm'>
           <Subheadline color='brandAlt'>{formatDateString(props.data.post.createdAt)}</Subheadline>
           <Display color='brandAlt'>{props.data.post.title}</Display>
-          <Text fontSize={[ 3, 4 ]} color='brandAlt70'>
-            {props.data.post.description}
-          </Text>
-        </Box>
+          <Text fontSize={[ 3, 4 ]} color='brandAlt70'>{props.data.post.description}</Text>
+        </Container>
 
-        <Flex width={[ 1, 6/12 ]} mx={3} align='center'>
+        <Container mobileBleed mw='rg' py={[ 3, 3, 4 ]} mb={[ 0, 1 ]}>
           <img src={props.data.post.featureImage.secure_url} />
-        </Flex>
-      </Flex>
-    </Block>
+        </Container>
 
-    <Block mw='sm'>
+      </Box>
+    </HeroFrame>
+
+    <Block mw='sm' pt={[0]}>
       <TextBlock dangerouslySetInnerHTML={{ __html: props.data.post.content.html}} />
     </Block>
 
@@ -62,10 +58,10 @@ const Root = props => (
       textCenter
     >
       <Subheadline children='guides and articles' />
-      <Display color='text' font='displayRegular' mb={3} children='Read all our useful Strata info' />
+      <Display color='text' font='displayRegular' mb={3} children='All the Strata Management info that matters' />
       <LargeButtonStyler>
         <Link href='/useful-info'>
-          <Button large icon bgColor='brand' children='Guides' />
+          <Button large icon bgColor='brand' children='useful info' />
         </Link>
       </LargeButtonStyler>
     </Block>

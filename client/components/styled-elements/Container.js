@@ -31,6 +31,10 @@ const Root = styled(Box)`
     position: relative;
   `}
 
+  ${props => props.textCenter && css`
+    text-align: center;
+  `}
+
   ${props => props.center && css`
     position: absolute;
     left: 0;
@@ -40,8 +44,11 @@ const Root = styled(Box)`
     transform: translateY(-50%);
   `}
 
-  ${props => props.textCenter && css`
-    text-align: center;
+  ${props => props.mobileBleed && css`
+    @media (max-width: 768px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   `}
 `;
 

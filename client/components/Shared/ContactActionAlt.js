@@ -18,7 +18,7 @@ const Root = styled(Box)`
 const ContactActionAlt = (props) => (
   <Root>
     <Subheadline>Let's talk</Subheadline>
-    <Display color='text' font='displayRegular' mb={3}>
+    <Display color={props.headlineColor || 'text'} font='displayRegular' mb={3}>
       Skip the hassle of <LineBreakAll m='auto'>Strata Management.</LineBreakAll>
     </Display>
     <LargeButtonStyler>

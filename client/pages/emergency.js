@@ -86,7 +86,7 @@ const Emergency = (props) => (
     </Block>
 
     <Block border textCenter>
-      <ContactAction btnColor='brandAlt' />
+      <ContactAction headlineColor='brandAlt' />
       <Contacts />
     </Block>
 

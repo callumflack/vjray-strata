@@ -24,12 +24,6 @@ const StyledHeroBox = styled(HeroBox)`
 
   @media (max-width: 512px) {
     &:after {
-      background-color: rgba(0, 153, 209, 0.96);
-      background-color: rgba(64, 64, 112, 0.1);
-      background-color: rgba(0, 0, 0, 0.25);
-      background-color: rgba(121, 122, 154, 0.5);
-      background-color: rgba(42, 43, 73, 0.5);
-      background-color: initial;
       background-image:
         linear-gradient(
           to right,
@@ -43,7 +37,7 @@ const StyledHeroBox = styled(HeroBox)`
 `
 
 const HeroContact = props => (
-  <StyledHeroBox avoidMenuAtLaptopSize>
+  <StyledHeroBox showAfterScreen avoidMenuAtLaptopSize>
     <CoverImage constrain contact src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png' />
     <HeroContainer mw='rg'>
       <HeroFlex>

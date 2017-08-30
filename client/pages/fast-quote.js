@@ -22,7 +22,7 @@ import Contacts from '../components/Shared/Contacts'
 
 
 const blockStyle = {
-  backgroundImage: 'linear-gradient(to bottom, rgba(219, 183, 140, 0.4), #F7F2EC 70% )'
+  backgroundImage: 'linear-gradient(to bottom, rgba(223, 212, 184, 0.4), #F7F2EC 70% )'
 }
 
 const Root = props => (
@@ -31,6 +31,7 @@ const Root = props => (
 
     <Block
       mw='sm'
+      pt={[ 5, 4, 5, 5, 6 ]}
       textCenter
       style={blockStyle}
     >

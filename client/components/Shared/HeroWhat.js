@@ -11,7 +11,9 @@ import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Hero'
 
 // #cbd7fc,
 const StyledHeroBox = styled(HeroBox)`
+  background-color: #ebe5df;
   background-color: initial;
+  background-image: initial;
   background-image:
     linear-gradient(
       to bottom,
@@ -19,22 +21,14 @@ const StyledHeroBox = styled(HeroBox)`
       ${theme.colors.beige} 70%
     );
 
-  background-image: initial;
-  background-color: #ebe5df;
-
-  @media (max-width: 512px) {
+  @media (max-width: 1024px) {
     &:after {
-      background-color: rgba(0, 153, 209, 0.96);
-      background-color: rgba(64, 64, 112, 0.1);
-      background-color: rgba(0, 0, 0, 0.25);
-      background-color: rgba(121, 122, 154, 0.5);
-      background-color: rgba(42, 43, 73, 0.5);
       background-color: initial;
       background-image:
         linear-gradient(
           to right,
-          rgba(223, 212, 184, 0.5),
-          rgba(223, 212, 184, 0.25) 70%
+          rgba(222, 202, 178, 0.3),
+          rgba(222, 202, 178, 0.2) 70%
         );
     }
   }
@@ -42,7 +36,7 @@ const StyledHeroBox = styled(HeroBox)`
 `
 
 const HeroWhat = props => (
-  <StyledHeroBox>
+  <StyledHeroBox showAfterScreen>
     <CoverImage constrain what src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618862/hero-what-_i582ye.png' />
     <HeroContainer mw='lg'>
       <HeroFlex>

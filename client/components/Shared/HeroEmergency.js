@@ -9,6 +9,17 @@ import CoverImage from '../styled-elements/CoverImage'
 import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Hero'
 
 
+// @media (max-width: 512px) {
+//   &:after {
+//     background-image:
+//       linear-gradient(
+//         to right,
+//         rgba(223, 212, 184, 0.96),
+//         rgba(223, 212, 184, 0.5) 80%
+//       );
+//   }
+// }
+
 const StyledHeroBox = styled(HeroBox)`
   background-image: initial;
   background-image:
@@ -19,33 +30,21 @@ const StyledHeroBox = styled(HeroBox)`
     );
 
     @media (max-width: 1024px) {
-    &:after {
-      background-color: initial;
-      background-image:
-        linear-gradient(
-          to right,
-          rgba(223, 212, 184, 0.5),
-          rgba(223, 212, 184, 0.1) 80%
-        );
-    }
-
-    @media (max-width: 512px) {
       &:after {
-        background-color: initial;
         background-image:
           linear-gradient(
             to right,
-            rgba(223, 212, 184, 0.96),
-            rgba(223, 212, 184, 0.5) 80%
+            rgba(222, 202, 178, 0.5),
+            rgba(222, 202, 178, 0.1) 80%
           );
       }
     }
+
   }
 `
 
-
 const HeroEmergency = props => (
-  <StyledHeroBox>
+  <StyledHeroBox showAfterScreen>
     <CoverImage constrain emergency src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503653804/hero-emergency-_ryfz7y.png' />
     <HeroContainer mw='lg'>
       <HeroFlex>

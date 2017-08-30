@@ -52,6 +52,7 @@ const Root = styled(Box)`
 
   ${props => props.what && css`
     left: 12%;
+    @media (max-width: 512px)  { opacity: 0.9; }
     @media (min-width: 768px)  { left: 22%; }
     @media (min-width: 1024px) { left: 10%; }
     @media (min-width: 1280px) { left: 5%; }
@@ -68,6 +69,7 @@ const Root = styled(Box)`
 
   ${props => props.emergency && css`
     left: 12%;
+    @media (max-width: 512px)  { opacity: 0.5; }
     @media (min-width: 768px)  { left: 22%; }
     @media (min-width: 1024px) { left: 10%; }
     @media (min-width: 1280px) { left: 8%; }

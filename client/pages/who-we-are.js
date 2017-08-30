@@ -45,16 +45,26 @@ const Root = props => (
 
     <Block>
       <Box w={[ 1, 11/12 ]} mx='auto'>
-        <Flex direction={[ 'column', 'column', 'row' ]} mx={[ -2, -2, -2, -3 ]}>
-
-          <Flex column width={[ 1, 1, 1/3, 1/4 ]} px={[ 2, 2, 2, 5, 3 ]}>
+        <Flex
+          direction={[ 'column', 'column', 'row' ]}
+          mx={[ -2, -2, -2, -3 ]}
+        >
+          <Flex
+            column
+            width={[ 1, 1, 1/3, 1/4 ]}
+            px={[ 4, 2, 2, 5, 3 ]}
+          >
             <Box mt='6px'>
               <img src='static/img/mike-pollard.jpg' />
             </Box>
             <Text color='text70' mt={2} children='Mike Pollard' />
             <Text color='text70' children='Owner' />
           </Flex>
-          <TextBlockWrapper order={[ '-1', '-1', 'initial' ]} px={[ 2, 2, 2, 3 ]} width={[ 1, 1, 2/3, 3/4 ]}>
+          <TextBlockWrapper
+            order={[ '-1', '-1', 'initial' ]}
+            px={[ 2, 2, 2, 3 ]}
+            width={[ 1, 1, 2/3, 3/4 ]}
+          >
             <TextBlock dangerouslySetInnerHTML={{__html: props.mikesLetter.body.html}} />
           </TextBlockWrapper>
 

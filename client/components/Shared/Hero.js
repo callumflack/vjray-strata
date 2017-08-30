@@ -32,6 +32,19 @@ const HeroBox = styled(Box)`
     height: calc(var(--Hero-height) + var(--Header-height)) !important;
   }
 
+  ${props => props.showAfterScreen && css`
+    @media (max-width: 1024px) {
+      &:after {
+        bottom: 0;
+        content: " ";
+        left: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+  `}
+
+
   /* 1 */
   ${props => props.avoidMenuAtLaptopSize && css`
     @media (min-height: 1000px) and (min-width: 1024px) {

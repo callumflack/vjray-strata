@@ -15,14 +15,13 @@ import Container from '../components/styled-elements/Container'
 import { Display, Headline, Subheadline } from '../components/styled-elements/Headline'
 import { MediumText, LargeText, LineBreak } from '../components/styled-elements/Text'
 
-import { ColorBox } from '../components/Shared/Hero'
 import { FormHeader } from '../components/Shared/Form.js'
 import FormQuote from '../components/Shared/FormQuote'
 import ContactAction from '../components/Shared/ContactAction'
 import Contacts from '../components/Shared/Contacts'
 
 
-const StyledColorBox = styled(ColorBox)`
+const ColorBox = styled(Box)`
   background-color: transparent;
   background-image:
     linear-gradient(
@@ -36,8 +35,8 @@ const Root = props => (
   <Layout>
     <Header pathname='/contact' clear />
 
-    <StyledColorBox pb={[ 4, 5, 6 ]}>
-      <Container mw='sm' mt={[ 4, 5, 6 ]} textCenter>
+    <ColorBox pb={[ 4, 4, 5, 5, 6 ]}>
+      <Container mw='sm' mt={[ 4, 4, 5, 5, 6 ]} textCenter>
 
         <Subheadline children='Confidential, no obligation' />
         <Display children='Get a fast quote.' mb={2} />
@@ -51,7 +50,7 @@ const Root = props => (
         </Box>
 
       </Container>
-    </StyledColorBox>
+    </ColorBox>
 
     <Block textCenter>
       <ContactAction headlineColor='brandAlt' />

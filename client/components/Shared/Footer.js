@@ -8,6 +8,7 @@ import { Box, Flex } from '../styled-grid'
 import Container from '../styled-elements/Container'
 import { Text, SmallText, Divider } from '../styled-elements/Text'
 import Icon from '../styled-elements/Icon';
+import ResponsiveToggle from './ResponsiveToggle';
 
 
 const Root = hoc(Box).extend`
@@ -54,14 +55,16 @@ const Nav = Flex.withComponent('nav').extend`
 
 const Column = styled(Box)`
   @media (max-width: 767px) {
-    :not(:first-child) {
-      margin-top: 2rem
+    margin-top: 2rem;
+
+    :first-child {
+      margin-top: 1.5rem;
     }
   }
 
   @media (min-width: 768px) {
     :not(:last-child) {
-      margin-right: 3rem
+      margin-right: 3rem;
     }
   }
 
@@ -108,23 +111,26 @@ const Footer = (props) => (
     >
       <Flex direction={[ 'column', 'row' ]} justify='space-between'>
 
-        <Flex column>
-          <LogoBox>
-            <Link href='/'>
-              <a><Icon
-                color='text'
-                size='80'
-                icon={icons.logo}
-              /></a>
-            </Link>
-          </LogoBox>
-        </Flex>
+        <ResponsiveToggle hideAtMobile>
+          <Flex column>
+            <LogoBox>
+              <Link href='/'>
+                <a><Icon
+                  color='text'
+                  size='80'
+                  icon={icons.logo}
+                /></a>
+              </Link>
+            </LogoBox>
+          </Flex>
+        </ResponsiveToggle>
 
         <Box>
           <Flex direction={[ 'column', 'row' ]} justify='center'>
             <Nav direction={[ 'column', 'row' ]}>
               <Column>
                 <Link href='/who-we-are'><a><span>About Us</span></a></Link>
+                <Link href='/'><a>Home page</a></Link>
                 <Link href='/who-we-are'><a>Who we are</a></Link>
                 <Link href='/what-we-do-for-you'><a>What we do for you</a></Link>
               </Column>

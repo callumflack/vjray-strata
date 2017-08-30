@@ -43,7 +43,7 @@ const StyledHeroBox = styled(HeroBox)`
 `
 
 const HeroContact = props => (
-  <StyledHeroBox>
+  <StyledHeroBox avoidMenuAtLaptopSize>
     <CoverImage constrain contact src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png' />
     <HeroContainer mw='rg'>
       <HeroFlex>

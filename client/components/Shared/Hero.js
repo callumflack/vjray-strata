@@ -5,7 +5,7 @@ import Container from '../styled-elements/Container'
 
 /*
  * 1. This keeps banner images from impinging
- *    on the main menu.
+ *    on the main menu at laptop-like screen heights..
  */
 
 const HeroBox = styled(Box)`
@@ -33,9 +33,11 @@ const HeroBox = styled(Box)`
   }
 
   /* 1 */
-  @media (min-height: 1000px) and (min-width: 1024px) {
-    > div:first-child > div:first-child { bottom: calc(-0.333333 * var(--Header-height)); }
-  }
+  ${props => props.avoidMenuAtLaptopSize && css`
+    @media (min-height: 1000px) and (min-width: 1024px) {
+      > div:first-child > div:first-child { bottom: calc(-0.333333 * var(--Header-height)); }
+    }
+  `}
 `
 
 const ColorBox = styled(HeroBox)`

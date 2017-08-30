@@ -39,7 +39,7 @@ const StyledHeroBox = styled(HeroBox)`
 `
 // ml={[ null, 3 ]}
 const HeroListening = () => (
-  <StyledHeroBox>
+  <StyledHeroBox avoidMenuAtLaptopSize>
     <CoverImage constrain listening src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503542523/home-hero_eq4eot.jpg' />
     <HeroContainer mw='lg'>
       <HeroFlex>

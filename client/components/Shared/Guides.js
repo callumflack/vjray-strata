@@ -58,7 +58,7 @@ const StyledBox = styled(Box)`
 `
 
 const StyledLink = styled(Box)`
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 `
 
 // {props.buttons && (

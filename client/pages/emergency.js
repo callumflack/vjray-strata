@@ -31,15 +31,10 @@ import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
 import ResponsiveToggle from '../components/Shared/ResponsiveToggle'
 
 
-const SLink = styled(Link)`
-  a {
-    display: table !important;
-  }
-`
-
 const Emergency = (props) => (
   <Layout>
     <Header pathname='/contact' clear />
+
     <HeroEmergency />
 
     <Block mw='sm'>

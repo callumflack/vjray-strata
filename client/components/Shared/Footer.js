@@ -95,6 +95,14 @@ const RuledBox = styled(Box)`
 
 const SecondNav = Flex.withComponent('nav').extend`
   color: ${theme.colors.text40};
+
+  p,
+  span,
+  a {
+    @media (max-width: 512px) {
+      font-size: ${theme.fontSizes[0]}pt;
+    }
+  }
 `;
 
 const StyledDivider = styled(Divider)`
@@ -154,7 +162,7 @@ const Footer = (props) => (
 
       <RuledBox>
         <SecondNav>
-          © 2017 VJ Ray
+          <span>© 2017 VJ Ray</span>
           <StyledDivider />
           <Link href='/terms-of-use'><a>Terms</a></Link>
           <StyledDivider />

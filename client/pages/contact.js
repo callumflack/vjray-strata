@@ -41,9 +41,7 @@ const Root = props => (
     <HeroContact />
 
     <Block textCenter pb={[ 0, 0 ]}>
-      <Display color='brand' mb={1}>
-        Visit us anytime.
-      </Display>
+      <Display color='brandAlt' mb={1} children='Visit us anytime.' />
       <LargeText color='text70' children='No appointment necessary.' />
       <Box mt={0}>
         <Contacts />

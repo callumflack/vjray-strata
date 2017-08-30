@@ -40,9 +40,16 @@ const HeroBox = styled(Box)`
   `}
 `
 
-const ColorBox = styled(HeroBox)`
-  align-items: initial;
-  height: auto !important;
+/*
+ * HeroFrame is an alternative to HeroBox.
+ * it works without need for HeroContainer, HeroFlex or HeroTitleBox.
+ */
+
+const HeroFrame = styled(Box)`
+  --Header-height: ${theme.blockHeights.navBar};
+  height: auto;
+  padding-top: var(--Header-height);
+  position: relative;
 `
 
 const HeroContainer = styled(Container)`
@@ -72,7 +79,7 @@ const HeroTitleBox = props =>
 
 export {
   HeroBox,
-  ColorBox,
+  HeroFrame,
   HeroContainer,
   HeroFlex,
   HeroTitleBox

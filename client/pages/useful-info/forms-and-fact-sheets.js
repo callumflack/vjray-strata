@@ -21,58 +21,6 @@ import Header from '../../components/Shared/Header'
 import HeroFacts from '../../components/Shared/HeroFacts'
 
 
-const HeroBox = styled(Box)`
-  --Hero-height: ${theme.blockHeights.hero};
-  --Header-height: ${theme.blockHeights.navBar};
-
-  align-items: center;
-  height: calc(50vh + var(--Header-height)) !important;
-  padding-top: var(--Header-height);
-  position: relative;
-
-  @media (min-width: 768px) {
-    height: calc(var(--Hero-height) + var(--Header-height)) !important;
-  }
-`
-
-const HeroTitleFlex = styled(Flex)`
-  height: 50vh;
-
-  @media (min-width: 768px) {
-    height: var(--Hero-height);
-  }
-`
-
-const HeroTitleBox = styled(Box)`
-
-`
-
-const Hero = props => (
-  <HeroBox px={3}>
-    <Container
-      mw='sm'
-      pb={[0]}
-      pl={[ 0, 3, 3, 0 ]}
-      relative
-      style={{ zIndex: 1 }}
-      >
-      <HeroTitleFlex
-        align='center'
-        width={[ 10/12, 1, 2/3, 2/3 ]}
-        >
-        <HeroTitleBox>
-          <Display color='brand'>
-            Strata forms <LineBreak>and fact sheets.</LineBreak>
-          </Display>
-          <LargeText color='text70'>
-            Readily available PDF downloads <LineBreak>to help your Strata Management.</LineBreak>
-          </LargeText>
-        </HeroTitleBox>
-      </HeroTitleFlex>
-    </Container>
-  </HeroBox>
-)
-
 const ListItemRoot = styled(Box)`
   border-bottom: 1px solid ${theme.colors.text20};
 `;
@@ -97,6 +45,7 @@ const ListItem = props => (
 const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear />
+
     <HeroFacts />
 
     <Box pb={[ 4, 4, 5, 5, 6 ]}>

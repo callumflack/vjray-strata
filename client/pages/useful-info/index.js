@@ -12,7 +12,7 @@ import { Display, Headline, Subheadline, HeadlineMeta } from '../../components/s
 import { Text, LargeText, SmallText, LineBreak, LineBreakAll } from '../../components/styled-elements/Text'
 
 import Block from '../../components/Shared/Block'
-import { ColorBox } from '../../components/Shared/Hero'
+import { HeroFrame } from '../../components/Shared/Hero'
 import Contacts from '../../components/Shared/Contacts'
 import ContactActionAlt from '../../components/Shared/ContactActionAlt'
 import Footer from '../../components/Shared/Footer'
@@ -24,25 +24,25 @@ import Button from '../../components/styled-elements/Button'
 import LargeButtonStyler from '../../components/Shared/LargeButtonStyler'
 
 
-const StyledColorBox = styled(ColorBox)`
+const StyledHeroFrame = styled(HeroFrame)`
   background-image:
     linear-gradient(
       to bottom,
-      rgb(64, 64, 112),
-      ${theme.colors.brandAlt70} 70%
+      #d6f4ff,
+      ${theme.colors.offBlue} 70%
     )!important;
-`
-
-const FactsBox = styled(ColorBox)`
-  background-color: ${theme.colors.beige};
-  background-image: initial;
 `
 
 // const Rule = Container.extend` errors, WTF???
 const Rule = styled(Container)`
-  background-color: rgba(255,255,255, 0.15);
+  background-color: rgba(74, 74, 85, 0.15);
   height: 1px;
   max-width: calc(960px - 64px);
+`
+
+const FactsBox = styled(HeroFrame)`
+  background-color: ${theme.colors.beige};
+  background-image: initial;
 `
 
 // moved the Posts lists here until
@@ -58,50 +58,71 @@ const PostsList = props => (
   </Box>
 )
 
+// previous forms & fact sheets stripe…
+{/* <Block
+  bg='beige'
+  textCenter
+  pt={4}
+  pb={4}
+>
+  <Subheadline mt={[ 1, 2 ]} children='Take action' />
+  <Display color='brandAlt' children='Forms and fact sheets.' />
+  <LargeText color='brandAlt70' mb={3}>
+    Readily available PDF downloads <LineBreakAll m='auto'>to manage your Strata.</LineBreakAll>
+  </LargeText>
+  <LargeButtonStyler>
+    <Link href='/useful-info/forms-and-fact-sheets'>
+      <Button large icon bgColor='brandAlt' children='See the list' />
+    </Link>
+  </LargeButtonStyler>
+</Block> */}
+
 const Root = (props) => (
   <Layout>
-    <Header pathname={props.pathname} clear reverseBorder color='white' />
+    <Header pathname={props.pathname} clear color='brandAlt' />
 
-    <StyledColorBox pb={[ 4, 5, 6 ]} px={[ 0, 3 ]}>
-      <Container mw='rg' mt={[ 4, 5, 6 ]} pb={[ 2, 3 ]}>
-        <Flex direction={[ 'column', 'row' ]}>
-          <Box width={[ 9/12, 5/12 ]} mt={[ 0, 3 ]}>
-            <Subheadline color='white' children='Info on the go' />
-            <Display color='white' font='displayRegular'>Your guides to <LineBreakAll>Sydney Strata.</LineBreakAll></Display>
-            <LargeText color='text40'>Download your complete <LineBreak>guide to Strata living.</LineBreak></LargeText>
-          </Box>
+    <StyledHeroFrame>
+      <Box
+        pt={[ 4, 4, 5, 5, 6 ]}
+        pb={[ 4, 4, 5, 5, 6 ]}
+      >
+        <Container mw='rg' pb={[ 2, 3 ]}>
+          <Flex direction={[ 'column', 'row' ]}>
+            <Box width={[ 9/12, 5/12 ]} mt={[ 0, 3 ]}>
+              <Subheadline color='' children='Info on the go' />
+              <Display color='brandAlt' font='displayRegular'>Your guides to <LineBreakAll>Sydney Strata.</LineBreakAll></Display>
+              <LargeText color='brandAlt70'>Download your complete <LineBreak>guide to Strata living.</LineBreak></LargeText>
+            </Box>
 
-          <Box width={[ 1, 9/12 ]} pt={[ 3, 0 ]}>
-            <Guides primary buttons icon />
-          </Box>
-        </Flex>
-      </Container>
+            <Box width={[ 1, 9/12 ]} pt={[ 3, 0 ]}>
+              <Guides primary buttons icon />
+            </Box>
+          </Flex>
+        </Container>
 
-      <Rule mw='rg' my={[ 3, 4 ]} />
+        <Rule mw='rg' my={[ 3, 4 ]} />
 
-      <Container textCenter>
-        <Subheadline color='white' mt={[ 1, 2 ]} mb={[ 3, 4 ]} children='All our guides' />
-        <Guides buttons />
-      </Container>
-    </StyledColorBox>
+        <Container textCenter pb={[ 2, 3 ]}>
+          <Subheadline color='' mt={[ 1, 2 ]} mb={[ 3, 4 ]} children='All our guides' />
+          <Guides buttons />
+        </Container>
 
-    <Block
-      bg='beige'
-      textCenter
-      pt={4}
-      pb={4}
-    >
-      <Subheadline mt={[ 1, 2 ]} children='Take action' />
-      <Display color='brandAlt' children='Forms and fact sheets.' />
-      <LargeText color='brandAlt70' mb={3}>
-        Readily available PDF downloads <LineBreakAll m='auto'>to manage your Strata.</LineBreakAll>
-      </LargeText>
-      <LargeButtonStyler>
-        <Link href='/useful-info/forms-and-fact-sheets'>
-          <Button large icon bgColor='brandAlt' children='See the list' />
-        </Link>
-      </LargeButtonStyler>
-    </Block>
+        <Rule mw='rg' my={[ 3, 4 ]} />
+
+        <Container mw='sm' textCenter>
+          <Subheadline mt={[ 1, 2 ]} children='Forms and fact sheets' />
+          <LargeText color='brandAlt' mt={[ 1, 2 ]} mb={3}>
+            Need a form or a fact? Here's all our readily available PDF downloads to manage your Strata.
+          </LargeText>
+          <LargeButtonStyler>
+            <Link href='/useful-info/forms-and-fact-sheets'>
+              <Button large icon bgColor='brandAlt' children='See the list' />
+            </Link>
+          </LargeButtonStyler>
+        </Container>
+
+      </Box>
+    </StyledHeroFrame>
 
     <Block mw='sm' textCenter id="blog">
       <Subheadline children='Latest article' />
@@ -109,7 +130,7 @@ const Root = (props) => (
     </Block>
 
     <Block border>
-      <ContactActionAlt btnColor='brandAlt' />
+      <ContactActionAlt btnColor='brand' />
       <Contacts />
     </Block>
 

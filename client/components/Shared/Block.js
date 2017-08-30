@@ -24,6 +24,7 @@ const Block = (props) => (
     border={props.border}
     pt={props.pt || [ 4, 4, 5, 5, 6 ]}
     pb={props.pb || [ 4, 4, 5, 5, 6 ]}
+    style={props.style}
     id={props.id}
   >
     <Container

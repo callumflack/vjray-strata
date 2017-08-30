@@ -58,25 +58,6 @@ const PostsList = props => (
   </Box>
 )
 
-// previous forms & fact sheets stripe…
-{/* <Block
-  bg='beige'
-  textCenter
-  pt={4}
-  pb={4}
->
-  <Subheadline mt={[ 1, 2 ]} children='Take action' />
-  <Display color='brandAlt' children='Forms and fact sheets.' />
-  <LargeText color='brandAlt70' mb={3}>
-    Readily available PDF downloads <LineBreakAll m='auto'>to manage your Strata.</LineBreakAll>
-  </LargeText>
-  <LargeButtonStyler>
-    <Link href='/useful-info/forms-and-fact-sheets'>
-      <Button large icon bgColor='brandAlt' children='See the list' />
-    </Link>
-  </LargeButtonStyler>
-</Block> */}
-
 const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear color='brandAlt' />

@@ -39,18 +39,13 @@ const Root = styled(Flex)`
   transition:
     opacity ${fade.duration}s ease-in-out ${fade.delay}s,
     transform ${fade.duration}s ease-in-out ${fade.delay}s,
-    background-color ${fade.duration}s ease-in-out 0s,
+    background-color ${fade.duration}s ease-in-out,
     border ${fade.duration}s ease-in-out 0s;
   width: 100%;
   z-index: 3;
 
-  button {
-    border-width: 1px;
-  }
-
   @media (max-width: 512px) {
     button {
-      border-width: 1px;
       padding: 0 0.75rem;
     }
   }
@@ -124,6 +119,10 @@ const Root = styled(Flex)`
     }
   `}
 `;
+
+const StyledButton = Button.extend`
+  border-width: 1px;
+`
 
 const ResponsiveToggle = styled(Box)`
   ${props => props.hideAtDesktop && css`
@@ -290,7 +289,7 @@ class Header extends React.Component {
     // iOS hides the header when scrolled to top
     // The cause is believed to be that it's possible to scroll a little below
     // 0 on the Y axis with a bounce back animation which scrolls back to 0.
-    // scollPos is checked to be above 0 to exclude scroll events caused by the bounce back animaiton
+    // scollPos is checked to be above 0 to exclude scroll events caused by the bounce back animation
     const scrolledDown = scrollPos > previousScrollPos && scrollPos > 0;
 
     if (this.state.isModalVisible) return;
@@ -397,10 +396,10 @@ class Header extends React.Component {
               <Nav>
                 <Link href={'tel:' + contactDetails.phone}>
                   <a><LinkText>
-                    <Button invert>
+                    <StyledButton invert>
                       <IconPhone navBar />
                       {contactDetails.phone}
-                    </Button>
+                    </StyledButton>
                   </LinkText></a>
                 </Link>
               </Nav>
@@ -438,11 +437,16 @@ class Header extends React.Component {
                 <Link href='/useful-info'>
                   <a><MobileLinkText>Useful info</MobileLinkText></a>
                 </Link>
-                <Link href='/fast-quote'>
-                  <a><MobileLinkText>Get a fast quote</MobileLinkText></a>
-                </Link>
                 <Link href='/contact'>
                   <a><MobileLinkText>Contact us</MobileLinkText></a>
+                </Link>
+
+                <Link href='/fast-quote'>
+                  <a>
+                    <Text align='left' font='textRegular' mt={1}>
+                      <StyledButton invert icon children='Get a fast quote' />
+                    </Text>
+                  </a>
                 </Link>
 
               </MobileNavFlex>

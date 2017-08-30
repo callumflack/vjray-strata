@@ -94,7 +94,7 @@ const Location = (props) => (
     </Box>
 
     <ItemsBox py={1}>
-      <Link href='tel:${props.location.phoneNumber}'><a>
+      <Link href={`tel:${props.location.phoneNumber}`}><a>
         <Item borderTop>
           <div><IconPhone contact /></div>
           {props.location.phoneNumber}

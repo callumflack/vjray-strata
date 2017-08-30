@@ -18,6 +18,7 @@ import ContactAction from '../../components/Shared/ContactAction'
 import Contacts from '../../components/Shared/Contacts'
 import Footer from '../../components/Shared/Footer'
 import Header from '../../components/Shared/Header'
+import HeroFacts from '../../components/Shared/HeroFacts'
 
 
 const HeroBox = styled(Box)`
@@ -96,10 +97,10 @@ const ListItem = props => (
 const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear />
-    <Hero />
+    <HeroFacts />
 
-    <Box pb={[ 4, 5, 6 ]} px={3}>
-      <Box pb={[ 4, 5 ]}>
+    <Box pb={[ 4, 4, 5, 5, 6 ]}>
+      <Box pb={[ 4, 4, 5 ]}>
         <Container mw='sm' >
           <Subheadline children='Forms' mb={2} />
 

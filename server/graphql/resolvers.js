@@ -9,12 +9,14 @@ const resolvers = {
   Query: {
     post: async (obj, { slug }) => {
       return await Post.model.findOne({ slug })
+      .where('state', 'published')
       .exec();
     },
 
     posts: async (obj, { limit=0 }) => {
       // A limit of 0 returns all documents
       return await Post.model.find()
+      .where('state', 'published')
       .limit(limit)
       .exec();
     },

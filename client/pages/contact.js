@@ -104,7 +104,7 @@ class ContactPage extends React.Component {
     }];
 
     return (
-      <Root pathname={this.props.pathname} tabs={tabs} />
+      <Root pathname={this.props.pathname} tabs={tabs} {...this.props} />
     )
   }
 }

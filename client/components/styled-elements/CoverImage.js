@@ -2,22 +2,26 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, { css } from 'styled-components'
+import theme from '../theme.js';
 import { Box } from '../styled-grid';
 
 
 /*
- * 1. Pin is used to position the Image position downards
- *    at certain breakpoints. Currently, this is managed in <Hero>.
+ * 1. Pin is a wrapper used to position the Image responsively.
+ *
+ * 2. This keeps banner images from impinging on the main menu
+ *    at laptop-like screen heights.
  */
 
 const Pin = styled(Box)`
   bottom: 0;
   left: 0;
-  overflow: hidden; /*1*/
+  overflow: hidden; /* 1 */
   position: absolute;
   top: 0;
   right: 0;
 `
+
 const Root = styled(Box)`
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -33,6 +37,21 @@ const Root = styled(Box)`
       margin-left: auto;
       margin-right: auto;
       max-width: 1600px;
+
+      height: 0;
+      padding-bottom: 53.32%;
+    }
+  `}
+
+  /* 2 */
+  ${props => props.avoidMenuAtLaptopSize && css`
+    @media (min-height: 900px) and (min-width: 1024px) {
+      --Header-height: ${theme.blockHeights.navBar};
+      bottom: calc(-0.333333 * var(--Header-height));
+
+      left: 10%;
+      right: 10%;
+      bottom: -50%;
     }
   `}
 

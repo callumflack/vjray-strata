@@ -6,6 +6,7 @@ import theme from '../theme'
 import { LargeText, LineBreak } from '../styled-elements/Text'
 import { Display, Headline, MobileSubheadline } from '../styled-elements/Headline'
 import CoverImage from '../styled-elements/CoverImage'
+import Image from './Image'
 import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Hero'
 
 
@@ -36,9 +37,11 @@ const StyledHeroBox = styled(HeroBox)`
 
 `
 
+{/* <CoverImage constrain contact src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png' /> */}
+
 const HeroContact = props => (
   <StyledHeroBox showAfterScreen avoidMenuAtLaptopSize>
-    <CoverImage constrain contact src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png' />
+    <Image contact src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png' />
     <HeroContainer mw='rg'>
       <HeroFlex>
         <HeroTitleBox

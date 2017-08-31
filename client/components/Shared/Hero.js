@@ -3,10 +3,18 @@ import { Box, Flex } from '../styled-grid';
 import theme from '../theme.js';
 import Container from '../styled-elements/Container'
 
-/*
- * 1. This keeps banner images from impinging
- *    on the main menu at laptop-like screen heights..
- */
+
+// @media (min-width: 768px) {
+//   height: calc(var(--Hero-height-tablet) + var(--Header-height)) !important;
+// }
+//
+// @media (min-width: 1024px) {
+//   height: calc(var(--Hero-height-laptop) + var(--Header-height)) !important;
+// }
+//
+// @media (min-width: 1536px) {
+//   height: calc(var(--Hero-height) + var(--Header-height)) !important;
+// }
 
 const HeroBox = styled(Box)`
   --Header-height: ${theme.blockHeights.navBar};
@@ -20,18 +28,6 @@ const HeroBox = styled(Box)`
   padding-top: var(--Header-height);
   position: relative;
 
-  @media (min-width: 768px) {
-    height: calc(var(--Hero-height-tablet) + var(--Header-height)) !important;
-  }
-
-  @media (min-width: 1024px) {
-    height: calc(var(--Hero-height-laptop) + var(--Header-height)) !important;
-  }
-
-  @media (min-width: 1536px) {
-    height: calc(var(--Hero-height) + var(--Header-height)) !important;
-  }
-
   ${props => props.showAfterScreen && css`
     @media (max-width: 1024px) {
       &:after {
@@ -42,14 +38,6 @@ const HeroBox = styled(Box)`
         top: 0;
         right: 0;
       }
-  `}
-
-
-  /* 1 */
-  ${props => props.avoidMenuAtLaptopSize && css`
-    @media (min-height: 1000px) and (min-width: 1024px) {
-      > div:first-child > div:first-child { bottom: calc(-0.333333 * var(--Header-height)); }
-    }
   `}
 `
 

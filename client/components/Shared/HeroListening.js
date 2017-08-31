@@ -37,7 +37,7 @@ const StyledHeroBox = styled(HeroBox)`
 /> */}
 const HeroListening = () => (
   <StyledHeroBox>
-    <Image listening src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503542523/home-hero_eq4eot.jpg' />
+    <Image listening img='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503542523/home-hero_eq4eot.jpg' />
     <HeroContainer mw='lg'>
       <HeroFlex>
         <HeroTitleBox width={[ 5/10, 5/12, 6/12 ]} mb={[ 3, 4 ]}>

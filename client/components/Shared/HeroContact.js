@@ -41,7 +41,7 @@ const StyledHeroBox = styled(HeroBox)`
 
 const HeroContact = props => (
   <StyledHeroBox showAfterScreen avoidMenuAtLaptopSize>
-    <Image contact src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png' />
+    <Image contact img='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png' />
     <HeroContainer mw='rg'>
       <HeroFlex>
         <HeroTitleBox

@@ -12,6 +12,7 @@ import { Text, LineBreak } from '../styled-elements/Text.js';
 import { Display, Subheadline  } from '../styled-elements/Headline.js';
 import Button from '../styled-elements/Button.js';
 import { FlexEmbed } from '../styled-elements/FlexEmbed.js';
+import CoverImage from '../styled-elements/CoverImage'
 
 
 const Root = styled(Box)`
@@ -21,37 +22,9 @@ const Root = styled(Box)`
   @media (min-width: 768px) { height: 70vh; }
 `;
 
-const StyledBox = styled(Box)`
-  background-image: url('static/img/home-sydney.jpg');
-  background-position: 0% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: ${theme.colors.text70};
-  height: 100%;
-  width: 100%;
-
-  @media (min-width: 768px) {
-    background-position-y: 50%;
-  }
-
-  @media (min-width: 1536px) {
-    background-position-y: 90%;
-  }
-
-  ${'' /* &:before {
-    background: rgba(247, 242, 236, 0.2);
-    background-blend-mode: multiply;
-    bottom: 0;
-    content: " ";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  } */}
-`;
-
 const FullBoxHeight = styled.div`
   height: 100%;
+  position: relative;
 `;
 
 const transition = {
@@ -165,39 +138,38 @@ class SydneyBox extends React.Component {
         </Modal>
 
         <FullBoxHeight>
-          <StyledBox>
+          <CoverImage homeSydney src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1504164089/home-sydney_qrh7b8.jpg' />
 
-            <Container
-              mw='sm'
-              textCenter
-              relative
-              pt={[ 4, 4, 5, 5, 6 ]}
+          <Container
+            mw='sm'
+            textCenter
+            relative
+            pt={[ 4, 4, 5, 5, 6 ]}
+          >
+            <Subheadline color='brandAlt' children='Dependable and effective' />
+            <Display color='brandAlt'>
+              We help make Sydney <LineBreak bp='1' m='auto'>strata living great.</LineBreak>
+            </Display>
+            <Text
+              color='text'
+              mb={3}
+              mx='auto'
+              w={[ 1, 10/12 ]}
             >
-              <Subheadline color='brandAlt' children='Dependable and effective' />
-              <Display color='brandAlt'>
-                We help make Sydney <LineBreak bp='1' m='auto'>strata living great.</LineBreak>
-              </Display>
-              <Text
-                color='text'
-                mb={3}
-                mx='auto'
-                w={[ 1, 10/12 ]}
-              >
-                We know that our job is much more that just looking after buildings. Its the people that matter. <Link href="/who-we-are"><a>Read about who we are.</a></Link>
-              </Text>
-              <Text font='textMedium'>
-                <Button
-                  color='brandAlt'
-                  bg='white'
-                  invert
-                  icon
-                  onClick={this.openModal}
-                  children='Watch video'
-                />
-              </Text>
-            </Container>
+              We know that our job is much more that just looking after buildings. Its the people that matter. <Link href="/who-we-are"><a>Read about who we are.</a></Link>
+            </Text>
+            <Text font='textMedium'>
+              <Button
+                color='brandAlt'
+                bg='white'
+                invert
+                icon
+                onClick={this.openModal}
+                children='Watch video'
+              />
+            </Text>
+          </Container>
 
-          </StyledBox>
         </FullBoxHeight>
       </Root>
     )

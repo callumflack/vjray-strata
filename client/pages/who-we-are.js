@@ -52,7 +52,7 @@ const Root = props => (
           <Flex
             column
             width={[ 1, 1, 1/3, 1/4 ]}
-            px={[ 4, 2, 2, 5, 3 ]}
+            px={[ 4, 2, 2, 3, 3 ]}
           >
             <Box mt='6px'>
               <img src='static/img/mike-pollard.jpg' />

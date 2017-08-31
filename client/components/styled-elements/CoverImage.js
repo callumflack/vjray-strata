@@ -6,22 +6,6 @@ import theme from '../theme.js';
 import { Box } from '../styled-grid';
 
 
-/*
- * 1. Pin is a wrapper used to position the Image responsively.
- *
- * 2. This keeps banner images from impinging on the main menu
- *    at laptop-like screen heights.
- */
-
-const Pin = styled(Box)`
-  bottom: 0;
-  left: 0;
-  overflow: hidden; /* 1 */
-  position: absolute;
-  top: 0;
-  right: 0;
-`
-
 const Root = styled(Box)`
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -32,67 +16,49 @@ const Root = styled(Box)`
   right: 0;
   top: 0;
 
-  ${props => props.constrain && css`
+  ${props => props.homeMap && css`
+    background-position: 50% 100%;
+    top: 30%;
+
     @media (min-width: 1536px) {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1600px;
+      background-position-x: 0;
+    }
 
-      height: 0;
-      padding-bottom: 53.32%;
+    &:before {
+      background-blend-mode: multiply;
+      background-image:
+        linear-gradient(
+          to bottom,
+          white,
+          rgba(64, 64, 112, 0.1) 40%
+        );
+      bottom: 0;
+      content: " ";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   `}
 
-  /* 2 */
-  ${props => props.avoidMenuAtLaptopSize && css`
-    @media (min-height: 900px) and (min-width: 1024px) {
-      --Header-height: ${theme.blockHeights.navBar};
-      bottom: calc(-0.333333 * var(--Header-height));
+  ${props => props.homeSydney && css`
+    background-position: 0% 50%;
+    color: ${theme.colors.text70};
+    height: 100%;
+    width: 100%;
 
-      left: 10%;
-      right: 10%;
-      bottom: -50%;
+    @media (min-width: 768px) {
+      background-position-y: 50%;
     }
-  `}
 
-  ${props => props.listening && css`
-    left: 25%;
-    @media (min-width: 1024px) { left: 20%; }
-    @media (min-width: 1280px) { left: 5%; }
-    @media (min-width: 1536px) { left: 10%; }
+    @media (min-width: 1536px) {
+      background-position-y: 90%;
+    }
   `}
 
   ${props => props.who && css`
     max-width: none;
-    @media (min-width: 1024px) { background-position: 50% 50%; }
-    @media (min-width: 1280px) { background-position: 50% 50%; }
     @media (min-width: 1536px) { background-position: 30% 100%; }
-  `}
-
-  ${props => props.what && css`
-    left: 12%;
-    @media (max-width: 512px)  { opacity: 0.9; }
-    @media (min-width: 768px)  { left: 22%; }
-    @media (min-width: 1024px) { left: 10%; }
-    @media (min-width: 1280px) { left: 5%; }
-    @media (min-width: 1800px) { left: 5%; }
-  `}
-
-  ${props => props.contact && css`
-    left: 12%;
-    @media (min-width: 768px)  { left: 22%; }
-    @media (min-width: 1024px) { left: 10%; }
-    @media (min-width: 1280px) { left: 5%; }
-    @media (min-width: 1800px) { left: 20%; }
-  `}
-
-  ${props => props.emergency && css`
-    left: 12%;
-    @media (max-width: 512px)  { opacity: 0.5; }
-    @media (min-width: 768px)  { left: 22%; }
-    @media (min-width: 1024px) { left: 10%; }
-    @media (min-width: 1280px) { left: 8%; }
-    @media (min-width: 1800px) { left: 8%; }
   `}
 `
 
@@ -127,16 +93,14 @@ class CoverImage extends React.Component {
 
   render() {
     return (
-      <Pin>
-        <Root
-          ref={(ref) => this._image = ref}
-          url={this.state.url}
-          style={{
-            backgroundImage: this.state.url
-          }}
-          {...this.props}
-        />
-      </Pin>
+      <Root
+        ref={(ref) => this._image = ref}
+        url={this.state.url}
+        style={{
+          backgroundImage: this.state.url
+        }}
+        {...this.props}
+      />
     )
   }
 }

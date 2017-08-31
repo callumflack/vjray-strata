@@ -31,12 +31,7 @@ const StyledHeroBox = styled(HeroBox)`
 
   @media (max-width: 512px) {
     &:after {
-      background-image:
-        linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0.25),
-          rgba(255, 255, 255, 0.35) 100%
-        );
+      background-color: rgba(255, 255, 255, 0.25);
     }
   }
 `
@@ -46,7 +41,7 @@ const HeroWho = props => (
     <CoverImage who src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503646409/hero-who_lfwht2.jpg' />
     <HeroContainer mw='lg' w={1}>
       <HeroFlex style={{ zIndex: '1' }}>
-        <HeroTitleBox w={[ 7/12, 5/6, 6/12, 2/3 ]} mb={[ 4, 5, 6 ]}>
+        <HeroTitleBox w={[ 7/12, 5/6, 6/12, 2/3 ]} mb={[ 4, 5, 5 ]}>
           <MobileSubheadline color='brandAlt' children='About us' />
           <Display color='brandAlt'>
             We believe in better <LineBreak>Strata Management </LineBreak><LineBreak>for Sydney.</LineBreak>

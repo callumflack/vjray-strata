@@ -5,11 +5,22 @@ import hoc from '../styled-elements/hoc'
 import theme from '../theme'
 import { LargeText, LineBreak } from '../styled-elements/Text'
 import { Display, Headline, MobileSubheadline } from '../styled-elements/Headline'
-import CoverImage from '../styled-elements/CoverImage'
+import Image from './Image'
 import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Hero'
 
 
-// #cbd7fc,
+// @media (max-width: 1024px) {
+//   &:after {
+//     background-color: initial;
+//     background-image:
+//       linear-gradient(
+//         to right,
+//         rgba(222, 202, 178, 0.3),
+//         rgba(222, 202, 178, 0.2) 70%
+//       );
+//   }
+// }
+
 const StyledHeroBox = styled(HeroBox)`
   background-color: #ebe5df;
   background-color: initial;
@@ -20,28 +31,15 @@ const StyledHeroBox = styled(HeroBox)`
       rgba(222, 202, 178, 0.4),
       ${theme.colors.beige} 70%
     );
-
-  @media (max-width: 1024px) {
-    &:after {
-      background-color: initial;
-      background-image:
-        linear-gradient(
-          to right,
-          rgba(222, 202, 178, 0.3),
-          rgba(222, 202, 178, 0.2) 70%
-        );
-    }
-  }
-
 `
 
 const HeroWhat = props => (
   <StyledHeroBox showAfterScreen>
-    <CoverImage constrain what src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618862/hero-what-_i582ye.png' />
-    <HeroContainer mw='lg'>
+    <Image what img='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618862/hero-what-_i582ye.png' />
+    <HeroContainer>
       <HeroFlex>
         <HeroTitleBox
-          w={[ 6/12, 5/12, 4/10, 1/2 ]}
+          w={[ 6/12, 5/12, 1/3, 1/2 ]}
           mb={[ 3, 4 ]}
         >
           <MobileSubheadline color='brandAlt' children='Services' />

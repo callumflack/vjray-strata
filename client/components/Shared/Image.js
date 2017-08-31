@@ -29,7 +29,7 @@ const Root = styled('img')`
 
   ${props => props.listening && css`
     margin-left: -45%;
-    @media (min-width: 768px)  { margin-left: -10%; }
+    @media (min-width: 768px) { margin-left: -10%; }
     @media (max-height: 1000px) and (min-width: 1024px) { margin-left: auto; }
     @media (min-width: 1280px) { margin-left: auto; margin-right: 10%; }
     @media (min-width: 1536px) { margin-right: 0; }
@@ -39,7 +39,7 @@ const Root = styled('img')`
 
   ${props => props.contact && css`
     margin-left: -45%;
-    @media (min-width: 768px)  { margin-left: -20%; }
+    @media (min-width: 768px) { margin-left: -20%; }
     @media (max-height: 1000px) and (min-width: 1024px) { margin-left: auto; }
     @media (min-width: 1280px) { margin-left: auto; margin-right: 10%; }
     @media (min-width: 1536px) { margin-right: 5%; }
@@ -48,18 +48,27 @@ const Root = styled('img')`
     @media (min-width: 2250px) { margin-right: 20%; }
   `}
 
-
-
-
-
-
-  ${props => props.who && css`
+  ${props => props.emergency && css`
+    margin-left: -65%;
+    @media (min-width: 768px) { margin-left: -28%; }
+    @media (max-height: 1000px) and (min-width: 1024px) { margin-left: auto; }
+    @media (min-width: 1280px) { margin-left: auto; margin-right: 17%; }
+    @media (min-width: 1536px) { margin-right: 12%; }
+    @media (min-width: 1800px) { margin-right: 18%; }
+    @media (min-width: 2000px) { margin-right: 20%; }
+    @media (min-width: 2250px) { margin-right: 25%; }
   `}
 
   ${props => props.what && css`
-  `}
-
-  ${props => props.emergency && css`
+    margin-left: -45%;
+    @media (min-width: 768px) { margin-left: -15%; }
+    @media (min-width: 1024px) { margin-left: -1%; }
+    @media (max-height: 1000px) and (min-width: 1024px) { margin-left: 3%; }
+    @media (min-width: 1280px) { margin-left: auto; margin-right: 4%; }
+    @media (min-width: 1536px) { margin-right: -2%; }
+    @media (min-width: 1800px) { margin-right: 8%; }
+    @media (min-width: 2000px) { margin-right: 16%; }
+    @media (min-width: 2250px) { margin-right: 18%; }
   `}
 `
 

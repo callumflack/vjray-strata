@@ -9,7 +9,7 @@ const emergencyList = [{
   text: 'In the case of a natural disaster such as a major storm or flood etc please contact the NSW State Emergency Service on 132 500.',
 }, {
   headline: 'Is it a rental property?',
-  text: 'If your repair relates to a property that you are renting through one of our offices please go to the V J Ray Group website.'
+  text: 'If your repair relates to a property that you are renting through one of our offices please go to the VJ Ray Group website.'
 }, {
   headline: 'Is it within business hours?',
   text: 'Please contact us by telephone on 9784 7900 if your repair is urgent and during office hours. Please don\'t rely on an email for an urgent repair as your strata manager may not see the email in time to contact the relevant repairer.',
@@ -65,7 +65,7 @@ const servicesList = [{
 }, {
   icon: 'contractor',
   headline: 'Contractor management',
-  text: 'We all know how complex the licensing, WHS & insurance laws surrounding contractors are these days, so at V J Ray we enlist the help of an independent company to continually monitor each and every contractor used by all of our strata schemes so that there is never any doubt that they comply.',
+  text: 'We all know how complex the licensing, WHS & insurance laws surrounding contractors are these days, so at VJ Ray we enlist the help of an independent company to continually monitor each and every contractor used by all of our strata schemes so that there is never any doubt that they comply.',
   link: false
 }, {
   icon: 'voting',

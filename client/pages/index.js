@@ -58,7 +58,7 @@ const Root = (props) => (
           {/* width={[ 1, 9/12, 9/12, 7/12 ]} */}
           <Box w={[ 1, 1, 8/12 ]} mx='auto'>
             <LargeText color='text70'>
-              "I have known and been happy with V J Ray for years. I cannot fault you. Thank you!" <LineBreakAll mx='auto'>
+              "I have known and been happy with VJ Ray for years. I cannot fault you. Thank you!" <LineBreakAll mx='auto'>
                 <AuthorText>— Petrania, Belmore</AuthorText>
               </LineBreakAll>
             </LargeText>

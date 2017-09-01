@@ -44,7 +44,7 @@ const HeroListening = () => (
           <Display mb={2}>
             Skip the hassle of <LineBreak>Strata Management.</LineBreak>
           </Display>
-          <LargeText children='At V J Ray Strata, we understand how valuable your peace of mind is.' />
+          <LargeText children='At VJ Ray Strata, we understand how valuable your peace of mind is.' />
         </HeroTitleBox>
       </HeroFlex>
     </HeroContainer>

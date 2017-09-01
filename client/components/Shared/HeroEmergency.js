@@ -45,7 +45,7 @@ const HeroEmergency = props => (
             It happens. <LineBreakAll>We're prepared.</LineBreakAll>
           </Display>
           <LargeText hideAtMobile>
-            At V J Ray Strata, <LineBreakAll>we'll sort it for you.</LineBreakAll>
+            At VJ Ray Strata, <LineBreakAll>we'll sort it for you.</LineBreakAll>
           </LargeText>
 
         </HeroTitleBox>

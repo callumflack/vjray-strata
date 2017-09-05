@@ -2,17 +2,14 @@
 title: Mike's letter
 ---
 
-Way back in 1962, in a one-room office in Campsie, VJ Ray started its journey in the Sydney real estate scene.
+Hi, I'm Mike Pollard, Managing Director of VJ Ray.
 
-Today, over 55 years later, our Strata Team has 27 staff, all with just one goal, to help people.
+My father Leon Pollard was VJ Ray's first employee when we started in Sydney real estate way back in a one-room Campsie office in 1962.
 
-VJ Ray is a family company that was started by Leon Pollard and is currently owned and operated by his son Mike Pollard.
+As Managing Director over half a century later, my 27 staff and I continue the original family culture and tradition that my father embedded, the essence of which is so often lost as companies grow into corporate giants.
 
-The guiding principal behind the VJ Ray culture has been to maintain the original family company atmosphere that is so often lost as companies grow into corporate giants.
-
-At VJ Ray we know that our job is much more that just looking after buildings, its about caring for and helping the people that own or live in those buildings. It's the people
-that matter.
+We know that our job is much more than just looking after buildings. It's about caring for and helping the people that own or live in those buildings.
 
 That's why our mission statement is so simple.
 
-We Help People.
+We help people make everyday Strata living easy.

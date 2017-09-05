@@ -21,7 +21,7 @@ const ContactAction = (props) => (
   <Root>
     <Subheadline children='Contact us' />
     <Display color={props.headlineColor || 'text' } font='displayRegular'>
-      Make Strata living easier.
+      Make Strata living easy.
     </Display>
 
     <Box

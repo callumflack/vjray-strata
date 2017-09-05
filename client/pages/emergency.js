@@ -61,7 +61,7 @@ const Emergency = (props) => (
 
       <LargeText font='displayMedium' mb={1} children='Is it within business hours?' />
       <Text color='text70' mb={2}>
-        If your repair is urgent and the time is currently office hours, please contact us by calling <Link href={'tel: ' + contactDetails.emergencyBusinessHours}><a>{contactDetails.emergencyBusinessHours}</a></Link>.
+        If your repair is urgent and the time is currently office hours, please contact us by calling <Link href={'tel:' + contactDetails.emergencyBusinessHours}><a>{contactDetails.emergencyBusinessHours}</a></Link>.
       </Text>
       <Text color='text70' mb={4}>
         Please don't rely on an email for an urgent repair as your strata manager may not see the email in time to contact the relevant repairer.
@@ -69,11 +69,11 @@ const Emergency = (props) => (
 
       <LargeText font='displayMedium' mb={1} children='Is it after-hours?' />
       <Text color='text70'>
-        Remember, our business hours include Saturdays until 4pm (2pm at our Carringbah office). For after-hours emergency repairs only, contact our director Mike Pollard on <Link href={'tel: ' + contactDetails.emergencyAfterHours}><a>{contactDetails.emergencyAfterHours}</a></Link>. Additional charges will apply.
+        Remember, our business hours include Saturdays until 4pm (2pm at our Carringbah office). For after-hours emergency repairs only, contact our director Mike Pollard on <Link href={'tel:' + contactDetails.emergencyAfterHours}><a>{contactDetails.emergencyAfterHours}</a></Link>. Additional charges will apply.
       </Text>
       <ResponsiveToggle hideAtDesktop>
         <LargeButtonStyler color='white' align='left' mt={2}>
-          <Link href={'tel: ' + contactDetails.emergencyAfterHours}>
+          <Link href={'tel:' + contactDetails.emergencyAfterHours}>
             <a><Button icon color='brand' bgColor='transparent' children='Call after-hours' /></a>
           </Link>
         </LargeButtonStyler>

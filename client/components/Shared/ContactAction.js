@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import theme from '../theme'
 import { Box } from '../styled-grid';
 
-import { LargeText } from '../Shared/Text'
+import { LargeText, LineBreak } from '../Shared/Text'
 import { Display, Subheadline } from '../Shared/Headline'
 import Button from '../Shared/Button'
 import Container from '../Shared/Container'
@@ -16,18 +16,21 @@ const Root = styled(Box)`
   text-align: center;
 `
 
+// How we can help make<LineBreak mx='auto'>your Strata living easier?</LineBreak>
 const ContactAction = (props) => (
   <Root>
-    <Subheadline children='Get in touch' />
-    <Display color={props.headlineColor || 'text' } font='displayRegular' children='Call 1300 073 405' />
+    <Subheadline children='Contact us' />
+    <Display color={props.headlineColor || 'text' } font='displayRegular'>
+      Make Strata living easier.
+    </Display>
 
     <Box
       width={[ 1, 7/12 ]}
       mx='auto'>
       { props.withButton &&
         <LargeButtonStyler color='white' mt={3} mb={3}>
-          <Link href='/fast-quote'>
-            <Button large icon bgColor={props.btnColor} children='Get a fast quote' />
+          <Link href='/let-us-help-you'>
+            <Button large icon bgColor={props.btnColor} children='Set up a call' />
           </Link>
         </LargeButtonStyler>
       }

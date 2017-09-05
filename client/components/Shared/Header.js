@@ -21,7 +21,7 @@ import Hamburger from './Hamburger'
 
 const fade = {
   duration: 0.25,
-  delay: 0.25,
+  delay: 0.15,
 };
 
 const Root = styled(Flex)`
@@ -118,7 +118,7 @@ const Root = styled(Flex)`
       }
     }
   `}
-`;
+`;//`
 
 const StyledButton = Button.extend`
   border-width: 1px;
@@ -136,7 +136,7 @@ const ResponsiveToggle = styled(Box)`
       display: none;
     }
   `}
-`
+`//`
 
 const DesktopNav = styled(ResponsiveToggle)`
   bottom: 0;
@@ -192,7 +192,7 @@ const MobileNavFlex = Flex.extend`
       opacity ${fade.duration}s ease-in-out,
       transform ${fade.duration}s ease-in-out;
   `}
-`
+`//`
 
 const MobileModal = Flex.extend`
   opacity: 1;
@@ -223,7 +223,7 @@ const LinkTextRoot = hoc('span').extend`
     border-bottom: 2px solid currentColor;
     padding-bottom: 33px;
   `}
-`
+`//`
 
 const LinkText = props =>
   <LinkTextRoot
@@ -441,10 +441,10 @@ class Header extends React.Component {
                   <a><MobileLinkText>Contact us</MobileLinkText></a>
                 </Link>
 
-                <Link href='/fast-quote'>
+                <Link href='/let-us-help-you'>
                   <a>
                     <Text align='left' font='textRegular' mt={1}>
-                      <StyledButton invert icon children='Get a fast quote' />
+                      <StyledButton invert icon children='Set up a call' />
                     </Text>
                   </a>
                 </Link>

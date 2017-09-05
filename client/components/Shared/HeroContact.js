@@ -51,7 +51,7 @@ const HeroContact = props => (
           mb={[ 3, 4 ]}
         >
           <MobileSubheadline color='brandAlt' children='Contact us' />
-          <Display color='brandAlt' mb={2} children='How can we help you?' />
+          <Display color='brandAlt' mb={2} children='How can we help make your Strata living easier?' />
           <LargeText hideAtMobile color='text' children='Visit, call or write to us.' />
         </HeroTitleBox>
       </HeroFlex>

@@ -115,7 +115,7 @@ const Footer = (props) => (
     <Container
       mw="lg"
       pt={[ 0, 2 ]}
-      pb={[ 3, null, null, 4 ]}
+      pb={3}
     >
       <Flex direction={[ 'column', 'row' ]} justify='space-between'>
 
@@ -150,7 +150,7 @@ const Footer = (props) => (
               </Column>
               <Column>
                 <Link href='/contact'><a><span>Contact Us</span></a></Link>
-                <Link href='/fast-quote'><a>Get a fast quote</a></Link>
+                <Link href='/let-us-help-you'><a>Set up a call</a></Link>
                 <Link href='/contact?form=report#contact-forms'><a>Report an issue</a></Link>
                 <Link href='/emergency'><a>Emergencies</a></Link>
               </Column>

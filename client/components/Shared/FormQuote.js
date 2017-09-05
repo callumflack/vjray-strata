@@ -38,12 +38,12 @@ class FormQuote extends React.Component {
           <FormGroupHeadline>Your details (Required)</FormGroupHeadline>
 
           <Input
-            placeholder='Your name*'
+            placeholder='Your name'
             name='name'
             required
           />
           <Input
-            placeholder='Your email*'
+            placeholder='Your email'
             name='email'
             validations={{
               isEmail: true
@@ -54,7 +54,7 @@ class FormQuote extends React.Component {
             required
           />
           <Input
-            placeholder='Your phone number*'
+            placeholder='Your phone number'
             name='phoneNumber'
             validations='isExisty'
             required
@@ -62,31 +62,36 @@ class FormQuote extends React.Component {
         </FormGroup>
 
         <FormGroup>
-          <FormGroupHeadline>Strata details</FormGroupHeadline>
+          <FormGroupHeadline>Strata details (required)</FormGroupHeadline>
 
           <Input
             placeholder='Your strata address'
             name='address'
+            required
           />
           <Input
             placeholder='Your postcode'
             name='postcode'
+            required
           />
 
           <Select
             name='unitsInScheme'
             defaultValue=''
+            required
           >
             <option value='' selected hidden>Total units in your strata</option>
-            {Array.from({length: 10}, (v, k) => k+1).map(i =>
-              <option value={i} key={i}>{i}</option>
-            )}
+            <option value="1-10">up to 10</option>
+            <option value="10-20">10-20</option>
+            <option value="20-40">20-40</option>
+            <option value="40+">40+</option>
           </Select>
 
           <Textarea
-            placeholder='Add any comments…'
+            placeholder='What&#39;s the problem we can help you with?'
             name='comments'
             rows='7'
+            required
           />
         </FormGroup>
       </FormContainer>

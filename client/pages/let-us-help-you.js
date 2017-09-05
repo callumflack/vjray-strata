@@ -25,6 +25,7 @@ const blockStyle = {
   backgroundImage: 'linear-gradient(to bottom, rgba(223, 212, 184, 0.4), #F7F2EC 70% )'
 }
 
+// Forms not your thing? Call us on {contactDetails.phone} <LineBreak m='auto' children='or drop in anytime without an appointment:' />
 const Root = props => (
   <Layout>
     <Header pathname='/contact' clear />
@@ -36,13 +37,13 @@ const Root = props => (
       style={blockStyle}
     >
       <Subheadline children='Confidential, no obligation' />
-      <Display children='Get a fast quote.' mb={2} />
+      <Display children='Find a better way.' mb={2} />
       <MediumText color='text'>
-        Forms not your thing? Call us on {contactDetails.phone} <LineBreak m='auto' children='or drop in anytime without an appointment:' />
+        Let us find you a better solution. Add your details below and we'll call you for a conversation about how we can help.
       </MediumText>
 
       <Box mw='sm' mt={[3, 4]}>
-        <FormHeader bg='brand' color='white' children='Fast quote form' />
+        <FormHeader bg='brand' color='white' children='Conversation form' />
         <FormQuote />
       </Box>
     </Block>

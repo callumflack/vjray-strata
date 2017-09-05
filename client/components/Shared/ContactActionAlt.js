@@ -17,13 +17,13 @@ const Root = styled(Box)`
 
 const ContactActionAlt = (props) => (
   <Root>
-    <Subheadline>Let's talk</Subheadline>
+    <Subheadline>Contact us</Subheadline>
     <Display color={props.headlineColor || 'text'} font='displayRegular' mb={3}>
       Skip the hassle of <LineBreakAll m='auto'>Strata Management.</LineBreakAll>
     </Display>
     <LargeButtonStyler>
-      <Link href='/fast-quote'>
-        <Button large icon bgColor={props.btnColor} children='Get a fast quote' />
+      <Link href='/let-us-help-you'>
+        <Button large icon bgColor={props.btnColor} children='Set up a call' />
       </Link>
     </LargeButtonStyler>
   </Root>

@@ -14,6 +14,10 @@ const Root = hoc(Box).extend`
   ${props => props.border && css`
     border-top: 1px solid ${theme.colors.text10};
   `}
+
+  ${props => props.noBottomPadding && css`
+    padding-bottom: 0 !important;
+  `}
 `;
 
 Root.Section = Root.withComponent('section')
@@ -22,8 +26,9 @@ const Block = (props) => (
   <Root.Section
     bg={props.bg}
     border={props.border}
-    pt={props.pt || [ 4, 4, 5, 5, 6 ]}
-    pb={props.pb || [ 4, 4, 5, 5, 6 ]}
+    pt={props.pt || [ 4, 4, 5, 5 ]}
+    pb={props.pb || [ 4, 4, 5, 5 ]}
+    noBottomPadding={props.noBottomPadding}
     style={props.style}
     id={props.id}
   >

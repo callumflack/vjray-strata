@@ -38,7 +38,8 @@
   },
   "now": {
     "alias": [
-      "vjray.now.sh"
+      "vjraystrata.com.au",
+      "www.vjraystrata.com.au"
     ],
     "env": {
       "NODE_ENV": "production",

@@ -30,7 +30,7 @@ const ContactAction = (props) => (
       { props.withButton &&
         <LargeButtonStyler color='white' mt={3} mb={3}>
           <Link href='/let-us-help-you'>
-            <Button large icon bgColor={props.btnColor} children='Set up a call' />
+            <Button large icon bgColor={props.btnColor} children='Get a fast quote' />
           </Link>
         </LargeButtonStyler>
       }

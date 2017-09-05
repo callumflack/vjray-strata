@@ -37,13 +37,13 @@ const Root = props => (
       style={blockStyle}
     >
       <Subheadline children='Confidential, no obligation' />
-      <Display children='Find a better way.' mb={2} />
+      <Display children='Get a fast quote.' mb={2} />
       <MediumText color='text'>
         Let us find you a better solution. Add your details below and we'll call you for a conversation about how we can help.
       </MediumText>
 
       <Box mw='sm' mt={[3, 4]}>
-        <FormHeader bg='brand' color='white' children='Conversation form' />
+        <FormHeader bg='brand' color='white' children='Fast quote form' />
         <FormQuote />
       </Box>
     </Block>

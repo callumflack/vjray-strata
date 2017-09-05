@@ -23,7 +23,7 @@ const ContactActionAlt = (props) => (
     </Display>
     <LargeButtonStyler>
       <Link href='/let-us-help-you'>
-        <Button large icon bgColor={props.btnColor} children='Set up a call' />
+        <Button large icon bgColor={props.btnColor} children='Get a fast quote' />
       </Link>
     </LargeButtonStyler>
   </Root>

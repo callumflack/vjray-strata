@@ -41,7 +41,7 @@ const Item = (props) => (
   <ItemRoot
     direction={[ 'column', 'row' ]}
     mx={-2}
-    mb={[ 3, 4, 5 ]}>
+    mb={[ 3, 4 ]}>
     <Box px={[ 2 ]}>
       <ItemIcon
         color='brand'
@@ -77,20 +77,27 @@ const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear />
     <HeroWhat />
-    <Block mw='sm' pb={[ 0, 0 ]}>
+    <Block mw='sm' noBottomPadding>
+      <Headline
+        font='displayMedium'
+        color='text'
+        mt={[ 0, 4, 4, 3 ]}
+        mb={2}
+        children='How we do this for you.'
+      />
       <LargeText
         color='text70'
         w={[ 1, 2/3, 1 ]}
         children={servicesIntro}
       />
     </Block>
-    <Block mw='sm'>
+    <Block mw='sm' noBottomPadding>
       {servicesList.map((item, i) =>
         <Item item={item} key={i} />
       )}
     </Block>
 
-    <Block border textCenter>
+    <Block textCenter>
       <ContactAction btnColor='brandAlt' withButton />
       <Contacts />
     </Block>

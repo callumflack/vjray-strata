@@ -43,11 +43,9 @@ const HeroWhat = props => (
           mb={[ 3, 4 ]}
         >
           <MobileSubheadline color='brandAlt' children='Services' />
-          <Display color='brand' mb={2}>
-            What we do for you.
-          </Display>
+          <Display color='brand' mb={2} children='What we do for you.' />
           <LargeText hideAtMobile>
-            We’ll go further to help you <LineBreak>find peace of mind.</LineBreak>
+            We’ll go further to help you find peace of mind by making Strata living easier.
           </LargeText>
 
         </HeroTitleBox>

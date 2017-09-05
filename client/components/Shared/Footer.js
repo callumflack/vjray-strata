@@ -96,11 +96,17 @@ const RuledBox = styled(Box)`
 const SecondNav = Flex.withComponent('nav').extend`
   color: ${theme.colors.text40};
 
+  @media (max-width: 512px) {
+    :last-child {
+      margin-top: ${theme.space[2]}px;
+    }
+  }
+
   p,
   span,
   a {
     @media (max-width: 512px) {
-      font-size: ${theme.fontSizes[0]}pt;
+      font-size: ${theme.fontSizes[1]}px;
     }
   }
 `;
@@ -161,13 +167,20 @@ const Footer = (props) => (
       </Flex>
 
       <RuledBox>
-        <SecondNav>
-          <span>© 2017 VJ Ray</span>
-          <StyledDivider />
-          <Link href='/terms-of-use'><a>Terms</a></Link>
-          <StyledDivider />
-          <Link href='/privacy-policy'><a>Privacy</a></Link>
-        </SecondNav>
+        <Flex direction={[ 'column', 'row' ]} justify='space-between'>
+          <SecondNav>
+            <span>© 2017 VJ Ray</span>
+            <StyledDivider />
+            <Link href='/terms-of-use'><a>Terms</a></Link>
+            <StyledDivider />
+            <Link href='/privacy-policy'><a>Privacy</a></Link>
+          </SecondNav>
+          <SecondNav mt={[ 0, 'auto' ]}>
+            <Link href='https://patternworks.com.au/'><a>Site by Patternworks</a></Link>
+            <StyledDivider />
+            <Link href='https://admin.vjraystrata.com.au/keystone/signin'><a>Login</a></Link>
+          </SecondNav>
+        </Flex>
       </RuledBox>
 
     </Container>

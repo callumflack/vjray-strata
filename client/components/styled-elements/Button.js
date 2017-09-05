@@ -15,7 +15,7 @@ const Button = styled.button`
   --Button-disabled-opacity: 0.6;
   --Button-font: inherit;
   --Button-height: 44px;
-  --Button-padding: 2px 1.25rem 0;
+  --Button-padding: 2px 1rem 0;
 
   background: var(--Button-background-color);
   border-color: var(--Button-border-color);

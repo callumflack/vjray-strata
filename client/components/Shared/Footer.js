@@ -89,7 +89,7 @@ const RuledBox = styled(Box)`
   padding-top: ${theme.space[2]}px;
 
   @media (min-width: 768px) {
-    margin-top: ${theme.space[4]}px;
+    margin-top: 36px;
   }
 `;
 

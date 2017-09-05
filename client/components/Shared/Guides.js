@@ -70,7 +70,7 @@ const Guides = (props) => (
     {props.guides.map((guide, i) =>
       <StyledBox
         width={props.primary ? [8/12, 1/2, 8/12] : [8/12, 1/2, 5/12 ]}
-        mx='auto'
+        mx={['auto', 0]}
         px={2}
         key={guide._id}
       >

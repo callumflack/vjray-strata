@@ -16,8 +16,7 @@ const GridRoot = styled(Grid)`
     :not(first-child) {
       margin-top: 1.5rem;
     }
-  }
-`
+  }`
 
 const StyledGrid = props =>
   <GridRoot w={[ 1, 1/2, 1/2, 1/4 ]} px={3} {...props} />
@@ -34,8 +33,7 @@ const StyledIcon = (props) =>
 const RootDivider = styled(Box)`
   @media (max-width: 1024px) {
     display: none;
-  }
-`
+  }`
 
 const Divider = () => (
   <RootDivider>
@@ -44,7 +42,7 @@ const Divider = () => (
 );
 
 const FeatureList = () => (
-  <Box w={[ 5/6, 5/6, 5/6, 1 ]} mx='auto' mt={[ 2, 2, 2, 4 ]}>
+  <Box w={[ 5/6, 5/6, 5/6, 1 ]} mx='auto' mt={[ 2, 2, 2, 3 ]}>
     <Box mx={-3}>
       <StyledGrid>
         <StyledIcon icon={ icons.experience } />
@@ -67,7 +65,7 @@ const FeatureList = () => (
       <StyledGrid>
         <StyledIcon icon={ icons.emergency } />
         <Header>24/7 emergency contact</Header>
-        <Lede>Because emergencies happen, speak to one of our senior staff anytime!</Lede>
+        <Lede>Emergencies happen. Speak to one of our senior staff anytime.</Lede>
       </StyledGrid>
     </Box>
   </Box>

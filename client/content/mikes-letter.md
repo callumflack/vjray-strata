@@ -8,7 +8,7 @@ My father Leon Pollard was VJ Ray's first employee when we started in Sydney rea
 
 Today, as Managing Director over half a century later, my 27 staff and I continue the original family culture and tradition that my father embedded, the essence of which is so often lost as companies grow into corporate giants.
 
-We know that our job is much more than just looking after buildings. It's about caring for and helping the people that own or live in those buildings.
+Our point of difference is we know our job is much more than just looking after buildings. It's about paying attention to and helping the people that own or live in those buildings.
 
 That's why our mission statement is so simple.
 

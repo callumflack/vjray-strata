@@ -90,7 +90,7 @@ const ErrorMessage = props =>
 
 const StyledSelect = styled.select`
   ${props => props.unselected && css `
-    color: grey !important;
+    color: #B7B7BB !important;
   `}
 `
 

@@ -38,7 +38,7 @@ const Root = (props) => (
       <Box mx='auto' width={[ 1, 1, 5/6 ]}>
         <Headline font='displayMedium' color='text' mt={[ 0, 4, 4 ]} mb={2} children='It all adds up to a better deal.' />
         <LargeText color='text70'>
-          "You guys are very quick to respond and handle things efficiently, no complaints here!"<LineBreak m='auto'><AuthorText>— Linda & Terry, Jindabyne</AuthorText></LineBreak>
+          "You guys are very quick to respond and handle things efficiently, no complaints here!"<LineBreak m='auto'><AuthorText>— Linda & Terry, Caringbah</AuthorText></LineBreak>
         </LargeText>
       </Box>
 

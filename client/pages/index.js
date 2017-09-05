@@ -3,14 +3,14 @@ import Link from 'next/link';
 
 import styled from 'styled-components'
 import { Flex, Box } from '../components/styled-grid'
-import hoc from '../components/styled-elements/hoc'
+import hoc from '../components/Shared/hoc'
 import theme from '../components/theme'
 
-import Layout from '../components/styled-elements/Layout'
-import Container from '../components/styled-elements/Container'
-import Button from '../components/styled-elements/Button'
-import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak, LineBreakMax, LineBreakAll } from '../components/styled-elements/Text'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/styled-elements/Headline'
+import Layout from '../components/Shared/Layout'
+import Container from '../components/Shared/Container'
+import Button from '../components/Shared/Button'
+import { Text, LargeText, MediumText, SmallText, AuthorText, LineBreak, LineBreakMax, LineBreakAll } from '../components/Shared/Text'
+import { Display, Headline, Subheadline, HeadlineMeta } from '../components/Shared/Headline'
 
 import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'

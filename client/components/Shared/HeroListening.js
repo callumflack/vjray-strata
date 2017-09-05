@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Flex, Box } from '../styled-grid'
-import hoc from '../styled-elements/hoc'
+import hoc from '../Shared/hoc'
 import theme from '../theme'
 
-import { LargeText, LineBreak } from '../styled-elements/Text'
-import { Headline, Display } from '../styled-elements/Headline'
-import CoverImage from '../styled-elements/CoverImage'
+import { LargeText, LineBreak } from '../Shared/Text'
+import { Headline, Display } from '../Shared/Headline'
+import CoverImage from '../Shared/CoverImage'
 
 import Image from './Image'
 import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Hero'

@@ -6,15 +6,15 @@ import theme from '../components/theme'
 import { icons, servicesIntro, servicesList } from '../components/constants'
 
 import { Flex, Box } from '../components/styled-grid'
-import hoc from '../components/styled-elements/hoc'
+import hoc from '../components/Shared/hoc'
 
-import { LargeText, Text, TextBlock, LineBreak } from '../components/styled-elements/Text'
-import { Display, Headline, Subheadline, MobileSubheadline, HeadlineMeta } from '../components/styled-elements/Headline'
-import Button from '../components/styled-elements/Button'
-import Container from '../components/styled-elements/Container'
-import CoverImage from '../components/styled-elements/CoverImage'
-import Icon from '../components/styled-elements/Icon';
-import Layout from '../components/styled-elements/Layout'
+import { LargeText, Text, TextBlock, LineBreak } from '../components/Shared/Text'
+import { Display, Headline, Subheadline, MobileSubheadline, HeadlineMeta } from '../components/Shared/Headline'
+import Button from '../components/Shared/Button'
+import Container from '../components/Shared/Container'
+import CoverImage from '../components/Shared/CoverImage'
+import Icon from '../components/Shared/Icon';
+import Layout from '../components/Shared/Layout'
 
 import HeroWhat from '../components/Shared/HeroWhat'
 import Block from '../components/Shared/Block'

@@ -8,9 +8,9 @@ import apollo from '../../lib/apollo.js';
 import theme from '../theme.js';
 import styled from 'styled-components';
 import { Box, Flex } from '../styled-grid';
-import { Text, SmallText } from '../styled-elements/Text.js';
-import Button from '../styled-elements/Button'
-import { IconDownload } from '../styled-elements/Icons'
+import { Text, SmallText } from '../Shared/Text.js';
+import Button from '../Shared/Button'
+import { IconDownload } from '../Shared/Icons'
 
 import BoxReset from './BoxReset'
 import ImageWithShadow from './ImageWithShadow'

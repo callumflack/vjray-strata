@@ -3,11 +3,11 @@ import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
 import { icons } from '../constants'
-import hoc from '../styled-elements/hoc'
+import hoc from '../Shared/hoc'
 import { Box, Flex } from '../styled-grid'
-import Container from '../styled-elements/Container'
-import { Text, SmallText, Divider } from '../styled-elements/Text'
-import Icon from '../styled-elements/Icon';
+import Container from '../Shared/Container'
+import { Text, SmallText, Divider } from '../Shared/Text'
+import Icon from '../Shared/Icon';
 import ResponsiveToggle from './ResponsiveToggle';
 
 

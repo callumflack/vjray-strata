@@ -3,11 +3,11 @@ import theme from '../theme'
 import { icons } from '../constants'
 
 import { Flex, Box, Grid } from '../styled-grid'
-import hoc from '../styled-elements/hoc'
+import hoc from '../Shared/hoc'
 
-import { Headline } from '../styled-elements/Headline'
-import { Text, SmallText, LargeText } from '../styled-elements/Text'
-import Icon from '../styled-elements/Icon';
+import { Headline } from '../Shared/Headline'
+import { Text, SmallText, LargeText } from '../Shared/Text'
+import Icon from '../Shared/Icon';
 
 
 

@@ -7,13 +7,13 @@ import theme from '../theme'
 import styled, { css } from 'styled-components'
 import { Flex, Box } from '../styled-grid'
 
-import hoc from '../styled-elements/hoc'
-import { IconPhone } from '../styled-elements/Icons'
-import Icon from '../styled-elements/Icon';
-import { Display } from '../styled-elements/Headline'
-import { Text, InlineText, Divider } from '../styled-elements/Text'
-import Container from '../styled-elements/Container'
-import Button from '../styled-elements/Button'
+import hoc from '../Shared/hoc'
+import { IconPhone } from '../Shared/Icons'
+import Icon from '../Shared/Icon';
+import { Display } from '../Shared/Headline'
+import { Text, InlineText, Divider } from '../Shared/Text'
+import Container from '../Shared/Container'
+import Button from '../Shared/Button'
 
 // import ResponsiveToggle from './ResponsiveToggle'
 import Hamburger from './Hamburger'

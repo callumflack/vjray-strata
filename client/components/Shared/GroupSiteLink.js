@@ -6,11 +6,11 @@ import { Flex, Box } from '../styled-grid'
 import theme from '../theme.js'
 import { icons } from '../constants'
 
-import hoc from '../styled-elements/hoc'
-import Container from '../styled-elements/Container'
-import { Headline } from '../styled-elements/Headline.js'
-import { Text, SmallText, LargeText, LineBreak, LineBreakMax, LineBreakAll } from '../styled-elements/Text.js'
-import Icon from '../styled-elements/Icon.js';
+import hoc from '../Shared/hoc'
+import Container from '../Shared/Container'
+import { Headline } from '../Shared/Headline.js'
+import { Text, SmallText, LargeText, LineBreak, LineBreakMax, LineBreakAll } from '../Shared/Text.js'
+import Icon from '../Shared/Icon.js';
 import Block from './Block'
 
 

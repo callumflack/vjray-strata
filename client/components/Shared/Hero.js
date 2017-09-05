@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Box, Flex } from '../styled-grid';
 import theme from '../theme.js';
-import Container from '../styled-elements/Container'
+import Container from '../Shared/Container'
 
 
 // @media (min-width: 768px) {

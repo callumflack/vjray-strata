@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import theme from '../theme.js';
 import { Box, Flex } from '../styled-grid';
-import { Text, SmallText } from '../styled-elements/Text';
-import CoverImage from '../styled-elements/CoverImage'
+import { Text, SmallText } from '../Shared/Text';
+import CoverImage from '../Shared/CoverImage'
 
 const Root = styled(Flex)`
   height: auto;

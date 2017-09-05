@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components'
 import { Box } from '../styled-grid'
 import theme from '../theme'
 import LaddaButton from '../Shared/LaddaButton.js'
-import { Text } from '../styled-elements/Text'
+import { Text } from '../Shared/Text'
 import {
   Form,
   SuccessMessage,

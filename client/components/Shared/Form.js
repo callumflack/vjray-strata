@@ -2,8 +2,8 @@ import React from 'react'
 import Formsy, { HOC } from 'formsy-react'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
-import { Text } from '../styled-elements/Text'
-import { Display, BoxedSubheadline, HeadlineDetail } from '../styled-elements/Headline'
+import { Text } from '../Shared/Text'
+import { Display, BoxedSubheadline, HeadlineDetail } from '../Shared/Headline'
 
 
 const Form = styled(Formsy.Form)`

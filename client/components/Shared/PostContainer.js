@@ -9,9 +9,9 @@ import styled from 'styled-components'
 import theme from '../theme'
 
 import { Box, Flex } from '../styled-grid'
-import Container from '../styled-elements/Container'
-import { Subheadline } from '../styled-elements/Headline'
-import { Text, LargeText } from '../styled-elements/Text'
+import Container from '../Shared/Container'
+import { Subheadline } from '../Shared/Headline'
+import { Text, LargeText } from '../Shared/Text'
 
 import Post from './Post'
 

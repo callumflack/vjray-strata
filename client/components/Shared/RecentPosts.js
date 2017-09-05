@@ -7,10 +7,10 @@ import apollo from '../../lib/apollo.js';
 
 import styled from 'styled-components';
 import theme from '../theme.js';
-import hoc from '../styled-elements/hoc';
+import hoc from '../Shared/hoc';
 import { Box } from '../styled-grid';
-import { Text } from '../styled-elements/Text.js';
-import { Display, Headline  } from '../styled-elements/Headline.js';
+import { Text } from '../Shared/Text.js';
+import { Display, Headline  } from '../Shared/Headline.js';
 
 
 const PostLink = hoc('span').extend`

@@ -1,8 +1,8 @@
 import styled, {css} from 'styled-components';
 import { Flex, Box } from '../styled-grid';
-import hoc from '../styled-elements/hoc'
+import hoc from '../Shared/hoc'
 import theme from '../theme.js';
-import Container from '../styled-elements/Container.js';
+import Container from '../Shared/Container.js';
 
 const Root = hoc(Box).extend`
   font-family: inherit;

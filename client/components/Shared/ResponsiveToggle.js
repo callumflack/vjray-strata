@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import hoc from '../styled-elements/hoc'
+import hoc from '../Shared/hoc'
 import theme from '../theme.js'
 
 const ResponsiveToggle = hoc('span').extend`

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import theme from '../theme'
-import hoc from '../styled-elements/hoc'
-import { HeadlineMetaBaseStyles } from '../styled-elements/Headline'
-import Button from '../styled-elements/Button'
+import hoc from '../Shared/hoc'
+import { HeadlineMetaBaseStyles } from '../Shared/Headline'
+import Button from '../Shared/Button'
 
 const Root = hoc('span').extend``
 

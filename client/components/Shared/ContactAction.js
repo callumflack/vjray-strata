@@ -5,10 +5,10 @@ import styled from 'styled-components'
 import theme from '../theme'
 import { Box } from '../styled-grid';
 
-import { LargeText } from '../styled-elements/Text'
-import { Display, Subheadline } from '../styled-elements/Headline'
-import Button from '../styled-elements/Button'
-import Container from '../styled-elements/Container'
+import { LargeText } from '../Shared/Text'
+import { Display, Subheadline } from '../Shared/Headline'
+import Button from '../Shared/Button'
+import Container from '../Shared/Container'
 import LargeButtonStyler from './LargeButtonStyler'
 
 

@@ -8,11 +8,11 @@ import { formatDateString } from '../lib/date.js';
 import styled from 'styled-components';
 import { Box, Flex } from '../components/styled-grid'
 
-import Layout from '../components/styled-elements/Layout.js';
-import Container from '../components/styled-elements/Container.js';
-import { Text, TextBlock, DangerouslyResetTextBlock } from '../components/styled-elements/Text.js';
-import { Display, Subheadline } from '../components/styled-elements/Headline'
-import Button from '../components/styled-elements/Button'
+import Layout from '../components/Shared/Layout.js';
+import Container from '../components/Shared/Container.js';
+import { Text, TextBlock, DangerouslyResetTextBlock } from '../components/Shared/Text.js';
+import { Display, Subheadline } from '../components/Shared/Headline'
+import Button from '../components/Shared/Button'
 
 import theme from '../components/theme.js';
 import Header from '../components/Shared/Header.js';

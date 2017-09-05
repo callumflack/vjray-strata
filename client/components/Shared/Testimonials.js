@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from '../theme.js';
 import { Box, Flex } from '../styled-grid';
-import { Text, SmallText } from '../styled-elements/Text';
+import { Text, SmallText } from '../Shared/Text';
 
 
 const StyledFlex = styled(Flex)`

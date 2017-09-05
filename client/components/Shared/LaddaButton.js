@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { css } from 'styled-components';
-import Button from '../styled-elements/Button.js';
+import Button from '../Shared/Button.js';
 
 const LaddaButtonRoot = Button.extend`
   position: relative;

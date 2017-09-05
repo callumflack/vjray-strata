@@ -3,13 +3,13 @@ import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
 import theme from '../../components/theme'
-import hoc from '../../components/styled-elements/hoc'
+import hoc from '../../components/Shared/hoc'
 import { Box, Flex } from '../../components/styled-grid'
 
-import Layout from '../../components/styled-elements/Layout'
-import Container from '../../components/styled-elements/Container'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../../components/styled-elements/Headline'
-import { Text, LargeText, SmallText, LineBreak, LineBreakAll } from '../../components/styled-elements/Text'
+import Layout from '../../components/Shared/Layout'
+import Container from '../../components/Shared/Container'
+import { Display, Headline, Subheadline, HeadlineMeta } from '../../components/Shared/Headline'
+import { Text, LargeText, SmallText, LineBreak, LineBreakAll } from '../../components/Shared/Text'
 
 import Block from '../../components/Shared/Block'
 import { HeroFrame } from '../../components/Shared/Hero'
@@ -20,7 +20,7 @@ import Guides from '../../components/Shared/Guides'
 import Header from '../../components/Shared/Header'
 import PostContainer from '../../components/Shared/PostContainer'
 import RecentPosts from '../../components/Shared/RecentPosts'
-import Button from '../../components/styled-elements/Button'
+import Button from '../../components/Shared/Button'
 import LargeButtonStyler from '../../components/Shared/LargeButtonStyler'
 
 

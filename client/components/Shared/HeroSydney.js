@@ -4,15 +4,15 @@ import Link from 'next/link';
 
 import styled, { css } from 'styled-components';
 import { Flex, Box } from '../styled-grid';
-import hoc from '../styled-elements/hoc'
+import hoc from '../Shared/hoc'
 import theme from '../theme.js';
 
-import Container from '../styled-elements/Container.js';
-import { Text, LineBreak } from '../styled-elements/Text.js';
-import { Display, Subheadline  } from '../styled-elements/Headline.js';
-import Button from '../styled-elements/Button.js';
-import { FlexEmbed } from '../styled-elements/FlexEmbed.js';
-import CoverImage from '../styled-elements/CoverImage'
+import Container from '../Shared/Container.js';
+import { Text, LineBreak } from '../Shared/Text.js';
+import { Display, Subheadline  } from '../Shared/Headline.js';
+import Button from '../Shared/Button.js';
+import { FlexEmbed } from '../Shared/FlexEmbed.js';
+import CoverImage from '../Shared/CoverImage'
 
 
 const Root = styled(Box)`

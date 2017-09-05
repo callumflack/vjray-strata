@@ -7,7 +7,7 @@ import { formatDateString } from '../../lib/date.js'
 import styled from 'styled-components'
 import theme from '../theme'
 import { Flex } from '../styled-grid'
-import { Text, LargeText } from '../styled-elements/Text'
+import { Text, LargeText } from '../Shared/Text'
 
 
 const Root = Flex.withComponent('a').extend`

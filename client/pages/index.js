@@ -32,6 +32,7 @@ import GroupSiteLink from '../components/Shared/GroupSiteLink'
 const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear />
+
     <HeroListening />
 
     <Block mw='rg' textCenter>

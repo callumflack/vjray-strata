@@ -18,8 +18,17 @@ import CoverImage from '../Shared/CoverImage'
 const Root = styled(Box)`
   height: 80vh;
 
-  @media (min-width: 768px) { height: 70vh; }
-  @media (min-width: 768px) { height: 70vh; }
+  @media (max-height: 736px) {
+    min-height: 90vh;
+  }
+
+  @media (max-height: 800px) {
+    min-height: 80vh;
+  }
+
+  @media (min-width: 1024px) {
+    height: 70vh;
+  }
 `;
 
 const FullBoxHeight = styled.div`

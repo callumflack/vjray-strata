@@ -28,6 +28,10 @@ const HeroBox = styled(Box)`
   padding-top: var(--Header-height);
   position: relative;
 
+  @media (min-width: 512px) and (max-height: 800px) {
+    min-height: calc(var(--Header-height) + 70vh) !important;
+  }
+
   ${props => props.showAfterScreen && css`
     @media (max-width: 1024px) {
       &:after {
@@ -39,7 +43,7 @@ const HeroBox = styled(Box)`
         right: 0;
       }
   `}
-`
+`//`
 
 /*
  * HeroFrame is an alternative to HeroBox.
@@ -73,7 +77,7 @@ const HeroTitleBoxRoot = styled(Box)`
       p { color: ${theme.colors.text20}; }
     }
   `}
-`
+`//`
 
 const HeroTitleBox = props =>
   <HeroTitleBoxRoot ml={[ 0, 0, 4, 0 ]} {...props} />

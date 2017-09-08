@@ -93,7 +93,11 @@ class FormQuote extends React.Component {
             rows='7'
             required
           />
+
         </FormGroup>
+
+        {/* Formspree spam filter */}
+        <input type="text" name="_gotcha" style={{display: "none" }} />
       </FormContainer>
     );
   }

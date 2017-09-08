@@ -189,6 +189,10 @@ class QuickQuoteForm extends React.Component {
           <Inputs direction={[ 'column', 'row' ]}>
             <Input fontSize={[ 2, 3 ]} placeholder='Your name' name='name' onChange={this.handleChange} />
             <Input fontSize={[ 2, 3 ]} mt={[ 2, 0 ]} placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
+
+            {/* Formspree spam filter */}
+            <input type="text" name="_gotcha" style={{display: "none" }} />
+
             <ButtonText font='textBook' fontSize={[ 2, 3 ]} letterSpacing='button' mt={[ 2, 0 ]}>
               <LaddaButton primary loading={this.state.loading} type='submit' children='Submit' />
             </ButtonText>

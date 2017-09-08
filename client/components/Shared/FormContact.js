@@ -65,6 +65,9 @@ class FormContact extends React.Component {
             name='comments'
             rows='7'
           />
+
+          {/* Formspree spam filter */}
+          <input type="text" name="_gotcha" style={{display: "none" }} />
         </FormGroup>
       </FormContainer>
     );

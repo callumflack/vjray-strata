@@ -15,7 +15,6 @@ import { Text, InlineText, Divider } from '../Shared/Text'
 import Container from '../Shared/Container'
 import Button from '../Shared/Button'
 
-// import ResponsiveToggle from './ResponsiveToggle'
 import Hamburger from './Hamburger'
 
 
@@ -78,7 +77,7 @@ const Root = styled(Flex)`
       border ${fade.duration}s ease-in-out 0s;
   `}
 
-  ${props => props.hasScrolledDown && css`
+  ${props => props.isWindowScrolled && css`
     --Header-border-color: transparent;
     background-color: ${theme.colors[props.bg] || 'rgba(255, 255, 255, 1)'};
     box-shadow:
@@ -136,7 +135,7 @@ const ResponsiveToggle = styled(Box)`
       display: none;
     }
   `}
-`//`
+`
 
 const DesktopNav = styled(ResponsiveToggle)`
   bottom: 0;
@@ -192,7 +191,9 @@ const MobileNavFlex = Flex.extend`
       opacity ${fade.duration}s ease-in-out,
       transform ${fade.duration}s ease-in-out;
   `}
-`//`
+`
+
+//`
 
 const MobileModal = Flex.extend`
   opacity: 1;
@@ -218,12 +219,14 @@ const MobileModal = Flex.extend`
   `}
 `;
 
+//`
+
 const LinkTextRoot = hoc('span').extend`
   ${props => props.isActive && css`
     border-bottom: 2px solid currentColor;
     padding-bottom: 33px;
   `}
-`//`
+`
 
 const LinkText = props =>
   <LinkTextRoot
@@ -255,8 +258,6 @@ const MobileLinkText = props =>
 
 
 class Header extends React.Component {
-  static timeout = null;
-
   constructor(props) {
     super(props);
 
@@ -266,16 +267,18 @@ class Header extends React.Component {
 
     this.state = {
       isVisible: true,
-      hasScrolledDown: false,
+      isWindowScrolled: false,
       previousScrollPos: 0,
       isModalVisible: false,
     };
   }
 
   componentDidMount() {
-    const scrollPos = window.scrollY;
-    const previousScrollPos = this.state.previousScrollPos;
-    this.setState({ previousScrollPos: scrollPos });
+    this.setState({
+      previousScrollPos: window.scrollY,
+      isWindowScrolled: window.scrollY > 200,
+    });
+
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -284,55 +287,35 @@ class Header extends React.Component {
   }
 
   handleScroll(event) {
-    const scrollPos = window.scrollY;
+    if (this.state.isModalVisible) return;
+
     const previousScrollPos = this.state.previousScrollPos;
     // iOS hides the header when scrolled to top
     // The cause is believed to be that it's possible to scroll a little below
     // 0 on the Y axis with a bounce back animation which scrolls back to 0.
     // scollPos is checked to be above 0 to exclude scroll events caused by the bounce back animation
-    const scrolledDown = scrollPos > previousScrollPos && scrollPos > 0;
-
-    if (this.state.isModalVisible) return;
+    const scrolledDown = window.scrollY > previousScrollPos && window.scrollY > 0;
 
     this.setState({
-      previousScrollPos: scrollPos,
+      previousScrollPos: window.scrollY,
       isVisible: !scrolledDown,
+      isWindowScrolled: window.scrollY > 200,
     });
-
-    if (scrollPos <= 200) {
-      return this.setState({
-        hasScrolledDown: false,
-      });
-    }
-
-    if (scrolledDown && !this.state.hasScrolledDown) {
-      this.setState({
-        hasScrolledDown: scrolledDown,
-      });
-    }
   }
 
   handleModalClick() {
-    const scrollPos = window.scrollY;
-
-    if (scrollPos <= 200) {
-      this.setState({
-        hasScrolledDown: false,
-      });
-    }
-
     this.setState({
       isModalVisible: false,
+      isWindowScrolled: window.scrollY > 200,
     });
   }
 
   handleModalTriggerClick() {
-    const scrollPos = window.scrollY;
-    const areHidingModel = this.state.isModalVisible;
+    const willHideModal = this.state.isModalVisible;
 
     this.setState({
       isVisible: true,
-      hasScrolledDown: !areHidingModel || !(areHidingModel && scrollPos <= 200),
+      isWindowScrolled: !willHideModal || !(willHideModal && window.scrollY <= 200),
       isModalVisible: !this.state.isModalVisible,
     });
   }
@@ -345,13 +328,8 @@ class Header extends React.Component {
     return (
       <div>
         <Root
-          color={this.props.color}
-          clear={this.props.clear}
-          reverseBorder={this.props.reverseBorder}
-          invertTextOnMobile={this.props.invertTextOnMobile}
           isHidden={!this.state.isVisible}
-          hasScrolledDown={this.state.hasScrolledDown}
-          isModalVisible={this.state.isModalVisible}
+          {...this.state}
         >
           <Container
             px={[ 1, 2, 2, 3 ]}

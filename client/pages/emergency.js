@@ -45,8 +45,11 @@ const Emergency = (props) => (
       </Text>
 
       <LargeText font='displayMedium' mb={1} children='Is it a rental property?' />
-      <Text mb={4} color='text70'>
+      <Text mb={2} color='text70'>
         If your repair relates to a property that you are renting through one of our offices, please go to the <Link href="http://www.vjray.com.au/"><a>VJ Ray Group website</a></Link>.
+      </Text>
+      <Text mb={4} color='text70'>
+        If you are renting your property through another agent, other than VJ Ray you should report the problem directly to your rental agent.
       </Text>
 
       <LargeText font='displayMedium' mb={1} children='Is it a non-urgent issue?' />

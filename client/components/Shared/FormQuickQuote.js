@@ -7,7 +7,7 @@ import apollo from '../../lib/apollo.js';
 import theme from '../theme.js';
 import { Flex, Box } from '../styled-grid'
 import hoc from '../Shared/hoc'
-import { InlineText } from '../Shared/Text.js';
+import { Text, InlineText } from '../Shared/Text.js';
 import { BoxedSubheadline } from '../Shared/Headline.js';
 import LaddaButton from '../Shared/LaddaButton.js';
 
@@ -187,14 +187,37 @@ class QuickQuoteForm extends React.Component {
         </BoxedSubheadline>
         <Box p={[ 2, 3 ]}>
           <Inputs direction={[ 'column', 'row' ]}>
-            <Input fontSize={[ 2, 3 ]} placeholder='Your name' name='name' onChange={this.handleChange} />
-            <Input fontSize={[ 2, 3 ]} mt={[ 2, 0 ]} placeholder='Your phone number' name='phoneNumber' onChange={this.handleChange} />
+            <Input
+              fontSize={[ 2, 3 ]}
+              placeholder='Your name'
+              name='name'
+              onChange={this.handleChange}
+            />
+            <Input
+              fontSize={[ 2, 3 ]}
+              mt={[ 2, 0 ]}
+              placeholder='Your phone number'
+              name='phoneNumber'
+              onChange={this.handleChange}
+            />
 
             {/* Formspree spam filter */}
             <input type="text" name="_gotcha" style={{display: "none" }} />
 
-            <ButtonText font='textBook' fontSize={[ 2, 3 ]} letterSpacing='button' mt={[ 2, 0 ]}>
-              <LaddaButton primary loading={this.state.loading} type='submit' children='Submit' />
+            <ButtonText
+              font='textBook'
+              fontSize={[ 2, 3 ]}
+              letterSpacing='button'
+              mt={[ 2, 0 ]}
+            >
+              <LaddaButton
+                primary
+                loading={this.state.loading}
+                type='submit'
+                disabled={this.state.messageSent}
+              >
+                { this.state.messageSent ? 'Sent' : 'Send'}
+              </LaddaButton>
             </ButtonText>
           </Inputs>
         </Box>

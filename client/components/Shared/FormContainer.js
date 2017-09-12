@@ -33,7 +33,7 @@ class FormContainer extends React.Component {
     this.disableButton = this.disableButton.bind(this);
 
     this.state = {
-      messageSent: false,
+      formSent: false,
       canSubmit: false,
       loading: false,
     };
@@ -47,7 +47,7 @@ class FormContainer extends React.Component {
     await this.props.submit(model);
 
     this.setState({
-      messageSent: true,
+      formSent: true,
       loading: false,
     });
   }
@@ -78,11 +78,11 @@ class FormContainer extends React.Component {
             {this.props.children}
 
             <Text align='right'>
-              { this.state.messageSent &&
+              { this.state.formSent &&
                 <SuccessMessage>Thanks! We'll contact you within 48 hours.</SuccessMessage>
               }
-              <LaddaButton primary loading={this.state.loading} type='submit' disabled={this.state.messageSent || !this.state.canSubmit}>
-                { this.state.messageSent ? 'Sent' : 'Send'}
+              <LaddaButton primary loading={this.state.loading} type='submit' disabled={this.state.formSent || !this.state.canSubmit}>
+                { this.state.formSent ? 'Sent' : 'Send'}
               </LaddaButton>
             </Text>
           </Form>

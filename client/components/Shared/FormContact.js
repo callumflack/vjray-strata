@@ -22,7 +22,7 @@ class FormContact extends React.Component {
   }
 
   async submit(model) {
-    const response = await fetch('https://formspree.io/hellothere@vjray.com.au', {
+    const response = await fetch('https://formspree.io/strata@vjray.com.au', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

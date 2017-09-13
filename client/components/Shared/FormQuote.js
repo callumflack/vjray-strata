@@ -21,7 +21,7 @@ class FormQuote extends React.Component {
   }
 
   async submit(model) {
-    const response = await fetch('https://formspree.io/strata@vjray.com.au', {
+    const response = await fetch('https://formspree.io/xgaewyjx', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

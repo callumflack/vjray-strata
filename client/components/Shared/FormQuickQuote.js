@@ -149,7 +149,7 @@ class QuickQuoteForm extends React.Component {
       loading: true,
     });
 
-    const response = await fetch('https://formspree.io/strata@vjray.com.au', {
+    const response = await fetch('https://formspree.io/xgaewyjx', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

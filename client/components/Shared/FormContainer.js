@@ -82,7 +82,7 @@ class FormContainer extends React.Component {
                 <SuccessMessage>Thanks! We'll contact you within 48 hours.</SuccessMessage>
               }
               <LaddaButton primary loading={this.state.loading} type='submit' disabled={this.state.formSent || !this.state.canSubmit}>
-                { this.state.formSent ? 'Sent' : 'Send'}
+                { this.state.formSent ? 'Sent' : 'Send' }
               </LaddaButton>
             </Text>
           </Form>

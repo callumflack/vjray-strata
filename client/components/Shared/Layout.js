@@ -14,6 +14,7 @@ const Layout = ({ children, title = 'VJ Ray Strata Management, Sydney' }) => (
         <title>{ title }</title>
         <meta charSet='utf-8' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name="google-site-verification" content="JizkFkWaLwMcZOtA0K-Mpo3iwamP4eYMmruKSGnpB6o" />
       </Head>
 
       { children }

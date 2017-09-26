@@ -135,7 +135,7 @@ const ResponsiveToggle = styled(Box)`
       display: none;
     }
   `}
-`
+`//`
 
 const DesktopNav = styled(ResponsiveToggle)`
   bottom: 0;
@@ -158,7 +158,13 @@ const Nav = styled(ResponsiveToggle)`
   a:not(:last-child) {
     margin-right: 1.5rem;
   }
-`;
+
+  ${props => props.hidePhoneNumberResponsively && css`
+    @media (min-width: 769px) and (max-width: 1023px) {
+      display: none;
+    }
+  `}
+`;//`
 
 
 /*
@@ -191,9 +197,7 @@ const MobileNavFlex = Flex.extend`
       opacity ${fade.duration}s ease-in-out,
       transform ${fade.duration}s ease-in-out;
   `}
-`
-
-//`
+`//`
 
 const MobileModal = Flex.extend`
   opacity: 1;
@@ -217,9 +221,7 @@ const MobileModal = Flex.extend`
       opacity ${fade.duration}s ease-in-out,
       transform 0s ease-in-out ${fade.duration}s;
   `}
-`;
-
-//`
+`//`
 
 const LinkTextRoot = hoc('span').extend`
   ${props => props.isActive && css`
@@ -371,7 +373,7 @@ class Header extends React.Component {
                 </Link>
               </Box>
 
-              <Nav>
+              <Nav hidePhoneNumberResponsively>
                 <Link href={'tel:' + contactDetails.phone}>
                   <a><LinkText>
                     <StyledButton invert>

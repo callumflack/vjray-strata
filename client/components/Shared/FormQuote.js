@@ -96,8 +96,9 @@ class FormQuote extends React.Component {
 
         </FormGroup>
 
-        {/* Formspree spam filter */}
+        {/* Formspree filters */}
         <input type="text" name="_gotcha" style={{display: "none" }} />
+        <input type="hidden" name="_subject" value="Strata website new business submission" />
       </FormContainer>
     );
   }

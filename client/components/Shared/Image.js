@@ -39,8 +39,9 @@ const Root = styled('img')`
 
   ${props => props.contact && css`
     margin-left: -45%;
-    @media (min-width: 768px) { margin-left: -20%; }
+    @media (min-width: 768px) { margin-left: -18%; }
     @media (max-height: 1000px) and (min-width: 1024px) { margin-left: auto; }
+    @media (min-width: 1024px) { margin-left: -5%; }
     @media (min-width: 1280px) { margin-left: auto; margin-right: 10%; }
     @media (min-width: 1536px) { margin-right: 5%; }
     @media (min-width: 1800px) { margin-right: 12%; }

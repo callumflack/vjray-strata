@@ -5,7 +5,6 @@ import hoc from '../Shared/hoc'
 import theme from '../theme'
 import { LargeText, LineBreak } from '../Shared/Text'
 import { Display, Headline, MobileSubheadline } from '../Shared/Headline'
-import CoverImage from '../Shared/CoverImage'
 import Image from './Image'
 import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Hero'
 

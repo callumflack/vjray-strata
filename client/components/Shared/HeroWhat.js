@@ -44,8 +44,8 @@ const HeroWhat = props => (
         >
           <MobileSubheadline color='brandAlt' children='Services' />
           <Display color='brand' mb={2} children='What we do for you.' />
-          <LargeText hideAtMobile>
-            We’ll go further to help you find peace of mind by making Strata living easier.
+          <LargeText>
+            We’ll go further to help you find peace of mind by making Strata Management easier.
           </LargeText>
 
         </HeroTitleBox>

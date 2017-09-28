@@ -35,9 +35,9 @@ const GroupSiteLink = () => (
     <Text
       color='text70'
       mx='auto'
-      w={[1, 7/12]}
+      w={[1, 10/12]}
     >
-      We offer full spectrum Real Estate services. <LineBreak mx='auto'>Find out more on our <Link href='http://www.vjray.com.au/'><a>Group website.</a></Link></LineBreak>
+      We offer full spectrum Real Estate Management services. Find out more on our <Link href='http://www.vjray.com.au/'><a>Group website.</a></Link>
     </Text>
   </Block>
 )

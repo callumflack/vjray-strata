@@ -46,7 +46,7 @@ class FormQuote extends React.Component {
 
   render() {
     return (
-      <FormContainer brand submit={this.submit.bind(this)}>
+      <FormContainer brand submit={this.submit}>
         <FormGroup>
           <FormGroupHeadline>Your details (Required)</FormGroupHeadline>
 

@@ -11,6 +11,8 @@ export default class MyDocument extends Document {
         <Head>
           <title>My page</title>
           {styleTags}
+
+          <script src='/static/js/google-calls.js'></script>
         </Head>
         <body>
           <div className='root'>

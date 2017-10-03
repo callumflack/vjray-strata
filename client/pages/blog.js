@@ -18,10 +18,10 @@ import theme from '../components/theme.js';
 import Header from '../components/Shared/Header.js';
 import Footer from '../components/Shared/Footer.js';
 import Block from '../components/Shared/Block.js';
-import Guides from '../components/Shared/Guides.js';
+import Guides from '../components/Guides.js';
 import ContactAction from '../components/Shared/ContactAction'
 import Contacts from '../components/Shared/Contacts.js';
-import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import LargeButtonStyler from '../components/LargeButtonStyler'
 import { HeroFrame } from '../components/Shared/Hero'
 
 

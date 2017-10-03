@@ -15,18 +15,18 @@ import { Display, Headline, Subheadline, HeadlineMeta } from '../components/Shar
 import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
-import Guides from '../components/Shared/Guides'
-import RecentPosts from '../components/Shared/RecentPosts'
+import Guides from '../components/Guides'
+import RecentPosts from '../components/RecentPosts'
 import ContactAction from '../components/Shared/ContactAction'
 import Contacts from '../components/Shared/Contacts'
-import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import LargeButtonStyler from '../components/LargeButtonStyler'
 import HeroListening from '../components/Shared/HeroListening'
 
 import FeatureList from '../components/Shared/FeatureList'
 import HeroSydney from '../components/Shared/HeroSydney'
-import HeroQuotes from '../components/Shared/HeroQuotes'
-import Testimonials from '../components/Shared/Testimonials'
-import GroupSiteLink from '../components/Shared/GroupSiteLink'
+import HeroQuotes from '../components/HeroQuotes'
+import Testimonials from '../components/Testimonials'
+import GroupSiteLink from '../components/GroupSiteLink'
 
 
 const Root = (props) => (

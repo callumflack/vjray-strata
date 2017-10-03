@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import { Flex, Box } from './styled-grid'
+import { Flex, Box } from 'rebass'
 import hoc from './Shared/hoc'
 import theme from './theme'
 
@@ -8,7 +8,7 @@ import { LargeText, LineBreak } from './Shared/Text'
 import { Display, Headline, MobileSubheadline } from './Shared/Headline'
 import CoverImage from './Shared/CoverImage'
 
-import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Hero'
+import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Shared/Hero'
 import FormQuickQuote from './FormQuickQuote'
 
 

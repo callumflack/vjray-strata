@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Box } from './styled-grid';
+import { Box } from 'rebass';
 
 const Root = styled(Box)`
   overflow: hidden;

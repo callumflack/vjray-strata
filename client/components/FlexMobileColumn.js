@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import { Flex } from './styled-grid'
+import { Flex } from 'rebass'
 import theme from './theme'
 
 // ------------------------------------------

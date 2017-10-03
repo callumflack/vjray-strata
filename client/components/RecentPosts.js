@@ -8,7 +8,7 @@ import apollo from '../lib/apollo.js';
 import styled from 'styled-components';
 import theme from './theme.js';
 import hoc from './Shared/hoc';
-import { Box } from './styled-grid';
+import { Box } from 'rebass';
 import { Text } from './Shared/Text.js';
 import { Display, Headline  } from './Shared/Headline.js';
 

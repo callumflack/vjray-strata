@@ -2,9 +2,9 @@ import React from 'react'
 import Formsy, { HOC } from 'formsy-react';
 
 import gql from 'graphql-tag'
-import apollo from '../../lib/apollo.js'
+import apollo from '../lib/apollo.js'
 
-import insertGoogleTags from '../../lib/insert-google-tags.js';
+import insertGoogleTags from '../lib/insert-google-tags.js';
 
 import theme from './theme'
 import FormContainer from './Shared/FormContainer'
@@ -15,7 +15,7 @@ import {
   Textarea,
   FormGroup,
   FormGroupHeadline,
-} from '../Shared/Form';
+} from './Shared/Form';
 
 class FormQuote extends React.Component {
   constructor(props) {

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import styled, { css } from 'styled-components';
 import gql from 'graphql-tag';
 
-import apollo from '../../lib/apollo.js';
+import apollo from '../lib/apollo.js';
 import theme from './theme.js';
-import { Flex, Box } from './styled-grid'
+import { Flex, Box } from 'rebass'
 import hoc from './Shared/hoc'
 import { Text, InlineText } from './Shared/Text.js';
 import { BoxedSubheadline } from './Shared/Headline.js';
-import LaddaButton from './LaddaButton.js';
+import LaddaButton from './Shared/LaddaButton.js';
 
 
 const Form = styled.form`

@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import gql from 'graphql-tag'
 import apollo from '../../lib/apollo'
 
-import { Box, Flex } from '../../components/styled-grid'
+import { Box, Flex } from 'rebass'
 import theme from '../../components/theme'
 
 import hoc from '../../components/Shared/hoc'
@@ -14,11 +14,11 @@ import { Display, Subheadline } from '../../components/Shared/Headline'
 import { LargeText, MediumText, Text, InlineText, LineBreak } from '../../components/Shared/Text'
 
 import Block from '../../components/Shared/Block'
-import ContactAction from '../../components/Shared/ContactAction'
+import ContactAction from '../../components/ContactAction'
 import Contacts from '../../components/Shared/Contacts'
 import Footer from '../../components/Shared/Footer'
 import Header from '../../components/Shared/Header'
-import HeroFacts from '../../components/Shared/HeroFacts'
+import HeroFacts from '../../components/HeroFacts'
 
 
 const ListItemRoot = styled(Box)`

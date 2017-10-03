@@ -2,13 +2,13 @@ import React from 'react'
 import Link from 'next/link';
 
 import gql from 'graphql-tag';
-import apollo from '../../lib/apollo.js';
-import { formatDateString } from '../../lib/date.js'
+import apollo from '../lib/apollo.js';
+import { formatDateString } from '../lib/date.js'
 
 import styled from 'styled-components'
 import theme from './theme'
 
-import { Box, Flex } from './styled-grid'
+import { Box, Flex } from 'rebass'
 import Container from './Shared/Container'
 import { Subheadline } from './Shared/Headline'
 import { Text, LargeText } from './Shared/Text'

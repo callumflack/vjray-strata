@@ -1,7 +1,7 @@
 import React from 'react'
 import fetchMarkdown from '../lib/fetchMarkdown.js'
 import theme from '../components/theme.js'
-import { Box } from '../components/styled-grid'
+import { Box } from 'rebass'
 import Layout from '../components/Shared/Layout'
 import { TextBlock } from '../components/Shared/Text'
 import Header from '../components/Shared/Header'

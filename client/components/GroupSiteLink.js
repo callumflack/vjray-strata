@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import styled from 'styled-components'
-import { Flex, Box } from './styled-grid'
+import { Flex, Box } from 'rebass'
 
 import theme from './theme.js'
 import { icons } from './constants'

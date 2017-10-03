@@ -6,7 +6,7 @@ import apollo from '../lib/apollo.js';
 import { formatDateString } from '../lib/date.js';
 
 import styled from 'styled-components';
-import { Box, Flex } from '../components/styled-grid'
+import { Box, Flex } from 'rebass'
 
 import Layout from '../components/Shared/Layout.js';
 import Container from '../components/Shared/Container.js';
@@ -36,20 +36,20 @@ const Root = props => (
     <HeroFrame>
       <Box pt={[ 3, 4, 4, 5, 5 ]}>
         <Container mw='sm'>
-          <Subheadline color='brandAlt'>{formatDateString(props.data.post.createdAt)}</Subheadline>
-          <Display color='brandAlt'>{props.data.post.title}</Display>
-          <Text fontSize={[ 3, 4 ]} color='brandAlt70'>{props.data.post.description}</Text>
+          <Subheadline color='brandAlt'>{formatDateString(props.post.createdAt)}</Subheadline>
+          <Display color='brandAlt'>{props.post.title}</Display>
+          <Text fontSize={[ 3, 4 ]} color='brandAlt70'>{props.post.description}</Text>
         </Container>
 
         <Container mobileBleed mw='rg' py={[ 3, 3, 4 ]} mb={[ 0, 1 ]}>
-          <img src={props.data.post.featureImage.secure_url} />
+          <img src={props.post.featureImage.secure_url} />
         </Container>
 
       </Box>
     </HeroFrame>
 
     <Block mw='sm' pt={[0]}>
-      <TextBlock dangerouslySetInnerHTML={{ __html: props.data.post.content.html}} />
+      <TextBlock dangerouslySetInnerHTML={{ __html: props.post.content.html}} />
     </Block>
 
     <Block
@@ -94,9 +94,13 @@ class Article extends React.Component {
       }
     }`;
 
-    return await apollo.query({
+    const { data: { post } } = await apollo.query({
       query: postQuery,
     });
+
+    return {
+      post,
+    };
   }
 
   render() {

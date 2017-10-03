@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Box } from './styled-grid'
+import { Box } from 'rebass'
 import theme from './theme'
 
 // Styled-components classes get added to data-injected content divs.

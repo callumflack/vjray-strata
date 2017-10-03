@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-import { formatDateString } from '../../lib/date.js'
+import { formatDateString } from '../lib/date.js'
 
 import styled from 'styled-components'
 import theme from './theme'
-import { Flex } from './styled-grid'
+import { Flex } from 'rebass'
 import { Text, LargeText } from './Shared/Text'
 
 

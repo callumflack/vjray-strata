@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import theme from './theme.js';
-import { Box, Flex } from './styled-grid';
+import { Box, Flex } from 'rebass';
 import { Text, SmallText } from './Shared/Text';
 import CoverImage from './Shared/CoverImage'
 

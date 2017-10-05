@@ -1,3 +1,5 @@
+const site = 'strata'
+
 const contactDetails = {
     phone: '1300 073 405',
     emergencyAfterHours: '0418 245 545',
@@ -84,4 +86,4 @@ const servicesList = [{
   link: false
 }]
 
-export { icons, contactDetails, servicesIntro, servicesList }
+export { site, icons, contactDetails, servicesIntro, servicesList }

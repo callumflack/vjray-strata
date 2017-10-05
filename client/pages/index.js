@@ -23,7 +23,7 @@ import LargeButtonStyler from '../components/LargeButtonStyler'
 import HeroListening from '../components/Shared/HeroListening'
 
 import FeatureList from '../components/Shared/FeatureList'
-import HeroSydney from '../components/Shared/HeroSydney'
+import HeroSydney from '../components/Shared/HeroStrataSydney'
 import HeroQuotes from '../components/HeroQuotes'
 import Testimonials from '../components/Testimonials'
 import GroupSiteLink from '../components/GroupSiteLink'

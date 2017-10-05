@@ -1,5 +1,31 @@
 const site = 'strata'
 
+// Nav items with the label 'Home' will not be shown
+// in the desktop nav
+
+const navItems = [
+  {
+    label: 'Home',
+    href: '/',
+  },
+  {
+    label: 'Who we are',
+    href: '/who-we-are',
+  },
+  {
+    label: 'What we do for you',
+    href: '/what-we-do-for-you',
+  },
+  {
+    label: 'Useful Info',
+    href: '/useful-info',
+  },
+  {
+    label: 'Contact',
+    href: '/contact',
+  },
+]
+
 const contactDetails = {
     phone: '1300 073 405',
     emergencyAfterHours: '0418 245 545',
@@ -86,4 +112,4 @@ const servicesList = [{
   link: false
 }]
 
-export { site, icons, contactDetails, servicesIntro, servicesList }
+export { site, navItems, icons, contactDetails, servicesIntro, servicesList }

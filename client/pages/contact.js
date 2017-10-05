@@ -44,7 +44,7 @@ const Root = props => (
       <Display color='brandAlt' mb={1} children='Visit us anytime.' />
       <LargeText color='text70' children='No appointment necessary.' />
       <Box mt={0}>
-        <Contacts />
+        <Contacts pathname={props.pathname} />
         <SmallText color='text70' mt={[ 3, 4 ]}>
           Looking for the Auburn office? They aren't affiliated with us. <LineBreak mx='auto'>You can find them <Link href='http://vjrayauburn.com.au/'>here.</Link></LineBreak>
         </SmallText>

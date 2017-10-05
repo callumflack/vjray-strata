@@ -31,7 +31,7 @@ import LargeButtonStyler from '../components/LargeButtonStyler'
 import ResponsiveToggle from '../components/Shared/ResponsiveToggle'
 
 
-const Emergency = (props) => (
+const Root = props => (
   <Layout>
     <Header pathname='/contact' clear />
 
@@ -85,11 +85,26 @@ const Emergency = (props) => (
 
     <Block border textCenter>
       <ContactAction headlineColor='brandAlt' />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
 
     <Footer />
   </Layout>
 )
+
+
+class Emergency extends React.Component {
+  static async getInitialProps({ pathname }) {
+    return {
+      pathname,
+    }
+  }
+
+  render() {
+    return (
+      <Root {...this.props} />
+    )
+  }
+}
 
 export default Emergency

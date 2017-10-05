@@ -115,7 +115,7 @@ const Root = (props) => (
 
     <Block>
       <ContactAction btnColor='brandAlt' withButton />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
 
     <Footer />

@@ -26,6 +26,40 @@ const navItems = [
   },
 ]
 
+// Used in the contacts.js component
+// Each page will show the locations in listed in
+// the locations array for it's pathname
+
+const contactLocationsForPathnames = {
+  '/': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+  '/blog': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+  '/contact': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+  '/emergency': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+  '/let-us-help-you': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+  '/privacy-policy': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+  '/terms-of-use': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+  '/what-we-do-for-you': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+  '/who-we-are': {
+    locations: ['Campsie Head Office', 'Caringbah Office'],
+  },
+}
+
 const contactDetails = {
     phone: '1300 073 405',
     emergencyAfterHours: '0418 245 545',
@@ -112,4 +146,4 @@ const servicesList = [{
   link: false
 }]
 
-export { site, navItems, icons, contactDetails, servicesIntro, servicesList }
+export { site, navItems, contactLocationsForPathnames, icons, contactDetails, servicesIntro, servicesList }

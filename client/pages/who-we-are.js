@@ -72,7 +72,7 @@ const Root = props => (
 
     <Block textCenter>
       <ContactAction btnColor='brandAlt' withButton />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
     <Footer />
   </Layout>

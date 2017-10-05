@@ -68,7 +68,7 @@ const Root = props => (
 
     <Block border>
       <ContactAction btnColor='brandAlt' withButton />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
 
     <Footer />
@@ -77,7 +77,7 @@ const Root = props => (
 
 
 class Article extends React.Component {
-  static async getInitialProps({ req, query }) {
+  static async getInitialProps({ req, query, pathname }) {
     const postQuery = gql`{
       post(slug: "${query.slug}") {
         _id,
@@ -100,6 +100,7 @@ class Article extends React.Component {
 
     return {
       post,
+      pathname,
     };
   }
 

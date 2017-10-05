@@ -50,7 +50,7 @@ const Root = props => (
 
     <Block textCenter>
       <ContactAction headlineColor='brandAlt' />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
 
     <Footer />

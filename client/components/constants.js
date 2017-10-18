@@ -68,7 +68,7 @@ const contactDetails = {
     emergencyBusinessHours: '9784 7900'
 }
 
-// "Home pg features" content object
+// Home pg features list
 
 const featuresList = [{
   icon: 'experience',

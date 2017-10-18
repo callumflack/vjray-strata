@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 import theme from '../../components/theme'
 import hoc from '../../components/Shared/hoc'
-import { Box, Flex } from '../../components/styled-grid'
+import { Box, Flex } from 'rebass'
 
 import Layout from '../../components/Shared/Layout'
 import Container from '../../components/Shared/Container'
@@ -14,14 +14,14 @@ import { Text, LargeText, SmallText, LineBreak, LineBreakAll } from '../../compo
 import Block from '../../components/Shared/Block'
 import { HeroFrame } from '../../components/Shared/Hero'
 import Contacts from '../../components/Shared/Contacts'
-import ContactActionAlt from '../../components/Shared/ContactActionAlt'
+import ContactActionAlt from '../../components/ContactActionAlt'
 import Footer from '../../components/Shared/Footer'
-import Guides from '../../components/Shared/Guides'
+import Guides from '../../components/Guides'
 import Header from '../../components/Shared/Header'
-import PostContainer from '../../components/Shared/PostContainer'
-import RecentPosts from '../../components/Shared/RecentPosts'
+import PostContainer from '../../components/PostContainer'
+import RecentPosts from '../../components/RecentPosts'
 import Button from '../../components/Shared/Button'
-import LargeButtonStyler from '../../components/Shared/LargeButtonStyler'
+import LargeButtonStyler from '../../components/LargeButtonStyler'
 
 
 const StyledHeroFrame = styled(HeroFrame)`

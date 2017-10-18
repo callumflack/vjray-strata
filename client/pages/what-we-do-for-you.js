@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import theme from '../components/theme'
 import { icons, servicesIntro, servicesList } from '../components/constants'
 
-import { Flex, Box } from '../components/styled-grid'
+import { Flex, Box } from 'rebass'
 import hoc from '../components/Shared/hoc'
 
 import { LargeText, Text, TextBlock, LineBreak } from '../components/Shared/Text'
@@ -16,13 +16,13 @@ import CoverImage from '../components/Shared/CoverImage'
 import Icon from '../components/Shared/Icon';
 import Layout from '../components/Shared/Layout'
 
-import HeroWhat from '../components/Shared/HeroWhat'
+import HeroWhat from '../components/HeroWhat'
 import Block from '../components/Shared/Block'
 import Contacts from '../components/Shared/Contacts'
-import ContactAction from '../components/Shared/ContactAction'
+import ContactAction from '../components/ContactAction'
 import Footer from '../components/Shared/Footer'
 import Header from '../components/Shared/Header'
-import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import LargeButtonStyler from '../components/LargeButtonStyler'
 
 
 const ItemRoot = styled(Flex)`
@@ -99,7 +99,7 @@ const Root = (props) => (
 
     <Block textCenter>
       <ContactAction btnColor='brandAlt' withButton />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
 
     <Footer />

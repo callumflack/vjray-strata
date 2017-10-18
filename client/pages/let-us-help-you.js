@@ -6,7 +6,7 @@ import apollo from '../lib/apollo'
 import theme from '../components/theme'
 import { contactDetails } from '../components/constants'
 
-import { Box } from '../components/styled-grid'
+import { Box } from 'rebass'
 import Layout from '../components/Shared/Layout'
 import Container from '../components/Shared/Container'
 import { Display, Headline, Subheadline } from '../components/Shared/Headline'
@@ -16,8 +16,8 @@ import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
 import { FormHeader } from '../components/Shared/Form.js'
-import FormQuote from '../components/Shared/FormQuote'
-import ContactAction from '../components/Shared/ContactAction'
+import FormQuote from '../components/FormQuote'
+import ContactAction from '../components/ContactAction'
 import Contacts from '../components/Shared/Contacts'
 
 
@@ -50,7 +50,7 @@ const Root = props => (
 
     <Block textCenter>
       <ContactAction headlineColor='brandAlt' />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
 
     <Footer />

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 
 import styled from 'styled-components'
-import { Flex, Box } from '../components/styled-grid'
+import { Flex, Box } from 'rebass'
 import hoc from '../components/Shared/hoc'
 import theme from '../components/theme'
 
@@ -15,25 +15,32 @@ import { Display, Headline, Subheadline, HeadlineMeta } from '../components/Shar
 import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
-import Guides from '../components/Shared/Guides'
-import RecentPosts from '../components/Shared/RecentPosts'
-import ContactAction from '../components/Shared/ContactAction'
+import Guides from '../components/Guides'
+import RecentPosts from '../components/RecentPosts'
+import ContactAction from '../components/ContactAction'
 import Contacts from '../components/Shared/Contacts'
-import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import LargeButtonStyler from '../components/LargeButtonStyler'
 import HeroListening from '../components/Shared/HeroListening'
 
 import FeatureList from '../components/Shared/FeatureList'
-import HeroSydney from '../components/Shared/HeroSydney'
-import HeroQuotes from '../components/Shared/HeroQuotes'
-import Testimonials from '../components/Shared/Testimonials'
-import GroupSiteLink from '../components/Shared/GroupSiteLink'
+import HeroSydney from '../components/Shared/HeroStrataSydney'
+import HeroQuotes from '../components/HeroQuotes'
+import Testimonials from '../components/Testimonials'
+import GroupSiteLink from '../components/GroupSiteLink'
+import FormQuickQuote from '../components/FormQuickQuote'
 
 
 const Root = (props) => (
   <Layout>
     <Header pathname={props.pathname} clear />
 
-    <HeroListening />
+    <HeroListening
+      headline='Skip the hassle of <LineBreak>Strata Management.</LineBreak>'
+      subheadline='At VJ Ray Strata, we understand how valuable your peace of mind is.'
+    >
+      <FormQuickQuote />
+    </HeroListening>
+
 
     <Block mw='rg' textCenter>
       <Box mx='auto' width={[ 1, 1, 5/6 ]}>
@@ -46,7 +53,10 @@ const Root = (props) => (
       <FeatureList />
     </Block>
 
-    <HeroSydney />
+    <HeroSydney
+      headline="We help make Sydney <LineBreak bp='1' m='auto'>strata living great.</LineBreak>"
+      subheadline="We know that our job is much more that just looking after buildings. Its the people that matter. <Link href='/who-we-are'><a>Read about who we are.</a></Link>"
+    />
 
     <HeroQuotes>
       <Box px={3} py={[ 4, 4, 5, 5, 6 ]} style={{ position: 'relative' }}>
@@ -92,7 +102,10 @@ const Root = (props) => (
         <Guides featured limit={3} />
       </Box>
 
-      <Subheadline mt={4}>
+      <Container mt={4} mw='sm'>
+
+      </Container>
+      <Subheadline>
         <Link href={`/`} as={`/home`}><a>Recent posts</a></Link>
       </Subheadline>
       <RecentPosts />
@@ -102,7 +115,7 @@ const Root = (props) => (
 
     <Block>
       <ContactAction btnColor='brandAlt' withButton />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
 
     <Footer />

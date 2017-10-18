@@ -6,7 +6,7 @@ import fetchMarkdown from '../lib/fetchMarkdown.js'
 
 import styled from 'styled-components'
 import theme from '../components/theme'
-import { Flex, Box } from '../components/styled-grid'
+import { Flex, Box } from 'rebass'
 import hoc from '../components/Shared/hoc'
 
 import { Text, TextBlock, DangerouslyResetTextBlock, LineBreak } from '../components/Shared/Text'
@@ -18,12 +18,12 @@ import Footer from '../components/Shared/Footer'
 import Container from '../components/Shared/Container'
 import Block from '../components/Shared/Block'
 
-import HeroWho from '../components/Shared/HeroWho'
+import HeroWho from '../components/HeroWho'
 import CoverImage from '../components/Shared/CoverImage'
 import Button from '../components/Shared/Button'
-import ContactAction from '../components/Shared/ContactAction'
+import ContactAction from '../components/ContactAction'
 import Contacts from '../components/Shared/Contacts'
-import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import LargeButtonStyler from '../components/LargeButtonStyler'
 
 
 
@@ -72,7 +72,7 @@ const Root = props => (
 
     <Block textCenter>
       <ContactAction btnColor='brandAlt' withButton />
-      <Contacts />
+      <Contacts pathname={props.pathname} />
     </Block>
     <Footer />
   </Layout>

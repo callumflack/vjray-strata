@@ -8,7 +8,7 @@ import { contactDetails } from '../components/constants'
 
 import theme from '../components/theme'
 import styled, { css } from 'styled-components'
-import { Flex, Box } from '../components/styled-grid'
+import { Flex, Box } from 'rebass'
 
 import Layout from '../components/Shared/Layout'
 import Container from '../components/Shared/Container'
@@ -20,14 +20,14 @@ import Button from '../components/Shared/Button'
 import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import Block from '../components/Shared/Block'
-import HeroContact from '../components/Shared/HeroContact'
+import HeroContact from '../components/HeroContact'
 import FormContact from '../components/Shared/FormContact'
 import FormIssue from '../components/Shared/FormIssue'
 import { FormHeader } from '../components/Shared/Form.js'
 import { Tabs, Pane } from '../components/Shared/Tabs.js'
-import ContactActionAlt from '../components/Shared/ContactActionAlt'
+import ContactActionAlt from '../components/ContactActionAlt'
 import Contacts from '../components/Shared/Contacts'
-import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import LargeButtonStyler from '../components/LargeButtonStyler'
 
 
 
@@ -44,7 +44,7 @@ const Root = props => (
       <Display color='brandAlt' mb={1} children='Visit us anytime.' />
       <LargeText color='text70' children='No appointment necessary.' />
       <Box mt={0}>
-        <Contacts />
+        <Contacts pathname={props.pathname} />
         <SmallText color='text70' mt={[ 3, 4 ]}>
           Looking for the Auburn office? They aren't affiliated with us. <LineBreak mx='auto'>You can find them <Link href='http://vjrayauburn.com.au/'>here.</Link></LineBreak>
         </SmallText>

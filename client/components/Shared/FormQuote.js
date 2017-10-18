@@ -23,7 +23,7 @@ class FormQuote extends React.Component {
   async submit(model) {
     dataLayer.push({
       pageTitle: this.props.pageTitle,
-      formTitle: 'Contact',
+      formTitle: 'Quote',
       event: 'formSubmitted',
     });
 

@@ -103,7 +103,7 @@ const SuccessMessage = styled.div`
 `;
 
 
-class QuickQuoteForm extends React.Component {
+class FormQuickQuote extends React.Component {
   constructor(props) {
     super(props);
 
@@ -232,8 +232,8 @@ class QuickQuoteForm extends React.Component {
   }
 }
 
-QuickQuoteForm.propTypes = {
+FormQuickQuote.propTypes = {
   pageTitle: PropTypes.string.isRequired,
 };
 
-export default QuickQuoteForm;
+export default FormQuickQuote;

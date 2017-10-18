@@ -102,10 +102,7 @@ const Root = (props) => (
         <Guides featured limit={3} />
       </Box>
 
-      <Container mt={4} mw='sm'>
-
-      </Container>
-      <Subheadline>
+      <Subheadline mt={4}>
         <Link href={`/`} as={`/home`}><a>Recent posts</a></Link>
       </Subheadline>
       <RecentPosts />

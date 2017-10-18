@@ -13,8 +13,6 @@ export default class MyDocument extends Document {
             dataLayer = [];
           </script>
           <script src="/static/js/google-tag-manager.js" />
-          <script src="/static/js/google-phone-call-tracking.js" />
-
           <title>My page</title>
           <style dangerouslySetInnerHTML={{ __html: styleTags }} />
         </Head>

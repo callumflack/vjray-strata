@@ -9,11 +9,11 @@ const navItems = [
     href: '/',
   },
   {
-    label: 'Who we are',
+    label: 'Who We Are',
     href: '/who-we-are',
   },
   {
-    label: 'What we do for you',
+    label: 'What We Do For You',
     href: '/what-we-do-for-you',
   },
   {
@@ -60,11 +60,35 @@ const contactLocationsForPathnames = {
   },
 }
 
+// Site contacts
+
 const contactDetails = {
     phone: '1300 073 405',
     emergencyAfterHours: '0418 245 545',
     emergencyBusinessHours: '9784 7900'
 }
+
+// "Home pg features" content object
+
+const featuresList = [{
+  icon: 'experience',
+  headline: "Over 55 years young",
+  lede: 'We\'ve pretty much seen it all, so we know how to solve it.',
+}, {
+  icon: 'lockin',
+  headline: 'No lock-in contracts',
+  lede: 'Stay because you\'re happy, not because you\'re stuck with us.',
+}, {
+  icon: 'emergency',
+  headline: "Open 6 days a week",
+  lede: 'We\'re open Saturdays, because not everyone has time in work hours.',
+}, {
+  icon: 'emergency',
+  headline: "24/7 emergency contact",
+  lede: "Emergencies happen. Speak to one of our senior staff anytime.",
+}]
+
+// Emergency pg list
 
 const emergencyList = [{
   headline: 'Is it due to a natural disaster?',
@@ -146,4 +170,13 @@ const servicesList = [{
   link: false
 }]
 
-export { site, navItems, contactLocationsForPathnames, icons, contactDetails, servicesIntro, servicesList }
+export { 
+  site, 
+  navItems, 
+  contactLocationsForPathnames, 
+  contactDetails, 
+  featuresList,
+  icons, 
+  servicesIntro, 
+  servicesList 
+}

@@ -121,12 +121,12 @@ const Headline = props =>
 
 // Meta Headline
 const HeadlineMetaBaseStyles = {
-    color: 'text',
-    font: 'textMedium',
-    fontSize: [ 0, 0, 1 ],
-    letterSpacing: 'meta',
-    lineHeight: 'display',
-    uppercase: 'true'
+  color: 'text',
+  font: 'textMedium',
+  fontSize: [ 0, 0, 1 ],
+  letterSpacing: 'meta',
+  lineHeight: 'display',
+  uppercase: 'true'
 }
 
 const HeadlineMeta = props =>

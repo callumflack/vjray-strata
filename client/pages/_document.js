@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <script src='/static/js/google-tag-manager.js'></script>
-          <script src='/static/js/google-calls.js'></script>
+          <script src='/static/js/google-phone-call-tracking.js'></script>
 
           <title>My page</title>
           <style dangerouslySetInnerHTML={{ __html: styleTags }} />

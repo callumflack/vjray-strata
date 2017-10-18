@@ -4,8 +4,6 @@ import Formsy, { HOC } from 'formsy-react';
 import gql from 'graphql-tag'
 import apollo from '../../lib/apollo.js'
 
-import insertGoogleTags from '../../lib/insert-google-tags.js';
-
 import theme from '../theme'
 import FormContainer from '../Shared/FormContainer'
 import {
@@ -31,17 +29,6 @@ class FormQuote extends React.Component {
       },
       body: JSON.stringify(model),
     });
-
-    insertGoogleTags(document, `
-      /* <![CDATA[ */
-      var google_conversion_id = 1049342091;
-      var google_conversion_language = "en";
-      var google_conversion_format = "3";
-      var google_conversion_color = "ffffff";
-      var google_conversion_label = "sKdhCN_pv3UQi-Gu9AM";
-      var google_remarketing_only = false;
-      /* ]]> */
-    `);
   }
 
   render() {

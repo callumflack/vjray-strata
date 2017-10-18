@@ -17,6 +17,8 @@ export default class MyDocument extends Document {
           <style dangerouslySetInnerHTML={{ __html: styleTags }} />
         </Head>
         <body>
+          <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNFDHLZ" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`}} />
+
           <div className="root">{main}</div>
           <NextScript />
         </body>

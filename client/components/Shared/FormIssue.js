@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Formsy, { HOC } from 'formsy-react';
 import styled, { css } from 'styled-components'
 

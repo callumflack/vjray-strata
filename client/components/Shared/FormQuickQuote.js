@@ -1,9 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import styled, { css } from 'styled-components';
-import gql from 'graphql-tag';
 
-import apollo from '../../lib/apollo.js';
 import theme from '../theme.js';
 import { Flex, Box } from '../styled-grid'
 import hoc from '../Shared/hoc'
@@ -149,6 +148,12 @@ class QuickQuoteForm extends React.Component {
       loading: true,
     });
 
+    dataLayer.push({
+      pageTitle: this.props.pageTitle,
+      formTitle: 'Quick Quote',
+      event: 'formSubmitted',
+    });
+
     const response = await fetch('https://formspree.io/xgaewyjx', {
       method: 'POST',
       headers: {
@@ -226,5 +231,9 @@ class QuickQuoteForm extends React.Component {
     );
   }
 }
+
+QuickQuoteForm.propTypes = {
+  pageTitle: PropTypes.string.isRequired,
+};
 
 export default QuickQuoteForm;

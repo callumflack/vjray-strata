@@ -1,8 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Formsy, { HOC } from 'formsy-react';
-
-import gql from 'graphql-tag'
-import apollo from '../../lib/apollo.js'
 
 import theme from '../theme'
 import FormContainer from '../Shared/FormContainer'
@@ -18,9 +16,17 @@ import {
 class FormQuote extends React.Component {
   constructor(props) {
     super(props);
+
+    this.submit = this.submit.bind(this);
   }
 
   async submit(model) {
+    dataLayer.push({
+      pageTitle: this.props.pageTitle,
+      formTitle: 'Contact',
+      event: 'formSubmitted',
+    });
+
     const response = await fetch('https://formspree.io/xgaewyjx', {
       method: 'POST',
       headers: {
@@ -103,5 +109,9 @@ class FormQuote extends React.Component {
     );
   }
 }
+
+FormQuote.propTypes = {
+  pageTitle: PropTypes.string.isRequired,
+};
 
 export default FormQuote;

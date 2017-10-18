@@ -9,6 +9,7 @@ export default class MyDocument extends Document {
 
     return <html>
         <Head>
+          {/* Initialize dataLayer array for google tag manager */}
           <script>
             dataLayer = [];
           </script>

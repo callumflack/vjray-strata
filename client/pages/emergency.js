@@ -1,9 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 
-import gql from 'graphql-tag'
-import apollo from '../lib/apollo'
-
 import { contactDetails } from '../components/constants'
 
 import theme from '../components/theme'
@@ -12,7 +9,6 @@ import { Flex, Box } from '../components/styled-grid'
 
 import Layout from '../components/Shared/Layout'
 import Container from '../components/Shared/Container'
-import CoverImage from '../components/Shared/CoverImage'
 import { Display, Headline, Subheadline, HeadlineMeta } from '../components/Shared/Headline'
 import { Text, SmallText, LargeText, LineBreak, LineBreakAll } from '../components/Shared/Text'
 import Button from '../components/Shared/Button'
@@ -21,10 +17,6 @@ import Header from '../components/Shared/Header'
 import Footer from '../components/Shared/Footer'
 import HeroEmergency from '../components/Shared/HeroEmergency'
 import Block from '../components/Shared/Block'
-import FormContact from '../components/Shared/FormContact'
-import FormIssue from '../components/Shared/FormIssue'
-import { FormHeader } from '../components/Shared/Form.js'
-import { Tabs, Pane } from '../components/Shared/Tabs.js'
 import ContactAction from '../components/Shared/ContactAction'
 import Contacts from '../components/Shared/Contacts'
 import LargeButtonStyler from '../components/Shared/LargeButtonStyler'

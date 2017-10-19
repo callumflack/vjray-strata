@@ -149,8 +149,7 @@ class FormQuickQuote extends React.Component {
     });
 
     dataLayer.push({
-      pageTitle: this.props.pageTitle,
-      formTitle: 'Quick Quote',
+      formTitle: 'Quote',
       event: 'formSubmitted',
     });
 

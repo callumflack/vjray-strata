@@ -23,7 +23,6 @@ class FormContact extends React.Component {
 
   async submit(model) {
     dataLayer.push({
-      pageTitle: this.props.pageTitle,
       formTitle: 'Contact',
       event: 'formSubmitted',
     });

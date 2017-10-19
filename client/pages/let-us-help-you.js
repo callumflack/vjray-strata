@@ -44,7 +44,7 @@ const Root = props => (
 
       <Box mw='sm' mt={[3, 4]}>
         <FormHeader bg='brand' color='white' children='Fast quote form' />
-        <FormQuote pageTitle='Let us help you'/>
+        <FormQuote />
       </Box>
     </Block>
 

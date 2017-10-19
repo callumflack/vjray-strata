@@ -49,7 +49,7 @@ const HeroListening = () => (
       </HeroFlex>
     </HeroContainer>
 
-    <FormQuickQuote pageTitle='Home' />
+    <FormQuickQuote />
   </StyledHeroBox>
 );
 

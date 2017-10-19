@@ -96,7 +96,7 @@ class ContactPage extends React.Component {
     const tabs = [{
       _id: 0,
       name: 'Quick response',
-      content: <FormContact pageTitle='Contact' />
+      content: <FormContact />
     }, {
       _id: 1,
       name: 'Report an issue',

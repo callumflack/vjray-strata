@@ -92,6 +92,10 @@ const Button = styled.button`
     border-radius: 5px;
   `}
 
+  ${props => props.noRadius && css`
+    border-radius: 0;
+  `}
+
   ${props => props.invertLegible && css`
     background-color: rgba(255,255,255,0.4);
 

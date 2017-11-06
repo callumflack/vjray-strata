@@ -47,6 +47,13 @@ const servicesIntro = 'We do everything you’d expect: arrange meetings, collec
 
 const servicesList = [{
   icon: 'emergency',
+  headline: 'Routine repairs',
+  text: 'This is a line about our routine repairs system that is a very good reason to use VJ Ray Strata.',
+  link: false,
+  buttonUrl: "/contact?form=report#contact-forms",
+  buttonLabel: 'Report an issue'
+}, {
+  icon: 'emergency',
   headline: 'After-hours emergencies',
   text: 'We know that emergencies don’t just happen during office hours. And rather than just leave you with the phone number for a message service we have our most senior staff on call to help you with emergency repairs, whenever they occur.',
   link: false,
@@ -56,7 +63,9 @@ const servicesList = [{
   icon: 'contents',
   headline: 'Contents insurance',
   text: 'Many owners and residents aren’t aware that damage to their furniture and possessions is not covered by the buildings insurance. That’s why we help with arranging contents insurance too. And depending on which company the building is insured with, there can be considerable savings by reducing insurances excess amounts.',
-  link: false
+  link: false,
+  buttonUrl: "/what-we-do-for-you/contents-insurance",
+  buttonLabel: 'Read more'
 }, {
   icon: 'bylaw',
   headline: 'By-law registration',

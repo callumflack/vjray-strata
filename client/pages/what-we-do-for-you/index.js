@@ -2,27 +2,26 @@ import React from 'react'
 import Link from 'next/link'
 
 import styled from 'styled-components'
-import theme from '../components/theme'
-import { icons, servicesIntro, servicesList } from '../components/constants'
+import theme from '../../components/theme'
+import { Flex, Box } from '../../components/styled-grid'
+import hoc from '../../components/Shared/hoc'
 
-import { Flex, Box } from '../components/styled-grid'
-import hoc from '../components/Shared/hoc'
+import { LargeText, Text, TextBlock, LineBreak } from '../../components/Shared/Text'
+import { Display, Headline, Subheadline, MobileSubheadline, HeadlineMeta } from '../../components/Shared/Headline'
+import Button from '../../components/Shared/Button'
+import Container from '../../components/Shared/Container'
+import CoverImage from '../../components/Shared/CoverImage'
+import Icon from '../../components/Shared/Icon';
+import Layout from '../../components/Shared/Layout'
 
-import { LargeText, Text, TextBlock, LineBreak } from '../components/Shared/Text'
-import { Display, Headline, Subheadline, MobileSubheadline, HeadlineMeta } from '../components/Shared/Headline'
-import Button from '../components/Shared/Button'
-import Container from '../components/Shared/Container'
-import CoverImage from '../components/Shared/CoverImage'
-import Icon from '../components/Shared/Icon';
-import Layout from '../components/Shared/Layout'
-
-import HeroWhat from '../components/Shared/HeroWhat'
-import Block from '../components/Shared/Block'
-import Contacts from '../components/Shared/Contacts'
-import ContactAction from '../components/Shared/ContactAction'
-import Footer from '../components/Shared/Footer'
-import Header from '../components/Shared/Header'
-import LargeButtonStyler from '../components/Shared/LargeButtonStyler'
+import HeroWhat from '../../components/Shared/HeroWhat'
+import Block from '../../components/Shared/Block'
+import Contacts from '../../components/Shared/Contacts'
+import ContactAction from '../../components/Shared/ContactAction'
+import Footer from '../../components/Shared/Footer'
+import Header from '../../components/Shared/Header'
+import LargeButtonStyler from '../../components/Shared/LargeButtonStyler'
+import { icons, servicesIntro, servicesList } from "../../components/constants";
 
 
 const ItemRoot = styled(Flex)`

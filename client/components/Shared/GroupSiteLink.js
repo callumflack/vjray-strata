@@ -1,30 +1,37 @@
-import Link from 'next/link';
+import Link from "next/link";
+import styled from "styled-components";
+import { Flex, Box } from "../styled-grid";
+import theme from "../theme";
+import { icons } from "../constants";
+import hoc from "../Shared/hoc";
+import Container from "../Shared/Container";
+import { Headline } from "../Shared/Headline";
+import {
+  Text,
+  SmallText,
+  LargeText,
+  LineBreak,
+  LineBreakMax,
+  LineBreakAll
+} from "../Shared/Text";
+import Icon from "../Shared/Icon";
+import LargeButtonStyler from "../Shared/LargeButtonStyler";
+import Button from "../Shared/Button";
+import Block from "./Block";
 
-import styled from 'styled-components'
-import { Flex, Box } from '../styled-grid'
+const StyledIcon = props => <Icon color="brand" size="100" icon={props.icon} />;
 
-import theme from '../theme'
-import { icons } from '../constants'
+const StyledHeading = props => (
+  <Headline color="brand" font="displayMedium" {...props} />
+);
 
-import hoc from '../Shared/hoc'
-import Container from '../Shared/Container'
-import { Headline } from '../Shared/Headline'
-import { Text, SmallText, LargeText, LineBreak, LineBreakMax, LineBreakAll } from '../Shared/Text'
-import Icon from '../Shared/Icon';
-import LargeButtonStyler from '../Shared/LargeButtonStyler';
-import Button from '../Shared/Button';
-import Block from './Block';
-
-
-const StyledIcon = (props) => <Icon color='brand' size='100' icon={ props.icon } />
-
-const StyledHeading = (props) => <Headline color='brand' font='displayMedium' {...props} />
-
-const StyledText = props => <Text color="text70" mx="auto" w={[1, 10 / 12]} {...props} />;
+const StyledText = props => (
+  <Text color="text70" mx="auto" w={[1, 10 / 12]} {...props} />
+);
 
 const GroupSiteLink = () => (
   <Block bg="beige" mw="sm" textCenter pt={[2, 3, 4]} pb={[3, 4, 5]}>
-    <StyledIcon icon={icons.service} />
+    <StyledIcon icon={icons.sun} />
     <StyledHeading>Already a customer?</StyledHeading>
     <StyledText>Here's a few helpful links.</StyledText>
     <LargeButtonStyler color="white" mt={3} mb={4}>

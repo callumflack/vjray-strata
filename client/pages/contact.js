@@ -17,12 +17,12 @@ import {
   Headline,
   Subheadline,
   MobileSubheadline,
-  HeadlineMeta
+  HeadlineMeta,
 } from "../components/Shared/Headline";
 import {
   LargeText,
   SmallText,
-  PrimaryButtonText
+  PrimaryButtonText,
 } from "../components/Shared/Texts";
 import LineBreak from "../components/Shared/LineBreak";
 import { Button } from "../components/Shared/Buttons";
@@ -38,8 +38,8 @@ import ContactForms from "../components/Shared/ContactForms";
 
 import FormContact from "../components/Shared/FormContact";
 import FormIssue from "../components/Shared/FormIssue";
-import { FormHeader } from "../components/Shared/Form.js";
-import { Tabs, Pane } from "../components/Shared/Tabs.js";
+import { FormHeader } from "../components/Shared/Form";
+import { Tabs, Pane } from "../components/Shared/Tabs";
 import ContactActionAlt from "../components/ContactActionAlt";
 import LargeButtonStyler from "../components/LargeButtonStyler";
 
@@ -122,7 +122,7 @@ class ContactPage extends React.Component {
   static async getInitialProps({ pathname, query }) {
     return {
       pathname,
-      defaultForm: query.form
+      defaultForm: query.form,
     };
   }
 
@@ -131,13 +131,13 @@ class ContactPage extends React.Component {
       {
         _id: 0,
         name: "Quick response",
-        content: <FormContact />
+        content: <FormContact />,
       },
       {
         _id: 1,
         name: "Report an issue",
-        content: <FormIssue />
-      }
+        content: <FormIssue />,
+      },
     ];
 
     return <Root pathname={this.props.pathname} tabs={tabs} {...this.props} />;

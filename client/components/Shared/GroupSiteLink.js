@@ -35,18 +35,18 @@ const GroupSiteLink = () => (
     <StyledHeading>Already a customer?</StyledHeading>
     <StyledText>Here's a few helpful links.</StyledText>
     <LargeButtonStyler color="white" mt={3} mb={4}>
-      <Link href="/portal">
-        <Button large icon bgColor="brand" children="Your portal" />
+      <Link
+        href="https://www.lookatmystrata.com.au/212825/Login/Logon"
+        passHref
+      >
+        <a>
+          <Button large icon bgColor="brand" children="Your portal" />
+        </a>
       </Link>
-      <Link href="/portal">
-        <Button
-          large
-          invert
-          noRadius
-          icon
-          color="brand"
-          children="Pay by DEFT"
-        />
+      <Link href="https://www.deft.com.au/" passHref>
+        <a>
+          <Button large invert icon color="brand" children="Pay by DEFT" />
+        </a>
       </Link>
     </LargeButtonStyler>
 

@@ -1,40 +1,50 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
-import styled from 'styled-components'
-import theme from '../../components/theme'
-import { Flex, Box } from '../../components/styled-grid'
-import hoc from '../../components/Shared/hoc'
+import styled from "styled-components";
+import theme from "../../components/theme";
+import { Flex, Box } from "../../components/styled-grid";
+import hoc from "../../components/Sharedy/hoc";
 
-import { LargeText, Text, TextBlock, LineBreak } from '../../components/Shared/Text'
-import { Display, Headline, Subheadline, MobileSubheadline, HeadlineMeta } from '../../components/Shared/Headline'
-import Button from '../../components/Shared/Button'
-import Container from '../../components/Shared/Container'
-import CoverImage from '../../components/Shared/CoverImage'
-import Icon from '../../components/Shared/Icon';
-import Layout from '../../components/Shared/Layout'
+import {
+  LargeText,
+  Text,
+  TextBlock,
+  LineBreak
+} from "../../components/Sharedy/Text";
+import {
+  Display,
+  Headline,
+  Subheadline,
+  MobileSubheadline,
+  HeadlineMeta
+} from "../../components/Sharedy/Headline";
+import Button from "../../components/Sharedy/Button";
+import Container from "../../components/Sharedy/Container";
+import CoverImage from "../../components/Sharedy/CoverImage";
+import Icon from "../../components/Sharedy/Icon";
+import Layout from "../../components/Sharedy/Layout";
 
-import HeroWhat from '../../components/Shared/HeroWhat'
-import Block from '../../components/Shared/Block'
-import Contacts from '../../components/Shared/Contacts'
-import ContactAction from '../../components/Shared/ContactAction'
-import Footer from '../../components/Shared/Footer'
-import Header from '../../components/Shared/Header'
-import LargeButtonStyler from '../../components/Shared/LargeButtonStyler'
+import HeroWhat from "../../components/Sharedy/HeroWhat";
+import Block from "../../components/Sharedy/Block";
+import Contacts from "../../components/Sharedy/Contacts";
+import ContactAction from "../../components/Sharedy/ContactAction";
+import Footer from "../../components/Sharedy/Footer";
+import Header from "../../components/Sharedy/Header";
+import LargeButtonStyler from "../../components/Sharedy/LargeButtonStyler";
 import { icons, servicesIntro, servicesList } from "../../components/constants";
-
 
 const ItemRoot = styled(Flex)`
   &:last-child {
     margin-bottom: 0;
   }
-`
+`;
 
 const ItemIcon = styled(Icon)`
   @media (min-width: 768px) {
     transform: translateY(-20px);
   }
-`
+`;
 
 const Root = props => (
   <Layout>
@@ -66,12 +76,12 @@ const Root = props => (
 class ContentsInsurancePage extends React.Component {
   static async getInitialProps({ pathname }) {
     return {
-      pathname,
-    }
+      pathname
+    };
   }
   render() {
-    return <Root pathname={this.props.pathname} />
+    return <Root pathname={this.props.pathname} />;
   }
 }
 
-export default ContentsInsurancePage
+export default ContentsInsurancePage;

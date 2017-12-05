@@ -1,0 +1,8 @@
+{
+  "name": "vjray-strata",
+  "alias": ["vjraystrata.com.au", "www.vjraystrata.com.au"],
+  "env": {
+    "NODE_ENV": "production",
+    "SERVER_URI": "@vjr_server_uri"
+  }
+}

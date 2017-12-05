@@ -84,9 +84,7 @@ const servicesList = [
     headline: "Contents insurance",
     text:
       "Many owners and residents aren’t aware that damage to their furniture and possessions is not covered by the buildings insurance. That’s why we help with arranging contents insurance too. And depending on which company the building is insured with, there can be considerable savings by reducing insurances excess amounts.",
-    link: false,
-    buttonUrl: "/what-we-do-for-you/contents-insurance",
-    buttonLabel: "Read more"
+    link: false
   },
   {
     icon: "bylaw",

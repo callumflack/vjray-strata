@@ -1,21 +1,15 @@
-import React from 'react';
-import styled from 'styled-components'
-import { Flex, Box } from 'rebass'
-import hoc from './Shared/hoc'
-import theme from './theme'
-
-import { LargeText, LineBreak } from './Shared/Text'
-import { Display, Headline, MobileSubheadline } from './Shared/Headline'
-import CoverImage from './Shared/CoverImage'
-
-import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from './Shared/Hero'
-import FormQuickQuote from './FormQuickQuote'
-
+import React from "react";
+import styled from "styled-components";
+import theme from "./theme-new";
+import { LineBreak } from "./Shared/Text";
+import { Display, MobileSubheadline } from "./Shared/Headline";
+import CoverImage from "./Shared/CoverImage";
+import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from "./Shared/Hero";
 
 const StyledHeroBox = styled(HeroBox)`
   --Hero-height: ${theme.blockHeights.superHero} !important;
   --Hero-height-mobile: ${theme.blockHeights.hero} !important;
-  background-color: #4F90C8;
+  background-color: #4f90c8;
   background-image: initial;
 
   &:after {
@@ -34,22 +28,26 @@ const StyledHeroBox = styled(HeroBox)`
       background-color: rgba(255, 255, 255, 0.25);
     }
   }
-`
+`;
 
 const HeroWho = props => (
   <StyledHeroBox>
-    <CoverImage who src='http://res.cloudinary.com/pw-img-cdn/image/upload/v1503646409/hero-who_lfwht2.jpg' />
-    <HeroContainer mw='lg' w={1}>
-      <HeroFlex style={{ zIndex: '1' }}>
-        <HeroTitleBox w={[ 7/12, 5/6, 6/12, 2/3 ]} mb={[ 4, 5, 5 ]}>
-          <MobileSubheadline color='brandAlt' children='About us' />
-          <Display color='brandAlt'>
-            We believe in better <LineBreak>Strata Management </LineBreak><LineBreak>for Sydney.</LineBreak>
+    <CoverImage
+      who
+      src="http://res.cloudinary.com/pw-img-cdn/image/upload/v1503646409/hero-who_lfwht2.jpg"
+    />
+    <HeroContainer mw="lg" w={1}>
+      <HeroFlex style={{ zIndex: "1" }}>
+        <HeroTitleBox w={[7 / 12, 5 / 6, 6 / 12, 2 / 3]} mb={[4, 5, 5]}>
+          <MobileSubheadline color="brandAlt" children="About us" />
+          <Display color="brandAlt">
+            We believe in better <LineBreak>Strata Management </LineBreak>
+            <LineBreak>for Sydney.</LineBreak>
           </Display>
         </HeroTitleBox>
       </HeroFlex>
     </HeroContainer>
   </StyledHeroBox>
-)
+);
 
-export default HeroWho
+export default HeroWho;

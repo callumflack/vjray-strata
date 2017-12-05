@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
-import { Flex } from 'rebass'
-import theme from './theme'
+import PropTypes from "prop-types";
+import styled, { css } from "styled-components";
+import { Flex } from "rebass";
+import theme from "./theme";
 
 // ------------------------------------------
 // This can be removed as we can now use
@@ -9,7 +9,7 @@ import theme from './theme'
 // ------------------------------------------
 
 // {$props => props.retainCellOrder && css`
-//   @media (max-width: ${theme.containers.sm}) {
+//   @media (max-width: ${theme.breakpoints[1]}em) {
 //     div + div {
 //       margin-top: ${theme.space[4]}px;
 //     }
@@ -19,21 +19,23 @@ import theme from './theme'
 const FlexMobileColumn = styled(Flex)`
   flex-direction: column;
 
-  @media (min-width: ${theme.containers.sm}) {
+  @media (min-width: ${theme.breakpoints[1]}em) {
     flex-direction: row;
   }
 
-  ${props => props.reverseShadow && css`
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  `}
-`
+  ${props =>
+    props.reverseShadow &&
+    css`
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    `};
+`;
 
 FlexMobileColumn.propTypes = {
   reverseShadow: PropTypes.bool,
-}
+};
 
 FlexMobileColumn.defaultProps = {
   reverseShadow: false,
-}
+};
 
-export default FlexMobileColumn
+export default FlexMobileColumn;

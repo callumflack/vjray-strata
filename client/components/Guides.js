@@ -1,34 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'next/link';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "next/link";
+import gql from "graphql-tag";
+import styled from "styled-components";
+import { Box, Flex } from "rebass";
 
-import gql from 'graphql-tag';
-import apollo from '../lib/apollo.js';
+import apollo from "../lib/apollo";
+import { SmallText } from "./Shared/Texts";
+import Button from "./Shared/Buttons";
+import { IconDownload } from "./Shared/Icons";
+import BoxReset from "./Legacy/BoxReset";
+import ImageWithShadow from "./ImageWithShadow";
 
-import theme from './theme.js';
-import styled from 'styled-components';
-import { Box, Flex } from 'rebass';
-import { Text, SmallText } from './Shared/Text.js';
-import Button from './Shared/Button'
-import { IconDownload } from './Shared/Icons'
-
-import BoxReset from './BoxReset'
-import ImageWithShadow from './ImageWithShadow'
-
-
-const GuideButton = (props) => (
+const GuideButton = props => (
   <SmallText
-    align='center'
-    font='textRegular'
-    letterSpacing='button'
+    align="center"
+    font="textRegular"
+    letterSpacing="button"
     mt={3}
     noUnderline
   >
     <Link href={`${props.guide.file.url}`}>
       <a>
-        <Button clean color='white'>
+        <Button clean color="white">
           {props.icon && <IconDownload bottom mr={1} />}
-          {props.guide.title || 'Download'}
+          {props.guide.title || "Download"}
         </Button>
       </a>
     </Link>
@@ -36,16 +32,16 @@ const GuideButton = (props) => (
 );
 
 // Box or BoxReset?
-const Root = (props) => (
+const Root = props => (
   <div>
-      <Flex
-        direction={!props.primary && [ 'column', 'row' ]}
-        justify='center'
-        mx={-2}>
-        {props.children}
-      </Flex>
-      <BoxReset>
-    </BoxReset>
+    <Flex
+      direction={!props.primary && ["column", "row"]}
+      justify="center"
+      mx={-2}
+    >
+      {props.children}
+    </Flex>
+    <BoxReset />
   </div>
 );
 
@@ -55,22 +51,24 @@ const StyledBox = styled(Box)`
       margin-top: 3rem;
     }
   }
-`
+`;
 
 const StyledLink = styled(Box)`
   border: 1px solid rgba(0, 0, 0, 0.05);
-`
+`;
 
 // {props.buttons && (
 //   <GuideButton guide={guide} icon={props.icon} />
 // )}
 
-const Guides = (props) => (
+const Guides = props => (
   <Root primary={props.primary}>
-    {props.guides.map((guide, i) =>
+    {props.guides.map((guide, i) => (
       <StyledBox
-        width={props.primary ? [8/12, 1/2, 8/12] : [8/12, 1/2, 5/12 ]}
-        mx={['auto', 0]}
+        width={
+          props.primary ? [8 / 12, 1 / 2, 8 / 12] : [8 / 12, 1 / 2, 5 / 12]
+        }
+        mx={["auto", 0]}
         px={2}
         key={guide._id}
       >
@@ -81,9 +79,8 @@ const Guides = (props) => (
             </a>
           </Link>
         </StyledLink>
-
       </StyledBox>
-    )}
+    ))}
   </Root>
 );
 
@@ -120,7 +117,7 @@ class GuidesContainer extends React.Component {
   }
 
   render() {
-    return <Guides guides={this.state.guides} {...this.props} />
+    return <Guides guides={this.state.guides} {...this.props} />;
   }
 }
 
@@ -142,6 +139,4 @@ GuidesContainer.defaultProps = {
 
 export default GuidesContainer;
 
-export {
-  GuideButton,
-};
+export { GuideButton };

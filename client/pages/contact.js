@@ -1,47 +1,21 @@
 import React from "react";
 import Link from "next/link";
-
 import gql from "graphql-tag";
 import apollo from "../lib/apollo";
 
-import { contactDetails } from "../components/constants";
-import theme from "../components/theme";
-import styled, { css } from "styled-components";
-import { Flex, Box } from "rebass";
-
 import Layout from "../components/Shared/Layout";
-import Container from "../components/Shared/Container";
-import CoverImage from "../components/Shared/CoverImage";
-import {
-  Display,
-  Headline,
-  Subheadline,
-  MobileSubheadline,
-  HeadlineMeta,
-} from "../components/Shared/Headline";
-import {
-  LargeText,
-  SmallText,
-  PrimaryButtonText,
-} from "../components/Shared/Texts";
+import { SmallText, PrimaryButtonText } from "../components/Shared/Texts";
 import LineBreak from "../components/Shared/LineBreak";
 import { Button } from "../components/Shared/Buttons";
-
 import Header from "../components/Shared/Header";
 import Footer from "../components/Shared/Footer";
 import Block from "../components/Shared/Block";
 import HeroBlock from "../components/Shared/HeroBlock";
 import HGroup from "../components/Shared/HGroup";
-
 import Contacts from "../components/Shared/Contacts";
 import ContactForms from "../components/Shared/ContactForms";
-
 import FormContact from "../components/Shared/FormContact";
 import FormIssue from "../components/Shared/FormIssue";
-import { FormHeader } from "../components/Shared/Form";
-import { Tabs, Pane } from "../components/Shared/Tabs";
-import ContactActionAlt from "../components/ContactActionAlt";
-import LargeButtonStyler from "../components/LargeButtonStyler";
 
 const Root = props => (
   <Layout>
@@ -49,11 +23,11 @@ const Root = props => (
 
     <HeroBlock
       bluegreyGradientBg
-      img="http://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png"
+      img="https://res.cloudinary.com/pw-img-cdn/image/upload/v1503618861/hero-contact-_awgf0r.png"
     >
       <HGroup
         title="How can we help make your Strata living easier?"
-        titleColor="text"
+        titleColor="brandAlt"
         titleFamily="displayMedium"
         text="Visit, call or write to us 24/7."
         textColor="text70"
@@ -63,7 +37,7 @@ const Root = props => (
     <Block
       maxWidth="38em"
       title="Visit us anytime."
-      titleColor="brand"
+      titleColor="brandAlt"
       text="No appointment needed."
       noBottomPadding
     >
@@ -80,7 +54,7 @@ const Root = props => (
       id="contact-forms"
       maxWidth="38em"
       title="Write to us."
-      titleColor="brand"
+      titleColor="brandAlt"
       text="We'll respond quick smart."
       noBottomPadding
     >
@@ -90,14 +64,16 @@ const Root = props => (
     <Block
       id="emergencies"
       title="Is it a Strata emergency?"
-      titleColor="brand"
+      titleColor="brandAlt"
       text="Go to our after-hours Strata repairs."
     >
-      <a href="https://vjraystrata.com.au/emergency">
-        <PrimaryButtonText center>
-          <Button icon bg="brand" children="Emergencies" />
-        </PrimaryButtonText>
-      </a>
+      <Link href="/emergency" prefetch passHref>
+        <a>
+          <PrimaryButtonText center>
+            <Button icon bg="brand" children="Emergencies" />
+          </PrimaryButtonText>
+        </a>
+      </Link>
     </Block>
 
     <Block
@@ -105,13 +81,15 @@ const Root = props => (
       maxWidth="38em"
       subhead="Learn more"
       title="Skip the hassle of Strata Management"
-      titleColor="text"
+      titleColor="brand"
     >
-      <a href="let-us-help-you">
-        <PrimaryButtonText center>
-          <Button icon bg="brand" children="Get a fast quote" />
-        </PrimaryButtonText>
-      </a>
+      <Link href="/let-us-help-you" prefetch passHref>
+        <a>
+          <PrimaryButtonText center>
+            <Button icon bg="brand" children="Get a fast quote" />
+          </PrimaryButtonText>
+        </a>
+      </Link>
     </Block>
 
     <Footer />

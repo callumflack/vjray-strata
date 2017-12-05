@@ -1,110 +1,154 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
-import gql from 'graphql-tag'
-import apollo from '../lib/apollo'
+import { contactDetails } from "../components/constants";
+import Layout from "../components/Shared/Layout";
+import { Text, LargeText, PrimaryButtonText } from "../components/Shared/Texts";
+import LineBreak from "../components/Shared/LineBreak";
+import ButtonOutline from "../components/Shared/Buttons";
+import Header from "../components/Shared/Header";
+import Footer from "../components/Shared/Footer";
+import HeroBlock from "../components/Shared/HeroBlock";
+import HGroup from "../components/Shared/HGroup";
+import Block from "../components/Shared/Block";
 
-import { contactDetails } from '../components/constants'
-
-import theme from '../components/theme'
-import styled, { css } from 'styled-components'
-import { Flex, Box } from 'rebass'
-
-import Layout from '../components/Shared/Layout'
-import Container from '../components/Shared/Container'
-import CoverImage from '../components/Shared/CoverImage'
-import { Display, Headline, Subheadline, HeadlineMeta } from '../components/Shared/Headline'
-import { Text, SmallText, LargeText, LineBreak, LineBreakAll } from '../components/Shared/Text'
-import Button from '../components/Shared/Button'
-
-import Header from '../components/Shared/Header'
-import Footer from '../components/Shared/Footer'
-import HeroEmergency from '../components/HeroEmergency'
-import Block from '../components/Shared/Block'
-import FormContact from '../components/Shared/FormContact'
-import FormIssue from '../components/Shared/FormIssue'
-import { FormHeader } from '../components/Shared/Form.js'
-import { Tabs, Pane } from '../components/Shared/Tabs.js'
-import ContactAction from '../components/ContactAction'
-import Contacts from '../components/Shared/Contacts'
-import LargeButtonStyler from '../components/LargeButtonStyler'
-import ResponsiveToggle from '../components/Shared/ResponsiveToggle'
-
+// prettier-ignore
+const EmergencyItem = props => (
+  <div>
+    <LargeText family="displayMedium" mb={1}>
+      {props.heading}
+    </LargeText>
+    <Text mb={4} color="text70">
+      {props.text}
+      {props.link && !props.button && (
+        <Link href={props.link}>
+          <a>{props.linkLabel}</a>
+        </Link>
+      )}
+    </Text>
+    {/* {props.button && (
+      <PrimaryButtonText color="white" align="left" mt={2} mb={4}>
+        <Link href={props.link} prefetch passHref>
+          <a>
+            <ButtonOutline brandBg icon color="brand">
+              {props.linkLabel}
+            </ButtonOutline>
+          </a>
+        </Link>
+      </PrimaryButtonText>
+    )} */}
+    {props.afterText && (
+      <Text mb={4} color="text70">
+        {props.afterText}
+      </Text>
+    )}
+  </div>
+);
 
 const Root = props => (
   <Layout>
-    <Header pathname='/contact' clear />
+    <Header pathname="/contact" clear />
 
-    <HeroEmergency />
+    <HeroBlock
+      bluegreyGradientBg
+      img="https://res.cloudinary.com/pw-img-cdn/image/upload/v1504161478/hero-emegency_dtjyhz.png"
+    >
+      <HGroup
+        title={
+          <span>
+            It happens.&nbsp;
+            <LineBreak>We&apos;re prepared.</LineBreak>
+          </span>
+        }
+        titleColor="brandAlt"
+        titleFamily="displayMedium"
+        text={
+          <span>
+            At VJ Ray Strata,&nbsp;
+            <LineBreak break={["inline", "block"]}>
+              we&apos;ll sort it for you.
+            </LineBreak>
+          </span>
+        }
+        textColor="text70"
+      />
+    </HeroBlock>
 
-    <Block mw='sm'>
+    <Block maxWidth="38em">
+      <EmergencyItem
+        heading="Is it due to a natural disaster?"
+        text="In the case of a natural disaster such as a major storm or flood, please
+        contact the NSW State Emergency Service on "
+        link="tel:132-500"
+        linkLabel="132 500"
+      />
 
-      <LargeText font='displayMedium' mb={1} children='Is it due to a natural disaster?' />
-      <Text mb={4} color='text70'>
-        In the case of a natural disaster such as a major storm or flood, please contact the NSW State Emergency Service on <Link href="tel:132-500"><a>132 500</a></Link>.
-      </Text>
+      <EmergencyItem
+        heading="Is it a rental property?"
+        text="If your repair relates to a property that you are renting through one of
+        our offices, please go to the "
+        link="http://www.vjray.com.au/"
+        linkLabel="VJ Ray Group website"
+      />
 
-      <LargeText font='displayMedium' mb={1} children='Is it a rental property?' />
-      <Text mb={2} color='text70'>
-        If your repair relates to a property that you are renting through one of our offices, please go to the <Link href="http://www.vjray.com.au/"><a>VJ Ray Group website</a></Link>.
-      </Text>
-      <Text mb={4} color='text70'>
-        If you are renting your property through another agent, other than VJ Ray you should report the problem directly to your rental agent.
-      </Text>
+      <EmergencyItem
+        heading="Is it a non-urgent issue?"
+        text="For non-urgent repairs please report the issue with the following link: "
+        link="/contact?form=report#contact-forms"
+        linkLabel="Report an issue"
+        button
+      />
 
-      <LargeText font='displayMedium' mb={1} children='Is it a non-urgent issue?' />
-      <Text color='text70'>
-        For non-urgent repairs please report the issue with the following link:
-      </Text>
-      <LargeButtonStyler color='white' align='left' mt={2} mb={4}>
-        <Link href='/contact?form=report#contact-forms'>
-          <Button icon color='brand' bgColor='transparent' children='Report an issue' />
-        </Link>
-      </LargeButtonStyler>
+      <EmergencyItem
+        heading="Is it within business hours?"
+        text="If your repair is urgent and the time is currently office hours, please
+        contact us by calling "
+        link={`tel:${contactDetails.emergencyBusinessHours}`}
+        linkLabel="${contactDetails.emergencyBusinessHours}"
+        afterText="Please don't rely on an email for an urgent repair as your strata
+        manager may not see the email in time to contact the relevant repairer."
+      />
 
-      <LargeText font='displayMedium' mb={1} children='Is it within business hours?' />
-      <Text color='text70' mb={2}>
-        If your repair is urgent and the time is currently office hours, please contact us by calling <Link href={'tel:' + contactDetails.emergencyBusinessHours}><a>{contactDetails.emergencyBusinessHours}</a></Link>.
-      </Text>
-      <Text color='text70' mb={4}>
-        Please don't rely on an email for an urgent repair as your strata manager may not see the email in time to contact the relevant repairer.
-      </Text>
+      <EmergencyItem
+        heading="Is it after-hours?"
+        text="Remember, our business hours include Saturdays until 4pm (2pm at our
+        Carringbah office). For after-hours emergency repairs only, contact our
+        director Mike Pollard on "
+        link={`tel:${contactDetails.emergencyAfterHours}`}
+        linkLabel="${contactDetails.emergencyAfterHours}"
+        afterText="Additional charges will apply."
+      />
 
-      <LargeText font='displayMedium' mb={1} children='Is it after-hours?' />
-      <Text color='text70'>
-        Remember, our business hours include Saturdays until 4pm (2pm at our Carringbah office). For after-hours emergency repairs only, contact our director Mike Pollard on <Link href={'tel:' + contactDetails.emergencyAfterHours}><a>{contactDetails.emergencyAfterHours}</a></Link>. Additional charges will apply.
-      </Text>
-      <ResponsiveToggle hideAtDesktop>
-        <LargeButtonStyler color='white' align='left' mt={2}>
-          <Link href={'tel:' + contactDetails.emergencyAfterHours}>
-            <a><Button icon color='brand' bgColor='transparent' children='Call after-hours' /></a>
+      {/* <ResponsiveToggle hideAtDesktop>
+        <LargeButtonStyler color="white" align="left" mt={2}>
+          <Link href={`tel:${contactDetails.emergencyAfterHours}`}>
+            <a>
+              <Button
+                icon
+                color="brand"
+                bgColor="transparent"
+                children="Call after-hours"
+              />
+            </a>
           </Link>
         </LargeButtonStyler>
-      </ResponsiveToggle>
-    </Block>
-
-    <Block border textCenter>
-      <ContactAction headlineColor='brandAlt' />
-      <Contacts pathname={props.pathname} />
+      </ResponsiveToggle> */}
     </Block>
 
     <Footer />
   </Layout>
-)
-
+);
 
 class Emergency extends React.Component {
   static async getInitialProps({ pathname }) {
     return {
       pathname,
-    }
+    };
   }
 
   render() {
-    return (
-      <Root {...this.props} />
-    )
+    return <Root {...this.props} />;
   }
 }
 
-export default Emergency
+export default Emergency;

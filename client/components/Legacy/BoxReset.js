@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
-import { Box } from 'rebass'
-import theme from './theme'
+import styled, { css } from "styled-components";
+import { Box } from "rebass";
+import theme from "./theme";
 
 // Styled-components classes get added to data-injected content divs.
 // This component overrides these classes.
@@ -16,8 +16,8 @@ const BoxReset = styled(Box)`
     width: 100% !important;
   }
 
-  @media (min-width: ${theme.containers.sm}) {
+  @media (min-width: ${theme.breakpoints[1]}em) {
   }
-`
+`;
 
-export default BoxReset
+export default BoxReset;

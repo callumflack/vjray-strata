@@ -71,9 +71,7 @@ const Form = styled(Formsy.Form)`
   }
 `;
 
-const FormHeader = props => (
-  <BoxedSubheadline bg="brandAlt" color="white" {...props} />
-);
+const FormHeader = props => <BoxedSubheadline bg="brandAlt" color="white" {...props} />;
 
 const FormGroup = styled.div`
   & + & {
@@ -109,6 +107,7 @@ class InputRoot extends React.Component {
         <input
           onChange={e => this.props.setValue(e.target.value)}
           placeholder={this.props.placeholder}
+          type={this.props.type}
         />
         <ErrorMessage>{this.props.getErrorMessage()}</ErrorMessage>
       </div>

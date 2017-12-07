@@ -37,6 +37,14 @@ class FormIssue extends React.Component {
     return (
       <FormContainer submit={this.submit}>
         <FormGroup>
+          <FormGroupHeadline>Your details (Required)</FormGroupHeadline>
+
+          {/* Formspree filters */}
+          <div style={{ display: "none" }}>
+            <Input type="text" name="_gotcha" value="" />
+          </div>
+          <Input type="hidden" name="_subject" value="Strata website issue submission" />
+
           <Input placeholder="Your name*" name="name" required />
           <Input
             placeholder="Your email*"
@@ -52,12 +60,6 @@ class FormIssue extends React.Component {
             required
           />
           <Textarea placeholder="Please describe your issue…" name="comments" rows="7" />
-          {/* Formspree filters */}
-          <div style={{ display: "none" }}>
-            <Input type="text" name="_gotcha" value="" />
-          </div>
-          <Input type="hidden" name="_subject" value="Strata website issue submission" />
-          />
         </FormGroup>
       </FormContainer>
     );

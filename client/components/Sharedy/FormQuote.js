@@ -43,6 +43,16 @@ class FormQuote extends React.Component {
           <FormGroup>
             <FormGroupHeadline>Your details (Required)</FormGroupHeadline>
 
+            {/* Formspree filters */}
+            <div style={{ display: "none" }}>
+              <Input type="text" name="_gotcha" value="" />
+            </div>
+            <Input
+              type="hidden"
+              name="_subject"
+              value="Strata website new business submission"
+            />
+
             <Input placeholder="Your name" name="name" required />
             <Input
               placeholder="Your email"
@@ -77,16 +87,6 @@ class FormQuote extends React.Component {
               required
             />
           </FormGroup>
-
-          {/* Formspree filters */}
-          <div style={{ display: "none" }}>
-            <Input type="text" name="_gotcha" value="" />
-          </div>
-          <Input
-            type="hidden"
-            name="_subject"
-            value="Strata website new business submission"
-          />
         </div>
       </FormContainer>
     );

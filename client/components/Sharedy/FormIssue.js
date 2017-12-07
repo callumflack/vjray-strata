@@ -41,12 +41,8 @@ class FormIssue extends React.Component {
           <Input
             placeholder="Your email*"
             name="email"
-            validations={{
-              isEmail: true
-            }}
-            validationErrors={{
-              isEmail: "Not a valid email"
-            }}
+            validations={{ isEmail: true }}
+            validationErrors={{ isEmail: "Not a valid email" }}
             required
           />
           <Input
@@ -55,18 +51,12 @@ class FormIssue extends React.Component {
             validations="isExisty"
             required
           />
-          <Textarea
-            placeholder="Please describe your issue…"
-            name="comments"
-            rows="7"
-          />
-
+          <Textarea placeholder="Please describe your issue…" name="comments" rows="7" />
           {/* Formspree filters */}
-          <input type="text" name="_gotcha" style={{ display: "none" }} />
-          <input
-            type="hidden"
-            name="_subject"
-            value="Strata website issue submission"
+          <div style={{ display: "none" }}>
+            <Input type="text" name="_gotcha" value="" />
+          </div>
+          <Input type="hidden" name="_subject" value="Strata website issue submission" />
           />
         </FormGroup>
       </FormContainer>

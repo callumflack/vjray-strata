@@ -14,8 +14,8 @@ const Form = styled.form`
   --Header-height: 48px;
   background-color: #fff;
   bottom: var(--Header-height);
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.09),
-    0 6px 30px 5px rgba(0, 0, 0, 0.06), 0 8px 10px -5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.09), 0 6px 30px 5px rgba(0, 0, 0, 0.06),
+    0 8px 10px -5px rgba(0, 0, 0, 0.15);
   display: none;
   left: 50%;
   position: absolute;
@@ -120,10 +120,8 @@ class FormQuickQuote extends React.Component {
 
   componentDidMount() {
     const formElement = ReactDOM.findDOMNode(this);
-    const formOffsetYRelativeToDocument = formElement.getBoundingClientRect()
-      .top;
-    const windowOffsetY =
-      window.pageYOffset || document.documentElement.scrollTop;
+    const formOffsetYRelativeToDocument = formElement.getBoundingClientRect().top;
+    const windowOffsetY = window.pageYOffset || document.documentElement.scrollTop;
     this.formRenderPosition = formOffsetYRelativeToDocument + windowOffsetY;
 
     this.updateFormPosition();
@@ -205,8 +203,10 @@ class FormQuickQuote extends React.Component {
             />
 
             {/* Formspree filters */}
-            <input type="text" name="_gotcha" style={{ display: "none" }} />
-            <input
+            <div style={{ display: "none" }}>
+              <Input type="text" name="_gotcha" value="" />
+            </div>
+            <Input
               type="hidden"
               name="_subject"
               value="Strata website new business submission"

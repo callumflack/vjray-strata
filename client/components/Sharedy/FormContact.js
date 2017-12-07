@@ -46,12 +46,8 @@ class FormContact extends React.Component {
           <Input
             placeholder="Your email*"
             name="email"
-            validations={{
-              isEmail: true
-            }}
-            validationErrors={{
-              isEmail: "Not a valid email"
-            }}
+            validations={{ isEmail: true }}
+            validationErrors={{ isEmail: "Not a valid email" }}
             required
           />
           <Input
@@ -63,8 +59,10 @@ class FormContact extends React.Component {
           <Textarea placeholder="Add your comments…" name="comments" rows="7" />
 
           {/* Formspree filters */}
-          <input type="text" name="_gotcha" style={{ display: "none" }} />
-          <input
+          <div style={{ display: "none" }}>
+            <Input type="text" name="_gotcha" value="" />
+          </div>
+          <Input
             type="hidden"
             name="_subject"
             value="Strata website contact submission"

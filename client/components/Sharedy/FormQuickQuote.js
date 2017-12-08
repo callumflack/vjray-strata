@@ -151,8 +151,6 @@ class FormQuickQuote extends React.Component {
       event: "formSubmitted"
     });
 
-    console.log(this.state);
-
     const response = await fetch("https://formspree.io/xgaewyjx", {
       method: "POST",
       headers: {

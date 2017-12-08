@@ -151,6 +151,8 @@ class FormQuickQuote extends React.Component {
       event: "formSubmitted"
     });
 
+    console.log(this.state);
+
     const response = await fetch("https://formspree.io/xgaewyjx", {
       method: "POST",
       headers: {
@@ -159,7 +161,10 @@ class FormQuickQuote extends React.Component {
       },
       body: JSON.stringify({
         name: this.state.name,
-        phoneNumber: this.state.phoneNumber
+        phoneNumber: this.state.phoneNumber,
+        /* Formspree filters */
+        _subject: "Strata website new business submission",
+        _gotcha: "",
       })
     });
 
@@ -200,16 +205,6 @@ class FormQuickQuote extends React.Component {
               placeholder="Your phone number"
               name="phoneNumber"
               onChange={this.handleChange}
-            />
-
-            {/* Formspree filters */}
-            <div style={{ display: "none" }}>
-              <Input type="text" name="_gotcha" value="" />
-            </div>
-            <Input
-              type="hidden"
-              name="_subject"
-              value="Strata website new business submission"
             />
 
             <ButtonText

@@ -12,7 +12,7 @@ import Image from "./Image";
 import { HeroBox, HeroContainer, HeroFlex, HeroTitleBox } from "./Hero";
 import FormQuickQuote from "./FormQuickQuote";
 
-const StyledHeroBox = styled(HeroBox)`
+const StyledHeroBox = styled(HeroBox) `
   background-color: ${theme.colors.beige};
 
   @media (max-width: 512px) {
@@ -51,8 +51,6 @@ const HeroListening = () => (
         </HeroTitleBox>
       </HeroFlex>
     </HeroContainer>
-
-    <FormQuickQuote />
   </StyledHeroBox>
 );
 

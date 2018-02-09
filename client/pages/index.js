@@ -53,7 +53,6 @@ const Root = props => (
         <Headline
           font="displayMedium"
           color="text"
-          mt={[0, 4, 4]}
           mb={2}
           children="It all adds up to a better deal."
         />

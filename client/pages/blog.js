@@ -55,9 +55,7 @@ const Root = props => (
     </HeroFrame>
 
     <Block mw="sm" pt={[0]}>
-      <TextBlock
-        dangerouslySetInnerHTML={{ __html: props.data.post.content.html }}
-      />
+      <TextBlock dangerouslySetInnerHTML={{ __html: props.data.post.content.html }} />
     </Block>
 
     <Block mw="sm" pt={[0, 0]} textCenter>
@@ -70,7 +68,7 @@ const Root = props => (
       />
       <LargeButtonStyler>
         <Link href="/useful-info">
-          <Button large icon bgColor="brand" children="useful info" />
+          <Button large icon="true" bgColor="brand" children="useful info" />
         </Link>
       </LargeButtonStyler>
     </Block>

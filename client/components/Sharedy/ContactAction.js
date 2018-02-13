@@ -11,7 +11,7 @@ import Button from "../Sharedy/Button";
 import Container from "../Sharedy/Container";
 import LargeButtonStyler from "./LargeButtonStyler";
 
-const Root = styled(Box)`
+const Root = styled(Box) `
   text-align: center;
 `;
 
@@ -29,7 +29,7 @@ const ContactAction = props => (
           <Link href="/let-us-help-you">
             <Button
               large
-              icon
+              icon="true"
               bgColor={props.btnColor}
               children="Get a fast quote"
             />

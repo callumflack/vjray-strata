@@ -443,7 +443,7 @@ class Header extends React.Component {
                 <Link href="/let-us-help-you">
                   <a>
                     <Text align="left" font="textRegular" mt={1}>
-                      <StyledButton invert icon children="Get a fast quote" />
+                      <StyledButton invert icon="true" children="Get a fast quote" />
                     </Text>
                   </a>
                 </Link>

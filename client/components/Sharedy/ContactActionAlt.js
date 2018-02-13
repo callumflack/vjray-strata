@@ -15,7 +15,7 @@ import { LineBreakAll } from "../Sharedy/Text";
 import Button from "../Sharedy/Button";
 import LargeButtonStyler from "./LargeButtonStyler";
 
-const Root = styled(Box)`
+const Root = styled(Box) `
   text-align: center;
 `;
 
@@ -30,7 +30,7 @@ const ContactActionAlt = props => (
       <Link href="/let-us-help-you">
         <Button
           large
-          icon
+          icon="true"
           bgColor={props.btnColor}
           children="Get a fast quote"
         />

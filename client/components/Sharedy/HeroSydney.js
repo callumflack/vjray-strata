@@ -14,7 +14,7 @@ import Button from "../Sharedy/Button.js";
 import { FlexEmbed } from "../Sharedy/FlexEmbed.js";
 import CoverImage from "../Sharedy/CoverImage";
 
-const Root = styled(Box)`
+const Root = styled(Box) `
   height: 80vh;
 
   @media (max-height: 736px) {
@@ -172,7 +172,7 @@ class SydneyBox extends React.Component {
                 color="brandAlt"
                 bg="white"
                 invert
-                icon
+                icon="true"
                 onClick={this.openModal}
                 children="Watch video"
               />

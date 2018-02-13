@@ -20,12 +20,7 @@ import {
   MobileSubheadline,
   HeadlineMeta
 } from "../components/Sharedy/Headline";
-import {
-  Text,
-  SmallText,
-  LargeText,
-  LineBreak
-} from "../components/Sharedy/Text";
+import { Text, SmallText, LargeText, LineBreak } from "../components/Sharedy/Text";
 import Button from "../components/Sharedy/Button";
 
 import Header from "../components/Sharedy/Header";
@@ -53,8 +48,7 @@ const Root = props => (
         <SmallText color="text70" mt={[3, 4]}>
           Looking for the Auburn office? They aren't affiliated with us.{" "}
           <LineBreak mx="auto">
-            You can find them{" "}
-            <Link href="http://vjrayauburn.com.au/">here.</Link>
+            You can find them <Link href="http://vjrayauburn.com.au/">here.</Link>
           </LineBreak>
         </SmallText>
       </Box>
@@ -84,7 +78,7 @@ const Root = props => (
       </LargeText>
       <LargeButtonStyler>
         <Link href="/emergency">
-          <Button large icon bgColor="brand" children="Emergencies" />
+          <Button large icon="true" bgColor="brand" children="Emergencies" />
         </Link>
       </LargeButtonStyler>
     </Block>

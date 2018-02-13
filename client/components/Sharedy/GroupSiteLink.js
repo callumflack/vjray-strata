@@ -35,17 +35,14 @@ const GroupSiteLink = () => (
     <StyledHeading>Already a customer?</StyledHeading>
     <StyledText>Here's a few helpful links.</StyledText>
     <LargeButtonStyler color="white" mt={3} mb={4}>
-      <Link
-        href="https://www.lookatmystrata.com.au/212825/Login/Logon"
-        passHref
-      >
+      <Link href="https://www.lookatmystrata.com.au/212825/Login/Logon" passHref>
         <a>
-          <Button large icon bgColor="brand" children="Your portal" />
+          <Button large icon="true" bgColor="brand" children="Your portal" />
         </a>
       </Link>
       <Link href="https://www.deft.com.au/" passHref>
         <a>
-          <Button large invert icon color="brand" children="Pay by DEFT" />
+          <Button large invert icon="true" color="brand" children="Pay by DEFT" />
         </a>
       </Link>
     </LargeButtonStyler>
@@ -56,8 +53,7 @@ const GroupSiteLink = () => (
       <LineBreakAll mx="auto" children="Strata Management?" />
     </StyledHeading>
     <StyledText>
-      We offer full spectrum Real Estate Management services. Find out more on
-      our&nbsp;
+      We offer full spectrum Real Estate Management services. Find out more on our&nbsp;
       <Link href="http://www.vjray.com.au/">
         <a>Group website.</a>
       </Link>

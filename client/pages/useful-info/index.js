@@ -81,13 +81,12 @@ const Root = props => (
                 Your guides to <LineBreakAll>Sydney Strata.</LineBreakAll>
               </Display>
               <LargeText color="brandAlt70">
-                Download your complete{" "}
-                <LineBreak>guide to Strata living.</LineBreak>
+                Download your complete <LineBreak>guide to Strata living.</LineBreak>
               </LargeText>
             </Box>
 
             <Box width={[1, 9 / 12]} pt={[3, 0]}>
-              <Guides primary buttons icon />
+              <Guides primary buttons icon="true" />
             </Box>
           </Flex>
         </Container>
@@ -95,12 +94,7 @@ const Root = props => (
         <Rule mw="rg" my={[3, 4]} />
 
         <Container textCenter pb={[2, 3]}>
-          <Subheadline
-            color=""
-            mt={[1, 2]}
-            mb={[3, 4]}
-            children="All our guides"
-          />
+          <Subheadline color="" mt={[1, 2]} mb={[3, 4]} children="All our guides" />
           <Guides buttons />
         </Container>
 
@@ -109,12 +103,12 @@ const Root = props => (
         <Container mw="sm" textCenter>
           <Subheadline mt={[1, 2]} children="Forms and fact sheets" />
           <LargeText color="brandAlt" mt={[1, 2]} mb={3}>
-            Need a form or a fact? Here's all our readily available PDF
-            downloads to manage your Strata.
+            Need a form or a fact? Here's all our readily available PDF downloads to
+            manage your Strata.
           </LargeText>
           <LargeButtonStyler>
             <Link href="/useful-info/forms-and-fact-sheets">
-              <Button large icon bgColor="brandAlt" children="See the list" />
+              <Button large icon="true" bgColor="brandAlt" children="See the list" />
             </Link>
           </LargeButtonStyler>
         </Container>

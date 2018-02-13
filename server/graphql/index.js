@@ -22,6 +22,14 @@ const Schema = `
     url: String,
   }
 
+  type Testimonial {
+    _id: String!,
+    name: String,
+    quote: String,
+    location: String,
+    createdAt: String,
+  }
+
   type Guide {
     _id: String!,
     title: String,
@@ -54,6 +62,7 @@ const Schema = `
     guides(limit: Int, primary: Boolean, featured: Boolean): [Guide],
     page(page: String!): Page,
     pdfSheets(type: String!): [PdfSheet],
+    testimonials(limit: Int, featured: Boolean): [Testimonial],
   }
 
   type Quote {

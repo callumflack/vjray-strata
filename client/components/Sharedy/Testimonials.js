@@ -1,3 +1,7 @@
+import React from "react";
+import PropTypes from "prop-types";
+import gql from "graphql-tag";
+import apollo from "../../lib/apollo.js";
 import styled from "styled-components";
 import theme from "../theme.js";
 import { Box, Flex } from "../styled-grid";
@@ -39,74 +43,79 @@ const Image = styled.img`
   display: inline-block;
 `;
 
-const testimonialList = [
-  {
-    name: "Jean",
-    quote:
-      "We are happy with everything. Can't think of a change currently. Thanks guys, you are terrific.",
-    location: "Picnic Point"
-  },
-  {
-    name: "Andrew",
-    quote: "Nothing but great service and friendly staff.",
-    location: "Campsie"
-  },
-  {
-    name: "Neil",
-    quote: "Extremely happy with the service that is given to our complex.",
-    location: "Caringbah"
-  },
-  {
-    name: "Daniel & Ruth",
-    quote:
-      "Love dealing with Sueallen. She responds immediately and organises what is needed or requested straight away.",
-    location: "Caringbah"
-  },
-  {
-    name: "Linda & Terry",
-    quote:
-      "You guys are very quick to respond and handle things efficiently — no complaints here.",
-    location: "Jindabyne"
-  }
-];
-
-const Testimonial = props => (
-  <StyledFlex justify="center" column>
-    <Quote color="text">{props.testimonial.quote}</Quote>
-    <StyledBox mb={[0, 1]} ml={[3, 4]}>
-      <QuoteTriangle>
-        <svg
-          width="30"
-          height="30"
-          viewBox="0 0 30 30"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <polygon
-            fill="currentColor"
-            points="28.59 0 1 27.59 1 0 0 0 0 30 30 0 28.59 0"
-          />
-          <polygon fill="white" points="1 0 1 27.59 28.59 0 1 0" />
-        </svg>
-      </QuoteTriangle>
-    </StyledBox>
-
-    <Box ml={[3, 4]}>
-      <Flex justify="flex-end" column>
-        <SmallText font="textMedium" color="brandAlt">
-          {props.testimonial.name}
-        </SmallText>
-        <SmallText color="brandAlt">{props.testimonial.location}</SmallText>
-      </Flex>
-    </Box>
-  </StyledFlex>
-);
-
 const Testimonials = props => (
-  <Flex justify="center" wrap>
-    {testimonialList.map((testimonial, i) => (
-      <Testimonial testimonial={testimonial} key={i} />
+  <Flex justify="center" wrap="true">
+    {props.testimonials.map((testimonial, i) => (
+      <StyledFlex justify="center" column key={testimonial._id}>
+        <Quote color="text">{testimonial.quote}</Quote>
+        <StyledBox mb={[0, 1]} ml={[3, 4]}>
+          <QuoteTriangle>
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                fill="currentColor"
+                points="28.59 0 1 27.59 1 0 0 0 0 30 30 0 28.59 0"
+              />
+              <polygon fill="white" points="1 0 1 27.59 28.59 0 1 0" />
+            </svg>
+          </QuoteTriangle>
+        </StyledBox>
+        <Box ml={[3, 4]}>
+          <Flex justify="flex-end" column>
+            <SmallText font="textMedium" color="brandAlt">
+              {testimonial.name}
+            </SmallText>
+            <SmallText color="brandAlt">{testimonial.location}</SmallText>
+          </Flex>
+        </Box>
+      </StyledFlex>
     ))}
   </Flex>
 );
 
-export default Testimonials;
+class TestimonialsContainer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      testimonials: []
+    };
+  }
+
+  async componentDidMount() {
+    const query = gql`{
+      testimonials(
+        featured: ${this.props.featured},
+        limit: ${this.props.limit}
+      ) {
+        _id,
+        name,
+        quote,
+        location
+      }
+    }`;
+
+    const { data: { testimonials } } = await apollo.query({ query });
+    this.setState({ testimonials });
+  }
+
+  render() {
+    return <Testimonials testimonials={this.state.testimonials} {...this.props} />;
+  }
+}
+
+TestimonialsContainer.propTypes = {
+  featured: PropTypes.bool,
+  limit: PropTypes.number
+};
+
+TestimonialsContainer.defaultProps = {
+  featured: true,
+  limit: 5
+};
+
+export default TestimonialsContainer;

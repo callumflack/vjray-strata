@@ -59,7 +59,7 @@ const Root = props => (
         <LargeText color="text70">
           "You guys are very quick to respond and handle things efficiently, no
           complaints here!"<LineBreak m="auto">
-            <AuthorText>— Linda & Terry, Caringbah</AuthorText>
+            <AuthorText>— Linda &amp; Terry, Caringbah</AuthorText>
           </LineBreak>
         </LargeText>
       </Box>
@@ -77,8 +77,8 @@ const Root = props => (
           {/* width={[ 1, 9/12, 9/12, 7/12 ]} */}
           <Box w={[1, 1, 8 / 12]} mx="auto">
             <LargeText color="text70">
-              "I have known and been happy with VJ Ray for years. I cannot fault
-              you. Thank you!"{" "}
+              "I have known and been happy with VJ Ray for years. I cannot fault you.
+              Thank you!"{" "}
               <LineBreakAll mx="auto">
                 <AuthorText>— Petrania, Belmore</AuthorText>
               </LineBreakAll>
@@ -89,7 +89,7 @@ const Root = props => (
                   color="brand"
                   bg="white"
                   invert
-                  icon
+                  icon="true"
                   children="What we do for you"
                 />
               </Link>
@@ -98,18 +98,14 @@ const Root = props => (
         </Container>
 
         <Container mw="lg" pt={[3, 4]}>
-          <Testimonials />
+          <Testimonials limit={5} />
         </Container>
       </Box>
     </HeroQuotes>
 
     <Block textCenter>
       <Subheadline children="Info on the go" />
-      <Display
-        color="brandAlt"
-        mb={3}
-        children="Your guides to Sydney Strata."
-      />
+      <Display color="brandAlt" mb={3} children="Your guides to Sydney Strata." />
       <Text color="text70" mx="auto" width={[1, 2 / 3, 2 / 3, 1 / 2]}>
         We've got guides and articles to help your Strata Management.{" "}
         <Link href="/useful-info">

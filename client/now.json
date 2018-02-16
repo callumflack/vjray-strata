@@ -1,8 +1,8 @@
 {
-  "name": "vjray-strata",
+  "name": "vjray-strata-client",
   "alias": ["vjraystrata.com.au", "www.vjraystrata.com.au"],
   "env": {
     "NODE_ENV": "production",
-    "SERVER_URI": "@vjr_server_uri"
+    "SERVER_URI": "@vjrstrata_test_uri"
   }
 }

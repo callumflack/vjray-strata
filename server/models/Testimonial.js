@@ -1,44 +1,46 @@
-const keystone = require('keystone');
+const keystone = require("keystone");
 const Types = keystone.Field.Types;
-
 
 // Model
 // -----------------
 
-const Testimonial = new keystone.List('Testimonial', {
+const Testimonial = new keystone.List("Testimonial", {
   autokey: {
-    path: 'slug',
-    from: 'name',
+    path: "slug",
+    from: "name",
     unique: true
   },
-  defaultSort: '-createdAt',
+  defaultSort: "-createdAt"
 });
 
 Testimonial.add({
   name: {
     type: String,
     initial: true,
-    unique: true,
+    unique: true
   },
   quote: {
     type: String,
     initial: true,
-    unique: true,
+    unique: true
   },
   location: {
     type: String,
     initial: true
   },
+  date: {
+    type: String,
+    initial: true
+  },
   createdAt: {
     type: Types.Date,
-    default: Date.now,
+    default: Date.now
   },
-  isFeatured: Types.Boolean,
+  isFeatured: Types.Boolean
 });
-
 
 // Registration
 // -----------------
 
-Testimonial.defaultColumns = 'name, quote, location, createdAt, isFeatured';
+Testimonial.defaultColumns = "name, quote, location, date, createdAt, isFeatured";
 Testimonial.register();

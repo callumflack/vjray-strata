@@ -27,6 +27,7 @@ const Schema = `
     name: String,
     quote: String,
     location: String,
+    date: String,
     createdAt: String,
   }
 

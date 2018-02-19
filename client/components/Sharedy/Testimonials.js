@@ -69,7 +69,10 @@ const Testimonials = props => (
             <SmallText font="textMedium" color="brandAlt">
               {testimonial.name}
             </SmallText>
-            <SmallText color="brandAlt">{testimonial.location}</SmallText>
+            <SmallText color="brandAlt">
+              {testimonial.location}
+              {testimonial.date && <span>&#44; {testimonial.date}</span>}
+            </SmallText>
           </Flex>
         </Box>
       </StyledFlex>
@@ -94,6 +97,7 @@ class TestimonialsContainer extends React.Component {
       ) {
         _id,
         name,
+        date,
         quote,
         location
       }

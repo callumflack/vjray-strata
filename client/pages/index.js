@@ -107,7 +107,7 @@ const Root = props => (
       <Subheadline children="Info on the go" />
       <Display color="brandAlt" mb={3} children="Your guides to Sydney Strata." />
       <Text color="text70" mx="auto" width={[1, 2 / 3, 2 / 3, 1 / 2]}>
-        We've got guides and articles to help your Strata Management.
+        We've got guides and articles to help your Strata Management.&nbsp;
         <Link href="/useful-info">
           <a>Check all our guides.</a>
         </Link>

@@ -11,12 +11,14 @@ class Layout extends React.Component {
     // Display a warning message if cilent is using IE 11 or below
     // React has compatibility issues with IE 11 or below
     const ua = window.navigator.userAgent;
-    if (ua.includes('MSIE ') || ua.includes('Trident/')) {
-      alert(`This website doesn't work well on old Internet Explorer browsers. Please consider upgrading!`);
+    if (ua.includes("MSIE ") || ua.includes("Trident/")) {
+      alert(
+        `This website doesn't work well on old Internet Explorer browsers. Please upgrade to at least IE 11.`
+      );
     }
   }
 
-  render () {
+  render() {
     return (
       <ThemeProvider theme={theme}>
         <div>
@@ -31,10 +33,10 @@ class Layout extends React.Component {
       </ThemeProvider>
     );
   }
-};
+}
 
 Layout.defaultProps = {
-  title: "VJ Ray Strata Management, Sydney",
+  title: "VJ Ray Strata Management, Sydney"
 };
 
 export default Layout;

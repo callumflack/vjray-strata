@@ -11,7 +11,7 @@ class Layout extends React.Component {
     // Display a warning message if cilent is using IE 11 or below
     // React has compatibility issues with IE 11 or below
     const ua = window.navigator.userAgent;
-    if (ua.includes("MSIE ") || ua.includes("Trident/")) {
+    if (ua.indexOf("MSIE") >= 0) {
       alert(
         `This website doesn't work well on old Internet Explorer browsers. Please upgrade to at least IE 11.`
       );

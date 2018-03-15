@@ -11,7 +11,7 @@ class Layout extends React.Component {
     // Display a warning message if cilent is using IE 11 or below
     // React has compatibility issues with IE 11 or below
     const ua = window.navigator.userAgent;
-    if (ua.indexOf("Trident") !== -1) {
+    if (ua.indexOf("MSIE") >= 0) {
       alert(
         `The VJ Ray Strata website doesn't work well on old Microsoft Internet Explorer browsers. Please use Microsoft Edge instead.`
       );

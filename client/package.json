@@ -16,7 +16,6 @@
   "license": "ISC",
   "dependencies": {
     "apollo-client": "1.4.2",
-    "core-js": "2.5.3",
     "dotenv": "4.0.0",
     "express": "4.15.3",
     "formsy-react": "0.19.5",
@@ -31,10 +30,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-ga": "^2.2.0",
-    "react-no-ssr": "1.1.0",
     "send": "0.15.3",
-    "styled-components": "3.1.6",
-    "your-browser-sucks": "1.0.2"
+    "styled-components": "3.1.6"
   },
   "devDependencies": {
     "@storybook/react": "^3.1.3"

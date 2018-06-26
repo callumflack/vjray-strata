@@ -58,62 +58,60 @@ const Root = styled(Flex)`
     css`
       color: ${theme.colors[props.color] || theme.colors.text};
     `} ${props =>
-      props.clear &&
-      css`
-        --Header-background-color: rbga(255, 255, 255, 0);
-      `} ${props =>
-      props.reverseBorder &&
-      css`
-        --Header-border-color: rgba(255, 255, 255, 0.15);
-      `} ${props =>
-      props.isHidden &&
-      css`
-        opacity: 0;
-        transform: translate3d(0, 0, 0)
-          translateY(-${theme.blockHeights.navBar});
-        transition: opacity ${fade.duration}s ease-in-out 1s,
-          transform ${fade.duration}s ease-in-out 1s,
-          background-color ${fade.duration}s ease-in-out,
-          border ${fade.duration}s ease-in-out 0s;
-      `} ${props =>
-      props.isWindowScrolled &&
-      css`
-        --Header-border-color: transparent;
-        background-color: ${theme.colors[props.bg] || "rgba(255, 255, 255, 1)"};
-        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.03),
-          0 6px 30px 5px rgba(0, 0, 0, 0.03);
-        color: ${theme.colors.text};
-        transition: opacity ${fade.duration}s ease-in-out,
-          transform ${fade.duration}s ease-in-out,
-          background-color ${fade.duration}s ease-in-out,
-          border ${fade.duration}s ease-in-out;
-      `} ${props =>
-      props.isModalVisible &&
-      css`
-        --Header-background-color: ${theme.colors.offWhite};
-        --Header-border-color: rgba(88, 88, 112, 0.15);
-        background-color: var(--Header-background-color);
-        border-bottom: 1px solid var(--Header-border-color);
-        transition: opacity ${fade.duration}s ease-in-out,
-          transform ${fade.duration}s ease-in-out,
-          background-color ${fade.duration}s ease-in-out,
-          border ${fade.duration}s ease-in-out;
-      `} ${props =>
-      props.invertTextOnMobile &&
-      css`
-        @media (max-width: 512px) {
-          --Header-border-color: rgba(255, 255, 255, 0.15);
+  props.clear &&
+  css`
+    --Header-background-color: rbga(255, 255, 255, 0);
+  `} ${props =>
+  props.reverseBorder &&
+  css`
+    --Header-border-color: rgba(255, 255, 255, 0.15);
+  `} ${props =>
+  props.isHidden &&
+  css`
+    opacity: 0;
+    transform: translate3d(0, 0, 0) translateY(-${theme.blockHeights.navBar});
+    transition: opacity ${fade.duration}s ease-in-out 1s,
+      transform ${fade.duration}s ease-in-out 1s,
+      background-color ${fade.duration}s ease-in-out,
+      border ${fade.duration}s ease-in-out 0s;
+  `} ${props =>
+  props.isWindowScrolled &&
+  css`
+    --Header-border-color: transparent;
+    background-color: ${theme.colors[props.bg] || "rgba(255, 255, 255, 1)"};
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.03), 0 6px 30px 5px rgba(0, 0, 0, 0.03);
+    color: ${theme.colors.text};
+    transition: opacity ${fade.duration}s ease-in-out,
+      transform ${fade.duration}s ease-in-out,
+      background-color ${fade.duration}s ease-in-out,
+      border ${fade.duration}s ease-in-out;
+  `} ${props =>
+  props.isModalVisible &&
+  css`
+    --Header-background-color: ${theme.colors.offWhite};
+    --Header-border-color: rgba(88, 88, 112, 0.15);
+    background-color: var(--Header-background-color);
+    border-bottom: 1px solid var(--Header-border-color);
+    transition: opacity ${fade.duration}s ease-in-out,
+      transform ${fade.duration}s ease-in-out,
+      background-color ${fade.duration}s ease-in-out,
+      border ${fade.duration}s ease-in-out;
+  `} ${props =>
+  props.invertTextOnMobile &&
+  css`
+    @media (max-width: 512px) {
+      --Header-border-color: rgba(255, 255, 255, 0.15);
 
-          a,
-          span {
-            color: ${theme.colors.text20} !important;
-          }
+      a,
+      span {
+        color: ${theme.colors.text20} !important;
+      }
 
-          button {
-            border-color: --Header-border-color;
-          }
-        }
-      `};
+      button {
+        border-color: --Header-border-color;
+      }
+    }
+  `};
 `; //`
 
 const StyledButton = Button.extend`
@@ -128,13 +126,13 @@ const ResponsiveToggle = styled(Box)`
         display: none;
       }
     `} ${props =>
-      props.hideAtMobile &&
-      css`
-        @media (max-width: 768px) {
-          display: none;
-        }
-      `};
-`; //`
+    props.hideAtMobile &&
+    css`
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    `};
+`;
 
 const DesktopNav = styled(ResponsiveToggle)`
   bottom: 0;
@@ -157,15 +155,7 @@ const Nav = styled(ResponsiveToggle)`
   a:not(:last-child) {
     margin-right: 1.5rem;
   }
-
-  ${props =>
-    props.hidePhoneNumberResponsively &&
-    css`
-      @media (min-width: 769px) and (max-width: 1023px) {
-        display: none;
-      }
-    `};
-`; //`
+`;
 
 /*
  * -----------
@@ -233,21 +223,14 @@ const LinkTextRoot = hoc("span").extend`
 `;
 
 const LinkText = props => (
-  <LinkTextRoot
-    font="textRegular"
-    fontSize={[2, 3]}
-    color="inherit"
-    {...props}
-  />
+  <LinkTextRoot font="textRegular" fontSize={[2, 3]} color="inherit" {...props} />
 );
 
 const StyledDivider = styled(Divider)`
   margin-left: 0 !important;
 `;
 
-const MobileLinkText = props => (
-  <Display align="left" color="text" {...props} />
-);
+const MobileLinkText = props => <Display align="left" color="text" {...props} />;
 
 /*
  * final component
@@ -290,8 +273,7 @@ class Header extends React.Component {
     // The cause is believed to be that it's possible to scroll a little below
     // 0 on the Y axis with a bounce back animation which scrolls back to 0.
     // scollPos is checked to be above 0 to exclude scroll events caused by the bounce back animation
-    const scrolledDown =
-      window.scrollY > previousScrollPos && window.scrollY > 0;
+    const scrolledDown = window.scrollY > previousScrollPos && window.scrollY > 0;
 
     this.setState({
       previousScrollPos: window.scrollY,
@@ -312,8 +294,7 @@ class Header extends React.Component {
 
     this.setState({
       isVisible: true,
-      isWindowScrolled:
-        !willHideModal || !(willHideModal && window.scrollY <= 200),
+      isWindowScrolled: !willHideModal || !(willHideModal && window.scrollY <= 200),
       isModalVisible: !this.state.isModalVisible
     });
   }
@@ -331,9 +312,7 @@ class Header extends React.Component {
                   </Link> */}
                   <Link href="/who-we-are">
                     <a>
-                      <LinkText
-                        isActive={this.props.pathname === "/who-we-are"}
-                      >
+                      <LinkText isActive={this.props.pathname === "/who-we-are"}>
                         Who We Are
                       </LinkText>
                     </a>
@@ -349,11 +328,17 @@ class Header extends React.Component {
                   </Link>
                   <Link href="/useful-info">
                     <a>
-                      <LinkText
-                        isActive={this.props.pathname === "/useful-info"}
-                      >
+                      <LinkText isActive={this.props.pathname === "/useful-info"}>
                         Useful Info
                       </LinkText>
+                    </a>
+                  </Link>
+                  <Link
+                    href="https://www.lookatmystrata.com.au/212825/Login/Logon"
+                    passHref
+                  >
+                    <a>
+                      <LinkText>Login</LinkText>
                     </a>
                   </Link>
                   <Link href="/contact">
@@ -369,16 +354,12 @@ class Header extends React.Component {
               <Box>
                 <Link href="/">
                   <a>
-                    <Icon
-                      color={this.props.color}
-                      size="80"
-                      icon={icons.logo}
-                    />
+                    <Icon color={this.props.color} size="80" icon={icons.logo} />
                   </a>
                 </Link>
               </Box>
 
-              <Nav hidePhoneNumberResponsively>
+              <Nav>
                 <Link href={"tel:" + contactDetails.phone}>
                   <a>
                     <LinkText>
@@ -432,6 +413,14 @@ class Header extends React.Component {
                 <Link href="/useful-info">
                   <a>
                     <MobileLinkText>Useful info</MobileLinkText>
+                  </a>
+                </Link>
+                <Link
+                  href="https://www.lookatmystrata.com.au/212825/Login/Logon"
+                  passHref
+                >
+                  <a>
+                    <MobileLinkText>Login</MobileLinkText>
                   </a>
                 </Link>
                 <Link href="/contact">

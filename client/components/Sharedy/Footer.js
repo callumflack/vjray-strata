@@ -202,8 +202,8 @@ const Footer = props => (
             </Link>
           </SecondNav>
           <SecondNav mt={[0, "auto"]}>
-            <Link href="https://patternworks.com.au/">
-              <a>Site by Patternworks</a>
+            <Link href="https://callumflack.design/">
+              <a>Site by Callum Flack Design</a>
             </Link>
             <StyledDivider />
             <Link href="https://admin.vjraystrata.com.au/keystone/signin">

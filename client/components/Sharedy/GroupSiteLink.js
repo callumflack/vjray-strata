@@ -1,19 +1,7 @@
 import Link from "next/link";
-import styled from "styled-components";
-import { Flex, Box } from "../styled-grid";
-import theme from "../theme";
 import { icons } from "../constants";
-import hoc from "../Sharedy/hoc";
-import Container from "../Sharedy/Container";
 import { Headline } from "../Sharedy/Headline";
-import {
-  Text,
-  SmallText,
-  LargeText,
-  LineBreak,
-  LineBreakMax,
-  LineBreakAll
-} from "../Sharedy/Text";
+import { Text, LineBreakAll } from "../Sharedy/Text";
 import Icon from "../Sharedy/Icon";
 import LargeButtonStyler from "../Sharedy/LargeButtonStyler";
 import Button from "../Sharedy/Button";

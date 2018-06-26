@@ -1,31 +1,17 @@
 import React from "react";
 import Link from "next/link";
-
-import styled from "styled-components";
-import { Flex, Box } from "../components/styled-grid";
-import hoc from "../components/Sharedy/hoc";
-import theme from "../components/theme";
-
+import { Box } from "../components/styled-grid";
 import Layout from "../components/Sharedy/Layout";
 import Container from "../components/Sharedy/Container";
 import Button from "../components/Sharedy/Button";
 import {
   Text,
   LargeText,
-  MediumText,
-  SmallText,
   AuthorText,
   LineBreak,
-  LineBreakMax,
   LineBreakAll
 } from "../components/Sharedy/Text";
-import {
-  Display,
-  Headline,
-  Subheadline,
-  HeadlineMeta
-} from "../components/Sharedy/Headline";
-
+import { Display, Headline, Subheadline } from "../components/Sharedy/Headline";
 import Header from "../components/Sharedy/Header";
 import Footer from "../components/Sharedy/Footer";
 import Block from "../components/Sharedy/Block";
@@ -33,9 +19,7 @@ import Guides from "../components/Sharedy/Guides";
 import RecentPosts from "../components/Sharedy/RecentPosts";
 import ContactAction from "../components/Sharedy/ContactAction";
 import Contacts from "../components/Sharedy/Contacts";
-import LargeButtonStyler from "../components/Sharedy/LargeButtonStyler";
 import HeroListening from "../components/Sharedy/HeroListening";
-
 import FeatureList from "../components/Sharedy/FeatureList";
 import HeroSydney from "../components/Sharedy/HeroSydney";
 import HeroQuotes from "../components/Sharedy/HeroQuotes";

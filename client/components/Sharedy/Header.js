@@ -112,10 +112,12 @@ const Root = styled(Flex)`
       }
     }
   `};
-`; //`
+`;
 
 const StyledButton = Button.extend`
   border-width: 1px;
+  padding-left: 9px;
+  padding-right: 9px;
 `;
 
 const ResponsiveToggle = styled(Box)`
@@ -173,6 +175,9 @@ const MobileNavContainer = styled(Container)`
   @media (max-width: ${theme.breakpoints[1]}em) {
     padding: 0;
   }
+  @media (max-width: 32em) {
+    padding: 0 !important;
+  }
 `;
 
 const MobileNavFlex = Flex.extend`
@@ -188,7 +193,7 @@ const MobileNavFlex = Flex.extend`
       transition: opacity ${fade.duration}s ease-in-out,
         transform ${fade.duration}s ease-in-out;
     `};
-`; //`
+`;
 
 const MobileModal = Flex.extend`
   opacity: 1;
@@ -211,7 +216,7 @@ const MobileModal = Flex.extend`
       transition: opacity ${fade.duration}s ease-in-out,
         transform 0s ease-in-out ${fade.duration}s;
     `};
-`; //`
+`;
 
 const LinkTextRoot = hoc("span").extend`
   ${props =>
@@ -326,25 +331,25 @@ class Header extends React.Component {
                       </LinkText>
                     </a>
                   </Link>
-                  <Link href="/useful-info">
-                    <a>
-                      <LinkText isActive={this.props.pathname === "/useful-info"}>
-                        Useful Info
-                      </LinkText>
-                    </a>
-                  </Link>
                   <Link
                     href="https://www.lookatmystrata.com.au/212825/Login/Logon"
                     passHref
                   >
                     <a>
-                      <LinkText>Login</LinkText>
+                      <LinkText>Customer Login</LinkText>
                     </a>
                   </Link>
                   <Link href="/contact">
                     <a>
                       <LinkText isActive={this.props.pathname === "/contact"}>
                         Contact Us
+                      </LinkText>
+                    </a>
+                  </Link>
+                  <Link href="/useful-info">
+                    <a>
+                      <LinkText isActive={this.props.pathname === "/useful-info"}>
+                        Useful Info
                       </LinkText>
                     </a>
                   </Link>
@@ -410,22 +415,22 @@ class Header extends React.Component {
                     <MobileLinkText>What we do for you</MobileLinkText>
                   </a>
                 </Link>
-                <Link href="/useful-info">
-                  <a>
-                    <MobileLinkText>Useful info</MobileLinkText>
-                  </a>
-                </Link>
                 <Link
                   href="https://www.lookatmystrata.com.au/212825/Login/Logon"
                   passHref
                 >
                   <a>
-                    <MobileLinkText>Login</MobileLinkText>
+                    <MobileLinkText>Customer Login</MobileLinkText>
                   </a>
                 </Link>
                 <Link href="/contact">
                   <a>
                     <MobileLinkText>Contact us</MobileLinkText>
+                  </a>
+                </Link>
+                <Link href="/useful-info">
+                  <a>
+                    <MobileLinkText>Useful info</MobileLinkText>
                   </a>
                 </Link>
 

@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
-
 import { formatDateString } from "../../lib/date.js";
-
-import styled from "styled-components";
 import theme from "../theme";
 import { Flex } from "../styled-grid";
 import { Text, LargeText } from "../Sharedy/Text";
@@ -36,10 +33,7 @@ const Post = props => (
       </Text>
     </Flex>
     <Flex width={[1, 3 / 4]}>
-      <Link
-        href={`/blog?slug=${props.post.slug}`}
-        as={`/blog/${props.post.slug}`}
-      >
+      <Link href={`/blog?slug=${props.post.slug}`} as={`/blog/${props.post.slug}`}>
         <LargeText align="left" font="displayRegular" mt={[1, 3]} mb={3}>
           {props.post.title}
         </LargeText>

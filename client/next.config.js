@@ -3,11 +3,7 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const webpack = require('webpack');
 
 module.exports = {
-  exportPathMap: function() {
-    return {
-      '/': { page: '/' },
-    }
-  },
+  target: 'serverless',
   webpack: (cfg) => {
     cfg.plugins.push(
       new webpack.DefinePlugin({
@@ -18,3 +14,8 @@ module.exports = {
     return cfg;
   },
 };
+
+// https://zeit.co/docs/v2/deployments/official-builders/next-js-now-next/
+// module.exports = {
+//   target: 'serverless'
+// }
